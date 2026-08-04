@@ -1,18 +1,20 @@
 # Chimera Scanner Dataset - Vulhub Redo (2026-08-05)
 
-ชุดข้อมูลนี้เป็นรอบสแกน vulnerable lab จาก Vulhub สำหรับโปรเจกต์ **Exploit-DL: ระบบเลือก Exploit อัตโนมัติด้วย Machine Learning / Deep Learning**
+ชุดนี้เป็น dataset จากการสแกน vulnerable lab ของ Vulhub สำหรับโปรเจกต์ **Exploit-DL: ระบบช่วยเลือก exploit อัตโนมัติด้วย Machine Learning / Deep Learning**
 
-แนวคิดง่าย ๆ คือ เราเอาผลสแกนจากหลายเครื่องมือ เช่น `nmap`, `httpx`, `nuclei`, `nikto` มาแปลงเป็นข้อมูลที่โมเดลอ่านได้ เช่น port, service, version, title, technology, CVE signal แล้วใช้เป็นฐานสำหรับทำนายว่า target แบบนี้ควรลอง exploit/CVE อะไรก่อน
+รอบนี้เน้นเก็บข้อมูลแบบ “หนึ่ง lab ต่อหนึ่ง CVE/product” เพื่อใช้เป็นฐานสำหรับเรียนรู้ความสัมพันธ์ระหว่าง fingerprint ของ target กับ CVE หรือ product ที่เกี่ยวข้อง
 
-## ขอบเขตของชุดข้อมูล
+พูดง่าย ๆ คือ เราเอาผลจาก tools เช่น `naabu`, `nmap`, `httpx`, `nuclei`, `nikto` มาแปลงเป็นข้อมูลที่ model ใช้ต่อได้ เช่น port, service, version, web title, tech stack และ scanner signal
 
-- แหล่งข้อมูล: Docker lab ในเครื่องจาก Vulhub
+## ขอบเขตของ dataset
+
+- Source: local Docker labs จาก Vulhub
 - Run ID: `202608041930-vulhub-expanded`
 - จำนวน lab: 8
 - Tools: `naabu`, `nmap`, `httpx`, `nuclei`, `nikto`
-- ความปลอดภัย: เก็บข้อมูลจากการสแกน/fingerprint เท่านั้น ยังไม่ได้ยิง exploit จริง
+- Scope: เก็บ fingerprint/report จาก scanner เท่านั้น ยังไม่ได้รัน exploit validation
 
-## โครงสร้างโฟลเดอร์
+## โครงสร้างไฟล์
 
 ```text
 datasets/
@@ -32,24 +34,26 @@ manifests/
   checksums.sha256
 ```
 
-## ไฟล์ที่ควรเริ่มอ่าน
+## ไฟล์ที่ควรเริ่มดู
 
 - `records/exploit-dl-features.jsonl`  
-  ตาราง feature หลักของรอบนี้ แต่ละแถวคือข้อมูล target/service/web surface หนึ่งจุด
+  feature หลักของชุดนี้ แต่ละแถวคือข้อมูลจาก target/service/web surface ที่ scanner เจอ
 
 - `records/exploit-labels.jsonl`  
-  label เบื้องต้นจากชื่อ lab/CVE ของ Vulhub เช่น target นี้ตั้งใจจำลอง CVE อะไร
+  label เบื้องต้นจาก lab identity เช่น lab นี้ถูกสร้างมาเพื่อจำลอง CVE อะไร
 
 - `datasets/tools-name-date/.../raw/`  
-  รายงานดิบจากแต่ละ tool เผื่ออยากกลับไป parse เพิ่มเอง
+  รายงานดิบจากแต่ละ tool เผื่ออยาก parse เพิ่มหรือกลับไปตรวจหลักฐาน
 
-## คำเตือนเรื่อง label
+## เรื่อง label ต้องเข้าใจตรงนี้ก่อน
 
-label ในชุดนี้เป็น **weak label / candidate label** จากตัวตนของ lab เช่น lab ชื่อ `CVE-2024-36401` จึงถือว่าเป็น positive candidate ของ CVE นั้น
+label ในชุดนี้เป็น **weak label / candidate label** จากชื่อ lab และ CVE ของ Vulhub
 
-แต่ยังไม่ใช่คำตอบว่า “ยิง exploit สำเร็จจริง” เพราะรอบนี้ยังไม่ได้รัน exploit validation
+ตัวอย่างเช่น ถ้า lab ชื่อ `geoserver-cve-2024-36401` เราถือว่า target นี้มี candidate label เป็น `CVE-2024-36401`
 
-ถ้าจะใช้ทำโมเดลจริงจัง ขั้นต่อไปควรเพิ่ม field:
+แต่ label แบบนี้ยังไม่ใช่คำตอบว่า “exploit สำเร็จจริง” เพราะยังไม่มีการยิง exploit แล้วบันทึกผลสำเร็จ/ล้มเหลว
+
+ถ้าจะเอาไปทำ model ที่จัดอันดับ exploit แบบจริงจัง ควรเพิ่มข้อมูลเหล่านี้ในรอบถัดไป:
 
 - `exploit_id`
 - `exploit_family`
@@ -57,17 +61,17 @@ label ในชุดนี้เป็น **weak label / candidate label** จ�
 - `exploit_runtime_seconds`
 - `exploit_error`
 
-## ใช้ทำอะไรได้ตอนนี้
-
-เหมาะสำหรับ:
+## ใช้ dataset นี้ทำอะไรได้ดี
 
 - ทดลองแปลง scanner report เป็น feature
 - ทำ baseline model จาก service/version/web fingerprint
-- ทดลองจับคู่ target fingerprint กับ CVE/product label
+- ทดลองจับคู่ product/version กับ CVE label
 - ใช้เป็น seed dataset ก่อนเพิ่ม exploit validation
 
-ยังไม่เหมาะสำหรับ:
+## ข้อจำกัด
 
-- สรุปว่าโมเดลยิง exploit สำเร็จจริง
-- วัด performance แบบ research-grade
-- train deep learning ขนาดใหญ่ เพราะจำนวนข้อมูลยังน้อย
+- ยังไม่มี exploit success label จริง
+- จำนวน lab ยังน้อยสำหรับ Deep Learning จริงจัง
+- ไม่ควรวัดผลแบบ production/research-grade จากชุดนี้อย่างเดียว
+
+ถ้าโจทย์คือ demo ระบบ “สไนเปอร์เลือก exploit ก่อนหลัง” ให้ใช้ dataset ชุด `multi-vuln-web` ร่วมด้วย เพราะชุดนั้นมี target ที่มีหลาย exploit family ให้จัดอันดับในเว็บเดียว

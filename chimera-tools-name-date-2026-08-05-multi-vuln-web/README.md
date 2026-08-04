@@ -1,12 +1,16 @@
 # Chimera Multi-Vulnerability Web Dataset (2026-08-05)
 
-ชุดนี้ทำมาเพื่อโปรเจกต์ **Exploit-DL: ระบบเลือก Exploit อัตโนมัติ** โดยเฉพาะ
+ชุดนี้เป็น dataset สำหรับโปรเจกต์ **Exploit-DL: ระบบช่วยเลือก exploit อัตโนมัติ** โดยเน้นโจทย์แบบ “หนึ่งเว็บมีช่องโหว่หลายแบบ” ซึ่งใกล้กับสถานการณ์ที่เราอยาก demo มากกว่า lab แบบหนึ่ง CVE ต่อหนึ่ง target
 
-ต่างจากชุด Vulhub CVE เดี่ยว ๆ ชุดนี้ใช้เว็บที่มีช่องโหว่หลายแบบในเว็บเดียว เพื่อจำลองโจทย์จริงว่า:
+ไอเดียหลักคือ เมื่อ scanner เจอข้อมูลของ target แล้ว ระบบควรตอบได้ว่า:
 
-> เมื่อเจอ target หนึ่งเว็บ เราควรลอง exploit family ไหนก่อน เพื่อให้มีโอกาสสำเร็จสูงที่สุด
+> ถ้าจะลองโจมตีแบบแม่น ๆ ไม่สุ่มยิงมั่ว ควรลอง exploit family ไหนก่อน เพราะตัวไหนมีโอกาสสำเร็จสูงกว่า
 
-## Lab ที่ใช้
+ดังนั้น dataset ชุดนี้ไม่ได้เก็บแค่รายงาน scan แต่เตรียมข้อมูลไปถึงขั้น feature, candidate ranking และ baseline model ให้ทดลองได้ทันที
+
+## Labs ที่ใช้
+
+เลือก lab ที่เป็นเว็บฝึกโจมตีชื่อดังและมีช่องโหว่หลายกลุ่มในตัวเดียว:
 
 - OWASP Juice Shop
 - OWASP WebGoat
@@ -14,27 +18,29 @@
 - bWAPP
 - OWASP Mutillidae / NOWASP
 
-## Tools ที่ใช้สแกน
+แต่ละตัวเหมาะกับงาน ranking เพราะมี exploit family ให้เปรียบเทียบหลายแบบ เช่น `sqli`, `xss`, `command-injection`, `file-inclusion`, `auth-bypass`, `xxe`
 
-- `nmap` สำหรับ service/version fingerprint
-- `httpx` สำหรับ web title, tech, status code
-- `nuclei` สำหรับ vulnerability/template signal
-- `nikto` สำหรับ web finding
-- `wapiti` สำหรับ DAST finding
-- `zap` สำหรับ DAST finding และ risk signal
+## Tools ที่ใช้เก็บข้อมูล
 
-## ไฟล์สำคัญ
+- `nmap` — เก็บ service/version fingerprint
+- `httpx` — เก็บ web title, status code, technology และ basic web fingerprint
+- `nuclei` — เก็บ template/CVE-style signal ถ้ามี match
+- `nikto` — เก็บ web finding แบบ classic web scanner
+- `wapiti` — เก็บ DAST finding
+- `zap` — เก็บ DAST finding และ risk signal จาก OWASP ZAP
+
+## โครงสร้างไฟล์
 
 ```text
 records/
-  exploit-dl-target-features.jsonl    # feature ต่อ target
+  exploit-dl-target-features.jsonl    # feature ระดับ target
   exploit-rank-candidates.jsonl       # candidate exploit ranking
-  all-records.jsonl                   # record รวมทั้งหมด
+  all-records.jsonl                   # normalized record ทั้งหมด
 
 derived/
-  training_examples.csv               # ตาราง train หลัก
+  training_examples.csv               # ตารางหลักสำหรับ train/test
   training_examples.jsonl
-  feature_matrix.csv                  # one-hot encoded matrix
+  feature_matrix.csv                  # one-hot encoded feature matrix
   feature_summary.json
   baseline_predictions.csv
   baseline_metrics.json
@@ -48,61 +54,75 @@ scripts/
   predict_example.py
 ```
 
-## วิธีรัน Step 2: Fingerprint → Feature
+## Step 2 — Fingerprint → Feature
 
-ติดตั้ง dependency:
+รันคำสั่งนี้เพื่อแปลงข้อมูลจาก scanner ให้เป็น feature table:
 
 ```bash
 pip install -r requirements.txt
-```
-
-สร้าง feature table:
-
-```bash
 python scripts/build_features.py --dataset-root .
 ```
 
-ผลลัพธ์หลัก:
+ผลลัพธ์ที่ได้:
 
 - `derived/training_examples.csv`
+- `derived/training_examples.jsonl`
 - `derived/feature_matrix.csv`
 - `derived/feature_summary.json`
 
-แนวคิดคือเอาข้อมูลจาก scanner เช่น port, service, title, tech, ZAP finding count, exploit family แล้วแปลงเป็นตัวเลข/ตารางที่โมเดลเรียนได้
+แนวคิดคือเอาข้อมูลที่ scanner มองเห็น เช่น port, service, title, tech stack, จำนวน finding จาก ZAP/Nikto/Wapiti และ exploit family ที่เป็น candidate มาแปลงเป็นตารางที่ ML ใช้ได้
 
-## วิธีรัน Step 3: ML Decision Engine
+ตัวอย่าง feature ที่ใช้:
 
-Train baseline model:
+- `port`
+- `candidate_exploit_family`
+- `rank_score`
+- `family_risk_prior`
+- `has_zap_evidence`
+- `zap_finding_count`
+- `observed_tech_count`
+- `service_product_count`
+- `observed_tech_text`
+- `service_products_text`
+
+ส่วนข้อความ เช่น product name, exploit family, tech stack จะถูกแปลงด้วย one-hot encoding ใน `feature_matrix.csv`
+
+## Step 3 — ML Decision Engine
+
+รัน baseline model:
 
 ```bash
 python scripts/train_baseline.py --dataset-root .
 ```
 
-ลอง predict target หนึ่งตัว:
+ลองให้ model จัดอันดับ exploit family ของ lab หนึ่งตัว:
 
 ```bash
 python scripts/predict_example.py --dataset-root . --lab-id dvwa
 ```
 
-ตัวอย่างผลลัพธ์ที่ควรเห็น:
+ตัวอย่าง output:
 
 ```text
-dvwa  command-injection  0.992
-dvwa  sqli               0.988
-dvwa  xss                0.084
+lab_id  candidate_exploit_family  predicted_success_probability
+dvwa    command-injection          0.992
+dvwa    sqli                       0.988
+dvwa    xss                        0.084
 ```
 
-แปลว่าโมเดลมองว่า DVWA ควรลอง `command-injection` หรือ `sqli` ก่อน
+แปลแบบง่าย ๆ คือ สำหรับ DVWA model มองว่า `command-injection` และ `sqli` ควรถูกลองก่อนกลุ่มอื่น
 
 ## Label ที่ใช้ตอนนี้
 
-ตอนนี้ label คือ:
+ตอนนี้ label หลักคือ:
 
 - `is_recommended`
 - `rank`
 - `rank_score`
 
-label นี้มาจาก heuristic:
+label ชุดนี้เป็น **weak label** หรือ label สำหรับ demo ก่อน ยังไม่ใช่ผล “ยิง exploit สำเร็จจริง”
+
+ที่มาของ label ตอนนี้คือ:
 
 ```text
 known vulnerable app prior
@@ -110,35 +130,49 @@ known vulnerable app prior
 + exploit family risk weight
 ```
 
-พูดตรง ๆ คือยังไม่ใช่ “ยิง exploit สำเร็จจริง” แต่เป็น weak label สำหรับทำ prototype ให้ระบบเรียนรู้ pipeline ได้ก่อน
-
-## ทำไมต้องเริ่มแบบนี้
-
-เพราะตอนนี้เรายังไม่มี feedback loop ที่ยิง exploit ทุกตัวแล้วบันทึกผลสำเร็จ/ล้มเหลวจริง การใช้ weak label ทำให้เราทดสอบระบบได้ครบก่อน:
+พูดให้ตรงคือ dataset นี้ช่วยให้เราทดสอบ pipeline ได้ครบก่อน:
 
 ```text
 scan → normalize → feature → train → predict ranking
 ```
 
-พอ pipeline นี้นิ่งแล้ว ค่อยเพิ่ม exploit validation เพื่อเปลี่ยน label ให้เป็นของจริง
+แต่ถ้าจะทำเป็นงานวิจัยที่แข็งขึ้น ต้องเพิ่มขั้น exploit validation เพื่อเก็บผลจริงว่า exploit ไหนสำเร็จ/ไม่สำเร็จ
+
+## ผล baseline รอบนี้
+
+ดูรายละเอียดได้ที่ `derived/baseline_metrics.json`
+
+สรุปสั้น ๆ:
+
+- training rows: 43
+- targets: 5
+- feature columns: 54
+- positive rows: 10
+- validation: Leave-One-Target-Out
+- accuracy: 0.9767
+- ROC-AUC: 0.9939
+- Top-1 hit rate by target: 1.0
+- Top-3 hit rate by target: 1.0
+
+ตัวเลขนี้ใช้ดูว่า pipeline ทำงานได้ ไม่ควรเอาไป claim ว่า model แม่นระดับ production เพราะ label ยังเป็น weak label และจำนวน target ยังน้อย
 
 ## ขั้นต่อไปที่ควรทำ
 
 1. เพิ่ม exploit validation ใน local lab เท่านั้น
 2. บันทึกผล `exploit_success_observed = true/false`
-3. เพิ่ม negative samples เช่น เว็บปกติหรือ version ที่ไม่ vulnerable
-4. เพิ่มจำนวน target เป็น 30–100 ตัว
+3. เพิ่ม negative samples เช่น target ที่ไม่ vulnerable หรือ version ที่ patch แล้ว
+4. เพิ่มจำนวน target อย่างน้อย 30–100 ตัว
 5. เปลี่ยน baseline จาก RandomForest ไปเป็น ranking model เช่น LightGBM Ranker
-6. ถ้าข้อมูลเยอะพอ ค่อยใช้ Deep Learning + text embeddings จาก banner/report
+6. ถ้าข้อมูลเยอะพอ ค่อยต่อ Deep Learning + text embeddings จาก banner/report
 
-## ข้อควรระวัง
+## สิ่งที่ไม่ควรใช้เป็น feature
 
-อย่า train ด้วย field ที่ทำให้โมเดลโกง เช่น:
+อย่าให้ model เรียนจากข้อมูลที่ทำให้โกง เช่น:
 
 - `lab_id`
 - Docker image name
-- local path
+- local file path
 - timestamp
 - generated host port
 
-เพราะโมเดลจะจำชื่อ lab แทนที่จะเรียนรู้ fingerprint จริง
+field พวกนี้ทำให้ผลดูแม่น แต่จริง ๆ model แค่จำชื่อ lab ไม่ได้เข้าใจ fingerprint ของ target
