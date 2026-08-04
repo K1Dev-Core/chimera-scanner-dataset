@@ -62,6 +62,10 @@ PROFILES = {
         "product": "Nova DevOps Console",
         "families": ["command-injection", "sqli", "file-inclusion", "ssrf", "broken-access-control", "xss", "sensitive-data-exposure"],
     },
+    "grafana-hard": {
+        "product": "Grafana",
+        "families": ["sqli", "file-inclusion", "command-injection", "broken-access-control", "sensitive-data-exposure", "ssrf", "xss"],
+    },
 }
 
 
