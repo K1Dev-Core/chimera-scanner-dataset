@@ -1,0 +1,62 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:06:14.604Z",
+  "runId": "20260805-005453-cve2026-famous",
+  "tool": {
+    "id": "greenbone",
+    "name": "Greenbone CE",
+    "type": "Vulnerability management",
+    "status": "staged"
+  },
+  "counts": {
+    "records": 1,
+    "findings": 0,
+    "sourceFiles": 3
+  },
+  "sourceFiles": [
+    {
+      "file": "../scanner-dataset/tools/greenbone/compose.yaml",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/greenbone/compose.yaml",
+      "bytes": 8697,
+      "sha256": "5b5117a7c200491de13bc7b79c97dc858c016c51017982d8f1de7ca077c1a868",
+      "updatedAt": "2026-08-04T17:06:50.014Z",
+      "kind": "yaml",
+      "lines": 295,
+      "records": 0
+    },
+    {
+      "file": "../scanner-dataset/tools/greenbone/start.ps1",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/greenbone/start.ps1",
+      "bytes": 599,
+      "sha256": "710bc45c74006e9b99e072fafe9067561b0b35c9ecf5f6217a9428081f6301ff",
+      "updatedAt": "2026-08-04T18:22:40.334Z",
+      "kind": "ps1",
+      "lines": 10,
+      "records": 0
+    },
+    {
+      "file": "../scanner-dataset/tools/greenbone/status.ps1",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/greenbone/status.ps1",
+      "bytes": 131,
+      "sha256": "997d9d9876e4c17f1a494fa4e3189a95046a3437af2bd24b43933669c6ef61d2",
+      "updatedAt": "2026-08-04T18:21:14.064Z",
+      "kind": "ps1",
+      "lines": 3,
+      "records": 0
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.greenbone.status.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "greenbone",
+      "status": "staged",
+      "findingCount": 0,
+      "files": [
+        "../scanner-dataset/tools/greenbone/compose.yaml",
+        "../scanner-dataset/tools/greenbone/start.ps1",
+        "../scanner-dataset/tools/greenbone/status.ps1"
+      ]
+    }
+  ]
+}

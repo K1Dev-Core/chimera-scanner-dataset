@@ -1,0 +1,128 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:06:14.584Z",
+  "runId": "20260805-005453-cve2026-famous",
+  "tool": {
+    "id": "naabu",
+    "name": "Naabu",
+    "type": "Port scanner",
+    "status": "completed"
+  },
+  "counts": {
+    "records": 8,
+    "findings": 8,
+    "sourceFiles": 2
+  },
+  "sourceFiles": [
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/naabu/naabu.jsonl",
+      "href": "/reports/20260805-005453-cve2026-famous/naabu/naabu.jsonl",
+      "bytes": 1128,
+      "sha256": "cb3f047e57a594eef733a3808191d055b6e7fd3a2a838d51fd33f7cf92f5aea0",
+      "updatedAt": "2026-08-04T17:55:34.708Z",
+      "kind": "jsonl",
+      "lines": 8,
+      "records": 8
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/naabu/console.txt",
+      "href": "/reports/20260805-005453-cve2026-famous/naabu/console.txt",
+      "bytes": 4544,
+      "sha256": "81704cf6140fe8a7ef7ccf0eb56dbc78a6391d0fc66814bea784d33b33c3121d",
+      "updatedAt": "2026-08-04T17:55:34.705Z",
+      "kind": "text",
+      "lines": 17,
+      "records": 0
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "nginx-ui-19000",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 19000,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "target-14000",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 14000,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "activemq-18161",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 18161,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "n8n-15678",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 15678,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "target-16116",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 16116,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "tomcat-14080",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 14080,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "wordpress-18080",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 18080,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "naabu",
+      "targetId": "vite-15173",
+      "host": "host.docker.internal",
+      "ip": "192.168.65.254",
+      "port": 15173,
+      "protocol": "tcp",
+      "timestamp": "2026-08-04T17:55:34.701755784Z"
+    }
+  ]
+}

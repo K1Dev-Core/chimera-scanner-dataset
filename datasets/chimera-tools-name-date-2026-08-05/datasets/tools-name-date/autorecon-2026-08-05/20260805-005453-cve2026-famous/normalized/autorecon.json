@@ -1,0 +1,62 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:06:14.607Z",
+  "runId": "20260805-005453-cve2026-famous",
+  "tool": {
+    "id": "autorecon",
+    "name": "AutoRecon",
+    "type": "Recon workflow",
+    "status": "available"
+  },
+  "counts": {
+    "records": 1,
+    "findings": 0,
+    "sourceFiles": 3
+  },
+  "sourceFiles": [
+    {
+      "file": "../scanner-dataset/tools/autorecon/source/Dockerfile",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/source/Dockerfile",
+      "bytes": 657,
+      "sha256": "11df45cc1a80eb728fea31e4a3709d7487d4f4f1c077266370dc2513208378ff",
+      "updatedAt": "2026-08-04T18:40:54.295Z",
+      "kind": "file",
+      "lines": 30,
+      "records": 0
+    },
+    {
+      "file": "../scanner-dataset/tools/autorecon/start.ps1",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/autorecon/start.ps1",
+      "bytes": 745,
+      "sha256": "4b9734a35134031fcd6d6533f1431721bc00c63f76f11872ff28f8f23e10065e",
+      "updatedAt": "2026-08-04T18:42:53.143Z",
+      "kind": "ps1",
+      "lines": 17,
+      "records": 0
+    },
+    {
+      "file": "../scanner-dataset/tools/autorecon/build.ps1",
+      "href": "/reports/20260805-005453-cve2026-famous/staged/autorecon/build.ps1",
+      "bytes": 411,
+      "sha256": "b7d1726163b405f21797bec38e56337fba1d7a60b39f08f4087b4236ab150633",
+      "updatedAt": "2026-08-04T18:42:53.143Z",
+      "kind": "ps1",
+      "lines": 8,
+      "records": 0
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.autorecon.status.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "autorecon",
+      "status": "available",
+      "findingCount": 0,
+      "files": [
+        "../scanner-dataset/tools/autorecon/source/Dockerfile",
+        "../scanner-dataset/tools/autorecon/start.ps1",
+        "../scanner-dataset/tools/autorecon/build.ps1"
+      ]
+    }
+  ]
+}

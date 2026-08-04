@@ -1,0 +1,187 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:13:42.658Z",
+  "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+  "target": {
+    "id": "inst-30317-aegis-ctf-com",
+    "targetId": "inst-30317-aegis-ctf-com-443",
+    "host_url": "https://inst-30317.aegis-ctf.com/",
+    "docker_url": "https://inst-30317.aegis-ctf.com/",
+    "host": "inst-30317.aegis-ctf.com",
+    "ports": [
+      "443/tcp"
+    ],
+    "source": "live authorized scan",
+    "displayName": "inst-30317.aegis-ctf.com",
+    "port": "443",
+    "cves": [],
+    "statusCode": 502,
+    "title": "inst-30317.aegis-ctf.com",
+    "webserver": "cloudflare",
+    "tech": [
+      "Cloudflare",
+      "HTTP/3"
+    ],
+    "cpe": [],
+    "words": 3,
+    "lines": 1
+  },
+  "tool": {
+    "id": "zap",
+    "name": "OWASP ZAP",
+    "type": "Passive web baseline",
+    "status": "completed"
+  },
+  "counts": {
+    "records": 6,
+    "findings": 8,
+    "sourceFiles": 7
+  },
+  "sourceFiles": [
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/result.json",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/result.json",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/result.json",
+      "bytes": 4486,
+      "sha256": "6ff00c41d418c916815df2489f31c4ce6829e8e2d08f1e509e7944ed8f42e54b",
+      "updatedAt": "2026-08-04T19:13:42.562Z",
+      "kind": "json",
+      "lines": 11,
+      "records": 1
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stderr.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stderr.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "updatedAt": "2026-08-04T19:13:42.560Z",
+      "kind": "text",
+      "lines": 0,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stdout.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stdout.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/stdout.txt",
+      "bytes": 3846,
+      "sha256": "5a8c9748902cae85a3bc46d0e5c914273d3b145b301010f972169dd9aec88880",
+      "updatedAt": "2026-08-04T19:13:42.560Z",
+      "kind": "text",
+      "lines": 80,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.html",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.html",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.html",
+      "bytes": 44869,
+      "sha256": "4af445849bd5531ec9daad9aaf8225e06cbd4573fc269cc1d1c4ce2d5151778d",
+      "updatedAt": "2026-08-04T19:13:35.325Z",
+      "kind": "html",
+      "lines": 1169,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.json",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.json",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.json",
+      "bytes": 14555,
+      "sha256": "a111ffe66cd669b1313642740cb747237c580d9474e56b8bcb3cca9a13b2a3c9",
+      "updatedAt": "2026-08-04T19:13:35.485Z",
+      "kind": "json",
+      "lines": 268,
+      "records": 1
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.md",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.md",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap-report.md",
+      "bytes": 12953,
+      "sha256": "39c242248cd1dfb1d842943d6e745fabdc9669130e1e008b9bbe296f92f2ba19",
+      "updatedAt": "2026-08-04T19:13:35.396Z",
+      "kind": "md",
+      "lines": 187,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap.yaml",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap.yaml",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/zap/zap.yaml",
+      "bytes": 1055,
+      "sha256": "3d8cadf8d57442c966f1935dbd9bcb998bec24981f1f29599a70b88a8b526f64",
+      "updatedAt": "2026-08-04T19:12:42.817Z",
+      "kind": "yaml",
+      "lines": 47,
+      "records": 0
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+      "risk": "Low (Medium)",
+      "confidence": "2",
+      "description": "Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.",
+      "count": "1"
+    },
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "Strict-Transport-Security Header Not Set",
+      "risk": "Low (High)",
+      "confidence": "3",
+      "description": "HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.",
+      "count": "3"
+    },
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "X-Content-Type-Options Header Missing",
+      "risk": "Low (Medium)",
+      "confidence": "2",
+      "description": "The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.",
+      "count": "1"
+    },
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "Non-Storable Content",
+      "risk": "Informational (Medium)",
+      "confidence": "2",
+      "description": "The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.",
+      "count": "1"
+    },
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "Re-examine Cache-control Directives",
+      "risk": "Informational (Low)",
+      "confidence": "1",
+      "description": "The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.",
+      "count": "1"
+    },
+    {
+      "schema": "chimera.zap.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "OWASP ZAP",
+      "name": "Storable and Cacheable Content",
+      "risk": "Informational (Medium)",
+      "confidence": "2",
+      "description": "The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.",
+      "count": "1"
+    }
+  ]
+}

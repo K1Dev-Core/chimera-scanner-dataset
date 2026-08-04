@@ -1,0 +1,176 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:13:42.590Z",
+  "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+  "target": {
+    "id": "inst-30317-aegis-ctf-com",
+    "targetId": "inst-30317-aegis-ctf-com-443",
+    "host_url": "https://inst-30317.aegis-ctf.com/",
+    "docker_url": "https://inst-30317.aegis-ctf.com/",
+    "host": "inst-30317.aegis-ctf.com",
+    "ports": [
+      "443/tcp"
+    ],
+    "source": "live authorized scan",
+    "displayName": "inst-30317.aegis-ctf.com",
+    "port": "443",
+    "cves": [],
+    "statusCode": 502,
+    "title": "inst-30317.aegis-ctf.com",
+    "webserver": "cloudflare",
+    "tech": [
+      "Cloudflare",
+      "HTTP/3"
+    ],
+    "cpe": [],
+    "words": 3,
+    "lines": 1
+  },
+  "tool": {
+    "id": "naabu",
+    "name": "Naabu",
+    "type": "Port scanner",
+    "status": "completed"
+  },
+  "counts": {
+    "records": 8,
+    "findings": 0,
+    "sourceFiles": 4
+  },
+  "sourceFiles": [
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/naabu.jsonl",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/naabu.jsonl",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/naabu.jsonl",
+      "bytes": 1136,
+      "sha256": "441b60066e9ce15fa22bce8744aee02450b048864db385d5ff808c4ee546668a",
+      "updatedAt": "2026-08-04T19:09:21.395Z",
+      "kind": "jsonl",
+      "lines": 8,
+      "records": 8
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/result.json",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/result.json",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/result.json",
+      "bytes": 1654,
+      "sha256": "5a22327fc5938bf46f336907a916a78caadc9be5af471d4c021e3f8b9a24c4fa",
+      "updatedAt": "2026-08-04T19:09:21.395Z",
+      "kind": "json",
+      "lines": 11,
+      "records": 1
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stderr.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stderr.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "updatedAt": "2026-08-04T19:09:21.394Z",
+      "kind": "text",
+      "lines": 0,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stdout.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stdout.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/naabu/stdout.txt",
+      "bytes": 1136,
+      "sha256": "441b60066e9ce15fa22bce8744aee02450b048864db385d5ff808c4ee546668a",
+      "updatedAt": "2026-08-04T19:09:21.394Z",
+      "kind": "text",
+      "lines": 8,
+      "records": 0
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:15.871766947Z",
+      "port": 8080,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:15.872396787Z",
+      "port": 443,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:15.872492093Z",
+      "port": 80,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:15.873748373Z",
+      "port": 8443,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:20.853020947Z",
+      "port": 8080,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:20.853051749Z",
+      "port": 443,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:20.85305625Z",
+      "port": 80,
+      "protocol": "tcp",
+      "tls": false
+    },
+    {
+      "schema": "chimera.naabu.port.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "host": "inst-30317.aegis-ctf.com",
+      "ip": "172.67.184.27",
+      "timestamp": "2026-08-04T19:09:20.85305855Z",
+      "port": 8443,
+      "protocol": "tcp",
+      "tls": false
+    }
+  ]
+}

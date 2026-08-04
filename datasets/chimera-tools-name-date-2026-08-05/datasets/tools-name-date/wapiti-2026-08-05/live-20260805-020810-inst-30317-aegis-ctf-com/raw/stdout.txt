@@ -1,0 +1,37 @@
+
+ ██╗    ██╗ █████╗ ██████╗ ██╗████████╗██╗██████╗
+ ██║    ██║██╔══██╗██╔══██╗██║╚══██╔══╝██║╚════██╗
+ ██║ █╗ ██║███████║██████╔╝██║   ██║   ██║ █████╔╝
+ ██║███╗██║██╔══██║██╔═══╝ ██║   ██║   ██║ ╚═══██╗
+ ╚███╔███╔╝██║  ██║██║     ██║   ██║   ██║██████╔╝
+  ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝╚═════╝  
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+CSP is not set for URL: https://inst-30317.aegis-ctf.com/
+X-Content-Type-Options is not set on https://inst-30317.aegis-ctf.com/
+Strict-Transport-Security is not set on https://inst-30317.aegis-ctf.com/
+[*] Saving scan state, please wait...
+This scan has been saved in the file /root/.wapiti/scans/inst-30317.aegis-ctf.com_page_0b954d72.db
+[*] Wapiti found 1 URLs and forms during the scan
+
+[*] Launching module upload
+
+[*] Launching module ssl
+sslscan is not installed or not found in PATH, module will be skipped
+
+[*] Launching module redirect
+
+[*] Launching module xss
+
+[*] Launching module sql
+
+[*] Launching module exec
+
+[*] Launching module file
+
+[*] Launching module ssrf
+[*] Asking endpoint URL https://wapiti3.ovh/get_ssrf.php?session_id=8n5r7c for results, please wait...
+
+[*] Launching module permanentxss
+
+[*] Generating report...
+A report has been generated in the file /out/wapiti.json

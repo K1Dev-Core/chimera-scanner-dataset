@@ -1,0 +1,6 @@
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"activemq-18161","findings":5,"outputDir":"","reportJson":""}
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"n8n-15678","findings":6,"outputDir":"","reportJson":""}
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"nginx-ui-19000","findings":7,"outputDir":"","reportJson":""}
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"tomcat-14080","findings":6,"outputDir":"","reportJson":""}
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"vite-15173","findings":6,"outputDir":"","reportJson":""}
+{"schema":"chimera.nikto.summary.v1","runId":"20260805-005453-cve2026-famous","tool":"nikto","targetId":"wordpress-18080","findings":9,"outputDir":"","reportJson":""}

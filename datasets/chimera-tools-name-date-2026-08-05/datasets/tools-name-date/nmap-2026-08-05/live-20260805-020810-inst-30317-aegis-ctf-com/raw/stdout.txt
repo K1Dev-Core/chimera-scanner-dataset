@@ -1,0 +1,16 @@
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-08-04 19:09 +0000
+Nmap scan report for inst-30317.aegis-ctf.com (172.67.184.27)
+Host is up (0.018s latency).
+Other addresses for inst-30317.aegis-ctf.com (not scanned): 104.21.68.5
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   open     http       Cloudflare http proxy
+443/tcp  open     ssl/http   Cloudflare http proxy
+3000/tcp filtered ppp
+5000/tcp filtered upnp
+8080/tcp open     http       Cloudflare http proxy
+8443/tcp open     ssl/http   Cloudflare http proxy
+9000/tcp filtered cslistener
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 37.11 seconds

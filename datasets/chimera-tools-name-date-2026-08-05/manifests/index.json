@@ -1,0 +1,1904 @@
+{
+  "schema": "chimera.dataset-package.v1",
+  "packageId": "chimera-tools-name-date-2026-08-05",
+  "generatedAt": "2026-08-04T19:22:18.130Z",
+  "branchTarget": "Hex",
+  "sourceWorkspace": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2",
+  "runs": [
+    {
+      "runId": "20260805-005453-cve2026-famous",
+      "sourceType": "local-vulnerable-lab",
+      "target": [
+        {
+          "targetId": "wordpress-18080",
+          "url": "http://localhost:18080",
+          "dockerUrl": "http://host.docker.internal:18080",
+          "cves": [
+            "CVE-2026-63030",
+            "CVE-2026-60137"
+          ],
+          "port": "18080",
+          "title": "wp2shell-lab",
+          "tech": [
+            "Apache HTTP Server:2.4.67",
+            "Debian",
+            "MySQL",
+            "PHP:8.3.31",
+            "WordPress Block Editor",
+            "WordPress Site Editor",
+            "WordPress:6.9.4"
+          ]
+        },
+        {
+          "targetId": "activemq-18161",
+          "url": "http://localhost:18161",
+          "dockerUrl": "http://host.docker.internal:18161",
+          "cves": [
+            "CVE-2026-34197"
+          ],
+          "port": "18161",
+          "title": "Error 401 Unauthorized",
+          "tech": [
+            "Basic"
+          ]
+        },
+        {
+          "targetId": "n8n-15678",
+          "url": "http://localhost:15678",
+          "dockerUrl": "http://host.docker.internal:15678",
+          "cves": [
+            "CVE-2026-21858"
+          ],
+          "port": "15678",
+          "title": "n8n.io - Workflow Automation",
+          "tech": []
+        },
+        {
+          "targetId": "nginx-ui-19000",
+          "url": "http://localhost:19000",
+          "dockerUrl": "http://host.docker.internal:19000",
+          "cves": [
+            "CVE-2026-27944"
+          ],
+          "port": "19000",
+          "title": "Nginx UI",
+          "tech": []
+        },
+        {
+          "targetId": "vite-15173",
+          "url": "http://localhost:15173",
+          "dockerUrl": "http://host.docker.internal:15173",
+          "cves": [
+            "CVE-2026-39363"
+          ],
+          "port": "15173",
+          "title": "",
+          "tech": []
+        },
+        {
+          "targetId": "tomcat-14080",
+          "url": "http://localhost:14080",
+          "dockerUrl": "http://host.docker.internal:14080",
+          "cves": [
+            "CVE-2026-34486"
+          ],
+          "port": "14080",
+          "title": "Apache Tomcat/9.0.116",
+          "tech": []
+        }
+      ],
+      "tools": [
+        {
+          "tool": "autorecon",
+          "normalized": [],
+          "raw": []
+        },
+        {
+          "tool": "greenbone",
+          "normalized": [],
+          "raw": []
+        },
+        {
+          "tool": "httpx",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+            "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/httpx.jsonl",
+            "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/targets.txt"
+          ]
+        },
+        {
+          "tool": "naabu",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+            "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/raw/naabu.jsonl"
+          ]
+        },
+        {
+          "tool": "nikto",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited2/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited3/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited4/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited4/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-manual/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-manual/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/nikto.html",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.html.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.json.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.txt"
+          ]
+        },
+        {
+          "tool": "nmap",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+            "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/nmap.nmap",
+            "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/nmap.xml"
+          ]
+        },
+        {
+          "tool": "nuclei",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.local-only.txt",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.local-only2.txt",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.jsonl",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.local-only.jsonl",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.local-only2.jsonl",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/summary.json",
+            "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/targets.txt"
+          ]
+        },
+        {
+          "tool": "wapiti",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/wapiti.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/wapiti.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/wapiti.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/test-format/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/wapiti.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/wapiti.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/wapiti.html",
+            "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/wapiti.json"
+          ]
+        },
+        {
+          "tool": "zap",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap.yaml",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap.yaml",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap.yaml",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap.yaml",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap.yaml",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap.yaml"
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "datasets/tools-name-date/autorecon-2026-08-05/20260805-005453-cve2026-famous/normalized/autorecon.json",
+          "bytes": 1874,
+          "sha256": "309211a8162158f8aa3d8c605ed49420cffd2c350709891da62e01098a82020d",
+          "modifiedAt": "2026-08-04T19:06:14.609Z",
+          "kind": "normalized",
+          "tool": "autorecon"
+        },
+        {
+          "path": "datasets/tools-name-date/autorecon-2026-08-05/20260805-005453-cve2026-famous/normalized/autorecon.jsonl",
+          "bytes": 298,
+          "sha256": "75f7c572ab0fdcca68ad55c07953939329f5b307e2bc7764228bf490e2d29c22",
+          "modifiedAt": "2026-08-04T19:06:14.609Z",
+          "kind": "normalized",
+          "tool": "autorecon"
+        },
+        {
+          "path": "datasets/tools-name-date/greenbone-2026-08-05/20260805-005453-cve2026-famous/normalized/greenbone.json",
+          "bytes": 1881,
+          "sha256": "6ddf0e5475f42f1d77952fd4219b75bc4faf92ffa68e46aa9d19878018a87dd6",
+          "modifiedAt": "2026-08-04T19:06:14.606Z",
+          "kind": "normalized",
+          "tool": "greenbone"
+        },
+        {
+          "path": "datasets/tools-name-date/greenbone-2026-08-05/20260805-005453-cve2026-famous/normalized/greenbone.jsonl",
+          "bytes": 291,
+          "sha256": "ff17c6138e37c9a893b80faacbc895262be5a36b5f8ab4b82a67d61bb431325e",
+          "modifiedAt": "2026-08-04T19:06:14.607Z",
+          "kind": "normalized",
+          "tool": "greenbone"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/normalized/httpx.json",
+          "bytes": 4796,
+          "sha256": "b6ce19b3f3bad4c776f8a5420df028043a272d6ba029eff71af683ad03a824fa",
+          "modifiedAt": "2026-08-04T19:06:14.590Z",
+          "kind": "normalized",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/normalized/httpx.jsonl",
+          "bytes": 2490,
+          "sha256": "27a6137f4405507afcd18952a47038ffded0c22d0a839f5d215654a91cff2163",
+          "modifiedAt": "2026-08-04T19:06:14.591Z",
+          "kind": "normalized",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/normalized/naabu.json",
+          "bytes": 3751,
+          "sha256": "0cd97238dc6372ec9506a9b4d4890b92324d2340896c674c0ee9974ea565bea0",
+          "modifiedAt": "2026-08-04T19:06:14.585Z",
+          "kind": "normalized",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/normalized/naabu.jsonl",
+          "bytes": 1954,
+          "sha256": "4237519a49594cb7be96376d736050c5287e142a93fd8685fb50a844533e04f7",
+          "modifiedAt": "2026-08-04T19:06:14.586Z",
+          "kind": "normalized",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/normalized/nikto.json",
+          "bytes": 4231,
+          "sha256": "6671f991ef60965d85f4d19c8c781395b32c95c24f7698116e96294b61e7e3dc",
+          "modifiedAt": "2026-08-04T19:06:14.600Z",
+          "kind": "normalized",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/normalized/nikto.jsonl",
+          "bytes": 986,
+          "sha256": "d823bbefed22e5c43515abd91da4cfefcd62f935ee38f0adb82f311867b65653",
+          "modifiedAt": "2026-08-04T19:06:14.601Z",
+          "kind": "normalized",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/normalized/nmap.json",
+          "bytes": 4192,
+          "sha256": "33150b1acfe7e9c15f3d74abd66759d40ba58840a4583ac3d2f580b548c1aed2",
+          "modifiedAt": "2026-08-04T19:06:14.588Z",
+          "kind": "normalized",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/normalized/nmap.jsonl",
+          "bytes": 2015,
+          "sha256": "fc1edac5a69e7577f246f026233bb93cff2bb2b3e96de72cc7d12266fc6cf5eb",
+          "modifiedAt": "2026-08-04T19:06:14.588Z",
+          "kind": "normalized",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/normalized/nuclei.json",
+          "bytes": 2609,
+          "sha256": "8da3682dd653a645e72f5580e7ad04991bc6fa0b9e2f0c1b8b580e3339eecfd8",
+          "modifiedAt": "2026-08-04T19:06:14.593Z",
+          "kind": "normalized",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/normalized/nuclei.jsonl",
+          "bytes": 879,
+          "sha256": "e48ab02930dc15fc976dcff47169ab86d4cc323d38ef17db90208dbd13a05dbc",
+          "modifiedAt": "2026-08-04T19:06:14.593Z",
+          "kind": "normalized",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/normalized/wapiti.json",
+          "bytes": 4277,
+          "sha256": "1e06f04507eaef96de010c418413c35ee46edd97c2ef5fb475b4eb0ddf461433",
+          "modifiedAt": "2026-08-04T19:06:14.604Z",
+          "kind": "normalized",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/normalized/wapiti.jsonl",
+          "bytes": 998,
+          "sha256": "cb86ed992c5f5408890c0c1a05f07675b7525197d5ad5dccc0a737e183de30b4",
+          "modifiedAt": "2026-08-04T19:06:14.604Z",
+          "kind": "normalized",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/normalized/zap.json",
+          "bytes": 36067,
+          "sha256": "87183ab9a9190b3868004c3e323321ca86c5145ca21d3ef0c560ea71fc9f443f",
+          "modifiedAt": "2026-08-04T19:06:14.597Z",
+          "kind": "normalized",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/normalized/zap.jsonl",
+          "bytes": 28732,
+          "sha256": "671e0932731fbaac9f4038cfcfe4b47e74c527510d8d046fa355ed49d3171560",
+          "modifiedAt": "2026-08-04T19:06:14.598Z",
+          "kind": "normalized",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+          "bytes": 8854,
+          "sha256": "37bd1afc9333a6d05c2e4958fd09a6a925dcbda7fe1074f651849d72566eb636",
+          "modifiedAt": "2026-08-04T17:59:35.574Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/httpx.jsonl",
+          "bytes": 3609,
+          "sha256": "279b174917aff01c5bd1aa23cdbd376f138d5ac6b0920af20d0b134951506a7a",
+          "modifiedAt": "2026-08-04T17:59:35.573Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/20260805-005453-cve2026-famous/raw/targets.txt",
+          "bytes": 210,
+          "sha256": "e80e5206ad14377c00b904d171a3c3bfad40cc0f1fe016b922565e97574ada1f",
+          "modifiedAt": "2026-08-04T17:58:32.141Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+          "bytes": 4544,
+          "sha256": "81704cf6140fe8a7ef7ccf0eb56dbc78a6391d0fc66814bea784d33b33c3121d",
+          "modifiedAt": "2026-08-04T17:55:34.705Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/20260805-005453-cve2026-famous/raw/naabu.jsonl",
+          "bytes": 1128,
+          "sha256": "cb3f047e57a594eef733a3808191d055b6e7fd3a2a838d51fd33f7cf92f5aea0",
+          "modifiedAt": "2026-08-04T17:55:34.708Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+          "bytes": 2689,
+          "sha256": "31fe14af42dfa8bf34e554c90f835e0579925b8660e4925c096aefdd615cc91e",
+          "modifiedAt": "2026-08-04T18:03:58.919Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/nikto.html",
+          "bytes": 6962,
+          "sha256": "b066b357ac01134aca0c64a1ab07cf3f6d710b72bef86c23fc5efe69c0a9854d",
+          "modifiedAt": "2026-08-04T18:03:34.659Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/nikto.json",
+          "bytes": 1090,
+          "sha256": "cad228e72d39657f8a79ee2502fb934522149fa9eb912e96d0258346762be7e5",
+          "modifiedAt": "2026-08-04T18:03:31.603Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.291Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.html.txt",
+          "bytes": 2602,
+          "sha256": "da0ebbe37f62c052d785583e56434e1c0853fb78d4ad4a4f014692c9df8e4d50",
+          "modifiedAt": "2026-08-04T18:03:34.660Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.json.txt",
+          "bytes": 2602,
+          "sha256": "105b01cd0b78a82468b98e961faa815455281bcdf305dd2f47c73fec9b2fde08",
+          "modifiedAt": "2026-08-04T18:03:31.604Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:06.630Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+          "bytes": 3213,
+          "sha256": "f5286d18ec0b6f52660161e0aa2c94240be5e2e24a758cadc6f53c29e4376fab",
+          "modifiedAt": "2026-08-04T18:03:58.923Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/nikto.html",
+          "bytes": 7895,
+          "sha256": "3092959aca60170f267b69d714129810b69d9b09eff28b3149a0f0d20f33e6ea",
+          "modifiedAt": "2026-08-04T18:03:27.549Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/nikto.json",
+          "bytes": 1407,
+          "sha256": "19ae7195514181ed802b2b6f765dbc2256c19b0eaaab57dff82a5589464eca26",
+          "modifiedAt": "2026-08-04T18:03:22.844Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.143Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.html.txt",
+          "bytes": 3126,
+          "sha256": "1113b75bbb406c17a7445625f53bd14db5ebe80d280825860d1309b26ffcc15e",
+          "modifiedAt": "2026-08-04T18:03:27.551Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.json.txt",
+          "bytes": 3126,
+          "sha256": "72f3b5ca9d615a88485a8a338b769372cd4a4e52c7447e5a409061f513ad7061",
+          "modifiedAt": "2026-08-04T18:03:22.845Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:06.854Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+          "bytes": 3409,
+          "sha256": "ecf4d2983be2c43796112b4f6c287d18d21b0ba5f6810a8d69d5b6a45782851e",
+          "modifiedAt": "2026-08-04T18:03:58.928Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/nikto.html",
+          "bytes": 8558,
+          "sha256": "e001f629762a5352f1741363c39a616d08799da52056ad56f2b72a14c9da29ce",
+          "modifiedAt": "2026-08-04T18:03:40.150Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/nikto.json",
+          "bytes": 1549,
+          "sha256": "74db2d20383e988204eaddbcd552f1312c5548c4c8de61c91ff5122db7646d7e",
+          "modifiedAt": "2026-08-04T18:03:38.116Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.487Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.html.txt",
+          "bytes": 3322,
+          "sha256": "256c2ea349bca6cbce202c771e6526740646b2c4192936974135f93956851720",
+          "modifiedAt": "2026-08-04T18:03:40.151Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.json.txt",
+          "bytes": 3322,
+          "sha256": "886df0e26e2b27e8741b54320b11ca49ba87416be003772911042d2eca5b23b8",
+          "modifiedAt": "2026-08-04T18:03:38.117Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:07.197Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited/console.txt",
+          "bytes": 188,
+          "sha256": "279feba7e1ccd3595a6eb5ed2e541fc4c635f70f36e50be4927e34da00ac2104",
+          "modifiedAt": "2026-08-04T18:02:00.497Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited2/console.txt",
+          "bytes": 3126,
+          "sha256": "9926d4470cdba5cd3f1c9359625ac28384638be8caaa2cd830013fe7ff211810",
+          "modifiedAt": "2026-08-04T18:02:16.278Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited3/console.txt",
+          "bytes": 1176,
+          "sha256": "d57226d375f99f548db2388ff60db7ee2b4120b650d666cb1cbd386579ec8597",
+          "modifiedAt": "2026-08-04T18:02:30.734Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited4/console.txt",
+          "bytes": 3126,
+          "sha256": "c5d895db9a370353028e9f01997f9a918615d003ab4cbb9112f1f117aa01e37b",
+          "modifiedAt": "2026-08-04T18:02:52.284Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-limited4/nikto.json",
+          "bytes": 1407,
+          "sha256": "10f2da5c4958a29d0e43d71810e8992c801c4896512fccff3bec044bab25e7c7",
+          "modifiedAt": "2026-08-04T18:02:52.272Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-manual/console.txt",
+          "bytes": 188,
+          "sha256": "279feba7e1ccd3595a6eb5ed2e541fc4c635f70f36e50be4927e34da00ac2104",
+          "modifiedAt": "2026-08-04T18:00:54.252Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/test-manual/nikto.json",
+          "bytes": 1,
+          "sha256": "245843abef9e72e7efac30138a994bf6301e7e1d7d7042a33d42e863d2638811",
+          "modifiedAt": "2026-08-04T18:00:54.357Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+          "bytes": 3213,
+          "sha256": "c87120dc2aa324f9cd51d1eb0f57949ad53a7c7ecc90097c75c4c60b5e058347",
+          "modifiedAt": "2026-08-04T18:03:58.931Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/nikto.html",
+          "bytes": 7895,
+          "sha256": "e92352ca713016b6c2bde9be430ef0ef6a5a5de882f28def61c34137d293d808",
+          "modifiedAt": "2026-08-04T18:03:43.972Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/nikto.json",
+          "bytes": 1407,
+          "sha256": "c5c084f08d643f77946ef73e6209343132f253355382ca3d0e797bd3fcbb011a",
+          "modifiedAt": "2026-08-04T18:03:42.064Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.643Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.html.txt",
+          "bytes": 3126,
+          "sha256": "0f7494e1a3af88a7ad50ec2360e0d80835ab8c1e9496f6d0dc509b9f0c7c127f",
+          "modifiedAt": "2026-08-04T18:03:43.973Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.json.txt",
+          "bytes": 3126,
+          "sha256": "7ac390e0a3def0c450192fe2298da5f498cf211515ce080523265aa8afee7f3c",
+          "modifiedAt": "2026-08-04T18:03:42.066Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:07.257Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+          "bytes": 3213,
+          "sha256": "4fb34c7f439480264b57f3835cf3dd7b3318539337181b25dadeda8a48abe6ea",
+          "modifiedAt": "2026-08-04T18:03:58.937Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/nikto.html",
+          "bytes": 7895,
+          "sha256": "82e5637dd03881523aac6efe6a91977ef63ec2fbc21b41ffd4a13b4056b096e4",
+          "modifiedAt": "2026-08-04T18:03:18.010Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/nikto.json",
+          "bytes": 1407,
+          "sha256": "6dc42152b30f8230301cf02d20bc59c734a98ce9b6cdd9f2b704bbae1b44a341",
+          "modifiedAt": "2026-08-04T18:03:13.890Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.088Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.html.txt",
+          "bytes": 3126,
+          "sha256": "c7d9e342a7254437c41779f701ee2449077615b34d01e9a296aecfc29f71ef6a",
+          "modifiedAt": "2026-08-04T18:03:18.011Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.json.txt",
+          "bytes": 3126,
+          "sha256": "a65a96647a02d6aff82dbbe8ee69441f54edd1a358fcddee8a8cb735718947e2",
+          "modifiedAt": "2026-08-04T18:03:13.891Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:06.486Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+          "bytes": 3935,
+          "sha256": "aa55e56acc808f5a926183a7e5fd34f3589700763f956a091fa40cbe11bfa8a8",
+          "modifiedAt": "2026-08-04T18:03:58.942Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/nikto.html",
+          "bytes": 9971,
+          "sha256": "a8f614b1772a125ef05bdbac4b28e0f335edef5be013674c3d33085166bf5917",
+          "modifiedAt": "2026-08-04T18:03:58.561Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/nikto.json",
+          "bytes": 1850,
+          "sha256": "1dd7f50d38400747d752f3c0e004f452938508470514436deaca9349efa932c1",
+          "modifiedAt": "2026-08-04T18:03:51.385Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.736Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.html.txt",
+          "bytes": 3848,
+          "sha256": "0d6666b46332ed3406f3389bb0a8f48fdca12e1beeafd0d497c28fb8902e1fb0",
+          "modifiedAt": "2026-08-04T18:03:58.563Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.json.txt",
+          "bytes": 3848,
+          "sha256": "dcc4ac2aed8093c50e6d83c362fc69e69283ae0c88e978903d40ca0a5c72221c",
+          "modifiedAt": "2026-08-04T18:03:51.387Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.txt",
+          "bytes": 91,
+          "sha256": "37e36b0607309e9aea1a94ad24fa9228e8e64e3a1a9ae6fff50fece828bfd87f",
+          "modifiedAt": "2026-08-04T17:58:06.978Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+          "bytes": 17264,
+          "sha256": "e834e5251183b4cd4f1c6424db9ec6639adbee852bef31a3232f771df07a2000",
+          "modifiedAt": "2026-08-04T17:58:20.418Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/nmap.nmap",
+          "bytes": 8638,
+          "sha256": "fe1fe02a756b01281f8d17d7bf2f849d4c1255c1f363def11bd730b198d82a36",
+          "modifiedAt": "2026-08-04T17:58:20.394Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/20260805-005453-cve2026-famous/raw/nmap.xml",
+          "bytes": 11529,
+          "sha256": "8a00e2b2a62af6f870cfe8157b9b0d636d94580bf81caf2e35ef374fcb187a34",
+          "modifiedAt": "2026-08-04T17:58:20.396Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.local-only.txt",
+          "bytes": 279,
+          "sha256": "437bef52061be3018a861232bd5ccba51f56adf85e0eb602a731ecf36173f45e",
+          "modifiedAt": "2026-08-04T17:57:09.682Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.local-only2.txt",
+          "bytes": 51563,
+          "sha256": "4819d7fc54c776897cfdfb86f9a830d1c1c94a3b83599614e9e4de955b7a0ca5",
+          "modifiedAt": "2026-08-04T17:58:09.720Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/console.txt",
+          "bytes": 51563,
+          "sha256": "4819d7fc54c776897cfdfb86f9a830d1c1c94a3b83599614e9e4de955b7a0ca5",
+          "modifiedAt": "2026-08-04T17:58:09.720Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.jsonl",
+          "bytes": 51024,
+          "sha256": "ed44842e83ca413abe154c0055a183aa65662fbd6c125cf44da837765dbc7d3c",
+          "modifiedAt": "2026-08-04T17:58:02.749Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.local-only.jsonl",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:57:09.290Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/nuclei.local-only2.jsonl",
+          "bytes": 51024,
+          "sha256": "ed44842e83ca413abe154c0055a183aa65662fbd6c125cf44da837765dbc7d3c",
+          "modifiedAt": "2026-08-04T17:58:02.749Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/summary.json",
+          "bytes": 3690,
+          "sha256": "2a2627bcd9d06f5460aa7e27f6834b8428744862a8512eddcb41044a0d3c2d5d",
+          "modifiedAt": "2026-08-04T18:00:43.610Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/20260805-005453-cve2026-famous/raw/targets.txt",
+          "bytes": 210,
+          "sha256": "e80e5206ad14377c00b904d171a3c3bfad40cc0f1fe016b922565e97574ada1f",
+          "modifiedAt": "2026-08-04T17:55:24.126Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+          "bytes": 4070,
+          "sha256": "434a285f03a709c0c45bd928136ab2ceec69727dba24f8d07d35777a9cde3f02",
+          "modifiedAt": "2026-08-04T18:05:09.081Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.177Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/stdout.txt",
+          "bytes": 2791,
+          "sha256": "e0b95e2e719b49883c4401d780554109b5181d94d48499572e5d1ecaa1c2763c",
+          "modifiedAt": "2026-08-04T17:59:04.610Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/wapiti.html",
+          "bytes": 687,
+          "sha256": "70363306295dc20a8e1eca227f25383192dfcea1aa70ce96c32ff0973c64fc2c",
+          "modifiedAt": "2026-08-04T18:05:09.180Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/wapiti.json",
+          "bytes": 44557,
+          "sha256": "973e2e66520d0925d43f092475db4a0796bb5552eece0aea58b32a40fe3bd7c4",
+          "modifiedAt": "2026-08-04T17:59:04.608Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+          "bytes": 3338,
+          "sha256": "81d872eb61e916337a84c7cd6e5f4586d34e0127a6330b2f8b1c081d81fa728b",
+          "modifiedAt": "2026-08-04T18:05:09.191Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.119Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/stdout.txt",
+          "bytes": 3285,
+          "sha256": "35f18d70e93d1b57e51a821f7ef24d1a9925ed64818a19fbb14ef9638fe65881",
+          "modifiedAt": "2026-08-04T17:59:18.193Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/wapiti.html",
+          "bytes": 870,
+          "sha256": "f08782052a1d7075ec843a305b6aa596e7f8d73329180b4bc58aec810dc7bf5a",
+          "modifiedAt": "2026-08-04T18:05:09.215Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/wapiti.json",
+          "bytes": 46122,
+          "sha256": "e64ecd01a623111b9fca7ab8abd931c0c4f661e5b0c90a81db9d6a15d3a00c1b",
+          "modifiedAt": "2026-08-04T17:59:18.191Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+          "bytes": 2243,
+          "sha256": "b3969f9df4f6c2012b6cc8f39e4502ffc4059dd48771465d20c73ce8308d2a93",
+          "modifiedAt": "2026-08-04T18:05:09.220Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.430Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/stdout.txt",
+          "bytes": 2190,
+          "sha256": "638cb1b9bc8344e3d9ab82503d99b84b4254828fd964c2d30511ab68e9972293",
+          "modifiedAt": "2026-08-04T17:59:08.391Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/wapiti.html",
+          "bytes": 687,
+          "sha256": "31ded89940b0e76d6bfd23dc7906111c879466ffe256d38a58f33d5c2cc4699f",
+          "modifiedAt": "2026-08-04T18:05:09.232Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/wapiti.json",
+          "bytes": 55363,
+          "sha256": "4f0765ab7d277a29508913c4bd0b36d6f466b4c921c5f72ebb262bd34d0411f2",
+          "modifiedAt": "2026-08-04T17:59:08.386Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/test-format/console.txt",
+          "bytes": 5,
+          "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+          "modifiedAt": "2026-08-04T18:00:28.210Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+          "bytes": 5181,
+          "sha256": "aa6573f45eda077dc624ce72ababc1f2ddb93a4610491133e9bc1483c7f3ede1",
+          "modifiedAt": "2026-08-04T18:05:09.237Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stderr.txt",
+          "bytes": 859,
+          "sha256": "bb6300c23262e7db75cfb76383e90f8a1baeb1695c0b913c604caae98b5c72ac",
+          "modifiedAt": "2026-08-04T17:58:22.153Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/stdout.txt",
+          "bytes": 4267,
+          "sha256": "3ab3f59935cd799ce49fd699c66303bea6efc50b7e750dca11469dd6fc476112",
+          "modifiedAt": "2026-08-04T17:59:10.607Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/wapiti.html",
+          "bytes": 683,
+          "sha256": "614c0b4177124180543e1b29fd4e3313398e0c6d95df43a0298b81dfa89258f9",
+          "modifiedAt": "2026-08-04T18:05:09.248Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/wapiti.json",
+          "bytes": 58408,
+          "sha256": "8eb04f9fe702b14283859933ad78dd334f78dc4c913f501d0341fbeac833f15c",
+          "modifiedAt": "2026-08-04T17:59:10.606Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+          "bytes": 1939,
+          "sha256": "59a047e05d88e656ea9ff48554ba1e63ab9bbdf124ec974e768fe433e4e179d6",
+          "modifiedAt": "2026-08-04T18:05:09.253Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.019Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/stdout.txt",
+          "bytes": 1886,
+          "sha256": "fe3a9f507a15da1e40f93d1a25c35034e1654e086f89d046515e927521055247",
+          "modifiedAt": "2026-08-04T17:59:03.856Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/wapiti.html",
+          "bytes": 679,
+          "sha256": "dbe51f022798b37ba5c2f89749376640fab86c10db45f453fa2a116d208d851e",
+          "modifiedAt": "2026-08-04T18:05:09.259Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/wapiti.json",
+          "bytes": 43724,
+          "sha256": "887d47b1be8ef77d70059f36907d886bec86a1f8b26a082991ee0de609adfc2d",
+          "modifiedAt": "2026-08-04T17:59:03.854Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+          "bytes": 3730,
+          "sha256": "c056adddbae4683f4151d68b6a8e7d5874bde980581c845588ea99e0d0c2d124",
+          "modifiedAt": "2026-08-04T18:05:09.263Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T17:58:04.694Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/stdout.txt",
+          "bytes": 3677,
+          "sha256": "d69e10c5fbc1dc1651bc1b02b59afa11f165672b3e8e51ca8a1ce0e564aea39c",
+          "modifiedAt": "2026-08-04T18:00:17.527Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/wapiti.html",
+          "bytes": 2701,
+          "sha256": "ee6eed722e42cb720ee9b068969cda1682bf7b59d2d543fb8857201a146d70b9",
+          "modifiedAt": "2026-08-04T18:05:09.292Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/wapiti.json",
+          "bytes": 57103,
+          "sha256": "7a08bc2570f946b5e4a69a9cedcdc47899be405ab70615bb74f4490f2059d1ca",
+          "modifiedAt": "2026-08-04T18:00:17.522Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/console.txt",
+          "bytes": 8602,
+          "sha256": "a883345429ea65ea691cb15cc513a504c62071d1e4c85ed363dcda392fe7d611",
+          "modifiedAt": "2026-08-04T18:05:09.167Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.html",
+          "bytes": 41514,
+          "sha256": "dc388aae4ff35313346e76f8d2fa3379af444ad3dc8373f69f42dbcbef96e0de",
+          "modifiedAt": "2026-08-04T18:05:01.451Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.json",
+          "bytes": 10756,
+          "sha256": "635e0f1528c6298223573fa3b4a9a864083716400192264d79d00f6362b4d9cb",
+          "modifiedAt": "2026-08-04T18:05:01.628Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap-report.md",
+          "bytes": 9641,
+          "sha256": "9c46a4c1f6cefd988389e3591195927a1bec51fe0656992afdd2f683f8327d40",
+          "modifiedAt": "2026-08-04T18:05:01.533Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/activemq-18161/zap.yaml",
+          "bytes": 1055,
+          "sha256": "fa1a3ed5bce85027c412f8b26a2d00524f927d01e65a924daaf7f6b2a6f70093",
+          "modifiedAt": "2026-08-04T18:04:10.577Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/console.txt",
+          "bytes": 11408,
+          "sha256": "f0d9d5a514d44f3e3cb2d77a22565b2a00807023896a575c02d174f4a516c4b6",
+          "modifiedAt": "2026-08-04T18:04:09.900Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.html",
+          "bytes": 94955,
+          "sha256": "6667df6eaf79135748d0903d250d5ef331caa930a5b298743516dfed32071612",
+          "modifiedAt": "2026-08-04T18:04:00.443Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.json",
+          "bytes": 36477,
+          "sha256": "1efd991d36bd4486181ebdbddf7b0777208822a9e9936eb8a6a24b1e56861191",
+          "modifiedAt": "2026-08-04T18:04:00.855Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap-report.md",
+          "bytes": 30882,
+          "sha256": "c6d11b4dae4009b3ce1884d1fe9327887c3a0b22497cae6d1c2453a239ac4e2b",
+          "modifiedAt": "2026-08-04T18:04:00.641Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/n8n-15678/zap.yaml",
+          "bytes": 1055,
+          "sha256": "5cd5153691d51a20d0e204c1e6ec36c5413d2ac81ac41767686f5994b095c3dc",
+          "modifiedAt": "2026-08-04T18:01:20.077Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/console.txt",
+          "bytes": 10344,
+          "sha256": "52b5dbef2ddd8c316fa2db91e0d68a96934f505c8558a812c1503f4b93a87ca2",
+          "modifiedAt": "2026-08-04T18:06:26.584Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.html",
+          "bytes": 86152,
+          "sha256": "00d873bbd019182f4d8169eb3133b1e0e28e0d4ed96bf4d1856d7d211c0a68ea",
+          "modifiedAt": "2026-08-04T18:06:18.572Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.json",
+          "bytes": 33524,
+          "sha256": "949f4b1dd44c49f70da8ecfefd17c6482be02e9744267b0b9ebe497f5e2123ff",
+          "modifiedAt": "2026-08-04T18:06:18.807Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap-report.md",
+          "bytes": 27311,
+          "sha256": "495f3529bda15ca5e1e50892f4c578082d399ef3e80534d9da74daef41c53702",
+          "modifiedAt": "2026-08-04T18:06:18.679Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/nginx-ui-19000/zap.yaml",
+          "bytes": 1055,
+          "sha256": "dfc855b174fcf2b6fe4887536a5a9726308ac8be67b187b120dcc60cf85c27bc",
+          "modifiedAt": "2026-08-04T18:05:09.905Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/console.txt",
+          "bytes": 10168,
+          "sha256": "0d42da721685e9c53d751553fff82d069df69798c05a41e635d78b696edf47f3",
+          "modifiedAt": "2026-08-04T18:07:22.553Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.html",
+          "bytes": 77446,
+          "sha256": "5c9b2d5b17550b0ea842d16ce1beea56345dc2c27e2d078abb7f8a25a3f225a0",
+          "modifiedAt": "2026-08-04T18:07:14.768Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.json",
+          "bytes": 28575,
+          "sha256": "66656f4f5641059c7b30b5009f70dd25acb380b2a21a73b644997542a04441d5",
+          "modifiedAt": "2026-08-04T18:07:14.989Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap-report.md",
+          "bytes": 24767,
+          "sha256": "24fba2a1b4c07c53914f6c4558f3d0a61527edfd19889235975a96a380c5e059",
+          "modifiedAt": "2026-08-04T18:07:14.866Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/tomcat-14080/zap.yaml",
+          "bytes": 1055,
+          "sha256": "f61af16f5b3ac7cd558acd04175a49308ef7c3cfa7eb25cd554e59fa6c6a633d",
+          "modifiedAt": "2026-08-04T18:06:27.301Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/console.txt",
+          "bytes": 7140,
+          "sha256": "b5e5f7ab423fb110e203ebe287c351669234f925dbf0199db4ab707debc08dea",
+          "modifiedAt": "2026-08-04T18:01:19.204Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.html",
+          "bytes": 24062,
+          "sha256": "b3b3ccb9d792171bc202eaaa70f505c87cae2ee1567a51d0a82ad84c1b7475f3",
+          "modifiedAt": "2026-08-04T18:01:12.792Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.json",
+          "bytes": 3821,
+          "sha256": "cc746fc20279786c64343aacbce19d4c90bcf3a653564c331d00d6faa18217ce",
+          "modifiedAt": "2026-08-04T18:01:12.949Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap-report.md",
+          "bytes": 3255,
+          "sha256": "c25da2f9ce71064885b9421311def2dc58c55eb855c2d3e41ddd11a708c3045e",
+          "modifiedAt": "2026-08-04T18:01:12.865Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/vite-15173/zap.yaml",
+          "bytes": 1055,
+          "sha256": "b49d9ae3abe9aec787b43a1304c60aa6e383be594ecc51a0da774feed32ba519",
+          "modifiedAt": "2026-08-04T18:00:20.499Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/console.txt",
+          "bytes": 11276,
+          "sha256": "a9babd88119f82bf97ad6ddf2f9688b2b499fadb954ad356a822b5314fad572c",
+          "modifiedAt": "2026-08-04T18:08:20.273Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.html",
+          "bytes": 100985,
+          "sha256": "0d163f2a3b134710d630db4f02a576f8da9bfe8c0e82b95eda48cc94b0842422",
+          "modifiedAt": "2026-08-04T18:08:12.007Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.json",
+          "bytes": 38596,
+          "sha256": "67bb4ef2e526cf1007030cfd3213ad361bf6e434bc7431972d4c2794bb1c5dbe",
+          "modifiedAt": "2026-08-04T18:08:12.237Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap-report.md",
+          "bytes": 33220,
+          "sha256": "3e6d01544c8f4a8bdde74193e0e99217b4a779ebff2e1573723ca68e92aec308",
+          "modifiedAt": "2026-08-04T18:08:12.103Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/20260805-005453-cve2026-famous/raw/wordpress-18080/zap.yaml",
+          "bytes": 1055,
+          "sha256": "e196d3e783a103ffdd37273c707807d0cf75c71df5999b60d1acc830e600fa03",
+          "modifiedAt": "2026-08-04T18:07:23.260Z",
+          "kind": "raw",
+          "tool": "zap"
+        }
+      ],
+      "toolCount": 9,
+      "fileCount": 144
+    },
+    {
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "sourceType": "live-scan",
+      "target": {
+        "id": "inst-30317-aegis-ctf-com",
+        "targetId": "inst-30317-aegis-ctf-com-443",
+        "host_url": "https://inst-30317.aegis-ctf.com/",
+        "docker_url": "https://inst-30317.aegis-ctf.com/",
+        "host": "inst-30317.aegis-ctf.com",
+        "ports": [
+          "443/tcp"
+        ],
+        "source": "live authorized scan",
+        "displayName": "inst-30317.aegis-ctf.com",
+        "port": "443",
+        "cves": [],
+        "statusCode": 502,
+        "title": "inst-30317.aegis-ctf.com",
+        "webserver": "cloudflare",
+        "tech": [
+          "Cloudflare",
+          "HTTP/3"
+        ],
+        "cpe": [],
+        "words": 3,
+        "lines": 1
+      },
+      "tools": [
+        {
+          "tool": "httpx",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/httpx.jsonl",
+            "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt"
+          ]
+        },
+        {
+          "tool": "naabu",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/naabu.jsonl",
+            "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt"
+          ]
+        },
+        {
+          "tool": "nikto",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nikto.json",
+            "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt"
+          ]
+        },
+        {
+          "tool": "nmap",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nmap.nmap",
+            "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt"
+          ]
+        },
+        {
+          "tool": "nuclei",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nuclei.jsonl",
+            "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt"
+          ]
+        },
+        {
+          "tool": "wapiti",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+            "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/wapiti.json"
+          ]
+        },
+        {
+          "tool": "zap",
+          "normalized": [],
+          "raw": [
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.html",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.json",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.md",
+            "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap.yaml"
+          ]
+        }
+      ],
+      "files": [
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/httpx.json",
+          "bytes": 4181,
+          "sha256": "b21c6d12063cab713a79ab03262177bc391256e89a92e0ee787c034345e875e0",
+          "modifiedAt": "2026-08-04T19:13:42.581Z",
+          "kind": "normalized",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/httpx.jsonl",
+          "bytes": 785,
+          "sha256": "03cff73c0ca72303ad011baffd683831b1ce82cf30475388702878f813160e16",
+          "modifiedAt": "2026-08-04T19:13:42.582Z",
+          "kind": "normalized",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/naabu.json",
+          "bytes": 5881,
+          "sha256": "6cdd4364dad26643b7e0e8da878cb57398dd051d0d56ce61ee1d1dd26c63568b",
+          "modifiedAt": "2026-08-04T19:13:42.603Z",
+          "kind": "normalized",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/naabu.jsonl",
+          "bytes": 2184,
+          "sha256": "24adc25b7d5dabba47a41365fc7c748c2836f7740f7ee7d11eaec3abaf48bcb2",
+          "modifiedAt": "2026-08-04T19:13:42.604Z",
+          "kind": "normalized",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nikto.json",
+          "bytes": 3043,
+          "sha256": "0f7fef8f8a8e73342b2a60d47bb9203ac8ea2a54ab61a38a47ad7945988e702d",
+          "modifiedAt": "2026-08-04T19:13:42.636Z",
+          "kind": "normalized",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nikto.jsonl",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:13:42.637Z",
+          "kind": "normalized",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nmap.json",
+          "bytes": 4282,
+          "sha256": "b24943e46a05eb7138388638d269ac5569ed96858dc95b992df5497c4c17bb29",
+          "modifiedAt": "2026-08-04T19:13:42.614Z",
+          "kind": "normalized",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nmap.jsonl",
+          "bytes": 961,
+          "sha256": "8e416074bcc361d993264b9a57a4dc8a5146da9cb9bd1ff28ebd166aabcb1ddf",
+          "modifiedAt": "2026-08-04T19:13:42.615Z",
+          "kind": "normalized",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nuclei.json",
+          "bytes": 8167,
+          "sha256": "a476b3d7bcc6c2241268cf2f4c4de9b8d6c94951c1f7c3586dea8d6d52142018",
+          "modifiedAt": "2026-08-04T19:13:42.627Z",
+          "kind": "normalized",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/nuclei.jsonl",
+          "bytes": 4217,
+          "sha256": "2afbef5cde07733d7cea9f13214983056e5e16f7a38b6e7ba5a7ad0223c076ed",
+          "modifiedAt": "2026-08-04T19:13:42.628Z",
+          "kind": "normalized",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/wapiti.json",
+          "bytes": 4092,
+          "sha256": "91b8b52929b105cc2503e8986c082a599b1f3e837f18876efabafe5a62a0dfc2",
+          "modifiedAt": "2026-08-04T19:13:42.646Z",
+          "kind": "normalized",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/wapiti.jsonl",
+          "bytes": 816,
+          "sha256": "2fba7642aae49098f2d40d5b0c7477358aeebe991155f5cebd370ac21911b02e",
+          "modifiedAt": "2026-08-04T19:13:42.647Z",
+          "kind": "normalized",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/zap.json",
+          "bytes": 8935,
+          "sha256": "29cdc37fd64296fec69d3676c7eecb83915be64bcc7d6e2d8e070d45fd8c0465",
+          "modifiedAt": "2026-08-04T19:13:42.660Z",
+          "kind": "normalized",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/normalized/zap.jsonl",
+          "bytes": 3856,
+          "sha256": "421b4cf6e727cb436aebeb5116a0ccab7c0d50be2bd4e260ecf3a942c9d07dab",
+          "modifiedAt": "2026-08-04T19:13:42.661Z",
+          "kind": "normalized",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/httpx.jsonl",
+          "bytes": 647,
+          "sha256": "9f471d1885bc25fcc80d3a4382952c3de53a22d503648e96f288afa99adfa280",
+          "modifiedAt": "2026-08-04T19:09:14.319Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 1290,
+          "sha256": "84fd39faf1cfe94edf0c0c298be68127638aa9be294ac4deaa8a0b70f8306c0c",
+          "modifiedAt": "2026-08-04T19:09:14.318Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 163,
+          "sha256": "111ce31965dd41eeafd8738f046e81dbd965f0c6b61db6b81d8c61a66007ad63",
+          "modifiedAt": "2026-08-04T19:09:14.317Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/httpx-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 647,
+          "sha256": "9f471d1885bc25fcc80d3a4382952c3de53a22d503648e96f288afa99adfa280",
+          "modifiedAt": "2026-08-04T19:09:14.316Z",
+          "kind": "raw",
+          "tool": "httpx"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/naabu.jsonl",
+          "bytes": 1136,
+          "sha256": "441b60066e9ce15fa22bce8744aee02450b048864db385d5ff808c4ee546668a",
+          "modifiedAt": "2026-08-04T19:09:21.395Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 1654,
+          "sha256": "5a22327fc5938bf46f336907a916a78caadc9be5af471d4c021e3f8b9a24c4fa",
+          "modifiedAt": "2026-08-04T19:09:21.395Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:09:21.394Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/naabu-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 1136,
+          "sha256": "441b60066e9ce15fa22bce8744aee02450b048864db385d5ff808c4ee546668a",
+          "modifiedAt": "2026-08-04T19:09:21.394Z",
+          "kind": "raw",
+          "tool": "naabu"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nikto.json",
+          "bytes": 2207,
+          "sha256": "678091d62f6c3a6971198def8d378a27721d52fea082f173d781476a42ce1cba",
+          "modifiedAt": "2026-08-04T19:12:34.387Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 3351,
+          "sha256": "7cb2ffdcccde7ac45d54d64c69e6f1086c5147b83175946426c123ab40e59cb2",
+          "modifiedAt": "2026-08-04T19:12:34.763Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 102,
+          "sha256": "dbb5ac23bbe9d3fc620ddf31dba2156b81ef16e1829c0439a8bf9cc00d6860cd",
+          "modifiedAt": "2026-08-04T19:12:34.763Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nikto-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 2707,
+          "sha256": "fbbef6ae858a8a82e46be0efbc34a06c034e812fc622233c8010f3d6a0dbc587",
+          "modifiedAt": "2026-08-04T19:12:34.762Z",
+          "kind": "raw",
+          "tool": "nikto"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nmap.nmap",
+          "bytes": 702,
+          "sha256": "c1f25845181e8c1320c11d3cda8b7e72240f6932ce1ed7929e56abcbd7c8554b",
+          "modifiedAt": "2026-08-04T19:09:59.296Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 1044,
+          "sha256": "e57c95d0e9fa5fa60e6015de3e2d6040c129da6caea311ec8701d42ea3eb3a7d",
+          "modifiedAt": "2026-08-04T19:09:59.296Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:09:59.295Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nmap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 702,
+          "sha256": "c1f25845181e8c1320c11d3cda8b7e72240f6932ce1ed7929e56abcbd7c8554b",
+          "modifiedAt": "2026-08-04T19:09:59.295Z",
+          "kind": "raw",
+          "tool": "nmap"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/nuclei.jsonl",
+          "bytes": 3995,
+          "sha256": "be0dad2e7dfab37d1eae491cd5109650461c3d0cd7d7010251f7c80ca15627b2",
+          "modifiedAt": "2026-08-04T19:11:59.322Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 4798,
+          "sha256": "c689792e6abf5f03ef3b3a0127f51ee759e4bbc9b6fe9998965e0998fa886f42",
+          "modifiedAt": "2026-08-04T19:11:59.321Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:11:59.321Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/nuclei-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 3995,
+          "sha256": "be0dad2e7dfab37d1eae491cd5109650461c3d0cd7d7010251f7c80ca15627b2",
+          "modifiedAt": "2026-08-04T19:11:59.321Z",
+          "kind": "raw",
+          "tool": "nuclei"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 2302,
+          "sha256": "940663795f24bcf969b48972abe9e5df7604207a78e488fb2d49de63b4b4416e",
+          "modifiedAt": "2026-08-04T19:12:41.908Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:12:41.907Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 1720,
+          "sha256": "3afb4ff3a49b6a04246a626080ff85453e25fde0118732ba97d2c3076617af33",
+          "modifiedAt": "2026-08-04T19:12:41.907Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/wapiti-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/wapiti.json",
+          "bytes": 45159,
+          "sha256": "26bdc5765de0ddf5f340ba70ab041a03d3b238d18f9d10917ebe62f05fb3f079",
+          "modifiedAt": "2026-08-04T19:12:41.185Z",
+          "kind": "raw",
+          "tool": "wapiti"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/result.json",
+          "bytes": 4486,
+          "sha256": "6ff00c41d418c916815df2489f31c4ce6829e8e2d08f1e509e7944ed8f42e54b",
+          "modifiedAt": "2026-08-04T19:13:42.562Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "modifiedAt": "2026-08-04T19:13:42.560Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/stdout.txt",
+          "bytes": 3846,
+          "sha256": "5a8c9748902cae85a3bc46d0e5c914273d3b145b301010f972169dd9aec88880",
+          "modifiedAt": "2026-08-04T19:13:42.560Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.html",
+          "bytes": 44869,
+          "sha256": "4af445849bd5531ec9daad9aaf8225e06cbd4573fc269cc1d1c4ce2d5151778d",
+          "modifiedAt": "2026-08-04T19:13:35.325Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.json",
+          "bytes": 14555,
+          "sha256": "a111ffe66cd669b1313642740cb747237c580d9474e56b8bcb3cca9a13b2a3c9",
+          "modifiedAt": "2026-08-04T19:13:35.485Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap-report.md",
+          "bytes": 12953,
+          "sha256": "39c242248cd1dfb1d842943d6e745fabdc9669130e1e008b9bbe296f92f2ba19",
+          "modifiedAt": "2026-08-04T19:13:35.396Z",
+          "kind": "raw",
+          "tool": "zap"
+        },
+        {
+          "path": "datasets/tools-name-date/zap-2026-08-05/live-20260805-020810-inst-30317-aegis-ctf-com/raw/zap.yaml",
+          "bytes": 1055,
+          "sha256": "3d8cadf8d57442c966f1935dbd9bcb998bec24981f1f29599a70b88a8b526f64",
+          "modifiedAt": "2026-08-04T19:12:42.817Z",
+          "kind": "raw",
+          "tool": "zap"
+        }
+      ],
+      "toolCount": 7,
+      "fileCount": 45
+    }
+  ],
+  "totals": {
+    "runs": 2,
+    "tools": 9,
+    "files": 190,
+    "normalizedFiles": 32,
+    "rawFiles": 157,
+    "findingRows": 2,
+    "normalizedRecordRows": 116
+  }
+}

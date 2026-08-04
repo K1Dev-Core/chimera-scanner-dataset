@@ -1,0 +1,118 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:13:42.643Z",
+  "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+  "target": {
+    "id": "inst-30317-aegis-ctf-com",
+    "targetId": "inst-30317-aegis-ctf-com-443",
+    "host_url": "https://inst-30317.aegis-ctf.com/",
+    "docker_url": "https://inst-30317.aegis-ctf.com/",
+    "host": "inst-30317.aegis-ctf.com",
+    "ports": [
+      "443/tcp"
+    ],
+    "source": "live authorized scan",
+    "displayName": "inst-30317.aegis-ctf.com",
+    "port": "443",
+    "cves": [],
+    "statusCode": 502,
+    "title": "inst-30317.aegis-ctf.com",
+    "webserver": "cloudflare",
+    "tech": [
+      "Cloudflare",
+      "HTTP/3"
+    ],
+    "cpe": [],
+    "words": 3,
+    "lines": 1
+  },
+  "tool": {
+    "id": "wapiti",
+    "name": "Wapiti",
+    "type": "Web DAST",
+    "status": "completed"
+  },
+  "counts": {
+    "records": 3,
+    "findings": 3,
+    "sourceFiles": 4
+  },
+  "sourceFiles": [
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/result.json",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/result.json",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/result.json",
+      "bytes": 2302,
+      "sha256": "940663795f24bcf969b48972abe9e5df7604207a78e488fb2d49de63b4b4416e",
+      "updatedAt": "2026-08-04T19:12:41.908Z",
+      "kind": "json",
+      "lines": 11,
+      "records": 1
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stderr.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stderr.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "updatedAt": "2026-08-04T19:12:41.907Z",
+      "kind": "text",
+      "lines": 0,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stdout.txt",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stdout.txt",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/stdout.txt",
+      "bytes": 1720,
+      "sha256": "3afb4ff3a49b6a04246a626080ff85453e25fde0118732ba97d2c3076617af33",
+      "updatedAt": "2026-08-04T19:12:41.907Z",
+      "kind": "text",
+      "lines": 26,
+      "records": 0
+    },
+    {
+      "label": "../scanner-dataset/runs/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/wapiti.json",
+      "file": "public/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/wapiti.json",
+      "href": "/reports/live-20260805-020810-inst-30317-aegis-ctf-com/wapiti/wapiti.json",
+      "bytes": 45159,
+      "sha256": "26bdc5765de0ddf5f340ba70ab041a03d3b238d18f9d10917ebe62f05fb3f079",
+      "updatedAt": "2026-08-04T19:12:41.185Z",
+      "kind": "json",
+      "lines": 605,
+      "records": 1
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.wapiti.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "Wapiti",
+      "name": "Content Security Policy Configuration",
+      "risk": 1,
+      "description": "CSP is not set for URL: https://inst-30317.aegis-ctf.com/",
+      "count": 1
+    },
+    {
+      "schema": "chimera.wapiti.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "Wapiti",
+      "name": "HTTP Strict Transport Security (HSTS)",
+      "risk": 1,
+      "description": "Strict-Transport-Security is not set",
+      "count": 1
+    },
+    {
+      "schema": "chimera.wapiti.finding.v1",
+      "runId": "live-20260805-020810-inst-30317-aegis-ctf-com",
+      "targetId": "inst-30317-aegis-ctf-com-443",
+      "tool": "Wapiti",
+      "name": "MIME Type Confusion",
+      "risk": 1,
+      "description": "X-Content-Type-Options is not set",
+      "count": 1
+    }
+  ]
+}

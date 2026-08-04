@@ -1,0 +1,120 @@
+# Nmap 7.98 scan initiated Tue Aug  4 17:55:42 2026 as: /usr/bin/nmap -sV -p 14000,15173,15678,16116,18080,18161,19000,14080 -oA /scan/nmap host.docker.internal
+Nmap scan report for host.docker.internal (192.168.65.254)
+Host is up (0.0039s latency).
+Other addresses for host.docker.internal (not scanned): fdc4:f303:9324::254
+
+PORT      STATE SERVICE    VERSION
+14000/tcp open  scotty-ft?
+14080/tcp open  http       Apache Tomcat 9.0.116
+15173/tcp open  unknown
+15678/tcp open  unknown
+16116/tcp open  apachemq   ActiveMQ OpenWire transport 6.2.2
+18080/tcp open  http       Apache httpd 2.4.67 ((Debian))
+18161/tcp open  http       Jetty
+19000/tcp open  http       Golang net/http server
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port15173-TCP:V=7.98%I=7%D=8/4%Time=6A7227A9%P=x86_64-unknown-linux-gnu
+SF:%r(GetRequest,252,"HTTP/1\.1\x20200\x20OK\r\nVary:\x20Origin\r\nContent
+SF:-Type:\x20text/html\r\nCache-Control:\x20no-cache\r\nEtag:\x20W/\"19c-K
+SF:WhVZWgLp2YGqm9G8gexjs\+Lqes\"\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x20
+SF:17:55:53\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x20html>\n<htm
+SF:l\x20lang=\"en\">\n\x20\x20<head>\n\x20\x20\x20\x20<script\x20type=\"mo
+SF:dule\"\x20src=\"/@vite/client\"></script>\n\n\x20\x20\x20\x20<meta\x20c
+SF:harset=\"UTF-8\"\x20/>\n\x20\x20\x20\x20<link\x20rel=\"icon\"\x20type=\
+SF:"image/svg\+xml\"\x20href=\"/vite\.svg\"\x20/>\n\x20\x20\x20\x20<meta\x
+SF:20name=\"viewport\"\x20content=\"width=device-width,\x20initial-scale=1
+SF:\.0\"\x20/>\n\x20\x20\x20\x20<title>Vite\x20App</title>\n\x20\x20</head
+SF:>\n\x20\x20<body>\n\x20\x20\x20\x20<div\x20id=\"app\"></div>\n\x20\x20\
+SF:x20\x20<script\x20type=\"module\"\x20src=\"/src/main\.js\"></script>\n\
+SF:x20\x20</body>\n</html>\n")%r(HTTPOptions,D2,"HTTP/1\.1\x20204\x20No\x2
+SF:0Content\r\nVary:\x20Origin,\x20Access-Control-Request-Headers\r\nAcces
+SF:s-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nContent-L
+SF:ength:\x200\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2017:55:53\x20GMT\r\
+SF:nConnection:\x20close\r\n\r\n")%r(RTSPRequest,D2,"HTTP/1\.1\x20204\x20N
+SF:o\x20Content\r\nVary:\x20Origin,\x20Access-Control-Request-Headers\r\nA
+SF:ccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nConte
+SF:nt-Length:\x200\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2017:55:53\x20GM
+SF:T\r\nConnection:\x20close\r\n\r\n")%r(RPCCheck,1C,"HTTP/1\.1\x20400\x20
+SF:Bad\x20Request\r\n\r\n")%r(DNSVersionBindReqTCP,1C,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20Request\r\n\r\n")%r(DNSStatusRequestTCP,1C,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20Request\r\n\r\n")%r(Help,1C,"HTTP/1\.1\x20400\x20Bad\x20Request
+SF:\r\n\r\n")%r(SSLSessionReq,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r
+SF:\n")%r(TerminalServerCookie,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\
+SF:r\n")%r(TLSSessionReq,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%
+SF:r(Kerberos,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(SMBProgNe
+SF:g,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port15678-TCP:V=7.98%I=7%D=8/4%Time=6A7227A9%P=x86_64-unknown-linux-gnu
+SF:%r(GetRequest,821,"HTTP/1\.1\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\
+SF:nCache-Control:\x20public,\x20max-age=0\r\nLast-Modified:\x20Tue,\x2004
+SF:\x20Aug\x202026\x2017:54:44\x20GMT\r\nETag:\x20W/\"700-19fcde9deac\"\r\
+SF:nContent-Type:\x20text/html;\x20charset=UTF-8\r\nContent-Length:\x20179
+SF:2\r\nVary:\x20Accept-Encoding\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x20
+SF:17:55:53\x20GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<htm
+SF:l\x20lang=\"en\">\n\t<head>\n\t\t<meta\x20charset=\"utf-8\"\x20/>\n\t\t
+SF:<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\"\x20/>\n\
+SF:t\t<meta\x20name=\"viewport\"\x20content=\"width=device-width,initial-s
+SF:cale=1\.0\"\x20/>\n\t\t<link\x20rel=\"icon\"\x20href=\"/favicon\.ico\"\
+SF:x20/>\n\t\t<script\x20type=\"text/javascript\">\n\t\t\twindow\.BASE_PAT
+SF:H\x20=\x20'/';\n\t\t\twindow\.REST_ENDPOINT\x20=\x20'rest';\n\t\t</scri
+SF:pt>\n\t\t<script\x20src=\"/rest/sentry\.js\"></script>\n\t\t<script>!fu
+SF:nction\(t,e\){var\x20o,n,p,r;e\.__SV\|\|\(window\.posthog=e,e\._i=\[\],
+SF:e\.init=function\(i,s,a\){function\x20g\(t,e\){var\x20o=e\.split\(\"\.\
+SF:"\);2==o\.length&&\(t=t\[o\[0\]\],e=o\[1\]\),t\[e\]=function\(\){t\.pus
+SF:h\(\[e\]\.concat\(Array\.prototype\.slice\.cal")%r(HTTPOptions,53,"HTTP
+SF:/1\.1\x20204\x20No\x20Content\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x20
+SF:17:55:53\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RTSPRequest,53,"HTT
+SF:P/1\.1\x20204\x20No\x20Content\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2
+SF:017:55:53\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RPCCheck,2F,"HTTP/
+SF:1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(DNSVe
+SF:rsionBindReqTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x
+SF:20close\r\n\r\n")%r(DNSStatusRequestTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20
+SF:Request\r\nConnection:\x20close\r\n\r\n")%r(Help,2F,"HTTP/1\.1\x20400\x
+SF:20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(SSLSessionReq,2F,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(
+SF:TerminalServerCookie,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnecti
+SF:on:\x20close\r\n\r\n")%r(TLSSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nConnection:\x20close\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port19000-TCP:V=7.98%I=7%D=8/4%Time=6A7227A4%P=x86_64-unknown-linux-gnu
+SF:%r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:
+SF:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20
+SF:Bad\x20Request")%r(GetRequest,63D,"HTTP/1\.0\x20200\x20OK\r\nAccept-Ran
+SF:ges:\x20bytes\r\nContent-Length:\x201407\r\nContent-Type:\x20text/html;
+SF:\x20charset=utf-8\r\nRequest-Id:\x20ce01168d-3e63-4f06-9968-22d1a5d4bba
+SF:f\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2017:55:48\x20GMT\r\n\r\n<!DOC
+SF:TYPE\x20html>\n<html\x20lang=\"en\">\n\n<head>\n\x20\x20<meta\x20charse
+SF:t=\"UTF-8\"\x20/>\n\x20\x20<link\x20href=\"\./favicon\.ico\"\x20rel=\"i
+SF:con\">\n\x20\x20<link\x20href=\"\./favicon-32x32\.png\"\x20rel=\"icon\"
+SF:\x20type=\"image/png\"\x20sizes=\"32x32\">\n\x20\x20<meta\x20content=\"
+SF:width=device-width,initial-scale=1\.0,user-scalable=0\"\x20name=\"viewp
+SF:ort\">\n\n\x20\x20<!--\x20PWA\x20Manifest\x20-->\n\x20\x20<link\x20rel=
+SF:\"manifest\"\x20href=\"\./manifest\.json\">\n\n\x20\x20<!--\x20PWA\x20M
+SF:eta\x20Tags\x20-->\n\x20\x20<meta\x20name=\"theme-color\"\x20content=\"
+SF:#ffffff\">\n\x20\x20<meta\x20name=\"apple-mobile-web-app-capable\"\x20c
+SF:ontent=\"yes\">\n\x20\x20<meta\x20name=\"apple-mobile-web-app-status-ba
+SF:r-style\"\x20content=\"default\">\n\x20\x20<meta\x20name=\"apple-mobile
+SF:-web-app-title\"\x20content=\"Nginx\x20UI\">\n\x20\x20<meta\x20name=\"m
+SF:obile-web-app-capable\"\x20content=\"yes\">\n\x20\x20<meta\x20name=\"ms
+SF:application-TileColor\"\x20conten")%r(HTTPOptions,63D,"HTTP/1\.0\x20200
+SF:\x20OK\r\nAccept-Ranges:\x20bytes\r\nContent-Length:\x201407\r\nContent
+SF:-Type:\x20text/html;\x20charset=utf-8\r\nRequest-Id:\x201d876e0d-d62b-4
+SF:dad-abf3-9f58e6f5de81\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2017:55:48
+SF:\x20GMT\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en\">\n\n<head>\n\x2
+SF:0\x20<meta\x20charset=\"UTF-8\"\x20/>\n\x20\x20<link\x20href=\"\./favic
+SF:on\.ico\"\x20rel=\"icon\">\n\x20\x20<link\x20href=\"\./favicon-32x32\.p
+SF:ng\"\x20rel=\"icon\"\x20type=\"image/png\"\x20sizes=\"32x32\">\n\x20\x2
+SF:0<meta\x20content=\"width=device-width,initial-scale=1\.0,user-scalable
+SF:=0\"\x20name=\"viewport\">\n\n\x20\x20<!--\x20PWA\x20Manifest\x20-->\n\
+SF:x20\x20<link\x20rel=\"manifest\"\x20href=\"\./manifest\.json\">\n\n\x20
+SF:\x20<!--\x20PWA\x20Meta\x20Tags\x20-->\n\x20\x20<meta\x20name=\"theme-c
+SF:olor\"\x20content=\"#ffffff\">\n\x20\x20<meta\x20name=\"apple-mobile-we
+SF:b-app-capable\"\x20content=\"yes\">\n\x20\x20<meta\x20name=\"apple-mobi
+SF:le-web-app-status-bar-style\"\x20content=\"default\">\n\x20\x20<meta\x2
+SF:0name=\"apple-mobile-web-app-title\"\x20content=\"Nginx\x20UI\">\n\x20\
+SF:x20<meta\x20name=\"mobile-web-app-capable\"\x20content=\"yes\">\n\x20\x
+SF:20<meta\x20name=\"msapplication-TileColor\"\x20conten");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 17:58:20 2026 -- 1 IP address (1 host up) scanned in 158.18 seconds

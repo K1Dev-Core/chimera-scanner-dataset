@@ -1,0 +1,134 @@
+{
+  "schema": "chimera.tool-dataset.v1",
+  "generatedAt": "2026-08-04T19:06:14.601Z",
+  "runId": "20260805-005453-cve2026-famous",
+  "tool": {
+    "id": "wapiti",
+    "name": "Wapiti",
+    "type": "Web DAST",
+    "status": "completed"
+  },
+  "counts": {
+    "records": 6,
+    "findings": 7,
+    "sourceFiles": 6
+  },
+  "sourceFiles": [
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/wordpress-18080/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/wordpress-18080/wapiti.json",
+      "bytes": 57103,
+      "sha256": "7a08bc2570f946b5e4a69a9cedcdc47899be405ab70615bb74f4490f2059d1ca",
+      "updatedAt": "2026-08-04T18:00:17.522Z",
+      "kind": "json",
+      "lines": 811,
+      "records": 1
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/activemq-18161/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/activemq-18161/wapiti.json",
+      "bytes": 44557,
+      "sha256": "973e2e66520d0925d43f092475db4a0796bb5552eece0aea58b32a40fe3bd7c4",
+      "updatedAt": "2026-08-04T17:59:04.608Z",
+      "kind": "json",
+      "lines": 589,
+      "records": 1
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/n8n-15678/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/n8n-15678/wapiti.json",
+      "bytes": 46122,
+      "sha256": "e64ecd01a623111b9fca7ab8abd931c0c4f661e5b0c90a81db9d6a15d3a00c1b",
+      "updatedAt": "2026-08-04T17:59:18.191Z",
+      "kind": "json",
+      "lines": 617,
+      "records": 1
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/nginx-ui-19000/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/nginx-ui-19000/wapiti.json",
+      "bytes": 55363,
+      "sha256": "4f0765ab7d277a29508913c4bd0b36d6f466b4c921c5f72ebb262bd34d0411f2",
+      "updatedAt": "2026-08-04T17:59:08.386Z",
+      "kind": "json",
+      "lines": 785,
+      "records": 1
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/vite-15173/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/vite-15173/wapiti.json",
+      "bytes": 43724,
+      "sha256": "887d47b1be8ef77d70059f36907d886bec86a1f8b26a082991ee0de609adfc2d",
+      "updatedAt": "2026-08-04T17:59:03.854Z",
+      "kind": "json",
+      "lines": 573,
+      "records": 1
+    },
+    {
+      "file": "../scanner-dataset/runs/20260805-005453-cve2026-famous/wapiti/tomcat-14080/wapiti.json",
+      "href": "/reports/20260805-005453-cve2026-famous/wapiti/tomcat-14080/wapiti.json",
+      "bytes": 58408,
+      "sha256": "8eb04f9fe702b14283859933ad78dd334f78dc4c913f501d0341fbeac833f15c",
+      "updatedAt": "2026-08-04T17:59:10.606Z",
+      "kind": "json",
+      "lines": 825,
+      "records": 1
+    }
+  ],
+  "records": [
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "activemq-18161",
+      "findings": 0,
+      "outputDir": "",
+      "reportJson": ""
+    },
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "n8n-15678",
+      "findings": 1,
+      "outputDir": "",
+      "reportJson": ""
+    },
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "nginx-ui-19000",
+      "findings": 0,
+      "outputDir": "",
+      "reportJson": ""
+    },
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "tomcat-14080",
+      "findings": 0,
+      "outputDir": "",
+      "reportJson": ""
+    },
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "vite-15173",
+      "findings": 0,
+      "outputDir": "",
+      "reportJson": ""
+    },
+    {
+      "schema": "chimera.wapiti.summary.v1",
+      "runId": "20260805-005453-cve2026-famous",
+      "tool": "wapiti",
+      "targetId": "wordpress-18080",
+      "findings": 6,
+      "outputDir": "",
+      "reportJson": ""
+    }
+  ]
+}

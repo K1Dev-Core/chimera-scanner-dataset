@@ -1,0 +1,121 @@
+{
+  "run_id": "20260805-005453-cve2026-famous",
+  "scanner": "nuclei",
+  "scanner_image": "projectdiscovery/nuclei:latest",
+  "scan_scope": "authorized local Docker labs only",
+  "local_only_enforced": true,
+  "important_note": "Final console.txt and nuclei.jsonl were produced with -ni / --no-interactsh so OAST-based templates were excluded.",
+  "started_at_local": "2026-08-05T00:57:30+07:00",
+  "completed_at_local": "2026-08-05T00:58:09+07:00",
+  "targets": [
+    "http://host.docker.internal:15173",
+    "http://host.docker.internal:15678",
+    "http://host.docker.internal:18161",
+    "http://host.docker.internal:19000",
+    "http://host.docker.internal:14080",
+    "http://host.docker.internal:18080"
+  ],
+  "requested_template_ids": [
+    "CVE-2026-39363",
+    "CVE-2026-21858",
+    "CVE-2026-34197",
+    "CVE-2026-27944",
+    "CVE-2026-34486",
+    "CVE-2026-63030"
+  ],
+  "matched_template_ids": [
+    "CVE-2026-27944",
+    "CVE-2026-63030"
+  ],
+  "not_matched_or_excluded_template_ids": [
+    "CVE-2026-39363",
+    "CVE-2026-21858",
+    "CVE-2026-34197",
+    "CVE-2026-34486"
+  ],
+  "finding_count": 2,
+  "findings": [
+    {
+      "template_id": "CVE-2026-27944",
+      "name": "Nginx UI < 2.3.3 - Information Disclosure",
+      "severity": "critical",
+      "url": "http://host.docker.internal:19000",
+      "matched_at": "http://host.docker.internal:19000/api/backup",
+      "host": "host.docker.internal",
+      "port": "19000",
+      "type": "http",
+      "cve_id": [
+        "cve-2026-27944"
+      ],
+      "cwe_id": [
+        "cwe-306"
+      ],
+      "cvss_score": 9.8,
+      "epss_score": 0.22162,
+      "tags": [
+        "cve",
+        "cve2026",
+        "nginx-ui",
+        "unauth",
+        "exposure",
+        "vkev"
+      ],
+      "matcher_status": true,
+      "timestamp": "2026-08-04T17:58:02.667591584Z",
+      "extracted_result_count": 1,
+      "remediation": "Upgrade to version 2.3.3 or later.\n"
+    },
+    {
+      "template_id": "CVE-2026-63030",
+      "name": "WordPress Core 6.9-7.0.1 - Pre-Auth Batch-Route Confusion",
+      "severity": "critical",
+      "url": "http://host.docker.internal:18080",
+      "matched_at": "http://host.docker.internal:18080/?rest_route=/batch/v1",
+      "host": "host.docker.internal",
+      "port": "18080",
+      "type": "http",
+      "cve_id": [
+        "cve-2026-63030"
+      ],
+      "cwe_id": [
+        "cwe-287"
+      ],
+      "cvss_score": 9.8,
+      "epss_score": 0.98051,
+      "tags": [
+        "cve",
+        "cve2026",
+        "wordpress",
+        "wp-core",
+        "preauth",
+        "batch-api",
+        "route-confusion",
+        "vkev",
+        "kev"
+      ],
+      "matcher_status": true,
+      "timestamp": "2026-08-04T17:58:02.74738337Z",
+      "extracted_result_count": 0,
+      "remediation": "Update WordPress immediately to version 6.9.5 or 7.0.2. As a temporary mitigation, block POST requests to /wp-json/batch/v1 and /?rest_route=/batch/v1 at the WAF or reverse proxy level.\n"
+    }
+  ],
+  "command_flags": [
+    "-l /work/targets.txt",
+    "-id CVE-2026-39363,CVE-2026-21858,CVE-2026-34197,CVE-2026-27944,CVE-2026-34486,CVE-2026-63030",
+    "-jsonl",
+    "-stats",
+    "-silent",
+    "-retries 1",
+    "-timeout 8",
+    "-rate-limit 25",
+    "-ni"
+  ],
+  "files": {
+    "targets": "targets.txt",
+    "console": "console.txt",
+    "jsonl": "nuclei.jsonl",
+    "summary": "summary.json",
+    "nuclei_jsonl_sha256": "ED44842E83CA413ABE154C0055A183AA65662FBD6C125CF44DA837765DBC7D3C",
+    "console_sha256": "4819D7FC54C776897CFDFB86F9A830D1C1C94A3B83599614E9E4DE955B7A0CA5"
+  }
+}

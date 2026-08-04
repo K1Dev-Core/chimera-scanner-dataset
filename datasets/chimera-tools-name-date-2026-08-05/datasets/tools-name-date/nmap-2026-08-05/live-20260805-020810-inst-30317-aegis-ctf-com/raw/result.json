@@ -1,0 +1,11 @@
+{
+  "command": "docker run --rm instrumentisto/nmap:latest -sV -Pn -p 443,80,8080,8443,3000,5000,9000 inst-30317.aegis-ctf.com",
+  "status": "completed",
+  "exitCode": 0,
+  "timedOut": false,
+  "error": "",
+  "stdout": "Starting Nmap 7.98 ( https://nmap.org ) at 2026-08-04 19:09 +0000\nNmap scan report for inst-30317.aegis-ctf.com (172.67.184.27)\nHost is up (0.018s latency).\nOther addresses for inst-30317.aegis-ctf.com (not scanned): 104.21.68.5\n\nPORT     STATE    SERVICE    VERSION\n80/tcp   open     http       Cloudflare http proxy\n443/tcp  open     ssl/http   Cloudflare http proxy\n3000/tcp filtered ppp\n5000/tcp filtered upnp\n8080/tcp open     http       Cloudflare http proxy\n8443/tcp open     ssl/http   Cloudflare http proxy\n9000/tcp filtered cslistener\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 37.11 seconds\n",
+  "stderr": "",
+  "startedAt": "2026-08-04T19:09:21.395Z",
+  "finishedAt": "2026-08-04T19:09:59.295Z"
+}

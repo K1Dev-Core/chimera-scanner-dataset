@@ -1,0 +1,4 @@
+{"schema":"chimera.nmap.finding.v1","runId":"live-20260805-020810-inst-30317-aegis-ctf-com","targetId":"inst-30317-aegis-ctf-com-443","tool":"Nmap","name":"80/tcp open http","risk":"info","description":"Cloudflare http proxy","count":1}
+{"schema":"chimera.nmap.finding.v1","runId":"live-20260805-020810-inst-30317-aegis-ctf-com","targetId":"inst-30317-aegis-ctf-com-443","tool":"Nmap","name":"443/tcp open ssl/http","risk":"info","description":"Cloudflare http proxy","count":1}
+{"schema":"chimera.nmap.finding.v1","runId":"live-20260805-020810-inst-30317-aegis-ctf-com","targetId":"inst-30317-aegis-ctf-com-443","tool":"Nmap","name":"8080/tcp open http","risk":"info","description":"Cloudflare http proxy","count":1}
+{"schema":"chimera.nmap.finding.v1","runId":"live-20260805-020810-inst-30317-aegis-ctf-com","targetId":"inst-30317-aegis-ctf-com-443","tool":"Nmap","name":"8443/tcp open ssl/http","risk":"info","description":"Cloudflare http proxy","count":1}
