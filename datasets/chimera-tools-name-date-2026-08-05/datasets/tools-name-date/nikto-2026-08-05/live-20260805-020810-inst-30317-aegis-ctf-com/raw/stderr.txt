@@ -1,1 +1,0 @@
-+ ERROR: Error limit (20) reached for host, giving up. Last error: opening stream: ssl connect failed

@@ -1,8 +1,0 @@
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":19000,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":14000,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":18161,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":15678,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":16116,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":14080,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":18080,"protocol":"tcp","tls":false}
-{"host":"host.docker.internal","ip":"192.168.65.254","timestamp":"2026-08-04T17:55:34.701755784Z","port":15173,"protocol":"tcp","tls":false}

@@ -1,6 +1,0 @@
-http://host.docker.internal:15173
-http://host.docker.internal:15678
-http://host.docker.internal:18161
-http://host.docker.internal:19000
-http://host.docker.internal:14080
-http://host.docker.internal:18080
