@@ -1,0 +1,5 @@
+ACME Support Portal weekly summary
+
+Open tickets: 4
+Risk queue: 7
+Note: rotate internal diagnostics credentials before production rollout.

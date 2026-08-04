@@ -112,6 +112,18 @@ dvwa    xss                        0.084
 
 แปลแบบง่าย ๆ คือ สำหรับ DVWA model มองว่า `command-injection` และ `sqli` ควรถูกลองก่อนกลุ่มอื่น
 
+## Live demo กับ lab ที่รันอยู่
+
+ถ้าต้องการลองกับ lab ที่เปิดอยู่จริง ให้ดูไฟล์ `LIVE_LAB_DEMO.md`
+
+ตัวอย่าง:
+
+```bash
+python scripts/live_rank_target.py --dataset-root . --profile dvwa --url http://127.0.0.1:26001 --out live-reports/dvwa
+```
+
+สคริปต์นี้จะดึง fingerprint เบื้องต้นจาก URL, สร้าง feature rows, โหลด baseline model แล้วออก report เป็น `.md`, `.csv`, `.jsonl`
+
 ## Label ที่ใช้ตอนนี้
 
 ตอนนี้ label หลักคือ:
