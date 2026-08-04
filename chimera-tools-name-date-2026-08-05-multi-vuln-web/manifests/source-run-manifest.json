@@ -1,0 +1,52 @@
+{
+  "run_id": "202608042005-multi-vuln-web",
+  "created_at": "2026-08-04T20:05:03.428Z",
+  "source_type": "multi-vulnerability local Docker web labs",
+  "safety_scope": "scanner/fingerprint/DAST collection only; no exploit execution",
+  "tools": [
+    "nmap",
+    "httpx",
+    "nuclei",
+    "nikto",
+    "wapiti",
+    "zap"
+  ],
+  "labs": [
+    {
+      "id": "owasp-juice-shop",
+      "product": "OWASP Juice Shop",
+      "image": "bkimminich/juice-shop:latest",
+      "url_local": "http://127.0.0.1:25000",
+      "status": "started"
+    },
+    {
+      "id": "owasp-webgoat",
+      "product": "OWASP WebGoat",
+      "image": "webgoat/webgoat:latest",
+      "url_local": "http://127.0.0.1:25001",
+      "status": "started"
+    },
+    {
+      "id": "dvwa",
+      "product": "Damn Vulnerable Web Application",
+      "image": "vulnerables/web-dvwa:latest",
+      "url_local": "http://127.0.0.1:25002",
+      "status": "started"
+    },
+    {
+      "id": "bwapp",
+      "product": "bWAPP",
+      "image": "raesene/bwapp:latest",
+      "url_local": "http://127.0.0.1:25003",
+      "status": "started"
+    },
+    {
+      "id": "mutillidae-nowasp",
+      "product": "OWASP Mutillidae / NOWASP",
+      "image": "citizenstig/nowasp:latest",
+      "url_local": "http://127.0.0.1:25004",
+      "status": "started"
+    }
+  ],
+  "record_count": 150
+}

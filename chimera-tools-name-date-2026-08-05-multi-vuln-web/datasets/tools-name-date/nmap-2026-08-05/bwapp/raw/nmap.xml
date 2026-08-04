@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Tue Aug  4 20:14:06 2026 as: /usr/bin/nmap -sV -Pn -p 25003 -oX /out/raw/nmap.xml host.docker.internal -->
+<nmaprun scanner="nmap" args="/usr/bin/nmap -sV -Pn -p 25003 -oX /out/raw/nmap.xml host.docker.internal" start="1785874446" startstr="Tue Aug  4 20:14:06 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="25003"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785874449" endtime="1785874460"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.65.254" addrtype="ipv4"/>
+<hostnames>
+<hostname name="host.docker.internal" type="user"/>
+</hostnames>
+<ports><port protocol="tcp" portid="25003"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Apache httpd" version="2.4.7" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.7</cpe></service></port>
+</ports>
+<times srtt="2137" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785874460" timestr="Tue Aug  4 20:14:20 2026" summary="Nmap done at Tue Aug  4 20:14:20 2026; 1 IP address (1 host up) scanned in 13.48 seconds" elapsed="13.48" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

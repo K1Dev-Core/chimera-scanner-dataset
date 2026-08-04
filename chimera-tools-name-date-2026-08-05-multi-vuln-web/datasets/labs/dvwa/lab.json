@@ -1,0 +1,20 @@
+{
+  "id": "dvwa",
+  "image": "vulnerables/web-dvwa:latest",
+  "containerPort": 80,
+  "hostPort": 25002,
+  "product": "Damn Vulnerable Web Application",
+  "type": "multi-vulnerability-training-app",
+  "candidate_exploit_families": [
+    "command-injection",
+    "sqli",
+    "xss",
+    "file-upload",
+    "file-inclusion",
+    "csrf",
+    "bruteforce"
+  ],
+  "url_local": "http://127.0.0.1:25002",
+  "url_docker": "http://host.docker.internal:25002",
+  "note": "Multi-vulnerability web training app; labels are intended as exploit-ranking candidate families."
+}

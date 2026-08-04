@@ -1,0 +1,217 @@
+Using the Automation Framework
+Total of 857 URLs
+PASS: Cookie Without Secure Flag [10011]
+PASS: Re-examine Cache-control Directives [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Viewstate [10032]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header [10035]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header [10061]
+PASS: PII Disclosure [10062]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Verification Request Identified [10113]
+PASS: Script Served From Malicious Domain (polyfill) [10115]
+PASS: ZAP is Out of Date [10116]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Stats Passive Scan Rule [50003]
+PASS: Insecure JSF ViewState [90001]
+PASS: Java Serialization Object [90002]
+PASS: Charset Mismatch [90011]
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: Vulnerable JS Library [10003] x 4 
+	http://host.docker.internal:25004/javascript/ddsmoothmenu/jquery.min.js (200 OK)
+	http://host.docker.internal:25004/javascript/jQuery/jquery.js (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-1.6.2.js (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-1.6.2.js?ts=1526333067 (200 OK)
+WARN-NEW: In Page Banner Information Leak [10009] x 5 
+	http://host.docker.internal:25004/config.inc (404 Not Found)
+	http://host.docker.internal:25004/documentation/images/pdf-icon-48-48.png (404 Not Found)
+	http://host.docker.internal:25004/documentation/images/youtube-48-48.png (404 Not Found)
+	http://host.docker.internal:25004/documentation/index.php?page=./documentation/vulnerabilities.php (404 Not Found)
+	http://host.docker.internal:25004/sitemap.xml (404 Not Found)
+WARN-NEW: Cookie No HttpOnly Flag [10010] x 3 
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004/index.php?do=toggle-hints&page=/app/home.php (302 Found)
+WARN-NEW: Content-Type Header Missing [10019] x 5 
+	http://host.docker.internal:25004/owasp-esapi-php/LICENSE (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/HELP_MY_TESTS_DONT_WORK_ANYMORE (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/LICENSE (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/README (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/lib/simpletest/VERSION (200 OK)
+WARN-NEW: Missing Anti-clickjacking Header [10020] x 5 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/database-offline.php (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/ (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+WARN-NEW: X-Content-Type-Options Header Missing [10021] x 5 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/ (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+	http://host.docker.internal:25004/robots.txt (200 OK)
+WARN-NEW: Information Disclosure - Debug Error Messages [10023] x 12 
+	http://host.docker.internal:25004/ (200 OK)
+	http://host.docker.internal:25004/documentation/change-log.html (200 OK)
+	http://host.docker.internal:25004/index.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0 (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/lib/apache-log4php/site/ (200 OK)
+WARN-NEW: Information Disclosure - Sensitive Information in URL [10024] x 5 
+	http://host.docker.internal:25004/index.php?page=password-generator.php&username=anonymous (302 Found)
+	http://host.docker.internal:25004/mutillidae/webservices/rest/ws-user-account.php?username=adrian (404 Not Found)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/querywindow.php?no_js=true&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+WARN-NEW: Information Disclosure - Suspicious Comments [10027] x 27 
+	http://host.docker.internal:25004/ (200 OK)
+	http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt (200 OK)
+	http://host.docker.internal:25004/index.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=login.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=xml-validator.php (200 OK)
+WARN-NEW: Off-site Redirect [10028] x 1 
+	http://host.docker.internal:25004/phpmyadmin/url.php?token=e415c9425c5cbf8477d80e5bb28fe9cb&url=http%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.5%2Fen%2Findex.html (302 Found)
+WARN-NEW: Cookie Poisoning [10029] x 3 
+	http://host.docker.internal:25004/phpmyadmin/index.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/navigation.php?set_theme=original&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+WARN-NEW: User Controllable Charset [10030] x 2 
+	http://host.docker.internal:25004/phpmyadmin/export.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/import.php (200 OK)
+WARN-NEW: User Controllable HTML Element Attribute (Potential XSS) [10031] x 4 
+	http://host.docker.internal:25004/index.php?page=xml-validator.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+WARN-NEW: Directory Browsing [10033] x 5 
+	http://host.docker.internal:25004/documentation/ (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/ (200 OK)
+	http://host.docker.internal:25004/javascript/?C=N;O=D (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+WARN-NEW: Server Leaks Version Information via "Server" HTTP Response Header Field [10036] x 5 
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+	http://host.docker.internal:25004/robots.txt (200 OK)
+	http://host.docker.internal:25004/sitemap.xml (404 Not Found)
+WARN-NEW: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037] x 5 
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004/classes/CustomErrorHandler.php (200 OK)
+	http://host.docker.internal:25004/classes/YouTubeVideoHandler.php (200 OK)
+	http://host.docker.internal:25004/database-offline.php (200 OK)
+	http://host.docker.internal:25004/documentation/how-to-access-Mutillidae-over-Virtual-Box-network.php (200 OK)
+WARN-NEW: Content Security Policy (CSP) Header Not Set [10038] x 5 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/ (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+	http://host.docker.internal:25004/sitemap.xml (404 Not Found)
+WARN-NEW: HTTP to HTTPS Insecure Transition in Form Post [10041] x 4 
+	http://host.docker.internal:25004/ (200 OK)
+	http://host.docker.internal:25004/index.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=xml-validator.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=home.php&popUpNotificationCode=HPH0 (200 OK)
+WARN-NEW: Big Redirect Detected (Potential Sensitive Information Leak) [10044] x 1 
+	http://host.docker.internal:25004/database-offline.php (302 Found)
+WARN-NEW: Non-Storable Content [10049] x 7 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/database-offline.php (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/?C=N;O=D (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/ (200 OK)
+WARN-NEW: Cookie without SameSite Attribute [10054] x 5 
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+WARN-NEW: CSP: X-Content-Security-Policy [10055] x 10 
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/querywindow.php?no_js=true&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+WARN-NEW: Permissions Policy Header Not Set [10063] x 5 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/owasp-esapi-php/ (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+	http://host.docker.internal:25004/sitemap.xml (404 Not Found)
+WARN-NEW: Timestamp Disclosure - Unix [10096] x 3 
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/main.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/navigation.php?collation_connection=utf8_general_ci&lang=en&token=e415c9425c5cbf8477d80e5bb28fe9cb (200 OK)
+WARN-NEW: Source Code Disclosure - PHP [10099] x 13 
+	http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt (200 OK)
+	http://host.docker.internal:25004/includes/anti-framing-protection.inc (200 OK)
+	http://host.docker.internal:25004/includes/back-button.inc (200 OK)
+	http://host.docker.internal:25004/includes/create-html-5-web-storage-target.inc (200 OK)
+	http://host.docker.internal:25004/includes/help-button.inc (200 OK)
+WARN-NEW: Modern Web Application [10109] x 5 
+	http://host.docker.internal:25004/ (200 OK)
+	http://host.docker.internal:25004/includes/main-menu.php (200 OK)
+	http://host.docker.internal:25004/index.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=xml-validator.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+WARN-NEW: Dangerous JS Functions [10110] x 7 
+	http://host.docker.internal:25004/phpmyadmin/js/functions.js?ts=1526333067 (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/gis_data_editor.js?ts=1526333067 (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-ui-1.8.16.custom.js (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery-ui-1.8.16.custom.js?ts=1526333067 (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/jquery/jquery.json-2.2.js (200 OK)
+WARN-NEW: Authentication Request Identified [10111] x 5 
+	http://host.docker.internal:25004/phpmyadmin/server_privileges.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/server_privileges.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/server_privileges.php (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/server_synchronize.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=login.php (302 Found)
+WARN-NEW: Session Management Response Identified [10112] x 2 
+	http://host.docker.internal:25004 (302 Found)
+	http://host.docker.internal:25004/phpmyadmin/ (200 OK)
+WARN-NEW: Absence of Anti-CSRF Tokens [10202] x 5 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/ (200 OK)
+	http://host.docker.internal:25004/database-offline.php (200 OK)
+	http://host.docker.internal:25004/index.php?page=view-someones-blog.php (200 OK)
+	http://host.docker.internal:25004/database-offline.php (302 Found)
+WARN-NEW: Private IP Disclosure [2] x 7 
+	http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt (200 OK)
+	http://host.docker.internal:25004/documentation/how-to-access-Mutillidae-over-Virtual-Box-network.php (200 OK)
+	http://host.docker.internal:25004/documentation/mutillidae-demo.txt (200 OK)
+	http://host.docker.internal:25004/hints-page-wrapper.php?level1HintIncludeFile=54 (200 OK)
+	http://host.docker.internal:25004/hints-page-wrapper.php?level1HintIncludeFile=55 (200 OK)
+WARN-NEW: Sub Resource Integrity Attribute Missing [90003] x 2 
+	http://host.docker.internal:25004/documentation/Mutillidae-Test-Scripts.txt (200 OK)
+	http://host.docker.internal:25004/phpmyadmin/js/functions.js?ts=1526333067 (200 OK)
+WARN-NEW: Cross-Origin-Embedder-Policy Header Missing or Invalid [90004] x 15 
+	http://host.docker.internal:25004 (200 OK)
+	http://host.docker.internal:25004/database-offline.php (200 OK)
+	http://host.docker.internal:25004/documentation/ (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/passwords/ (200 OK)
+WARN-NEW: Application Error Disclosure [90022] x 10 
+	http://host.docker.internal:25004/classes/ (200 OK)
+	http://host.docker.internal:25004/classes/?C=N;O=D (200 OK)
+	http://host.docker.internal:25004/documentation/ (200 OK)
+	http://host.docker.internal:25004/documentation/?C=S;O=A (200 OK)
+	http://host.docker.internal:25004/javascript/ (200 OK)
+WARN-NEW: WSDL File Detection [90030] x 3 
+	http://host.docker.internal:25004/webservices/soap/ws-hello-world.php?wsdl (200 OK)
+	http://host.docker.internal:25004/webservices/soap/ws-lookup-dns-record.php?wsdl (200 OK)
+	http://host.docker.internal:25004/webservices/soap/ws-user-account.php?wsdl (200 OK)
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 35	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 32

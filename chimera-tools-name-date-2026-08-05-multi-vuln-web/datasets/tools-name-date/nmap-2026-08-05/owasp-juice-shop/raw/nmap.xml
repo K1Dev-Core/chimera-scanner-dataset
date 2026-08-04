@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Tue Aug  4 20:05:53 2026 as: /usr/bin/nmap -sV -Pn -p 25000 -oX /out/raw/nmap.xml host.docker.internal -->
+<nmaprun scanner="nmap" args="/usr/bin/nmap -sV -Pn -p 25000 -oX /out/raw/nmap.xml host.docker.internal" start="1785873953" startstr="Tue Aug  4 20:05:53 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="25000"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785873955" endtime="1785873966"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.65.254" addrtype="ipv4"/>
+<hostnames>
+<hostname name="host.docker.internal" type="user"/>
+</hostnames>
+<ports><port protocol="tcp" portid="25000"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="icl-twobase1" servicefp="SF-Port25000-TCP:V=7.98%I=7%D=8/4%Time=6A72462E%P=x86_64-unknown-linux-gnu%r(GetRequest,2866,&quot;HTTP/1\.1\x20200\x20OK\r\nAccess-Control-Allow-Origin:\x20\*\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGIN\r\nFeature-Policy:\x20payment\x20&apos;self&apos;\r\nX-Recruiting:\x20/#/jobs\r\nAccept-Ranges:\x20bytes\r\nCache-Control:\x20public,\x20max-age=0\r\nLast-Modified:\x20Tue,\x2004\x20Aug\x202026\x2020:05:17\x20GMT\r\nETag:\x20W/\&quot;26af-19fce6166ea\&quot;\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nContent-Length:\x209903\r\nVary:\x20Accept-Encoding\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2020:06:06\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!-&#45;\n\x20\x20~\x20Copyright\x20\(c\)\x202014-2026\x20Bjoern\x20Kimminich\x20&amp;\x20the\x20OWASP\x20Juice\x20Shop\x20contributors\.\n\x20\x20~\x20SPDX-License-Identifier:\x20MIT\n\x20\x20-&#45;&gt;\n\n&lt;!doctype\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;\x20data-beasties-container&gt;\n&lt;head&gt;\n\x20\x20&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\x20\x20&lt;title&gt;OWASP\x20Juice\x20Shop&lt;/title&gt;\n\x20\x20&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Probably\x20the\x20most\x20modern\x20and\x20sophisticated\x20insecure\x20web\x20application\&quot;&gt;\n\x20\x20&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\&quot;&gt;\n\x20\x20&lt;link\x20rel=\&quot;preconnect\&quot;\x20href=\&quot;htt&quot;)%r(HTTPOptions,EA,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nVary:\x20Access-Control-Request-Headers\r\nContent-Length:\x200\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2020:06:06\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(RTSPRequest,EA,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\x20GET,HEAD,PUT,PATCH,POST,DELETE\r\nVary:\x20Access-Control-Request-Headers\r\nContent-Length:\x200\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2020:06:06\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(RPCCheck,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(DNSVersionBindReqTCP,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/></port>
+</ports>
+<times srtt="1967" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785873966" timestr="Tue Aug  4 20:06:06 2026" summary="Nmap done at Tue Aug  4 20:06:06 2026; 1 IP address (1 host up) scanned in 13.67 seconds" elapsed="13.67" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
