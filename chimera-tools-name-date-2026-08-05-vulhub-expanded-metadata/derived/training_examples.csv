@@ -1,0 +1,265 @@
+lab_id,product,cve,candidate_exploit_family,known_exploit_family,rank,rank_score,is_recommended,is_known_family,exposed_port_count,has_http_port_hint,image_count,compose_service_count,product_text,image_text,port_text,label_source
+1panel-cve-2024-39907,1panel,CVE-2024-39907,sqli,sqli,1,0.96,1,1,1,0,1,1,1panel,vulhub/1panel:1.10.10,10086:10086/tcp,vulhub_directory_metadata_heuristic
+1panel-cve-2024-39907,1panel,CVE-2024-39907,auth-bypass,sqli,2,0.78,1,0,1,0,1,1,1panel,vulhub/1panel:1.10.10,10086:10086/tcp,vulhub_directory_metadata_heuristic
+1panel-cve-2024-39907,1panel,CVE-2024-39907,sensitive-data-exposure,sqli,3,0.6,0,0,1,0,1,1,1panel,vulhub/1panel:1.10.10,10086:10086/tcp,vulhub_directory_metadata_heuristic
+1panel-cve-2024-39907,1panel,CVE-2024-39907,xss,sqli,4,0.42,0,0,1,0,1,1,1panel,vulhub/1panel:1.10.10,10086:10086/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2015-5254,activemq,CVE-2015-5254,deserialization,deserialization,1,0.96,1,1,2,0,1,0,activemq,vulhub/activemq:5.11.1,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2015-5254,activemq,CVE-2015-5254,command-injection,deserialization,2,0.78,1,0,2,0,1,0,activemq,vulhub/activemq:5.11.1,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2015-5254,activemq,CVE-2015-5254,auth-bypass,deserialization,3,0.6,0,0,2,0,1,0,activemq,vulhub/activemq:5.11.1,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2015-5254,activemq,CVE-2015-5254,file-inclusion,deserialization,4,0.42,0,0,2,0,1,0,activemq,vulhub/activemq:5.11.1,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2016-3088,activemq,CVE-2016-3088,file-upload,file-upload,1,0.96,1,1,2,0,1,0,activemq,vulhub/activemq:5.11.1-with-cron,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2016-3088,activemq,CVE-2016-3088,command-injection,file-upload,2,0.78,1,0,2,0,1,0,activemq,vulhub/activemq:5.11.1-with-cron,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2016-3088,activemq,CVE-2016-3088,xss,file-upload,3,0.6,0,0,2,0,1,0,activemq,vulhub/activemq:5.11.1-with-cron,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2016-3088,activemq,CVE-2016-3088,auth-bypass,file-upload,4,0.42,0,0,2,0,1,0,activemq,vulhub/activemq:5.11.1-with-cron,61616:61616/tcp | 8161:8161/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2023-46604,activemq,CVE-2023-46604,deserialization,deserialization,1,0.96,1,1,3,0,1,0,activemq,vulhub/activemq:5.17.3,61616:61616/tcp | 8161:8161/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2023-46604,activemq,CVE-2023-46604,command-injection,deserialization,2,0.78,1,0,3,0,1,0,activemq,vulhub/activemq:5.17.3,61616:61616/tcp | 8161:8161/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2023-46604,activemq,CVE-2023-46604,auth-bypass,deserialization,3,0.6,0,0,3,0,1,0,activemq,vulhub/activemq:5.17.3,61616:61616/tcp | 8161:8161/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+activemq-cve-2023-46604,activemq,CVE-2023-46604,file-inclusion,deserialization,4,0.42,0,0,3,0,1,0,activemq,vulhub/activemq:5.17.3,61616:61616/tcp | 8161:8161/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+adminer-cve-2021-21311,adminer,CVE-2021-21311,sqli,sqli,1,0.96,1,1,1,1,1,0,adminer,vulhub/adminer:4.7.8,8080:80/tcp,vulhub_directory_metadata_heuristic
+adminer-cve-2021-21311,adminer,CVE-2021-21311,auth-bypass,sqli,2,0.78,1,0,1,1,1,0,adminer,vulhub/adminer:4.7.8,8080:80/tcp,vulhub_directory_metadata_heuristic
+adminer-cve-2021-21311,adminer,CVE-2021-21311,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,1,0,adminer,vulhub/adminer:4.7.8,8080:80/tcp,vulhub_directory_metadata_heuristic
+adminer-cve-2021-21311,adminer,CVE-2021-21311,xss,sqli,4,0.42,0,0,1,1,1,0,adminer,vulhub/adminer:4.7.8,8080:80/tcp,vulhub_directory_metadata_heuristic
+airflow-cve-2020-11978,airflow,CVE-2020-11978,command-injection,command-injection,1,0.96,1,1,2,1,3,9,airflow,postgres:13-alpine | redis:5-alpine | vulhub/airflow:1.10.10,8080:8080/tcp | 5555:5555/tcp,vulhub_directory_metadata_heuristic
+airflow-cve-2020-11978,airflow,CVE-2020-11978,auth-bypass,command-injection,2,0.78,1,0,2,1,3,9,airflow,postgres:13-alpine | redis:5-alpine | vulhub/airflow:1.10.10,8080:8080/tcp | 5555:5555/tcp,vulhub_directory_metadata_heuristic
+airflow-cve-2020-11978,airflow,CVE-2020-11978,file-upload,command-injection,3,0.6,0,0,2,1,3,9,airflow,postgres:13-alpine | redis:5-alpine | vulhub/airflow:1.10.10,8080:8080/tcp | 5555:5555/tcp,vulhub_directory_metadata_heuristic
+airflow-cve-2020-11978,airflow,CVE-2020-11978,deserialization,command-injection,4,0.42,0,0,2,1,3,9,airflow,postgres:13-alpine | redis:5-alpine | vulhub/airflow:1.10.10,8080:8080/tcp | 5555:5555/tcp,vulhub_directory_metadata_heuristic
+apache-druid-cve-2021-25646,apache-druid,CVE-2021-25646,auth-bypass,auth-bypass,1,0.96,1,1,1,0,1,0,apache-druid,vulhub/apache-druid:0.20.0,8888:8888/tcp,vulhub_directory_metadata_heuristic
+apache-druid-cve-2021-25646,apache-druid,CVE-2021-25646,broken-access-control,auth-bypass,2,0.78,1,0,1,0,1,0,apache-druid,vulhub/apache-druid:0.20.0,8888:8888/tcp,vulhub_directory_metadata_heuristic
+apache-druid-cve-2021-25646,apache-druid,CVE-2021-25646,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,0,1,0,apache-druid,vulhub/apache-druid:0.20.0,8888:8888/tcp,vulhub_directory_metadata_heuristic
+apache-druid-cve-2021-25646,apache-druid,CVE-2021-25646,command-injection,auth-bypass,4,0.42,0,0,1,0,1,0,apache-druid,vulhub/apache-druid:0.20.0,8888:8888/tcp,vulhub_directory_metadata_heuristic
+apisix-cve-2020-13945,apisix,CVE-2020-13945,command-injection,command-injection,1,0.96,1,1,4,0,2,2,apisix,gcr.io/etcd-development/etcd:v3.4.15 | vulhub/apisix:2.11.0,9080:9080/tcp | 9091:9091/tcp | 9443:9443/tcp | 2379:2379/tcp,vulhub_directory_metadata_heuristic
+apisix-cve-2020-13945,apisix,CVE-2020-13945,auth-bypass,command-injection,2,0.78,1,0,4,0,2,2,apisix,gcr.io/etcd-development/etcd:v3.4.15 | vulhub/apisix:2.11.0,9080:9080/tcp | 9091:9091/tcp | 9443:9443/tcp | 2379:2379/tcp,vulhub_directory_metadata_heuristic
+apisix-cve-2020-13945,apisix,CVE-2020-13945,file-upload,command-injection,3,0.6,0,0,4,0,2,2,apisix,gcr.io/etcd-development/etcd:v3.4.15 | vulhub/apisix:2.11.0,9080:9080/tcp | 9091:9091/tcp | 9443:9443/tcp | 2379:2379/tcp,vulhub_directory_metadata_heuristic
+apisix-cve-2020-13945,apisix,CVE-2020-13945,deserialization,command-injection,4,0.42,0,0,4,0,2,2,apisix,gcr.io/etcd-development/etcd:v3.4.15 | vulhub/apisix:2.11.0,9080:9080/tcp | 9091:9091/tcp | 9443:9443/tcp | 2379:2379/tcp,vulhub_directory_metadata_heuristic
+cacti-cve-2022-46169,cacti,CVE-2022-46169,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,2,cacti,mysql:5.7 | vulhub/cacti:1.2.22,8080:80/tcp,vulhub_directory_metadata_heuristic
+cacti-cve-2022-46169,cacti,CVE-2022-46169,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,2,cacti,mysql:5.7 | vulhub/cacti:1.2.22,8080:80/tcp,vulhub_directory_metadata_heuristic
+cacti-cve-2022-46169,cacti,CVE-2022-46169,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,2,cacti,mysql:5.7 | vulhub/cacti:1.2.22,8080:80/tcp,vulhub_directory_metadata_heuristic
+cacti-cve-2022-46169,cacti,CVE-2022-46169,command-injection,auth-bypass,4,0.42,0,0,1,1,2,2,cacti,mysql:5.7 | vulhub/cacti:1.2.22,8080:80/tcp,vulhub_directory_metadata_heuristic
+cmsms-cve-2019-9053,cmsms,CVE-2019-9053,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,2,cmsms,mysql:5.7 | vulhub/cmsms:2.2.9.1,80:80/tcp,vulhub_directory_metadata_heuristic
+cmsms-cve-2019-9053,cmsms,CVE-2019-9053,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,2,cmsms,mysql:5.7 | vulhub/cmsms:2.2.9.1,80:80/tcp,vulhub_directory_metadata_heuristic
+cmsms-cve-2019-9053,cmsms,CVE-2019-9053,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,2,cmsms,mysql:5.7 | vulhub/cmsms:2.2.9.1,80:80/tcp,vulhub_directory_metadata_heuristic
+cmsms-cve-2019-9053,cmsms,CVE-2019-9053,command-injection,auth-bypass,4,0.42,0,0,1,1,2,2,cmsms,mysql:5.7 | vulhub/cmsms:2.2.9.1,80:80/tcp,vulhub_directory_metadata_heuristic
+coldfusion-cve-2023-26360,coldfusion,CVE-2023-26360,command-injection,command-injection,1,0.96,1,1,2,0,1,1,coldfusion,vulhub/coldfusion:2018.0.15,8500:8500/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+coldfusion-cve-2023-26360,coldfusion,CVE-2023-26360,auth-bypass,command-injection,2,0.78,1,0,2,0,1,1,coldfusion,vulhub/coldfusion:2018.0.15,8500:8500/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+coldfusion-cve-2023-26360,coldfusion,CVE-2023-26360,file-upload,command-injection,3,0.6,0,0,2,0,1,1,coldfusion,vulhub/coldfusion:2018.0.15,8500:8500/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+coldfusion-cve-2023-26360,coldfusion,CVE-2023-26360,deserialization,command-injection,4,0.42,0,0,2,0,1,1,coldfusion,vulhub/coldfusion:2018.0.15,8500:8500/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2021-26084,confluence,CVE-2021-26084,auth-bypass,auth-bypass,1,0.96,1,1,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.4.10,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2021-26084,confluence,CVE-2021-26084,broken-access-control,auth-bypass,2,0.78,1,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.4.10,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2021-26084,confluence,CVE-2021-26084,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.4.10,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2021-26084,confluence,CVE-2021-26084,command-injection,auth-bypass,4,0.42,0,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.4.10,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2022-26134,confluence,CVE-2022-26134,auth-bypass,auth-bypass,1,0.96,1,1,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.13.6,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2022-26134,confluence,CVE-2022-26134,broken-access-control,auth-bypass,2,0.78,1,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.13.6,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2022-26134,confluence,CVE-2022-26134,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.13.6,8090:8090/tcp,vulhub_directory_metadata_heuristic
+confluence-cve-2022-26134,confluence,CVE-2022-26134,command-injection,auth-bypass,4,0.42,0,0,1,0,2,2,confluence,postgres:12.8-alpine | vulhub/confluence:7.13.6,8090:8090/tcp,vulhub_directory_metadata_heuristic
+couchdb-cve-2017-12635,couchdb,CVE-2017-12635,nosql-injection,nosql-injection,1,0.96,1,1,1,0,2,2,couchdb,buildpack-deps:focal-curl | vulhub/couchdb:2.1.0,5984:5984/tcp,vulhub_directory_metadata_heuristic
+couchdb-cve-2017-12635,couchdb,CVE-2017-12635,auth-bypass,nosql-injection,2,0.78,1,0,1,0,2,2,couchdb,buildpack-deps:focal-curl | vulhub/couchdb:2.1.0,5984:5984/tcp,vulhub_directory_metadata_heuristic
+couchdb-cve-2017-12635,couchdb,CVE-2017-12635,sensitive-data-exposure,nosql-injection,3,0.6,0,0,1,0,2,2,couchdb,buildpack-deps:focal-curl | vulhub/couchdb:2.1.0,5984:5984/tcp,vulhub_directory_metadata_heuristic
+couchdb-cve-2017-12635,couchdb,CVE-2017-12635,sqli,nosql-injection,4,0.42,0,0,1,0,2,2,couchdb,buildpack-deps:focal-curl | vulhub/couchdb:2.1.0,5984:5984/tcp,vulhub_directory_metadata_heuristic
+craftcms-cve-2023-41892,craftcms,CVE-2023-41892,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,0,craftcms,mysql:5.7 | vulhub/craftcms:4.4.14,8088:80/tcp,vulhub_directory_metadata_heuristic
+craftcms-cve-2023-41892,craftcms,CVE-2023-41892,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,0,craftcms,mysql:5.7 | vulhub/craftcms:4.4.14,8088:80/tcp,vulhub_directory_metadata_heuristic
+craftcms-cve-2023-41892,craftcms,CVE-2023-41892,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,0,craftcms,mysql:5.7 | vulhub/craftcms:4.4.14,8088:80/tcp,vulhub_directory_metadata_heuristic
+craftcms-cve-2023-41892,craftcms,CVE-2023-41892,command-injection,auth-bypass,4,0.42,0,0,1,1,2,0,craftcms,mysql:5.7 | vulhub/craftcms:4.4.14,8088:80/tcp,vulhub_directory_metadata_heuristic
+django-cve-2019-14234,django,CVE-2019-14234,command-injection,command-injection,1,0.96,1,1,1,1,2,2,django,postgres:9.6-alpine | vulhub/django:2.2.3,8000:8000/tcp,vulhub_directory_metadata_heuristic
+django-cve-2019-14234,django,CVE-2019-14234,auth-bypass,command-injection,2,0.78,1,0,1,1,2,2,django,postgres:9.6-alpine | vulhub/django:2.2.3,8000:8000/tcp,vulhub_directory_metadata_heuristic
+django-cve-2019-14234,django,CVE-2019-14234,file-upload,command-injection,3,0.6,0,0,1,1,2,2,django,postgres:9.6-alpine | vulhub/django:2.2.3,8000:8000/tcp,vulhub_directory_metadata_heuristic
+django-cve-2019-14234,django,CVE-2019-14234,deserialization,command-injection,4,0.42,0,0,1,1,2,2,django,postgres:9.6-alpine | vulhub/django:2.2.3,8000:8000/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2014-3704,drupal,CVE-2014-3704,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,0,drupal,mysql:5.5 | vulhub/drupal:7.31,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2014-3704,drupal,CVE-2014-3704,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,0,drupal,mysql:5.5 | vulhub/drupal:7.31,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2014-3704,drupal,CVE-2014-3704,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,0,drupal,mysql:5.5 | vulhub/drupal:7.31,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2014-3704,drupal,CVE-2014-3704,command-injection,auth-bypass,4,0.42,0,0,1,1,2,0,drupal,mysql:5.5 | vulhub/drupal:7.31,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2018-7600,drupal,CVE-2018-7600,sqli,sqli,1,0.96,1,1,1,1,1,0,drupal,vulhub/drupal:8.5.0,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2018-7600,drupal,CVE-2018-7600,auth-bypass,sqli,2,0.78,1,0,1,1,1,0,drupal,vulhub/drupal:8.5.0,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2018-7600,drupal,CVE-2018-7600,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,1,0,drupal,vulhub/drupal:8.5.0,8080:80/tcp,vulhub_directory_metadata_heuristic
+drupal-cve-2018-7600,drupal,CVE-2018-7600,xss,sqli,4,0.42,0,0,1,1,1,0,drupal,vulhub/drupal:8.5.0,8080:80/tcp,vulhub_directory_metadata_heuristic
+elasticsearch-cve-2015-1427,elasticsearch,CVE-2015-1427,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,0,elasticsearch,vulhub/elasticsearch:1.4.2,9200:9200/tcp | 9300:9300/tcp,vulhub_directory_metadata_heuristic
+elasticsearch-cve-2015-1427,elasticsearch,CVE-2015-1427,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,0,elasticsearch,vulhub/elasticsearch:1.4.2,9200:9200/tcp | 9300:9300/tcp,vulhub_directory_metadata_heuristic
+elasticsearch-cve-2015-1427,elasticsearch,CVE-2015-1427,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,0,elasticsearch,vulhub/elasticsearch:1.4.2,9200:9200/tcp | 9300:9300/tcp,vulhub_directory_metadata_heuristic
+elasticsearch-cve-2015-1427,elasticsearch,CVE-2015-1427,command-injection,auth-bypass,4,0.42,0,0,2,0,1,0,elasticsearch,vulhub/elasticsearch:1.4.2,9200:9200/tcp | 9300:9300/tcp,vulhub_directory_metadata_heuristic
+flask-ssti,flask,,command-injection,command-injection,1,0.96,1,1,1,1,1,0,flask,vulhub/flask:1.1.1,8000:8000/tcp,vulhub_directory_metadata_heuristic
+flask-ssti,flask,,auth-bypass,command-injection,2,0.78,1,0,1,1,1,0,flask,vulhub/flask:1.1.1,8000:8000/tcp,vulhub_directory_metadata_heuristic
+flask-ssti,flask,,file-upload,command-injection,3,0.6,0,0,1,1,1,0,flask,vulhub/flask:1.1.1,8000:8000/tcp,vulhub_directory_metadata_heuristic
+flask-ssti,flask,,deserialization,command-injection,4,0.42,0,0,1,1,1,0,flask,vulhub/flask:1.1.1,8000:8000/tcp,vulhub_directory_metadata_heuristic
+flink-cve-2020-17518,flink,CVE-2020-17518,file-inclusion,file-inclusion,1,0.96,1,1,2,1,1,0,flink,vulhub/flink:1.11.2,8081:8081/tcp | 6123:6123/tcp,vulhub_directory_metadata_heuristic
+flink-cve-2020-17518,flink,CVE-2020-17518,sensitive-data-exposure,file-inclusion,2,0.78,1,0,2,1,1,0,flink,vulhub/flink:1.11.2,8081:8081/tcp | 6123:6123/tcp,vulhub_directory_metadata_heuristic
+flink-cve-2020-17518,flink,CVE-2020-17518,auth-bypass,file-inclusion,3,0.6,0,0,2,1,1,0,flink,vulhub/flink:1.11.2,8081:8081/tcp | 6123:6123/tcp,vulhub_directory_metadata_heuristic
+flink-cve-2020-17518,flink,CVE-2020-17518,command-injection,file-inclusion,4,0.42,0,0,2,1,1,0,flink,vulhub/flink:1.11.2,8081:8081/tcp | 6123:6123/tcp,vulhub_directory_metadata_heuristic
+geoserver-cve-2024-36401,geoserver,CVE-2024-36401,auth-bypass,auth-bypass,1,0.96,1,1,2,1,1,0,geoserver,vulhub/geoserver:2.23.2,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+geoserver-cve-2024-36401,geoserver,CVE-2024-36401,broken-access-control,auth-bypass,2,0.78,1,0,2,1,1,0,geoserver,vulhub/geoserver:2.23.2,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+geoserver-cve-2024-36401,geoserver,CVE-2024-36401,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,1,1,0,geoserver,vulhub/geoserver:2.23.2,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+geoserver-cve-2024-36401,geoserver,CVE-2024-36401,command-injection,auth-bypass,4,0.42,0,0,2,1,1,0,geoserver,vulhub/geoserver:2.23.2,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+gitlab-cve-2021-22205,gitlab,CVE-2021-22205,file-upload,file-upload,1,0.96,1,1,2,1,3,3,gitlab,postgres:12-alpine | redis:5.0.9-alpine | vulhub/gitlab:13.10.1,8080:80/tcp | 10022:22/tcp,vulhub_directory_metadata_heuristic
+gitlab-cve-2021-22205,gitlab,CVE-2021-22205,command-injection,file-upload,2,0.78,1,0,2,1,3,3,gitlab,postgres:12-alpine | redis:5.0.9-alpine | vulhub/gitlab:13.10.1,8080:80/tcp | 10022:22/tcp,vulhub_directory_metadata_heuristic
+gitlab-cve-2021-22205,gitlab,CVE-2021-22205,xss,file-upload,3,0.6,0,0,2,1,3,3,gitlab,postgres:12-alpine | redis:5.0.9-alpine | vulhub/gitlab:13.10.1,8080:80/tcp | 10022:22/tcp,vulhub_directory_metadata_heuristic
+gitlab-cve-2021-22205,gitlab,CVE-2021-22205,auth-bypass,file-upload,4,0.42,0,0,2,1,3,3,gitlab,postgres:12-alpine | redis:5.0.9-alpine | vulhub/gitlab:13.10.1,8080:80/tcp | 10022:22/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2021-43798,grafana,CVE-2021-43798,file-inclusion,file-inclusion,1,0.96,1,1,1,1,1,1,grafana,vulhub/grafana:8.2.6,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2021-43798,grafana,CVE-2021-43798,sensitive-data-exposure,file-inclusion,2,0.78,1,0,1,1,1,1,grafana,vulhub/grafana:8.2.6,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2021-43798,grafana,CVE-2021-43798,auth-bypass,file-inclusion,3,0.6,0,0,1,1,1,1,grafana,vulhub/grafana:8.2.6,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2021-43798,grafana,CVE-2021-43798,command-injection,file-inclusion,4,0.42,0,0,1,1,1,1,grafana,vulhub/grafana:8.2.6,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2024-9264,grafana,CVE-2024-9264,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,1,grafana,vulhub/grafana:11.0.0,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2024-9264,grafana,CVE-2024-9264,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,1,grafana,vulhub/grafana:11.0.0,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2024-9264,grafana,CVE-2024-9264,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,1,grafana,vulhub/grafana:11.0.0,3000:3000/tcp,vulhub_directory_metadata_heuristic
+grafana-cve-2024-9264,grafana,CVE-2024-9264,command-injection,auth-bypass,4,0.42,0,0,1,1,1,1,grafana,vulhub/grafana:11.0.0,3000:3000/tcp,vulhub_directory_metadata_heuristic
+h2database-cve-2021-42392,h2database,CVE-2021-42392,auth-bypass,auth-bypass,1,0.96,1,1,2,1,1,1,h2database,vulhub/spring-with-h2database:2.0.204,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+h2database-cve-2021-42392,h2database,CVE-2021-42392,broken-access-control,auth-bypass,2,0.78,1,0,2,1,1,1,h2database,vulhub/spring-with-h2database:2.0.204,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+h2database-cve-2021-42392,h2database,CVE-2021-42392,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,1,1,1,h2database,vulhub/spring-with-h2database:2.0.204,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+h2database-cve-2021-42392,h2database,CVE-2021-42392,command-injection,auth-bypass,4,0.42,0,0,2,1,1,1,h2database,vulhub/spring-with-h2database:2.0.204,8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+httpd-cve-2021-41773,httpd,CVE-2021-41773,file-inclusion,file-inclusion,1,0.96,1,1,1,1,0,0,httpd,none,8080:80/tcp,vulhub_directory_metadata_heuristic
+httpd-cve-2021-41773,httpd,CVE-2021-41773,sensitive-data-exposure,file-inclusion,2,0.78,1,0,1,1,0,0,httpd,none,8080:80/tcp,vulhub_directory_metadata_heuristic
+httpd-cve-2021-41773,httpd,CVE-2021-41773,auth-bypass,file-inclusion,3,0.6,0,0,1,1,0,0,httpd,none,8080:80/tcp,vulhub_directory_metadata_heuristic
+httpd-cve-2021-41773,httpd,CVE-2021-41773,command-injection,file-inclusion,4,0.42,0,0,1,1,0,0,httpd,none,8080:80/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2018-1000861,jenkins,CVE-2018-1000861,auth-bypass,auth-bypass,1,0.96,1,1,2,1,1,1,jenkins,vulhub/jenkins:2.138,50000:50000/tcp | 8080:8080/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2018-1000861,jenkins,CVE-2018-1000861,broken-access-control,auth-bypass,2,0.78,1,0,2,1,1,1,jenkins,vulhub/jenkins:2.138,50000:50000/tcp | 8080:8080/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2018-1000861,jenkins,CVE-2018-1000861,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,1,1,1,jenkins,vulhub/jenkins:2.138,50000:50000/tcp | 8080:8080/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2018-1000861,jenkins,CVE-2018-1000861,command-injection,auth-bypass,4,0.42,0,0,2,1,1,1,jenkins,vulhub/jenkins:2.138,50000:50000/tcp | 8080:8080/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2024-23897,jenkins,CVE-2024-23897,command-injection,command-injection,1,0.96,1,1,3,1,1,1,jenkins,vulhub/jenkins:2.441,50000:50000/tcp | 8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2024-23897,jenkins,CVE-2024-23897,auth-bypass,command-injection,2,0.78,1,0,3,1,1,1,jenkins,vulhub/jenkins:2.441,50000:50000/tcp | 8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2024-23897,jenkins,CVE-2024-23897,file-upload,command-injection,3,0.6,0,0,3,1,1,1,jenkins,vulhub/jenkins:2.441,50000:50000/tcp | 8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+jenkins-cve-2024-23897,jenkins,CVE-2024-23897,deserialization,command-injection,4,0.42,0,0,3,1,1,1,jenkins,vulhub/jenkins:2.441,50000:50000/tcp | 8080:8080/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+jira-cve-2019-11581,jira,CVE-2019-11581,command-injection,command-injection,1,0.96,1,1,1,1,1,2,jira,vulhub/jira:8.1.0,8080:8080/tcp,vulhub_directory_metadata_heuristic
+jira-cve-2019-11581,jira,CVE-2019-11581,auth-bypass,command-injection,2,0.78,1,0,1,1,1,2,jira,vulhub/jira:8.1.0,8080:8080/tcp,vulhub_directory_metadata_heuristic
+jira-cve-2019-11581,jira,CVE-2019-11581,file-upload,command-injection,3,0.6,0,0,1,1,1,2,jira,vulhub/jira:8.1.0,8080:8080/tcp,vulhub_directory_metadata_heuristic
+jira-cve-2019-11581,jira,CVE-2019-11581,deserialization,command-injection,4,0.42,0,0,1,1,1,2,jira,vulhub/jira:8.1.0,8080:8080/tcp,vulhub_directory_metadata_heuristic
+joomla-cve-2023-23752,joomla,CVE-2023-23752,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,0,joomla,mysql:5.7 | vulhub/joomla:4.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+joomla-cve-2023-23752,joomla,CVE-2023-23752,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,0,joomla,mysql:5.7 | vulhub/joomla:4.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+joomla-cve-2023-23752,joomla,CVE-2023-23752,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,0,joomla,mysql:5.7 | vulhub/joomla:4.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+joomla-cve-2023-23752,joomla,CVE-2023-23752,command-injection,auth-bypass,4,0.42,0,0,1,1,2,0,joomla,mysql:5.7 | vulhub/joomla:4.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+jupyter-notebook-rce,jupyter,,auth-bypass,auth-bypass,1,0.96,1,1,1,0,1,0,jupyter,vulhub/jupyter-notebook:5.2.2,8888:8888/tcp,vulhub_directory_metadata_heuristic
+jupyter-notebook-rce,jupyter,,broken-access-control,auth-bypass,2,0.78,1,0,1,0,1,0,jupyter,vulhub/jupyter-notebook:5.2.2,8888:8888/tcp,vulhub_directory_metadata_heuristic
+jupyter-notebook-rce,jupyter,,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,0,1,0,jupyter,vulhub/jupyter-notebook:5.2.2,8888:8888/tcp,vulhub_directory_metadata_heuristic
+jupyter-notebook-rce,jupyter,,command-injection,auth-bypass,4,0.42,0,0,1,0,1,0,jupyter,vulhub/jupyter-notebook:5.2.2,8888:8888/tcp,vulhub_directory_metadata_heuristic
+kibana-cve-2019-7609,kibana,CVE-2019-7609,command-injection,command-injection,1,0.96,1,1,1,1,2,0,kibana,vulhub/elasticsearch:6.8.6 | vulhub/kibana:6.5.4,5601:5601/tcp,vulhub_directory_metadata_heuristic
+kibana-cve-2019-7609,kibana,CVE-2019-7609,auth-bypass,command-injection,2,0.78,1,0,1,1,2,0,kibana,vulhub/elasticsearch:6.8.6 | vulhub/kibana:6.5.4,5601:5601/tcp,vulhub_directory_metadata_heuristic
+kibana-cve-2019-7609,kibana,CVE-2019-7609,file-upload,command-injection,3,0.6,0,0,1,1,2,0,kibana,vulhub/elasticsearch:6.8.6 | vulhub/kibana:6.5.4,5601:5601/tcp,vulhub_directory_metadata_heuristic
+kibana-cve-2019-7609,kibana,CVE-2019-7609,deserialization,command-injection,4,0.42,0,0,1,1,2,0,kibana,vulhub/elasticsearch:6.8.6 | vulhub/kibana:6.5.4,5601:5601/tcp,vulhub_directory_metadata_heuristic
+laravel-cve-2021-3129,laravel,CVE-2021-3129,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,0,laravel,vulhub/laravel:8.4.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+laravel-cve-2021-3129,laravel,CVE-2021-3129,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,0,laravel,vulhub/laravel:8.4.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+laravel-cve-2021-3129,laravel,CVE-2021-3129,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,0,laravel,vulhub/laravel:8.4.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+laravel-cve-2021-3129,laravel,CVE-2021-3129,command-injection,auth-bypass,4,0.42,0,0,1,1,1,0,laravel,vulhub/laravel:8.4.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+log4j-cve-2021-44228,log4j,CVE-2021-44228,command-injection,command-injection,1,0.96,1,1,2,1,1,0,log4j,vulhub/solr:8.11.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+log4j-cve-2021-44228,log4j,CVE-2021-44228,auth-bypass,command-injection,2,0.78,1,0,2,1,1,0,log4j,vulhub/solr:8.11.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+log4j-cve-2021-44228,log4j,CVE-2021-44228,file-upload,command-injection,3,0.6,0,0,2,1,1,0,log4j,vulhub/solr:8.11.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+log4j-cve-2021-44228,log4j,CVE-2021-44228,deserialization,command-injection,4,0.42,0,0,2,1,1,0,log4j,vulhub/solr:8.11.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+magento-2-2-sqli,magento,,sqli,sqli,1,0.96,1,1,1,1,2,0,magento,mysql:5.7 | vulhub/magento:2.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+magento-2-2-sqli,magento,,auth-bypass,sqli,2,0.78,1,0,1,1,2,0,magento,mysql:5.7 | vulhub/magento:2.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+magento-2-2-sqli,magento,,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,2,0,magento,mysql:5.7 | vulhub/magento:2.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+magento-2-2-sqli,magento,,xss,sqli,4,0.42,0,0,1,1,2,0,magento,mysql:5.7 | vulhub/magento:2.2.7,8080:80/tcp,vulhub_directory_metadata_heuristic
+metabase-cve-2021-41277,metabase,CVE-2021-41277,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,1,metabase,vulhub/metabase:0.40.4,3000:3000/tcp,vulhub_directory_metadata_heuristic
+metabase-cve-2021-41277,metabase,CVE-2021-41277,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,1,metabase,vulhub/metabase:0.40.4,3000:3000/tcp,vulhub_directory_metadata_heuristic
+metabase-cve-2021-41277,metabase,CVE-2021-41277,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,1,metabase,vulhub/metabase:0.40.4,3000:3000/tcp,vulhub_directory_metadata_heuristic
+metabase-cve-2021-41277,metabase,CVE-2021-41277,command-injection,auth-bypass,4,0.42,0,0,1,1,1,1,metabase,vulhub/metabase:0.40.4,3000:3000/tcp,vulhub_directory_metadata_heuristic
+mongo-express-cve-2019-10758,mongo-express,CVE-2019-10758,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,2,mongo-express,mongo:3.4 | vulhub/mongo-express:0.53.0,8081:8081/tcp,vulhub_directory_metadata_heuristic
+mongo-express-cve-2019-10758,mongo-express,CVE-2019-10758,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,2,mongo-express,mongo:3.4 | vulhub/mongo-express:0.53.0,8081:8081/tcp,vulhub_directory_metadata_heuristic
+mongo-express-cve-2019-10758,mongo-express,CVE-2019-10758,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,2,mongo-express,mongo:3.4 | vulhub/mongo-express:0.53.0,8081:8081/tcp,vulhub_directory_metadata_heuristic
+mongo-express-cve-2019-10758,mongo-express,CVE-2019-10758,command-injection,auth-bypass,4,0.42,0,0,1,1,2,2,mongo-express,mongo:3.4 | vulhub/mongo-express:0.53.0,8081:8081/tcp,vulhub_directory_metadata_heuristic
+n8n-cve-2026-21858,n8n,CVE-2026-21858,file-inclusion,file-inclusion,1,0.96,1,1,1,0,1,1,n8n,vulhub/n8n:1.65.0,5678:5678/tcp,vulhub_directory_metadata_heuristic
+n8n-cve-2026-21858,n8n,CVE-2026-21858,sensitive-data-exposure,file-inclusion,2,0.78,1,0,1,0,1,1,n8n,vulhub/n8n:1.65.0,5678:5678/tcp,vulhub_directory_metadata_heuristic
+n8n-cve-2026-21858,n8n,CVE-2026-21858,auth-bypass,file-inclusion,3,0.6,0,0,1,0,1,1,n8n,vulhub/n8n:1.65.0,5678:5678/tcp,vulhub_directory_metadata_heuristic
+n8n-cve-2026-21858,n8n,CVE-2026-21858,command-injection,file-inclusion,4,0.42,0,0,1,0,1,1,n8n,vulhub/n8n:1.65.0,5678:5678/tcp,vulhub_directory_metadata_heuristic
+nacos-cve-2021-29441,nacos,CVE-2021-29441,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,1,nacos,vulhub/nacos:1.4.0,8848:8848/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+nacos-cve-2021-29441,nacos,CVE-2021-29441,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,1,nacos,vulhub/nacos:1.4.0,8848:8848/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+nacos-cve-2021-29441,nacos,CVE-2021-29441,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,1,nacos,vulhub/nacos:1.4.0,8848:8848/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+nacos-cve-2021-29441,nacos,CVE-2021-29441,command-injection,auth-bypass,4,0.42,0,0,2,0,1,1,nacos,vulhub/nacos:1.4.0,8848:8848/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+next-js-cve-2025-29927,next.js,CVE-2025-29927,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,1,next.js,vulhub/nextjs:15.2.2,3000:3000/tcp,vulhub_directory_metadata_heuristic
+next-js-cve-2025-29927,next.js,CVE-2025-29927,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,1,next.js,vulhub/nextjs:15.2.2,3000:3000/tcp,vulhub_directory_metadata_heuristic
+next-js-cve-2025-29927,next.js,CVE-2025-29927,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,1,next.js,vulhub/nextjs:15.2.2,3000:3000/tcp,vulhub_directory_metadata_heuristic
+next-js-cve-2025-29927,next.js,CVE-2025-29927,command-injection,auth-bypass,4,0.42,0,0,1,1,1,1,next.js,vulhub/nextjs:15.2.2,3000:3000/tcp,vulhub_directory_metadata_heuristic
+nexus-cve-2020-10199,nexus,CVE-2020-10199,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,0,nexus,vulhub/nexus:3.21.1,8081:8081/tcp,vulhub_directory_metadata_heuristic
+nexus-cve-2020-10199,nexus,CVE-2020-10199,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,0,nexus,vulhub/nexus:3.21.1,8081:8081/tcp,vulhub_directory_metadata_heuristic
+nexus-cve-2020-10199,nexus,CVE-2020-10199,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,0,nexus,vulhub/nexus:3.21.1,8081:8081/tcp,vulhub_directory_metadata_heuristic
+nexus-cve-2020-10199,nexus,CVE-2020-10199,command-injection,auth-bypass,4,0.42,0,0,1,1,1,0,nexus,vulhub/nexus:3.21.1,8081:8081/tcp,vulhub_directory_metadata_heuristic
+nginx-cve-2017-7529,nginx,CVE-2017-7529,command-injection,command-injection,1,0.96,1,1,1,1,1,0,nginx,vulhub/nginx:1.13.2,8080:8080/tcp,vulhub_directory_metadata_heuristic
+nginx-cve-2017-7529,nginx,CVE-2017-7529,auth-bypass,command-injection,2,0.78,1,0,1,1,1,0,nginx,vulhub/nginx:1.13.2,8080:8080/tcp,vulhub_directory_metadata_heuristic
+nginx-cve-2017-7529,nginx,CVE-2017-7529,file-upload,command-injection,3,0.6,0,0,1,1,1,0,nginx,vulhub/nginx:1.13.2,8080:8080/tcp,vulhub_directory_metadata_heuristic
+nginx-cve-2017-7529,nginx,CVE-2017-7529,deserialization,command-injection,4,0.42,0,0,1,1,1,0,nginx,vulhub/nginx:1.13.2,8080:8080/tcp,vulhub_directory_metadata_heuristic
+nginx-ui-cve-2026-27944,nginx-ui,CVE-2026-27944,sqli,sqli,1,0.96,1,1,1,1,1,1,nginx-ui,vulhub/nginx-ui:2.3.2,9000:9000/tcp,vulhub_directory_metadata_heuristic
+nginx-ui-cve-2026-27944,nginx-ui,CVE-2026-27944,auth-bypass,sqli,2,0.78,1,0,1,1,1,1,nginx-ui,vulhub/nginx-ui:2.3.2,9000:9000/tcp,vulhub_directory_metadata_heuristic
+nginx-ui-cve-2026-27944,nginx-ui,CVE-2026-27944,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,1,1,nginx-ui,vulhub/nginx-ui:2.3.2,9000:9000/tcp,vulhub_directory_metadata_heuristic
+nginx-ui-cve-2026-27944,nginx-ui,CVE-2026-27944,xss,sqli,4,0.42,0,0,1,1,1,1,nginx-ui,vulhub/nginx-ui:2.3.2,9000:9000/tcp,vulhub_directory_metadata_heuristic
+ofbiz-cve-2023-51467,ofbiz,CVE-2023-51467,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,0,ofbiz,vulhub/ofbiz:18.12.10,8443:8443/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+ofbiz-cve-2023-51467,ofbiz,CVE-2023-51467,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,0,ofbiz,vulhub/ofbiz:18.12.10,8443:8443/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+ofbiz-cve-2023-51467,ofbiz,CVE-2023-51467,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,0,ofbiz,vulhub/ofbiz:18.12.10,8443:8443/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+ofbiz-cve-2023-51467,ofbiz,CVE-2023-51467,command-injection,auth-bypass,4,0.42,0,0,2,0,1,0,ofbiz,vulhub/ofbiz:18.12.10,8443:8443/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+openfire-cve-2023-32315,openfire,CVE-2023-32315,file-inclusion,file-inclusion,1,0.96,1,1,1,0,1,0,openfire,vulhub/openfire:4.7.4,9090:9090/tcp,vulhub_directory_metadata_heuristic
+openfire-cve-2023-32315,openfire,CVE-2023-32315,sensitive-data-exposure,file-inclusion,2,0.78,1,0,1,0,1,0,openfire,vulhub/openfire:4.7.4,9090:9090/tcp,vulhub_directory_metadata_heuristic
+openfire-cve-2023-32315,openfire,CVE-2023-32315,auth-bypass,file-inclusion,3,0.6,0,0,1,0,1,0,openfire,vulhub/openfire:4.7.4,9090:9090/tcp,vulhub_directory_metadata_heuristic
+openfire-cve-2023-32315,openfire,CVE-2023-32315,command-injection,file-inclusion,4,0.42,0,0,1,0,1,0,openfire,vulhub/openfire:4.7.4,9090:9090/tcp,vulhub_directory_metadata_heuristic
+php-cve-2012-1823,php,CVE-2012-1823,auth-bypass,auth-bypass,1,0.96,1,1,1,1,1,0,php,vulhub/php:5.4.1-cgi,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2012-1823,php,CVE-2012-1823,broken-access-control,auth-bypass,2,0.78,1,0,1,1,1,0,php,vulhub/php:5.4.1-cgi,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2012-1823,php,CVE-2012-1823,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,1,0,php,vulhub/php:5.4.1-cgi,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2012-1823,php,CVE-2012-1823,command-injection,auth-bypass,4,0.42,0,0,1,1,1,0,php,vulhub/php:5.4.1-cgi,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2019-11043,php,CVE-2019-11043,command-injection,command-injection,1,0.96,1,1,1,1,2,0,php,nginx:1 | vulhub/php:7.2.10-fpm,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2019-11043,php,CVE-2019-11043,auth-bypass,command-injection,2,0.78,1,0,1,1,2,0,php,nginx:1 | vulhub/php:7.2.10-fpm,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2019-11043,php,CVE-2019-11043,file-upload,command-injection,3,0.6,0,0,1,1,2,0,php,nginx:1 | vulhub/php:7.2.10-fpm,8080:80/tcp,vulhub_directory_metadata_heuristic
+php-cve-2019-11043,php,CVE-2019-11043,deserialization,command-injection,4,0.42,0,0,1,1,2,0,php,nginx:1 | vulhub/php:7.2.10-fpm,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpmyadmin-cve-2018-12613,phpmyadmin,CVE-2018-12613,command-injection,command-injection,1,0.96,1,1,1,1,2,0,phpmyadmin,mysql:5.5 | vulhub/phpmyadmin:4.8.1,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpmyadmin-cve-2018-12613,phpmyadmin,CVE-2018-12613,auth-bypass,command-injection,2,0.78,1,0,1,1,2,0,phpmyadmin,mysql:5.5 | vulhub/phpmyadmin:4.8.1,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpmyadmin-cve-2018-12613,phpmyadmin,CVE-2018-12613,file-upload,command-injection,3,0.6,0,0,1,1,2,0,phpmyadmin,mysql:5.5 | vulhub/phpmyadmin:4.8.1,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpmyadmin-cve-2018-12613,phpmyadmin,CVE-2018-12613,deserialization,command-injection,4,0.42,0,0,1,1,2,0,phpmyadmin,mysql:5.5 | vulhub/phpmyadmin:4.8.1,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpunit-cve-2017-9841,phpunit,CVE-2017-9841,command-injection,command-injection,1,0.96,1,1,1,1,1,0,phpunit,vulhub/phpunit:5.6.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpunit-cve-2017-9841,phpunit,CVE-2017-9841,auth-bypass,command-injection,2,0.78,1,0,1,1,1,0,phpunit,vulhub/phpunit:5.6.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpunit-cve-2017-9841,phpunit,CVE-2017-9841,file-upload,command-injection,3,0.6,0,0,1,1,1,0,phpunit,vulhub/phpunit:5.6.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+phpunit-cve-2017-9841,phpunit,CVE-2017-9841,deserialization,command-injection,4,0.42,0,0,1,1,1,0,phpunit,vulhub/phpunit:5.6.2,8080:80/tcp,vulhub_directory_metadata_heuristic
+redis-4-unacc,redis,,file-upload,file-upload,1,0.96,1,1,1,0,1,0,redis,vulhub/redis:4.0.14,6379:6379/tcp,vulhub_directory_metadata_heuristic
+redis-4-unacc,redis,,command-injection,file-upload,2,0.78,1,0,1,0,1,0,redis,vulhub/redis:4.0.14,6379:6379/tcp,vulhub_directory_metadata_heuristic
+redis-4-unacc,redis,,xss,file-upload,3,0.6,0,0,1,0,1,0,redis,vulhub/redis:4.0.14,6379:6379/tcp,vulhub_directory_metadata_heuristic
+redis-4-unacc,redis,,auth-bypass,file-upload,4,0.42,0,0,1,0,1,0,redis,vulhub/redis:4.0.14,6379:6379/tcp,vulhub_directory_metadata_heuristic
+rocketchat-cve-2021-22911,rocketchat,CVE-2021-22911,sqli,sqli,1,0.96,1,1,1,1,2,3,rocketchat,mongo:4.0 | vulhub/rocketchat:3.12.1,3000:3000/tcp,vulhub_directory_metadata_heuristic
+rocketchat-cve-2021-22911,rocketchat,CVE-2021-22911,auth-bypass,sqli,2,0.78,1,0,1,1,2,3,rocketchat,mongo:4.0 | vulhub/rocketchat:3.12.1,3000:3000/tcp,vulhub_directory_metadata_heuristic
+rocketchat-cve-2021-22911,rocketchat,CVE-2021-22911,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,2,3,rocketchat,mongo:4.0 | vulhub/rocketchat:3.12.1,3000:3000/tcp,vulhub_directory_metadata_heuristic
+rocketchat-cve-2021-22911,rocketchat,CVE-2021-22911,xss,sqli,4,0.42,0,0,1,1,2,3,rocketchat,mongo:4.0 | vulhub/rocketchat:3.12.1,3000:3000/tcp,vulhub_directory_metadata_heuristic
+rocketmq-cve-2023-33246,rocketmq,CVE-2023-33246,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,0,rocketmq,vulhub/rocketmq:5.1.0,10911:10911/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+rocketmq-cve-2023-33246,rocketmq,CVE-2023-33246,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,0,rocketmq,vulhub/rocketmq:5.1.0,10911:10911/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+rocketmq-cve-2023-33246,rocketmq,CVE-2023-33246,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,0,rocketmq,vulhub/rocketmq:5.1.0,10911:10911/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+rocketmq-cve-2023-33246,rocketmq,CVE-2023-33246,command-injection,auth-bypass,4,0.42,0,0,2,0,1,0,rocketmq,vulhub/rocketmq:5.1.0,10911:10911/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+shiro-cve-2016-4437,shiro,CVE-2016-4437,deserialization,deserialization,1,0.96,1,1,1,1,1,0,shiro,vulhub/shiro:1.2.4,8080:8080/tcp,vulhub_directory_metadata_heuristic
+shiro-cve-2016-4437,shiro,CVE-2016-4437,command-injection,deserialization,2,0.78,1,0,1,1,1,0,shiro,vulhub/shiro:1.2.4,8080:8080/tcp,vulhub_directory_metadata_heuristic
+shiro-cve-2016-4437,shiro,CVE-2016-4437,auth-bypass,deserialization,3,0.6,0,0,1,1,1,0,shiro,vulhub/shiro:1.2.4,8080:8080/tcp,vulhub_directory_metadata_heuristic
+shiro-cve-2016-4437,shiro,CVE-2016-4437,file-inclusion,deserialization,4,0.42,0,0,1,1,1,0,shiro,vulhub/shiro:1.2.4,8080:8080/tcp,vulhub_directory_metadata_heuristic
+showdoc-3-2-5-sqli,showdoc,,sqli,sqli,1,0.96,1,1,1,1,1,0,showdoc,vulhub/showdoc:3.2.4,8080:80/tcp,vulhub_directory_metadata_heuristic
+showdoc-3-2-5-sqli,showdoc,,auth-bypass,sqli,2,0.78,1,0,1,1,1,0,showdoc,vulhub/showdoc:3.2.4,8080:80/tcp,vulhub_directory_metadata_heuristic
+showdoc-3-2-5-sqli,showdoc,,sensitive-data-exposure,sqli,3,0.6,0,0,1,1,1,0,showdoc,vulhub/showdoc:3.2.4,8080:80/tcp,vulhub_directory_metadata_heuristic
+showdoc-3-2-5-sqli,showdoc,,xss,sqli,4,0.42,0,0,1,1,1,0,showdoc,vulhub/showdoc:3.2.4,8080:80/tcp,vulhub_directory_metadata_heuristic
+solr-cve-2019-17558,solr,CVE-2019-17558,file-upload,file-upload,1,0.96,1,1,2,1,1,0,solr,vulhub/solr:8.2.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+solr-cve-2019-17558,solr,CVE-2019-17558,command-injection,file-upload,2,0.78,1,0,2,1,1,0,solr,vulhub/solr:8.2.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+solr-cve-2019-17558,solr,CVE-2019-17558,xss,file-upload,3,0.6,0,0,2,1,1,0,solr,vulhub/solr:8.2.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+solr-cve-2019-17558,solr,CVE-2019-17558,auth-bypass,file-upload,4,0.42,0,0,2,1,1,0,solr,vulhub/solr:8.2.0,8983:8983/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+spring-cve-2022-22965,spring,CVE-2022-22965,command-injection,command-injection,1,0.96,1,1,1,1,1,0,spring,vulhub/spring-webmvc:5.3.17,8080:8080/tcp,vulhub_directory_metadata_heuristic
+spring-cve-2022-22965,spring,CVE-2022-22965,auth-bypass,command-injection,2,0.78,1,0,1,1,1,0,spring,vulhub/spring-webmvc:5.3.17,8080:8080/tcp,vulhub_directory_metadata_heuristic
+spring-cve-2022-22965,spring,CVE-2022-22965,file-upload,command-injection,3,0.6,0,0,1,1,1,0,spring,vulhub/spring-webmvc:5.3.17,8080:8080/tcp,vulhub_directory_metadata_heuristic
+spring-cve-2022-22965,spring,CVE-2022-22965,deserialization,command-injection,4,0.42,0,0,1,1,1,0,spring,vulhub/spring-webmvc:5.3.17,8080:8080/tcp,vulhub_directory_metadata_heuristic
+struts2-s2-045,struts2,,file-upload,file-upload,1,0.96,1,1,1,1,1,0,struts2,vulhub/struts2:2.3.30,8080:8080/tcp,vulhub_directory_metadata_heuristic
+struts2-s2-045,struts2,,command-injection,file-upload,2,0.78,1,0,1,1,1,0,struts2,vulhub/struts2:2.3.30,8080:8080/tcp,vulhub_directory_metadata_heuristic
+struts2-s2-045,struts2,,xss,file-upload,3,0.6,0,0,1,1,1,0,struts2,vulhub/struts2:2.3.30,8080:8080/tcp,vulhub_directory_metadata_heuristic
+struts2-s2-045,struts2,,auth-bypass,file-upload,4,0.42,0,0,1,1,1,0,struts2,vulhub/struts2:2.3.30,8080:8080/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2023-42793,teamcity,CVE-2023-42793,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,1,teamcity,vulhub/teamcity:2023.05.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2023-42793,teamcity,CVE-2023-42793,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,1,teamcity,vulhub/teamcity:2023.05.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2023-42793,teamcity,CVE-2023-42793,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,1,teamcity,vulhub/teamcity:2023.05.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2023-42793,teamcity,CVE-2023-42793,command-injection,auth-bypass,4,0.42,0,0,2,0,1,1,teamcity,vulhub/teamcity:2023.05.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2024-27198,teamcity,CVE-2024-27198,auth-bypass,auth-bypass,1,0.96,1,1,2,0,1,1,teamcity,vulhub/teamcity:2023.11.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2024-27198,teamcity,CVE-2024-27198,broken-access-control,auth-bypass,2,0.78,1,0,2,0,1,1,teamcity,vulhub/teamcity:2023.11.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2024-27198,teamcity,CVE-2024-27198,sensitive-data-exposure,auth-bypass,3,0.6,0,0,2,0,1,1,teamcity,vulhub/teamcity:2023.11.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+teamcity-cve-2024-27198,teamcity,CVE-2024-27198,command-injection,auth-bypass,4,0.42,0,0,2,0,1,1,teamcity,vulhub/teamcity:2023.11.3,8111:8111/tcp | 5005:5005/tcp,vulhub_directory_metadata_heuristic
+thinkphp-5-0-23-rce,thinkphp,,command-injection,command-injection,1,0.96,1,1,1,1,1,0,thinkphp,vulhub/thinkphp:5.0.23,8080:80/tcp,vulhub_directory_metadata_heuristic
+thinkphp-5-0-23-rce,thinkphp,,auth-bypass,command-injection,2,0.78,1,0,1,1,1,0,thinkphp,vulhub/thinkphp:5.0.23,8080:80/tcp,vulhub_directory_metadata_heuristic
+thinkphp-5-0-23-rce,thinkphp,,file-upload,command-injection,3,0.6,0,0,1,1,1,0,thinkphp,vulhub/thinkphp:5.0.23,8080:80/tcp,vulhub_directory_metadata_heuristic
+thinkphp-5-0-23-rce,thinkphp,,deserialization,command-injection,4,0.42,0,0,1,1,1,0,thinkphp,vulhub/thinkphp:5.0.23,8080:80/tcp,vulhub_directory_metadata_heuristic
+tomcat-cve-2017-12615,tomcat,CVE-2017-12615,auth-bypass,auth-bypass,1,0.96,1,1,1,1,0,0,tomcat,none,8080:8080/tcp,vulhub_directory_metadata_heuristic
+tomcat-cve-2017-12615,tomcat,CVE-2017-12615,broken-access-control,auth-bypass,2,0.78,1,0,1,1,0,0,tomcat,none,8080:8080/tcp,vulhub_directory_metadata_heuristic
+tomcat-cve-2017-12615,tomcat,CVE-2017-12615,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,0,0,tomcat,none,8080:8080/tcp,vulhub_directory_metadata_heuristic
+tomcat-cve-2017-12615,tomcat,CVE-2017-12615,command-injection,auth-bypass,4,0.42,0,0,1,1,0,0,tomcat,none,8080:8080/tcp,vulhub_directory_metadata_heuristic
+weblogic-cve-2020-14882,weblogic,CVE-2020-14882,file-upload,file-upload,1,0.96,1,1,1,0,1,0,weblogic,vulhub/weblogic:12.2.1.3-2018,7001:7001/tcp,vulhub_directory_metadata_heuristic
+weblogic-cve-2020-14882,weblogic,CVE-2020-14882,command-injection,file-upload,2,0.78,1,0,1,0,1,0,weblogic,vulhub/weblogic:12.2.1.3-2018,7001:7001/tcp,vulhub_directory_metadata_heuristic
+weblogic-cve-2020-14882,weblogic,CVE-2020-14882,xss,file-upload,3,0.6,0,0,1,0,1,0,weblogic,vulhub/weblogic:12.2.1.3-2018,7001:7001/tcp,vulhub_directory_metadata_heuristic
+weblogic-cve-2020-14882,weblogic,CVE-2020-14882,auth-bypass,file-upload,4,0.42,0,0,1,0,1,0,weblogic,vulhub/weblogic:12.2.1.3-2018,7001:7001/tcp,vulhub_directory_metadata_heuristic
+webmin-cve-2019-15107,webmin,CVE-2019-15107,auth-bypass,auth-bypass,1,0.96,1,1,1,0,1,0,webmin,vulhub/webmin:1.910,10000:10000/tcp,vulhub_directory_metadata_heuristic
+webmin-cve-2019-15107,webmin,CVE-2019-15107,broken-access-control,auth-bypass,2,0.78,1,0,1,0,1,0,webmin,vulhub/webmin:1.910,10000:10000/tcp,vulhub_directory_metadata_heuristic
+webmin-cve-2019-15107,webmin,CVE-2019-15107,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,0,1,0,webmin,vulhub/webmin:1.910,10000:10000/tcp,vulhub_directory_metadata_heuristic
+webmin-cve-2019-15107,webmin,CVE-2019-15107,command-injection,auth-bypass,4,0.42,0,0,1,0,1,0,webmin,vulhub/webmin:1.910,10000:10000/tcp,vulhub_directory_metadata_heuristic
+wordpress-pwnscriptum,wordpress,,auth-bypass,auth-bypass,1,0.96,1,1,1,1,2,0,wordpress,mysql:5 | vulhub/wordpress:4.6,8080:80/tcp,vulhub_directory_metadata_heuristic
+wordpress-pwnscriptum,wordpress,,broken-access-control,auth-bypass,2,0.78,1,0,1,1,2,0,wordpress,mysql:5 | vulhub/wordpress:4.6,8080:80/tcp,vulhub_directory_metadata_heuristic
+wordpress-pwnscriptum,wordpress,,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,2,0,wordpress,mysql:5 | vulhub/wordpress:4.6,8080:80/tcp,vulhub_directory_metadata_heuristic
+wordpress-pwnscriptum,wordpress,,command-injection,auth-bypass,4,0.42,0,0,1,1,2,0,wordpress,mysql:5 | vulhub/wordpress:4.6,8080:80/tcp,vulhub_directory_metadata_heuristic
+zabbix-cve-2016-10134,zabbix,CVE-2016-10134,auth-bypass,auth-bypass,1,0.96,1,1,1,1,3,0,zabbix,mysql:5 | vulhub/zabbix:3.0.3-server | vulhub/zabbix:3.0.3-web,8080:80/tcp,vulhub_directory_metadata_heuristic
+zabbix-cve-2016-10134,zabbix,CVE-2016-10134,broken-access-control,auth-bypass,2,0.78,1,0,1,1,3,0,zabbix,mysql:5 | vulhub/zabbix:3.0.3-server | vulhub/zabbix:3.0.3-web,8080:80/tcp,vulhub_directory_metadata_heuristic
+zabbix-cve-2016-10134,zabbix,CVE-2016-10134,sensitive-data-exposure,auth-bypass,3,0.6,0,0,1,1,3,0,zabbix,mysql:5 | vulhub/zabbix:3.0.3-server | vulhub/zabbix:3.0.3-web,8080:80/tcp,vulhub_directory_metadata_heuristic
+zabbix-cve-2016-10134,zabbix,CVE-2016-10134,command-injection,auth-bypass,4,0.42,0,0,1,1,3,0,zabbix,mysql:5 | vulhub/zabbix:3.0.3-server | vulhub/zabbix:3.0.3-web,8080:80/tcp,vulhub_directory_metadata_heuristic
