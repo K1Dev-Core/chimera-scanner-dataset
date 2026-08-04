@@ -1,0 +1,161 @@
+:root {
+  --bg: #090a0c;
+  --panel: #121418;
+  --panel2: #171a20;
+  --line: #30343d;
+  --text: #f6f7f9;
+  --muted: #9ca6b5;
+  --green: #6ee7b7;
+  --yellow: #fde68a;
+  --red: #fca5a5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+aside {
+  border-right: 1px solid var(--line);
+  padding: 28px;
+  background: #07080a;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.05em;
+  margin-bottom: 34px;
+}
+
+.brand span {
+  color: var(--muted);
+  display: block;
+  font-weight: 500;
+}
+
+nav a {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  margin-bottom: 8px;
+}
+
+nav a:hover {
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+main { padding: 34px; }
+
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+.eyebrow {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  font-size: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.card, .panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.card strong {
+  display: block;
+  font-size: 34px;
+  letter-spacing: -0.05em;
+}
+
+.status {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  color: var(--green);
+}
+
+.muted, small { color: var(--muted); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 10px;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  background: #090a0d;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 11px 12px;
+  border-radius: 0;
+  font: inherit;
+}
+
+textarea { min-height: 120px; }
+
+button {
+  background: var(--text);
+  color: #08090b;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+
+pre {
+  background: #08090b;
+  border: 1px solid var(--line);
+  padding: 14px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.badge {
+  color: var(--yellow);
+}
+
+.danger { color: var(--red); }

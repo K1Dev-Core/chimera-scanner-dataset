@@ -1,0 +1,7 @@
+release: nova-ops-console
+version: 2.6.1
+environment: production
+owner: platform-team
+notes:
+  - "Temporary lab build for Exploit-DL ranking experiment"
+  - "Flag is inside the container filesystem"

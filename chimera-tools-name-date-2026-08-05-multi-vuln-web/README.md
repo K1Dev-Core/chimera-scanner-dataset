@@ -116,6 +116,8 @@ dvwa    xss                        0.084
 
 ถ้าต้องการลองกับ lab ที่เปิดอยู่จริง ให้ดูไฟล์ `LIVE_LAB_DEMO.md`
 
+สำหรับโจทย์แข่งแบบ manual-only vs model-report assisted ให้ดูไฟล์ `RCE_COMPETITION_PROMPTS.md`
+
 ตัวอย่าง:
 
 ```bash

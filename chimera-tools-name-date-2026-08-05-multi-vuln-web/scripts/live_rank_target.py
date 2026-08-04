@@ -58,6 +58,10 @@ PROFILES = {
         "product": "Acme Support Portal",
         "families": ["sqli", "command-injection", "file-inclusion", "broken-access-control", "xss", "sensitive-data-exposure"],
     },
+    "nova-devops": {
+        "product": "Nova DevOps Console",
+        "families": ["command-injection", "sqli", "file-inclusion", "ssrf", "broken-access-control", "xss", "sensitive-data-exposure"],
+    },
 }
 
 
