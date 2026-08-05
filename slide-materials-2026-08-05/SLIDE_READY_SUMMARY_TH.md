@@ -128,7 +128,38 @@ Top-1/Top-3 hit by target: 1.0
 - Dataset เริ่มมีหลาย vulnerability family ไม่ใช่แค่ SQLi อย่างเดียว
 - มีทั้ง public lab และ lab ที่สร้างเอง
 - เริ่มออกแบบ A/B test เพื่อวัดว่า report จาก model ช่วยลดเวลาทดสอบจริงหรือไม่
+- มี case study จาก target `picoCTF dolphin-cove` สำหรับโชว์ report จริงจาก passive fingerprint
 - เห็น limitation ของ model แล้ว เช่น bias ตามข้อมูลฝึก จึงมีแผนเพิ่ม exploit feedback label
+
+## 8.1 Case Study: picoCTF dolphin-cove
+
+Target:
+
+```text
+http://dolphin-cove.picoctf.net:55701/login
+```
+
+Fingerprint:
+
+```text
+title: The New Twitter
+server: Werkzeug/3.1.5 Python/3.12.4
+form_count: 1
+input_names: password, username
+links: /register, /static/login-register.css
+```
+
+Ranking ที่ระบบแนะนำ:
+
+| Rank | Family | Score | เหตุผลแบบย่อ |
+|---:|---|---:|---|
+| 1 | auth-bypass | 0.78 | มี login/register flow |
+| 2 | sqli | 0.68 | มี username/password form |
+| 3 | broken-access-control | 0.62 | มี account/session surface |
+
+จุดที่ควรอธิบาย:
+
+> เคสนี้ใช้โชว์ว่า Chimera ช่วยลด search space ให้ผู้ทดสอบ โดยจาก URL หน้า login ระบบสามารถเสนอ priority ว่าควรเริ่มจาก auth-bypass, SQLi และ broken access control ก่อน
 
 ## 9. แผนต่อไป
 
@@ -138,4 +169,3 @@ Top-1/Top-3 hit by target: 1.0
 4. train baseline หลายโมเดล เช่น Random Forest, XGBoost, Neural Network
 5. ทำ A/B test ระหว่าง manual-only กับ model-assisted
 6. สรุปว่า model ช่วยลดเวลาและเพิ่มความแม่นในการเลือก exploit family ได้จริงไหม
-

@@ -4,4 +4,4 @@ Multi-vuln feature matrix,chimera-tools-name-date-2026-08-05-multi-vuln-web/deri
 Vulhub expanded training,chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/derived/training_examples.csv,264,17 columns,Expanded metadata/weak-label training rows,ใช้โชว์ว่าขยายข้อมูลจาก Vulhub ได้ 66 labs
 Vulhub expanded feature matrix,chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/derived/feature_matrix.csv,264,84 feature columns,Model-ready expanded feature matrix,ใช้โชว์จำนวน feature ที่เพิ่มขึ้น
 Vulhub redo JSONL,chimera-tools-name-date-2026-08-05-vulhub-redo/records/exploit-dl-features.jsonl,8+ labs,JSONL records,Initial vulnerable-lab feature records,ใช้โชว์ชุดเริ่มต้นจาก Vulhub/lab
-
+picoCTF dolphin-cove case study,slide-materials-2026-08-05/case-studies/picoctf-dolphin-cove-55701,1 target,6 ranked families,Passive fingerprint + ranking report,ใช้โชว์ตัวอย่าง A/B test และ live report จาก target จริง

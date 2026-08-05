@@ -52,3 +52,13 @@ chimera-tools-name-date-2026-08-05-multi-vuln-web/scripts/live_rank_target.py
 
 ใช้โชว์ pipeline ว่ามีการ build feature, train model และ generate live ranking report จริง
 
+## 6. Case study จาก picoCTF
+
+```text
+slide-materials-2026-08-05/case-studies/picoctf-dolphin-cove-55701/README.md
+slide-materials-2026-08-05/case-studies/picoctf-dolphin-cove-55701/fingerprint.csv
+slide-materials-2026-08-05/case-studies/picoctf-dolphin-cove-55701/ranked_families.csv
+slide-materials-2026-08-05/case-studies/picoctf-dolphin-cove-55701/chimera_model_report.md
+```
+
+ใช้โชว์ตัวอย่าง target จริงสำหรับ A/B test และ live ranking report
