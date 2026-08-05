@@ -1,0 +1,12 @@
+slide_no,title,key_message,suggested_visual
+1,Problem,ผู้ทดสอบเสียเวลาลองช่องโหว่หลายทางโดยไม่มีลำดับความสำคัญ,ภาพ target ที่มีหลาย attack surface
+2,Project Idea,Chimera จัดอันดับ vulnerability family จาก fingerprint ของเป้าหมาย,Pipeline diagram
+3,Data Sources,ข้อมูลมาจาก Vulhub custom labs scanner และ passive fingerprint,Source table
+4,Dataset Status,ตอนนี้มี 66 labs 264 training rows และ 84 feature columns,Dataset inventory table
+5,Feature Engineering,แปลง product service port CVE form scanner finding เป็นตัวเลข,Before/after feature example
+6,Labels,ตอนนี้มี weak labels และแผนเพิ่ม exploit_success_observed,Label status table
+7,Baseline Model,เริ่มด้วย Random Forest ก่อน Deep Learning เพื่อเป็น baseline,Model block diagram
+8,Live Ranking Report,ระบบออก report จัดอันดับ family ที่ควรตรวจ เช่น auth-bypass SQLi access-control,Ranking table
+9,A/B Test Plan,เทียบ manual-only กับ model-assisted เพื่อวัดเวลาและความแม่น,Experiment table
+10,Next Step,เพิ่ม scan evidence และ exploit feedback label เพื่อให้ dataset แม่นขึ้น,Roadmap
+

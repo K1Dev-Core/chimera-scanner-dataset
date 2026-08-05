@@ -1,0 +1,7 @@
+dataset,path,rows,columns_or_features,main_use,slide_note
+Multi-vuln web prototype,chimera-tools-name-date-2026-08-05-multi-vuln-web/derived/training_examples.csv,43,30 columns,Human-readable training/ranking examples,ใช้โชว์ข้อมูลก่อนแปลงเป็นตัวเลข
+Multi-vuln feature matrix,chimera-tools-name-date-2026-08-05-multi-vuln-web/derived/feature_matrix.csv,43,54 feature columns,Model-ready feature matrix,ใช้โชว์ว่าแปลงเป็น feature vector แล้ว
+Vulhub expanded training,chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/derived/training_examples.csv,264,17 columns,Expanded metadata/weak-label training rows,ใช้โชว์ว่าขยายข้อมูลจาก Vulhub ได้ 66 labs
+Vulhub expanded feature matrix,chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/derived/feature_matrix.csv,264,84 feature columns,Model-ready expanded feature matrix,ใช้โชว์จำนวน feature ที่เพิ่มขึ้น
+Vulhub redo JSONL,chimera-tools-name-date-2026-08-05-vulhub-redo/records/exploit-dl-features.jsonl,8+ labs,JSONL records,Initial vulnerable-lab feature records,ใช้โชว์ชุดเริ่มต้นจาก Vulhub/lab
+

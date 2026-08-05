@@ -1,0 +1,9 @@
+label,status,meaning,next_action
+is_recommended,available,บอกว่า candidate vulnerability family นี้ควรถูกแนะนำหรือไม่,ใช้เป็น weak label สำหรับ baseline ต่อได้
+is_top1,available,บอกว่า candidate นี้เป็นอันดับ 1 ของ target/lab หรือไม่,ใช้เทรนหรือวัด top-1 ranking ได้
+is_known_family,available_in_vulhub_expanded,บอกว่า candidate ตรงกับ known family จาก metadata หรือไม่,ใช้เพิ่ม supervision จาก CVE/lab metadata
+exploit_success_observed,not_yet_available,บอกว่า exploit/family นี้สำเร็จจริงหรือไม่,ควรเพิ่มจากการทดสอบ exploit feedback จริง
+time_to_success_seconds,not_yet_available,เวลาที่ใช้จนเจอผลสำเร็จ,ควรเพิ่มเพื่อวัดว่า model ช่วยให้เร็วขึ้นไหม
+attempt_count_before_success,not_yet_available,จำนวนครั้งที่ลองก่อนสำเร็จ,ควรเพิ่มเพื่อวัดคุณภาพ ranking
+manual_vs_model_group,planned,กลุ่ม A/B test ระหว่าง manual-only กับ model-assisted,ใช้ใน evaluation ของโปรเจกต์
+

@@ -1,0 +1,8 @@
+feature_group,example_features,why_it_matters
+Network / Port,"exposed_port_count, has_http_port_hint, port_80_open, port_3000_open",บอกว่าเป้าหมายเปิดบริการหรือเว็บบน port แบบไหน
+Product / Service,"product_grafana, product_wordpress, service_apache_httpd, service_werkzeug",ช่วยเชื่อม product/service กับ CVE หรือ exploit family ที่พบบ่อย
+Version / CVE,"has_cve, cve_year, service_version_count, has_known_vulnerable_version",ใช้จับคู่ version กับช่องโหว่ที่เคยมีในอดีต
+Web Surface,"has_login_form, has_register_link, has_upload_form, input_username, input_password",ช่วยบอกว่า surface น่าจะเกี่ยวกับ auth-bypass, SQLi, upload หรือ access control
+Scanner Evidence,"has_zap_evidence, has_nuclei_evidence, zap_finding_count, nuclei_finding_count",เพิ่มน้ำหนักจากหลักฐานที่ scanner พบจริง
+Candidate Family,"candidate_exploit_family_sqli, candidate_exploit_family_command_injection, candidate_exploit_family_auth_bypass",ทำให้โมเดลเรียนรู้ว่า candidate family ใดเหมาะกับ fingerprint แบบใด
+
