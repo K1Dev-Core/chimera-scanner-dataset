@@ -41,19 +41,34 @@ label หลักควรมาจากผลการยืนยันจ�
 
 ## สถานะ GitHub ที่ยืนยันแล้ว
 
-Commit ล่าสุดที่สร้างในงานรอบนี้:
+Commits สำคัญที่สร้างในงานรอบนี้:
 
 ```text
 00cb150b7d07fb53706b10fb822f2d70f5d3c079
 Add Dec feature and scanner tool documentation
+
+2017e2721d904483f8d1f3d413e846f9f0f75555
+Add Dec weekly status and session handoff
+
+3efa7b5725f813b26c661cf0c0ee45159d2d5e87
+Add reproducible Dec dataset builder
+
+54b27803dca617ec16c948acc236124042a6ed27
+Add scanner dataset blueprint
+
+6b33080788afeb103e49014dfa28390b5acfba6b
+Replace duplicated tool study with sanitized version
 ```
 
 ไฟล์ที่อัปแล้ว:
 
 - `dec-feature-and-tool-recommendations-th.md`
 - `tool-study-article-th.md`
+- `DEC-CURRENT-STATUS.md`
+- `build_dec_dataset_v2.py`
+- `scanner-dataset-blueprint.md`
 
-หมายเหตุ: สำเนา `tool-study-article-th.md` บน GitHub ยังมีรหัสผ่านตัวอย่างเดิมจนกว่าจะอัปฉบับแก้ไข ควรเปลี่ยนรหัสผ่านบัญชี GVM หากรหัสนั้นยังใช้งานอยู่
+`tool-study-article-th.md` บน GitHub ถูกแทนที่ด้วยฉบับ sanitize แล้ว ไม่พบรหัสผ่านแล็บเดิมและใช้ `${GVM_PASSWORD}` แทน อย่างไรก็ตามควรเปลี่ยนรหัสผ่านบัญชี GVM หากค่าดังกล่าวเคยใช้จริง
 
 ## Dataset ปัจจุบัน
 
@@ -156,16 +171,13 @@ C:\Users\rapii\Documents\Codex\2026-08-03\faraday-https-github-com-infobyte-fara
 - `dataset-platforms-cheatsheet.md` - คำสั่งแพลตฟอร์มและ import workflow
 - `scanner-dataset-blueprint.md` - blueprint ของ dataset
 
-## ไฟล์ที่ควรอัปเพิ่ม
+## ไฟล์ที่ควรอัปเพิ่มในรอบถัดไป
 
 ลำดับแนะนำ:
 
-1. `DEC-CURRENT-STATUS.md` เพื่อใช้ handoff ข้าม session
-2. `tool-study-article-th.md` ฉบับลบรหัสผ่านจริง
-3. `build_dec_dataset_v2.py` เพื่อให้ dataset สร้างซ้ำได้
-4. `scanner-dataset-blueprint.md` เป็นภาพรวมโครงสร้าง
-5. `agent-run-10-cves-raw-normalized-2026-08-04.md` หลังตรวจคำสั่งและ secret scan อีกครั้ง
-6. `dataset-platforms-cheatsheet.md` หลัง sanitize credential และค่าเริ่มต้นของฐานข้อมูล
+1. `agent-run-10-cves-raw-normalized-2026-08-04.md` หลังตรวจคำสั่งและ secret scan อีกครั้ง
+2. `dataset-platforms-cheatsheet.md` หลัง sanitize credential และค่าเริ่มต้นของฐานข้อมูล
+3. README index หลัง schema ของ Hex และ Dec ถูกรวมเป็นแบบเดียวกันแล้ว
 
 ไม่อัป `hex-vs-dec-dataset-analysis-th.md` เป็นเอกสารแยก เพราะ Hex และ Dec เป็นส่วนที่จะต้องรวมกัน ให้ใช้ไฟล์นี้เป็น working note ภายใน แล้วนำ schema, leakage controls และข้อสรุปที่เกี่ยวข้องไปรวมในเอกสารกลางของ dataset
 
