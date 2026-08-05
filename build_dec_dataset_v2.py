@@ -102,6 +102,37 @@ FAMILY_KEYWORDS = {
     "authentication-bypass": ("auth bypass", "authentication bypass", "unauthenticated"),
 }
 
+SENSITIVE_ASSIGNMENT = re.compile(
+    r"(?i)\b(jsessionid|phpsessid|sessionid|csrf(?:_token)?|csrftoken|"
+    r"access_token|refresh_token|auth_token|authorization|cookie)"
+    r"(\s*[=:]\s*)([^\s;,'\"&]+)"
+)
+
+
+def redact_text(value: str) -> str:
+    return SENSITIVE_ASSIGNMENT.sub(lambda match: f"{match.group(1)}{match.group(2)}[REDACTED]", value)
+
+
+def redact_value(value: Any) -> Any:
+    if isinstance(value, str):
+        return redact_text(value)
+    if isinstance(value, list):
+        return [redact_value(item) for item in value]
+    if isinstance(value, dict):
+        return {key: redact_value(item) for key, item in value.items()}
+    return value
+
+
+def redact_records(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+    sanitized = []
+    changed = 0
+    for record in records:
+        clean = redact_value(record)
+        if clean != record:
+            changed += 1
+        sanitized.append(clean)
+    return sanitized, changed
+
 
 def sha256_text(value: str | None) -> str | None:
     if not value:
@@ -644,6 +675,7 @@ def validate_jsonl(destination: Path) -> dict[str, Any]:
     for path in sorted(destination.rglob("*.jsonl")):
         line_count = 0
         invalid_lines = []
+        record_ids = []
         with path.open("r", encoding="utf-8") as handle:
             for line_number, line in enumerate(handle, 1):
                 if not line.strip():
@@ -653,13 +685,17 @@ def validate_jsonl(destination: Path) -> dict[str, Any]:
                     value = json.loads(line)
                     if not isinstance(value, dict):
                         invalid_lines.append(line_number)
+                    elif value.get("record_id"):
+                        record_ids.append(value["record_id"])
                 except json.JSONDecodeError:
                     invalid_lines.append(line_number)
+        duplicate_record_ids = len(record_ids) - len(set(record_ids))
         report["files"][path.relative_to(destination).as_posix()] = {
             "records": line_count,
             "invalid_lines": invalid_lines,
+            "duplicate_record_ids": duplicate_record_ids,
         }
-        if invalid_lines:
+        if invalid_lines or duplicate_record_ids:
             report["valid"] = False
     return report
 
@@ -674,6 +710,10 @@ def build(source: Path, destination: Path) -> dict[str, Any]:
     observations = parse_httpx(source) + parse_naabu(source) + parse_nmap(source) + parse_scan_summaries(source)
     findings = parse_nuclei(source) + parse_wapiti(source) + parse_nikto(source)
     validations = parse_metasploit(source) + parse_sqlmap(source)
+    observations, redacted_observations = redact_records(observations)
+    findings, redacted_findings = redact_records(findings)
+    validations, redacted_validations = redact_records(validations)
+    redacted_records = redacted_observations + redacted_findings + redacted_validations
     targets = build_targets(observations)
     target_features = build_target_features(observations, findings, validations)
     candidate_features, labels = build_candidate_rows(target_features, findings)
@@ -700,7 +740,7 @@ def build(source: Path, destination: Path) -> dict[str, Any]:
         "schema_version": SCHEMA_VERSION,
         "name": "chimera-scanner-dataset-dec-v2",
         "built_at": datetime.now(timezone.utc).isoformat(),
-        "source": str(source),
+        "source": source.name,
         "source_policy": "read-only; raw files are referenced, not copied",
         "run_date": RUN_DATE,
         "counts": counts,
@@ -715,15 +755,87 @@ def build(source: Path, destination: Path) -> dict[str, Any]:
         },
     }
     (destination / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    quality = validate_jsonl(destination)
-    quality["warnings"] = [
+    warnings = [
         "OpenVAS output is absent in the source dataset.",
         "ZAP raw text contains no structured alerts; only scan coverage is recorded.",
         "AutoRecon is retained as a coverage summary because its output is a multi-file report tree.",
         "Only 10 vulnerable targets are present; this is a pipeline dataset, not a reliable model benchmark.",
         "Candidate labels represent Vulhub ground truth family, not observed exploit success.",
     ]
+    quality = validate_jsonl(destination)
+    candidate_ids = {row["record_id"] for row in candidate_features}
+    missing_candidate_references = sorted(
+        row["candidate_record_id"] for row in labels if row["candidate_record_id"] not in candidate_ids
+    )
+    forbidden_feature_fields = {
+        "ground_truth_cve",
+        "is_ground_truth_family",
+        "exploit_success_observed",
+        "label_source",
+    }
+    feature_leakage_fields = sorted(
+        {key for row in candidate_features for key in row if key in forbidden_feature_fields}
+    )
+    candidate_rows_per_target = dict(sorted(Counter(row["target_id"] for row in candidate_features).items()))
+    unredacted_sensitive_records = sum(
+        redact_value(row) != row for row in observations + findings + validations
+    )
+    quality["integrity"] = {
+        "candidate_rows_per_target": candidate_rows_per_target,
+        "label_references_missing": len(missing_candidate_references),
+        "feature_leakage_fields": feature_leakage_fields,
+        "unredacted_sensitive_records": unredacted_sensitive_records,
+    }
+    if missing_candidate_references or feature_leakage_fields or unredacted_sensitive_records:
+        quality["valid"] = False
+    quality["redaction"] = {
+        "records_changed": redacted_records,
+        "policy": "Sensitive session, CSRF, authentication, authorization, and cookie assignments are replaced with [REDACTED].",
+    }
+    quality["warnings"] = warnings
     (destination / "quality-report.json").write_text(json.dumps(quality, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    readme = f"""# Dec Dataset v2 Generated Output
+
+This directory was generated by `build_dec_dataset_v2.py` from the Dec scanner collection.
+The source dataset is read-only; raw scanner files are referenced by relative path and are not copied.
+
+## Build
+
+```bash
+python build_dec_dataset_v2.py <source-dataset> <destination>
+```
+
+## Counts
+
+| Record set | Count |
+|---|---:|
+| Targets | {counts['targets']} |
+| Observations | {counts['observations']} |
+| Findings | {counts['findings']} |
+| Validations | {counts['validations']} |
+| All records | {counts['all_records']} |
+| Target features | {counts['target_features']} |
+| Target-candidate features | {counts['candidate_features']} |
+| Target-candidate labels | {counts['candidate_labels']} |
+
+## Layout
+
+- `records/`: normalized target, observation, finding, and validation records.
+- `derived/`: leakage-aware model feature rows.
+- `labels/`: labels kept separate from model features.
+- `manifest.json`: schema, source policy, tool coverage, and counts.
+- `quality-report.json`: JSONL validation, redaction count, and known limitations.
+- `checksums.sha256`: SHA-256 checksums for every generated artifact.
+
+## Important Limits
+
+- OpenVAS output is not present in this source collection.
+- ZAP and AutoRecon currently contribute coverage summaries, not parsed findings.
+- The ten targets are vulnerable Vulhub labs; add patched controls before model evaluation.
+- `is_ground_truth_family` is a Vulhub family label, not proof of exploit success.
+- Split train/validation/test by target or product family before joining labels.
+"""
+    (destination / "README.md").write_text(readme, encoding="utf-8", newline="\n")
     checksums(destination)
     return {"destination": str(destination), "counts": counts, "quality": quality}
 
