@@ -1,0 +1,15 @@
+item,value,note
+prototype_training_rows,43,จาก chimera-tools-name-date-2026-08-05-multi-vuln-web/derived/training_examples.csv
+prototype_targets,5,จำนวน target/lab ใน prototype training set
+prototype_feature_columns,54,จาก feature_summary.json
+prototype_positive_recommended_rows,10,label is_recommended = 1
+expanded_vulhub_labs,66,จาก chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata
+expanded_vulhub_training_rows,264,metadata/weak-label ranking rows
+expanded_vulhub_feature_columns,84,feature matrix columns
+baseline_model,RandomForestClassifier,ใช้เป็น baseline ก่อน Deep Learning
+baseline_accuracy,0.9767,proof-of-concept metric จาก weak labels
+baseline_roc_auc,0.9939,proof-of-concept metric จาก weak labels
+top1_hit_rate_by_target,1.0,prototype evaluation
+top3_hit_rate_by_target,1.0,prototype evaluation
+main_limitation,weak_labels_not_confirmed_exploit_success,ยังต้องเพิ่ม exploit_success_observed
+

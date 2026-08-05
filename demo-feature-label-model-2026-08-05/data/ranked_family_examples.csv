@@ -1,0 +1,14 @@
+target_id,rank,exploit_family,predicted_priority_score,reason,label_type
+picoctf-dolphin-cove-55701,1,auth-bypass,0.78,login/register flow is the primary exposed surface,safe weak-prior ranking from passive fingerprint
+picoctf-dolphin-cove-55701,2,sqli,0.68,username/password POST form may depend on backend query handling,safe weak-prior ranking from passive fingerprint
+picoctf-dolphin-cove-55701,3,broken-access-control,0.62,social-app style account/session flows often expose authorization checks,safe weak-prior ranking from passive fingerprint
+picoctf-dolphin-cove-55701,4,xss,0.48,social posting/profile surfaces are plausible but not yet observed from login page,safe weak-prior ranking from passive fingerprint
+picoctf-dolphin-cove-55701,5,sensitive-data-exposure,0.35,framework/version header is visible; more evidence needed,safe weak-prior ranking from passive fingerprint
+picoctf-dolphin-cove-55701,6,csrf,0.28,state-changing forms exist; token evidence not yet collected,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,1,auth-bypass,0.78,login/register flow is the primary exposed surface,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,2,sqli,0.68,username/password POST form may depend on backend query handling,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,3,broken-access-control,0.62,social-app style account/session flows often expose authorization checks,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,4,xss,0.48,social posting/profile surfaces are plausible but not yet observed from login page,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,5,sensitive-data-exposure,0.35,framework/version header is visible; more evidence needed,safe weak-prior ranking from passive fingerprint
+picoctf-lonely-island-49776,6,csrf,0.28,state-changing forms exist; token evidence not yet collected,safe weak-prior ranking from passive fingerprint
+

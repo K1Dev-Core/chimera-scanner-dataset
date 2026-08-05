@@ -1,0 +1,21 @@
+group,name,type,current_status,source,meaning
+feature,has_login_form,binary,derived_from_passive_http,passive_targets.csv,มี login form หรือ username/password input
+feature,has_register_link,binary,derived_from_passive_http,passive_targets.csv,มี link ไปหน้า register
+feature,http_status_code,numeric,available,passive_targets.csv,HTTP status code
+feature,http_server,categorical,available,passive_targets.csv,server header เช่น Apache หรือ Werkzeug
+feature,http_title,categorical,available,passive_targets.csv,title ของหน้าเว็บ
+feature,form_count,numeric,available,passive_targets.csv,จำนวน form ที่พบ
+feature,input_username,binary,derived_from_input_names,passive_targets.csv,พบ input username
+feature,input_password,binary,derived_from_input_names,passive_targets.csv,พบ input password
+feature,has_zap_evidence,binary,available_in_training_examples,derived/training_examples.csv,มี evidence จาก ZAP หรือไม่
+feature,has_nuclei_evidence,binary,available_in_training_examples,derived/training_examples.csv,มี evidence จาก Nuclei หรือไม่
+feature,zap_finding_count,numeric,available_in_training_examples,derived/training_examples.csv,จำนวน finding จาก ZAP
+feature,nuclei_finding_count,numeric,available_in_training_examples,derived/training_examples.csv,จำนวน finding จาก Nuclei
+feature,candidate_exploit_family,categorical,available,ranked_family_examples.csv,family ที่ระบบกำลังพิจารณา
+label,is_recommended,binary,available_weak_label,derived/training_examples.csv,candidate นี้ควรถูกแนะนำหรือไม่
+label,is_top1,binary,available_weak_label,derived/training_examples.csv,candidate นี้เป็นอันดับ 1 หรือไม่
+label,is_known_family,binary,available_weak_label,vulhub-expanded-metadata,candidate ตรงกับ known family จาก metadata หรือไม่
+label,exploit_success_observed,binary,planned_next,manual_validation_loop,exploit/family นี้สำเร็จจริงหรือไม่
+label,time_to_success_seconds,numeric,planned_next,A/B_test,เวลาที่ใช้จนเจอผล
+label,attempt_count_before_success,numeric,planned_next,A/B_test,จำนวนครั้งที่ลองก่อนเจอผล
+
