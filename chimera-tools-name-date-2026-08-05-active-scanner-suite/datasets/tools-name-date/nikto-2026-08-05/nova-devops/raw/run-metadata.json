@@ -1,0 +1,11 @@
+﻿{
+    "tool":  "nikto",
+    "lab_id":  "nova-devops",
+    "target_url":  "http://host.docker.internal:27100/",
+    "host_port":  "27100",
+    "product":  "Nova DevOps Console",
+    "started_at":  "2026-08-05T05:10:03.6742416Z",
+    "ended_at":  "2026-08-05T05:10:04.4742141Z",
+    "status":  "nonzero_exit_1",
+    "error":  ""
+}

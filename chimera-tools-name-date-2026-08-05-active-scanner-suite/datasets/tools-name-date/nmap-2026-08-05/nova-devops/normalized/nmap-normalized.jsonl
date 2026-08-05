@@ -1,0 +1,1 @@
+{"dataset_record_type": "service_fingerprint", "tool": "nmap", "lab_id": "nova-devops", "product": "Nova DevOps Console", "target_url": "http://127.0.0.1:27100/", "port": 27100, "protocol": "tcp", "state": "open", "service": "http", "service_product": "Werkzeug httpd", "service_version": "3.1.8", "service_extrainfo": "Python 3.12.13"}

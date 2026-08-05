@@ -1,0 +1,11 @@
+﻿{
+    "tool":  "nikto",
+    "lab_id":  "acme-support",
+    "target_url":  "http://host.docker.internal:27000/",
+    "host_port":  "27000",
+    "product":  "Acme Support Portal",
+    "started_at":  "2026-08-05T05:02:15.6582649Z",
+    "ended_at":  "2026-08-05T05:02:16.9622515Z",
+    "status":  "nonzero_exit_1",
+    "error":  ""
+}

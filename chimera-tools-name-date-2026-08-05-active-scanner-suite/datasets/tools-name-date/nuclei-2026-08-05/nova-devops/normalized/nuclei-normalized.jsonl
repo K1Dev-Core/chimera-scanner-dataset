@@ -1,0 +1,1 @@
+{"dataset_record_type": "scanner_status", "tool": "nuclei", "lab_id": "nova-devops", "product": "Nova DevOps Console", "target_url": "http://127.0.0.1:27100/", "finding_count": 0, "status": "completed_no_match"}

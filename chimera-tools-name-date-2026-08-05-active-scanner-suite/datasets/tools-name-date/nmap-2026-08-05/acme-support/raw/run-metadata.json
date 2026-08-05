@@ -1,0 +1,11 @@
+﻿{
+    "tool":  "nmap",
+    "lab_id":  "acme-support",
+    "target_url":  "http://host.docker.internal:27000/",
+    "host_port":  "27000",
+    "product":  "Acme Support Portal",
+    "started_at":  "2026-08-05T04:46:57.5015868Z",
+    "ended_at":  "2026-08-05T04:47:11.7624154Z",
+    "status":  "ok",
+    "error":  ""
+}

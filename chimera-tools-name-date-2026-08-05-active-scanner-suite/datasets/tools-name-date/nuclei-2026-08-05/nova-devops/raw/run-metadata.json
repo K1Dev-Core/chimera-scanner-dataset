@@ -1,0 +1,11 @@
+﻿{
+    "tool":  "nuclei",
+    "lab_id":  "nova-devops",
+    "target_url":  "http://host.docker.internal:27100/",
+    "host_port":  "27100",
+    "product":  "Nova DevOps Console",
+    "started_at":  "2026-08-05T05:03:34.3825728Z",
+    "ended_at":  "2026-08-05T05:10:03.6712417Z",
+    "status":  "nonzero_exit_2",
+    "error":  ""
+}

@@ -1,0 +1,11 @@
+﻿{
+    "tool":  "wapiti",
+    "lab_id":  "nova-devops",
+    "target_url":  "http://host.docker.internal:27100/",
+    "host_port":  "27100",
+    "product":  "Nova DevOps Console",
+    "started_at":  "2026-08-05T05:10:04.4775193Z",
+    "ended_at":  "2026-08-05T05:10:07.7227645Z",
+    "status":  "nonzero_exit_1",
+    "error":  ""
+}
