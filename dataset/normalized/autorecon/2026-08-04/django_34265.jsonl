@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "autorecon",
+  "target": "django_34265",
+  "raw_dir": "/home/kali/dataset/raw/autorecon/2026-08-04/django_34265",
+  "parser_status": "raw_dir_only"
+}

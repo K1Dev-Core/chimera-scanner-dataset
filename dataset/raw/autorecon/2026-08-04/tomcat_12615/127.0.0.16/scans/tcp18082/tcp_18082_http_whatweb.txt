@@ -1,0 +1,21 @@
+WhatWeb report for http://127.0.0.16:18082
+Status    : 200 OK
+Title     : Apache Tomcat/8.5.14
+IP        : 127.0.0.16
+Country   : RESERVED, ZZ
+
+Summary   : HTML5
+
+Detected Plugins:
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration
+
+
+HTTP Headers:
+	HTTP/1.1 200
+	Content-Type: text/html;charset=UTF-8
+	Transfer-Encoding: chunked
+	Date: Tue, 04 Aug 2026 20:51:46 GMT
+	Connection: close
+
+

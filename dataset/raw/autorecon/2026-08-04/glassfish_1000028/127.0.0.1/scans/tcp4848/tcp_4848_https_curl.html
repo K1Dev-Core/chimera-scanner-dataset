@@ -1,0 +1,98 @@
+HTTP/1.1 200 OK
+Server: GlassFish Server Open Source Edition  4.1
+X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)
+Set-Cookie: JSESSIONID=e79b2e9a65e7c8d8c3ab73c35d41; Path=/; Secure; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Date: Tue, 04 Aug 2026 20:31:49 GMT
+Transfer-Encoding: chunked
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>Login</title>
+<script type="text/javascript">
+<!-- FIXME: add code to ensure we're the top-most frame -->
+    if (document.getElementById('layout-doc') != null) {
+        // Just refresh the page... login will take over
+        window.location = window.location;
+    }
+</script>
+    <style type="text/css">
+        /* clickjacking defense */
+        body { display : none; }
+    </style>
+<link rel="stylesheet" type="text/css" href="/theme/com/sun/webui/jsf/suntheme/css/css_master.css" />
+<script type="text/javascript">
+djConfig={
+    "isDebug": false,
+    "debugAtAllCosts": false,
+    "parseWidgets": false
+};
+</script>
+<script type="text/javascript" src="/theme/META-INF/dojo/dojo.js"></script>
+<script type="text/javascript" src="/theme/META-INF/json/json.js"></script>
+<script type="text/javascript" src="/theme/META-INF/prototype/prototype.js"></script>
+<script type="text/javascript" src="/theme/META-INF/com_sun_faces_ajax.js"></script>
+<script type="text/javascript">
+dojo.hostenv.setModulePrefix("webui.suntheme", "/theme/com/sun/webui/jsf/suntheme/javascript");
+dojo.require('webui.suntheme.*');
+</script>
+<link id="sun_link5" rel="stylesheet" type="text/css" href="/resource/css/css_ns6up.css" />
+
+</head>
+
+<body id="body3" class="LogBdy" focus="loginform.j_username" style="background-color: #FFFFFF;">
+    <div id="header"class="LogTopBnd" style="background: url('/theme/com/sun/webui/jsf/suntheme/images/login/gradlogtop.jpg') repeat-x; height: 30px;"></div>
+    <div class="middle" style="background-image: url(/theme/com/sun/webui/jsf/suntheme/images/login/gradlogsides.jpg);background-repeat:repeat-x;background-position:left top; background-color: #D4DCE1;">
+        <div class="plugincontent" style="width1: 1px; visibility: visible;">
+
+<div style="height: 435px;background-image: url(/resource/community-theme/images/login-backimage-open.png);
+    background-repeat:no-repeat;background-position:left top; width: 720px; margin: auto;">
+    <div style="width: 460px; padding-top: 160px; margin-left: 310px;">
+<img id="sun_image11" src="/resource/community-theme/images/login-product_name_open.png;jsessionid=e79b2e9a65e7c8d8c3ab73c35d41" alt="GlassFish Server Open Source Edition" height="42" width="329" border="0" />
+        <form method="POST" class="form" name="loginform" action="j_security_check">
+        <table role="presentation">
+        <tr>
+            <td><label for="Login.username" style="font-weight: bold;">User Name:</label></td>
+            <td><input type="text" name="j_username" id="Login.username" tabindex="1" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="Login.password" style="font-weight: bold;">Password:</label>
+            <td><input type="password" name="j_password" id="Login.password" tabindex="2">
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" class="Btn1"
+                    value="Login"
+                    title="Log In to GlassFish Administration Console" tabindex="3"
+                    onmouseover="javascript: if (this.disabled==0) this.className='Btn1Hov'"
+                    onmouseout="javascript: if (this.disabled==0) this.className='Btn1'"
+                    onblur="javascript: if (this.disabled==0) this.className='Btn1'"
+                    onfocus="javascript: if (this.disabled==0) this.className='Btn1Hov'"
+                    name="loginButton" id="loginButton">
+        	    <input type="hidden" name="loginButton.DisabledHiddenField" value="true" />
+    	    </td>
+	    </tr>
+	    </table>
+        </form>
+    </div>
+</div>
+
+            <script type="text/javascript">
+                if (false) {
+                    //submitAndDisable(document.getElementById('loginButton'), 'Login');
+                    document.getElementById('loginButton').form.submit();
+                    //document.getElementById('loginButton').form.autocomplete="off";
+                }
+            </script>
+        </div>
+    </div>
+    <div class="footer"
+        style="background-image: url(/theme/com/sun/webui/jsf/suntheme/images/login/gradlogbot.jpg);background-repeat:repeat-x;background-position:left top; color: #FFFFFF; background-color: #4A5C68">
+        <div id="copyright" style="width: 720px; margin-left: auto; margin-right: auto; padding: 5px;">
+            <span>Copyright © 2005, 2014, Oracle and/or its affiliates. All rights reserved.  Oracle and Java are registered trademarks of Oracle and/or its  affiliates. Other names may be trademarks of their respective owners.</span>
+        </div>
+    </div>
+    <script src="/resource/js/cj.js"></script>
+</body>
+</html>

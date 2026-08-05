@@ -1,0 +1,30 @@
+```bash
+whatweb --color=never --no-errors -a 3 -v http://127.0.0.16:18082 2>&1
+```
+
+[/home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_whatweb.txt](file:///home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_whatweb.txt):
+
+```
+WhatWeb report for http://127.0.0.16:18082
+Status    : 200 OK
+Title     : Apache Tomcat/8.5.14
+IP        : 127.0.0.16
+Country   : RESERVED, ZZ
+
+Summary   : HTML5
+
+Detected Plugins:
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration
+
+
+HTTP Headers:
+	HTTP/1.1 200
+	Content-Type: text/html;charset=UTF-8
+	Transfer-Encoding: chunked
+	Date: Tue, 04 Aug 2026 20:51:46 GMT
+	Connection: close
+
+
+
+```

@@ -1,0 +1,15 @@
+# Nmap 7.99 scan initiated Tue Aug  4 15:48:36 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 18080 -oN /home/kali/dataset/raw/nmap/2026-08-04/struts2_s2045/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/struts2_s2045/scan.xml 127.0.0.11
+Nmap scan report for 127.0.0.11
+Host is up (0.000080s latency).
+
+PORT      STATE SERVICE VERSION
+18080/tcp open  http    Jetty 9.2.11.v20150529
+|_http-title: Struts2 Showcase - Fileupload sample
+|_http-server-header: Jetty(9.2.11.v20150529)
+| http-cookie-flags: 
+|   /: 
+|     JSESSIONID: 
+|_      httponly flag not set
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 15:48:49 2026 -- 1 IP address (1 host up) scanned in 12.42 seconds

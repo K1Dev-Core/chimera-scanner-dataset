@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:30:55 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 4848 -oN /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 4848 -oN /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1" start="1785875455" startstr="Tue Aug  4 16:30:55 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="4848"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785875455"/>
+<taskend task="NSE" time="1785875455"/>
+<taskbegin task="NSE" time="1785875455"/>
+<taskend task="NSE" time="1785875455"/>
+<taskbegin task="NSE" time="1785875455"/>
+<taskend task="NSE" time="1785875455"/>
+<taskbegin task="SYN Stealth Scan" time="1785875455"/>
+<taskend task="SYN Stealth Scan" time="1785875455" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785875456"/>
+<taskend task="Service scan" time="1785875491" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785875498"/>
+<taskend task="NSE" time="1785875509"/>
+<taskbegin task="NSE" time="1785875509"/>
+<taskend task="NSE" time="1785875509"/>
+<taskbegin task="NSE" time="1785875509"/>
+<taskend task="NSE" time="1785875509"/>
+<host starttime="1785875455" endtime="1785875509"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="4848"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Oracle GlassFish" version="4.1" extrainfo="Servlet 3.1; JSP 2.3; Java 1.8" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:oracle:jsp:2.3</cpe></service><script id="http-server-header" output="GlassFish Server Open Source Edition  4.1 "><elem>GlassFish Server Open Source Edition  4.1 </elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US/organizationalUnitName=GlassFish/localityName=Santa Clara&#xa;Issuer: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US/organizationalUnitName=GlassFish/localityName=Santa Clara&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2014-08-21T13:30:10&#xa;Not valid after:  2024-08-18T13:30:10&#xa;MD5:     594f 8111 2179 0c71 532a 00ab 223e 0e8a&#xa;SHA-1:   1ff8 eff1 b17d c744 191e 213a 3102 9aa7 5982 a63c&#xa;SHA-256: 08de fee6 7d8b 168e 29b8 0a97 e523 3c8b e32b 316e d389 aace 05be 31da a702 036b&#xa;-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDmTCCAoGgAwIBAgIEMeuNnzANBgkqhkiG9w0BAQsFADB9MQswCQYDVQQGEwJV&#xa;UzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExGzAZ&#xa;BgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UECxMJR2xhc3NGaXNoMRIw&#xa;EAYDVQQDEwlsb2NhbGhvc3QwHhcNMTQwODIxMTMzMDEwWhcNMjQwODE4MTMzMDEw&#xa;WjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxML&#xa;U2FudGEgQ2xhcmExGzAZBgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UE&#xa;CxMJR2xhc3NGaXNoMRIwEAYDVQQDEwlsb2NhbGhvc3QwggEiMA0GCSqGSIb3DQEB&#xa;AQUAA4IBDwAwggEKAoIBAQCWpLMWHmNZb8HNZ95LmBfkyMKcJlpn8AWajtEui7yV&#xa;XdR7o+N2mpx/dP1SX1fkKPVM+rmbMCV6jkNHyKX7uam1YtnlKpM0Hc3jQT1S03p2&#xa;pWTLusK9Tr+sMQf4E7J0EUNM/TaPvyB0P+2d65mdVPdMxX19KKpfkJ26fLMtzyBp&#xa;W2mvVzVWgYfrjXPv7RVGayX2Ii7FC7VWC3xCiOKg6vT+kfw7uxOWhsp/utu7Aoo/&#xa;vHFTbM1ZeocTshlaFsqjTOYH0wMfVibEICca6nuC88OzE5aOnklMZXxyURivh/Qq&#xa;C+e8IIhqtGWIQV91KdhgqVp+g7HgpJzvm03r2c41BidBAgMBAAGjITAfMB0GA1Ud&#xa;DgQWBBQTVdt9qTFxozNAVtNJqXdCkKNZOTANBgkqhkiG9w0BAQsFAAOCAQEAB+Xx&#xa;ljjOVTMcZaVaOJDrmFmhrhlfv19Tvs82VC8DXV6dITzczMmhXuALcTE2zjrbu3hA&#xa;7Vv7CvDmAVrDKc0L4aENqZnt2Ch42hsvFSVGhdizj+d5D+83alUG4C0MZ/NgRqvC&#xa;9axwXp887+MzYTTE+ctagxCC5drzFR0osvneU/AQcnlIurSs7EkWktimSLWnOm83&#xa;FQL0ZmaUjIIsV3pFBDMx9pt8agSwCgGOjrkxnpqsU/fLOPbl24b/8tg5dzRHX3/s&#xa;8zd5COtZtZA/2X7ocMP03RfstBnQCCZ+y2RGF7gI2KeZHs/xK3mG8SJvxAWU4U/h&#xa;ZOTwR42VlQhP/vlg5A==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;"><table key="subject">
+<elem key="commonName">localhost</elem>
+<elem key="countryName">US</elem>
+<elem key="localityName">Santa Clara</elem>
+<elem key="organizationName">Oracle Corporation</elem>
+<elem key="organizationalUnitName">GlassFish</elem>
+<elem key="stateOrProvinceName">California</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost</elem>
+<elem key="countryName">US</elem>
+<elem key="localityName">Santa Clara</elem>
+<elem key="organizationName">Oracle Corporation</elem>
+<elem key="organizationalUnitName">GlassFish</elem>
+<elem key="stateOrProvinceName">California</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">96A4B3161E63596FC1CD67DE4B9817E4C8C29C265A67F0059A8ED12E8BBC955DD47BA3E3769A9C7F74FD525F57E428F54CFAB99B30257A8E4347C8A5FBB9A9B562D9E52A93341DCDE3413D52D37A76A564CBBAC2BD4EBFAC3107F813B27411434CFD368FBF20743FED9DEB999D54F74CC57D7D28AA5F909DBA7CB32DCF20695B69AF5735568187EB8D73EFED15466B25F6222EC50BB5560B7C4288E2A0EAF4FE91FC3BBB139686CA7FBADBBB028A3FBC71536CCD597A8713B2195A16CAA34CE607D3031F5626C420271AEA7B82F3C3B313968E9E494C657C725118AF87F42A0BE7BC20886AB46588415F7529D860A95A7E83B1E0A49CEF9B4DEBD9CE35062741</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">13:55:DB:7D:A9:31:71:A3:33:40:56:D3:49:A9:77:42:90:A3:59:39</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2014-08-21T13:30:10</elem>
+<elem key="notAfter">2024-08-18T13:30:10</elem>
+</table>
+<elem key="md5">594f811121790c71532a00ab223e0e8a</elem>
+<elem key="sha1">1ff8eff1b17dc744191e213a31029aa75982a63c</elem>
+<elem key="sha256">08defee67d8b168e29b80a97e5233c8be32b316ed389aace05be31daa702036b</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDmTCCAoGgAwIBAgIEMeuNnzANBgkqhkiG9w0BAQsFADB9MQswCQYDVQQGEwJV&#xa;UzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExGzAZ&#xa;BgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UECxMJR2xhc3NGaXNoMRIw&#xa;EAYDVQQDEwlsb2NhbGhvc3QwHhcNMTQwODIxMTMzMDEwWhcNMjQwODE4MTMzMDEw&#xa;WjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxML&#xa;U2FudGEgQ2xhcmExGzAZBgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UE&#xa;CxMJR2xhc3NGaXNoMRIwEAYDVQQDEwlsb2NhbGhvc3QwggEiMA0GCSqGSIb3DQEB&#xa;AQUAA4IBDwAwggEKAoIBAQCWpLMWHmNZb8HNZ95LmBfkyMKcJlpn8AWajtEui7yV&#xa;XdR7o+N2mpx/dP1SX1fkKPVM+rmbMCV6jkNHyKX7uam1YtnlKpM0Hc3jQT1S03p2&#xa;pWTLusK9Tr+sMQf4E7J0EUNM/TaPvyB0P+2d65mdVPdMxX19KKpfkJ26fLMtzyBp&#xa;W2mvVzVWgYfrjXPv7RVGayX2Ii7FC7VWC3xCiOKg6vT+kfw7uxOWhsp/utu7Aoo/&#xa;vHFTbM1ZeocTshlaFsqjTOYH0wMfVibEICca6nuC88OzE5aOnklMZXxyURivh/Qq&#xa;C+e8IIhqtGWIQV91KdhgqVp+g7HgpJzvm03r2c41BidBAgMBAAGjITAfMB0GA1Ud&#xa;DgQWBBQTVdt9qTFxozNAVtNJqXdCkKNZOTANBgkqhkiG9w0BAQsFAAOCAQEAB+Xx&#xa;ljjOVTMcZaVaOJDrmFmhrhlfv19Tvs82VC8DXV6dITzczMmhXuALcTE2zjrbu3hA&#xa;7Vv7CvDmAVrDKc0L4aENqZnt2Ch42hsvFSVGhdizj+d5D+83alUG4C0MZ/NgRqvC&#xa;9axwXp887+MzYTTE+ctagxCC5drzFR0osvneU/AQcnlIurSs7EkWktimSLWnOm83&#xa;FQL0ZmaUjIIsV3pFBDMx9pt8agSwCgGOjrkxnpqsU/fLOPbl24b/8tg5dzRHX3/s&#xa;8zd5COtZtZA/2X7ocMP03RfstBnQCCZ+y2RGF7gI2KeZHs/xK3mG8SJvxAWU4U/h&#xa;ZOTwR42VlQhP/vlg5A==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-title" output="Did not follow redirect to https://localhost:4848/"><elem key="redirect_url">https://localhost:4848/</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: HEAD POST"><table key="Supported Methods">
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="4848"/>
+<portused state="closed" proto="udp" portid="38600"/>
+<osmatch name="Fortinet FortiGate-60B or -100A firewall" accuracy="90" line="27705">
+<osclass type="firewall" vendor="Fortinet" osfamily="embedded" accuracy="90"/>
+</osmatch>
+<osmatch name="DD-WRT (Linux 2.4.36)" accuracy="89" line="50233">
+<osclass type="WAP" vendor="Linux" osfamily="Linux" osgen="2.4.X" accuracy="89"><cpe>cpe:/o:linux:linux_kernel:2.4.36</cpe></osclass>
+</osmatch>
+<osmatch name="Cisco Unified Communications Manager VoIP adapter" accuracy="87" line="16540">
+<osclass type="VoIP adapter" vendor="Cisco" osfamily="embedded" accuracy="87"><cpe>cpe:/h:cisco:unified_call_manager</cpe></osclass>
+</osmatch>
+<osmatch name="Android 7.1.2 (Linux 3.10)" accuracy="87" line="34473">
+<osclass type="phone" vendor="Google" osfamily="Android" osgen="7.X" accuracy="87"><cpe>cpe:/o:google:android:7.1.2</cpe></osclass>
+<osclass type="phone" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:3.10</cpe></osclass>
+</osmatch>
+<osmatch name="GoPro HERO3 camera" accuracy="87" line="34922">
+<osclass type="webcam" vendor="GoPro" osfamily="embedded" accuracy="87"><cpe>cpe:/h:gopro:hero3</cpe></osclass>
+</osmatch>
+<osmatch name="DD-WRT v23 (Linux 2.4.36)" accuracy="87" line="50270">
+<osclass type="WAP" vendor="Linux" osfamily="Linux" osgen="2.4.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:2.4.36</cpe></osclass>
+</osmatch>
+<osmatch name="Vyatta router (Linux 2.6.26)" accuracy="87" line="51239">
+<osclass type="firewall" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:2.6.26</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.18" accuracy="87" line="52788">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:2.6.18</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.2.0" accuracy="87" line="68925">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:3.2.0</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.18" accuracy="87" line="72714">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="87"><cpe>cpe:/o:linux:linux_kernel:5.18</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="SCAN(V=7.99%E=4%D=8/4%OT=4848%CT=%CU=38600%PV=Y%DS=0%DC=L%G=N%TM=6A724C35%P=x86_64-pc-linux-gnu)&#xa;SEQ()&#xa;ECN(R=N)&#xa;T1(R=N)&#xa;T2(R=N)&#xa;T3(R=N)&#xa;T4(R=N)&#xa;U1(R=N)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=N)&#xa;"/>
+</os>
+<distance value="0"/>
+<times srtt="43" rttvar="1586" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785875509"/>
+<taskend task="NSE" time="1785875509"/>
+<taskbegin task="NSE" time="1785875509"/>
+<taskend task="NSE" time="1785875509"/>
+<taskbegin task="NSE" time="1785875509"/>
+<taskend task="NSE" time="1785875509"/>
+<runstats><finished time="1785875509" timestr="Tue Aug  4 16:31:49 2026" summary="Nmap done at Tue Aug  4 16:31:49 2026; 1 IP address (1 host up) scanned in 53.97 seconds" elapsed="53.97" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

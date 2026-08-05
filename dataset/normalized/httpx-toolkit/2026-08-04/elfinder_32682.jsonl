@@ -1,0 +1,1 @@
+{"run_date":"2026-08-04","tool":"httpx-toolkit","target":"elfinder_32682","url":"http://127.0.0.1:18083","host":"127.0.0.1","port":"18083","status_code":200,"title":"elFinder 2.1.x source version with PHP connector","server":"Apache/2.4.52 (Debian)","tech":["Apache HTTP Server:2.4.52","Cloudflare","Debian","RequireJS","cdnjs"],"raw_source":"scan.jsonl"}

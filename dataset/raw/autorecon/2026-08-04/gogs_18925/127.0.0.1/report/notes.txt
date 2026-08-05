@@ -1,0 +1,4 @@
+[*] hadoop-datanode found on tcp/3000.
+
+
+

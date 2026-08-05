@@ -1,0 +1,250 @@
+        ___
+       __H__
+ ___ ___["]_____ ___ ___  {1.10.6#stable}
+|_ -| . [']     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 16:00:11 /2026-08-04/
+
+[16:00:11] [INFO] loading tamper module 'space2comment'
+[16:00:11] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36' from file '/usr/share/sqlmap/data/txt/user-agents.txt'
+[1/1] URL:
+GET http://127.0.0.14:18000/?date=minute
+do you want to test this URL? [Y/n/q]
+> Y
+[16:00:12] [INFO] testing URL 'http://127.0.0.14:18000/?date=minute'
+[16:00:12] [INFO] flushing session file
+[16:00:12] [INFO] using '/home/kali/.local/share/sqlmap/output/results-08042026_0400pm.csv' as the CSV results file in multiple targets mode
+[16:00:12] [INFO] testing connection to the target URL
+[16:00:12] [INFO] checking if the target is protected by some kind of WAF/IPS
+[16:00:14] [WARNING] reflective value(s) found and filtering out
+[16:00:14] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS
+are you sure that you want to continue with further target testing? [Y/n] Y
+[16:00:14] [INFO] testing if the target URL content is stable
+[16:00:14] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[16:00:14] [INFO] testing if GET parameter 'date' is dynamic
+[16:00:14] [WARNING] GET parameter 'date' does not appear to be dynamic
+[16:00:14] [INFO] heuristic (basic) test shows that GET parameter 'date' might be injectable (possible DBMS: 'PostgreSQL')
+[16:00:15] [INFO] testing for SQL injection on GET parameter 'date'
+it looks like the back-end DBMS is 'PostgreSQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[16:00:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:00:39] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[16:00:41] [INFO] GET parameter 'date' appears to be 'OR boolean-based blind - WHERE or HAVING clause' injectable 
+[16:00:41] [INFO] testing 'Generic inline queries'
+[16:00:41] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:00:41] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
+[16:00:42] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[16:00:42] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
+[16:00:42] [INFO] testing 'PostgreSQL inline queries'
+[16:00:42] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:00:42] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
+[16:00:42] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[16:00:42] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
+[16:00:42] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
+[16:00:43] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
+[16:00:43] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:00:43] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind'
+[16:00:43] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind (comment)'
+[16:00:43] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind (comment)'
+[16:00:43] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[16:00:43] [INFO] testing 'PostgreSQL OR time-based blind (heavy query)'
+[16:00:44] [INFO] testing 'PostgreSQL AND time-based blind (heavy query - comment)'
+[16:00:44] [INFO] testing 'PostgreSQL OR time-based blind (heavy query - comment)'
+[16:00:44] [INFO] testing 'PostgreSQL > 8.1 time-based blind - Parameter replace'
+[16:00:44] [INFO] testing 'PostgreSQL time-based blind - Parameter replace (heavy query)'
+[16:00:44] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[16:00:44] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[16:00:48] [INFO] target URL appears to be UNION injectable with 20 columns
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+[16:01:56] [WARNING] if UNION based SQL injection is not detected, please consider forcing the back-end DBMS (e.g. '--dbms=mysql') 
+[16:01:56] [INFO] testing 'Generic UNION query (53) - 21 to 40 columns'
+[16:02:04] [INFO] testing 'Generic UNION query (53) - 41 to 60 columns'
+[16:02:10] [INFO] testing 'Generic UNION query (53) - 61 to 80 columns'
+[16:02:15] [INFO] testing 'Generic UNION query (53) - 81 to 100 columns'
+[16:02:22] [WARNING] in OR boolean-based injection cases, please consider usage of switch '--drop-set-cookie' if you experience any problems during data retrieval
+[16:02:22] [INFO] checking if the injection point on GET parameter 'date' is a false positive
+[16:02:22] [WARNING] false positive or unexploitable injection point detected
+[16:02:22] [WARNING] GET parameter 'date' does not seem to be injectable
+[16:02:22] [INFO] testing if parameter 'User-Agent' is dynamic
+[16:02:22] [WARNING] parameter 'User-Agent' does not appear to be dynamic
+[16:02:22] [WARNING] heuristic (basic) test shows that parameter 'User-Agent' might not be injectable
+[16:02:22] [INFO] testing for SQL injection on parameter 'User-Agent'
+[16:02:22] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:02:32] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[16:02:36] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[16:02:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:03:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:03:07] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[16:03:08] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[16:03:10] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[16:03:11] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:04:07] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:04:23] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:04:24] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[16:04:25] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[16:04:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[16:04:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[16:04:31] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[16:04:31] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[16:04:32] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[16:04:32] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[16:04:32] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[16:04:33] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[16:04:39] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[16:04:40] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[16:04:51] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[16:05:09] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[16:05:44] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:06:46] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
+[16:07:30] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[16:07:30] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
+[16:07:33] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause'
+[16:07:36] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)'
+[16:07:40] [INFO] testing 'Generic inline queries'
+[16:07:40] [INFO] testing 'PostgreSQL inline queries'
+[16:07:40] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:07:43] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
+[16:07:50] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[16:07:54] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
+[16:07:58] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
+[16:08:08] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
+[16:08:20] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:08:25] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind'
+[16:08:29] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind (comment)'
+[16:08:32] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind (comment)'
+[16:08:38] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[16:08:44] [INFO] testing 'PostgreSQL OR time-based blind (heavy query)'
+[16:08:50] [INFO] testing 'PostgreSQL AND time-based blind (heavy query - comment)'
+[16:09:08] [INFO] testing 'PostgreSQL OR time-based blind (heavy query - comment)'
+[16:09:18] [INFO] testing 'PostgreSQL > 8.1 time-based blind - Parameter replace'
+[16:09:18] [INFO] testing 'PostgreSQL time-based blind - Parameter replace (heavy query)'
+[16:09:19] [INFO] testing 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause'
+[16:09:20] [INFO] testing 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[16:09:20] [INFO] testing 'Generic UNION query (53) - 1 to 10 columns'
+[16:09:27] [WARNING] parameter 'User-Agent' does not seem to be injectable
+[16:09:27] [INFO] testing if parameter 'Referer' is dynamic
+[16:09:27] [INFO] parameter 'Referer' appears to be dynamic
+[16:09:27] [WARNING] heuristic (basic) test shows that parameter 'Referer' might not be injectable
+[16:09:27] [INFO] testing for SQL injection on parameter 'Referer'
+[16:09:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:09:59] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[16:10:16] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[16:10:30] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:10:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:10:48] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[16:10:50] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[16:10:54] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[16:10:56] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:11:04] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:11:17] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:11:17] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[16:11:18] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[16:11:18] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[16:11:18] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[16:11:18] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[16:11:19] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[16:11:19] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[16:11:20] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[16:11:20] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[16:11:20] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[16:11:21] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[16:11:21] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[16:11:31] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[16:11:37] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[16:11:44] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:11:50] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
+[16:11:55] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[16:11:55] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
+[16:11:55] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause'
+[16:11:56] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)'
+[16:11:56] [INFO] testing 'Generic inline queries'
+[16:11:56] [INFO] testing 'PostgreSQL inline queries'
+[16:11:56] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:11:59] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
+[16:12:05] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[16:12:08] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
+[16:12:14] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
+[16:12:17] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
+[16:12:22] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:12:30] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind'
+[16:12:36] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind (comment)'
+[16:12:41] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind (comment)'
+[16:12:46] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[16:12:53] [INFO] testing 'PostgreSQL OR time-based blind (heavy query)'
+[16:13:00] [INFO] testing 'PostgreSQL AND time-based blind (heavy query - comment)'
+[16:13:05] [INFO] testing 'PostgreSQL OR time-based blind (heavy query - comment)'
+[16:13:10] [INFO] testing 'PostgreSQL > 8.1 time-based blind - Parameter replace'
+[16:13:11] [INFO] testing 'PostgreSQL time-based blind - Parameter replace (heavy query)'
+[16:13:11] [INFO] testing 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause'
+[16:13:11] [INFO] testing 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[16:13:11] [INFO] testing 'Generic UNION query (53) - 1 to 10 columns'
+[16:13:16] [WARNING] parameter 'Referer' does not seem to be injectable
+[16:13:16] [INFO] testing if parameter 'Host' is dynamic
+[16:13:16] [INFO] parameter 'Host' appears to be dynamic
+[16:13:16] [WARNING] heuristic (basic) test shows that parameter 'Host' might not be injectable
+[16:13:16] [INFO] testing for SQL injection on parameter 'Host'
+[16:13:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[16:13:35] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[16:13:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[16:14:14] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:14:39] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[16:14:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[16:14:55] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[16:14:57] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[16:15:01] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:15:13] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[16:15:27] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[16:15:27] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[16:15:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[16:15:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[16:15:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[16:15:28] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[16:15:29] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[16:15:29] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[16:15:29] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[16:15:29] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[16:15:30] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[16:15:30] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[16:15:31] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[16:15:43] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[16:15:52] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[16:15:59] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[16:16:05] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
+[16:16:10] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[16:16:10] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
+[16:16:10] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause'
+[16:16:10] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)'
+[16:16:11] [INFO] testing 'Generic inline queries'
+[16:16:11] [INFO] testing 'PostgreSQL inline queries'
+[16:16:11] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[16:16:13] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
+[16:16:17] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[16:16:18] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
+[16:16:22] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
+[16:16:26] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
+[16:16:33] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[16:16:42] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind'
+[16:16:49] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind (comment)'
+[16:16:54] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind (comment)'
+[16:16:59] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[16:17:08] [INFO] testing 'PostgreSQL OR time-based blind (heavy query)'
+[16:17:17] [INFO] testing 'PostgreSQL AND time-based blind (heavy query - comment)'
+[16:17:23] [INFO] testing 'PostgreSQL OR time-based blind (heavy query - comment)'
+[16:17:29] [INFO] testing 'PostgreSQL > 8.1 time-based blind - Parameter replace'
+[16:17:29] [INFO] testing 'PostgreSQL time-based blind - Parameter replace (heavy query)'
+[16:17:29] [INFO] testing 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause'
+[16:17:30] [INFO] testing 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[16:17:30] [INFO] testing 'Generic UNION query (53) - 1 to 10 columns'
+[16:17:37] [WARNING] parameter 'Host' does not seem to be injectable
+[16:17:37] [ERROR] all tested parameters do not appear to be injectable, skipping to the next target
+[16:17:37] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 806 times
+[16:17:37] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/home/kali/.local/share/sqlmap/output/results-08042026_0400pm.csv'
+
+[*] ending @ 16:17:37 /2026-08-04/
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:31:35 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;osscan-guess -p 18080 -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/_custom_ports_udp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/xml/_custom_ports_udp_nmap.xml 127.0.0.11 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;osscan-guess -p 18080 -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/_custom_ports_udp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/xml/_custom_ports_udp_nmap.xml 127.0.0.11" start="1785875495" startstr="Tue Aug  4 16:31:35 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="1" services="18080"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785875496"/>
+<taskend task="NSE" time="1785875496"/>
+<taskbegin task="NSE" time="1785875496"/>
+<taskend task="NSE" time="1785875496"/>
+<taskbegin task="NSE" time="1785875496"/>
+<taskend task="NSE" time="1785875496"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1785875496"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1785875500"/>
+<taskbegin task="UDP Scan" time="1785875500"/>
+<taskend task="UDP Scan" time="1785875500" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785875500"/>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<host starttime="1785875500" endtime="1785875502"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="udp" portid="18080"><state state="closed" reason="port-unreach" reason_ttl="64"/></port>
+</ports>
+<os><portused state="closed" proto="udp" portid="18080"/>
+<osfingerprint fingerprint="SCAN(V=7.99%E=4%D=8/4%OT=%CT=%CU=18080%PV=Y%DS=0%DC=L%G=N%TM=6A724C2E%P=x86_64-pc-linux-gnu)&#xa;SEQ(CI=Z%II=I)&#xa;T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<distance value="0"/>
+<times srtt="176" rttvar="432" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<taskbegin task="NSE" time="1785875502"/>
+<taskend task="NSE" time="1785875502"/>
+<runstats><finished time="1785875502" timestr="Tue Aug  4 16:31:42 2026" summary="Nmap done at Tue Aug  4 16:31:42 2026; 1 IP address (1 host up) scanned in 7.18 seconds" elapsed="7.18" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

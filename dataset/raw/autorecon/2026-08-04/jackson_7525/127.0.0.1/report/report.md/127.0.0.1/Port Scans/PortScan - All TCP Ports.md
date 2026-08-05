@@ -1,0 +1,112 @@
+```bash
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p 8080 -oN "/home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/_full_tcp_nmap.txt" -oX "/home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/xml/_full_tcp_nmap.xml" 127.0.0.1
+```
+
+[/home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/_full_tcp_nmap.txt](file:///home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/_full_tcp_nmap.txt):
+
+```
+# Nmap 7.99 scan initiated Tue Aug  4 18:01:44 2026 as: /usr/lib/nmap/nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p 8080 -oN /home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/jackson_7525/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1
+adjust_timeouts2: packet supposedly had rtt of -501787 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -501787 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -489182 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -489182 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -757397 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -757397 microseconds.  Ignoring time.
+Nmap scan report for localhost (127.0.0.1)
+Host is up, received user-set (0.000042s latency).
+Scanned at 2026-08-04 18:01:45 EDT for 58s
+
+PORT     STATE SERVICE    REASON         VERSION
+8080/tcp open  http-proxy syn-ack ttl 64
+|_http-title: Site doesn't have a title (application/json;charset=UTF-8).
+|_http-favicon: Spring Java Framework
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Hello, RPCCheck: 
+|     HTTP/1.1 400 
+|     Date: Tue, 04 Aug 2026 22:01:56 GMT
+|     Connection: close
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 
+|     Content-Type: application/json;charset=UTF-8
+|     Date: Tue, 04 Aug 2026 22:01:51 GMT
+|     Connection: close
+|     ["java.util.LinkedHashMap",{"timestamp":["java.util.Date",1785880911665],"status":404,"error":"Not Found","message":"No message available","path":"/nice%20ports%2C/Tri%6Eity.txt%2ebak"}]
+|   GetRequest: 
+|     HTTP/1.1 404 
+|     Content-Type: application/json;charset=UTF-8
+|     Date: Tue, 04 Aug 2026 22:01:51 GMT
+|     Connection: close
+|     ["java.util.LinkedHashMap",{"timestamp":["java.util.Date",1785880911583],"status":404,"error":"Not Found","message":"No message available","path":"/"}]
+|   HTTPOptions: 
+|     HTTP/1.1 404 
+|     Content-Type: application/json;charset=UTF-8
+|     Date: Tue, 04 Aug 2026 22:01:51 GMT
+|     Connection: close
+|     ["java.util.LinkedHashMap",{"timestamp":["java.util.Date",1785880911626],"status":404,"error":"Not Found","message":"No message available","path":"/"}]
+|   RTSPRequest, Socks4, Socks5: 
+|     HTTP/1.1 400 
+|     Date: Tue, 04 Aug 2026 22:01:51 GMT
+|_    Connection: close
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8080-TCP:V=7.99%I=9%D=8/4%Time=6A72614F%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,10E,"HTTP/1\.1\x20404\x20\r\nContent-Type:\x20application/json;
+SF:charset=UTF-8\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2022:01:51\x20GMT\
+SF:r\nConnection:\x20close\r\n\r\n\[\"java\.util\.LinkedHashMap\",{\"times
+SF:tamp\":\[\"java\.util\.Date\",1785880911583\],\"status\":404,\"error\":
+SF:\"Not\x20Found\",\"message\":\"No\x20message\x20available\",\"path\":\"
+SF:/\"}\]")%r(HTTPOptions,10E,"HTTP/1\.1\x20404\x20\r\nContent-Type:\x20ap
+SF:plication/json;charset=UTF-8\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x202
+SF:2:01:51\x20GMT\r\nConnection:\x20close\r\n\r\n\[\"java\.util\.LinkedHas
+SF:hMap\",{\"timestamp\":\[\"java\.util\.Date\",1785880911626\],\"status\"
+SF::404,\"error\":\"Not\x20Found\",\"message\":\"No\x20message\x20availabl
+SF:e\",\"path\":\"/\"}\]")%r(RTSPRequest,49,"HTTP/1\.1\x20400\x20\r\nDate:
+SF:\x20Tue,\x2004\x20Aug\x202026\x2022:01:51\x20GMT\r\nConnection:\x20clos
+SF:e\r\n\r\n")%r(FourOhFourRequest,131,"HTTP/1\.1\x20404\x20\r\nContent-Ty
+SF:pe:\x20application/json;charset=UTF-8\r\nDate:\x20Tue,\x2004\x20Aug\x20
+SF:2026\x2022:01:51\x20GMT\r\nConnection:\x20close\r\n\r\n\[\"java\.util\.
+SF:LinkedHashMap\",{\"timestamp\":\[\"java\.util\.Date\",1785880911665\],\
+SF:"status\":404,\"error\":\"Not\x20Found\",\"message\":\"No\x20message\x2
+SF:0available\",\"path\":\"/nice%20ports%2C/Tri%6Eity\.txt%2ebak\"}\]")%r(
+SF:Socks5,49,"HTTP/1\.1\x20400\x20\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x
+SF:2022:01:51\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(Socks4,49,"HTTP/1
+SF:\.1\x20400\x20\r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2022:01:51\x20GMT
+SF:\r\nConnection:\x20close\r\n\r\n")%r(RPCCheck,49,"HTTP/1\.1\x20400\x20\
+SF:r\nDate:\x20Tue,\x2004\x20Aug\x202026\x2022:01:56\x20GMT\r\nConnection:
+SF:\x20close\r\n\r\n")%r(DNSVersionBindReqTCP,49,"HTTP/1\.1\x20400\x20\r\n
+SF:Date:\x20Tue,\x2004\x20Aug\x202026\x2022:01:56\x20GMT\r\nConnection:\x2
+SF:0close\r\n\r\n")%r(DNSStatusRequestTCP,49,"HTTP/1\.1\x20400\x20\r\nDate
+SF::\x20Tue,\x2004\x20Aug\x202026\x2022:01:56\x20GMT\r\nConnection:\x20clo
+SF:se\r\n\r\n")%r(Hello,49,"HTTP/1\.1\x20400\x20\r\nDate:\x20Tue,\x2004\x2
+SF:0Aug\x202026\x2022:01:56\x20GMT\r\nConnection:\x20close\r\n\r\n");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+Aggressive OS guesses: Linux 5.0 - 6.2 (97%), Linux 3.7 - 4.19 (93%), Linux 2.6.32 (93%), Linux 6.8 (93%), Linux 5.7 (92%), Linux 5.8 (92%), Linux 3.8 - 3.9 (92%), Linux 4.1 (92%), Linux 5.15 (92%), Linux 4.10 (92%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.99%E=4%D=8/4%OT=8080%CT=%CU=43400%PV=Y%DS=0%DC=L%G=N%TM=6A726183%P=x86_64-pc-linux-gnu)
+SEQ(TS=22)
+SEQ(SP=108%GCD=1%ISR=106%TI=Z%CI=Z%II=I%TS=21)
+OPS(O1=MFFD7ST11NWA%O2=MFFD7ST11NWA%O3=MFFD7NNT11NWA%O4=MFFD7ST11NWA%O5=MFFD7ST11NWA%O6=MFFD7ST11)
+WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FFCB)
+ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNWA%CC=Y%Q=)
+T1(R=N)
+T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=N)
+T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=N)
+IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 0.000 days (since Tue Aug  4 18:02:37 2026)
+Network Distance: 0 hops
+
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 18:02:43 2026 -- 1 IP address (1 host up) scanned in 58.64 seconds
+
+```

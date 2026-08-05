@@ -1,0 +1,40 @@
+```bash
+nikto -ask=no -Tuning=x4567890ac -nointeractive -host http://127.0.0.16:18082 2>&1 | tee "/home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nikto.txt"
+```
+
+[/home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nikto.txt](file:///home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nikto.txt):
+
+```
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.16
++ Target Hostname:    127.0.0.16
++ Target Port:        18082
++ Platform:           Windows
++ Start Time:         2026-08-04 16:51:42 (GMT-4)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ ERROR: Failed to check for updates: 403
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [500645] /favicon.ico: identifies this app/server as: Apache Tomcat (possibly 5.5.26 through 8.0.15), Alfresco Community. See: https://en.wikipedia.org/wiki/Favicon
++ [000366] /examples/servlets/index.html: Apache Tomcat default JSP pages present.
++ [001355] /examples/jsp/snp/snoop.jsp: Displays information about page retrievals, including other users. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2104
++ [003399] /manager/manager-howto.html: Tomcat documentation found. See: CWE-552
++ [006525] /manager/html: Default Tomcat Manager / Host Manager interface found.
++ [006525] /host-manager/html: Default Tomcat Manager / Host Manager interface found.
++ [006634] /docs/: Tomcat Documentation found.
++ [007015] /manager/status: Default Tomcat Server Status interface found.
++ [007015] /host-manager/status: Default Tomcat Server Status interface found.
++ [007342] /: X-Frame-Options header is deprecated and was replaced with the Content-Security-Policy HTTP header with the frame-ancestors directive. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options
++ [007352] /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ 7633 requests: 0 errors and 16 items reported on the remote host
++ End Time:           2026-08-04 16:53:33 (GMT-4) (111 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+```

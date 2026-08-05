@@ -1,0 +1,1 @@
+{"run_date":"2026-08-04","tool":"httpx-toolkit","target":"spring_22965","url":"http://127.0.0.12:28080","host":"127.0.0.12","port":"28080","status_code":200,"title":null,"server":null,"tech":["Java"],"raw_source":"scan.jsonl"}

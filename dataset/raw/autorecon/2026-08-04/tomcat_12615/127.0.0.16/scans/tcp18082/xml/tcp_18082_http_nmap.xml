@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:51:41 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 18082 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/xml/tcp_18082_http_nmap.xml 127.0.0.16 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 18082 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/tcp_18082_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615/127.0.0.16/scans/tcp18082/xml/tcp_18082_http_nmap.xml 127.0.0.16" start="1785876701" startstr="Tue Aug  4 16:51:41 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18082"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785876702"/>
+<taskend task="NSE" time="1785876702"/>
+<taskbegin task="NSE" time="1785876702"/>
+<taskend task="NSE" time="1785876702"/>
+<taskbegin task="NSE" time="1785876702"/>
+<taskend task="NSE" time="1785876702"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1785876702"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1785876702"/>
+<taskbegin task="SYN Stealth Scan" time="1785876702"/>
+<taskend task="SYN Stealth Scan" time="1785876702" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785876703"/>
+<taskend task="Service scan" time="1785876714" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785876714"/>
+<taskprogress task="NSE" time="1785876745" percent="99.68" remaining="1" etc="1785876745"/>
+<taskend task="NSE" time="1785876771"/>
+<taskbegin task="NSE" time="1785876771"/>
+<taskend task="NSE" time="1785876771"/>
+<taskbegin task="NSE" time="1785876771"/>
+<taskend task="NSE" time="1785876771"/>
+<host starttime="1785876702" endtime="1785876771"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.16" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="18082"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache Tomcat" version="8.5.14" method="probed" conf="10"><cpe>cpe:/a:apache:tomcat:8.5.14</cpe></service><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      Other: 1; css: 1; ico: 1; png: 1&#xa;    /docs/&#xa;      Other: 1; html: 8; txt: 1&#xa;    /docs/api/&#xa;      html: 1&#xa;    /docs/appdev/&#xa;      Other: 1&#xa;    /docs/config/&#xa;      Other: 1&#xa;    /examples/&#xa;      Other: 1&#xa;  Longest directory structure:&#xa;    Depth: 2&#xa;    Dir: /docs/api/&#xa;  Total files found (by extension):&#xa;    Other: 5; css: 1; html: 9; ico: 1; png: 1; txt: 1&#xa;"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-headers" output="&#xa;  Content-Type: text/html;charset=UTF-8&#xa;  Transfer-Encoding: chunked&#xa;  Date: Tue, 04 Aug 2026 20:51:56 GMT&#xa;  Connection: close&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-title" output="Apache Tomcat/8.5.14"><elem key="title">Apache Tomcat/8.5.14</elem>
+</script><script id="http-date" output="Tue, 04 Aug 2026 20:51:54 GMT; 0s from local time."><elem key="date">2026-08-04T20:51:54+00:00</elem>
+<elem key="delta">0.0</elem>
+</script><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-malware-host" output="Host appears to be clean"/><script id="http-favicon" output="Apache Tomcat"/><script id="http-vhosts" output="&#xa;128 names had status 200"/><script id="http-php-version" output="Logo query returned unknown hash 23fc1b18423ac1e400fde35175b31bbb&#xa;Credits query returned unknown hash 23fc1b18423ac1e400fde35175b31bbb"/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-referer-checker" output="Couldn&apos;t find any cross-domain scripts."/><script id="http-waf-detect" output="IDS/IPS/WAF detected:&#xa;127.0.0.16:18082/?p4yl04d3=&lt;script&gt;alert(document.cookie)&lt;/script&gt;"/><script id="http-security-headers" output=""></script><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-comments-displayer" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=127.0.0.16&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 627&#xa;    Comment: &#xa;         // and the connection is returned to the pool&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 626&#xa;    Comment: &#xa;         // Always make sure result sets and statements are closed,&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/appdev/&#xa;    Line number: 7&#xa;    Comment: &#xa;         // Workaround for IE &lt;= 11&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 622&#xa;    Comment: &#xa;         // Make sure we don&apos;t close it twice&#xa;    &#xa;    Path: http://127.0.0.16:18082/&#xa;    Line number: 53&#xa;    Comment: &#xa;        &lt;!-&#45;&#xa;                        &lt;br class=&quot;separator&quot; /&gt;&#xa;                        -&#45;&gt;&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 621&#xa;    Comment: &#xa;         // Return to connection pool&#xa;    &#xa;    Path: http://127.0.0.16:18082/tomcat.css&#xa;    Line number: 1&#xa;    Comment: &#xa;        /*&#xa;          Licensed to the Apache Software Foundation (ASF) under one or more&#xa;          contributor license agreements.  See the NOTICE file distributed with&#xa;          this work for additional information regarding copyright ownership.&#xa;          The ASF licenses this file to You under the Apache License, Version 2.0&#xa;          (the &quot;License&quot;); you may not use this file except in compliance with&#xa;          the License.  You may obtain a copy of the License at&#xa;        &#xa;              http://www.apache.org/licenses/LICENSE-2.0&#xa;        &#xa;          Unless required by applicable law or agreed to in writing, software&#xa;          distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa;          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa;          See the License for the specific language governing permissions and&#xa;          limitations under the License.&#xa;        */&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/appdev/&#xa;    Line number: 3&#xa;    Comment: &#xa;         // Enable strict mode&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 610&#xa;    Comment: &#xa;         // Or PreparedStatement if needed&#xa;    &#xa;    Path: http://127.0.0.16:18082/examples/&#xa;    Line number: 1&#xa;    Comment: &#xa;        &lt;!-&#45;&#xa;          Licensed to the Apache Software Foundation (ASF) under one or more&#xa;          contributor license agreements.  See the NOTICE file distributed with&#xa;          this work for additional information regarding copyright ownership.&#xa;          The ASF licenses this file to You under the Apache License, Version 2.0&#xa;          (the &quot;License&quot;); you may not use this file except in compliance with&#xa;          the License.  You may obtain a copy of the License at&#xa;        &#xa;              http://www.apache.org/licenses/LICENSE-2.0&#xa;        &#xa;          Unless required by applicable law or agreed to in writing, software&#xa;          distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa;          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa;          See the License for the specific language governing permissions and&#xa;          limitations under the License.&#xa;        -&#45;&gt;&#xa;    &#xa;    Path: http://127.0.0.16:18082/host-manager/html&#xa;    Line number: 6&#xa;    Comment: &#xa;        &lt;!-&#45;&#xa;            BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}&#xa;            H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}&#xa;            PRE, TT {border: 1px dotted #525D76}&#xa;            A {color : black;}A.name {color : black;}&#xa;            -&#45;&gt;&#xa;    &#xa;    Path: http://127.0.0.16:18082/docs/jndi-datasource-examples-howto.html&#xa;    Line number: 395&#xa;    Comment: &#xa;        &#xa;        //etc.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xa;"/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/><script id="http-errors" output="&#xa;Spidering limited to: maxpagecount=40; withinhost=127.0.0.16&#xa;  Found the following error pages: &#xa;  &#xa;  Error Code: 403&#xa;  &#x9;http://127.0.0.16:18082/manager/html&#xa;  &#xa;  Error Code: 403&#xa;  &#x9;http://127.0.0.16:18082/manager/status&#xa;  &#xa;  Error Code: 403&#xa;  &#x9;http://127.0.0.16:18082/host-manager/html&#xa;"/><script id="http-grep" output="&#xa;  (2) http://127.0.0.16:18082/docs/realm-howto.html: &#xa;    (2) email: &#xa;      + j.jones@mycompany.com&#xa;      + f.bloggs@mycompany.com&#xa;  (1) http://127.0.0.16:18082/docs/appdev/: &#xa;    (1) email: &#xa;      + craigmcc@apache.org"><table key="(2) http://127.0.0.16:18082/docs/realm-howto.html">
+<table key="(2) email">
+<elem>+ j.jones@mycompany.com</elem>
+<elem>+ f.bloggs@mycompany.com</elem>
+</table>
+</table>
+<table key="(1) http://127.0.0.16:18082/docs/appdev/">
+<table key="(1) email">
+<elem>+ craigmcc@apache.org</elem>
+</table>
+</table>
+</script><script id="http-chrono" output="Request times for /; avg: 734.46ms; min: 493.59ms; max: 1307.03ms"/><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-enum" output="&#xa;  /examples/: Sample scripts&#xa;  /docs/: Potentially interesting folder&#xa;"/></port>
+</ports>
+<times srtt="48" rttvar="5000" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785876771"/>
+<taskend task="NSE" time="1785876771"/>
+<taskbegin task="NSE" time="1785876771"/>
+<taskend task="NSE" time="1785876771"/>
+<taskbegin task="NSE" time="1785876771"/>
+<taskend task="NSE" time="1785876771"/>
+<runstats><finished time="1785876771" timestr="Tue Aug  4 16:52:51 2026" summary="Nmap done at Tue Aug  4 16:52:51 2026; 1 IP address (1 host up) scanned in 70.01 seconds" elapsed="70.01" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

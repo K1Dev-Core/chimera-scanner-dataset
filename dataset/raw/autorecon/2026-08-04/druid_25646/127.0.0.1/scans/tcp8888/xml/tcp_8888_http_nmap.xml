@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:31:06 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 8888 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/tcp8888/tcp_8888_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/tcp8888/xml/tcp_8888_http_nmap.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 8888 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/tcp8888/tcp_8888_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/tcp8888/xml/tcp_8888_http_nmap.xml 127.0.0.1" start="1785875466" startstr="Tue Aug  4 16:31:06 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="8888"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785875466"/>
+<taskend task="NSE" time="1785875466"/>
+<taskbegin task="NSE" time="1785875466"/>
+<taskend task="NSE" time="1785875466"/>
+<taskbegin task="NSE" time="1785875466"/>
+<taskend task="NSE" time="1785875466"/>
+<taskbegin task="SYN Stealth Scan" time="1785875466"/>
+<taskend task="SYN Stealth Scan" time="1785875466" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785875467"/>
+<taskend task="Service scan" time="1785875473" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785875473"/>
+<taskprogress task="NSE" time="1785875504" percent="99.68" remaining="1" etc="1785875504"/>
+<taskend task="NSE" time="1785875522"/>
+<taskbegin task="NSE" time="1785875522"/>
+<taskend task="NSE" time="1785875522"/>
+<taskbegin task="NSE" time="1785875522"/>
+<taskend task="NSE" time="1785875522"/>
+<host starttime="1785875466" endtime="1785875522"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="8888"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Jetty" method="probed" conf="10"><cpe>cpe:/a:eclipse:jetty</cpe></service><script id="http-security-headers" output="&#xa;  Cache_Control: &#xa;    Header: Cache-Control: must-revalidate,no-cache,no-store"><table key="Cache_Control">
+<elem>Header: Cache-Control: must-revalidate,no-cache,no-store</elem>
+</table>
+</script><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-errors" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Redirected To: http://localhost:8888/unified-console.html&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<elem key="Redirected To">http://localhost:8888/unified-console.html</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-php-version" output="Logo query returned unknown hash cb96148a634ca842a2a8b3aa357995af&#xa;Credits query returned unknown hash cb96148a634ca842a2a8b3aa357995af"/><script id="http-vhosts" output="&#xa;128 names had status 405"/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-date" output="Tue, 04 Aug 2026 20:31:14 GMT; -2s from local time."><elem key="date">2026-08-04T20:31:14+00:00</elem>
+<elem key="delta">-2.0</elem>
+</script><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      html: 1; js: 1&#xa;  Longest directory structure:&#xa;    Depth: 0&#xa;    Dir: /&#xa;  Total files found (by extension):&#xa;    html: 1; js: 1&#xa;"/><script id="http-waf-detect" output="IDS/IPS/WAF detected:&#xa;localhost:8888/?p4yl04d3=&lt;script&gt;alert(document.cookie)&lt;/script&gt;"/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-headers" output="&#xa;  Connection: close&#xa;  Date: Tue, 04 Aug 2026 20:31:14 GMT&#xa;  Last-Modified: Thu, 08 Oct 2020 21:58:58 GMT&#xa;  Content-Type: text/html&#xa;  Accept-Ranges: bytes&#xa;  Vary: Accept-Encoding, User-Agent&#xa;  Content-Length: 1377&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-internal-ip-disclosure" output="&#xa;  Internal IP Leaked: 172.28.0.2"><elem key="Internal IP Leaked">172.28.0.2</elem>
+</script><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-malware-host" output="Host appears to be clean"/><script id="http-title" output="Apache Druid&#xa;Requested resource was http://localhost:8888/unified-console.html"><elem key="title">Apache Druid</elem>
+<elem key="redirect_url">http://localhost:8888/unified-console.html</elem>
+</script><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/><script id="http-enum" output="&#xa;  /status/: Potentially interesting folder&#xa;"/><script id="http-referer-checker" output="Couldn&apos;t find any cross-domain scripts."/><script id="http-methods" output="&#xa;  Supported Methods: GET POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-comments-displayer" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=localhost&#xa;    &#xa;    Path: http://localhost:8888/console-config.js&#xa;    Line number: 1&#xa;    Comment: &#xa;        /*&#xa;         * Licensed to the Apache Software Foundation (ASF) under one&#xa;         * or more contributor license agreements.  See the NOTICE file&#xa;         * distributed with this work for additional information&#xa;         * regarding copyright ownership.  The ASF licenses this file&#xa;         * to you under the Apache License, Version 2.0 (the&#xa;         * &quot;License&quot;); you may not use this file except in compliance&#xa;         * with the License.  You may obtain a copy of the License at&#xa;         *&#xa;         *     http://www.apache.org/licenses/LICENSE-2.0&#xa;         *&#xa;         * Unless required by applicable law or agreed to in writing, software&#xa;         * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa;         * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa;         * See the License for the specific language governing permissions and&#xa;         * limitations under the License.&#xa;         */&#xa;    &#xa;    Path: http://localhost:8888/unified-console.html&#xa;    Line number: 2&#xa;    Comment: &#xa;        &lt;!-&#45;&#xa;          ~ Licensed to the Apache Software Foundation (ASF) under one&#xa;          ~ or more contributor license agreements.  See the NOTICE file&#xa;          ~ distributed with this work for additional information&#xa;          ~ regarding copyright ownership.  The ASF licenses this file&#xa;          ~ to you under the Apache License, Version 2.0 (the&#xa;          ~ &quot;License&quot;); you may not use this file except in compliance&#xa;          ~ with the License.  You may obtain a copy of the License at&#xa;          ~&#xa;          ~   http://www.apache.org/licenses/LICENSE-2.0&#xa;          ~&#xa;          ~ Unless required by applicable law or agreed to in writing,&#xa;          ~ software distributed under the License is distributed on an&#xa;          ~ &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY&#xa;          ~ KIND, either express or implied.  See the License for the&#xa;          ~ specific language governing permissions and limitations&#xa;          ~ under the License.&#xa;          -&#45;&gt;&#xa;    &#xa;    Path: http://localhost:8888/console-config.js&#xa;    Line number: 21&#xa;    Comment: &#xa;        /* future configs may go here */&#xa;"/><script id="http-chrono" output="Request times for /unified-console.html; avg: 271.86ms; min: 217.82ms; max: 305.59ms"/><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/></port>
+</ports>
+<times srtt="268" rttvar="5000" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785875522"/>
+<taskend task="NSE" time="1785875522"/>
+<taskbegin task="NSE" time="1785875522"/>
+<taskend task="NSE" time="1785875522"/>
+<taskbegin task="NSE" time="1785875522"/>
+<taskend task="NSE" time="1785875522"/>
+<runstats><finished time="1785875522" timestr="Tue Aug  4 16:32:02 2026" summary="Nmap done at Tue Aug  4 16:32:02 2026; 1 IP address (1 host up) scanned in 56.20 seconds" elapsed="56.20" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:31:35 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 18080 -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/xml/_full_tcp_nmap.xml 127.0.0.11 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 18080 -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/xml/_full_tcp_nmap.xml 127.0.0.11" start="1785875495" startstr="Tue Aug  4 16:31:35 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18080"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785875495"/>
+<taskend task="NSE" time="1785875495"/>
+<taskbegin task="NSE" time="1785875495"/>
+<taskend task="NSE" time="1785875495"/>
+<taskbegin task="NSE" time="1785875495"/>
+<taskend task="NSE" time="1785875495"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1785875495"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1785875500"/>
+<taskbegin task="SYN Stealth Scan" time="1785875500"/>
+<taskend task="SYN Stealth Scan" time="1785875500" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785875500"/>
+<taskend task="Service scan" time="1785875511" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785875515"/>
+<taskend task="NSE" time="1785875515"/>
+<taskbegin task="NSE" time="1785875515"/>
+<taskend task="NSE" time="1785875516"/>
+<taskbegin task="NSE" time="1785875516"/>
+<taskend task="NSE" time="1785875516"/>
+<host starttime="1785875500" endtime="1785875516"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="18080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Jetty" version="9.2.11.v20150529" method="probed" conf="10"><cpe>cpe:/a:mortbay:jetty:9.2.11.v20150529</cpe></service><script id="http-title" output="Struts2 Showcase - Fileupload sample"><elem key="title">Struts2 Showcase - Fileupload sample</elem>
+</script><script id="http-server-header" output="Jetty(9.2.11.v20150529)"><elem>Jetty(9.2.11.v20150529)</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-cookie-flags" output="&#xa;  /: &#xa;    JSESSIONID: &#xa;      httponly flag not set"><table key="/">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+</script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="18080"/>
+<portused state="closed" proto="udp" portid="41968"/>
+<osmatch name="Linux 5.0 - 6.2" accuracy="97" line="72241">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:6</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.7 - 4.19" accuracy="93" line="69589">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 6.8" accuracy="93" line="73576">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:6.8</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32" accuracy="93" line="59503">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.8 - 3.9" accuracy="92" line="69872">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.7" accuracy="92" line="72990">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:5.7</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.8" accuracy="92" line="73008">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:5.8</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.1" accuracy="92" line="70582">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:4.1</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.15" accuracy="92" line="72678">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:5.15</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.10" accuracy="92" line="70695">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:4.10</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="SCAN(V=7.99%E=4%D=8/4%OT=18080%CT=%CU=41968%PV=Y%DS=0%DC=L%G=N%TM=6A724C3C%P=x86_64-pc-linux-gnu)&#xa;SEQ(SP=102%GCD=1%ISR=104%TI=Z%CI=Z%II=I%TS=21)&#xa;SEQ(SP=108%GCD=1%ISR=108%TI=Z%CI=Z%II=I%TS=21)&#xa;OPS(O1=MFFD7ST11NWA%O2=MFFD7ST11NWA%O3=MFFD7NNT11NWA%O4=MFFD7ST11NWA%O5=MFFD7ST11NWA%O6=MFFD7ST11)&#xa;WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FFCB)&#xa;ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNWA%CC=Y%Q=)&#xa;T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)&#xa;T2(R=N)&#xa;T3(R=N)&#xa;T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<uptime seconds="3" lastboot="Tue Aug  4 16:31:53 2026"/>
+<distance value="0"/>
+<tcpsequence index="258" difficulty="Good luck!" values="5A475D67,725D06D2,74AA14CC,4C9774CD,853292ED,2FC82209"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="other" values="5B8EA858,D9F9586D,B0CDB3F4,B919BC12,5C30582D,F6E40E57"/>
+<times srtt="38" rttvar="7" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785875516"/>
+<taskend task="NSE" time="1785875516"/>
+<taskbegin task="NSE" time="1785875516"/>
+<taskend task="NSE" time="1785875516"/>
+<taskbegin task="NSE" time="1785875516"/>
+<taskend task="NSE" time="1785875516"/>
+<runstats><finished time="1785875516" timestr="Tue Aug  4 16:31:56 2026" summary="Nmap done at Tue Aug  4 16:31:56 2026; 1 IP address (1 host up) scanned in 21.14 seconds" elapsed="21.14" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

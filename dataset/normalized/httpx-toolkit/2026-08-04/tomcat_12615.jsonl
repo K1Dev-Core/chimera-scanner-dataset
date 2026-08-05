@@ -1,0 +1,1 @@
+{"run_date":"2026-08-04","tool":"httpx-toolkit","target":"tomcat_12615","url":"http://127.0.0.16:18082","host":"127.0.0.16","port":"18082","status_code":200,"title":"Apache Tomcat/8.5.14","server":null,"tech":[],"raw_source":"scan.jsonl"}

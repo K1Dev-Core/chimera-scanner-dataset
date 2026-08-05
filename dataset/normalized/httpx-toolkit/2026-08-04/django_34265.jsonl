@@ -1,0 +1,1 @@
+{"run_date":"2026-08-04","tool":"httpx-toolkit","target":"django_34265","url":"http://127.0.0.14:18000","host":"127.0.0.14","port":"18000","status_code":200,"title":null,"server":"WSGIServer/0.2 CPython/3.10.5","tech":[],"raw_source":"scan.jsonl"}

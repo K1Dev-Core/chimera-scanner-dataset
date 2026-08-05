@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "wapiti",
+  "target": "tomcat_12615",
+  "raw_json_path": "/home/kali/dataset/raw/wapiti/2026-08-04/tomcat_12615/scan.json",
+  "parser_status": "raw_saved"
+}

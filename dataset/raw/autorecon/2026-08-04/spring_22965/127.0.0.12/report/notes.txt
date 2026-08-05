@@ -1,0 +1,4 @@
+[*] nagios-nsca found on tcp/28080.
+
+
+

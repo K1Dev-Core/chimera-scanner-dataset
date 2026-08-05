@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "zaproxy",
+  "target": "apache_41773",
+  "raw_text_path": "/home/kali/dataset/raw/zaproxy/2026-08-04/apache_41773/scan.txt",
+  "parser_status": "raw_only"
+}

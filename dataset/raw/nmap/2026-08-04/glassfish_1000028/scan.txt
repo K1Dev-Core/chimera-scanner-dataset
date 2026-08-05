@@ -1,0 +1,13 @@
+# Nmap 7.99 scan initiated Tue Aug  4 15:48:39 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 4848 -oN /home/kali/dataset/raw/nmap/2026-08-04/glassfish_1000028/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/glassfish_1000028/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000038s latency).
+
+PORT     STATE SERVICE           VERSION
+4848/tcp open  ssl/appserv-http?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US
+| Not valid before: 2014-08-21T13:30:10
+|_Not valid after:  2024-08-18T13:30:10
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 15:49:56 2026 -- 1 IP address (1 host up) scanned in 76.42 seconds

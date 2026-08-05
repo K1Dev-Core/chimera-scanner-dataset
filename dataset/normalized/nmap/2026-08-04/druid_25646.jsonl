@@ -1,0 +1,10 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "nmap",
+  "target": "druid_25646",
+  "host": "127.0.0.1",
+  "port": "8888",
+  "raw_text_path": "/home/kali/dataset/raw/nmap/2026-08-04/druid_25646/scan.txt",
+  "raw_xml_path": "/home/kali/dataset/raw/nmap/2026-08-04/druid_25646/scan.xml",
+  "parser_status": "raw_only"
+}

@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "nikto",
+  "target": "spring_22965",
+  "raw_text_path": "/home/kali/dataset/raw/nikto/2026-08-04/spring_22965/scan.txt",
+  "parser_status": "raw_only"
+}

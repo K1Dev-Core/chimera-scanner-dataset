@@ -1,0 +1,32 @@
+```bash
+nmap -vv --reason -Pn -T4 -sU -A --osscan-guess -p 8888 -oN "/home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/_custom_ports_udp_nmap.txt" -oX "/home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/xml/_custom_ports_udp_nmap.xml" 127.0.0.1
+```
+
+[/home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/_custom_ports_udp_nmap.txt](file:///home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/_custom_ports_udp_nmap.txt):
+
+```
+# Nmap 7.99 scan initiated Tue Aug  4 16:30:55 2026 as: /usr/lib/nmap/nmap -vv --reason -Pn -T4 -sU -A --osscan-guess -p 8888 -oN /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/_custom_ports_udp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/druid_25646/127.0.0.1/scans/xml/_custom_ports_udp_nmap.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up, received user-set (0.000089s latency).
+Scanned at 2026-08-04 16:30:55 EDT for 2s
+
+PORT     STATE  SERVICE   REASON              VERSION
+8888/udp closed ddi-udp-1 port-unreach ttl 64
+Too many fingerprints match this host to give specific OS details
+TCP/IP fingerprint:
+SCAN(V=7.99%E=4%D=8/4%OT=%CT=%CU=8888%PV=Y%DS=0%DC=L%G=N%TM=6A724C01%P=x86_64-pc-linux-gnu)
+SEQ(CI=Z)
+SEQ(CI=Z%II=I)
+T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 0 hops
+
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 16:30:57 2026 -- 1 IP address (1 host up) scanned in 1.84 seconds
+
+```

@@ -1,0 +1,11 @@
+# Nmap 7.99 scan initiated Tue Aug  4 15:48:39 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 18082 -oN /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.xml 127.0.0.16
+Nmap scan report for 127.0.0.16
+Host is up (0.000064s latency).
+
+PORT      STATE SERVICE VERSION
+18082/tcp open  http    Apache Tomcat 8.5.14
+|_http-favicon: Apache Tomcat
+|_http-title: Apache Tomcat/8.5.14
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 15:48:51 2026 -- 1 IP address (1 host up) scanned in 12.11 seconds

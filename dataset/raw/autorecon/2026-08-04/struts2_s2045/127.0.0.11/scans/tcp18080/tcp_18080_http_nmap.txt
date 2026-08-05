@@ -1,0 +1,147 @@
+# Nmap 7.99 scan initiated Tue Aug  4 16:31:57 2026 as: /usr/lib/nmap/nmap -vv --reason -Pn -T4 -sV -p 18080 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/tcp_18080_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/xml/tcp_18080_http_nmap.xml 127.0.0.11
+Nmap scan report for 127.0.0.11
+Host is up, received user-set (0.000038s latency).
+Scanned at 2026-08-04 16:32:02 EDT for 65s
+
+PORT      STATE SERVICE REASON         VERSION
+18080/tcp open  http    syn-ack ttl 64 Jetty 9.2.11.v20150529
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+| http-headers: 
+|   Date: Tue, 04 Aug 2026 20:32:16 GMT
+|   Content-Type: text/html; charset=ISO-8859-1
+|   Set-Cookie: JSESSIONID=1qqgo9rbvk4if1ogsp56zwghia;Path=/
+|   Expires: Thu, 01 Jan 1970 00:00:00 GMT
+|   Connection: close
+|   Server: Jetty(9.2.11.v20150529)
+|   
+|_  (Request type: HEAD)
+|_http-chrono: Request times for /; avg: 408.40ms; min: 329.55ms; max: 532.11ms
+|_http-comments-displayer: Couldn't find any comments.
+| http-vuln-cve2017-5638: 
+|   VULNERABLE:
+|   Apache Struts Remote Code Execution Vulnerability
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-5638
+|       Apache Struts 2.3.5 - Struts 2.3.31 and Apache Struts 2.5 - Struts 2.5.10 are vulnerable to a Remote Code Execution
+|       vulnerability via the Content-Type header.
+|           
+|     Disclosure date: 2017-03-07
+|     References:
+|       https://cwiki.apache.org/confluence/display/WW/S2-045
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5638
+|_      http://blog.talosintelligence.com/2017/03/apache-0-day-exploited.html
+| http-php-version: Logo query returned unknown hash 305829a80d0670bd4c82944cc53e3168
+|_Credits query returned unknown hash 68002e76b125f03329fa37bfc320f1db
+|_http-date: Tue, 04 Aug 2026 20:32:14 GMT; 0s from local time.
+|_http-server-header: Jetty(9.2.11.v20150529)
+|_http-errors: Couldn't find any error pages.
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-title: Struts2 Showcase - Fileupload sample
+| http-security-headers: 
+|   Expires: 
+|_    Header: Expires: Thu, 01 Jan 1970 00:00:00 GMT
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+|_http-userdir-enum: Potential Users: root, admin, administrator, webadmin, sysadmin, netadmin, guest, user, web, test
+|_http-fetch: Please enter the complete path of the directory to save data in.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-vhosts: 
+|_128 names had status 200
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-mobileversion-checker: No mobile version detected.
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1; action: 1
+|   Longest directory structure:
+|     Depth: 0
+|     Dir: /
+|   Total files found (by extension):
+|_    Other: 1; action: 1
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=127.0.0.11
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://127.0.0.11:18080/
+|     Form id: doupload
+|     Form action: /doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5
+|     
+|     Path: http://127.0.0.11:18080/doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5
+|     Form id: doupload
+|_    Form action: /doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+| http-enum: 
+|   /wp-json: Possible admin folder
+|   /backup: Possible backup
+|   /852566C90012664F: Lotus Domino
+|   /_app_bin: MS Sharepoint
+|   /_controltemplates: MS Sharepoint
+|   /_layouts: MS Sharepoint
+|   /sitedirectory: MS Sharepoint
+|   /Default?MAIN=DEVICE: TopAccess Toshiba e-Studio520
+|_  /README: Interesting, a readme.
+| http-fileupload-exploiter: 
+|   
+|     Failed to upload and execute a payload.
+|   
+|_    Failed to upload and execute a payload.
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-feed: Couldn't find any feeds.
+| http-cookie-flags: 
+|   /: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /wp-json: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /backup: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /852566C90012664F: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /_app_bin: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /_controltemplates: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /_layouts: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /sitedirectory: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /Default: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /README: 
+|     JSESSIONID: 
+|_      httponly flag not set
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 16:33:07 2026 -- 1 IP address (1 host up) scanned in 70.77 seconds

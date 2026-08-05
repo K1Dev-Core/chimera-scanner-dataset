@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "autorecon",
+  "target": "tomcat_12615",
+  "raw_dir": "/home/kali/dataset/raw/autorecon/2026-08-04/tomcat_12615",
+  "parser_status": "raw_dir_only"
+}

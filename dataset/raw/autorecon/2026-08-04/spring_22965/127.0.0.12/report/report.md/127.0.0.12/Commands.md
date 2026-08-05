@@ -1,0 +1,7 @@
+```bash
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p 28080 -oN "/home/kali/dataset/raw/autorecon/2026-08-04/spring_22965/127.0.0.12/scans/_full_tcp_nmap.txt" -oX "/home/kali/dataset/raw/autorecon/2026-08-04/spring_22965/127.0.0.12/scans/xml/_full_tcp_nmap.xml" 127.0.0.12
+
+nmap -vv --reason -Pn -T4 -sU -A --osscan-guess -p 28080 -oN "/home/kali/dataset/raw/autorecon/2026-08-04/spring_22965/127.0.0.12/scans/_custom_ports_udp_nmap.txt" -oX "/home/kali/dataset/raw/autorecon/2026-08-04/spring_22965/127.0.0.12/scans/xml/_custom_ports_udp_nmap.xml" 127.0.0.12
+
+
+```

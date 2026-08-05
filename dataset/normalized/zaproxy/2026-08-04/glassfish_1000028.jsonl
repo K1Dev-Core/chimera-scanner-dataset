@@ -1,0 +1,7 @@
+{
+  "run_date": "2026-08-04",
+  "tool": "zaproxy",
+  "target": "glassfish_1000028",
+  "raw_text_path": "/home/kali/dataset/raw/zaproxy/2026-08-04/glassfish_1000028/scan.txt",
+  "parser_status": "raw_only"
+}

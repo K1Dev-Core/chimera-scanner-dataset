@@ -1,0 +1,83 @@
+WhatWeb report for https://127.0.0.1:4848
+Status    : 200 OK
+Title     : Login
+IP        : 127.0.0.1
+Country   : RESERVED, ZZ
+
+Summary   : Cookies[JSESSIONID], HTTPServer[GlassFish Server Open Source Edition  4.1], HttpOnly[JSESSIONID], Java[2.3][Servlet/3.1], PasswordField[j_password], Prototype, Script[text/javascript], Sun-GlassFish[ 4.1][Open Source Edition], X-Powered-By[Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)]
+
+Detected Plugins:
+[ Cookies ]
+	Display the names of cookies in the HTTP headers. The
+	values are not returned to save on space.
+
+	String       : JSESSIONID
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to
+	identify the operating system from the server header.
+
+	String       : GlassFish Server Open Source Edition  4.1 (from server string)
+
+[ HttpOnly ]
+	If the HttpOnly flag is included in the HTTP set-cookie
+	response header and the browser supports it then the cookie
+	cannot be accessed through client side script - More Info:
+	http://en.wikipedia.org/wiki/HTTP_cookie
+
+	String       : JSESSIONID
+
+[ Java ]
+	Java allows you to play online games, chat with people
+	around the world, calculate your mortgage interest, and
+	view images in 3D, just to name a few. It's also integral
+	to the intranet applications and other e-business solutions
+	that are the foundation of corporate computing.
+
+	Version      : 2.3 (from X-Powered-By # JSP Version Detection)
+	String       : Servlet/3.1 (from X-Powered-By # Servlet Version Detection)
+	Website     : http://www.java.com/
+
+[ PasswordField ]
+	find password fields
+
+	String       : j_password (from field name)
+
+[ Prototype ]
+	Javascript library
+
+
+[ Script ]
+	This plugin detects instances of script HTML elements and
+	returns the script language/type.
+
+	String       : text/javascript
+
+[ Sun-GlassFish ]
+	GlassFish is an open source application server project led
+	by Sun Microsystems for the Java EE platform. The
+	proprietary version is called Sun GlassFish Enterprise
+	Server. GlassFish supports All Java EE API specifications,
+	such as JDBC, RMI, e-mail, JMS, web services, XML, etc.,
+	and defines how to coordinate them.
+
+	Version      :  4.1
+	String       : Open Source Edition
+	Website     : http://glassfish.java.net/
+
+[ X-Powered-By ]
+	X-Powered-By HTTP header
+
+	String       : Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8) (from x-powered-by string)
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Server: GlassFish Server Open Source Edition  4.1
+	X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1  Java/Oracle Corporation/1.8)
+	Set-Cookie: JSESSIONID=e79bf8a48c66503de03f382f1db2; Path=/; Secure; HttpOnly
+	Content-Type: text/html;charset=UTF-8
+	Date: Tue, 04 Aug 2026 20:31:52 GMT
+	Connection: close
+	Transfer-Encoding: chunked
+
+

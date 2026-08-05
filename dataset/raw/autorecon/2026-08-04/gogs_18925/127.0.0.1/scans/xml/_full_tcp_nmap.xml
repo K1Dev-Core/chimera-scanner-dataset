@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:40:22 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 3000 -oN /home/kali/dataset/raw/autorecon/2026-08-04/gogs_18925/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/gogs_18925/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p 3000 -oN /home/kali/dataset/raw/autorecon/2026-08-04/gogs_18925/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/gogs_18925/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1" start="1785876022" startstr="Tue Aug  4 16:40:22 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="3000"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785876023"/>
+<taskend task="NSE" time="1785876023"/>
+<taskbegin task="NSE" time="1785876023"/>
+<taskend task="NSE" time="1785876023"/>
+<taskbegin task="NSE" time="1785876023"/>
+<taskend task="NSE" time="1785876023"/>
+<taskbegin task="SYN Stealth Scan" time="1785876023"/>
+<taskend task="SYN Stealth Scan" time="1785876023" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785876023"/>
+<taskend task="Service scan" time="1785876295" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785876301"/>
+<taskend task="NSE" time="1785876303"/>
+<taskbegin task="NSE" time="1785876303"/>
+<taskend task="NSE" time="1785876303"/>
+<taskbegin task="NSE" time="1785876303"/>
+<taskend task="NSE" time="1785876303"/>
+<host starttime="1785876023" endtime="1785876303"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="3000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="hadoop-datanode" product="Apache Hadoop" method="probed" conf="10"><cpe>cpe:/a:golang:go</cpe></service><script id="hadoop-datanode-info" output="&#xa;  Logs: log_root_path"><elem key="Logs">log_root_path</elem>
+</script><script id="http-favicon" output="Unknown favicon MD5: 337372B7EC33DE7D431936311BCAF5EF"/><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/><script id="http-title" output="Installation - Gogs&#xa;Requested resource was /install"><elem key="title">Installation - Gogs</elem>
+<elem key="redirect_url">/install</elem>
+</script><script id="hadoop-tasktracker-info" output="&#xa;  Logs: log_root_path"><elem key="Logs">log_root_path</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="fingerprint-strings" output="&#xa;  GenericLines, Help: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 302 Found&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Location: /install&#xa;    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647&#xa;    Set-Cookie: i_like_gogits=eb64b925bafc809d; Path=/; HttpOnly&#xa;    Set-Cookie: _csrf=tyNy_Mr-F4O9PYvunkxCM1hpEnc6MTc4NTg3NjAyOTYxNTc5ODA0OA%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 20:40:29 GMT; HttpOnly&#xa;    Date: Tue, 04 Aug 2026 20:40:29 GMT&#xa;    Content-Length: 31&#xa;    href=&quot;/install&quot;&gt;Found&lt;/a&gt;.&#xa;  HTTPOptions: &#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Type: text/html; charset=UTF-8&#xa;    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647&#xa;    Set-Cookie: i_like_gogits=03f8a292e2049af2; Path=/; HttpOnly&#xa;    Set-Cookie: _csrf=76l7rW1rqieSVsSdVZE62QC1KYc6MTc4NTg3NjAzNDY3Mzc3OTM2NA%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 20:40:34 GMT; HttpOnly&#xa;    Date: Tue, 04 Aug 2026 20:40:34 GMT&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html&gt;&#xa;    &lt;head data-suburl=&quot;&quot;&gt;&#xa;    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&#xa;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;&#xa;    &lt;meta name=&quot;author&quot; content=&quot;Gogs&quot; /&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Gogs is a painless self-hosted Git service&quot; /&gt;&#xa;    &lt;meta name=&quot;keywords&quot; content=&quot;go, git, self-hosted, gogs&quot;&gt;&#xa;    &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;&#xa;    &lt;meta name=&quot;_csrf&quot; content=&quot;76l7rW1rqieSVsSdVZE62QC1KYc6MTc4NTg3NjAzNDY3Mzc3OTM2NA==&quot; /&gt;&#xa;    &lt;meta name=&quot;_suburl&quot; content=&quot;&quot; /&gt;"><elem key="GenericLines, Help">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 302 Found&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Location: /install&#xa;    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647&#xa;    Set-Cookie: i_like_gogits=eb64b925bafc809d; Path=/; HttpOnly&#xa;    Set-Cookie: _csrf=tyNy_Mr-F4O9PYvunkxCM1hpEnc6MTc4NTg3NjAyOTYxNTc5ODA0OA%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 20:40:29 GMT; HttpOnly&#xa;    Date: Tue, 04 Aug 2026 20:40:29 GMT&#xa;    Content-Length: 31&#xa;    href=&quot;/install&quot;&gt;Found&lt;/a&gt;.</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Type: text/html; charset=UTF-8&#xa;    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647&#xa;    Set-Cookie: i_like_gogits=03f8a292e2049af2; Path=/; HttpOnly&#xa;    Set-Cookie: _csrf=76l7rW1rqieSVsSdVZE62QC1KYc6MTc4NTg3NjAzNDY3Mzc3OTM2NA%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 20:40:34 GMT; HttpOnly&#xa;    Date: Tue, 04 Aug 2026 20:40:34 GMT&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html&gt;&#xa;    &lt;head data-suburl=&quot;&quot;&gt;&#xa;    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&#xa;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;&#xa;    &lt;meta name=&quot;author&quot; content=&quot;Gogs&quot; /&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Gogs is a painless self-hosted Git service&quot; /&gt;&#xa;    &lt;meta name=&quot;keywords&quot; content=&quot;go, git, self-hosted, gogs&quot;&gt;&#xa;    &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;&#xa;    &lt;meta name=&quot;_csrf&quot; content=&quot;76l7rW1rqieSVsSdVZE62QC1KYc6MTc4NTg3NjAzNDY3Mzc3OTM2NA==&quot; /&gt;&#xa;    &lt;meta name=&quot;_suburl&quot; content=&quot;&quot; /&gt;</elem>
+</script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="3000"/>
+<portused state="closed" proto="udp" portid="42764"/>
+<osmatch name="Linux 5.0 - 6.2" accuracy="97" line="72241">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:6</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.7 - 4.19" accuracy="93" line="69589">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 6.8" accuracy="93" line="73576">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:6.8</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32" accuracy="92" line="59503">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.8 - 3.9" accuracy="92" line="69872">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.7" accuracy="92" line="72990">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:5.7</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.1" accuracy="92" line="70582">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:4.1</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.15" accuracy="92" line="72678">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:5.15</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.10" accuracy="92" line="70695">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:4.10</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.10 - 5.11" accuracy="91" line="72353">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="91"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="SCAN(V=7.99%E=4%D=8/4%OT=3000%CT=%CU=42764%PV=Y%DS=0%DC=L%G=N%TM=6A724F4F%P=x86_64-pc-linux-gnu)&#xa;SEQ(SP=102%GCD=1%ISR=10B%TI=Z%CI=Z%TS=21)&#xa;SEQ(SP=10A%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=22)&#xa;OPS(O1=MFFD7ST11NWA%O2=MFFD7ST11NWA%O3=MFFD7NNT11NWA%O4=MFFD7ST11NWA%O5=MFFD7ST11NWA%O6=MFFD7ST11)&#xa;WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FFCB)&#xa;ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNWA%CC=Y%Q=)&#xa;T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)&#xa;T2(R=N)&#xa;T3(R=N)&#xa;T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<uptime seconds="17" lastboot="Tue Aug  4 16:44:46 2026"/>
+<distance value="0"/>
+<tcpsequence index="258" difficulty="Good luck!" values="79178AA4,C94CC3FC,1CB9ADFB,FCEECDF8"/>
+<ipidsequence class="All zeros" values="0,0,0,0"/>
+<tcptssequence class="other" values="7C9E845C,9E69301A,4A4ACF23,746529E2"/>
+<times srtt="86" rttvar="215" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785876303"/>
+<taskend task="NSE" time="1785876303"/>
+<taskbegin task="NSE" time="1785876303"/>
+<taskend task="NSE" time="1785876303"/>
+<taskbegin task="NSE" time="1785876303"/>
+<taskend task="NSE" time="1785876303"/>
+<runstats><finished time="1785876303" timestr="Tue Aug  4 16:45:03 2026" summary="Nmap done at Tue Aug  4 16:45:03 2026; 1 IP address (1 host up) scanned in 280.64 seconds" elapsed="280.64" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

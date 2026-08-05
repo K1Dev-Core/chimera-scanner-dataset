@@ -1,0 +1,57 @@
+```bash
+whatweb --color=never --no-errors -a 3 -v http://127.0.0.11:18080 2>&1
+```
+
+[/home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/tcp_18080_http_whatweb.txt](file:///home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/tcp_18080_http_whatweb.txt):
+
+```
+WhatWeb report for http://127.0.0.11:18080
+Status    : 200 OK
+Title     : Struts2 Showcase - Fileupload sample
+IP        : 127.0.0.11
+Country   : RESERVED, ZZ
+
+Summary   : Cookies[JSESSIONID], HTTPServer[Jetty(9.2.11.v20150529)], Java, Jetty[9.2.11.v20150529]
+
+Detected Plugins:
+[ Cookies ]
+	Display the names of cookies in the HTTP headers. The
+	values are not returned to save on space.
+
+	String       : JSESSIONID
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to
+	identify the operating system from the server header.
+
+	String       : Jetty(9.2.11.v20150529) (from server string)
+
+[ Java ]
+	Java allows you to play online games, chat with people
+	around the world, calculate your mortgage interest, and
+	view images in 3D, just to name a few. It's also integral
+	to the intranet applications and other e-business solutions
+	that are the foundation of corporate computing.
+
+	Website     : http://www.java.com/
+
+[ Jetty ]
+	Jetty is a pure Java application server. Jetty provides an
+	HTTP server, HTTP client, and javax.servlet container.
+
+	Version      : 9.2.11.v20150529
+	Google Dorks: (1)
+	Website     : http://jetty.codehaus.org/jetty/
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Date: Tue, 04 Aug 2026 20:32:00 GMT
+	Content-Type: text/html; charset=ISO-8859-1
+	Set-Cookie: JSESSIONID=8x9cn8lzhnpb1ufqhd1whq4v9;Path=/
+	Expires: Thu, 01 Jan 1970 00:00:00 GMT
+	Connection: close
+	Server: Jetty(9.2.11.v20150529)
+
+
+
+```

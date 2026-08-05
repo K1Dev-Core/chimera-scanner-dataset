@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:31:57 2026 as: /usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 18080 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/tcp_18080_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/xml/tcp_18080_http_nmap.xml 127.0.0.11 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -vv -&#45;reason -Pn -T4 -sV -p 18080 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/tcp_18080_http_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/struts2_s2045/127.0.0.11/scans/tcp18080/xml/tcp_18080_http_nmap.xml 127.0.0.11" start="1785875517" startstr="Tue Aug  4 16:31:57 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18080"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1785875518"/>
+<taskend task="NSE" time="1785875518"/>
+<taskbegin task="NSE" time="1785875518"/>
+<taskend task="NSE" time="1785875518"/>
+<taskbegin task="NSE" time="1785875518"/>
+<taskend task="NSE" time="1785875518"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1785875518"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1785875522"/>
+<taskbegin task="SYN Stealth Scan" time="1785875522"/>
+<taskend task="SYN Stealth Scan" time="1785875522" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1785875523"/>
+<taskend task="Service scan" time="1785875534" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1785875534"/>
+<taskprogress task="NSE" time="1785875565" percent="99.68" remaining="1" etc="1785875565"/>
+<taskend task="NSE" time="1785875587"/>
+<taskbegin task="NSE" time="1785875587"/>
+<taskend task="NSE" time="1785875587"/>
+<taskbegin task="NSE" time="1785875587"/>
+<taskend task="NSE" time="1785875587"/>
+<host starttime="1785875522" endtime="1785875587"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="127.0.0.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="18080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Jetty" version="9.2.11.v20150529" method="probed" conf="10"><cpe>cpe:/a:mortbay:jetty:9.2.11.v20150529</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-headers" output="&#xa;  Date: Tue, 04 Aug 2026 20:32:16 GMT&#xa;  Content-Type: text/html; charset=ISO-8859-1&#xa;  Set-Cookie: JSESSIONID=1qqgo9rbvk4if1ogsp56zwghia;Path=/&#xa;  Expires: Thu, 01 Jan 1970 00:00:00 GMT&#xa;  Connection: close&#xa;  Server: Jetty(9.2.11.v20150529)&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-chrono" output="Request times for /; avg: 408.40ms; min: 329.55ms; max: 532.11ms"/><script id="http-comments-displayer" output="Couldn&apos;t find any comments."/><script id="http-vuln-cve2017-5638" output="&#xa;  VULNERABLE:&#xa;  Apache Struts Remote Code Execution Vulnerability&#xa;    State: VULNERABLE&#xa;    IDs:  CVE:CVE-2017-5638&#xa;      Apache Struts 2.3.5 - Struts 2.3.31 and Apache Struts 2.5 - Struts 2.5.10 are vulnerable to a Remote Code Execution&#xa;      vulnerability via the Content-Type header.&#xa;          &#xa;    Disclosure date: 2017-03-07&#xa;    References:&#xa;      https://cwiki.apache.org/confluence/display/WW/S2-045&#xa;      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5638&#xa;      http://blog.talosintelligence.com/2017/03/apache-0-day-exploited.html&#xa;"><table key="CVE-2017-5638">
+<elem key="title">Apache Struts Remote Code Execution Vulnerability</elem>
+<elem key="state">VULNERABLE</elem>
+<table key="ids">
+<elem>CVE:CVE-2017-5638</elem>
+</table>
+<table key="description">
+<elem>Apache Struts 2.3.5 - Struts 2.3.31 and Apache Struts 2.5 - Struts 2.5.10 are vulnerable to a Remote Code Execution&#xa;vulnerability via the Content-Type header.&#xa;    </elem>
+</table>
+<table key="dates">
+<table key="disclosure">
+<elem key="year">2017</elem>
+<elem key="month">03</elem>
+<elem key="day">07</elem>
+</table>
+</table>
+<elem key="disclosure">2017-03-07</elem>
+<table key="refs">
+<elem>https://cwiki.apache.org/confluence/display/WW/S2-045</elem>
+<elem>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5638</elem>
+<elem>http://blog.talosintelligence.com/2017/03/apache-0-day-exploited.html</elem>
+</table>
+</table>
+</script><script id="http-php-version" output="Logo query returned unknown hash 305829a80d0670bd4c82944cc53e3168&#xa;Credits query returned unknown hash 68002e76b125f03329fa37bfc320f1db"/><script id="http-date" output="Tue, 04 Aug 2026 20:32:14 GMT; 0s from local time."><elem key="date">2026-08-04T20:32:14+00:00</elem>
+<elem key="delta">0.0</elem>
+</script><script id="http-server-header" output="Jetty(9.2.11.v20150529)"><elem>Jetty(9.2.11.v20150529)</elem>
+</script><script id="http-errors" output="Couldn&apos;t find any error pages."/><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/><script id="http-title" output="Struts2 Showcase - Fileupload sample"><elem key="title">Struts2 Showcase - Fileupload sample</elem>
+</script><script id="http-security-headers" output="&#xa;  Expires: &#xa;    Header: Expires: Thu, 01 Jan 1970 00:00:00 GMT"><table key="Expires">
+<elem>Header: Expires: Thu, 01 Jan 1970 00:00:00 GMT</elem>
+</table>
+</script><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/><script id="http-userdir-enum" output="Potential Users: root, admin, administrator, webadmin, sysadmin, netadmin, guest, user, web, test"/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-vhosts" output="&#xa;128 names had status 200"/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      Other: 1; action: 1&#xa;  Longest directory structure:&#xa;    Depth: 0&#xa;    Dir: /&#xa;  Total files found (by extension):&#xa;    Other: 1; action: 1&#xa;"/><script id="http-csrf" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=127.0.0.11&#xa;  Found the following possible CSRF vulnerabilities: &#xa;    &#xa;    Path: http://127.0.0.11:18080/&#xa;    Form id: doupload&#xa;    Form action: /doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5&#xa;    &#xa;    Path: http://127.0.0.11:18080/doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5&#xa;    Form id: doupload&#xa;    Form action: /doUpload.action;jsessionid=fvy984dzjgr9196hs41i1w1q5&#xa;"/><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-referer-checker" output="Couldn&apos;t find any cross-domain scripts."/><script id="http-enum" output="&#xa;  /wp-json: Possible admin folder&#xa;  /backup: Possible backup&#xa;  /852566C90012664F: Lotus Domino&#xa;  /_app_bin: MS Sharepoint&#xa;  /_controltemplates: MS Sharepoint&#xa;  /_layouts: MS Sharepoint&#xa;  /sitedirectory: MS Sharepoint&#xa;  /Default?MAIN=DEVICE: TopAccess Toshiba e-Studio520&#xa;  /README: Interesting, a readme.&#xa;"/><script id="http-fileupload-exploiter" output="&#xa;  &#xa;    Failed to upload and execute a payload.&#xa;  &#xa;    Failed to upload and execute a payload."><table>
+<elem>Failed to upload and execute a payload.</elem>
+</table>
+<table>
+<elem>Failed to upload and execute a payload.</elem>
+</table>
+</script><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-cookie-flags" output="&#xa;  /: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /wp-json: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /backup: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /852566C90012664F: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /_app_bin: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /_controltemplates: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /_layouts: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /sitedirectory: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /Default: &#xa;    JSESSIONID: &#xa;      httponly flag not set&#xa;  /README: &#xa;    JSESSIONID: &#xa;      httponly flag not set"><table key="/">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/wp-json">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/backup">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/852566C90012664F">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/_app_bin">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/_controltemplates">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/_layouts">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/sitedirectory">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/Default">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+<table key="/README">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+</script></port>
+</ports>
+<times srtt="38" rttvar="5000" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1785875587"/>
+<taskend task="NSE" time="1785875587"/>
+<taskbegin task="NSE" time="1785875587"/>
+<taskend task="NSE" time="1785875587"/>
+<taskbegin task="NSE" time="1785875587"/>
+<taskend task="NSE" time="1785875587"/>
+<runstats><finished time="1785875587" timestr="Tue Aug  4 16:33:07 2026" summary="Nmap done at Tue Aug  4 16:33:07 2026; 1 IP address (1 host up) scanned in 70.77 seconds" elapsed="70.77" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

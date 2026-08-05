@@ -1,0 +1,67 @@
+# Nmap 7.99 scan initiated Tue Aug  4 16:30:55 2026 as: /usr/lib/nmap/nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p 4848 -oN /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/_full_tcp_nmap.txt -oX /home/kali/dataset/raw/autorecon/2026-08-04/glassfish_1000028/127.0.0.1/scans/xml/_full_tcp_nmap.xml 127.0.0.1
+adjust_timeouts2: packet supposedly had rtt of -808977 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -808977 microseconds.  Ignoring time.
+Nmap scan report for localhost (127.0.0.1)
+Host is up, received user-set (0.000043s latency).
+Scanned at 2026-08-04 16:30:55 EDT for 54s
+
+PORT     STATE SERVICE  REASON         VERSION
+4848/tcp open  ssl/http syn-ack ttl 64 Oracle GlassFish 4.1 (Servlet 3.1; JSP 2.3; Java 1.8)
+|_http-server-header: GlassFish Server Open Source Edition  4.1 
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US/organizationalUnitName=GlassFish/localityName=Santa Clara
+| Issuer: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US/organizationalUnitName=GlassFish/localityName=Santa Clara
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2014-08-21T13:30:10
+| Not valid after:  2024-08-18T13:30:10
+| MD5:     594f 8111 2179 0c71 532a 00ab 223e 0e8a
+| SHA-1:   1ff8 eff1 b17d c744 191e 213a 3102 9aa7 5982 a63c
+| SHA-256: 08de fee6 7d8b 168e 29b8 0a97 e523 3c8b e32b 316e d389 aace 05be 31da a702 036b
+| -----BEGIN CERTIFICATE-----
+| MIIDmTCCAoGgAwIBAgIEMeuNnzANBgkqhkiG9w0BAQsFADB9MQswCQYDVQQGEwJV
+| UzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExGzAZ
+| BgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UECxMJR2xhc3NGaXNoMRIw
+| EAYDVQQDEwlsb2NhbGhvc3QwHhcNMTQwODIxMTMzMDEwWhcNMjQwODE4MTMzMDEw
+| WjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxML
+| U2FudGEgQ2xhcmExGzAZBgNVBAoTEk9yYWNsZSBDb3Jwb3JhdGlvbjESMBAGA1UE
+| CxMJR2xhc3NGaXNoMRIwEAYDVQQDEwlsb2NhbGhvc3QwggEiMA0GCSqGSIb3DQEB
+| AQUAA4IBDwAwggEKAoIBAQCWpLMWHmNZb8HNZ95LmBfkyMKcJlpn8AWajtEui7yV
+| XdR7o+N2mpx/dP1SX1fkKPVM+rmbMCV6jkNHyKX7uam1YtnlKpM0Hc3jQT1S03p2
+| pWTLusK9Tr+sMQf4E7J0EUNM/TaPvyB0P+2d65mdVPdMxX19KKpfkJ26fLMtzyBp
+| W2mvVzVWgYfrjXPv7RVGayX2Ii7FC7VWC3xCiOKg6vT+kfw7uxOWhsp/utu7Aoo/
+| vHFTbM1ZeocTshlaFsqjTOYH0wMfVibEICca6nuC88OzE5aOnklMZXxyURivh/Qq
+| C+e8IIhqtGWIQV91KdhgqVp+g7HgpJzvm03r2c41BidBAgMBAAGjITAfMB0GA1Ud
+| DgQWBBQTVdt9qTFxozNAVtNJqXdCkKNZOTANBgkqhkiG9w0BAQsFAAOCAQEAB+Xx
+| ljjOVTMcZaVaOJDrmFmhrhlfv19Tvs82VC8DXV6dITzczMmhXuALcTE2zjrbu3hA
+| 7Vv7CvDmAVrDKc0L4aENqZnt2Ch42hsvFSVGhdizj+d5D+83alUG4C0MZ/NgRqvC
+| 9axwXp887+MzYTTE+ctagxCC5drzFR0osvneU/AQcnlIurSs7EkWktimSLWnOm83
+| FQL0ZmaUjIIsV3pFBDMx9pt8agSwCgGOjrkxnpqsU/fLOPbl24b/8tg5dzRHX3/s
+| 8zd5COtZtZA/2X7ocMP03RfstBnQCCZ+y2RGF7gI2KeZHs/xK3mG8SJvxAWU4U/h
+| ZOTwR42VlQhP/vlg5A==
+|_-----END CERTIFICATE-----
+|_http-title: Did not follow redirect to https://localhost:4848/
+| http-methods: 
+|_  Supported Methods: HEAD POST
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+Aggressive OS guesses: Fortinet FortiGate-60B or -100A firewall (90%), DD-WRT (Linux 2.4.36) (89%), Cisco Unified Communications Manager VoIP adapter (87%), Android 7.1.2 (Linux 3.10) (87%), GoPro HERO3 camera (87%), DD-WRT v23 (Linux 2.4.36) (87%), Vyatta router (Linux 2.6.26) (87%), Linux 2.6.18 (87%), Linux 3.2.0 (87%), Linux 5.18 (87%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.99%E=4%D=8/4%OT=4848%CT=%CU=38600%PV=Y%DS=0%DC=L%G=N%TM=6A724C35%P=x86_64-pc-linux-gnu)
+SEQ()
+ECN(R=N)
+T1(R=N)
+T2(R=N)
+T3(R=N)
+T4(R=N)
+U1(R=N)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=N)
+
+Network Distance: 0 hops
+
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 16:31:49 2026 -- 1 IP address (1 host up) scanned in 53.97 seconds
