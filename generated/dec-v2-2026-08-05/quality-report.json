@@ -1,0 +1,73 @@
+{
+  "files": {
+    "derived/target-candidate-features.jsonl": {
+      "records": 80,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "derived/target-features.jsonl": {
+      "records": 10,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "labels/target-candidate-labels.jsonl": {
+      "records": 80,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "records/all-records.jsonl": {
+      "records": 449,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "records/findings.jsonl": {
+      "records": 386,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "records/observations.jsonl": {
+      "records": 48,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "records/targets.jsonl": {
+      "records": 10,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    },
+    "records/validations.jsonl": {
+      "records": 5,
+      "invalid_lines": [],
+      "duplicate_record_ids": 0
+    }
+  },
+  "valid": true,
+  "integrity": {
+    "candidate_rows_per_target": {
+      "apache_41773": 8,
+      "django_34265": 8,
+      "druid_25646": 8,
+      "elfinder_32682": 8,
+      "glassfish_1000028": 8,
+      "gogs_18925": 8,
+      "jackson_7525": 8,
+      "spring_22965": 8,
+      "struts2_s2045": 8,
+      "tomcat_12615": 8
+    },
+    "label_references_missing": 0,
+    "feature_leakage_fields": [],
+    "unredacted_sensitive_records": 0
+  },
+  "redaction": {
+    "records_changed": 1,
+    "policy": "Sensitive session, CSRF, authentication, authorization, and cookie assignments are replaced with [REDACTED]."
+  },
+  "warnings": [
+    "OpenVAS output is absent in the source dataset.",
+    "ZAP raw text contains no structured alerts; only scan coverage is recorded.",
+    "AutoRecon is retained as a coverage summary because its output is a multi-file report tree.",
+    "Only 10 vulnerable targets are present; this is a pipeline dataset, not a reliable model benchmark.",
+    "Candidate labels represent Vulhub ground truth family, not observed exploit success."
+  ]
+}

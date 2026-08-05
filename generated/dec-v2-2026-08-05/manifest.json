@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "name": "chimera-scanner-dataset-dec-v2",
+  "built_at": "2026-08-05T05:36:49.959846+00:00",
+  "source": "dataset",
+  "source_policy": "read-only; raw files are referenced, not copied",
+  "run_date": "2026-08-04",
+  "counts": {
+    "targets": 10,
+    "observations": 48,
+    "findings": 386,
+    "validations": 5,
+    "all_records": 449,
+    "target_features": 10,
+    "candidate_features": 80,
+    "candidate_labels": 80
+  },
+  "tools_with_structured_parsers": [
+    "httpx-toolkit",
+    "naabu",
+    "nmap",
+    "nuclei",
+    "wapiti",
+    "nikto",
+    "metasploit",
+    "sqlmap"
+  ],
+  "tools_with_coverage_summaries_only": [
+    "autorecon",
+    "zaproxy"
+  ],
+  "missing_tool_outputs": [
+    "openvas"
+  ],
+  "label_policy": {
+    "ground_truth_is_separate": true,
+    "exploit_success_defaults_to_null": true,
+    "no_rank_score_feature": true,
+    "required_split_group": "target_id or product-family group"
+  }
+}
