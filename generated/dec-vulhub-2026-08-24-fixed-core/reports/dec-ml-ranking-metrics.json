@@ -1,0 +1,57 @@
+{
+  "task": "ทดสอบว่า ML เรียง candidate exploit family ต่อ target ได้ดีกว่าสุ่มหรือไม่",
+  "dataset_root": "generated\\dec-vulhub-2026-08-24-fixed-core",
+  "rows": 602,
+  "targets": 43,
+  "candidate_families": 14,
+  "label_counts": {
+    "unknown": 562,
+    "positive_family_match": 40
+  },
+  "validation": "Leave-One-Target-Out; ทดสอบ target ที่ model ไม่เห็นตอน train",
+  "safe_features_used": [
+    "candidate_product_match_score",
+    "candidate_service_match_score",
+    "candidate_port_match_score",
+    "candidate_technology_match_score",
+    "candidate_scanner_signal_score",
+    "candidate_family(one-hot)"
+  ],
+  "excluded_leakage_features": [
+    "is_ground_truth_family",
+    "candidate_cve_match_score",
+    "candidate_validation_available"
+  ],
+  "ml": {
+    "top1_hit_rate": 1.0,
+    "top3_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "mrr": 1.0,
+    "classification_at_0_5": {
+      "tp": 40,
+      "fp": 2,
+      "tn": 560,
+      "fn": 0,
+      "precision": 0.9523809523809523,
+      "recall": 1.0,
+      "f1": 0.975609756097561
+    }
+  },
+  "heuristic": {
+    "top1_hit_rate": 1.0,
+    "top3_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "mrr": 1.0
+  },
+  "random_expected": {
+    "top1_hit_rate": 0.0714285714285714,
+    "top3_hit_rate": 0.21428571428571433,
+    "top5_hit_rate": 0.3571428571428571
+  },
+  "failure_case_count_top3": 0,
+  "warnings": [
+    "label เป็น positive_family_match จาก family/lab identity จึงยังเป็น weak label ไม่ใช่ exploit success ทุกแถว",
+    "ผลนี้ใช้ทดสอบ ranking เบื้องต้น ไม่ใช่ final model validation",
+    "ห้ามใช้ is_ground_truth_family, candidate_cve_match_score, candidate_validation_available เป็น input หลัก เพราะเสี่ยง label leakage"
+  ]
+}
