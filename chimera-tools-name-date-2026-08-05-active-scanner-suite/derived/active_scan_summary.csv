@@ -1,0 +1,13 @@
+lab_id,product,target_url,tool,records,finding_count,raw_path,normalized_path
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,nmap,1,0,datasets/tools-name-date/nmap-2026-08-05/acme-support/raw,datasets/tools-name-date/nmap-2026-08-05/acme-support/normalized/nmap-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,nmap,1,0,datasets/tools-name-date/nmap-2026-08-05/nova-devops/raw,datasets/tools-name-date/nmap-2026-08-05/nova-devops/normalized/nmap-normalized.jsonl
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,httpx,1,0,datasets/tools-name-date/httpx-2026-08-05/acme-support/raw,datasets/tools-name-date/httpx-2026-08-05/acme-support/normalized/httpx-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,httpx,1,0,datasets/tools-name-date/httpx-2026-08-05/nova-devops/raw,datasets/tools-name-date/httpx-2026-08-05/nova-devops/normalized/httpx-normalized.jsonl
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,nuclei,1,0,datasets/tools-name-date/nuclei-2026-08-05/acme-support/raw,datasets/tools-name-date/nuclei-2026-08-05/acme-support/normalized/nuclei-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,nuclei,1,0,datasets/tools-name-date/nuclei-2026-08-05/nova-devops/raw,datasets/tools-name-date/nuclei-2026-08-05/nova-devops/normalized/nuclei-normalized.jsonl
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,nikto,7,7,datasets/tools-name-date/nikto-2026-08-05/acme-support/raw,datasets/tools-name-date/nikto-2026-08-05/acme-support/normalized/nikto-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,nikto,7,7,datasets/tools-name-date/nikto-2026-08-05/nova-devops/raw,datasets/tools-name-date/nikto-2026-08-05/nova-devops/normalized/nikto-normalized.jsonl
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,wapiti,4,4,datasets/tools-name-date/wapiti-2026-08-05/acme-support/raw,datasets/tools-name-date/wapiti-2026-08-05/acme-support/normalized/wapiti-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,wapiti,4,4,datasets/tools-name-date/wapiti-2026-08-05/nova-devops/raw,datasets/tools-name-date/wapiti-2026-08-05/nova-devops/normalized/wapiti-normalized.jsonl
+acme-support,Acme Support Portal,http://127.0.0.1:27000/,zap,12,12,datasets/tools-name-date/zap-2026-08-05/acme-support/raw,datasets/tools-name-date/zap-2026-08-05/acme-support/normalized/zap-normalized.jsonl
+nova-devops,Nova DevOps Console,http://127.0.0.1:27100/,zap,12,12,datasets/tools-name-date/zap-2026-08-05/nova-devops/raw,datasets/tools-name-date/zap-2026-08-05/nova-devops/normalized/zap-normalized.jsonl

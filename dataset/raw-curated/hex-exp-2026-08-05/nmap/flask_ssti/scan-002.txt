@@ -1,0 +1,11 @@
+# Nmap 7.99 scan initiated Wed Aug  5 12:51:19 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -T4 -p 18031 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000050s latency).
+
+PORT      STATE SERVICE VERSION
+18031/tcp open  http    Gunicorn 20.0.0
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+|_http-server-header: gunicorn/20.0.0
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Aug  5 12:51:28 2026 -- 1 IP address (1 host up) scanned in 8.97 seconds

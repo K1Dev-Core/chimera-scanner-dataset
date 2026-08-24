@@ -1,0 +1,127 @@
+{
+  "dataset_record_type": "staged_vulhub_expansion_batch",
+  "batch_id": "2026-08-05-hard-newer-vulhub-expansion",
+  "purpose": "เพิ่มข้อมูล fingerprint/feature/label สำหรับโปรเจกต์ Exploit-DL โดยใช้ lab ที่สมจริงกว่าเดิมและมี CVE ใหม่มากขึ้น",
+  "status": "staged_waiting_for_docker",
+  "reason_not_scanned_yet": "บนเครื่องนี้ Docker Desktop daemon ยัง start ไม่สำเร็จในรอบล่าสุด จึงยังรัน container/scan batch เพิ่มไม่ได้",
+  "safety_scope": "local Docker/Vulhub labs only; fingerprint/scanning only; no real exploitation against external targets",
+  "recommended_tools": [
+    "naabu",
+    "nmap",
+    "httpx",
+    "nuclei",
+    "nikto",
+    "wapiti",
+    "OWASP ZAP passive/baseline"
+  ],
+  "labs": [
+    {
+      "id": "langflow-cve-2025-3248",
+      "vulhub_path": "langflow/CVE-2025-3248",
+      "product": "Langflow",
+      "year": 2025,
+      "known_cves": ["CVE-2025-3248"],
+      "expected_family": ["rce", "auth-bypass", "python-app"],
+      "why_useful": "เว็บแอปยุคใหม่/AI workflow surface เหมาะกับ unseen modern target"
+    },
+    {
+      "id": "pgadmin-cve-2025-2945",
+      "vulhub_path": "pgadmin/CVE-2025-2945",
+      "product": "pgAdmin 4",
+      "year": 2025,
+      "known_cves": ["CVE-2025-2945"],
+      "expected_family": ["post-auth-rce", "python-eval", "admin-console"],
+      "why_useful": "เป็น admin console จริง มี auth context ช่วยให้โมเดลเรียนรู้ว่าไม่ใช่ทุก RCE จะ unauth"
+    },
+    {
+      "id": "cacti-cve-2025-24367",
+      "vulhub_path": "cacti/CVE-2025-24367",
+      "product": "Cacti",
+      "year": 2025,
+      "known_cves": ["CVE-2025-24367"],
+      "expected_family": ["post-auth-rce", "argument-injection", "monitoring"],
+      "why_useful": "surface แบบ monitoring dashboard สมจริงและคล้ายระบบองค์กร"
+    },
+    {
+      "id": "1panel-cve-2024-39907",
+      "vulhub_path": "1panel/CVE-2024-39907",
+      "product": "1Panel",
+      "year": 2024,
+      "known_cves": ["CVE-2024-39907"],
+      "expected_family": ["sqli", "file-write", "post-auth-rce"],
+      "why_useful": "เหมาะมากกับ Exploit-DL เพราะเป็น chain จาก SQLi ไปสู่ผลกระทบสูงกว่า"
+    },
+    {
+      "id": "teamcity-cve-2024-27198",
+      "vulhub_path": "teamcity/CVE-2024-27198",
+      "product": "JetBrains TeamCity",
+      "year": 2024,
+      "known_cves": ["CVE-2024-27198"],
+      "expected_family": ["auth-bypass", "ci-cd", "rce-chain"],
+      "why_useful": "CI/CD product จริง เหมาะวัดว่าโมเดลรู้จัก high-value enterprise surface ไหม"
+    },
+    {
+      "id": "geoserver-cve-2024-36401",
+      "vulhub_path": "geoserver/CVE-2024-36401",
+      "product": "GeoServer",
+      "year": 2024,
+      "known_cves": ["CVE-2024-36401"],
+      "expected_family": ["rce", "java", "geospatial-server"],
+      "why_useful": "Java server จริง CVE ดัง ใช้เทียบกับ Grafana hard lab ได้ดี"
+    },
+    {
+      "id": "confluence-cve-2023-22527",
+      "vulhub_path": "confluence/CVE-2023-22527",
+      "product": "Atlassian Confluence",
+      "year": 2023,
+      "known_cves": ["CVE-2023-22527"],
+      "expected_family": ["template-injection", "ognl", "rce", "enterprise-wiki"],
+      "why_useful": "enterprise app จริง และเป็น RCE family ที่ต่างจาก SQLi/command injection"
+    },
+    {
+      "id": "metabase-cve-2023-38646",
+      "vulhub_path": "metabase/CVE-2023-38646",
+      "product": "Metabase",
+      "year": 2023,
+      "known_cves": ["CVE-2023-38646"],
+      "expected_family": ["pre-auth-rce", "bi-dashboard", "setup-token"],
+      "why_useful": "BI dashboard จริง เหมาะเพิ่ม diversity ของ product fingerprint"
+    },
+    {
+      "id": "rocketmq-cve-2023-33246",
+      "vulhub_path": "rocketmq/CVE-2023-33246",
+      "product": "Apache RocketMQ",
+      "year": 2023,
+      "known_cves": ["CVE-2023-33246"],
+      "expected_family": ["rce", "message-queue", "non-web-service"],
+      "why_useful": "เพิ่มตัวอย่าง non-web service เพื่อไม่ให้โมเดล bias เฉพาะ HTTP"
+    },
+    {
+      "id": "redis-cve-2022-0543",
+      "vulhub_path": "redis/CVE-2022-0543",
+      "product": "Redis",
+      "year": 2022,
+      "known_cves": ["CVE-2022-0543"],
+      "expected_family": ["rce", "lua-sandbox", "database"],
+      "why_useful": "service fingerprint ชัดมาก เหมาะทำ feature port/service/version/CPE"
+    },
+    {
+      "id": "gitlab-cve-2021-22205",
+      "vulhub_path": "gitlab/CVE-2021-22205",
+      "product": "GitLab",
+      "year": 2021,
+      "known_cves": ["CVE-2021-22205"],
+      "expected_family": ["rce", "devops-platform"],
+      "why_useful": "DevOps product จริง ช่วยเพิ่ม class ที่ใกล้เคียง TeamCity แต่คนละ stack"
+    },
+    {
+      "id": "grafana-cve-2024-9264",
+      "vulhub_path": "grafana/CVE-2024-9264",
+      "product": "Grafana",
+      "year": 2024,
+      "known_cves": ["CVE-2024-9264"],
+      "expected_family": ["file-read", "rce-chain", "dashboard"],
+      "why_useful": "มี hard unseen lab แล้ว ใช้เป็น anchor สำหรับวัด bias ของโมเดล"
+    }
+  ]
+}

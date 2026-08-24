@@ -1,0 +1,48 @@
+{
+  "name": "chimera-tools-name-date-2026-08-05-active-scanner-suite",
+  "generated_at": "2026-08-05T05:19:02.395138+00:00",
+  "scope": "Active scanner collection against local Docker labs only.",
+  "tools": [
+    "nmap",
+    "httpx",
+    "nuclei",
+    "nikto",
+    "wapiti",
+    "zap"
+  ],
+  "targets": {
+    "acme-support": {
+      "product": "Acme Support Portal",
+      "target_url": "http://127.0.0.1:27000/",
+      "docker_url": "http://host.docker.internal:27000/",
+      "port": 27000,
+      "known_families": [
+        "sqli",
+        "command-injection",
+        "file-inclusion",
+        "broken-access-control",
+        "xss"
+      ]
+    },
+    "nova-devops": {
+      "product": "Nova DevOps Console",
+      "target_url": "http://127.0.0.1:27100/",
+      "docker_url": "http://host.docker.internal:27100/",
+      "port": 27100,
+      "known_families": [
+        "sqli",
+        "command-injection",
+        "file-inclusion",
+        "ssrf",
+        "broken-access-control"
+      ]
+    }
+  },
+  "counts": {
+    "targets": 2,
+    "tools": 6,
+    "tool_target_runs": 12,
+    "normalized_records": 52,
+    "scanner_findings": 46
+  }
+}

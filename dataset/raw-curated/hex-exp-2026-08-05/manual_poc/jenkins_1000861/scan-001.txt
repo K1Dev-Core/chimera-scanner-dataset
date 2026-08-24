@@ -1,0 +1,1 @@
+manual PoC CVE-2018-1000861 (Jenkins script console unauthenticated RCE): checkScript flow + POST script console -> /tmp/success created in container (confirmed earlier in batch1)

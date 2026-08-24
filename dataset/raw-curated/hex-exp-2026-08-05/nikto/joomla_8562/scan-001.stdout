@@ -1,0 +1,34 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        18026
++ Platform:           Linux/Unix
++ Start Time:         2026-08-05 12:56:58 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.10 (Debian) PHP/5.6.12
++ [999986] /: Retrieved x-powered-by header: PHP/5.6.12.
++ [999979] /images: RFC-1918 IP address found in the 'location' header. The IP is "192.168.144.3". See: https://portswigger.net/kb/issues/00600300_private-ip-addresses-disclosed
++ [999988] /images: The web server may reveal its internal or real IP in the Location header via a request to with HTTP/1.0. The value is "192.168.144.3". See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0649
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [600050] Apache/2.4.10 appears to be outdated (current is at least 2.4.66).
++ [600625] PHP/5.6.12 appears to be outdated (current is at least 8.5.1).
++ [800262] /: PHP/5.6 - PHP 3/4/5 and 7.0 are End of Life products without support.
++ [999967] /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ [000434] /: HTTP TRACE method is active and replies which suggests the host is vulnerable to XST. See: https://owasp.org/www-community/attacks/Cross_Site_Tracing
++ [000485] /contents/extensions/asp/1: The IIS system may be vulnerable to a DOS. See: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/MS02-018
++ [001587] /bin/: This might be interesting.
++ [001687] /home/: This might be interesting.
++ [001702] /includes/: This might be interesting.
++ [001736] /login/: This might be interesting.
++ [001738] /logs/: This might be interesting.
++ [001897] /tmp/: This might be interesting.
++ [001947] /wwwthreads/3tvars.pm: This might be interesting.
++ [003211] /securelogin/1,2345,A,00.html: Vignette Story Server v4.1, 6, may disclose sensitive information via a buffer overflow. See: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0385
++ [003573] /LICENSE.txt: License file found may identify site software.
++ [003584] /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/
++ [003848] /www/2: This might be interesting.

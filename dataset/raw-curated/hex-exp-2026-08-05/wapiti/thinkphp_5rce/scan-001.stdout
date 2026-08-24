@@ -1,0 +1,37 @@
+
+     __      __               .__  __  .__________
+    /  \    /  \_____  ______ |__|/  |_|__\_____  \
+    \   \/\/   /\__  \ \____ \|  \   __\  | _(__  <
+     \        /  / __ \|  |_> >  ||  | |  |/       \
+      \__/\  /  (____  /   __/|__||__| |__/______  /
+           \/        \/|__|                      \/
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+X-Frame-Options is not set on http://127.0.0.1:18030/
+X-Content-Type-Options is not set on http://127.0.0.1:18030/
+CSP is not set for URL: http://127.0.0.1:18030/
+Host 127.0.0.1:18030 serves HTTP content without redirecting to HTTPS.
+[*] Saving scan state, please wait...
+This scan has been saved in the file /home/kali/.wapiti/scans/127.0.0.1_18030_folder_7f750f86.db
+[*] Wapiti found 1 URLs and forms during the scan
+
+[*] Launching module redirect
+
+[*] Launching module ssrf
+[*] Asking endpoint URL https://wapiti3.ovh/get_ssrf.php?session_id=paq8s7 for results, please wait...
+
+[*] Launching module exec
+
+[*] Launching module file
+
+[*] Launching module sql
+
+[*] Launching module upload
+
+[*] Launching module ssl
+
+[*] Launching module xss
+
+[*] Launching module permanentxss
+
+[*] Generating report...
+A report has been generated in the file /home/kali/dataset/dec-vulhub-2026-08-05/raw/wapiti/thinkphp_5rce/scan.json

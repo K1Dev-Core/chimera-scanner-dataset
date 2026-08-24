@@ -1,0 +1,40 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        18025
++ Platform:           Windows
++ Start Time:         2026-08-05 10:58:19 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Jetty(9.4.z-SNAPSHOT)
++ [999100] /: Uncommon header(s) 'x-hudson' found, with contents: 1.395.
++ [999100] /: Uncommon header(s) 'x-jenkins-session' found, with contents: 3c6eef71.
++ [999100] /: Uncommon header(s) 'x-jenkins' found, with contents: 2.138.
++ [999100] /: Uncommon header(s) 'x-jenkins-cli2-port' found, with contents: 50000.
++ [999100] /: Uncommon header(s) 'x-instance-identity' found, with contents: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3dUtxgRFEmFJ4Y2VcVYTAkUr9MxKGO6p59Jh2Z12owY2BZoLqZN95S0kNW/lc6o0H50ThN8+0RlLax6u+7+0MBto+FlC6r7U4Mwv0wsYLcxvqSFs1O95sjaOCEiZbYxGhv8Q0P4lpgmA9arbm3foSK2xU6Addgc9kNoYOgZ+D7aLKVy6X4r43CnXaC4/icJTXN9BUFVR+us4HlDhIsLfxi51ljvQcEeNCaYpXdEmdMEK1vuudjo9yQTid/6KPz30z3v1n0WWvHJfaUJumw8srwmjqEe3deZXSRrKmDe8kLFEgq1Oxn/6F6LL14m4OjAdb7ge6M3G1BieYvJ7o+zsOwIDAQAB.
++ [999100] /: Uncommon header(s) 'x-jenkins-cli-port' found, with contents: 50000.
++ [999100] /: Uncommon header(s) 'x-hudson-cli-port' found, with contents: 50000.
++ [999100] /: Uncommon header(s) 'x-hudson-theme' found, with contents: default.
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [500778] /favicon.ico: identifies this app/server as: Jenkins. See: https://en.wikipedia.org/wiki/Favicon
++ [500778] /static/3c6eef71/favicon.ico: identifies this app/server as: Jenkins. See: https://en.wikipedia.org/wiki/Favicon
++ [601275] Jetty/9.4.z-SNAPSHOT appears to be outdated (current is at least 12.0.19). Jetty 10.0.6 AND 9.4.41.v20210516 are also currently supported.
++ [999967] /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ [999100] /log/: Uncommon header(s) 'x-required-permission' found, with contents: hudson.model.Hudson.Administer.
++ [999100] /log/: Uncommon header(s) 'x-you-are-authenticated-as' found, with contents: anonymous.
++ [999100] /log/: Uncommon header(s) 'x-you-are-in-group-disabled' found, with contents: JENKINS-39402: use -Dhudson.security.AccessDeniedException2.REPORT_GROUP_HEADERS=true or use /whoAmI to diagnose.
++ [999100] /script//ident/index.php?path_inc=https://cirt.net/public/rfiinc.txt: Uncommon header(s) 'x-permission-implied-by' found, with contents: hudson.model.Hudson.Administer.
++ [007352] /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ 8701 requests: 0 errors and 20 items reported on the remote host
++ End Time:           2026-08-05 10:59:13 (GMT-4) (54 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+      *********************************************************************
+      Portions of the server's headers (2.138 50000 3c6eef71 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3dUtxgRFEmFJ4Y2VcVYTAkUr9MxKGO6p59Jh2Z12owY2BZoLqZN95S0kNW/lc6o0H50ThN8+0RlLax6u+7+0MBto+FlC6r7U4Mwv0wsYLcxvqSFs1O95sjaOCEiZbYxGhv8Q0P4lpgmA9arbm3foSK2xU6Addgc9kNoYOgZ+D7aLKVy6X4r43CnXaC4/icJTXN9BUFVR+us4HlDhIsLfxi51ljvQcEeNCaYpXdEmdMEK1vuudjo9yQTid/6KPz30z3v1n0WWvHJfaUJumw8srwmjqEe3deZXSRrKmDe8kLFEgq1Oxn/6F6LL14m4OjAdb7ge6M3G1BieYvJ7o+zsOwIDAQAB 1.395) are not in
+      the Nikto 2.6.0 database or are newer than the known string. Would you like
+      to submit this information (*no server specific data*) to CIRT.net
+      for a Nikto update (or you may email to sullo@cirt.net) (y/n)? 

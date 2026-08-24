@@ -1,0 +1,18 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":58},
+  "initArgs":[
+    "defaults",[
+      "config","db-data-config.xml"]],
+  "command":"full-import",
+  "status":"idle",
+  "importResponse":"",
+  "statusMessages":{
+    "Time Elapsed":"0:3:51.996",
+    "Total Requests made to DataSource":"1",
+    "Total Rows Fetched":"0",
+    "Total Documents Processed":"0",
+    "Total Documents Skipped":"0",
+    "Full Dump Started":"2026-08-05 16:53:04",
+    "Full Import failed":"2026-08-05 16:53:04"}}

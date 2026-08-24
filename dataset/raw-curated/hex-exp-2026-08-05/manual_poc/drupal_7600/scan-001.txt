@@ -1,0 +1,1 @@
+manual PoC CVE-2018-7600 (Drupal 8.5.0): user/register + element_parents ajax vector -> HTTP 500 both steps; no code execution obtained; version vulnerable per install (8.5.0)

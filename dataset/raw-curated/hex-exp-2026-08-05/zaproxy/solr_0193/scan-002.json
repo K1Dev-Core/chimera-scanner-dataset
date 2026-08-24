@@ -1,0 +1,1035 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.17.0",
+	"@generated": "Wed, 5 Aug 2026 16:43:57",
+	"created": "2026-08-05T16:43:57.798894229Z",
+	"insights":[
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.warn",
+			"description": "ZAP warnings logged - see the zap.log file for details",
+			"statistic": "3"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "44"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "54"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.endpoint.ctype.application/javascript",
+			"description": "Percentage of endpoints with content type application/javascript",
+			"statistic": "25"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.endpoint.ctype.text/css",
+			"description": "Percentage of endpoints with content type text/css",
+			"statistic": "17"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.endpoint.ctype.text/html",
+			"description": "Percentage of endpoints with content type text/html",
+			"statistic": "55"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://127.0.0.1:18028",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "143"
+		}
+	],
+	"site":[ 
+		{
+			"@name": "http://127.0.0.1:18028",
+			"@host": "127.0.0.1",
+			"@port": "18028",
+			"@ssl": "false",
+			"alerts": [ 
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "High (Medium)",
+					"desc": "<p>The identified library appears to be vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "79",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-cookies.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-cookies.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*\n AngularJS v1.3.8",
+							"otherinfo": "The identified library angularjs, version 1.3.8 is vulnerable.\nCVE-2025-2336\nCVE-2022-25869\nCVE-2019-14863\nCVE-2024-21490\nCVE-2025-0716\nCVE-2024-8373\nCVE-2024-8372\nCVE-2023-26117\nCVE-2019-10768\nCVE-2023-26118\nCVE-2023-26116\nCVE-2026-11998\nCVE-2020-7676\nCVE-2025-4690\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-2336\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-beta1-dense-dispersion-2015-09-29\nhttps://github.com/advisories/GHSA-j58c-ww9w-pwp5\nhttps://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94\nhttps://github.com/angular/angular.js/pull/15699\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8373\nhttps://github.com/advisories/GHSA-4w4v-5hc9-xrr2\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6241747\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8372\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-4690\nhttps://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md\nhttps://github.com/advisories/GHSA-mqm9-c95h-x2p6\nhttps://github.com/advisories/GHSA-28hp-fgcr-2r4h\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6241746\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-21490\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#1230-patronal-resurrection-2016-07-21\nhttps://bugzilla.redhat.com/show_bug.cgi?id=2492579\nhttps://github.com/advisories/GHSA-4p4w-6hg8-63wx\nhttps://github.com/angular/angular.js\nhttps://github.com/advisories/GHSA-qwqh-hm9m-p5hr\nhttp://pastebin.com/raw/kGrdaypP\nhttps://github.com/advisories/GHSA-hfff-63hg-f47j\nhttps://codepen.io/herodevs/full/xxoQRNL/0072e627abe03e9cda373bc75b4c1017\nhttps://access.redhat.com/security/cve/CVE-2026-11998\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-4690\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19\nhttps://stackblitz.com/edit/angularjs-vulnerability-ng-srcset-redos\nhttps://github.com/advisories/GHSA-2vrf-hf26-jrp5\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-0716\nhttps://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7676\nhttps://codepen.io/herodevs/full/bGPQgMp/8da9ce87e99403ee13a295c305ebfa0b\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-2336\nhttps://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113\nhttps://codepen.io/herodevs/pen/qEWQmpd/a86a0d29310e12c7a3756768e6c7b915\nhttps://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8373\nhttps://github.com/advisories/GHSA-2qqx-w9hr-q5gx\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8372\nhttps://github.com/advisories/GHSA-r5fx-8r73-v86c\nhttps://github.com/advisories/GHSA-5cp4-xmrw-59wf\nhttps://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json\nhttps://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-0716\nhttps://github.com/advisories/GHSA-prc3-vjfx-vhm9\nhttps://github.com/advisories/GHSA-m9gf-397r-hwpg\nhttps://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs\nhttps://docs.angularjs.org/misc/version-support-status\n"
+						},
+						{
+							"id": "77",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-resource.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-resource.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*\n AngularJS v1.3.8",
+							"otherinfo": "The identified library angularjs, version 1.3.8 is vulnerable.\nCVE-2025-2336\nCVE-2022-25869\nCVE-2019-14863\nCVE-2024-21490\nCVE-2025-0716\nCVE-2024-8373\nCVE-2024-8372\nCVE-2023-26117\nCVE-2019-10768\nCVE-2023-26118\nCVE-2023-26116\nCVE-2026-11998\nCVE-2020-7676\nCVE-2025-4690\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-2336\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-beta1-dense-dispersion-2015-09-29\nhttps://github.com/advisories/GHSA-j58c-ww9w-pwp5\nhttps://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94\nhttps://github.com/angular/angular.js/pull/15699\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8373\nhttps://github.com/advisories/GHSA-4w4v-5hc9-xrr2\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6241747\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8372\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-4690\nhttps://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md\nhttps://github.com/advisories/GHSA-mqm9-c95h-x2p6\nhttps://github.com/advisories/GHSA-28hp-fgcr-2r4h\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6241746\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-21490\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#1230-patronal-resurrection-2016-07-21\nhttps://bugzilla.redhat.com/show_bug.cgi?id=2492579\nhttps://github.com/advisories/GHSA-4p4w-6hg8-63wx\nhttps://github.com/angular/angular.js\nhttps://github.com/advisories/GHSA-qwqh-hm9m-p5hr\nhttp://pastebin.com/raw/kGrdaypP\nhttps://github.com/advisories/GHSA-hfff-63hg-f47j\nhttps://codepen.io/herodevs/full/xxoQRNL/0072e627abe03e9cda373bc75b4c1017\nhttps://access.redhat.com/security/cve/CVE-2026-11998\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-4690\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19\nhttps://stackblitz.com/edit/angularjs-vulnerability-ng-srcset-redos\nhttps://github.com/advisories/GHSA-2vrf-hf26-jrp5\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-0716\nhttps://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7676\nhttps://codepen.io/herodevs/full/bGPQgMp/8da9ce87e99403ee13a295c305ebfa0b\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-2336\nhttps://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113\nhttps://codepen.io/herodevs/pen/qEWQmpd/a86a0d29310e12c7a3756768e6c7b915\nhttps://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8373\nhttps://github.com/advisories/GHSA-2qqx-w9hr-q5gx\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8372\nhttps://github.com/advisories/GHSA-r5fx-8r73-v86c\nhttps://github.com/advisories/GHSA-5cp4-xmrw-59wf\nhttps://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json\nhttps://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-0716\nhttps://github.com/advisories/GHSA-prc3-vjfx-vhm9\nhttps://github.com/advisories/GHSA-m9gf-397r-hwpg\nhttps://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs\nhttps://docs.angularjs.org/misc/version-support-status\n"
+						},
+						{
+							"id": "82",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-route.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-route.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*\n AngularJS v1.3.8",
+							"otherinfo": "The identified library angularjs, version 1.3.8 is vulnerable.\nCVE-2025-2336\nCVE-2022-25869\nCVE-2019-14863\nCVE-2024-21490\nCVE-2025-0716\nCVE-2024-8373\nCVE-2024-8372\nCVE-2023-26117\nCVE-2019-10768\nCVE-2023-26118\nCVE-2023-26116\nCVE-2026-11998\nCVE-2020-7676\nCVE-2025-4690\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-2336\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-beta1-dense-dispersion-2015-09-29\nhttps://github.com/advisories/GHSA-j58c-ww9w-pwp5\nhttps://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94\nhttps://github.com/angular/angular.js/pull/15699\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8373\nhttps://github.com/advisories/GHSA-4w4v-5hc9-xrr2\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6241747\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8372\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-4690\nhttps://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md\nhttps://github.com/advisories/GHSA-mqm9-c95h-x2p6\nhttps://github.com/advisories/GHSA-28hp-fgcr-2r4h\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6241746\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-21490\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#1230-patronal-resurrection-2016-07-21\nhttps://bugzilla.redhat.com/show_bug.cgi?id=2492579\nhttps://github.com/advisories/GHSA-4p4w-6hg8-63wx\nhttps://github.com/angular/angular.js\nhttps://github.com/advisories/GHSA-qwqh-hm9m-p5hr\nhttp://pastebin.com/raw/kGrdaypP\nhttps://github.com/advisories/GHSA-hfff-63hg-f47j\nhttps://codepen.io/herodevs/full/xxoQRNL/0072e627abe03e9cda373bc75b4c1017\nhttps://access.redhat.com/security/cve/CVE-2026-11998\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-4690\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19\nhttps://stackblitz.com/edit/angularjs-vulnerability-ng-srcset-redos\nhttps://github.com/advisories/GHSA-2vrf-hf26-jrp5\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-0716\nhttps://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7676\nhttps://codepen.io/herodevs/full/bGPQgMp/8da9ce87e99403ee13a295c305ebfa0b\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-2336\nhttps://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113\nhttps://codepen.io/herodevs/pen/qEWQmpd/a86a0d29310e12c7a3756768e6c7b915\nhttps://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8373\nhttps://github.com/advisories/GHSA-2qqx-w9hr-q5gx\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8372\nhttps://github.com/advisories/GHSA-r5fx-8r73-v86c\nhttps://github.com/advisories/GHSA-5cp4-xmrw-59wf\nhttps://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json\nhttps://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-0716\nhttps://github.com/advisories/GHSA-prc3-vjfx-vhm9\nhttps://github.com/advisories/GHSA-m9gf-397r-hwpg\nhttps://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs\nhttps://docs.angularjs.org/misc/version-support-status\n"
+						},
+						{
+							"id": "98",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/**\n * @license AngularJS v1.3.8",
+							"otherinfo": "The identified library angularjs, version 1.3.8 is vulnerable.\nCVE-2025-2336\nCVE-2022-25869\nCVE-2019-14863\nCVE-2024-21490\nCVE-2025-0716\nCVE-2024-8373\nCVE-2024-8372\nCVE-2023-26117\nCVE-2019-10768\nCVE-2023-26118\nCVE-2023-26116\nCVE-2026-11998\nCVE-2020-7676\nCVE-2025-4690\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-2336\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-beta1-dense-dispersion-2015-09-29\nhttps://github.com/advisories/GHSA-j58c-ww9w-pwp5\nhttps://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94\nhttps://github.com/angular/angular.js/pull/15699\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8373\nhttps://github.com/advisories/GHSA-4w4v-5hc9-xrr2\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6241747\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-8372\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-4690\nhttps://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md\nhttps://github.com/advisories/GHSA-mqm9-c95h-x2p6\nhttps://github.com/advisories/GHSA-28hp-fgcr-2r4h\nhttps://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6241746\nhttps://nvd.nist.gov/vuln/detail/CVE-2024-21490\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#1230-patronal-resurrection-2016-07-21\nhttps://bugzilla.redhat.com/show_bug.cgi?id=2492579\nhttps://github.com/advisories/GHSA-4p4w-6hg8-63wx\nhttps://github.com/angular/angular.js\nhttps://github.com/advisories/GHSA-qwqh-hm9m-p5hr\nhttp://pastebin.com/raw/kGrdaypP\nhttps://github.com/advisories/GHSA-hfff-63hg-f47j\nhttps://codepen.io/herodevs/full/xxoQRNL/0072e627abe03e9cda373bc75b4c1017\nhttps://access.redhat.com/security/cve/CVE-2026-11998\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-4690\nhttps://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19\nhttps://stackblitz.com/edit/angularjs-vulnerability-ng-srcset-redos\nhttps://github.com/advisories/GHSA-2vrf-hf26-jrp5\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-0716\nhttps://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8\nhttps://nvd.nist.gov/vuln/detail/CVE-2020-7676\nhttps://codepen.io/herodevs/full/bGPQgMp/8da9ce87e99403ee13a295c305ebfa0b\nhttps://nvd.nist.gov/vuln/detail/CVE-2025-2336\nhttps://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113\nhttps://codepen.io/herodevs/pen/qEWQmpd/a86a0d29310e12c7a3756768e6c7b915\nhttps://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8373\nhttps://github.com/advisories/GHSA-2qqx-w9hr-q5gx\nhttps://www.herodevs.com/vulnerability-directory/cve-2024-8372\nhttps://github.com/advisories/GHSA-r5fx-8r73-v86c\nhttps://github.com/advisories/GHSA-5cp4-xmrw-59wf\nhttps://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json\nhttps://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435\nhttps://www.herodevs.com/vulnerability-directory/cve-2025-0716\nhttps://github.com/advisories/GHSA-prc3-vjfx-vhm9\nhttps://github.com/advisories/GHSA-m9gf-397r-hwpg\nhttps://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a\nhttps://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs\nhttps://docs.angularjs.org/misc/version-support-status\n"
+						}
+					],
+					"count": "4",
+					"systemic": false,
+					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
+					"otherinfo": "<p>The identified library angularjs, version 1.3.8 is vulnerable.</p><p>CVE-2025-2336</p><p>CVE-2022-25869</p><p>CVE-2019-14863</p><p>CVE-2024-21490</p><p>CVE-2025-0716</p><p>CVE-2024-8373</p><p>CVE-2024-8372</p><p>CVE-2023-26117</p><p>CVE-2019-10768</p><p>CVE-2023-26118</p><p>CVE-2023-26116</p><p>CVE-2026-11998</p><p>CVE-2020-7676</p><p>CVE-2025-4690</p><p>https://www.herodevs.com/vulnerability-directory/cve-2025-2336</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md#150-beta1-dense-dispersion-2015-09-29</p><p>https://github.com/advisories/GHSA-j58c-ww9w-pwp5</p><p>https://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94</p><p>https://github.com/angular/angular.js/pull/15699</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-8373</p><p>https://github.com/advisories/GHSA-4w4v-5hc9-xrr2</p><p>https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-6241747</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-8372</p><p>https://nvd.nist.gov/vuln/detail/CVE-2025-4690</p><p>https://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md</p><p>https://github.com/advisories/GHSA-mqm9-c95h-x2p6</p><p>https://github.com/advisories/GHSA-28hp-fgcr-2r4h</p><p>https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-6241746</p><p>https://nvd.nist.gov/vuln/detail/CVE-2024-21490</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md#1230-patronal-resurrection-2016-07-21</p><p>https://bugzilla.redhat.com/show_bug.cgi?id=2492579</p><p>https://github.com/advisories/GHSA-4p4w-6hg8-63wx</p><p>https://github.com/angular/angular.js</p><p>https://github.com/advisories/GHSA-qwqh-hm9m-p5hr</p><p>http://pastebin.com/raw/kGrdaypP</p><p>https://github.com/advisories/GHSA-hfff-63hg-f47j</p><p>https://codepen.io/herodevs/full/xxoQRNL/0072e627abe03e9cda373bc75b4c1017</p><p>https://access.redhat.com/security/cve/CVE-2026-11998</p><p>https://www.herodevs.com/vulnerability-directory/cve-2025-4690</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19</p><p>https://stackblitz.com/edit/angularjs-vulnerability-ng-srcset-redos</p><p>https://github.com/advisories/GHSA-2vrf-hf26-jrp5</p><p>https://www.herodevs.com/vulnerability-directory/cve-2026-11998</p><p>https://nvd.nist.gov/vuln/detail/CVE-2025-0716</p><p>https://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8</p><p>https://nvd.nist.gov/vuln/detail/CVE-2020-7676</p><p>https://codepen.io/herodevs/full/bGPQgMp/8da9ce87e99403ee13a295c305ebfa0b</p><p>https://nvd.nist.gov/vuln/detail/CVE-2025-2336</p><p>https://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113</p><p>https://codepen.io/herodevs/pen/qEWQmpd/a86a0d29310e12c7a3756768e6c7b915</p><p>https://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77</p><p>https://www.herodevs.com/vulnerability-directory/cve-2024-8373</p><p>https://github.com/advisories/GHSA-2qqx-w9hr-q5gx</p><p>https://www.herodevs.com/vulnerability-directory/cve-2024-8372</p><p>https://github.com/advisories/GHSA-r5fx-8r73-v86c</p><p>https://github.com/advisories/GHSA-5cp4-xmrw-59wf</p><p>https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json</p><p>https://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435</p><p>https://www.herodevs.com/vulnerability-directory/cve-2025-0716</p><p>https://github.com/advisories/GHSA-prc3-vjfx-vhm9</p><p>https://github.com/advisories/GHSA-m9gf-397r-hwpg</p><p>https://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a</p><p>https://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs</p><p>https://docs.angularjs.org/misc/version-support-status</p><p></p>",
+					"reference": "<p>https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/</p>",
+					"cweid": "1395",
+					"wascid": "-1",
+					"sourceid": "244"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "0",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "6",
+							"uri": "http://127.0.0.1:18028/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:18028\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "5",
+							"uri": "http://127.0.0.1:18028/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "11",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "13",
+							"uri": "http://127.0.0.1:18028/solr/%23/%7B%7BcurrentCollection.name%7D%7D/collection-overview",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/#\/{{currentCollection.name}}\/collection-overview",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The identified library appears to be vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "76",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery-2.1.3.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery-2.1.3.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "jquery-2.1.3.min.js",
+							"otherinfo": "The identified library jquery, version 2.1.3 is vulnerable.\nCVE-2020-11023\nCVE-2020-11022\nCVE-2015-9251\nCVE-2019-11358\nhttps://github.com/jquery/jquery/issues/2432\nhttp://research.insecurelabs.org/jquery/test/\nhttp://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/\nhttps://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://nvd.nist.gov/vuln/detail/CVE-2019-11358\nhttps://github.com/advisories/GHSA-rmxg-73gg-4p98\nhttps://nvd.nist.gov/vuln/detail/CVE-2015-9251\nhttps://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b\nhttps://bugs.jquery.com/ticket/11974\nhttps://github.com/jquery/jquery.com/issues/162\nhttps://blog.jquery.com/2020/04/10/jquery-3-5-0-released/\n"
+						},
+						{
+							"id": "86",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery-ui.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery-ui.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*! jQuery UI - v1.12.1",
+							"otherinfo": "The identified library jquery-ui, version 1.12.1 is vulnerable.\nCVE-2021-41184\nCVE-2021-41183\nCVE-2021-41182\nCVE-2022-31160\nhttps://github.com/advisories/GHSA-h6gj-6jjq-h8g9\nhttps://bugs.jqueryui.com/ticket/15284\nhttps://github.com/jquery/jquery-ui/commit/8cc5bae1caa1fcf96bf5862c5646c787020ba3f9\nhttps://nvd.nist.gov/vuln/detail/CVE-2022-31160\nhttps://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327\nhttps://nvd.nist.gov/vuln/detail/CVE-2021-41184\nhttps://nvd.nist.gov/vuln/detail/CVE-2021-41183\nhttps://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc\nhttps://nvd.nist.gov/vuln/detail/CVE-2021-41182\nhttps://github.com/jquery/jquery-ui/issues/2101\n"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Upgrade to the latest version of the affected library.</p>",
+					"otherinfo": "<p>The identified library jquery, version 2.1.3 is vulnerable.</p><p>CVE-2020-11023</p><p>CVE-2020-11022</p><p>CVE-2015-9251</p><p>CVE-2019-11358</p><p>https://github.com/jquery/jquery/issues/2432</p><p>http://research.insecurelabs.org/jquery/test/</p><p>http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/</p><p>https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-11358</p><p>https://github.com/advisories/GHSA-rmxg-73gg-4p98</p><p>https://nvd.nist.gov/vuln/detail/CVE-2015-9251</p><p>https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b</p><p>https://bugs.jquery.com/ticket/11974</p><p>https://github.com/jquery/jquery.com/issues/162</p><p>https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/</p><p></p>",
+					"reference": "<p>https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/</p>",
+					"cweid": "1395",
+					"wascid": "-1",
+					"sourceid": "229"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-2",
+					"alert": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
+					"instances":[ 
+						{
+							"id": "27",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "43",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to 'require-corp' for documents.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-3",
+					"alert": "Cross-Origin-Opener-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Opener-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
+					"instances":[ 
+						{
+							"id": "28",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "44",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Opener-Policy header appropriately, and that it sets the Cross-Origin-Opener-Policy header to 'same-origin' for documents.</p><p>'same-origin-allow-popups' is considered as less secured and should be avoided.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Opener-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-1",
+					"alert": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"name": "Cross-Origin-Resource-Policy Header Missing or Invalid",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+					"instances":[ 
+						{
+							"id": "25",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "40",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "60",
+							"uri": "http://127.0.0.1:18028/solr/css/angular/analysis.css?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/css\/angular\/analysis.css (_)",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "64",
+							"uri": "http://127.0.0.1:18028/solr/css/angular/common.css?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/css\/angular\/common.css (_)",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "63",
+							"uri": "http://127.0.0.1:18028/solr/img/favicon.ico?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/img\/favicon.ico (_)",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10110",
+					"alertRef": "10110",
+					"alert": "Dangerous JS Functions",
+					"name": "Dangerous JS Functions",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+					"instances":[ 
+						{
+							"id": "93",
+							"uri": "http://127.0.0.1:18028/solr/js/angular/app.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/js\/angular\/app.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "97",
+							"uri": "http://127.0.0.1:18028/solr/js/angular/controllers/cloud.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/js\/angular\/controllers\/cloud.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "81",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-chosen.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-chosen.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "85",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-route.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-route.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval(",
+							"otherinfo": ""
+						},
+						{
+							"id": "105",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "trustAsHtml(",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": false,
+					"solution": "<p>See the references for security advice on the use of these functions.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://v17.angular.io/guide/security</p>",
+					"cweid": "749",
+					"wascid": "-1",
+					"sourceid": "271"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063-1",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"id": "16",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "9",
+							"uri": "http://127.0.0.1:18028/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:18028\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "10",
+							"uri": "http://127.0.0.1:18028/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "26",
+							"uri": "http://127.0.0.1:18028/sitemap.xml.",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml.",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "20",
+							"uri": "http://127.0.0.1:18028/solr/%23/%7B%7BcurrentCollection.name%7D%7D/collection-overview",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/#\/{{currentCollection.name}}\/collection-overview",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "2",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "31",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "59",
+							"uri": "http://127.0.0.1:18028/solr/css/angular/analysis.css?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/css\/angular\/analysis.css (_)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "62",
+							"uri": "http://127.0.0.1:18028/solr/css/angular/common.css?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/css\/angular\/common.css (_)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "61",
+							"uri": "http://127.0.0.1:18028/solr/img/favicon.ico?_=8.1.1",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/img\/favicon.ico (_)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90011",
+					"alertRef": "90011-1",
+					"alert": "Charset Mismatch (Header Versus Meta Content-Type Charset)",
+					"name": "Charset Mismatch (Header Versus Meta Content-Type Charset)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check identifies responses where the HTTP Content-Type header declares a charset different from the charset defined by the body of the HTML or XML. When there's a charset mismatch between the HTTP header and content body Web browsers can be forced into an undesirable content-sniffing mode to determine the content's correct character set.</p><p></p><p>An attacker could manipulate content on the page to be interpreted in an encoding of their choice. For example, if an attacker can control content at the beginning of the page, they could inject script using UTF-7 encoded text and manipulate some browsers into interpreting that text.</p>",
+					"instances":[ 
+						{
+							"id": "4",
+							"uri": "http://127.0.0.1:18028/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:18028\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match."
+						},
+						{
+							"id": "3",
+							"uri": "http://127.0.0.1:18028/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match."
+						},
+						{
+							"id": "19",
+							"uri": "http://127.0.0.1:18028/sitemap.xml.",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml.",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match."
+						},
+						{
+							"id": "22",
+							"uri": "http://127.0.0.1:18028/solr/%23/%7B%7BcurrentCollection.name%7D%7D/analysis",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/#\/{{currentCollection.name}}\/analysis",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match."
+						},
+						{
+							"id": "12",
+							"uri": "http://127.0.0.1:18028/solr/%23/%7B%7BcurrentCollection.name%7D%7D/collection-overview",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/#\/{{currentCollection.name}}\/collection-overview",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p>",
+					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the META content-type encoding declarations: [iso-8859-1] and [utf-8] do not match.</p>",
+					"reference": "<p>https://code.google.com/archive/p/browsersec/wikis/Part2.wiki#Character_set_handling_and_detection</p>",
+					"cweid": "436",
+					"wascid": "15",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
+					"instances":[ 
+						{
+							"id": "92",
+							"uri": "http://127.0.0.1:18028/solr/js/angular/app.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/js\/angular\/app.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// @todo .attr( 'title', '/a",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// @todo .attr( 'title', '/admin/ping is not configured (' + xhr.status + ': ' + error_thrown + ')' );\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "95",
+							"uri": "http://127.0.0.1:18028/solr/js/angular/controllers/index.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/js\/angular\/controllers\/index.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// @todo These should really",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// @todo These should really be an AngularJS Filter: {{ javaMemoryUsed | bytes }}\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "94",
+							"uri": "http://127.0.0.1:18028/solr/js/angular/controllers/logging.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/js\/angular\/controllers\/logging.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/* @todo sticky_mode\n       ",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in likely comment: \"/* @todo sticky_mode\n        // state element is in viewport\n        sticky_mode = ( state.position().top <= $( window ).scrollT\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "80",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-chosen.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-chosen.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nThe MIT License\n\nCopyright (c) 2013 Localytics http://www.localytics.com\n\nPermission is hereby granted, free of charge, to an\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "83",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-cookies.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-cookies.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nThe MIT License\n\nCopyright (c) 2010-2015 Google, Inc. http://angularjs.org\n\nPermission is hereby granted, free of charge, to \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "78",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-resource.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-resource.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nThe MIT License\n\nCopyright (c) 2010-2015 Google, Inc. http://angularjs.org\n\nPermission is hereby granted, free of charge, to \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "84",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-route.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-route.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nThe MIT License\n\nCopyright (c) 2010-2015 Google, Inc. http://angularjs.org\n\nPermission is hereby granted, free of charge, to \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "90",
+							"uri": "http://127.0.0.1:18028/solr/libs/angular-utf8-base64.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/angular-utf8-base64.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nThe MIT License (MIT)\n\nCopyright (c) 2014 Andrey Bezyazychniy\n\nPermission is hereby granted, free of charge, to any person ob\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "88",
+							"uri": "http://127.0.0.1:18028/solr/libs/chosen.jquery.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/chosen.jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\n\nChosen\n\n- by Patrick Filler for Harvest http://getharvest.com\n- Copyright (c) 2011-2013 by Harvest\n\nAvailable for use under \", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "87",
+							"uri": "http://127.0.0.1:18028/solr/libs/chosen.jquery.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/chosen.jquery.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// Chosen, a Select Box Enhancer for jQ",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in likely comment: \"// Chosen, a Select Box Enhancer for jQuery and Prototype\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "89",
+							"uri": "http://127.0.0.1:18028/solr/libs/highlight.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/highlight.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "te products derived from this software \n    ",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\n\nCopyright (c) 2006, Ivan Sagalaev\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nm\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "99",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery-2.1.3.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery-2.1.3.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM, OUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*!\n\nCopyright 2014 jQuery Foundation and other contributors\nhttp://jquery.com/\n\nPermission is hereby granted, free of charge, t\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "96",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery-ui.min.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery-ui.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM, OUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*!\n\nCopyright 2014 jQuery Foundation and other contributors\nhttp://jquery.com/\n\nPermission is hereby granted, free of charge, t\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "102",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery.jstree.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery.jstree.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 2 times, the first in likely comment: \"/*\n\nThe MIT License (MIT)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and ass\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "103",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery.jstree.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery.jstree.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// TODO: find a more elegan",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 3 times, the first in likely comment: \"// TODO: find a more elegant approach to syncronizing returning requests\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "104",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery.jstree.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery.jstree.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "// where is the type stores ",
+							"otherinfo": "The following pattern was used: \\bWHERE\\b and was detected in likely comment: \"// where is the type stores (the rel attribute of the LI element)\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "100",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery.jstree.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery.jstree.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ecated + there is a bug in IE)",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in likely comment: \"// code is copied form jQuery ($.browser is deprecated + there is a bug in IE)\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "101",
+							"uri": "http://127.0.0.1:18028/solr/libs/jquery.jstree.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/jquery.jstree.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ing/moving nodes by user interaction.\n */",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in likely comment: \"/* \n * jsTree CRRM plugin 1.0\n * Handles creating/renaming/removing/moving nodes by user interaction.\n */\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "91",
+							"uri": "http://127.0.0.1:18028/solr/libs/ngtimeago.js",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/libs\/ngtimeago.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": " OTHERWISE, ARISING FROM, OUT OF OR IN CONNE",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nCopyright (c) 2014 Uttesh Kumar\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this softwar\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "19",
+					"systemic": false,
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bTODO\\b and was detected in likely comment: \"// @todo .attr( 'title', '/admin/ping is not configured (' + xhr.status + ': ' + error_thrown + ')' );\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "615",
+					"wascid": "13",
+					"sourceid": "271"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Client Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"id": "1",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a ng-click=\"ping()\"><span>Ping</span><small class=\"qtime\" ng-show=\"showPing\"> (<span>{{pingMS}}ms</span>)</small></a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "14",
+							"uri": "http://127.0.0.1:18028/solr/",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a ng-click=\"ping()\"><span>Ping</span><small class=\"qtime\" ng-show=\"showPing\"> (<span>{{pingMS}}ms</span>)</small></a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049-1",
+					"alert": "Non-Storable Content",
+					"name": "Non-Storable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+					"instances":[ 
+						{
+							"id": "18",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "302",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "8"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049-3",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"id": "15",
+							"uri": "http://127.0.0.1:18028",
+							"nodeName": "http:\/\/127.0.0.1:18028",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "8",
+							"uri": "http://127.0.0.1:18028/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:18028\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "7",
+							"uri": "http://127.0.0.1:18028/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "23",
+							"uri": "http://127.0.0.1:18028/sitemap.xml.",
+							"nodeName": "http:\/\/127.0.0.1:18028\/sitemap.xml.",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"id": "17",
+							"uri": "http://127.0.0.1:18028/solr/%23/%7B%7BcurrentCollection.name%7D%7D/collection-overview",
+							"nodeName": "http:\/\/127.0.0.1:18028\/solr\/#\/{{currentCollection.name}}\/collection-overview",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "1"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

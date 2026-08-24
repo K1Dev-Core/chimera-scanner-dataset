@@ -1,0 +1,145 @@
+Using the Automation Framework
+Total of 402 URLs
+PASS: In Page Banner Information Leak [10009]
+PASS: Cookie Without Secure Flag [10011]
+PASS: Re-examine Cache-control Directives [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Anti-clickjacking Header [10020]
+PASS: X-Content-Type-Options Header Missing [10021]
+PASS: Information Disclosure - Debug Error Messages [10023]
+PASS: Information Disclosure - Sensitive Information in URL [10024]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Off-site Redirect [10028]
+PASS: User Controllable Charset [10030]
+PASS: Viewstate [10032]
+PASS: Directory Browsing [10033]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header [10035]
+PASS: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTP to HTTPS Insecure Transition in Form Post [10041]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Big Redirect Detected (Potential Sensitive Information Leak) [10044]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: CSP [10055]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header [10061]
+PASS: PII Disclosure [10062]
+PASS: Timestamp Disclosure [10096]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Source Code Disclosure [10099]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Verification Request Identified [10113]
+PASS: Script Served From Malicious Domain (polyfill) [10115]
+PASS: ZAP is Out of Date [10116]
+PASS: Private IP Disclosure [2]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Stats Passive Scan Rule [50003]
+PASS: Insecure JSF ViewState [90001]
+PASS: Java Serialization Object [90002]
+PASS: Sub Resource Integrity Attribute Missing [90003]
+PASS: WSDL File Detection [90030]
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: Vulnerable JS Library [10003] x 12 
+	http://127.0.0.1:18025/static/3c6eef71/scripts/prototype.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/yui/animation/animation-min.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/yui/autocomplete/autocomplete-min.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/yui/connection/connection-min.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/yui/container/container-min.js (200 OK)
+WARN-NEW: Cookie No HttpOnly Flag [10010] x 5 
+	http://127.0.0.1:18025/?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/asynchPeople/?auto_refresh=false (200 OK)
+	http://127.0.0.1:18025/iconSize?16x16 (302 Found)
+	http://127.0.0.1:18025/iconSize?24x24 (302 Found)
+	http://127.0.0.1:18025/view/all/builds?auto_refresh=false (200 OK)
+WARN-NEW: Content-Type Header Missing [10019] x 1 
+	http://127.0.0.1:18025/api/xml?xpath=/*/* (500 Internal Server Error)
+WARN-NEW: Information Disclosure - Suspicious Comments [10027] x 19 
+	http://127.0.0.1:18025/adjuncts/3c6eef71/lib/layout/breadcrumbs.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/lib/layout/breadcrumbs.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/lib/layout/breadcrumbs.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/org/kohsuke/stapler/bind.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/org/kohsuke/stapler/simile/timeline_ajax/simile-ajax-bundle.js (200 OK)
+WARN-NEW: Cookie Poisoning [10029] x 5 
+	http://127.0.0.1:18025/?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/asynchPeople/?auto_refresh=false (200 OK)
+	http://127.0.0.1:18025/computer/?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/legend?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/view/all/builds?auto_refresh=false (200 OK)
+WARN-NEW: User Controllable HTML Element Attribute (Potential XSS) [10031] x 1 
+	http://127.0.0.1:18025/login?from=%2Fview%2Fall%2Fbuilds (200 OK)
+WARN-NEW: Server Leaks Version Information via "Server" HTTP Response Header Field [10036] x 5 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/robots.txt (200 OK)
+	http://127.0.0.1:18025/sitemap.xml (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml. (404 Not Found)
+WARN-NEW: Content Security Policy (CSP) Header Not Set [10038] x 5 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/login?from=%2F (200 OK)
+	http://127.0.0.1:18025/sitemap.xml (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml. (404 Not Found)
+WARN-NEW: Non-Storable Content [10049] x 6 
+	http://127.0.0.1:18025/toggleCollapse?paneId=buildQueue (302 Found)
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/robots.txt (200 OK)
+	http://127.0.0.1:18025/sitemap.xml (404 Not Found)
+WARN-NEW: Cookie without SameSite Attribute [10054] x 5 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/iconSize?16x16 (302 Found)
+	http://127.0.0.1:18025/iconSize?24x24 (302 Found)
+	http://127.0.0.1:18025/view/all/builds?auto_refresh=false (200 OK)
+WARN-NEW: Permissions Policy Header Not Set [10063] x 5 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/login?from=%2F (200 OK)
+	http://127.0.0.1:18025/sitemap.xml (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml. (404 Not Found)
+WARN-NEW: Modern Web Application [10109] x 5 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/?auto_refresh=true (200 OK)
+	http://127.0.0.1:18025/asynchPeople/ (200 OK)
+	http://127.0.0.1:18025/login?from=%2F (200 OK)
+WARN-NEW: Dangerous JS Functions [10110] x 6 
+	http://127.0.0.1:18025/adjuncts/3c6eef71/org/kohsuke/stapler/bind.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/org/kohsuke/stapler/simile/timeline_ajax/simile-ajax-bundle.js (200 OK)
+	http://127.0.0.1:18025/adjuncts/3c6eef71/org/kohsuke/stapler/simile/timeline_js/timeline-bundle.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/hudson-behavior.js (200 OK)
+	http://127.0.0.1:18025/static/3c6eef71/scripts/prototype.js (200 OK)
+WARN-NEW: Authentication Request Identified [10111] x 1 
+	http://127.0.0.1:18025/j_acegi_security_check (302 Found)
+WARN-NEW: Session Management Response Identified [10112] x 1 
+	http://127.0.0.1:18025 (200 OK)
+WARN-NEW: Absence of Anti-CSRF Tokens [10202] x 4 
+	http://127.0.0.1:18025/createItem (405 Method Not Allowed)
+	http://127.0.0.1:18025/login?from=%2F (200 OK)
+	http://127.0.0.1:18025/loginError (401 Unauthorized)
+	http://127.0.0.1:18025/quietDown (405 Method Not Allowed)
+WARN-NEW: Cross-Origin-Embedder-Policy Header Missing or Invalid [90004] x 10 
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+	http://127.0.0.1:18025/login?from=%2F (200 OK)
+	http://127.0.0.1:18025 (200 OK)
+	http://127.0.0.1:18025/ (200 OK)
+WARN-NEW: Charset Mismatch (Header Versus Meta Content-Type Charset) [90011] x 5 
+	http://127.0.0.1:18025/job/JOBNAME/config.xml. (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml. (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml.. (404 Not Found)
+	http://127.0.0.1:18025/sitemap.xml... (404 Not Found)
+WARN-NEW: Application Error Disclosure [90022] x 2 
+	http://127.0.0.1:18025/api/xml?xpath=/*/* (500 Internal Server Error)
+	http://127.0.0.1:18025/computer/(master)/loadStatistics/graph?height=500&type=min&width='%20+%20w%20+%20' (500 Internal Server Error)
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 19	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 48

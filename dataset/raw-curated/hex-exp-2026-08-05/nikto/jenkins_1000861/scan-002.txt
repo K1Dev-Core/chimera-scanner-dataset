@@ -1,0 +1,23 @@
+- Nikto v2.6.0/
++ Target Host: 127.0.0.1
++ Target Port: 18025
++ GET /: Uncommon header(s) 'x-hudson' found, with contents: 1.395.
++ GET /: Uncommon header(s) 'x-jenkins-session' found, with contents: 3c6eef71.
++ GET /: Uncommon header(s) 'x-jenkins' found, with contents: 2.138.
++ GET /: Uncommon header(s) 'x-jenkins-cli2-port' found, with contents: 50000.
++ GET /: Uncommon header(s) 'x-instance-identity' found, with contents: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3dUtxgRFEmFJ4Y2VcVYTAkUr9MxKGO6p59Jh2Z12owY2BZoLqZN95S0kNW/lc6o0H50ThN8+0RlLax6u+7+0MBto+FlC6r7U4Mwv0wsYLcxvqSFs1O95sjaOCEiZbYxGhv8Q0P4lpgmA9arbm3foSK2xU6Addgc9kNoYOgZ+D7aLKVy6X4r43CnXaC4/icJTXN9BUFVR+us4HlDhIsLfxi51ljvQcEeNCaYpXdEmdMEK1vuudjo9yQTid/6KPz30z3v1n0WWvHJfaUJumw8srwmjqEe3deZXSRrKmDe8kLFEgq1Oxn/6F6LL14m4OjAdb7ge6M3G1BieYvJ7o+zsOwIDAQAB.
++ GET /: Uncommon header(s) 'x-jenkins-cli-port' found, with contents: 50000.
++ GET /: Uncommon header(s) 'x-hudson-cli-port' found, with contents: 50000.
++ GET /: Uncommon header(s) 'x-hudson-theme' found, with contents: default.
++ GET /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security: 
++ GET /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP: 
++ GET /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy: 
++ GET /favicon.ico: identifies this app/server as: Jenkins. See: https://en.wikipedia.org/wiki/Favicon: 
++ GET /static/3c6eef71/favicon.ico: identifies this app/server as: Jenkins. See: https://en.wikipedia.org/wiki/Favicon: 
++ HEAD Jetty/9.4.z-SNAPSHOT appears to be outdated (current is at least 12.0.19). Jetty 10.0.6 AND 9.4.41.v20210516 are also currently supported.
++ AMOCLBFQ /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ GET /log/: Uncommon header(s) 'x-required-permission' found, with contents: hudson.model.Hudson.Administer.
++ GET /log/: Uncommon header(s) 'x-you-are-authenticated-as' found, with contents: anonymous.
++ GET /log/: Uncommon header(s) 'x-you-are-in-group-disabled' found, with contents: JENKINS-39402: use -Dhudson.security.AccessDeniedException2.REPORT_GROUP_HEADERS=true or use /whoAmI to diagnose.
++ GET /script//ident/index.php?path_inc=https://cirt.net/public/rfiinc.txt: Uncommon header(s) 'x-permission-implied-by' found, with contents: hudson.model.Hudson.Administer.
++ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/: 

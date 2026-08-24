@@ -1,0 +1,4 @@
+target_id,target_url,status_code,title,server,content_type,content_length,form_count,input_names,links,label_status,data_source
+picoctf-dolphin-cove-55701,http://dolphin-cove.picoctf.net:55701/login,200,The New Twitter,Werkzeug/3.1.5 Python/3.12.4,text/html; charset=utf-8,923,1,"password, username","/register, /static/login-register.css",weak_prior_only,passive_http_fingerprint
+picoctf-lonely-island-49776,http://lonely-island.picoctf.net:49776/,200,Login - picoCTF demo,Apache/2.4.66 (Debian),text/html; charset=UTF-8,3128,1,"password, username, viewport","/register.php, /assets/css/styles.css",weak_prior_only,passive_http_fingerprint
+

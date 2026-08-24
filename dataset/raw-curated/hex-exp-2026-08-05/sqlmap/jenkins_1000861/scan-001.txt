@@ -1,0 +1,1 @@
+no parameterized URL identified for sqlmap

@@ -1,0 +1,244 @@
+{
+  "run_id": "202608041930-vulhub-expanded",
+  "created_at": "2026-08-04T19:30:34.185Z",
+  "source": "vulhub",
+  "safety_scope": "local docker vulnerable labs only; no exploit execution",
+  "tools": [
+    "naabu",
+    "nmap",
+    "httpx",
+    "nuclei",
+    "nikto"
+  ],
+  "labs": [
+    {
+      "id": "nginx-ui-cve-2026-27944",
+      "path": "nginx-ui/CVE-2026-27944",
+      "cve": "CVE-2026-27944",
+      "product": "nginx-ui",
+      "year": 2026,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\nginx-ui-cve-2026-27944",
+      "mappings": [
+        {
+          "original_host_port": 9000,
+          "host_port": 24000,
+          "container_port": 9000,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24000"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24000"
+      ],
+      "status": "scanned",
+      "record_count": 3
+    },
+    {
+      "id": "n8n-cve-2026-21858",
+      "path": "n8n/CVE-2026-21858",
+      "cve": "CVE-2026-21858",
+      "product": "n8n",
+      "year": 2026,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\n8n-cve-2026-21858",
+      "mappings": [
+        {
+          "original_host_port": 5678,
+          "host_port": 24001,
+          "container_port": 5678,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24001"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24001"
+      ],
+      "status": "scanned",
+      "record_count": 3
+    },
+    {
+      "id": "activemq-cve-2026-34197",
+      "path": "activemq/CVE-2026-34197",
+      "cve": "CVE-2026-34197",
+      "product": "apache-activemq",
+      "year": 2026,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\activemq-cve-2026-34197",
+      "mappings": [
+        {
+          "original_host_port": 61616,
+          "host_port": 24002,
+          "container_port": 61616,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 8161,
+          "host_port": 24003,
+          "container_port": 8161,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 5005,
+          "host_port": 24004,
+          "container_port": 5005,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24003"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24003"
+      ],
+      "status": "scanned",
+      "record_count": 5
+    },
+    {
+      "id": "nextjs-cve-2025-29927",
+      "path": "next.js/CVE-2025-29927",
+      "cve": "CVE-2025-29927",
+      "product": "next.js",
+      "year": 2025,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\nextjs-cve-2025-29927",
+      "mappings": [
+        {
+          "original_host_port": 3000,
+          "host_port": 24005,
+          "container_port": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24005"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24005"
+      ],
+      "status": "scanned",
+      "record_count": 3
+    },
+    {
+      "id": "jenkins-cve-2024-23897",
+      "path": "jenkins/CVE-2024-23897",
+      "cve": "CVE-2024-23897",
+      "product": "jenkins",
+      "year": 2024,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\jenkins-cve-2024-23897",
+      "mappings": [
+        {
+          "original_host_port": 50000,
+          "host_port": 24006,
+          "container_port": 50000,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 8080,
+          "host_port": 24007,
+          "container_port": 8080,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 5005,
+          "host_port": 24008,
+          "container_port": 5005,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24007"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24007"
+      ],
+      "status": "scanned",
+      "record_count": 5
+    },
+    {
+      "id": "geoserver-cve-2024-36401",
+      "path": "geoserver/CVE-2024-36401",
+      "cve": "CVE-2024-36401",
+      "product": "geoserver",
+      "year": 2024,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\geoserver-cve-2024-36401",
+      "mappings": [
+        {
+          "original_host_port": 8080,
+          "host_port": 24009,
+          "container_port": 8080,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 5005,
+          "host_port": 24010,
+          "container_port": 5005,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24009"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24009"
+      ],
+      "status": "scanned",
+      "record_count": 4
+    },
+    {
+      "id": "log4j-cve-2021-44228",
+      "path": "log4j/CVE-2021-44228",
+      "cve": "CVE-2021-44228",
+      "product": "apache-solr-log4j",
+      "year": 2021,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\log4j-cve-2021-44228",
+      "mappings": [
+        {
+          "original_host_port": 8983,
+          "host_port": 24011,
+          "container_port": 8983,
+          "protocol": "tcp"
+        },
+        {
+          "original_host_port": 5005,
+          "host_port": 24012,
+          "container_port": 5005,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24011"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24011"
+      ],
+      "status": "scanned",
+      "record_count": 4
+    },
+    {
+      "id": "drupal-cve-2018-7600",
+      "path": "drupal/CVE-2018-7600",
+      "cve": "CVE-2018-7600",
+      "product": "drupal",
+      "year": 2018,
+      "working_dir": "C:\\Users\\uSeR\\Documents\\Codex\\2026-08-04\\docker-cve-wp2shell-2\\work\\vulhub-active-labs\\202608041930-vulhub-expanded\\drupal-cve-2018-7600",
+      "mappings": [
+        {
+          "original_host_port": 8080,
+          "host_port": 24013,
+          "container_port": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "http_targets_local": [
+        "http://127.0.0.1:24013"
+      ],
+      "http_targets_docker": [
+        "http://host.docker.internal:24013"
+      ],
+      "status": "scanned",
+      "record_count": 3
+    }
+  ],
+  "record_count": 30
+}

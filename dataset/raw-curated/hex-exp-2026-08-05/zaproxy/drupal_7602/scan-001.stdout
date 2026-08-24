@@ -1,0 +1,126 @@
+Using the Automation Framework
+Total of 97 URLs
+PASS: Cookie No HttpOnly Flag [10010]
+PASS: Cookie Without Secure Flag [10011]
+PASS: Re-examine Cache-control Directives [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Content-Type Header Missing [10019]
+PASS: Information Disclosure - Sensitive Information in URL [10024]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Off-site Redirect [10028]
+PASS: Cookie Poisoning [10029]
+PASS: User Controllable Charset [10030]
+PASS: Viewstate [10032]
+PASS: Directory Browsing [10033]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header [10035]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTP to HTTPS Insecure Transition in Form Post [10041]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Big Redirect Detected (Potential Sensitive Information Leak) [10044]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: Cookie without SameSite Attribute [10054]
+PASS: CSP [10055]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header [10061]
+PASS: PII Disclosure [10062]
+PASS: Timestamp Disclosure [10096]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Dangerous JS Functions [10110]
+PASS: Authentication Request Identified [10111]
+PASS: Session Management Response Identified [10112]
+PASS: Verification Request Identified [10113]
+PASS: Script Served From Malicious Domain (polyfill) [10115]
+PASS: ZAP is Out of Date [10116]
+PASS: Private IP Disclosure [2]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Stats Passive Scan Rule [50003]
+PASS: Insecure JSF ViewState [90001]
+PASS: Java Serialization Object [90002]
+PASS: Sub Resource Integrity Attribute Missing [90003]
+PASS: Charset Mismatch [90011]
+PASS: Application Error Disclosure [90022]
+PASS: WSDL File Detection [90030]
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: Vulnerable JS Library [10003] x 1 
+	http://127.0.0.1:18022/misc/jquery.js?v=1.4.4 (200 OK)
+WARN-NEW: In Page Banner Information Leak [10009] x 5 
+	http://127.0.0.1:18022/includes/ (403 Forbidden)
+	http://127.0.0.1:18022/misc/ (403 Forbidden)
+	http://127.0.0.1:18022/modules/ (403 Forbidden)
+	http://127.0.0.1:18022/profiles/ (403 Forbidden)
+	http://127.0.0.1:18022/scripts/ (403 Forbidden)
+WARN-NEW: Missing Anti-clickjacking Header [10020] x 4 
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022/install.php?locale=en&profile=standard (200 OK)
+	http://127.0.0.1:18022/install.php?localize=true&profile=standard (200 OK)
+	http://127.0.0.1:18022/install.php?profile=standard (200 OK)
+WARN-NEW: X-Content-Type-Options Header Missing [10021] x 4 
+	http://127.0.0.1:18022/misc/favicon.ico (200 OK)
+	http://127.0.0.1:18022/themes/seven/ie.css?0 (200 OK)
+	http://127.0.0.1:18022/themes/seven/ie7.css?0 (200 OK)
+	http://127.0.0.1:18022/themes/seven/logo.png (200 OK)
+WARN-NEW: Information Disclosure - Debug Error Messages [10023] x 1 
+	http://127.0.0.1:18022/CHANGELOG.txt (200 OK)
+WARN-NEW: Information Disclosure - Suspicious Comments [10027] x 6 
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+WARN-NEW: User Controllable HTML Element Attribute (Potential XSS) [10031] x 1 
+	http://127.0.0.1:18022/install.php?locale=en&profile=standard (200 OK)
+WARN-NEW: Server Leaks Version Information via "Server" HTTP Response Header Field [10036] x 3 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/misc/*.css$ (302 Found)
+	http://127.0.0.1:18022/sitemap.xml (302 Found)
+WARN-NEW: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037] x 4 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/misc/*.css$ (302 Found)
+	http://127.0.0.1:18022/misc/*.js (302 Found)
+	http://127.0.0.1:18022/sitemap.xml (302 Found)
+WARN-NEW: Content Security Policy (CSP) Header Not Set [10038] x 5 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022/misc/ (403 Forbidden)
+	http://127.0.0.1:18022/modules/ (403 Forbidden)
+	http://127.0.0.1:18022/profiles/ (403 Forbidden)
+WARN-NEW: Non-Storable Content [10049] x 6 
+	http://127.0.0.1:18022/misc/*.css$ (302 Found)
+	http://127.0.0.1:18022/misc/*.gif (302 Found)
+	http://127.0.0.1:18022/misc/*.js (302 Found)
+	http://127.0.0.1:18022/misc/*.js$ (302 Found)
+	http://127.0.0.1:18022/sitemap.xml (302 Found)
+WARN-NEW: Permissions Policy Header Not Set [10063] x 5 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022/misc/ (403 Forbidden)
+	http://127.0.0.1:18022/misc/drupal.js?0 (200 OK)
+	http://127.0.0.1:18022/profiles/ (403 Forbidden)
+WARN-NEW: Source Code Disclosure - SQL [10099] x 1 
+	http://127.0.0.1:18022/INSTALL.pgsql.txt (200 OK)
+WARN-NEW: Modern Web Application [10109] x 3 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022/install.php?locale=en&profile=standard (200 OK)
+WARN-NEW: Absence of Anti-CSRF Tokens [10202] x 4 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022/install.php?locale=en&profile=standard (200 OK)
+	http://127.0.0.1:18022/install.php?profile=standard (200 OK)
+WARN-NEW: Cross-Origin-Embedder-Policy Header Missing or Invalid [90004] x 9 
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022 (200 OK)
+	http://127.0.0.1:18022/install.php (200 OK)
+	http://127.0.0.1:18022 (200 OK)
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 16	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 51

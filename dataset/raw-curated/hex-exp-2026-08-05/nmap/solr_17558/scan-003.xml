@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Wed Aug  5 12:51:19 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18029 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/solr_17558/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/solr_17558/scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18029 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/solr_17558/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/solr_17558/scan.xml 127.0.0.1" start="1785948679" startstr="Wed Aug  5 12:51:19 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18029"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785948680" endtime="1785948694"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="18029"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache Solr" method="probed" conf="10"><cpe>cpe:/a:apache:solr</cpe></service><script id="http-title" output="Solr Admin&#xa;Requested resource was http://localhost:18029/solr/"><elem key="title">Solr Admin</elem>
+<elem key="redirect_url">http://localhost:18029/solr/</elem>
+</script></port>
+</ports>
+<times srtt="51" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785948694" timestr="Wed Aug  5 12:51:34 2026" summary="Nmap done at Wed Aug  5 12:51:34 2026; 1 IP address (1 host up) scanned in 15.48 seconds" elapsed="15.48" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

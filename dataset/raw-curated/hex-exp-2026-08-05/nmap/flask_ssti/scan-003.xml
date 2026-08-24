@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Wed Aug  5 12:51:19 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18031 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18031 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/flask_ssti/scan.xml 127.0.0.1" start="1785948679" startstr="Wed Aug  5 12:51:19 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18031"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785948680" endtime="1785948688"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="18031"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Gunicorn" version="20.0.0" method="probed" conf="10"><cpe>cpe:/a:gunicorn:gunicorn:20.0.0</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/html; charset=utf-8)."></script><script id="http-server-header" output="gunicorn/20.0.0"><elem>gunicorn/20.0.0</elem>
+</script></port>
+</ports>
+<times srtt="50" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785948688" timestr="Wed Aug  5 12:51:28 2026" summary="Nmap done at Wed Aug  5 12:51:28 2026; 1 IP address (1 host up) scanned in 8.97 seconds" elapsed="8.97" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

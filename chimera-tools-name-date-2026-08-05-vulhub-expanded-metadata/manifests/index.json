@@ -1,0 +1,24 @@
+{
+  "name": "chimera-vulhub-expanded-metadata-tools-name-date",
+  "date": "2026-08-05",
+  "source_type": "local Vulhub source metadata",
+  "schema_version": "0.1.0",
+  "safety_scope": "no exploit execution; no active attack payloads; Docker runtime unavailable",
+  "labs": 66,
+  "feature_seed_rows": 66,
+  "label_candidate_rows": 66,
+  "rank_candidate_rows": 264,
+  "derived_training_rows": 264,
+  "derived_feature_columns": 84,
+  "all_records": 462,
+  "known_family_counts": {
+    "sqli": 7,
+    "deserialization": 3,
+    "file-upload": 6,
+    "command-injection": 15,
+    "auth-bypass": 29,
+    "nosql-injection": 1,
+    "file-inclusion": 5
+  },
+  "note": "Use this batch to expand Step 2 features and candidate labels. Runtime scanner evidence should be appended when Docker is available."
+}

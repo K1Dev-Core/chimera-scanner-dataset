@@ -1,0 +1,186 @@
+Using the Automation Framework
+Total of 319 URLs
+PASS: Cookie No HttpOnly Flag [10010]
+PASS: Cookie Without Secure Flag [10011]
+PASS: Re-examine Cache-control Directives [10015]
+PASS: Cross-Domain JavaScript Source File Inclusion [10017]
+PASS: Content-Type Header Missing [10019]
+PASS: Information Disclosure - Sensitive Information in HTTP Referrer Header [10025]
+PASS: HTTP Parameter Override [10026]
+PASS: Off-site Redirect [10028]
+PASS: Cookie Poisoning [10029]
+PASS: Viewstate [10032]
+PASS: Directory Browsing [10033]
+PASS: Heartbleed OpenSSL Vulnerability (Indicative) [10034]
+PASS: Strict-Transport-Security Header [10035]
+PASS: X-Backend-Server Header Information Leak [10039]
+PASS: Secure Pages Include Mixed Content [10040]
+PASS: HTTP to HTTPS Insecure Transition in Form Post [10041]
+PASS: HTTPS to HTTP Insecure Transition in Form Post [10042]
+PASS: User Controllable JavaScript Event (XSS) [10043]
+PASS: Retrieved from Cache [10050]
+PASS: X-ChromeLogger-Data (XCOLD) Header Information Leak [10052]
+PASS: X-Debug-Token Information Leak [10056]
+PASS: Username Hash Found [10057]
+PASS: X-AspNet-Version Response Header [10061]
+PASS: PII Disclosure [10062]
+PASS: Hash Disclosure [10097]
+PASS: Cross-Domain Misconfiguration [10098]
+PASS: Weak Authentication Method [10105]
+PASS: Reverse Tabnabbing [10108]
+PASS: Authentication Request Identified [10111]
+PASS: Verification Request Identified [10113]
+PASS: Script Served From Malicious Domain (polyfill) [10115]
+PASS: ZAP is Out of Date [10116]
+PASS: Session ID in URL Rewrite [3]
+PASS: Script Passive Scan Rules [50001]
+PASS: Stats Passive Scan Rule [50003]
+PASS: Insecure JSF ViewState [90001]
+PASS: Java Serialization Object [90002]
+PASS: Sub Resource Integrity Attribute Missing [90003]
+PASS: Charset Mismatch [90011]
+PASS: WSDL File Detection [90030]
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: Vulnerable JS Library [10003] x 4 
+	http://127.0.0.1:18027/doc/html/_static/underscore.js (200 OK)
+	http://127.0.0.1:18027/doc/html/_static/jquery.js (200 OK)
+	http://127.0.0.1:18027/js/vendor/jquery/jquery-ui.min.js?v=4.8.1 (200 OK)
+	http://127.0.0.1:18027/js/vendor/jquery/jquery.min.js?v=4.8.1 (200 OK)
+WARN-NEW: In Page Banner Information Leak [10009] x 5 
+	http://127.0.0.1:18027/etc/phpMyAdmin/ (404 Not Found)
+	http://127.0.0.1:18027/etc/phpmyadmin (404 Not Found)
+	http://127.0.0.1:18027/sitemap.xml (404 Not Found)
+	http://127.0.0.1:18027/themes/ (403 Forbidden)
+	http://127.0.0.1:18027/usr/share/doc/phmyadmin/README.Debian (404 Not Found)
+WARN-NEW: Missing Anti-clickjacking Header [10020] x 5 
+	http://127.0.0.1:18027/doc/html/config.html (200 OK)
+	http://127.0.0.1:18027/doc/html/genindex.html (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/doc/html/intro.html (200 OK)
+	http://127.0.0.1:18027/doc/html/require.html (200 OK)
+WARN-NEW: X-Content-Type-Options Header Missing [10021] x 5 
+	http://127.0.0.1:18027/doc/html/genindex.html (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/doc/html/intro.html (200 OK)
+	http://127.0.0.1:18027/doc/html/require.html (200 OK)
+	http://127.0.0.1:18027/robots.txt (200 OK)
+WARN-NEW: Information Disclosure - Debug Error Messages [10023] x 7 
+	http://127.0.0.1:18027/changelog.php (200 OK)
+	http://127.0.0.1:18027/changelog.php?lang=en (200 OK)
+	http://127.0.0.1:18027/doc/html/_sources/config.txt (200 OK)
+	http://127.0.0.1:18027/doc/html/_sources/faq.txt (200 OK)
+	http://127.0.0.1:18027/doc/html/config.html (200 OK)
+WARN-NEW: Information Disclosure - Sensitive Information in URL [10024] x 1 
+	http://127.0.0.1:18027/index.php?db&lang=en&table&token=o.%3Cl1n%7CY.c%5BfC6%27%21 (200 OK)
+WARN-NEW: Information Disclosure - Suspicious Comments [10027] x 9 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/db_operations.php?db=information_schema&server=1 (200 OK)
+	http://127.0.0.1:18027/db_structure.php?db=information_schema&server=1 (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+WARN-NEW: User Controllable Charset [10030] x 2 
+	http://127.0.0.1:18027/export.php (200 OK)
+	http://127.0.0.1:18027/import.php (200 OK)
+WARN-NEW: User Controllable HTML Element Attribute (Potential XSS) [10031] x 1 
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+WARN-NEW: Server Leaks Version Information via "Server" HTTP Response Header Field [10036] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/robots.txt (200 OK)
+	http://127.0.0.1:18027/sitemap.xml (404 Not Found)
+WARN-NEW: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) [10037] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+	http://127.0.0.1:18027/logout.php?lang=en (302 Found)
+	http://127.0.0.1:18027/navigation.php?ajax_request=1&lang=en (200 OK)
+WARN-NEW: Content Security Policy (CSP) Header Not Set [10038] x 10 
+	http://127.0.0.1:18027/doc/html/config.html (200 OK)
+	http://127.0.0.1:18027/doc/html/genindex.html (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/doc/html/intro.html (200 OK)
+	http://127.0.0.1:18027/sitemap.xml (404 Not Found)
+WARN-NEW: Big Redirect Detected (Potential Sensitive Information Leak) [10044] x 10 
+	http://127.0.0.1:18027/logout.php (302 Found)
+	http://127.0.0.1:18027/logout.php?db=information_schema (302 Found)
+	http://127.0.0.1:18027/logout.php?db=information_schema&goto=db_operations.php (302 Found)
+	http://127.0.0.1:18027/logout.php?lang=en (302 Found)
+	http://127.0.0.1:18027/index.php (302 Found)
+WARN-NEW: Non-Storable Content [10049] x 9 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+	http://127.0.0.1:18027/logout.php?lang=en (302 Found)
+	http://127.0.0.1:18027/navigation.php?ajax_request=1&lang=en (200 OK)
+WARN-NEW: Cookie without SameSite Attribute [10054] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/navigation.php?ajax_request=1&lang=en (200 OK)
+WARN-NEW: CSP: Failure to Define Directive with No Fallback [10055] x 12 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+WARN-NEW: Permissions Policy Header Not Set [10063] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+	http://127.0.0.1:18027/sitemap.xml (404 Not Found)
+WARN-NEW: Timestamp Disclosure - Unix [10096] x 5 
+	http://127.0.0.1:18027/sql.php?db=information_schema&pos=0&table=COLLATIONS (200 OK)
+	http://127.0.0.1:18027/sql.php?db=information_schema&pos=0&table=EVENTS (200 OK)
+	http://127.0.0.1:18027/sql.php?db=information_schema&pos=0&table=FILES (200 OK)
+	http://127.0.0.1:18027/sql.php?db=information_schema&pos=0&table=GLOBAL_STATUS (200 OK)
+	http://127.0.0.1:18027/sql.php?db=information_schema&pos=0&table=COLUMNS (200 OK)
+WARN-NEW: Source Code Disclosure - PHP [10099] x 12 
+	http://127.0.0.1:18027/doc/html/_sources/config.txt (200 OK)
+	http://127.0.0.1:18027/doc/html/_sources/setup.txt (200 OK)
+	http://127.0.0.1:18027/changelog.php (200 OK)
+	http://127.0.0.1:18027/changelog.php?lang=en (200 OK)
+	http://127.0.0.1:18027/db_export.php?db=test (200 OK)
+WARN-NEW: Modern Web Application [10109] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+	http://127.0.0.1:18027/logout.php?lang=en (302 Found)
+WARN-NEW: Dangerous JS Functions [10110] x 3 
+	http://127.0.0.1:18027/js/functions.js?v=4.8.1 (200 OK)
+	http://127.0.0.1:18027/js/vendor/jquery/jquery-ui-timepicker-addon.js?v=4.8.1 (200 OK)
+	http://127.0.0.1:18027/js/vendor/jquery/jquery.tablesorter.js?v=4.8.1 (200 OK)
+WARN-NEW: Session Management Response Identified [10112] x 9 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/db_operations.php?db=information_schema&server=1 (200 OK)
+	http://127.0.0.1:18027/db_structure.php?db=information_schema&server=1 (200 OK)
+	http://127.0.0.1:18027/index.php?lang=en (200 OK)
+WARN-NEW: Absence of Anti-CSRF Tokens [10202] x 5 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+WARN-NEW: Private IP Disclosure [2] x 10 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/doc/html/config.html (200 OK)
+	http://127.0.0.1:18027/doc/html/faq.html (200 OK)
+	http://127.0.0.1:18027/doc/html/setup.html (200 OK)
+WARN-NEW: Cross-Origin-Embedder-Policy Header Missing or Invalid [90004] x 10 
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+	http://127.0.0.1:18027/doc/html/index.html (200 OK)
+	http://127.0.0.1:18027 (200 OK)
+	http://127.0.0.1:18027/ (200 OK)
+WARN-NEW: Application Error Disclosure [90022] x 6 
+	http://127.0.0.1:18027/changelog.php (200 OK)
+	http://127.0.0.1:18027/changelog.php?lang=en (200 OK)
+	http://127.0.0.1:18027/doc/html/_sources/faq.txt (200 OK)
+	http://127.0.0.1:18027/doc/html/credits.html (200 OK)
+	http://127.0.0.1:18027/doc/html/faq.html (200 OK)
+FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 26	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 41

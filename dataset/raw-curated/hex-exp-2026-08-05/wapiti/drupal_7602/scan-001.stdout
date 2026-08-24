@@ -1,0 +1,59 @@
+
+     __    __            _ _   _ _____
+    / / /\ \ \__ _ _ __ (_) |_(_)___ /
+    \ \/  \/ / _` | '_ \| | __| | |_ \
+     \  /\  / (_| | |_) | | |_| |___) |
+      \/  \/ \__,_| .__/|_|\__|_|____/
+                  |_|                 
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+X-Frame-Options is not set on http://127.0.0.1:18022/
+X-Content-Type-Options is not set on http://127.0.0.1:18022/
+CSP is not set for URL: http://127.0.0.1:18022/
+Host 127.0.0.1:18022 serves HTTP content without redirecting to HTTPS.
+Sensitive data (POST data) was sent over an unencrypted HTTP connection to http://127.0.0.1:18022/install.php. The server redirected, but not to an HTTPS URL, leaving the initial data and the redirection exposed.
+Sensitive data (GET parameters) was sent over an unencrypted HTTP connection to http://127.0.0.1:18022/install.php?profile=standard. The server did not enforce HTTPS.
+Cleartext transmission of sensitive information: Password field 'mysql[password]' is sent over unencrypted connections from URL http://127.0.0.1:18022/install.php?profile=standard&locale=en
+Cleartext transmission of sensitive information: Password field 'pgsql[password]' is sent over unencrypted connections from URL http://127.0.0.1:18022/install.php?profile=standard&locale=en
+Sensitive data (POST data) was sent over an unencrypted HTTP connection to http://127.0.0.1:18022/install.php?profile=standard&locale=en. The server did not enforce HTTPS.
+[*] Saving scan state, please wait...
+This scan has been saved in the file /home/kali/.wapiti/scans/127.0.0.1_18022_folder_04c526da.db
+[*] Wapiti found 14 URLs and forms during the scan
+
+[*] Launching module redirect
+
+[*] Launching module ssrf
+[*] Asking endpoint URL https://wapiti3.ovh/get_ssrf.php?session_id=x6opni for results, please wait...
+
+[*] Launching module exec
+
+[*] Launching module file
+
+[*] Launching module sql
+
+[*] Launching module upload
+
+[*] Launching module ssl
+
+[*] Launching module xss
+---
+HTML Injection in http://127.0.0.1:18022/install.php via injection in the parameter driver
+Evil request:
+    POST /install.php?profile=standard&locale=en HTTP/1.1
+    host: 127.0.0.1:18022
+    connection: keep-alive
+    user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0
+    accept-language: en-US
+    accept-encoding: gzip, deflate, br
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    content-type: application/x-www-form-urlencoded
+    referer: http://127.0.0.1:18022/install.php?profile=standard&locale=en
+    content-length: 580
+    Content-Type: application/x-www-form-urlencoded
+
+    mysql%5Bdatabase%5D=default&mysql%5Busername%5D=alice&mysql%5Bpassword%5D=Letm3in_&mysql%5Bhost%5D=localhost&mysql%5Bport%5D=default&mysql%5Bdb_prefix%5D=default&sqlite%5Bdatabase%5D=sites%2Fdefault%2Ffiles%2F.ht.sqlite&sqlite%5Bdb_prefix%5D=default&pgsql%5Bdatabase%5D=default&pgsql%5Busername%5D=alice&pgsql%5Bpassword%5D=Letm3in_&pgsql%5Bhost%5D=localhost&pgsql%5Bport%5D=default&pgsql%5Bdb_prefix%5D=default&form_build_id=form-Yf-gqv6AElzu2NyDaXEZdxu6fcVxAzDLlgV-iDrst7w&form_id=install_settings_form&op=Save%20and%20continue&driver=%3Cdiv%20id%3D%22w5yc1yl1c8%22%3Eyolo%3C%2Fdiv%3E
+---
+
+[*] Launching module permanentxss
+
+[*] Generating report...
+A report has been generated in the file /home/kali/dataset/dec-vulhub-2026-08-05/raw/wapiti/drupal_7602/scan.json

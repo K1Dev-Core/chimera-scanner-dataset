@@ -1,0 +1,11 @@
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-05 11:12 -0400
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000054s latency).
+
+PORT      STATE SERVICE VERSION
+18024/tcp open  http    Oracle WebLogic Server 10.3.6.0 (Servlet 2.5; JSP 2.1; T3 enabled)
+|_http-title: Error 404--Not Found
+|_weblogic-t3-info: T3 protocol in use (WebLogic version: 10.3.6.0)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.38 seconds

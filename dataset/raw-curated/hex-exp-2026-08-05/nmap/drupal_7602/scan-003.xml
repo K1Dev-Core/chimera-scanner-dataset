@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Wed Aug  5 10:47:45 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18022 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7602/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7602/scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18022 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7602/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7602/scan.xml 127.0.0.1" start="1785941265" startstr="Wed Aug  5 10:47:45 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18022"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785941266" endtime="1785941278"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="18022"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.10" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.10</cpe></service><script id="http-robots.txt" output="36 disallowed entries (15 shown)&#xa;/includes/ /misc/ /modules/ /profiles/ /scripts/ &#xa;/themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt &#xa;/INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt &#xa;/LICENSE.txt /MAINTAINERS.txt"/><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/><script id="http-server-header" output="Apache/2.4.10 (Debian)"><elem>Apache/2.4.10 (Debian)</elem>
+</script><script id="http-title" output="Select an installation profile | Drupal&#xa;Requested resource was http://localhost:18022/install.php"><elem key="title">Select an installation profile | Drupal</elem>
+<elem key="redirect_url">http://localhost:18022/install.php</elem>
+</script><script id="http-generator" output="Drupal 7 (http://drupal.org)"/></port>
+</ports>
+<times srtt="45" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785941278" timestr="Wed Aug  5 10:47:58 2026" summary="Nmap done at Wed Aug  5 10:47:58 2026; 1 IP address (1 host up) scanned in 13.11 seconds" elapsed="13.11" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,303 @@
+
+     __      __               .__  __  .__________
+    /  \    /  \_____  ______ |__|/  |_|__\_____  \
+    \   \/\/   /\__  \ \____ \|  \   __\  | _(__  <
+     \        /  / __ \|  |_> >  ||  | |  |/       \
+      \__/\  /  (____  /   __/|__||__| |__/______  /
+           \/        \/|__|                      \/
+Wapiti 3.2.10 (wapiti-scanner.github.io)
+Secure flag is not set on the cookie: 'phpMyAdmin' set at 'http://127.0.0.1:18027/'
+Secure flag is not set on the cookie: 'pma_lang' set at 'http://127.0.0.1:18027/'
+CSP "script-src" value is not safe for URL: http://127.0.0.1:18027/
+Sensitive data (cookie in the response) was sent over an unencrypted HTTP connection to http://127.0.0.1:18027/. The server did not enforce HTTPS.
+X-Frame-Options is not set on http://127.0.0.1:18027/js/vendor/jquery/jquery.min.js
+X-Content-Type-Options is not set on http://127.0.0.1:18027/js/vendor/jquery/jquery.min.js
+Sensitive data (cookie in the response) was sent over an unencrypted HTTP connection to http://127.0.0.1:18027/index.php?db=&table=&server=1&target=&lang=en. The server redirected, but not to an HTTPS URL, leaving the initial data and the redirection exposed.
+Redirection response at http://127.0.0.1:18027/index.php contains HTML content with links/forms
+CSP is not set for URL: http://127.0.0.1:18027/doc/html/faq.html
+Host 127.0.0.1:18027 serves HTTP content without redirecting to HTTPS.
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/faq.html: /tmp/php
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/faq.html: /etc/httpd/conf/httpd.conf
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/faq.html: /etc/httpd/conf/addon-modules/php.conf
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/faq.html: /tmp/mysql.sock
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/faq.html: /var/lib/mysql/mysql.sock
+Potential full path disclosure in http://127.0.0.1:18027/server_engines.php: /dev/null
+Redirection response at http://127.0.0.1:18027/index.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_operations.php contains HTML content with links/forms
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/config.html: /etc/phpmyadmin
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/config.html: /var/log/auth.log
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/config.html: /etc/mysql/server-key.pem
+Redirection response at http://127.0.0.1:18027/logout.php contains HTML content with links/forms
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /usr/local/mysql/
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /usr/local/mysql/share/charsets/
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /var/lib/mysql/
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /var/lib/mysql/4a965793114f.log
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /usr/local/mysql/share/
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /var/lib/mysql/4a965793114f.pid
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /usr/local/mysql/lib/plugin/
+Potential full path disclosure in http://127.0.0.1:18027/server_variables.php?lang=en: /var/lib/mysql/4a965793114f-slow.log
+Redirection response at http://127.0.0.1:18027/db_structure.php contains HTML content with links/forms
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /usr/share/doc/phmyadmin/README.Debian
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /etc/phpMyAdmin/
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /etc/phpmyadmin/config.user.inc.php
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /some/local/directory/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /docker/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /usr/sbin/pma-configure
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /usr/sbin/pma-secure
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/setup.html: /usr/share/phpmyadmin/passwd
+Sensitive data (GET parameters) was sent over an unencrypted HTTP connection to http://127.0.0.1:18027/doc/html/search.html?q=default&check_keywords=yes&area=default. The server did not enforce HTTPS.
+Redirection response at http://127.0.0.1:18027/db_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&goto=db_operations.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_routines.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_designer.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_search.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_import.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_triggers.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_events.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_operations.php?db=&table=&server=1&target= contains HTML content with links/forms
+Potential full path disclosure in http://127.0.0.1:18027/doc/html/vendors.html: /var/lib/phpmyadmin/config.inc.php
+Redirection response at http://127.0.0.1:18027/logout.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_structure.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_structure.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_change.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_operations.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_select.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&goto=db_operations.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_operations.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_sql.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_select.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_import.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_change.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/server_import.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_structure.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/server_sql.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/index.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_import.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_structure.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_datadict.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_sql.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_export.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_designer.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_triggers.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_search.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_import.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_routines.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_triggers.php contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/js/designer/objects.js
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/js/vendor/jqplot/plugins/jqplot.pieRenderer.js
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&goto=db_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_events.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&goto=db_search.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_sql.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_structure.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_import.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_routines.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_operations.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_search.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_export.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_designer.php?db=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_structure.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=default&table=default contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_operations.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_select.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=&table= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_change.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_operations.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&goto=db_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_sql.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_sql.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&goto=db_search.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_change.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_import.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_select.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_import.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=default&table=default&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=&table=&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_structure.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ENGINES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATIONS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_zoom_select.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_find_replace.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE_LRU contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/view_create.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SESSION_VARIABLES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMNS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_datadict.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PLUGINS contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/sql.php
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_sql.php?db=information_schema&table=PROCESSLIST
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SCHEMA_PRIVILEGES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROCESSLIST contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMN_PRIVILEGES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_POOL_STATS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=REFERENTIAL_CONSTRAINTS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMP_RESET contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=STATISTICS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLE_CONSTRAINTS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_TRX contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=GLOBAL_STATUS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SCHEMATA contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATION_CHARACTER_SET_APPLICABILITY contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=EVENTS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TRIGGERS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=KEY_COLUMN_USAGE contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMP contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROFILING contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_LOCKS contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_structure.php?change_column=1&field=COLLATION_NAME&db=information_schema&table=COLLATIONS
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=FILES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLE_PRIVILEGES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=USER_PRIVILEGES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=CHARACTER_SETS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=GLOBAL_VARIABLES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_LOCK_WAITS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARAMETERS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SESSION_STATUS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARTITIONS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=VIEWS contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLESPACES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ROUTINES contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_tracking.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM_RESET contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_tracking.php contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/sql.php?db=information_schema&table=ROUTINES&server=1&target=
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=default&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_triggers.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=default&table=default&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_search.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_designer.php?db=test&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_designer.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_export.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_routines.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_sql.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_TRX&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATIONS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_operations.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=CHARACTER_SETS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=CHARACTER_SETS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATIONS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_TRX&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ENGINES&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ENGINES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_import.php?db=default&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_find_replace.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_zoom_select.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE_LRU&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATIONS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE_LRU&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=VIEWS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ENGINES&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE_LRU&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/view_create.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMNS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SESSION_STATUS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=EVENTS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SESSION_VARIABLES&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROFILING&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARAMETERS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARAMETERS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMNS&server=1&target= contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_structure.php?change_column=1&field=id&db=test&table=pma__history
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROFILING&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=USER_PRIVILEGES&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=USER_PRIVILEGES&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM_RESET&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PLUGINS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_LOCKS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_POOL_STATS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_POOL_STATS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PLUGINS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PLUGINS&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMN_PRIVILEGES&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SCHEMA_PRIVILEGES&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SCHEMATA&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARTITIONS&goto=tbl_sql.php&back=tbl_sql.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMP&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROCESSLIST&goto=tbl_export.php&back=tbl_export.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROCESSLIST&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=REFERENTIAL_CONSTRAINTS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLUMN_PRIVILEGES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_POOL_STATS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMP_RESET&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_BUFFER_PAGE&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=GLOBAL_STATUS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=STATISTICS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLE_CONSTRAINTS&server=1&target= contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_structure.php
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_TRX&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SCHEMATA&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=COLLATION_CHARACTER_SET_APPLICABILITY&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TRIGGERS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=KEY_COLUMN_USAGE&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PROFILING&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMP&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=EVENTS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_LOCKS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=FILES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=CHARACTER_SETS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLE_PRIVILEGES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=USER_PRIVILEGES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=GLOBAL_VARIABLES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_LOCK_WAITS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARAMETERS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=PARTITIONS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=SESSION_STATUS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=TABLESPACES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=ROUTINES&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=VIEWS&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&goto=tbl_tracking.php&back=db_tracking.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=information_schema&table=INNODB_CMPMEM_RESET&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/db_tracking.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_tracking.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=default&server=1&target= contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/sql.php?db=test&table=pma__history&pos=0
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/sql.php?db=test&table=pma__relation
+Redirection response at http://127.0.0.1:18027/tbl_replace.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__designer_settings contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__column_info contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__history contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_addfield.php contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__export_templates contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_indexes.php?db=test&table=pma__export_templates&server=1&index=PRIMARY
+Redirection response at http://127.0.0.1:18027/tbl_indexes.php contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/normalization.php?db=test&table=pma__central_columns&goto=tbl_structure.php&back=tbl_structure.php
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__central_columns contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__pdf_pages contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__bookmark contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__favorite contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__navigationhiding contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__relation contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__recent contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_change.php?db=test&table=pma__recent&server=1&target=
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_triggers.php?db=test&table=pma__savedsearches&server=1&target=
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__savedsearches contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__users contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__table_info contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/logout.php?db=test&table=pma__table_uiprefs
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__table_coords contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__usergroups contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__tracking contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_replace.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/logout.php?db=test&table=pma__userconfig contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_addfield.php?db=&table=&server=1&target= contains HTML content with links/forms
+Redirection response at http://127.0.0.1:18027/tbl_indexes.php?db=&table=&server=1&target= contains HTML content with links/forms
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/tbl_relation.php?db=test&table=pma__table_info&server=1&target=
+[!] RemoteProtocolError with URL http://127.0.0.1:18027/db_triggers.php?db=test&token=%285%3Bt%27%22%5E%40tBri6l%26o
+[*] Saving scan state, please wait...
+This scan has been saved in the file /home/kali/.wapiti/scans/127.0.0.1_18027_folder_4256d82b.db
+[*] Wapiti found 3405 URLs and forms during the scan
+
+[*] Launching module redirect

@@ -1,0 +1,27 @@
+{
+  "rows": 43,
+  "targets": 5,
+  "candidate_families": [
+    "auth-bypass",
+    "broken-access-control",
+    "bruteforce",
+    "command-injection",
+    "csrf",
+    "deserialization",
+    "file-inclusion",
+    "file-upload",
+    "generic-web",
+    "jwt",
+    "nosql-injection",
+    "sensitive-data-exposure",
+    "sqli",
+    "ssrf",
+    "xss",
+    "xxe"
+  ],
+  "positive_recommended_rows": 10,
+  "feature_matrix_columns": 54,
+  "main_label": "is_recommended",
+  "ranking_label": "rank",
+  "warning": "This is a demo/weak-label dataset. For research-grade training, replace heuristic labels with exploit validation results."
+}

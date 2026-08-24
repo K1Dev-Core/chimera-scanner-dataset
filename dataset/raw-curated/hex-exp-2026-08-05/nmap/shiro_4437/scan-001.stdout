@@ -1,0 +1,12 @@
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-05 12:41 -0400
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00012s latency).
+
+PORT      STATE SERVICE VERSION
+18032/tcp open  http    Apache Tomcat (language: en)
+|_http-trane-info: Problem with XML parsing of /evox/about
+| http-title: Login Page
+|_Requested resource was http://localhost:18032/login;jsessionid=489F77934540BF29B6CC7D039A1A61AC
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.30 seconds

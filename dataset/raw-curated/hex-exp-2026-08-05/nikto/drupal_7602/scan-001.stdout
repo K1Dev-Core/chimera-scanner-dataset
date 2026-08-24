@@ -1,0 +1,25 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        18022
++ Platform:           Linux/Unix
++ Start Time:         2026-08-05 10:58:05 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.10 (Debian)
++ [999986] /: Retrieved x-powered-by header: PHP/7.0.28.
++ [999996] /robots.txt: contains 68 entries which should be manually viewed. See: https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [600625] PHP/7.0.28 appears to be outdated (current is at least 8.5.1).
++ [600050] Apache/2.4.10 appears to be outdated (current is at least 2.4.66).
++ [003569] /INSTALL.txt: Default file found.
++ [003570] /UPGRADE.txt: Default file found.
++ [003572] /install.php: install.php file found.
++ [003573] /LICENSE.txt: License file found may identify site software.
++ [003577] /INSTALL.mysql.txt: Drupal installation file found. See: https://drupal.stackexchange.com/questions/269076/how-do-i-restrict-access-to-the-install-php-file
++ [003578] /INSTALL.pgsql.txt: Drupal installation file found. See: https://drupal.stackexchange.com/questions/269076/how-do-i-restrict-access-to-the-install-php-file
++ [003584] /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/

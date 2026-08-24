@@ -1,0 +1,19 @@
+- Nikto v2.6.0/
++ Target Host: 127.0.0.1
++ Target Port: 18022
++ GET /: Retrieved x-powered-by header: PHP/7.0.28.
++ GET /robots.txt: contains 68 entries which should be manually viewed. See: https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt: 
++ GET /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options: 
++ GET /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security: 
++ GET /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy: 
++ GET /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP: 
++ GET /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy: 
++ HEAD PHP/7.0.28 appears to be outdated (current is at least 8.5.1).
++ HEAD Apache/2.4.10 appears to be outdated (current is at least 2.4.66).
++ GET /INSTALL.txt: Default file found.
++ GET /UPGRADE.txt: Default file found.
++ GET /install.php: install.php file found.
++ GET /LICENSE.txt: License file found may identify site software.
++ GET /INSTALL.mysql.txt: Drupal installation file found. See: https://drupal.stackexchange.com/questions/269076/how-do-i-restrict-access-to-the-install-php-file: 
++ GET /INSTALL.pgsql.txt: Drupal installation file found. See: https://drupal.stackexchange.com/questions/269076/how-do-i-restrict-access-to-the-install-php-file: 
++ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/: 

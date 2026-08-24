@@ -1,0 +1,44 @@
+lab_id,product,candidate_exploit_family,rank,rank_score,is_recommended,predicted_success_probability,predicted_label
+bwapp,bWAPP,command-injection,1,0.815,1,0.98,1
+bwapp,bWAPP,sqli,2,0.72,1,0.804,1
+bwapp,bWAPP,xxe,4,0.585,0,0.356,0
+bwapp,bWAPP,xss,3,0.65,0,0.152,0
+bwapp,bWAPP,ssrf,5,0.5,0,0.012,0
+bwapp,bWAPP,csrf,7,0.36,0,0.012,0
+bwapp,bWAPP,generic-web,8,0.21,0,0.012,0
+bwapp,bWAPP,file-inclusion,6,0.495,0,0.008,0
+dvwa,Damn Vulnerable Web Application,sqli,2,0.795,1,0.956,1
+dvwa,Damn Vulnerable Web Application,command-injection,1,0.85,1,0.924,1
+dvwa,Damn Vulnerable Web Application,file-upload,3,0.61,0,0.128,0
+dvwa,Damn Vulnerable Web Application,xss,4,0.58,0,0.052,0
+dvwa,Damn Vulnerable Web Application,file-inclusion,5,0.565,0,0.028,0
+dvwa,Damn Vulnerable Web Application,auth-bypass,6,0.42,0,0.024,0
+dvwa,Damn Vulnerable Web Application,generic-web,9,0.21,0,0.02,0
+dvwa,Damn Vulnerable Web Application,bruteforce,8,0.35,0,0.016,0
+dvwa,Damn Vulnerable Web Application,csrf,7,0.395,0,0.012,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,command-injection,2,0.78,1,0.976,1
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,sqli,1,0.83,1,0.952,1
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,xss,3,0.685,0,0.408,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,auth-bypass,4,0.62,0,0.192,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,sensitive-data-exposure,7,0.35,0,0.04,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,file-inclusion,5,0.565,0,0.032,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,csrf,6,0.395,0,0.032,0
+mutillidae-nowasp,OWASP Mutillidae / NOWASP,generic-web,8,0.21,0,0.008,0
+owasp-juice-shop,OWASP Juice Shop,sqli,2,0.685,1,0.9,1
+owasp-juice-shop,OWASP Juice Shop,nosql-injection,1,0.7,1,0.732,1
+owasp-juice-shop,OWASP Juice Shop,command-injection,6,0.51,0,0.236,0
+owasp-juice-shop,OWASP Juice Shop,xss,3,0.65,0,0.18,0
+owasp-juice-shop,OWASP Juice Shop,sensitive-data-exposure,8,0.385,0,0.06,0
+owasp-juice-shop,OWASP Juice Shop,auth-bypass,5,0.51,0,0.048,0
+owasp-juice-shop,OWASP Juice Shop,ssrf,7,0.43,0,0.048,0
+owasp-juice-shop,OWASP Juice Shop,broken-access-control,4,0.525,0,0.044,0
+owasp-juice-shop,OWASP Juice Shop,generic-web,9,0.21,0,0.024,0
+owasp-webgoat,OWASP WebGoat,sqli,1,0.72,1,0.952,1
+owasp-webgoat,OWASP WebGoat,xxe,2,0.655,1,0.32,0
+owasp-webgoat,OWASP WebGoat,command-injection,7,0.51,0,0.272,0
+owasp-webgoat,OWASP WebGoat,deserialization,4,0.55,0,0.144,0
+owasp-webgoat,OWASP WebGoat,xss,5,0.545,0,0.068,0
+owasp-webgoat,OWASP WebGoat,jwt,3,0.57,0,0.04,0
+owasp-webgoat,OWASP WebGoat,broken-access-control,6,0.525,0,0.024,0
+owasp-webgoat,OWASP WebGoat,auth-bypass,8,0.44,0,0.012,0
+owasp-webgoat,OWASP WebGoat,generic-web,9,0.21,0,0.008,0

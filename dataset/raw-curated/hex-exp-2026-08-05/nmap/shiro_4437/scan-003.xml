@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Wed Aug  5 12:41:27 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18032 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/shiro_4437/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/shiro_4437/scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -T4 -p 18032 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/shiro_4437/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/shiro_4437/scan.xml 127.0.0.1" start="1785948087" startstr="Wed Aug  5 12:41:27 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18032"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785948088" endtime="1785948106"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="18032"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache Tomcat" extrainfo="language: en" method="probed" conf="10"><cpe>cpe:/a:apache:tomcat</cpe></service><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/><script id="http-title" output="Login Page&#xa;Requested resource was http://localhost:18032/login;jsessionid=489F77934540BF29B6CC7D039A1A61AC"><elem key="title">Login Page</elem>
+<elem key="redirect_url">http://localhost:18032/login;jsessionid=489F77934540BF29B6CC7D039A1A61AC</elem>
+</script></port>
+</ports>
+<times srtt="121" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785948106" timestr="Wed Aug  5 12:41:46 2026" summary="Nmap done at Wed Aug  5 12:41:46 2026; 1 IP address (1 host up) scanned in 18.30 seconds" elapsed="18.30" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

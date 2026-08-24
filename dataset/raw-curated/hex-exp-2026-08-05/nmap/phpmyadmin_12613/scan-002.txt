@@ -1,0 +1,13 @@
+# Nmap 7.99 scan initiated Wed Aug  5 12:51:20 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -T4 -p 18027 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/phpmyadmin_12613/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/phpmyadmin_12613/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000055s latency).
+
+PORT      STATE SERVICE VERSION
+18027/tcp open  http    Apache httpd 2.4.25 ((Debian))
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: localhost:18027 / mysql | phpMyAdmin 4.8.1
+|_http-server-header: Apache/2.4.25 (Debian)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Aug  5 12:51:39 2026 -- 1 IP address (1 host up) scanned in 18.84 seconds

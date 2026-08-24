@@ -1,0 +1,19 @@
+# Nmap 7.99 scan initiated Wed Aug  5 10:47:45 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -T4 -p 18021 -oN /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7600/scan.txt -oX /home/kali/dataset/dec-vulhub-2026-08-05/raw/nmap/drupal_7600/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000046s latency).
+
+PORT      STATE SERVICE VERSION
+18021/tcp open  http    Apache httpd 2.4.25 ((Debian))
+|_http-generator: Drupal 8 (https://www.drupal.org)
+| http-robots.txt: 22 disallowed entries (15 shown)
+| /core/ /profiles/ /README.txt /web.config /admin/ 
+| /comment/reply/ /filter/tips/ /node/add/ /search/ /user/register/ 
+| /user/password/ /user/login/ /user/logout/ /index.php/admin/ 
+|_/index.php/comment/reply/
+| http-title: Choose language | Drupal
+|_Requested resource was /core/install.php
+|_http-server-header: Apache/2.4.25 (Debian)
+|_http-trane-info: Problem with XML parsing of /evox/about
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Aug  5 10:48:01 2026 -- 1 IP address (1 host up) scanned in 15.54 seconds

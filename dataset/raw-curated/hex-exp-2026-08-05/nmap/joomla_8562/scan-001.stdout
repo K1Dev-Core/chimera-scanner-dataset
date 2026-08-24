@@ -1,0 +1,12 @@
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-05 12:41 -0400
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00018s latency).
+
+PORT      STATE SERVICE VERSION
+18026/tcp open  http    Apache httpd 2.4.10 ((Debian) PHP/5.6.12)
+|_http-title: Home
+|_http-server-header: Apache/2.4.10 (Debian) PHP/5.6.12
+|_http-generator: Joomla! - Open Source Content Management
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 21.48 seconds

