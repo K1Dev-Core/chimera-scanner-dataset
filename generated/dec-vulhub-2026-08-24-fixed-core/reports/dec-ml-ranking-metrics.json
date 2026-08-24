@@ -48,6 +48,37 @@
     "top3_hit_rate": 0.21428571428571433,
     "top5_hit_rate": 0.3571428571428571
   },
+  "ml_vs_agentic_efficiency": {
+    "metric": "attempts_to_first_positive_candidate; lower is better",
+    "ml_ranker": {
+      "mean": 1.0,
+      "median": 1.0,
+      "max": 1.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "agentic_scanner_heuristic": {
+      "mean": 1.0,
+      "median": 1.0,
+      "max": 1.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "agentic_fixed_playbook": {
+      "mean": 7.775,
+      "median": 7.0,
+      "max": 14.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "agentic_random_expected": {
+      "mean": 7.5,
+      "median": 7.5,
+      "max": 7.5,
+      "evaluated_targets": 40
+    },
+    "interpretation": "agentic_scanner_heuristic คือ agent ที่อ่าน scanner evidence แล้วจัดลำดับด้วย rule; fixed_playbook คือ agent ที่ไล่ family ตาม playbook เดิมโดยไม่เรียนจากข้อมูล"
+  },
   "failure_case_count_top3": 0,
   "warnings": [
     "label เป็น positive_family_match จาก family/lab identity จึงยังเป็น weak label ไม่ใช่ exploit success ทุกแถว",

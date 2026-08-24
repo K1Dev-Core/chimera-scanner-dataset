@@ -23,6 +23,23 @@ LEAKAGE_FEATURES = [
     "candidate_validation_available",
 ]
 
+AGENTIC_FIXED_PLAYBOOK_ORDER = [
+    "web_server",
+    "web_framework",
+    "java_web_framework",
+    "java_app_server",
+    "cms",
+    "php_web",
+    "python_web",
+    "database_admin",
+    "search_engine",
+    "message_broker",
+    "file_management",
+    "admin_panel",
+    "cgi",
+    "unknown",
+]
+
 
 def load_json_array(path: Path) -> list[dict]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -131,6 +148,62 @@ def heuristic_score(row: dict) -> float:
     )
 
 
+def fixed_playbook_score(row: dict) -> float:
+    family = row.get("candidate_family")
+    try:
+        return float(-AGENTIC_FIXED_PLAYBOOK_ORDER.index(family))
+    except ValueError:
+        return float(-len(AGENTIC_FIXED_PLAYBOOK_ORDER))
+
+
+def attempts_to_first_positive(rows: list[dict], score_key: str) -> dict:
+    attempts = []
+    missed_targets = []
+    for target_id, group in group_by_target(rows).items():
+        if not any(row["is_positive"] for row in group):
+            continue
+        ranked = sorted(group, key=lambda row: row[score_key], reverse=True)
+        for idx, row in enumerate(ranked, start=1):
+            if row["is_positive"]:
+                attempts.append(float(idx))
+                break
+        else:
+            missed_targets.append(target_id)
+    if not attempts:
+        return {"mean": None, "median": None, "max": None, "evaluated_targets": 0, "missed_targets": missed_targets}
+    ordered = sorted(attempts)
+    mid = len(ordered) // 2
+    median = ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2.0
+    return {
+        "mean": float(sum(attempts) / len(attempts)),
+        "median": float(median),
+        "max": float(max(attempts)),
+        "evaluated_targets": len(attempts),
+        "missed_targets": missed_targets,
+    }
+
+
+def expected_random_attempts(rows: list[dict]) -> dict:
+    values = []
+    for _, group in group_by_target(rows).items():
+        positives = sum(1 for row in group if row["is_positive"])
+        if positives == 0:
+            continue
+        total = len(group)
+        values.append((total + 1.0) / (positives + 1.0))
+    if not values:
+        return {"mean": None, "median": None, "max": None, "evaluated_targets": 0}
+    ordered = sorted(values)
+    mid = len(ordered) // 2
+    median = ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2.0
+    return {
+        "mean": float(sum(values) / len(values)),
+        "median": float(median),
+        "max": float(max(values)),
+        "evaluated_targets": len(values),
+    }
+
+
 def precision_recall_at_threshold(rows: list[dict], score_key: str, threshold: float = 0.5) -> dict:
     tp = fp = tn = fn = 0
     for row in rows:
@@ -171,6 +244,7 @@ def main() -> None:
         merged["label"] = label
         merged["is_positive"] = label == "positive_family_match"
         merged["heuristic_score"] = heuristic_score(row)
+        merged["agentic_fixed_playbook_score"] = fixed_playbook_score(row)
         rows.append(merged)
 
     families = sorted({row["candidate_family"] for row in rows})
@@ -193,12 +267,13 @@ def main() -> None:
                 "is_positive": row["is_positive"],
                 "ml_probability": float(prob),
                 "heuristic_score": float(row["heuristic_score"]),
+                "agentic_fixed_playbook_score": float(row["agentic_fixed_playbook_score"]),
                 "leakage_fields_present": {field: row.get(field) for field in LEAKAGE_FEATURES},
             }
             predictions.append(out)
 
     for target_id, group in group_by_target(predictions).items():
-        for score_key in ["ml_probability", "heuristic_score"]:
+        for score_key in ["ml_probability", "heuristic_score", "agentic_fixed_playbook_score"]:
             ranked = sorted(group, key=lambda row: row[score_key], reverse=True)
             for rank, row in enumerate(ranked, start=1):
                 row[f"{score_key}_rank"] = rank
@@ -265,6 +340,14 @@ def main() -> None:
             "top3_hit_rate": expected_random_hit_at_k(predictions, 3),
             "top5_hit_rate": expected_random_hit_at_k(predictions, 5),
         },
+        "ml_vs_agentic_efficiency": {
+            "metric": "attempts_to_first_positive_candidate; lower is better",
+            "ml_ranker": attempts_to_first_positive(predictions, "ml_probability"),
+            "agentic_scanner_heuristic": attempts_to_first_positive(predictions, "heuristic_score"),
+            "agentic_fixed_playbook": attempts_to_first_positive(predictions, "agentic_fixed_playbook_score"),
+            "agentic_random_expected": expected_random_attempts(predictions),
+            "interpretation": "agentic_scanner_heuristic คือ agent ที่อ่าน scanner evidence แล้วจัดลำดับด้วย rule; fixed_playbook คือ agent ที่ไล่ family ตาม playbook เดิมโดยไม่เรียนจากข้อมูล",
+        },
         "failure_case_count_top3": len(failures),
         "warnings": [
             "label เป็น positive_family_match จาก family/lab identity จึงยังเป็น weak label ไม่ใช่ exploit success ทุกแถว",
@@ -276,6 +359,10 @@ def main() -> None:
     (output_dir / "dec-ml-ranking-metrics.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
     (output_dir / "dec-ml-ranking-predictions.json").write_text(json.dumps(predictions, indent=2, ensure_ascii=False), encoding="utf-8")
     (output_dir / "dec-ml-ranking-failures.json").write_text(json.dumps(failures, indent=2, ensure_ascii=False), encoding="utf-8")
+    (output_dir / "dec-ml-vs-agentic-comparison.json").write_text(
+        json.dumps(metrics["ml_vs_agentic_efficiency"], indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
     lines = [
         "# รายงานทดสอบ ML Ranking ของ Dec",
@@ -310,6 +397,19 @@ def main() -> None:
         f"| ML logistic ranker | {metrics['ml']['top1_hit_rate']:.3f} | {metrics['ml']['top3_hit_rate']:.3f} | {metrics['ml']['top5_hit_rate']:.3f} | {metrics['ml']['mrr']:.3f} |",
         f"| Heuristic weighted score | {metrics['heuristic']['top1_hit_rate']:.3f} | {metrics['heuristic']['top3_hit_rate']:.3f} | {metrics['heuristic']['top5_hit_rate']:.3f} | {metrics['heuristic']['mrr']:.3f} |",
         f"| Random expected | {metrics['random_expected']['top1_hit_rate']:.3f} | {metrics['random_expected']['top3_hit_rate']:.3f} | {metrics['random_expected']['top5_hit_rate']:.3f} | n/a |",
+        "",
+        "## ML vs Agentic",
+        "",
+        "ตารางนี้วัดจำนวน attempt เฉลี่ยจนเจอ candidate family ที่เป็น positive ยิ่งน้อยยิ่งดี",
+        "",
+        "| วิธี | mean attempts | median | max | ความหมาย |",
+        "| --- | ---: | ---: | ---: | --- |",
+        f"| ML logistic ranker | {metrics['ml_vs_agentic_efficiency']['ml_ranker']['mean']:.3f} | {metrics['ml_vs_agentic_efficiency']['ml_ranker']['median']:.3f} | {metrics['ml_vs_agentic_efficiency']['ml_ranker']['max']:.3f} | model เรียงจากข้อมูล train แบบ leave-one-target-out |",
+        f"| Agentic scanner heuristic | {metrics['ml_vs_agentic_efficiency']['agentic_scanner_heuristic']['mean']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_scanner_heuristic']['median']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_scanner_heuristic']['max']:.3f} | agent ใช้ scanner evidence/rule จัดลำดับเอง |",
+        f"| Agentic fixed playbook | {metrics['ml_vs_agentic_efficiency']['agentic_fixed_playbook']['mean']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_fixed_playbook']['median']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_fixed_playbook']['max']:.3f} | agent ไล่ family ตาม playbook คงที่ |",
+        f"| Agentic random expected | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['mean']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['median']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['max']:.3f} | agent ลองสุ่มจนเจอ |",
+        "",
+        "คำอ่านผล: บน feature ชุดนี้ ML และ agentic scanner heuristic มีประสิทธิภาพเท่ากัน เพราะ scanner-derived match score ชี้ family ถูกชัดมาก ส่วน agentic fixed playbook/random แพ้ด้านจำนวน attempt",
         "",
         "## คำวินิจฉัยเบื้องต้น",
         "",

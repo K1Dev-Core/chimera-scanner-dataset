@@ -34,6 +34,19 @@ feature ที่ตั้งใจไม่ใช้:
 | Heuristic weighted score | 1.000 | 1.000 | 1.000 | 1.000 |
 | Random expected | 0.071 | 0.214 | 0.357 | n/a |
 
+## ML vs Agentic
+
+ตารางนี้วัดจำนวน attempt เฉลี่ยจนเจอ candidate family ที่เป็น positive ยิ่งน้อยยิ่งดี
+
+| วิธี | mean attempts | median | max | ความหมาย |
+| --- | ---: | ---: | ---: | --- |
+| ML logistic ranker | 1.000 | 1.000 | 1.000 | model เรียงจากข้อมูล train แบบ leave-one-target-out |
+| Agentic scanner heuristic | 1.000 | 1.000 | 1.000 | agent ใช้ scanner evidence/rule จัดลำดับเอง |
+| Agentic fixed playbook | 7.775 | 7.000 | 14.000 | agent ไล่ family ตาม playbook คงที่ |
+| Agentic random expected | 7.500 | 7.500 | 7.500 | agent ลองสุ่มจนเจอ |
+
+คำอ่านผล: บน feature ชุดนี้ ML และ agentic scanner heuristic มีประสิทธิภาพเท่ากัน เพราะ scanner-derived match score ชี้ family ถูกชัดมาก ส่วน agentic fixed playbook/random แพ้ด้านจำนวน attempt
+
 ## คำวินิจฉัยเบื้องต้น
 
 ผลรอบนี้ดีมากจนควรมองเป็น red flag มากกว่าชัยชนะสุดท้าย เพราะ ML และ heuristic ได้ Top-1 เท่ากันที่ 1.000 แปลว่า feature กลุ่ม `candidate_*_match_score` น่าจะมี signal ที่ใกล้กับ family label มากอยู่แล้ว
