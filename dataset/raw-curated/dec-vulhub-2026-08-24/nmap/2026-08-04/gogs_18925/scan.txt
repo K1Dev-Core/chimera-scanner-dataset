@@ -1,0 +1,50 @@
+# Nmap 7.99 scan initiated Tue Aug  4 15:48:43 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 3000 -oN /home/kali/dataset/raw/nmap/2026-08-04/gogs_18925/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/gogs_18925/scan.xml 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000093s latency).
+
+PORT     STATE SERVICE            VERSION
+3000/tcp open  hadoop-tasktracker Apache Hadoop
+| hadoop-datanode-info: 
+|_  Logs: log_root_path
+| fingerprint-strings: 
+|   GenericLines, Help: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 302 Found
+|     Content-Type: text/html; charset=utf-8
+|     Location: /install
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gogits=b417e79cc966bd68; Path=/; HttpOnly
+|     Set-Cookie: _csrf=e93LPFMFJwoJ7vuWb5yglui5T906MTc4NTg3MjkzMDIwNTg5NjYxOQ%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 19:48:50 GMT; HttpOnly
+|     Date: Tue, 04 Aug 2026 19:48:50 GMT
+|     Content-Length: 31
+|     href="/install">Found</a>.
+|   HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+|     Set-Cookie: i_like_gogits=56549435f970bcd5; Path=/; HttpOnly
+|     Set-Cookie: _csrf=LARHmDBggEvg_dqyKC6gXuXoLLI6MTc4NTg3MjkzMDIzNDg1MDMyNA%3D%3D; Path=/; Expires=Wed, 05 Aug 2026 19:48:50 GMT; HttpOnly
+|     Date: Tue, 04 Aug 2026 19:48:50 GMT
+|     <!DOCTYPE html>
+|     <html>
+|     <head data-suburl="">
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+|     <meta name="author" content="Gogs" />
+|     <meta name="description" content="Gogs is a painless self-hosted Git service" />
+|     <meta name="keywords" content="go, git, self-hosted, gogs">
+|     <meta name="referrer" content="no-referrer" />
+|     <meta name="_csrf" content="LARHmDBggEvg_dqyKC6gXuXoLLI6MTc4NTg3MjkzMDIzNDg1MDMyNA==" />
+|_    <meta name="_suburl" content="" />
+| http-title: Installation - Gogs
+|_Requested resource was /install
+|_http-trane-info: Problem with XML parsing of /evox/about
+| hadoop-tasktracker-info: 
+|_  Logs: log_root_path
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug  4 15:49:12 2026 -- 1 IP address (1 host up) scanned in 28.34 seconds

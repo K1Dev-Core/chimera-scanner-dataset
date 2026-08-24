@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 15:55:18 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 28080 -oN /home/kali/dataset/raw/nmap/2026-08-04/spring_22965/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/spring_22965/scan.xml 127.0.0.12 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 28080 -oN /home/kali/dataset/raw/nmap/2026-08-04/spring_22965/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/spring_22965/scan.xml 127.0.0.12" start="1785873318" startstr="Tue Aug  4 15:55:18 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="28080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785873321" endtime="1785873332"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.12" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="28080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nagios-nsca" product="Nagios NSCA" method="probed" conf="10"/></port>
+</ports>
+<times srtt="61" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785873332" timestr="Tue Aug  4 15:55:32 2026" summary="Nmap done at Tue Aug  4 15:55:32 2026; 1 IP address (1 host up) scanned in 14.49 seconds" elapsed="14.49" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

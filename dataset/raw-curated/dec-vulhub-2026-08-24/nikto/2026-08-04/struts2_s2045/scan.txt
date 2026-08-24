@@ -1,0 +1,23 @@
+- Nikto v2.6.0
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.11
++ Target Hostname:    127.0.0.11
++ Target Port:        18080
++ Platform:           Unknown
++ Start Time:         2026-08-04 15:52:16 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Jetty(9.2.11.v20150529)
++ [95] /: Cookie JSESSIONID created without the httponly flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ [601275] Jetty/9.2.11.v20150529 appears to be outdated (current is at least 12.0.19). Jetty 10.0.6 AND 9.4.41.v20210516 are also currently supported.
+- STATUS: Completed 1479 requests (~20% complete, ~1.0 minutes left): currently in plugin 'Nikto Tests'
+- STATUS: Running average: Not enough data.
++ Scan terminated: 0 errors and 7 items reported on the remote host
++ End Time:           2026-08-04 15:52:31 (GMT-4) (15 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

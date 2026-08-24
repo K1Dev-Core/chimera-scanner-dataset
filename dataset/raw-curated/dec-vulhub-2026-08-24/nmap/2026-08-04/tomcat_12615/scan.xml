@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 15:48:39 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 18082 -oN /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.xml 127.0.0.16 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 18082 -oN /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/tomcat_12615/scan.xml 127.0.0.16" start="1785872919" startstr="Tue Aug  4 15:48:39 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18082"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785872920" endtime="1785872931"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.16" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="18082"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache Tomcat" version="8.5.14" method="probed" conf="10"><cpe>cpe:/a:apache:tomcat:8.5.14</cpe></service><script id="http-favicon" output="Apache Tomcat"/><script id="http-title" output="Apache Tomcat/8.5.14"><elem key="title">Apache Tomcat/8.5.14</elem>
+</script></port>
+</ports>
+<times srtt="64" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785872931" timestr="Tue Aug  4 15:48:51 2026" summary="Nmap done at Tue Aug  4 15:48:51 2026; 1 IP address (1 host up) scanned in 12.11 seconds" elapsed="12.11" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

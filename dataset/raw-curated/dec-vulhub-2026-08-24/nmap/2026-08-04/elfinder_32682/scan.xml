@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Tue Aug  4 16:21:41 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 18083 -oN /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 18083 -oN /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.txt -oX /home/kali/dataset/raw/nmap/2026-08-04/elfinder_32682/scan.xml 127.0.0.1" start="1785874901" startstr="Tue Aug  4 16:21:41 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="18083"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1785874903" endtime="1785874918"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="18083"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.52" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.52</cpe></service><script id="http-title" output="elFinder 2.1.x source version with PHP connector"><elem key="title">elFinder 2.1.x source version with PHP connector</elem>
+</script><script id="http-server-header" output="Apache/2.4.52 (Debian)"><elem>Apache/2.4.52 (Debian)</elem>
+</script></port>
+</ports>
+<times srtt="56" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1785874918" timestr="Tue Aug  4 16:21:58 2026" summary="Nmap done at Tue Aug  4 16:21:58 2026; 1 IP address (1 host up) scanned in 16.97 seconds" elapsed="16.97" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
