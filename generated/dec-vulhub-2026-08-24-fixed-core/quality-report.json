@@ -1,0 +1,40 @@
+{
+  "all_records": 3266,
+  "all_records_rebuilt_from": [
+    "records/targets.jsonl",
+    "records/observations.jsonl",
+    "records/findings.jsonl",
+    "records/validations.jsonl",
+    "records/tool_runs.jsonl"
+  ],
+  "core_artifact_only": true,
+  "duplicate_record_ids": 0,
+  "findings": 2046,
+  "findings_record_type_fixed": true,
+  "fixed_at": "2026-08-24T17:24:35Z",
+  "generated_at": "2026-08-24T17:01:42Z",
+  "jsonl_invalid_lines": 0,
+  "label_leakage_fields": 0,
+  "missing_label_refs": 0,
+  "missing_record_ids": 0,
+  "observations": 704,
+  "observations_deduplicated_from_findings": true,
+  "public_ips": 0,
+  "raw_files_excluded_from_git_upload": true,
+  "record_type_counts": {
+    "finding": 2046,
+    "observation": 704,
+    "target": 43,
+    "tool_run": 381,
+    "validation": 92
+  },
+  "target_candidate_rows": 602,
+  "target_candidate_rows_min": 160,
+  "targets": 43,
+  "targets_min": 20,
+  "tool_runs": 381,
+  "tool_runs_record_type_added": true,
+  "unredacted_sensitive_values": 0,
+  "valid": true,
+  "validations": 92
+}

@@ -1,0 +1,1301 @@
+[
+  {
+    "target_id": "1panel_39907",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 8,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "activemq_5254",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Jetty(8.1.16.v20140903)"
+    ],
+    "technology_flags": [
+      "Java",
+      "Jetty:8.1.16"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 0,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 0,
+    "service_product_family": [
+      "Jetty(8.1.16.v20140903)"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "adminer_21311",
+    "open_port_count": 1,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.54 (Debian)"
+    ],
+    "technology_flags": [
+      "Adminer:4.7.8",
+      "Apache HTTP Server:2.4.54",
+      "Debian",
+      "PHP:7.4.33"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 0,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 0,
+    "service_product_family": [
+      "Apache/2.4.54 (Debian)"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "adminer_43008",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Adminer:4.6.2",
+      "Apache HTTP Server:2.4.25",
+      "Debian",
+      "PHP:7.2.15"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 9,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "apache-cxf_28752",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Jetty(9.4.27.v20200227)"
+    ],
+    "technology_flags": [
+      "Java",
+      "Jetty:9.4.27"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 0,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 0,
+    "service_product_family": [
+      "Jetty(9.4.27.v20200227)"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "apache_41773",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.49 (Unix)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.49",
+      "UNIX"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 40,
+    "zap_alert_count_by_risk": {
+      "low": 8
+    },
+    "wapiti_vulnerability_count": 8,
+    "service_product_family": [
+      "Apache/2.4.49 (Unix)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "appweb_8715",
+    "open_port_count": 0,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "unknown"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 1,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "unknown"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "bash_6271",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.10 (Debian)"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.10",
+      "Debian"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 0,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 0,
+    "service_product_family": [
+      "Apache/2.4.10 (Debian)"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "cacti_46169",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 1,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "cmsms_26120",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.38",
+      "Debian"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 7,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "cmsms_9053",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.38",
+      "Debian"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 7,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "coldfusion_2861",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "JRun Web Server",
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 3,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "JRun Web Server",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "django_34265",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "WSGIServer/0.2 CPython/3.10.5",
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "medium": 1
+    },
+    "nikto_issue_count": 38,
+    "zap_alert_count_by_risk": {
+      "low": 7
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "WSGIServer/0.2 CPython/3.10.5",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "django_35042",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 14,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "druid_25646",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "medium": 1,
+      "high": 1,
+      "info": 1,
+      "low": 1,
+      "critical": 1
+    },
+    "nikto_issue_count": 40,
+    "zap_alert_count_by_risk": {
+      "low": 9
+    },
+    "wapiti_vulnerability_count": 8,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "drupal_6339",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.25",
+      "Debian",
+      "PHP:7.2.3"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 4,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "drupal_6341",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 13,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 5,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "drupal_7600",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.25",
+      "Debian",
+      "PHP:7.2.3"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 13,
+    "zap_alert_count_by_risk": {
+      "medium": 4,
+      "low": 9,
+      "info": 5
+    },
+    "wapiti_vulnerability_count": 34,
+    "service_product_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "drupal_7602",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.10 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.10",
+      "Debian",
+      "PHP:7.0.28"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 18,
+    "zap_alert_count_by_risk": {
+      "medium": 5,
+      "low": 9,
+      "info": 5
+    },
+    "wapiti_vulnerability_count": 10,
+    "service_product_family": [
+      "Apache/2.4.10 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "elasticsearch_1427",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "medium": 1
+    },
+    "nikto_issue_count": 42,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 2,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "elfinder_32682",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.52 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.52",
+      "Cloudflare",
+      "Debian",
+      "RequireJS",
+      "cdnjs"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "high": 1,
+      "critical": 1
+    },
+    "nikto_issue_count": 8,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "Apache/2.4.52 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 1
+  },
+  {
+    "target_id": "flask_ssti",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "gunicorn/20.0.0",
+      "http"
+    ],
+    "technology_flags": [
+      "Python",
+      "gunicorn:20.0.0"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "medium": 1,
+      "info": 1
+    },
+    "nikto_issue_count": 3,
+    "zap_alert_count_by_risk": {
+      "medium": 2,
+      "low": 6,
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "gunicorn/20.0.0",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "glassfish_1000028",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http",
+      "ssl/appserv-http?"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "low": 1
+    },
+    "nikto_issue_count": 32,
+    "zap_alert_count_by_risk": {
+      "low": 13
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "http",
+      "ssl/appserv-http?"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "gogs_18925",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "hadoop-tasktracker",
+      "http"
+    ],
+    "technology_flags": [
+      "Go",
+      "Gogs",
+      "Macaron"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "info": 1,
+      "medium": 1,
+      "critical": 1
+    },
+    "nikto_issue_count": 40,
+    "zap_alert_count_by_risk": {
+      "low": 18
+    },
+    "wapiti_vulnerability_count": 32,
+    "service_product_family": [
+      "hadoop-tasktracker",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "grafana_43798",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 6,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 1,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "jackson_7525",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http",
+      "http-proxy"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 34,
+    "zap_alert_count_by_risk": {
+      "low": 2
+    },
+    "wapiti_vulnerability_count": 8,
+    "service_product_family": [
+      "http",
+      "http-proxy"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "jenkins_1000861",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Jetty(9.4.z-SNAPSHOT)",
+      "http"
+    ],
+    "technology_flags": [
+      "Java",
+      "Jenkins:2.138",
+      "Jetty:9.4",
+      "Prototype",
+      "YUI"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "medium": 1,
+      "info": 1,
+      "high": 1
+    },
+    "nikto_issue_count": 22,
+    "zap_alert_count_by_risk": {
+      "high": 1,
+      "medium": 3,
+      "low": 9,
+      "info": 10
+    },
+    "wapiti_vulnerability_count": 49,
+    "service_product_family": [
+      "Jetty(9.4.z-SNAPSHOT)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "jenkins_23897",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "high": 1
+    },
+    "nikto_issue_count": 27,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 48,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "joomla_23752",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "medium": 1
+    },
+    "nikto_issue_count": 9,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 34,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "joomla_8562",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.10 (Debian) PHP/5.6.12",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.10",
+      "Bootstrap",
+      "Debian",
+      "Joomla",
+      "PHP:5.6.12",
+      "jQuery",
+      "jQuery Migrate"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 27,
+    "zap_alert_count_by_risk": {
+      "medium": 4,
+      "low": 8,
+      "info": 8
+    },
+    "wapiti_vulnerability_count": 19,
+    "service_product_family": [
+      "Apache/2.4.10 (Debian) PHP/5.6.12",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "phpmyadmin_12613",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.25",
+      "Debian",
+      "MySQL",
+      "PHP:7.2.5",
+      "jQuery",
+      "jQuery Migrate",
+      "jQuery UI",
+      "phpMyAdmin"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 1,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "high": 1
+    },
+    "nikto_issue_count": 15,
+    "zap_alert_count_by_risk": {
+      "high": 1,
+      "medium": 11,
+      "low": 15,
+      "info": 11
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "Apache/2.4.25 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "shiro_1957",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1
+    },
+    "nikto_issue_count": 15,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 10,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "shiro_4437",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [
+      "Java"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "info": 1
+    },
+    "nikto_issue_count": 10,
+    "zap_alert_count_by_risk": {
+      "medium": 4,
+      "low": 7,
+      "info": 5
+    },
+    "wapiti_vulnerability_count": 11,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "solr_0193",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "info": 1,
+      "critical": 1
+    },
+    "nikto_issue_count": 13,
+    "zap_alert_count_by_risk": {
+      "high": 1,
+      "medium": 2,
+      "low": 6,
+      "info": 5
+    },
+    "wapiti_vulnerability_count": 5,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "solr_17558",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "critical": 1
+    },
+    "nikto_issue_count": 13,
+    "zap_alert_count_by_risk": {
+      "high": 1,
+      "medium": 2,
+      "low": 6,
+      "info": 5
+    },
+    "wapiti_vulnerability_count": 5,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "spring_22963",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http",
+      "rtsp"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "critical": 1
+    },
+    "nikto_issue_count": 9,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "http",
+      "rtsp"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "spring_22965",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http",
+      "nagios-nsca"
+    ],
+    "technology_flags": [
+      "Java"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "medium": 1,
+      "high": 1,
+      "low": 1
+    },
+    "nikto_issue_count": 36,
+    "zap_alert_count_by_risk": {
+      "low": 10
+    },
+    "wapiti_vulnerability_count": 10,
+    "service_product_family": [
+      "http",
+      "nagios-nsca"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "struts2_s2045",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Jetty(9.2.11.v20150529)",
+      "http"
+    ],
+    "technology_flags": [
+      "Java",
+      "Jetty:9.2.11"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 1,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "low": 1,
+      "unknown": 1
+    },
+    "nikto_issue_count": 34,
+    "zap_alert_count_by_risk": {
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 16,
+    "service_product_family": [
+      "Jetty(9.2.11.v20150529)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "thinkphp_5rce",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "technology_flags": [
+      "Apache HTTP Server:2.4.38",
+      "Debian",
+      "PHP:7.2.31",
+      "Tencent Analytics (\u817e\u8baf\u5206\u6790)"
+    ],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "info": 1
+    },
+    "nikto_issue_count": 14,
+    "zap_alert_count_by_risk": {
+      "medium": 3,
+      "low": 9,
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "Apache/2.4.38 (Debian)",
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "tomcat_12615",
+    "open_port_count": 2,
+    "web_port_count": 1,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "medium": 1
+    },
+    "nikto_issue_count": 52,
+    "zap_alert_count_by_risk": {
+      "low": 23
+    },
+    "wapiti_vulnerability_count": 86,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "tomcat_1938",
+    "open_port_count": 2,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 0,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "info": 1,
+      "medium": 1,
+      "low": 1
+    },
+    "nikto_issue_count": 31,
+    "zap_alert_count_by_risk": {},
+    "wapiti_vulnerability_count": 44,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 7,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "weblogic_10271",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [
+      "Java",
+      "Java Servlet:2.5",
+      "JavaServer Pages:2.1"
+    ],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "high": 1,
+      "critical": 1,
+      "info": 1,
+      "medium": 1
+    },
+    "nikto_issue_count": 8,
+    "zap_alert_count_by_risk": {
+      "medium": 1,
+      "low": 2,
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  },
+  {
+    "target_id": "weblogic_14882",
+    "open_port_count": 1,
+    "web_port_count": 0,
+    "http_status_family": "unknown",
+    "server_header_family": [
+      "http"
+    ],
+    "technology_flags": [],
+    "has_login_page": 1,
+    "has_upload_endpoint": 0,
+    "has_parameterized_url": 0,
+    "nuclei_finding_count_by_severity": {
+      "critical": 1,
+      "high": 1,
+      "info": 1
+    },
+    "nikto_issue_count": 8,
+    "zap_alert_count_by_risk": {
+      "medium": 1,
+      "low": 1,
+      "info": 1
+    },
+    "wapiti_vulnerability_count": 4,
+    "service_product_family": [
+      "http"
+    ],
+    "scanner_coverage_count": 10,
+    "scanner_failure_count": 0
+  }
+]
