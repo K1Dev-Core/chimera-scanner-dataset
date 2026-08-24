@@ -32,6 +32,8 @@ branch ที่ใช้งานตอนนี้คือ `Dec`
 
 - summary และ feature table: `experiments/dec-ml-scan-2026-08-25/`
 - รายงานทดสอบ ranking: `experiments/dec-ml-scan-2026-08-25/reports/dec-ml-scan-ranking-report-th.md`
+- แผน validation/attack order: `experiments/dec-ml-scan-2026-08-25/reports/dec-ml-attack-order-validation-plan-th.md`
+- target queue รอบ Kali ถัดไป: `experiments/dec-ml-scan-2026-08-25/validation-target-queue.csv`
 - raw-curated evidence: `dataset/raw-curated/dec-ml-scan-2026-08-25/`
 
 รอบนี้มี 29 target records และ scan_success 29 records ใช้สำหรับทดลอง feature/ranking เพิ่มเติม ยังไม่ใช่ exploit-success ground truth ทั้งหมด

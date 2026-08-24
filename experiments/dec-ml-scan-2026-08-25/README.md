@@ -23,6 +23,8 @@
 | `derived/candidate-family-features.jsonl` | ข้อมูลเดียวกับ CSV แต่เหมาะกับ pipeline ที่อ่าน JSONL |
 | `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
+| `reports/dec-ml-attack-order-validation-plan-th.md` | แผนทดสอบ attack order และ validation loop รอบถัดไป |
+| `validation-target-queue.csv` | target queue สำหรับให้ Kali/opencode validate ต่อ |
 | `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
 
 ## ควรใช้ยังไง
@@ -72,6 +74,8 @@ python scripts\evaluate_dec_ml_scan_20260825.py
 - `joomla_CVE-2023-23752`
 - `shiro_CVE-2016-4437`
 - `spring_CVE-2022-22965`
+
+target เหล่านี้ถูกจัดไว้ใน `validation-target-queue.csv` แล้ว โดยเรียงจากเคสที่ให้ feedback กับโมเดลได้มากที่สุดก่อน
 
 ## ยังไม่ควรใช้ยังไง
 
