@@ -9,6 +9,7 @@
 | `build_dec_dataset_v2.py` | script build dataset Dec v2 จาก records/raw ที่มี |
 | `evaluate_dec_ml_ranking.py` | evaluate ranking ของชุด normalized fixed-core 43 targets |
 | `evaluate_dec_ml_scan_20260825.py` | evaluate ranking จาก scanner-derived features ชุด Kali scan 29 targets |
+| `import_dec_validation_results.py` | validate/import `validation-results.jsonl` จาก Kali ให้เป็น label table |
 
 ก่อนรัน script ควรอ่าน `docs/overview/DEC-DATASET-GUIDE-TH.md` และตรวจ path input/output ให้ตรงกับรอบ dataset ที่ต้องการสร้าง
 
@@ -16,4 +17,10 @@
 
 ```powershell
 python scripts\evaluate_dec_ml_scan_20260825.py
+```
+
+ตัวอย่าง import ผล validation จาก Kali:
+
+```powershell
+python scripts\import_dec_validation_results.py --input experiments\dec-ml-scan-2026-08-25\validation-results.example.jsonl
 ```

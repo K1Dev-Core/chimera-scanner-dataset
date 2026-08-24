@@ -25,6 +25,9 @@
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
 | `reports/dec-ml-attack-order-validation-plan-th.md` | แผนทดสอบ attack order และ validation loop รอบถัดไป |
 | `validation-target-queue.csv` | target queue สำหรับให้ Kali/opencode validate ต่อ |
+| `validation-results.schema.json` | schema ของผล validation ที่ Kali ต้องส่งกลับ |
+| `validation-results.example.jsonl` | ตัวอย่าง 1 record สำหรับเช็ก format |
+| `derived/validated-labels.csv` | label table ที่ import จาก validation results ตัวอย่าง |
 | `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
 
 ## ควรใช้ยังไง
@@ -76,6 +79,14 @@ python scripts\evaluate_dec_ml_scan_20260825.py
 - `spring_CVE-2022-22965`
 
 target เหล่านี้ถูกจัดไว้ใน `validation-target-queue.csv` แล้ว โดยเรียงจากเคสที่ให้ feedback กับโมเดลได้มากที่สุดก่อน
+
+prompt สำหรับส่งให้ opencode ฝั่ง Kali อยู่ที่ `docs/prompts/DEC-KALI-VALIDATION-QUEUE-PROMPT-TH.md`
+
+เมื่อได้ไฟล์ `validation-results.jsonl` กลับมาจาก Kali ให้ import ด้วย:
+
+```powershell
+python scripts\import_dec_validation_results.py --input path\to\validation-results.jsonl
+```
 
 ## ยังไม่ควรใช้ยังไง
 

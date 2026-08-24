@@ -1,0 +1,2 @@
+target_id,weak_label,validation_status,confidence,label_strength,safe_poc_used,evidence_file_count,tools_used,evidence_summary,notes
+joomla_CVE-2023-23752,joomla,inconclusive,low,weak_pending_validation,False,0,,ตัวอย่าง schema เท่านั้น ยังไม่ใช่ผล validation จริง,ให้ opencode/Kali เขียนผลจริงทับใน run folder แล้วค่อย import กลับ repo

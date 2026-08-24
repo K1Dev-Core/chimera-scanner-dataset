@@ -1,0 +1,1 @@
+{"target_id":"joomla_CVE-2023-23752","weak_label":"joomla","validation_status":"inconclusive","confidence":"low","evidence_summary":"ตัวอย่าง schema เท่านั้น ยังไม่ใช่ผล validation จริง","evidence_files":[],"tools_used":[],"safe_poc_used":false,"destructive_action":false,"notes":"ให้ opencode/Kali เขียนผลจริงทับใน run folder แล้วค่อย import กลับ repo"}

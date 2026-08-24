@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dec ML validation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "target_id",
+    "weak_label",
+    "validation_status",
+    "confidence",
+    "evidence_summary",
+    "evidence_files",
+    "tools_used",
+    "safe_poc_used",
+    "destructive_action",
+    "notes"
+  ],
+  "properties": {
+    "target_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "weak_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "validated_positive",
+        "validated_negative",
+        "inconclusive",
+        "not_run"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "none"
+      ]
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "evidence_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safe_poc_used": {
+      "type": "boolean"
+    },
+    "destructive_action": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
