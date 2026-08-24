@@ -19,6 +19,8 @@
 | `observations.jsonl` | observation ระดับ target จาก scanner/fingerprint |
 | `features.csv` | feature table สำหรับทดลอง ML ranking |
 | `labels-draft.jsonl` | weak label จากชื่อ Vulhub path |
+| `derived/candidate-family-features.csv` | input ML แบบ candidate-level: 1 target x ทุก candidate family |
+| `derived/candidate-family-features.jsonl` | ข้อมูลเดียวกับ CSV แต่เหมาะกับ pipeline ที่อ่าน JSONL |
 | `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
 | `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
@@ -42,6 +44,13 @@
 - `has_wapiti`
 
 ใช้ `labels-draft.jsonl` เพื่อเทียบว่า target นี้ควรอยู่ family ไหน แต่ต้องจำไว้ว่า label นี้ยังอ่อน เพราะได้จากชื่อ lab/folder ของ Vulhub
+
+ถ้าจะดู input ที่ ML ใช้จริงใน evaluator ให้เปิด `derived/candidate-family-features.csv`:
+
+- 1 target จะถูกขยายเป็นหลายแถวตามจำนวน candidate family
+- แต่ละแถวมี `target_id`, `candidate_family`, `positive_family`, `label`
+- feature หลักคือคะแนนจาก scanner evidence เช่น `title_alias_score`, `server_alias_score`, `nmap_alias_score`, `port_score`, `protocol_score`
+- แถวที่ `candidate_family` ตรงกับ weak label จะเป็น `positive_family_match` ที่เหลือเป็น `negative_family`
 
 รัน evaluator รอบนี้ได้ด้วย:
 

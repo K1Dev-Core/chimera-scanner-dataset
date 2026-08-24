@@ -373,6 +373,40 @@ def write_report(output_dir: Path, metrics: dict, failures: list[dict]) -> None:
     (output_dir / "dec-ml-scan-ranking-report-th.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_candidate_feature_tables(experiment_dir: Path, rows: list[dict]) -> None:
+    derived_dir = experiment_dir / "derived"
+    derived_dir.mkdir(parents=True, exist_ok=True)
+    feature_names = [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "body_alias_score",
+        "port_score",
+        "protocol_score",
+        "http_tool_score",
+        "heuristic_score",
+    ]
+    fieldnames = ["target_id", "candidate_family", "positive_family", "label", *feature_names]
+    export_rows = []
+    for row in rows:
+        export_row = {
+            "target_id": row["target_id"],
+            "candidate_family": row["candidate_family"],
+            "positive_family": row["positive_family"],
+            "label": "positive_family_match" if row["is_positive"] else "negative_family",
+        }
+        export_row.update({name: float(row.get(name, 0.0) or 0.0) for name in feature_names})
+        export_rows.append(export_row)
+
+    with (derived_dir / "candidate-family-features.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(export_rows)
+    with (derived_dir / "candidate-family-features.jsonl").open("w", encoding="utf-8") as handle:
+        for row in export_rows:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate target-level Dec ML scan fingerprints.")
     parser.add_argument("--experiment-dir", default="experiments/dec-ml-scan-2026-08-25")
@@ -387,6 +421,7 @@ def main() -> None:
         target_features = list(csv.DictReader(handle))
     labels = load_jsonl(experiment_dir / "labels-draft.jsonl")
     rows = build_candidate_rows(target_features, labels)
+    write_candidate_feature_tables(experiment_dir, rows)
 
     predictions = evaluate_ml(rows, PROFILES["current"]["features"], "ml_probability")
     for row in predictions:
