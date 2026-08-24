@@ -79,3 +79,13 @@ branch ที่ใช้งานตอนนี้คือ `Dec`
 - `dataset/raw/autorecon/**` ยังมี path ยาวบน Windows จึงยังไม่ควรนำขึ้นหรือใช้ตรง ๆ
 
 รายละเอียดเต็มอยู่ใน `docs/overview/DEC-DATASET-GUIDE-TH.md`
+
+## ตรวจสุขภาพ artifacts
+
+ก่อน commit/push รอบใหญ่ ให้รัน:
+
+```powershell
+python scripts\validate_dec_artifacts.py
+```
+
+สคริปต์นี้ตรวจ fixed core 43 targets, ML scan 29 targets, candidate rows, report JSON และ validation example

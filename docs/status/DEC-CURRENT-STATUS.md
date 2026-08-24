@@ -194,6 +194,7 @@ experiments/dec-ml-scan-2026-08-25/derived/validated-labels.jsonl
 | `scripts/evaluate_dec_ml_ranking.py` | evaluate ranking ชุด fixed-core 43 targets |
 | `scripts/evaluate_dec_ml_scan_20260825.py` | evaluate scanner-derived features ชุด 29 targets |
 | `scripts/import_dec_validation_results.py` | validate/import ผล validation จาก Kali |
+| `scripts/validate_dec_artifacts.py` | ตรวจ fixed core, ML scan, candidate rows และ report JSON |
 
 หลัง import validation แล้วให้รัน:
 
@@ -202,6 +203,12 @@ python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
 ```
 
 คำสั่งนี้จะสร้างรายงาน `reports/dec-ml-scan-ranking-merged-report-th.md` และใช้ validated label ก่อน ถ้า target ยังไม่มี validation จะ fallback ไป weak label
+
+ก่อน commit/push รอบใหญ่ให้รัน:
+
+```powershell
+python scripts\validate_dec_artifacts.py
+```
 
 ## กติกาข้อมูล
 

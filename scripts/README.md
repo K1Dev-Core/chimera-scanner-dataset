@@ -10,6 +10,7 @@
 | `evaluate_dec_ml_ranking.py` | evaluate ranking ของชุด normalized fixed-core 43 targets |
 | `evaluate_dec_ml_scan_20260825.py` | evaluate ranking จาก scanner-derived features ชุด Kali scan 29 targets |
 | `import_dec_validation_results.py` | validate/import `validation-results.jsonl` จาก Kali ให้เป็น label table |
+| `validate_dec_artifacts.py` | ตรวจสุขภาพ artifacts หลักของ Dec เช่น fixed core, ML scan, reports และ candidate rows |
 
 ก่อนรัน script ควรอ่าน `docs/overview/DEC-DATASET-GUIDE-TH.md` และตรวจ path input/output ให้ตรงกับรอบ dataset ที่ต้องการสร้าง
 
@@ -29,4 +30,10 @@ python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
 
 ```powershell
 python scripts\import_dec_validation_results.py --input experiments\dec-ml-scan-2026-08-25\validation-results.example.jsonl
+```
+
+ตรวจ artifacts หลักก่อน commit/push:
+
+```powershell
+python scripts\validate_dec_artifacts.py
 ```
