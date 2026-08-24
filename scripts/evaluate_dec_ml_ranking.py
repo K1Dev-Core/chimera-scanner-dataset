@@ -17,6 +17,33 @@ SAFE_NUMERIC_FEATURES = [
     "candidate_scanner_signal_score",
 ]
 
+FEATURE_PROFILES = {
+    "current": {
+        "numeric_features": SAFE_NUMERIC_FEATURES,
+        "use_candidate_family_onehot": True,
+        "description": "ใช้ match score ทุกตัวและ candidate_family one-hot เหมือน evaluator รอบแรก",
+    },
+    "no_family_onehot": {
+        "numeric_features": SAFE_NUMERIC_FEATURES,
+        "use_candidate_family_onehot": False,
+        "description": "ถอด candidate_family one-hot ออก เหลือเฉพาะคะแนนจาก scanner/feature engineering",
+    },
+    "scanner_signal_only": {
+        "numeric_features": ["candidate_scanner_signal_score"],
+        "use_candidate_family_onehot": False,
+        "description": "ใช้เฉพาะสัญญาณ scanner ที่ map มายัง candidate family",
+    },
+    "no_product_no_tech": {
+        "numeric_features": [
+            "candidate_service_match_score",
+            "candidate_port_match_score",
+            "candidate_scanner_signal_score",
+        ],
+        "use_candidate_family_onehot": False,
+        "description": "ถอด product/technology match ที่ใกล้ family hint ออก",
+    },
+}
+
 LEAKAGE_FEATURES = [
     "is_ground_truth_family",
     "candidate_cve_match_score",
@@ -57,8 +84,15 @@ def sigmoid(x: np.ndarray) -> np.ndarray:
     return 1.0 / (1.0 + np.exp(-np.clip(x, -40, 40)))
 
 
-def build_matrix(rows: list[dict], families: list[str], mean: np.ndarray | None = None, std: np.ndarray | None = None):
-    numeric = np.array([[float(row.get(col, 0.0) or 0.0) for col in SAFE_NUMERIC_FEATURES] for row in rows], dtype=float)
+def build_matrix(
+    rows: list[dict],
+    families: list[str],
+    numeric_features: list[str],
+    use_candidate_family_onehot: bool,
+    mean: np.ndarray | None = None,
+    std: np.ndarray | None = None,
+):
+    numeric = np.array([[float(row.get(col, 0.0) or 0.0) for col in numeric_features] for row in rows], dtype=float)
     if mean is None:
         mean = numeric.mean(axis=0)
     if std is None:
@@ -66,15 +100,17 @@ def build_matrix(rows: list[dict], families: list[str], mean: np.ndarray | None 
     std = np.where(std == 0, 1.0, std)
     numeric = (numeric - mean) / std
 
-    family_index = {family: idx for idx, family in enumerate(families)}
-    one_hot = np.zeros((len(rows), len(families)), dtype=float)
-    for i, row in enumerate(rows):
-        family = row.get("candidate_family")
-        if family in family_index:
-            one_hot[i, family_index[family]] = 1.0
-
     intercept = np.ones((len(rows), 1), dtype=float)
-    return np.hstack([intercept, numeric, one_hot]), mean, std
+    parts = [intercept, numeric]
+    if use_candidate_family_onehot:
+        family_index = {family: idx for idx, family in enumerate(families)}
+        one_hot = np.zeros((len(rows), len(families)), dtype=float)
+        for i, row in enumerate(rows):
+            family = row.get("candidate_family")
+            if family in family_index:
+                one_hot[i, family_index[family]] = 1.0
+        parts.append(one_hot)
+    return np.hstack(parts), mean, std
 
 
 def train_logistic(X: np.ndarray, y: np.ndarray, epochs: int = 900, lr: float = 0.08, l2: float = 0.01) -> np.ndarray:
@@ -223,6 +259,49 @@ def precision_recall_at_threshold(rows: list[dict], score_key: str, threshold: f
     return {"tp": tp, "fp": fp, "tn": tn, "fn": fn, "precision": precision, "recall": recall, "f1": f1}
 
 
+def evaluate_ml_profile(rows: list[dict], families: list[str], targets: list[str], profile_name: str, profile: dict) -> list[dict]:
+    profile_predictions: list[dict] = []
+    numeric_features = profile["numeric_features"]
+    use_family = bool(profile["use_candidate_family_onehot"])
+
+    for held_out_target in targets:
+        train_rows = [row for row in rows if row["target_id"] != held_out_target]
+        test_rows = [row for row in rows if row["target_id"] == held_out_target]
+        X_train, mean, std = build_matrix(train_rows, families, numeric_features, use_family)
+        y_train = np.array([1.0 if row["is_positive"] else 0.0 for row in train_rows], dtype=float)
+        X_test, _, _ = build_matrix(test_rows, families, numeric_features, use_family, mean=mean, std=std)
+        weights = train_logistic(X_train, y_train)
+        probs = sigmoid(X_test @ weights)
+        for row, prob in zip(test_rows, probs):
+            profile_predictions.append(
+                {
+                    "target_id": row["target_id"],
+                    "candidate_family": row["candidate_family"],
+                    "label": row["label"],
+                    "is_positive": row["is_positive"],
+                    f"{profile_name}_probability": float(prob),
+                }
+            )
+    for _, group in group_by_target(profile_predictions).items():
+        score_key = f"{profile_name}_probability"
+        ranked = sorted(group, key=lambda row: row[score_key], reverse=True)
+        for rank, row in enumerate(ranked, start=1):
+            row[f"{score_key}_rank"] = rank
+    return profile_predictions
+
+
+def summarize_profile_predictions(predictions: list[dict], profile_name: str) -> dict:
+    score_key = f"{profile_name}_probability"
+    return {
+        "top1_hit_rate": hit_at_k(predictions, score_key, 1),
+        "top3_hit_rate": hit_at_k(predictions, score_key, 3),
+        "top5_hit_rate": hit_at_k(predictions, score_key, 5),
+        "mrr": mean_reciprocal_rank(predictions, score_key),
+        "attempts_to_first_positive": attempts_to_first_positive(predictions, score_key),
+        "classification_at_0_5": precision_recall_at_threshold(predictions, score_key, 0.5),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate Dec target-candidate exploit ranking.")
     parser.add_argument("--dataset-root", default="generated/dec-vulhub-2026-08-24-fixed-core")
@@ -249,28 +328,28 @@ def main() -> None:
 
     families = sorted({row["candidate_family"] for row in rows})
     targets = sorted({row["target_id"] for row in rows})
+    profile_prediction_sets = {
+        name: evaluate_ml_profile(rows, families, targets, name, profile)
+        for name, profile in FEATURE_PROFILES.items()
+    }
+    current_predictions = profile_prediction_sets["current"]
+    current_by_key = {
+        (row["target_id"], row["candidate_family"]): row["current_probability"]
+        for row in current_predictions
+    }
     predictions: list[dict] = []
-
-    for held_out_target in targets:
-        train_rows = [row for row in rows if row["target_id"] != held_out_target]
-        test_rows = [row for row in rows if row["target_id"] == held_out_target]
-        X_train, mean, std = build_matrix(train_rows, families)
-        y_train = np.array([1.0 if row["is_positive"] else 0.0 for row in train_rows], dtype=float)
-        X_test, _, _ = build_matrix(test_rows, families, mean=mean, std=std)
-        weights = train_logistic(X_train, y_train)
-        probs = sigmoid(X_test @ weights)
-        for row, prob in zip(test_rows, probs):
-            out = {
-                "target_id": row["target_id"],
-                "candidate_family": row["candidate_family"],
-                "label": row["label"],
-                "is_positive": row["is_positive"],
-                "ml_probability": float(prob),
-                "heuristic_score": float(row["heuristic_score"]),
-                "agentic_fixed_playbook_score": float(row["agentic_fixed_playbook_score"]),
-                "leakage_fields_present": {field: row.get(field) for field in LEAKAGE_FEATURES},
-            }
-            predictions.append(out)
+    for row in rows:
+        out = {
+            "target_id": row["target_id"],
+            "candidate_family": row["candidate_family"],
+            "label": row["label"],
+            "is_positive": row["is_positive"],
+            "ml_probability": float(current_by_key[(row["target_id"], row["candidate_family"])]),
+            "heuristic_score": float(row["heuristic_score"]),
+            "agentic_fixed_playbook_score": float(row["agentic_fixed_playbook_score"]),
+            "leakage_fields_present": {field: row.get(field) for field in LEAKAGE_FEATURES},
+        }
+        predictions.append(out)
 
     for target_id, group in group_by_target(predictions).items():
         for score_key in ["ml_probability", "heuristic_score", "agentic_fixed_playbook_score"]:
@@ -340,6 +419,15 @@ def main() -> None:
             "top3_hit_rate": expected_random_hit_at_k(predictions, 3),
             "top5_hit_rate": expected_random_hit_at_k(predictions, 5),
         },
+        "feature_ablation": {
+            name: {
+                "description": FEATURE_PROFILES[name]["description"],
+                "numeric_features": FEATURE_PROFILES[name]["numeric_features"],
+                "use_candidate_family_onehot": FEATURE_PROFILES[name]["use_candidate_family_onehot"],
+                **summarize_profile_predictions(profile_predictions, name),
+            }
+            for name, profile_predictions in profile_prediction_sets.items()
+        },
         "ml_vs_agentic_efficiency": {
             "metric": "attempts_to_first_positive_candidate; lower is better",
             "ml_ranker": attempts_to_first_positive(predictions, "ml_probability"),
@@ -361,6 +449,10 @@ def main() -> None:
     (output_dir / "dec-ml-ranking-failures.json").write_text(json.dumps(failures, indent=2, ensure_ascii=False), encoding="utf-8")
     (output_dir / "dec-ml-vs-agentic-comparison.json").write_text(
         json.dumps(metrics["ml_vs_agentic_efficiency"], indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (output_dir / "dec-ml-feature-ablation.json").write_text(
+        json.dumps(metrics["feature_ablation"], indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
 
@@ -410,6 +502,20 @@ def main() -> None:
         f"| Agentic random expected | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['mean']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['median']:.3f} | {metrics['ml_vs_agentic_efficiency']['agentic_random_expected']['max']:.3f} | agent ลองสุ่มจนเจอ |",
         "",
         "คำอ่านผล: บน feature ชุดนี้ ML และ agentic scanner heuristic มีประสิทธิภาพเท่ากัน เพราะ scanner-derived match score ชี้ family ถูกชัดมาก ส่วน agentic fixed playbook/random แพ้ด้านจำนวน attempt",
+        "",
+        "## Feature ablation",
+        "",
+        "ตารางนี้ลองถอด feature บางกลุ่มออก เพื่อดูว่า model ยังแม่นอยู่ไหม ถ้าถอดแล้วตกหนัก แปลว่า feature เดิมอาจช่วยเฉลยคำตอบมากเกินไป",
+        "",
+        "| Profile | Top-1 | Top-3 | mean attempts | คำอธิบาย |",
+        "| --- | ---: | ---: | ---: | --- |",
+    ])
+    for name, result in metrics["feature_ablation"].items():
+        attempts = result["attempts_to_first_positive"]["mean"]
+        lines.append(
+            f"| `{name}` | {result['top1_hit_rate']:.3f} | {result['top3_hit_rate']:.3f} | {attempts:.3f} | {result['description']} |"
+        )
+    lines.extend([
         "",
         "## คำวินิจฉัยเบื้องต้น",
         "",

@@ -1,0 +1,120 @@
+{
+  "current": {
+    "description": "ใช้ match score ทุกตัวและ candidate_family one-hot เหมือน evaluator รอบแรก",
+    "numeric_features": [
+      "candidate_product_match_score",
+      "candidate_service_match_score",
+      "candidate_port_match_score",
+      "candidate_technology_match_score",
+      "candidate_scanner_signal_score"
+    ],
+    "use_candidate_family_onehot": true,
+    "top1_hit_rate": 1.0,
+    "top3_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "mrr": 1.0,
+    "attempts_to_first_positive": {
+      "mean": 1.0,
+      "median": 1.0,
+      "max": 1.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "classification_at_0_5": {
+      "tp": 40,
+      "fp": 2,
+      "tn": 560,
+      "fn": 0,
+      "precision": 0.9523809523809523,
+      "recall": 1.0,
+      "f1": 0.975609756097561
+    }
+  },
+  "no_family_onehot": {
+    "description": "ถอด candidate_family one-hot ออก เหลือเฉพาะคะแนนจาก scanner/feature engineering",
+    "numeric_features": [
+      "candidate_product_match_score",
+      "candidate_service_match_score",
+      "candidate_port_match_score",
+      "candidate_technology_match_score",
+      "candidate_scanner_signal_score"
+    ],
+    "use_candidate_family_onehot": false,
+    "top1_hit_rate": 1.0,
+    "top3_hit_rate": 1.0,
+    "top5_hit_rate": 1.0,
+    "mrr": 1.0,
+    "attempts_to_first_positive": {
+      "mean": 1.0,
+      "median": 1.0,
+      "max": 1.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "classification_at_0_5": {
+      "tp": 40,
+      "fp": 2,
+      "tn": 560,
+      "fn": 0,
+      "precision": 0.9523809523809523,
+      "recall": 1.0,
+      "f1": 0.975609756097561
+    }
+  },
+  "scanner_signal_only": {
+    "description": "ใช้เฉพาะสัญญาณ scanner ที่ map มายัง candidate family",
+    "numeric_features": [
+      "candidate_scanner_signal_score"
+    ],
+    "use_candidate_family_onehot": false,
+    "top1_hit_rate": 0.075,
+    "top3_hit_rate": 0.2,
+    "top5_hit_rate": 0.275,
+    "mrr": 0.2201310495060495,
+    "attempts_to_first_positive": {
+      "mean": 7.625,
+      "median": 7.0,
+      "max": 14.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "classification_at_0_5": {
+      "tp": 36,
+      "fp": 482,
+      "tn": 80,
+      "fn": 4,
+      "precision": 0.0694980694980695,
+      "recall": 0.9,
+      "f1": 0.12903225806451615
+    }
+  },
+  "no_product_no_tech": {
+    "description": "ถอด product/technology match ที่ใกล้ family hint ออก",
+    "numeric_features": [
+      "candidate_service_match_score",
+      "candidate_port_match_score",
+      "candidate_scanner_signal_score"
+    ],
+    "use_candidate_family_onehot": false,
+    "top1_hit_rate": 0.075,
+    "top3_hit_rate": 0.2,
+    "top5_hit_rate": 0.275,
+    "mrr": 0.2201310495060495,
+    "attempts_to_first_positive": {
+      "mean": 7.625,
+      "median": 7.0,
+      "max": 14.0,
+      "evaluated_targets": 40,
+      "missed_targets": []
+    },
+    "classification_at_0_5": {
+      "tp": 36,
+      "fp": 482,
+      "tn": 80,
+      "fn": 4,
+      "precision": 0.0694980694980695,
+      "recall": 0.9,
+      "f1": 0.12903225806451615
+    }
+  }
+}

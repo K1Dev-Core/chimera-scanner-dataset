@@ -47,6 +47,17 @@ feature ที่ตั้งใจไม่ใช้:
 
 คำอ่านผล: บน feature ชุดนี้ ML และ agentic scanner heuristic มีประสิทธิภาพเท่ากัน เพราะ scanner-derived match score ชี้ family ถูกชัดมาก ส่วน agentic fixed playbook/random แพ้ด้านจำนวน attempt
 
+## Feature ablation
+
+ตารางนี้ลองถอด feature บางกลุ่มออก เพื่อดูว่า model ยังแม่นอยู่ไหม ถ้าถอดแล้วตกหนัก แปลว่า feature เดิมอาจช่วยเฉลยคำตอบมากเกินไป
+
+| Profile | Top-1 | Top-3 | mean attempts | คำอธิบาย |
+| --- | ---: | ---: | ---: | --- |
+| `current` | 1.000 | 1.000 | 1.000 | ใช้ match score ทุกตัวและ candidate_family one-hot เหมือน evaluator รอบแรก |
+| `no_family_onehot` | 1.000 | 1.000 | 1.000 | ถอด candidate_family one-hot ออก เหลือเฉพาะคะแนนจาก scanner/feature engineering |
+| `scanner_signal_only` | 0.075 | 0.200 | 7.625 | ใช้เฉพาะสัญญาณ scanner ที่ map มายัง candidate family |
+| `no_product_no_tech` | 0.075 | 0.200 | 7.625 | ถอด product/technology match ที่ใกล้ family hint ออก |
+
 ## คำวินิจฉัยเบื้องต้น
 
 ผลรอบนี้ดีมากจนควรมองเป็น red flag มากกว่าชัยชนะสุดท้าย เพราะ ML และ heuristic ได้ Top-1 เท่ากันที่ 1.000 แปลว่า feature กลุ่ม `candidate_*_match_score` น่าจะมี signal ที่ใกล้กับ family label มากอยู่แล้ว
