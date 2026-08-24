@@ -37,3 +37,5 @@ python scripts\import_dec_validation_results.py --input experiments\dec-ml-scan-
 ```powershell
 python scripts\validate_dec_artifacts.py
 ```
+
+validator นี้รวม fixture ของ validation import ด้วย เพื่อเช็กว่า `validated`, `merged`, `validated_negative`, `inconclusive` และ `not_run` ยังทำงานตามที่ตั้งใจ

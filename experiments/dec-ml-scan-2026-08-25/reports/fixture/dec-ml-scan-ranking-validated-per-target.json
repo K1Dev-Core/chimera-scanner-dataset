@@ -1,0 +1,40 @@
+[
+  {
+    "target_id": "joomla_CVE-2023-23752",
+    "positive_family": "joomla",
+    "positive_rank": 2,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "redis",
+        "probability": 0.12407787186673042,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "joomla",
+        "probability": 0.016764260561144533,
+        "is_positive": true
+      }
+    ]
+  },
+  {
+    "target_id": "redis_CVE-2022-0543",
+    "positive_family": "redis",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "redis",
+        "probability": 0.9999566331078769,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "joomla",
+        "probability": 0.30213587764418715,
+        "is_positive": false
+      }
+    ]
+  }
+]

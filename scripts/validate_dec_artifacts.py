@@ -76,6 +76,7 @@ def validate_ml_scan() -> dict:
     require(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
     require(ML_SCAN / "validation-results.schema.json")
     require(ML_SCAN / "validation-results.example.jsonl")
+    require(ML_SCAN / "validation-results.fixture.jsonl")
 
     feature_count, feature_cols = count_csv(ML_SCAN / "features.csv")
     candidate_count, candidate_cols = count_csv(ML_SCAN / "derived" / "candidate-family-features.csv")
@@ -85,6 +86,10 @@ def validate_ml_scan() -> dict:
     metrics = load_json(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
     merged_metrics = load_json(ML_SCAN / "reports" / "dec-ml-scan-ranking-merged-metrics.json")
     example = load_jsonl(ML_SCAN / "validation-results.example.jsonl")
+    fixture = load_jsonl(ML_SCAN / "validation-results.fixture.jsonl")
+    fixture_labels_count, _ = count_csv(ML_SCAN / "derived" / "fixture" / "validated-labels.csv")
+    fixture_validated_metrics = load_json(ML_SCAN / "reports" / "fixture" / "dec-ml-scan-ranking-validated-metrics.json")
+    fixture_merged_metrics = load_json(ML_SCAN / "reports" / "fixture" / "dec-ml-scan-ranking-merged-metrics.json")
 
     expected_feature_cols = {"target_id", "protocol_kind", "port", "candidate_family", "scan_success"}
     missing_feature_cols = expected_feature_cols - set(feature_cols)
@@ -104,6 +109,12 @@ def validate_ml_scan() -> dict:
         raise AssertionError("merged ranking metrics must use merged label mode")
     if not example:
         raise AssertionError("validation-results.example.jsonl must contain at least one row")
+    if len(fixture) != 5 or fixture_labels_count != 5:
+        raise AssertionError("validation fixture expected 5 rows")
+    if fixture_validated_metrics["evaluated_targets"] != 2:
+        raise AssertionError("fixture validated mode expected 2 evaluated targets")
+    if fixture_merged_metrics["evaluated_targets"] != 28:
+        raise AssertionError("fixture merged mode expected 28 evaluated targets")
 
     return {
         "target_features": feature_count,
@@ -113,6 +124,9 @@ def validate_ml_scan() -> dict:
         "merged_candidate_rows": merged_count,
         "weak_top1": round(metrics["ml"]["top1_hit_rate"], 3),
         "merged_top1": round(merged_metrics["ml"]["top1_hit_rate"], 3),
+        "fixture_rows": len(fixture),
+        "fixture_validated_targets": fixture_validated_metrics["evaluated_targets"],
+        "fixture_merged_targets": fixture_merged_metrics["evaluated_targets"],
     }
 
 

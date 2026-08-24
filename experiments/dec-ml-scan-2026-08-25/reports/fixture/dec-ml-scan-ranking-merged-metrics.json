@@ -1,0 +1,160 @@
+{
+  "task": "ทดสอบว่า scanner-derived target fingerprints ช่วยเรียง candidate family ได้ถูกต้องหรือไม่",
+  "experiment_dir": "experiments\\dec-ml-scan-2026-08-25",
+  "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
+  "label_metadata": {
+    "label_mode": "merged",
+    "weak_label_rows": 29,
+    "validated_label_rows": 5,
+    "effective_label_rows": 28,
+    "validated_positive_rows": 2,
+    "skipped_validated_negative_or_without_positive": [
+      "spring_CVE-2022-22965"
+    ]
+  },
+  "targets": 29,
+  "evaluated_targets": 28,
+  "candidate_rows": 728,
+  "candidate_families": 26,
+  "label_counts": {
+    "positive_family_match": 28,
+    "negative_family": 700
+  },
+  "input_features": [
+    "title_alias_score",
+    "server_alias_score",
+    "nmap_alias_score",
+    "body_alias_score",
+    "port_score",
+    "protocol_score",
+    "http_tool_score"
+  ],
+  "excluded_leakage_fields": [
+    "target_id",
+    "candidate_family",
+    "positive_family",
+    "CVE in target_id"
+  ],
+  "ml": {
+    "top1_hit_rate": 0.7857142857142857,
+    "top3_hit_rate": 0.8571428571428571,
+    "top5_hit_rate": 0.8928571428571429,
+    "mrr": 0.8330532212885153,
+    "attempts_to_first_positive": {
+      "mean": 2.5,
+      "median": 1.0,
+      "max": 17.0,
+      "evaluated_targets": 28
+    }
+  },
+  "heuristic": {
+    "top1_hit_rate": 0.7857142857142857,
+    "top3_hit_rate": 0.8571428571428571,
+    "top5_hit_rate": 0.8928571428571429,
+    "mrr": 0.8336996336996336,
+    "attempts_to_first_positive": {
+      "mean": 2.357142857142857,
+      "median": 1.0,
+      "max": 13.0,
+      "evaluated_targets": 28
+    }
+  },
+  "random_expected": {
+    "top1_hit_rate": 0.038461538461538436,
+    "top3_hit_rate": 0.11538461538461542,
+    "top5_hit_rate": 0.1923076923076923,
+    "attempts_to_first_positive": {
+      "mean": 13.5,
+      "median": 13.5,
+      "max": 13.5,
+      "evaluated_targets": 28
+    }
+  },
+  "feature_ablation": {
+    "current": {
+      "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/protocol/port/tool coverage",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "body_alias_score",
+        "port_score",
+        "protocol_score",
+        "http_tool_score"
+      ],
+      "top1_hit_rate": 0.7857142857142857,
+      "top3_hit_rate": 0.8571428571428571,
+      "top5_hit_rate": 0.8928571428571429,
+      "mrr": 0.8330532212885153,
+      "attempts_to_first_positive": {
+        "mean": 2.5,
+        "median": 1.0,
+        "max": 17.0,
+        "evaluated_targets": 28
+      }
+    },
+    "no_body_text": {
+      "description": "ตัด body/probe text ออก เหลือเฉพาะ metadata ที่มักนิ่งกว่า",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "port_score",
+        "protocol_score",
+        "http_tool_score"
+      ],
+      "top1_hit_rate": 0.7857142857142857,
+      "top3_hit_rate": 0.8571428571428571,
+      "top5_hit_rate": 0.8928571428571429,
+      "mrr": 0.8333333333333333,
+      "attempts_to_first_positive": {
+        "mean": 2.4285714285714284,
+        "median": 1.0,
+        "max": 15.0,
+        "evaluated_targets": 28
+      }
+    },
+    "port_protocol_only": {
+      "description": "ใช้แค่ port/protocol เพื่อดู baseline ที่หยาบมากและเสี่ยงชนกัน",
+      "features": [
+        "port_score",
+        "protocol_score"
+      ],
+      "top1_hit_rate": 0.42857142857142855,
+      "top3_hit_rate": 0.5714285714285714,
+      "top5_hit_rate": 0.7142857142857143,
+      "mrr": 0.5516976079476079,
+      "attempts_to_first_positive": {
+        "mean": 4.321428571428571,
+        "median": 2.5,
+        "max": 13.0,
+        "evaluated_targets": 28
+      }
+    },
+    "text_only": {
+      "description": "ใช้เฉพาะคำจาก scanner evidence ไม่ใช้ port",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "body_alias_score"
+      ],
+      "top1_hit_rate": 0.7142857142857143,
+      "top3_hit_rate": 0.75,
+      "top5_hit_rate": 0.75,
+      "mrr": 0.7515660430839003,
+      "attempts_to_first_positive": {
+        "mean": 4.571428571428571,
+        "median": 1.0,
+        "max": 24.0,
+        "evaluated_targets": 28
+      }
+    }
+  },
+  "failure_case_count_top3": 4,
+  "warnings": [
+    "labels-draft.jsonl เป็น weak label จากชื่อ lab/folder ยังไม่ใช่ exploit-success ground truth",
+    "candidate rows ถูกสร้างจาก family list เพื่อวัด ranking เท่านั้น ไม่ใช่ข้อมูล scanner ดิบโดยตรง",
+    "ห้ามนำ target_id, candidate_family เดิมใน features.csv, positive_family หรือ CVE จากชื่อ target ไปเป็น input model จริง"
+  ]
+}

@@ -29,7 +29,9 @@
 | `validation-target-queue.csv` | target queue สำหรับให้ Kali/opencode validate ต่อ |
 | `validation-results.schema.json` | schema ของผล validation ที่ Kali ต้องส่งกลับ |
 | `validation-results.example.jsonl` | ตัวอย่าง 1 record สำหรับเช็ก format |
+| `validation-results.fixture.jsonl` | fixture สำหรับทดสอบ import/evaluator หลายสถานะ ไม่ใช่ผล scan จริง |
 | `derived/validated-labels.csv` | label table ที่ import จาก validation results ตัวอย่าง |
+| `derived/fixture/` | output จาก fixture ใช้เป็น regression check |
 | `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
 
 ## ควรใช้ยังไง

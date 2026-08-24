@@ -1,0 +1,5 @@
+target_id,candidate_family,positive_family,label,title_alias_score,server_alias_score,nmap_alias_score,body_alias_score,port_score,protocol_score,http_tool_score,heuristic_score
+joomla_CVE-2023-23752,joomla,joomla,positive_family_match,0.0,0.0,0.0,0.0,0.0,0.25,0.2,0.35
+joomla_CVE-2023-23752,redis,joomla,negative_family,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+redis_CVE-2022-0543,joomla,redis,negative_family,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.15
+redis_CVE-2022-0543,redis,redis,positive_family_match,0.0,0.0,1.0,0.0,1.0,1.0,0.0,3.3000000000000003

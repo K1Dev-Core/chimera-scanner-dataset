@@ -459,8 +459,7 @@ def write_report(output_dir: Path, metrics: dict, failures: list[dict], report_p
     (output_dir / f"{report_prefix}-report-th.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def write_candidate_feature_tables(experiment_dir: Path, rows: list[dict], label_mode: str) -> None:
-    derived_dir = experiment_dir / "derived"
+def write_candidate_feature_tables(derived_dir: Path, rows: list[dict], label_mode: str) -> None:
     derived_dir.mkdir(parents=True, exist_ok=True)
     feature_names = [
         "title_alias_score",
@@ -504,6 +503,11 @@ def main() -> None:
         default="experiments/dec-ml-scan-2026-08-25/derived/validated-labels.csv",
         help="CSV/JSONL produced by scripts/import_dec_validation_results.py",
     )
+    parser.add_argument(
+        "--derived-output-dir",
+        default=None,
+        help="Where candidate-family feature tables are written; defaults to <experiment-dir>/derived",
+    )
     args = parser.parse_args()
 
     experiment_dir = Path(args.experiment_dir)
@@ -518,7 +522,12 @@ def main() -> None:
     rows = build_candidate_rows(target_features, labels)
     if not rows:
         raise ValueError(f"no candidate rows available for label_mode={args.label_mode!r}")
-    write_candidate_feature_tables(experiment_dir, rows, args.label_mode)
+    if len({row["target_id"] for row in rows}) < 2:
+        raise ValueError(
+            f"label_mode={args.label_mode!r} needs at least 2 evaluated targets for leave-one-target-out validation"
+        )
+    derived_output_dir = Path(args.derived_output_dir) if args.derived_output_dir else experiment_dir / "derived"
+    write_candidate_feature_tables(derived_output_dir, rows, args.label_mode)
 
     predictions = evaluate_ml(rows, PROFILES["current"]["features"], "ml_probability")
     for row in predictions:

@@ -1,0 +1,102 @@
+[
+  {
+    "target_id": "goahead_CVE-2017-17562",
+    "positive_family": "goahead",
+    "positive_rank": 4,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "joomla_CVE-2023-23752",
+    "positive_family": "joomla",
+    "positive_rank": 17,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "aria2",
+        "probability": 0.05153798815153583,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "redis",
+        "probability": 0.05153798815153583,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "tomcat",
+        "probability": 0.04089274502464995,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "shiro_CVE-2016-4437",
+    "positive_family": "shiro",
+    "positive_rank": 10,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.4937132920903599,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "thinkphp_5-rce",
+    "positive_family": "thinkphp",
+    "positive_rank": 12,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.5191294818304968,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.5191294818304968,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.5191294818304968,
+        "is_positive": false
+      }
+    ]
+  }
+]

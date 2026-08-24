@@ -1,0 +1,6 @@
+target_id,weak_label,validation_status,confidence,label_strength,safe_poc_used,evidence_file_count,tools_used,evidence_summary,notes
+joomla_CVE-2023-23752,joomla,validated_positive,medium,validated,True,1,curl;nmap,fixture: พบ endpoint/config evidence ที่สนับสนุน weak label,fixture สำหรับทดสอบ import/evaluator ไม่ใช่ผล scan จริง
+spring_CVE-2022-22965,spring,validated_negative,medium,validated_negative,False,1,curl;nmap,fixture: evidence ไม่สนับสนุน weak label จึงต้องถูกตัดออกใน validated mode,fixture สำหรับทดสอบ import/evaluator ไม่ใช่ผล scan จริง
+shiro_CVE-2016-4437,shiro,inconclusive,low,weak_pending_validation,False,0,curl,fixture: fingerprint ยังไม่พอ ต้อง fallback เป็น weak label เฉพาะ merged mode,fixture สำหรับทดสอบ import/evaluator ไม่ใช่ผล scan จริง
+goahead_CVE-2017-17562,goahead,not_run,none,not_run,False,0,,fixture: ยังไม่ได้รัน ต้อง fallback เป็น weak label เฉพาะ merged mode,fixture สำหรับทดสอบ import/evaluator ไม่ใช่ผล scan จริง
+redis_CVE-2022-0543,redis,validated_positive,medium,validated,False,1,nmap,fixture: non-http redis fingerprint สนับสนุน weak label,fixture สำหรับทดสอบ import/evaluator ไม่ใช่ผล scan จริง
