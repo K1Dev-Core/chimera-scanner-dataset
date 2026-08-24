@@ -19,6 +19,8 @@
 | `observations.jsonl` | observation ระดับ target จาก scanner/fingerprint |
 | `features.csv` | feature table สำหรับทดลอง ML ranking |
 | `labels-draft.jsonl` | weak label จากชื่อ Vulhub path |
+| `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
+| `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
 | `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
 
 ## ควรใช้ยังไง
@@ -40,6 +42,27 @@
 - `has_wapiti`
 
 ใช้ `labels-draft.jsonl` เพื่อเทียบว่า target นี้ควรอยู่ family ไหน แต่ต้องจำไว้ว่า label นี้ยังอ่อน เพราะได้จากชื่อ lab/folder ของ Vulhub
+
+รัน evaluator รอบนี้ได้ด้วย:
+
+```powershell
+python scripts\evaluate_dec_ml_scan_20260825.py
+```
+
+ผลล่าสุด:
+
+- ML logistic ranker: Top-1 `0.759`, Top-3 `0.862`, mean attempts `2.586`
+- Scanner heuristic: Top-1 `0.724`, Top-3 `0.828`, mean attempts `2.724`
+- Random expected: Top-1 `0.037`, Top-3 `0.111`, mean attempts `14.000`
+
+ความหมายคือ ML ช่วยลดจำนวน candidate ที่ต้องลองจากค่าเฉลี่ยสุ่มประมาณ 14 เหลือประมาณ 2.6 แต่ยังไม่ใช่ความแม่น exploit จริง เพราะ label ยังเป็น weak label
+
+จุดที่ ML ยังพลาดเกิน Top-3:
+
+- `goahead_CVE-2017-17562`
+- `joomla_CVE-2023-23752`
+- `shiro_CVE-2016-4437`
+- `spring_CVE-2022-22965`
 
 ## ยังไม่ควรใช้ยังไง
 

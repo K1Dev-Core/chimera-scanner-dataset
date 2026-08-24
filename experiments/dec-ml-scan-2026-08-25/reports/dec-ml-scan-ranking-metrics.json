@@ -1,0 +1,149 @@
+{
+  "task": "ทดสอบว่า scanner-derived target fingerprints ช่วยเรียง candidate family ได้ถูกต้องหรือไม่",
+  "experiment_dir": "experiments\\dec-ml-scan-2026-08-25",
+  "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
+  "targets": 29,
+  "candidate_rows": 783,
+  "candidate_families": 27,
+  "label_counts": {
+    "positive_family_match": 29,
+    "negative_family": 754
+  },
+  "input_features": [
+    "title_alias_score",
+    "server_alias_score",
+    "nmap_alias_score",
+    "body_alias_score",
+    "port_score",
+    "protocol_score",
+    "http_tool_score"
+  ],
+  "excluded_leakage_fields": [
+    "target_id",
+    "candidate_family",
+    "positive_family",
+    "CVE in target_id"
+  ],
+  "ml": {
+    "top1_hit_rate": 0.7586206896551724,
+    "top3_hit_rate": 0.8620689655172413,
+    "top5_hit_rate": 0.896551724137931,
+    "mrr": 0.8207728714828106,
+    "attempts_to_first_positive": {
+      "mean": 2.586206896551724,
+      "median": 1.0,
+      "max": 17.0,
+      "evaluated_targets": 29
+    }
+  },
+  "heuristic": {
+    "top1_hit_rate": 0.7241379310344828,
+    "top3_hit_rate": 0.8275862068965517,
+    "top5_hit_rate": 0.8620689655172413,
+    "mrr": 0.7906237440720199,
+    "attempts_to_first_positive": {
+      "mean": 2.7241379310344827,
+      "median": 1.0,
+      "max": 13.0,
+      "evaluated_targets": 29
+    }
+  },
+  "random_expected": {
+    "top1_hit_rate": 0.0370370370370371,
+    "top3_hit_rate": 0.11111111111111116,
+    "top5_hit_rate": 0.18518518518518523,
+    "attempts_to_first_positive": {
+      "mean": 14.0,
+      "median": 14.0,
+      "max": 14.0,
+      "evaluated_targets": 29
+    }
+  },
+  "feature_ablation": {
+    "current": {
+      "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/protocol/port/tool coverage",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "body_alias_score",
+        "port_score",
+        "protocol_score",
+        "http_tool_score"
+      ],
+      "top1_hit_rate": 0.7586206896551724,
+      "top3_hit_rate": 0.8620689655172413,
+      "top5_hit_rate": 0.896551724137931,
+      "mrr": 0.8207728714828106,
+      "attempts_to_first_positive": {
+        "mean": 2.586206896551724,
+        "median": 1.0,
+        "max": 17.0,
+        "evaluated_targets": 29
+      }
+    },
+    "no_body_text": {
+      "description": "ตัด body/probe text ออก เหลือเฉพาะ metadata ที่มักนิ่งกว่า",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "port_score",
+        "protocol_score",
+        "http_tool_score"
+      ],
+      "top1_hit_rate": 0.7241379310344828,
+      "top3_hit_rate": 0.8275862068965517,
+      "top5_hit_rate": 0.8620689655172413,
+      "mrr": 0.7902700747528333,
+      "attempts_to_first_positive": {
+        "mean": 2.793103448275862,
+        "median": 1.0,
+        "max": 15.0,
+        "evaluated_targets": 29
+      }
+    },
+    "port_protocol_only": {
+      "description": "ใช้แค่ port/protocol เพื่อดู baseline ที่หยาบมากและเสี่ยงชนกัน",
+      "features": [
+        "port_score",
+        "protocol_score"
+      ],
+      "top1_hit_rate": 0.41379310344827586,
+      "top3_hit_rate": 0.5517241379310345,
+      "top5_hit_rate": 0.6896551724137931,
+      "mrr": 0.5351366066883309,
+      "attempts_to_first_positive": {
+        "mean": 4.655172413793103,
+        "median": 3.0,
+        "max": 14.0,
+        "evaluated_targets": 29
+      }
+    },
+    "text_only": {
+      "description": "ใช้เฉพาะคำจาก scanner evidence ไม่ใช้ port",
+      "features": [
+        "title_alias_score",
+        "server_alias_score",
+        "nmap_alias_score",
+        "body_alias_score"
+      ],
+      "top1_hit_rate": 0.6551724137931034,
+      "top3_hit_rate": 0.7241379310344828,
+      "top5_hit_rate": 0.7241379310344828,
+      "mrr": 0.7098503724328312,
+      "attempts_to_first_positive": {
+        "mean": 5.275862068965517,
+        "median": 1.0,
+        "max": 25.0,
+        "evaluated_targets": 29
+      }
+    }
+  },
+  "failure_case_count_top3": 4,
+  "warnings": [
+    "labels-draft.jsonl เป็น weak label จากชื่อ lab/folder ยังไม่ใช่ exploit-success ground truth",
+    "candidate rows ถูกสร้างจาก family list เพื่อวัด ranking เท่านั้น ไม่ใช่ข้อมูล scanner ดิบโดยตรง",
+    "ห้ามนำ target_id, candidate_family เดิมใน features.csv, positive_family หรือ CVE จากชื่อ target ไปเป็น input model จริง"
+  ]
+}

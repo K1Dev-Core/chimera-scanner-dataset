@@ -31,9 +31,18 @@ branch ที่ใช้งานตอนนี้คือ `Dec`
 ชุดล่าสุดจาก Kali/Vulhub อยู่ที่:
 
 - summary และ feature table: `experiments/dec-ml-scan-2026-08-25/`
+- รายงานทดสอบ ranking: `experiments/dec-ml-scan-2026-08-25/reports/dec-ml-scan-ranking-report-th.md`
 - raw-curated evidence: `dataset/raw-curated/dec-ml-scan-2026-08-25/`
 
 รอบนี้มี 29 target records และ scan_success 29 records ใช้สำหรับทดลอง feature/ranking เพิ่มเติม ยังไม่ใช่ exploit-success ground truth ทั้งหมด
+
+ผลประเมินล่าสุดจาก scanner-derived features:
+
+- ML logistic ranker: Top-1 `0.759`, Top-3 `0.862`, mean attempts `2.586`
+- Scanner heuristic: Top-1 `0.724`, Top-3 `0.828`, mean attempts `2.724`
+- Random expected: Top-1 `0.037`, Top-3 `0.111`, mean attempts `14.000`
+
+คำอ่านสั้น ๆ คือ ML ช่วยเรียง candidate family ได้ดีกว่าสุ่มและดีกว่า heuristic เล็กน้อย แต่ยังมีจุดพลาด เช่น Joomla/Shiro/Spring ที่ scanner evidence ยังไม่เฉพาะพอ จึงต้องทำ exploit validation และเพิ่ม negative controls ต่อ
 
 ## ชุดหลักของ Dec
 

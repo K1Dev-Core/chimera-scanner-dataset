@@ -1,0 +1,727 @@
+[
+  {
+    "target_id": "adminer_CVE-2021-21311",
+    "positive_family": "adminer",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.9966341495888951,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.5347639626453683,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.5347639626453683,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "apache_druid_CVE-2021-25646",
+    "positive_family": "druid",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "druid",
+        "probability": 0.9966843549404097,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08404197925158699,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08404197925158699,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "appweb_CVE-2018-8715",
+    "positive_family": "appweb",
+    "positive_rank": 2,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.5027080796982667,
+        "is_positive": true
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "aria2_rce",
+    "positive_family": "aria2",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "aria2",
+        "probability": 0.9945712020718714,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "redis",
+        "probability": 0.4444160678801238,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.05545742316505533,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "couchdb_CVE-2017-12635",
+    "positive_family": "couchdb",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "couchdb",
+        "probability": 0.9719023641032458,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08395677195737927,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08395677195737927,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "couchdb_CVE-2017-12636",
+    "positive_family": "couchdb",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "couchdb",
+        "probability": 0.9719023641032458,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08395677195737927,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08395677195737927,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "drupal_CVE-2018-7600",
+    "positive_family": "drupal",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "drupal",
+        "probability": 0.9966341495888951,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.5347639626453683,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.5347639626453683,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "elasticsearch_CVE-2015-1427",
+    "positive_family": "elasticsearch",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "elasticsearch",
+        "probability": 0.48486596268842835,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08256180881487224,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08256180881487224,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "flask_ssti",
+    "positive_family": "flask",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "flask",
+        "probability": 0.7600262068815921,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.09360173761399933,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.09360173761399933,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "goahead_CVE-2017-17562",
+    "positive_family": "goahead",
+    "positive_rank": 4,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "adminer",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "appweb",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "drupal",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "gogs_CVE-2018-18925",
+    "positive_family": "gogs",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "gogs",
+        "probability": 0.9966729211193613,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "grafana",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "nextjs",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "grafana_CVE-2021-43798",
+    "positive_family": "grafana",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "grafana",
+        "probability": 0.9966729211193613,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "gogs",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "nextjs",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "jenkins_CVE-2018-1000861",
+    "positive_family": "jenkins",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "jenkins",
+        "probability": 0.9965747205130279,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "jetty",
+        "probability": 0.9904632213543867,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.5326512889823063,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "jetty_CVE-2021-28164",
+    "positive_family": "jetty",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "jetty",
+        "probability": 0.9993849516111621,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.5348471194162142,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.5348471194162142,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "joomla_CVE-2023-23752",
+    "positive_family": "joomla",
+    "positive_rank": 17,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "aria2",
+        "probability": 0.05137762691697815,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "redis",
+        "probability": 0.05137762691697815,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "thinkphp",
+        "probability": 0.04253636134448443,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "nextjs_CVE-2025-29927",
+    "positive_family": "nextjs",
+    "positive_rank": 3,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "gogs",
+        "probability": 0.4024616165412548,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "grafana",
+        "probability": 0.4024616165412548,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "nextjs",
+        "probability": 0.4024616165412548,
+        "is_positive": true
+      }
+    ]
+  },
+  {
+    "target_id": "nexus_CVE-2019-7238",
+    "positive_family": "nexus",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "nexus",
+        "probability": 0.46779622365503115,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.07794501440145862,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.07794501440145862,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "nginx_CVE-2017-7529",
+    "positive_family": "nginx",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "nginx",
+        "probability": 0.9999291720010709,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.5341419459051757,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.5341419459051757,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "phpmyadmin_CVE-2018-12613",
+    "positive_family": "phpmyadmin",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "phpmyadmin",
+        "probability": 0.8571004824378938,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.5298050063598971,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.5298050063598971,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "rails_CVE-2018-3760",
+    "positive_family": "rails",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "rails",
+        "probability": 0.9966729211193613,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "gogs",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "grafana",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "rails_CVE-2019-5418",
+    "positive_family": "rails",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "rails",
+        "probability": 0.9966729211193613,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "gogs",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "grafana",
+        "probability": 0.5209577287841899,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "redis_CVE-2022-0543",
+    "positive_family": "redis",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "redis",
+        "probability": 0.9946118040718108,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "aria2",
+        "probability": 0.44668609671343257,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.04462875637179083,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "shiro_CVE-2016-4437",
+    "positive_family": "shiro",
+    "positive_rank": 12,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "thinkphp",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "tomcat",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.5027080796982666,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "solr_CVE-2017-12629-RCE",
+    "positive_family": "solr",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "solr",
+        "probability": 0.9966843549404097,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08404197925158699,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08404197925158699,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "spring_CVE-2022-22965",
+    "positive_family": "spring",
+    "positive_rank": 13,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "thinkphp",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "tomcat",
+        "probability": 0.5027080796982667,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.5027080796982666,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "struts2_s2-045",
+    "positive_family": "struts2",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "struts2",
+        "probability": 0.9965747205130279,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "jetty",
+        "probability": 0.9904632213543867,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.5326512889823063,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "thinkphp_5-rce",
+    "positive_family": "thinkphp",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "thinkphp",
+        "probability": 0.5259008058869048,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "tomcat",
+        "probability": 0.5259008058869048,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "adminer",
+        "probability": 0.5259008058869047,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "tomcat_CVE-2017-12615",
+    "positive_family": "tomcat",
+    "positive_rank": 2,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "spring",
+        "probability": 0.9454021069504183,
+        "is_positive": false
+      },
+      {
+        "rank": 2,
+        "candidate_family": "tomcat",
+        "probability": 0.9454021069504183,
+        "is_positive": true
+      },
+      {
+        "rank": 3,
+        "candidate_family": "thinkphp",
+        "probability": 0.5332522298880715,
+        "is_positive": false
+      }
+    ]
+  },
+  {
+    "target_id": "webmin_CVE-2019-15107",
+    "positive_family": "webmin",
+    "positive_rank": 1,
+    "ml_top3": [
+      {
+        "rank": 1,
+        "candidate_family": "webmin",
+        "probability": 0.9910654441673551,
+        "is_positive": true
+      },
+      {
+        "rank": 2,
+        "candidate_family": "adminer",
+        "probability": 0.08404188326286045,
+        "is_positive": false
+      },
+      {
+        "rank": 3,
+        "candidate_family": "appweb",
+        "probability": 0.08404188326286045,
+        "is_positive": false
+      }
+    ]
+  }
+]
