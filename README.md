@@ -11,8 +11,9 @@ branch ที่ใช้งานตอนนี้คือ `Dec`
 1. อ่านคู่มือภาพรวมภาษาไทย: `docs/overview/DEC-DATASET-GUIDE-TH.md`
 2. เปิด dataset หลัก 43 targets: `generated/dec-vulhub-2026-08-24-fixed-core/`
 3. ดู raw scanner output ที่คัดแล้ว: `dataset/raw-curated/`
-4. ดูข้อมูลทดลองจาก `Hex`: `experiments/hex-2026-08-05/`
-5. อ่านสถานะ/ประวัติงาน: `docs/status/`
+4. ดูข้อมูลทดลอง ML scan ล่าสุด 29 targets: `experiments/dec-ml-scan-2026-08-25/`
+5. ดูข้อมูลทดลองจาก `Hex`: `experiments/hex-2026-08-05/`
+6. อ่านสถานะ/ประวัติงาน: `docs/status/`
 
 ## โครงสร้าง repo
 
@@ -24,6 +25,15 @@ branch ที่ใช้งานตอนนี้คือ `Dec`
 | `docs/` | คู่มือ สถานะ checklist และบทความอธิบาย | อ่านทำความเข้าใจ project |
 | `experiments/` | ชุดทดลองจาก Hex/ZAP ที่ยังไม่ใช่แกนหลัก | ใช้เป็น feature seed หรือไอเดีย target เพิ่ม |
 | `scripts/` | script สำหรับ build/normalize dataset | ใช้ตอน regenerate dataset |
+
+## ชุดทดลอง ML scan ล่าสุด
+
+ชุดล่าสุดจาก Kali/Vulhub อยู่ที่:
+
+- summary และ feature table: `experiments/dec-ml-scan-2026-08-25/`
+- raw-curated evidence: `dataset/raw-curated/dec-ml-scan-2026-08-25/`
+
+รอบนี้มี 29 target records และ scan_success 29 records ใช้สำหรับทดลอง feature/ranking เพิ่มเติม ยังไม่ใช่ exploit-success ground truth ทั้งหมด
 
 ## ชุดหลักของ Dec
 

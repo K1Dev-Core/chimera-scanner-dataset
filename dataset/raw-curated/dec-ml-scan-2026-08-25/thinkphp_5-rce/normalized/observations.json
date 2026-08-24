@@ -1,0 +1,14 @@
+{
+  "target_id": "thinkphp_5-rce",
+  "url": "http://127.0.0.1:8080",
+  "title": "",
+  "server": "Apache/2.4.38 (Debian)",
+  "x_powered_by": "PHP/7.2.31",
+  "scan_mode": "fast_fingerprint",
+  "source_files": [
+    "curl_headers.txt",
+    "curl_home.html",
+    "target_probe.txt",
+    "nmap.stdout"
+  ]
+}

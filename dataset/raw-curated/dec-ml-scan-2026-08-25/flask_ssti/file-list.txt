@@ -1,0 +1,10 @@
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/logs/health.log	32 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/logs/nmap.log	474 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/logs/scan.log	85 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/logs/start.log	82253 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/normalized/observations.json	281 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/raw/curl_headers.txt	160 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/raw/curl_home.html	11 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/raw/nmap.stdout	697 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/raw/nmap.xml	1825 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/flask_ssti/raw/target_probe.txt	0 bytes

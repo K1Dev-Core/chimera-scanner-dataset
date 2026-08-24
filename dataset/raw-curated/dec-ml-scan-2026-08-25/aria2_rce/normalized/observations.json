@@ -1,0 +1,17 @@
+{
+  "target_id": "aria2_rce",
+  "url": "rpc://127.0.0.1:6800",
+  "protocol_kind": "nonhttp",
+  "http_status": "",
+  "title": "",
+  "server": "",
+  "x_powered_by": "",
+  "nmap_service_line": "6800/tcp open  http    aria2 downloader JSON-RPC",
+  "scan_mode": "fast_fingerprint_wave5",
+  "source_files": [
+    "curl_headers.txt",
+    "curl_home.html",
+    "target_probe.txt",
+    "nmap.stdout"
+  ]
+}

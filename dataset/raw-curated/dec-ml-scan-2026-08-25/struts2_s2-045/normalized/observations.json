@@ -1,0 +1,14 @@
+{
+  "target_id": "struts2_s2-045",
+  "url": "http://127.0.0.1:8080",
+  "title": "Struts2 Showcase - Fileupload sample",
+  "server": "Jetty(9.2.11.v20150529)",
+  "x_powered_by": "",
+  "scan_mode": "fast_fingerprint",
+  "source_files": [
+    "curl_headers.txt",
+    "curl_home.html",
+    "target_probe.txt",
+    "nmap.stdout"
+  ]
+}

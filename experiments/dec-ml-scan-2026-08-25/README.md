@@ -1,0 +1,55 @@
+# Dec ML Scan 2026-08-25
+
+ชุดนี้เป็นผลสแกนจาก Kali/Vulhub ที่เก็บเพิ่มเพื่อทดลอง ML ranking ของโปรเจกต์ Dec
+
+เป้าหมายคือเพิ่มข้อมูล scanner-derived feature ให้โมเดลเห็น service/family ที่หลากหลายขึ้น ไม่ใช่เพิ่ม raw ทั้งก้อนแบบไม่คัด
+
+## สถานะชุดนี้
+
+- จำนวน target records: 29
+- scan_success: 29
+- raw หลักอยู่ที่ `dataset/raw-curated/dec-ml-scan-2026-08-25/`
+- ชุด feature สำหรับทดลองอยู่ในโฟลเดอร์นี้
+
+## ไฟล์สำคัญ
+
+| ไฟล์ | ใช้ทำอะไร |
+| --- | --- |
+| `SCAN-SUMMARY-TH.md` | สรุปภาษาไทยของรอบสแกน |
+| `observations.jsonl` | observation ระดับ target จาก scanner/fingerprint |
+| `features.csv` | feature table สำหรับทดลอง ML ranking |
+| `labels-draft.jsonl` | weak label จากชื่อ Vulhub path |
+| `dec-ml-scan-2026-08-25.tar.gz` | archive ของ raw-curated รอบนี้ |
+
+## ควรใช้ยังไง
+
+ใช้ `features.csv` เป็น input ทดลอง ranking model ได้ทันที โดยเริ่มจากคอลัมน์พวกนี้:
+
+- `protocol_kind`
+- `port`
+- `candidate_family`
+- `title`
+- `server`
+- `x_powered_by`
+- `http_status`
+- `nmap_service_line`
+- `scan_success`
+- `has_nmap`
+- `has_probe`
+- `has_nikto`
+- `has_wapiti`
+
+ใช้ `labels-draft.jsonl` เพื่อเทียบว่า target นี้ควรอยู่ family ไหน แต่ต้องจำไว้ว่า label นี้ยังอ่อน เพราะได้จากชื่อ lab/folder ของ Vulhub
+
+## ยังไม่ควรใช้ยังไง
+
+- อย่าใช้ `candidate_family`, ชื่อ CVE, หรือชื่อ target เป็น feature หลักในการวัดความแม่นจริง เพราะเสี่ยง label leakage
+- อย่าถือว่า `labels-draft.jsonl` คือ exploit-success ground truth
+- อย่าเทรนรวมกับชุดหลักโดยไม่แยก train/test ตาม family หรือ target group
+
+## งานต่อ
+
+- ทำ validation script สำหรับ target ที่มี probe เช่น Joomla, Grafana, ThinkPHP, Redis, Aria2
+- ติดตั้ง ProjectDiscovery `httpx` ตัวจริงแทน Python `httpx`
+- จูน `nuclei` ให้เลือก template เฉพาะ CVE เพื่อลด timeout
+- normalize ชุดนี้เข้า schema หลักของ Dec ถ้าจะเอาไปรวมกับ 43-target fixed core

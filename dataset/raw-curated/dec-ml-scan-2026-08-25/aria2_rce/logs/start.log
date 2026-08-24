@@ -1,0 +1,75 @@
+time="2026-08-24T16:51:33-04:00" level=warning msg="/home/kali/labs/vulhub/aria2/rce/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Image vulhub/aria2:1.18.8 Pulling 
+ 0515498019af Pulling fs layer 0B
+ 2800a72d7212 Pulling fs layer 0B
+ 0515498019af Downloading 267B
+ 0515498019af Download complete 0B
+ 2800a72d7212 Downloading 1.049MB
+ 2800a72d7212 Downloading 1.049MB
+ 2800a72d7212 Downloading 2.097MB
+ 2800a72d7212 Downloading 3.146MB
+ 2800a72d7212 Downloading 3.146MB
+ 2800a72d7212 Downloading 4.194MB
+ 2800a72d7212 Downloading 5.243MB
+ 2800a72d7212 Downloading 5.243MB
+ 2800a72d7212 Downloading 6.291MB
+ 2800a72d7212 Downloading 7.34MB
+ 2800a72d7212 Downloading 8.389MB
+ 2800a72d7212 Downloading 9.437MB
+ 2800a72d7212 Downloading 10.49MB
+ 2800a72d7212 Downloading 11.53MB
+ 2800a72d7212 Downloading 12.58MB
+ 2800a72d7212 Downloading 14.68MB
+ 2800a72d7212 Downloading 15.73MB
+ 2800a72d7212 Downloading 16.78MB
+ 2800a72d7212 Downloading 17.83MB
+ 2800a72d7212 Downloading 18.87MB
+ 2800a72d7212 Downloading 19.92MB
+ 2800a72d7212 Downloading 20.97MB
+ 2800a72d7212 Downloading 22.02MB
+ 2800a72d7212 Downloading 23.07MB
+ 2800a72d7212 Downloading 25.17MB
+ 2800a72d7212 Downloading 26.21MB
+ 2800a72d7212 Downloading 27.26MB
+ 2800a72d7212 Downloading 28.31MB
+ 2800a72d7212 Downloading 29.36MB
+ 2800a72d7212 Downloading 30.41MB
+ 2800a72d7212 Downloading 31.46MB
+ 2800a72d7212 Downloading 33.55MB
+ 2800a72d7212 Downloading 33.55MB
+ 2800a72d7212 Downloading 35.65MB
+ 2800a72d7212 Downloading 36.7MB
+ 2800a72d7212 Downloading 37.75MB
+ 2800a72d7212 Downloading 38.8MB
+ 2800a72d7212 Downloading 39.85MB
+ 2800a72d7212 Download complete 0B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 1B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Extracting 2B
+ 2800a72d7212 Pull complete 0B
+ 0515498019af Pull complete 0B
+ Image vulhub/aria2:1.18.8 Pulled 
+ Network rce_default Creating 
+ Network rce_default Created 
+ Container rce-aria2-1 Creating 
+ Container rce-aria2-1 Created 
+ Container rce-aria2-1 Starting 
+ Container rce-aria2-1 Started 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Mon Aug 24 16:22:36 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 8080 -oX /home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.xml -oN /home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.stdout 127.0.0.1 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -sC -p 8080 -oX /home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.xml -oN /home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.stdout 127.0.0.1" start="1787602956" startstr="Mon Aug 24 16:22:36 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="8080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1787602956" endtime="1787602963"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="8080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Jetty" version="9.2.11.v20150529" method="probed" conf="10"><cpe>cpe:/a:mortbay:jetty:9.2.11.v20150529</cpe></service><script id="http-title" output="Struts2 Showcase - Fileupload sample"><elem key="title">Struts2 Showcase - Fileupload sample</elem>
+</script><script id="http-server-header" output="Jetty(9.2.11.v20150529)"><elem>Jetty(9.2.11.v20150529)</elem>
+</script><script id="http-cookie-flags" output="&#xa;  /: &#xa;    JSESSIONID: &#xa;      httponly flag not set"><table key="/">
+<table key="JSESSIONID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+</script></port>
+</ports>
+<times srtt="95" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1787602963" timestr="Mon Aug 24 16:22:43 2026" summary="Nmap done at Mon Aug 24 16:22:43 2026; 1 IP address (1 host up) scanned in 6.75 seconds" elapsed="6.75" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

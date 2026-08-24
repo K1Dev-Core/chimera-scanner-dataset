@@ -1,0 +1,10 @@
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/logs/compose-ps.txt	483 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/logs/nmap.log	448 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/logs/probe.log	0 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/logs/scan.log	85 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/logs/start.log	2579 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/normalized/observations.json	396 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/raw/nmap.stdout	669 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/raw/nmap.xml	1751 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/raw/non_http_target.txt	21 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/aria2_rce/raw/target_probe.txt	0 bytes

@@ -6,6 +6,7 @@
 
 | path | คืออะไร |
 | --- | --- |
+| `dec-ml-scan-2026-08-25/` | features, weak labels และ summary จาก Kali/Vulhub scan เพิ่ม 29 target สำหรับทดลอง ML ranking |
 | `hex-2026-08-05/` | records, feature seeds, demo model และ metadata ที่ import จาก branch Hex |
 | `zap-n8n-5-8-69/` | ZAP report สำหรับ n8n target ทดลอง |
 

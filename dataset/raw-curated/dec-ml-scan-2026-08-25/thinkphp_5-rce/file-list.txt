@@ -1,0 +1,10 @@
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/logs/health.log	32 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/logs/nmap.log	550 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/logs/scan.log	89 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/logs/start.log	11241 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/normalized/observations.json	302 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/raw/curl_headers.txt	154 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/raw/curl_home.html	931 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/raw/nmap.stdout	781 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/raw/nmap.xml	1957 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/thinkphp_5-rce/raw/target_probe.txt	0 bytes

@@ -1,0 +1,10 @@
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/logs/health.log	64 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/logs/nmap.log	551 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/logs/scan.log	89 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/logs/start.log	71368 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/normalized/observations.json	329 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/curl_headers.txt	253 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/curl_home.html	1076 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.stdout	782 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/nmap.xml	2117 bytes
+/home/kali/reports/dec-ml-scan-2026-08-25/struts2_s2-045/raw/target_probe.txt	1077 bytes
