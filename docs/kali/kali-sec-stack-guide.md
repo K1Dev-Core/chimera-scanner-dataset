@@ -1,60 +1,67 @@
-# Kali Security Stack Guide
+# คู่มือ Kali Security Stack
 
-Verified against upstream docs and project pages on 2026-08-03.
+ตรวจจาก upstream docs และ project pages เมื่อ 2026-08-03
 
-## What this includes
+## ชุดเครื่องมือที่ใช้
 
-- Platform / vulnerability management:
-  - Faraday
-  - DefectDojo
-  - Reconmap
-- Vulnerability scanners:
-  - Greenbone Community Edition / GVM
-  - OWASP ZAP
-  - Nuclei
-  - Wapiti
-- Recon / attack surface:
-  - Subfinder
-  - httpx-toolkit
-  - Naabu
-  - AutoRecon
-  - Amass
-- Exploitation / web testing:
-  - Metasploit Framework
-  - sqlmap
-  - Nikto
-- Lab environment:
-  - Docker Engine
-  - Vulhub
+Platform / vulnerability management:
 
-## Recommended flow on Kali
+- `Faraday`
+- `DefectDojo`
+- `Reconmap`
 
-1. Install Docker first.
-2. Install CLI tools from Kali repos.
-3. Install GVM and run `gvm-setup`.
-4. Clone Faraday, DefectDojo, Reconmap, and Vulhub.
-5. Start only the stack you need, because running all of them together can be heavy on RAM and may create port conflicts.
+Scanner:
+
+- `Greenbone Community Edition / GVM`
+- `OWASP ZAP`
+- `Nuclei`
+- `Wapiti`
+
+Recon / attack surface:
+
+- `Subfinder`
+- `httpx-toolkit`
+- `Naabu`
+- `AutoRecon`
+- `Amass`
+
+Exploitation / web testing:
+
+- `Metasploit Framework`
+- `sqlmap`
+- `Nikto`
+
+Lab:
+
+- `Docker Engine`
+- `Vulhub`
+
+## Flow ที่แนะนำบน Kali
+
+1. ติดตั้ง Docker ก่อน
+2. ติดตั้ง CLI tools จาก Kali repo
+3. ติดตั้ง `GVM` แล้วรัน `gvm-setup`
+4. clone `Faraday`, `DefectDojo`, `Reconmap`, `Vulhub`
+5. เปิดเฉพาะ stack ที่ต้องใช้ เพราะเปิดทั้งหมดพร้อมกันอาจกิน RAM และชน port
 
 ## One-shot installer
 
-The script was created in the Codex workspace here:
+script อยู่ที่:
 
-[kali-sec-stack-install.sh](C:\Users\rapii\Documents\Codex\2026-08-03\faraday-https-github-com-infobyte-faraday\outputs\kali-sec-stack-install.sh)
+`docs/kali/kali-sec-stack-install.sh`
 
-Copy it to Kali first, then run it.
-
-Example if you already moved it into your Kali home directory:
+ตัวอย่างการรันบน Kali:
 
 ```bash
 chmod +x ~/kali-sec-stack-install.sh
 sudo ~/kali-sec-stack-install.sh
 ```
 
-## Important Kali note for Docker
+## หมายเหตุเรื่อง Docker บน Kali
 
-Docker's official docs say Kali should follow the Debian install path and substitute the matching Debian codename. The script currently uses `trixie`, which is the safe default from Docker's current Debian guidance for Kali-like setups. If your Kali image is pinned differently, adjust the `Suites:` line in `/etc/apt/sources.list.d/docker.sources`.
+Docker official docs แนะนำให้ Kali ใช้วิธีติดตั้งแบบ Debian และเลือก Debian codename ที่ตรงกัน script นี้ใช้ `trixie` เป็นค่า default ที่ปลอดภัยสำหรับ Kali รุ่นใหม่ ถ้า image ของ Kali ถูก pin ต่างออกไป ให้แก้ `Suites:` ใน `/etc/apt/sources.list.d/docker.sources`
 
-## Quick run commands
+## คำสั่งเปิดใช้งานเร็ว
 
 ```bash
 # Faraday
@@ -80,39 +87,26 @@ cd <scenario-dir>
 docker compose up -d
 ```
 
-## What I checked on this machine
+## สิ่งที่ตรวจบนเครื่อง Windows นี้
 
-On this Windows workspace, as of 2026-08-03:
+ณ 2026-08-03:
 
-- `git` is installed
-- `docker` and `docker compose` binaries are present
-- Docker daemon is not running
-- WSL is not installed
+- มี `git`
+- มี binary ของ `docker` และ `docker compose`
+- Docker daemon ยังไม่รัน
+- ยังไม่มี WSL
 
-That means I can prepare the installation assets and commands cleanly, but I cannot fully stand up a Kali lab inside this machine without first enabling WSL or using a separate Kali VM.
+ดังนั้นบนเครื่องนี้เตรียมไฟล์/คำสั่งได้ แต่การยก Kali lab จริงควรทำใน Kali VM หรือเปิด WSL ก่อน
 
-## Source links
+## แหล่งอ้างอิงหลัก
 
-- [Faraday](https://github.com/infobyte/faraday)
-- [DefectDojo install docs](https://docs.defectdojo.com/get_started/open_source/installation/)
-- [DefectDojo repo](https://github.com/DefectDojo/django-DefectDojo)
-- [Reconmap deployment docs](https://reconmap.com/admin-manual/deployment-options/)
-- [Reconmap repo](https://github.com/reconmap/reconmap)
-- [Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
-- [Greenbone Community docs](https://greenbone.github.io/docs/latest/index.html)
-- [Kali gvm package](https://www.kali.org/tools/gvm/)
-- [Kali zaproxy package](https://www.kali.org/tools/zaproxy/)
-- [Kali nuclei package](https://www.kali.org/tools/nuclei/)
-- [Kali wapiti package](https://www.kali.org/tools/wapiti/)
-- [Kali subfinder package](https://www.kali.org/tools/subfinder/)
-- [Kali httpx-toolkit package](https://www.kali.org/tools/httpx-toolkit/)
-- [Kali naabu package](https://www.kali.org/tools/naabu/)
-- [Kali autorecon package](https://www.kali.org/tools/autorecon/)
-- [OWASP Amass install guide](https://github.com/owasp-amass/amass/wiki/Installation-Guide)
-- [Kali metasploit-framework package](https://www.kali.org/tools/metasploit-framework/)
-- [Kali Metasploit database init guide](https://www.kali.org/docs/tools/starting-metasploit-framework-in-kali/)
-- [sqlmap project wiki](https://github.com/sqlmapproject/sqlmap/wiki/usage)
-- [Kali all tools index](https://www.kali.org/tools/all-tools/)
-- [Nikto repo](https://github.com/sullo/nikto)
-- [Kali nikto package](https://www.kali.org/tools/nikto/)
-- [Vulhub](https://github.com/vulhub/vulhub)
+- Faraday
+- DefectDojo
+- Reconmap
+- Docker Engine on Debian
+- Greenbone Community docs
+- Kali tool packages
+- OWASP ZAP
+- sqlmap
+- Nikto
+- Vulhub

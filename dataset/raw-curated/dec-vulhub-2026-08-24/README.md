@@ -1,13 +1,13 @@
 # Dec Vulhub Raw Curated Dataset
 
-Curated raw scanner outputs for the Dec Vulhub dataset update.
+โฟลเดอร์นี้เก็บ raw scanner outputs ที่คัดแล้วสำหรับ Dec Vulhub dataset update
 
-- Source raw root: `dataset/raw`
-- Source scan date: `2026-08-04`
-- Curated package date: `2026-08-24`
-- Purpose: keep real scanner outputs for dataset review, demo, ML, and feature engineering without runtime caches or tool dependencies.
+- source raw root: `dataset/raw`
+- source scan date: `2026-08-04`
+- curated package date: `2026-08-24`
+- purpose: เก็บผล scan จริงเพื่อ review, demo, ML และ feature engineering โดยไม่เอา cache/runtime/dependency ติดมาด้วย
 
-## Included
+## สิ่งที่รวมไว้
 
 | Tool | Files | Formats |
 | --- | ---: | --- |
@@ -21,14 +21,14 @@ Curated raw scanner outputs for the Dec Vulhub dataset update.
 | wapiti | 10 | `.json` |
 | zaproxy | 10 | `.txt` |
 
-Total: 85 files.
+รวมทั้งหมด 85 files
 
-## Excluded
+## สิ่งที่ไม่รวม
 
-- `dataset/raw/autorecon/**` for this first curated raw pass because several AutoRecon report paths are too long on Windows and need a separate path-normalization pass.
-- ZAP home/cache/runtime folders such as `.zaphome`.
-- Runtime/dependency artifacts such as `chromedriver`, `*.jar`, `__pycache__`, and `*.pyc`.
+- `dataset/raw/autorecon/**` เพราะ path ของ AutoRecon หลายไฟล์ยาวเกินบน Windows ต้องทำ path-normalization แยก
+- ZAP home/cache/runtime เช่น `.zaphome`
+- runtime/dependency artifacts เช่น `chromedriver`, `*.jar`, `__pycache__`, `*.pyc`
 
-## Notes
+## หมายเหตุ
 
-This folder intentionally preserves the per-tool and per-target structure from `dataset/raw` for traceability while keeping only scan-result artifacts.
+โครงสร้างในนี้ยังคงแยกตาม tool และ target เพื่อ trace กลับไปยัง scanner output ได้ง่าย แต่เก็บเฉพาะ artifact ที่เป็นผล scan จริง

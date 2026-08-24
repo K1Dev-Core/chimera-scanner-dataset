@@ -1,36 +1,44 @@
-# DEC Dataset — dec-vulhub-2026-08-05
+# DEC Dataset: dec-vulhub-2026-08-24-fixed-core
 
-Chimera Scanner Dataset (Dec branch). 22 targets from Vulhub local lab.
+ชุดนี้คือ normalized/fixed core ล่าสุดของ branch `Dec` สำหรับ Chimera Scanner Dataset
 
-## Label semantics (IMPORTANT)
+## ภาพรวม
 
-The label `positive_family_match` in `labels/target-candidate-labels.jsonl` is a
-**weak label** derived from Vulhub ground truth:
-- It means the candidate family equals the application's known family
-  (e.g. a Drupal lab is `cms`).
-- It is **NOT** an "exploit succeeded" label.
-- A separate signal, `candidate_validation_available`, marks rows where a manual
-  PoC / MSF / sqlmap validation completed successfully for that target.
-- All other rows are labeled `unknown`.
+- แหล่งที่มา: Vulhub local lab
+- จำนวน target ล่าสุดหลังแก้ schema: 43 targets
+- ใช้สำหรับ: analysis, feature engineering, demo, baseline ML
+- raw scan files ตัวเต็มไม่ได้อยู่ใน package นี้ทั้งหมด ให้ดู evidence ที่คัดแล้วใน `dataset/raw-curated/`
 
-Do not treat this dataset as ground-truth exploit success for every
-`positive_family_match` row.
+## ความหมายของ label สำคัญ
 
-## Contents
+`positive_family_match` ใน `labels/target-candidate-labels.jsonl` เป็น weak label จาก ground truth ของ Vulhub
 
-- `records/` — targets, observations, findings, validations, tool_runs, all-records (JSONL)
-- `derived/` — target-features.json, target-candidate-features.json
-- `labels/` — target-candidate-labels.jsonl
-- `normalized/` — per-tool normalized records (`dec.dataset.v2`)
-- `raw/` — per-target scanner outputs renamed to `tool-name(cve)-date`
-- `metadata/` — target selection + old-target reuse
-- `logs/` — pipeline scripts and run logs
-- `manifest.json`, `quality-report.json`, `checksums.sha256`, `DEC-RUN-SUMMARY-2026-08-05.md`
+แปลว่า:
 
-## Security
+- candidate family ตรงกับ family ที่รู้จาก lab เช่น Drupal lab อยู่ในกลุ่ม `cms`
+- ไม่ได้แปลว่า exploit สำเร็จทุกแถว
+- ถ้ามีการยืนยันด้วย manual PoC, Metasploit หรือ sqlmap จะดู signal แยก เช่น `candidate_validation_available`
+- แถวอื่นที่ยังไม่ยืนยันจะเป็น `unknown`
 
-- Lab-only: all hosts are 127.0.0.x loopbacks; no public IPs.
-- Normalized output: sensitive values (sessions, cookies, tokens, passwords)
-  redacted as `[REDACTED]`.
-- No fabricated records; all tool statuses (success/no_finding/failed/timeout/skipped)
-  are recorded as observed.
+ดังนั้นอย่าใช้ `positive_family_match` เป็นหลักฐาน exploit success โดยตรง
+
+## โครงสร้างไฟล์
+
+| path | คืออะไร |
+| --- | --- |
+| `records/` | targets, observations, findings, validations, tool_runs, all-records แบบ JSONL |
+| `derived/` | feature ระดับ target และ target-candidate |
+| `labels/` | label แยกจาก feature เพื่อกัน leakage |
+| `normalized/` | per-tool normalized records |
+| `metadata/` | target selection และข้อมูล reuse target เก่า |
+| `logs/` | pipeline scripts และ run logs |
+| `manifest.json` | metadata และจำนวน record |
+| `quality-report.json` | ผลตรวจคุณภาพ |
+| `checksums.sha256` | checksum ของ artifact |
+
+## Security / data hygiene
+
+- เป็น lab-only ใช้ loopback/private lab ไม่ใช่ public target
+- sensitive values เช่น session, cookie, token, password ถูก redact เป็น `[REDACTED]`
+- ไม่มี fabricated records
+- tool status เช่น `success`, `no_finding`, `failed`, `timeout`, `skipped` ถูกบันทึกตามจริง

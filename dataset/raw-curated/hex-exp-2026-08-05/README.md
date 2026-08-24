@@ -1,15 +1,15 @@
 # Dec Vulhub Hex Experiment Raw Curated Dataset
 
-Curated raw scanner outputs from the 2026-08-05 experimental target run.
+โฟลเดอร์นี้เก็บ raw scanner outputs ที่คัดแล้วจากรอบทดลอง target วันที่ 2026-08-05
 
-- Source raw root: `dec-vulhub-2026-08-05-fixed/raw`
-- Experiment date: `2026-08-05`
-- Curated package date: `2026-08-24`
-- Purpose: add raw evidence and scan provenance for the experimental targets already represented in the Dec 43-target normalized core.
+- source raw root: `dec-vulhub-2026-08-05-fixed/raw`
+- experiment date: `2026-08-05`
+- curated package date: `2026-08-24`
+- purpose: เพิ่ม raw evidence และ scan provenance ให้ experimental targets ที่มีอยู่แล้วใน normalized core 43 targets ของ Dec
 
-## Target Set
+## Target set
 
-These targets are already included in the 43-target normalized Dec core, so this package does not increase the normalized target count. It adds supporting raw evidence for feature engineering, scanner coverage analysis, and validation review.
+targets ชุดนี้รวมอยู่ใน normalized Dec core 43 targets แล้ว จึงไม่ได้เพิ่มจำนวน normalized target แต่เพิ่มหลักฐานดิบสำหรับ feature engineering, scanner coverage analysis และ validation review
 
 | target_id | expected vulnerability |
 | --- | --- |
@@ -26,7 +26,7 @@ These targets are already included in the 43-target normalized Dec core, so this
 | `flask_ssti` | unknown/non-CVE lab |
 | `shiro_4437` | CVE-2016-4437 |
 
-## Included
+## สิ่งที่รวมไว้
 
 | Tool | Files | Formats |
 | --- | ---: | --- |
@@ -41,17 +41,17 @@ These targets are already included in the 43-target normalized Dec core, so this
 | wapiti | 23 | `.json`, `.stdout` |
 | zaproxy | 24 | `.json`, `.stdout` |
 
-Total: 264 files.
+รวมทั้งหมด 264 files
 
-## Excluded
+## สิ่งที่ไม่รวม
 
-- `*.stderr`, `*.exit`, `*.log`, and `*.yaml` command metadata.
-- Runtime/dependency/cache artifacts such as `.zaphome`, `chromedriver`, `*.jar`, `__pycache__`, and `*.pyc`.
-- AutoRecon outputs from this package, because AutoRecon needs a separate path-normalized curation pass.
-- OpenVAS for this package because no real OpenVAS reports were present for these target directories.
+- `*.stderr`, `*.exit`, `*.log`, `*.yaml` ที่เป็น command metadata
+- runtime/dependency/cache เช่น `.zaphome`, `chromedriver`, `*.jar`, `__pycache__`, `*.pyc`
+- AutoRecon outputs เพราะต้องทำ path-normalized curation แยก
+- OpenVAS เพราะไม่พบ report จริงใน target directories ชุดนี้
 
-## How To Use
+## วิธีใช้
 
-Use this package for scanner coverage features, raw evidence review, manual PoC corroboration, and target-level feature extraction.
+ใช้ package นี้สำหรับ scanner coverage features, raw evidence review, manual PoC corroboration และ target-level feature extraction
 
-Avoid using target names or exact CVE strings as ML input features unless the task is explicitly a retrieval or traceability demo. Those fields are labels/provenance and can leak the answer into training.
+อย่าใช้ target name หรือ CVE string ตรง ๆ เป็น ML input feature เว้นแต่งานนั้นเป็น retrieval/traceability demo เพราะ field เหล่านี้เป็น label/provenance และอาจทำให้ label leakage

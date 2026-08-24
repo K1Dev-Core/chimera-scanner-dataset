@@ -1,48 +1,35 @@
-# Scanner Dataset Blueprint
+# Blueprint สำหรับ Scanner Dataset
 
-Verified and prepared on 2026-08-03.
+ตรวจและเตรียมไว้เมื่อ 2026-08-03
 
-## Short answer
+## คำตอบสั้น ๆ
 
-If your goal is to build a usable dataset, do **not** force every tool to detect the exact same CVE.
+ถ้าเป้าหมายคือทำ dataset ที่ใช้ได้จริง ไม่ควรบังคับให้ทุก tool ต้องหา CVE เดียวกันให้เจอทั้งหมด เพราะ tool แต่ละตัวถูกออกแบบมาคนละแบบ
 
-Use two tracks:
+ควรแบ่งเป็น 2 track:
 
-1. **CVE-focused track** for tools that naturally emit CVE-like findings
-   - Nuclei
-   - Greenbone / OpenVAS
-   - Metasploit
+| track | เหมาะกับ tool | ใช้ทำอะไร |
+| --- | --- | --- |
+| CVE-focused | `Nuclei`, `Greenbone/OpenVAS`, `Metasploit` | หา/ยืนยันช่องโหว่ที่โยงกับ CVE ได้ชัด |
+| Web-finding | `OWASP ZAP`, `Nikto`, `sqlmap` | เก็บ web finding, misconfiguration, SQLi, header issue |
 
-2. **Web-finding track** for tools that naturally emit rule- or behavior-based findings
-   - OWASP ZAP
-   - Nikto
-   - sqlmap
+`Faraday`, `DefectDojo`, และ `Reconmap` ควรมองเป็นระบบรับข้อมูล/normalize/reporting ไม่ใช่ scanner หลัก
 
-Platforms like **Faraday**, **DefectDojo**, and **Reconmap** should be treated as **ingestion / normalization targets**, not as primary scanners.
+## CVE ที่เหมาะเริ่มต้น
 
-## Best starter CVEs
+แนะนำจาก Vulhub เพราะ reproducible และรู้จักกันดี:
 
-Pick these three from Vulhub because they are common, well-known, and usually easy to reproduce:
+1. `CVE-2017-5638` Apache Struts2 S2-045 RCE
+2. `CVE-2021-44228` Log4Shell
+3. `CVE-2022-22965` Spring4Shell
 
-1. `CVE-2017-5638` - Apache Struts2 S2-045 RCE
-2. `CVE-2021-44228` - Log4Shell
-3. `CVE-2022-22965` - Spring4Shell
+เหมาะกับ `Nuclei`, `Greenbone/OpenVAS`, `Metasploit`
 
-These are good for:
-- Nuclei
-- Greenbone / OpenVAS
-- Metasploit
+ไม่เหมาะมากกับ `sqlmap`, `Nikto`, `ZAP` ถ้าต้องการให้ detect CVE เดียวกันตรง ๆ เพราะสามตัวนี้มักรายงานจากพฤติกรรมหรือ rule ทั่วไปมากกว่า
 
-They are **not ideal** for:
-- sqlmap
-- Nikto
-- ZAP
+## โครงสร้าง record ที่แนะนำ
 
-For `sqlmap`, use a dedicated SQL injection lab instead of forcing one of the CVEs above.
-
-## Recommended dataset design
-
-Use one row per finding attempt:
+ใช้หนึ่งแถวต่อหนึ่ง finding attempt:
 
 ```json
 {
@@ -50,232 +37,51 @@ Use one row per finding attempt:
   "tool_category": "scanner",
   "scenario_source": "vulhub",
   "scenario": "spring/CVE-2022-22965",
-  "target_url": "http://192.168.56.101:8080",
+  "target_url": "http://TARGET:PORT",
   "ground_truth_type": "cve",
   "ground_truth_id": "CVE-2022-22965",
   "label": "positive",
-  "scan_command": "nuclei -u http://192.168.56.101:8080 -jle nuclei.jsonl",
-  "report_format": "jsonl",
   "finding_id": "spring4shell-rce",
   "severity": "critical",
   "evidence_summary": "Template matched vulnerable behavior",
-  "raw_report_path": "reports/nuclei.jsonl",
-  "normalized_fields": {
-    "host": "192.168.56.101",
-    "port": 8080,
-    "protocol": "http"
-  }
+  "raw_report_path": "reports/nuclei.jsonl"
 }
 ```
 
-## Coverage matrix
+## Matrix การใช้ tool
 
-| Tool | Best use in dataset | Should map to CVE? | Suggested target |
-|---|---|---:|---|
-| Nuclei | direct vuln detection | yes | Struts / Log4Shell / Spring4Shell |
-| Greenbone | network/service vuln report | yes, when available | same 3 CVEs |
-| Metasploit | verification / exploitability | yes | same 3 CVEs |
-| ZAP | alert/rule output | usually no | generic vulnerable web app |
-| Nikto | server/web findings | usually no | generic vulnerable web app |
-| sqlmap | SQLi detection and extraction | no, or separate SQLi CVE only | SQLi lab |
-| Faraday | result aggregation | imported | all |
-| DefectDojo | result ingestion / dedupe | imported | all |
-| Reconmap | engagement/project tracking | imported/manual | all |
+| Tool | ใช้ดีที่สุดกับอะไร | ควร map เป็น CVE ไหม |
+| --- | --- | --- |
+| Nuclei | direct vuln detection | ใช่ |
+| Greenbone/OpenVAS | network/service vuln report | ใช่ ถ้ามี CVE reference |
+| Metasploit | verification/exploitability | ใช่ |
+| ZAP | alert/rule output | ส่วนใหญ่ไม่ |
+| Nikto | server/web findings | ส่วนใหญ่ไม่ |
+| sqlmap | SQL injection detection | ใช้กับ SQLi track แยก |
+| Faraday | result aggregation | เป็น imported view |
+| DefectDojo | ingestion/dedupe | เป็น findings store |
+| Reconmap | project/engagement context | เป็น context |
 
-## Exact recommendation
+## แผน practical starter
 
-If you want one practical starter set:
-
-### Track A: CVE dataset
+Track A: CVE dataset
 
 - `CVE-2017-5638`
 - `CVE-2021-44228`
 - `CVE-2022-22965`
 
-Run:
-- Nuclei
-- Greenbone
-- Metasploit
+รัน:
 
-### Track B: Web app findings dataset
+- `Nuclei`
+- `Greenbone/OpenVAS`
+- `Metasploit`
 
-Use a purposely SQLi-capable lab for:
-- sqlmap
-- ZAP
-- Nikto
+Track B: Web app findings
 
-If you must stay in Vulhub, choose a web scenario with an injectable parameter. If you only care about dataset quality, a dedicated SQLi training app is cleaner than trying to force SQLi into the same CVE track.
+- ใช้ lab ที่มี SQLi หรือ web vulnerability ชัดเจน
+- รัน `sqlmap`, `ZAP`, `Nikto`
 
-## Example commands
-
-## 1) Nuclei
-
-Official docs support JSONL export.
-
-```bash
-nuclei -u http://TARGET:PORT -jle nuclei.jsonl
-```
-
-Example finding shape:
-
-```json
-{
-  "template-id": "spring4shell-rce",
-  "info": {
-    "name": "Spring4Shell RCE",
-    "severity": "critical"
-  },
-  "host": "http://TARGET:PORT",
-  "matched-at": "http://TARGET:PORT/",
-  "type": "http"
-}
-```
-
-## 2) ZAP
-
-ZAP is better stored as alert output, not CVE output.
-
-```bash
-zaproxy -cmd -quickurl http://TARGET:PORT -quickout zap-report.json
-```
-
-Typical alert shape:
-
-```json
-{
-  "site": [
-    {
-      "name": "http://TARGET:PORT",
-      "alerts": [
-        {
-          "riskcode": "2",
-          "confidence": "2",
-          "name": "X-Frame-Options Header Not Set",
-          "cweid": "1021",
-          "wascid": "15",
-          "instances": [
-            {
-              "uri": "http://TARGET:PORT/"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-## 3) Nikto
-
-Nikto supports JSON, XML, CSV, HTML, SQL, and text export.
-
-```bash
-nikto -h http://TARGET:PORT -o nikto.json -Format json
-```
-
-Typical finding shape:
-
-```json
-{
-  "host": "TARGET",
-  "port": 80,
-  "vulnerabilities": [
-    {
-      "id": "headers",
-      "msg": "X-Content-Type-Options header is not set",
-      "url": "http://TARGET:PORT/"
-    }
-  ]
-}
-```
-
-## 4) sqlmap
-
-sqlmap is best for a separate SQLi dataset. It can store results in CSV, HTML, SQLITE, and JSONL.
-
-```bash
-sqlmap -u "http://TARGET/item.php?id=1" --batch --output-dir sqlmap-output
-```
-
-Typical console finding shape:
-
-```text
-[INFO] testing if the target URL content is stable
-[INFO] GET parameter 'id' appears to be dynamic
-[INFO] GET parameter 'id' appears to be injectable
----
-Parameter: id (GET)
-    Type: boolean-based blind
-    Title: AND boolean-based blind - WHERE or HAVING clause
----
-```
-
-## 5) Greenbone / OpenVAS
-
-Use XML export as the richest machine-readable source.
-
-Typical result shape:
-
-```xml
-<result id="...">
-  <name>Apache Struts Remote Code Execution Vulnerability</name>
-  <host>TARGET</host>
-  <port>8080/tcp</port>
-  <severity>10.0</severity>
-  <nvt>
-    <refs>
-      <ref type="cve" id="CVE-2017-5638"/>
-    </refs>
-  </nvt>
-</result>
-```
-
-## 6) Metasploit
-
-Use this as exploit-verification evidence instead of your only scanner dataset source.
-
-Typical scanner module console shape:
-
-```text
-[*] Scanning 1 of 1 hosts
-[+] TARGET:PORT - Vulnerable to CVE-2021-44228
-[*] Auxiliary module execution completed
-```
-
-## Best practical lab plan
-
-### Lab 1: Struts2 / `CVE-2017-5638`
-
-Collect:
-- Nuclei JSONL
-- Greenbone XML
-- Metasploit console output
-- Optional ZAP/Nikto baseline web findings
-
-### Lab 2: Log4Shell / `CVE-2021-44228`
-
-Collect:
-- Nuclei JSONL
-- Greenbone XML
-- Metasploit scanner/exploit evidence
-
-### Lab 3: Spring4Shell / `CVE-2022-22965`
-
-Collect:
-- Nuclei JSONL
-- Greenbone XML
-- Metasploit evidence
-
-### Lab 4: SQLi app
-
-Collect:
-- sqlmap console + output directory artifacts
-- ZAP JSON report
-- Nikto JSON report
-
-## Normalization tips
-
-For dataset use these normalized fields across all tools:
+## Fields ที่ควร normalize
 
 - `tool`
 - `target`
@@ -287,44 +93,28 @@ For dataset use these normalized fields across all tools:
 - `raw_location`
 - `label`
 
-Recommended labels:
+label ที่แนะนำ:
 
-- `positive` = tool correctly detected planted issue
-- `negative` = tool produced no relevant finding
-- `partial` = tool found a symptom but not the exact root issue
-- `noise` = unrelated finding
+- `positive` tool เจอ issue ที่ตั้งใจปลูกไว้
+- `negative` ไม่พบ finding ที่เกี่ยวข้อง
+- `partial` เจอ symptom แต่ยังไม่ยืนยัน root cause
+- `noise` finding ไม่เกี่ยวกับโจทย์
 
-## Faraday / DefectDojo / Reconmap role
+## บทบาทของ platform
 
-Use them after collection:
+- `Faraday`: รวม multi-tool findings
+- `DefectDojo`: dedupe/import/reimport และ lifecycle ของ finding
+- `Reconmap`: project, engagement, asset context
 
-- **Faraday**: centralize multi-tool findings
-- **DefectDojo**: dedupe and manage imported reports
-- **Reconmap**: track engagements and assets
+สำหรับ dataset ให้ถือ raw scanner artifacts เป็น source of truth และใช้ export จาก platform เป็นมุมมองรอง
 
-For dataset work, keep the **raw scanner artifacts** as the source of truth, and treat platform exports as secondary normalized views.
+## ลำดับงานที่แนะนำ
 
-## Suggested first run
+1. เปิด Vulhub scenario หนึ่งตัว เช่น Struts2
+2. รัน `Nuclei`
+3. รัน `Metasploit` เพื่อ verify
+4. export `Greenbone/OpenVAS` report
+5. เก็บ raw output ทั้งหมด
+6. เปิด SQLi lab แยกเพื่อรัน `sqlmap`, `ZAP`, `Nikto`
 
-If you want the cleanest first dataset with the least pain:
-
-1. Start one Vulhub scenario for `CVE-2017-5638`
-2. Run Nuclei
-3. Run Metasploit scanner
-4. Export Greenbone report
-5. Save all three raw outputs
-6. Separately stand up one SQLi lab and run sqlmap + ZAP + Nikto
-
-That gives you a much better dataset than forcing all tools to chase the same CVE.
-
-## Sources
-
-- [Vulhub](https://github.com/vulhub/vulhub)
-- [Nuclei repo](https://github.com/projectdiscovery/nuclei)
-- [Nuclei docs: get started](https://github.com/projectdiscovery/nuclei-docs/blob/main/docs/nuclei/get-started.md)
-- [ZAP command line](https://www.zaproxy.org/docs/desktop/addons/quick-start/cmdline/)
-- [ZAP report templates](https://www.zaproxy.org/docs/desktop/addons/report-generation/templates/)
-- [Nikto README](https://github.com/sullo/nikto/blob/master/README.md)
-- [sqlmap usage wiki](https://github.com/sqlmapproject/sqlmap/wiki/usage)
-- [Greenbone reports](https://docs.greenbone.net/GSM-Manual/gos-24.10/en/reports.html)
-- [Greenbone GMP report example](https://docs.greenbone.net/API/GMP/gmp-22.7.html)
+แนวทางนี้ให้ dataset คุณภาพดีกว่าการบังคับให้ทุก scanner ไล่หา CVE เดียวกันทั้งหมด
