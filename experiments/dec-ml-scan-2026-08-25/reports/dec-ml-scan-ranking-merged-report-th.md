@@ -10,7 +10,7 @@
 - candidate rows: 783
 - candidate families: 27
 - label counts: `{"positive_family_match": 29, "negative_family": 754}`
-- label mode: `weak`
+- label mode: `merged`
 - effective label rows: 29
 
 ## Input ที่ใช้ทดสอบ

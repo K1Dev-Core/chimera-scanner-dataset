@@ -3,10 +3,12 @@
   "experiment_dir": "experiments\\dec-ml-scan-2026-08-25",
   "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
   "label_metadata": {
-    "label_mode": "weak",
+    "label_mode": "merged",
     "weak_label_rows": 29,
     "validated_label_rows": 1,
-    "effective_label_rows": 29
+    "effective_label_rows": 29,
+    "validated_positive_rows": 0,
+    "skipped_validated_negative_or_without_positive": []
   },
   "targets": 29,
   "evaluated_targets": 29,

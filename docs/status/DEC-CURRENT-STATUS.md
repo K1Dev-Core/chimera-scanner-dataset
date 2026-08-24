@@ -195,6 +195,14 @@ experiments/dec-ml-scan-2026-08-25/derived/validated-labels.jsonl
 | `scripts/evaluate_dec_ml_scan_20260825.py` | evaluate scanner-derived features ชุด 29 targets |
 | `scripts/import_dec_validation_results.py` | validate/import ผล validation จาก Kali |
 
+หลัง import validation แล้วให้รัน:
+
+```powershell
+python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
+```
+
+คำสั่งนี้จะสร้างรายงาน `reports/dec-ml-scan-ranking-merged-report-th.md` และใช้ validated label ก่อน ถ้า target ยังไม่มี validation จะ fallback ไป weak label
+
 ## กติกาข้อมูล
 
 - raw-curated เก็บเฉพาะผล scan จริง ไม่เก็บ cache/runtime/dependency

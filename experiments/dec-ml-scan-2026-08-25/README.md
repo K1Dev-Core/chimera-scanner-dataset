@@ -21,8 +21,10 @@
 | `labels-draft.jsonl` | weak label จากชื่อ Vulhub path |
 | `derived/candidate-family-features.csv` | input ML แบบ candidate-level: 1 target x ทุก candidate family |
 | `derived/candidate-family-features.jsonl` | ข้อมูลเดียวกับ CSV แต่เหมาะกับ pipeline ที่อ่าน JSONL |
+| `derived/candidate-family-features-merged.csv` | input ML โหมด merged: ใช้ validated label ถ้ามี ไม่มีกลับไปใช้ weak label |
 | `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
+| `reports/dec-ml-scan-ranking-merged-report-th.md` | รายงาน ranking โหมด merged สำหรับใช้หลัง import validation |
 | `reports/dec-ml-attack-order-validation-plan-th.md` | แผนทดสอบ attack order และ validation loop รอบถัดไป |
 | `validation-target-queue.csv` | target queue สำหรับให้ Kali/opencode validate ต่อ |
 | `validation-results.schema.json` | schema ของผล validation ที่ Kali ต้องส่งกลับ |
@@ -62,6 +64,16 @@
 ```powershell
 python scripts\evaluate_dec_ml_scan_20260825.py
 ```
+
+ค่า default คือ `--label-mode weak` แปลว่าใช้ `labels-draft.jsonl` ทั้งหมด
+
+หลังจาก import ผล validation จาก Kali แล้ว ให้รันแบบ merged:
+
+```powershell
+python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
+```
+
+โหมด `merged` จะใช้ validated positive/negative ก่อน ถ้า target ยังไม่มีผล validation จะ fallback ไปใช้ weak label เพื่อให้ยังวัดภาพรวมครบทุก target ได้
 
 ผลล่าสุด:
 

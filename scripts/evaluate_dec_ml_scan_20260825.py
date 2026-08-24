@@ -75,6 +75,8 @@ PROFILES = {
 }
 
 LEAKAGE_FIELDS = ["target_id", "candidate_family", "positive_family", "CVE in target_id"]
+VALIDATED_POSITIVE = {"validated", "validated_positive"}
+VALIDATED_NEGATIVE = {"validated_negative"}
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -83,6 +85,86 @@ def load_jsonl(path: Path) -> list[dict]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+def load_weak_labels(experiment_dir: Path) -> list[dict]:
+    labels = load_jsonl(experiment_dir / "labels-draft.jsonl")
+    for row in labels:
+        row["label_mode_source"] = "weak"
+    return labels
+
+
+def load_validated_label_rows(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8", newline="") as handle:
+        if path.suffix.lower() == ".csv":
+            return list(csv.DictReader(handle))
+    return load_jsonl(path)
+
+
+def load_effective_labels(experiment_dir: Path, validated_labels: Path, label_mode: str) -> tuple[list[dict], dict]:
+    weak_labels = load_weak_labels(experiment_dir)
+    weak_by_target = {row["target_id"]: row for row in weak_labels}
+    validation_rows = load_validated_label_rows(validated_labels)
+    validation_by_target = {row["target_id"]: row for row in validation_rows}
+
+    if label_mode == "weak":
+        return weak_labels, {
+            "label_mode": label_mode,
+            "weak_label_rows": len(weak_labels),
+            "validated_label_rows": len(validation_rows),
+            "effective_label_rows": len(weak_labels),
+        }
+
+    effective = []
+    skipped = []
+    for target_id, validation in validation_by_target.items():
+        status = str(validation.get("validation_status", ""))
+        strength = str(validation.get("label_strength", ""))
+        is_validated_positive = status == "validated_positive" or strength in VALIDATED_POSITIVE
+        is_validated_negative = status == "validated_negative" or strength in VALIDATED_NEGATIVE
+        if is_validated_positive:
+            effective.append(
+                {
+                    "target_id": target_id,
+                    "positive_family": validation.get("weak_label", ""),
+                    "label_source": "validated_positive",
+                    "label_strength": strength or "validated",
+                    "label_mode_source": "validated",
+                }
+            )
+        elif is_validated_negative:
+            skipped.append(target_id)
+
+    if label_mode == "validated":
+        return effective, {
+            "label_mode": label_mode,
+            "weak_label_rows": len(weak_labels),
+            "validated_label_rows": len(validation_rows),
+            "effective_label_rows": len(effective),
+            "skipped_validated_negative_or_without_positive": skipped,
+        }
+
+    if label_mode != "merged":
+        raise ValueError(f"unsupported label_mode={label_mode!r}")
+
+    effective_by_target = {row["target_id"]: row for row in effective}
+    for target_id, weak in weak_by_target.items():
+        if target_id in effective_by_target or target_id in skipped:
+            continue
+        merged = dict(weak)
+        merged["label_mode_source"] = "weak_fallback"
+        effective_by_target[target_id] = merged
+    labels = [effective_by_target[target_id] for target_id in sorted(effective_by_target)]
+    return labels, {
+        "label_mode": label_mode,
+        "weak_label_rows": len(weak_labels),
+        "validated_label_rows": len(validation_rows),
+        "effective_label_rows": len(labels),
+        "validated_positive_rows": len(effective),
+        "skipped_validated_negative_or_without_positive": skipped,
+    }
 
 
 def truthy(value: object) -> bool:
@@ -163,6 +245,8 @@ def build_candidate_rows(features: list[dict], labels: list[dict]) -> list[dict]
     rows = []
     for target in features:
         target_id = target["target_id"]
+        if target_id not in label_by_target:
+            continue
         positive = label_by_target[target_id]
         for family in families:
             row = {
@@ -305,7 +389,7 @@ def format_float(value: float) -> str:
     return f"{value:.3f}"
 
 
-def write_report(output_dir: Path, metrics: dict, failures: list[dict]) -> None:
+def write_report(output_dir: Path, metrics: dict, failures: list[dict], report_prefix: str) -> None:
     lines = [
         "# รายงานทดสอบ ML จากผลสแกน Kali 29 Targets",
         "",
@@ -319,6 +403,8 @@ def write_report(output_dir: Path, metrics: dict, failures: list[dict]) -> None:
         f"- candidate rows: {metrics['candidate_rows']}",
         f"- candidate families: {metrics['candidate_families']}",
         f"- label counts: `{json.dumps(metrics['label_counts'], ensure_ascii=False)}`",
+        f"- label mode: `{metrics['label_metadata']['label_mode']}`",
+        f"- effective label rows: {metrics['label_metadata']['effective_label_rows']}",
         "",
         "## Input ที่ใช้ทดสอบ",
         "",
@@ -370,10 +456,10 @@ def write_report(output_dir: Path, metrics: dict, failures: list[dict]) -> None:
         "- ค่าคะแนนที่ดีมากยังต้องระวัง เพราะ label ยังมาจากชื่อ lab/folder ของ Vulhub ไม่ใช่ exploit success",
         "- สิ่งที่ควรทำต่อคือเพิ่ม negative controls และทำ exploit validation เฉพาะ target ที่มี PoC ชัด เช่น Joomla, Grafana, Redis, Aria2, ThinkPHP",
     ])
-    (output_dir / "dec-ml-scan-ranking-report-th.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (output_dir / f"{report_prefix}-report-th.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def write_candidate_feature_tables(experiment_dir: Path, rows: list[dict]) -> None:
+def write_candidate_feature_tables(experiment_dir: Path, rows: list[dict], label_mode: str) -> None:
     derived_dir = experiment_dir / "derived"
     derived_dir.mkdir(parents=True, exist_ok=True)
     feature_names = [
@@ -398,11 +484,12 @@ def write_candidate_feature_tables(experiment_dir: Path, rows: list[dict]) -> No
         export_row.update({name: float(row.get(name, 0.0) or 0.0) for name in feature_names})
         export_rows.append(export_row)
 
-    with (derived_dir / "candidate-family-features.csv").open("w", encoding="utf-8", newline="") as handle:
+    suffix = "" if label_mode == "weak" else f"-{label_mode}"
+    with (derived_dir / f"candidate-family-features{suffix}.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(export_rows)
-    with (derived_dir / "candidate-family-features.jsonl").open("w", encoding="utf-8") as handle:
+    with (derived_dir / f"candidate-family-features{suffix}.jsonl").open("w", encoding="utf-8") as handle:
         for row in export_rows:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
@@ -411,6 +498,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate target-level Dec ML scan fingerprints.")
     parser.add_argument("--experiment-dir", default="experiments/dec-ml-scan-2026-08-25")
     parser.add_argument("--output-dir", default="experiments/dec-ml-scan-2026-08-25/reports")
+    parser.add_argument("--label-mode", choices=["weak", "validated", "merged"], default="weak")
+    parser.add_argument(
+        "--validated-labels",
+        default="experiments/dec-ml-scan-2026-08-25/derived/validated-labels.csv",
+        help="CSV/JSONL produced by scripts/import_dec_validation_results.py",
+    )
     args = parser.parse_args()
 
     experiment_dir = Path(args.experiment_dir)
@@ -419,9 +512,13 @@ def main() -> None:
 
     with (experiment_dir / "features.csv").open(encoding="utf-8", newline="") as handle:
         target_features = list(csv.DictReader(handle))
-    labels = load_jsonl(experiment_dir / "labels-draft.jsonl")
+    labels, label_metadata = load_effective_labels(experiment_dir, Path(args.validated_labels), args.label_mode)
+    if not labels:
+        raise ValueError(f"no effective labels available for label_mode={args.label_mode!r}")
     rows = build_candidate_rows(target_features, labels)
-    write_candidate_feature_tables(experiment_dir, rows)
+    if not rows:
+        raise ValueError(f"no candidate rows available for label_mode={args.label_mode!r}")
+    write_candidate_feature_tables(experiment_dir, rows, args.label_mode)
 
     predictions = evaluate_ml(rows, PROFILES["current"]["features"], "ml_probability")
     for row in predictions:
@@ -465,7 +562,9 @@ def main() -> None:
         "task": "ทดสอบว่า scanner-derived target fingerprints ช่วยเรียง candidate family ได้ถูกต้องหรือไม่",
         "experiment_dir": str(experiment_dir),
         "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
+        "label_metadata": label_metadata,
         "targets": len(target_features),
+        "evaluated_targets": len({row["target_id"] for row in rows}),
         "candidate_rows": len(rows),
         "candidate_families": len({row["candidate_family"] for row in rows}),
         "label_counts": dict(Counter("positive_family_match" if row["is_positive"] else "negative_family" for row in rows)),
@@ -488,11 +587,13 @@ def main() -> None:
         ],
     }
 
-    (output_dir / "dec-ml-scan-ranking-metrics.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
-    (output_dir / "dec-ml-scan-ranking-predictions.json").write_text(json.dumps(predictions, indent=2, ensure_ascii=False), encoding="utf-8")
-    (output_dir / "dec-ml-scan-ranking-per-target.json").write_text(json.dumps(per_target, indent=2, ensure_ascii=False), encoding="utf-8")
-    (output_dir / "dec-ml-scan-ranking-failures.json").write_text(json.dumps(failures, indent=2, ensure_ascii=False), encoding="utf-8")
-    write_report(output_dir, metrics, failures)
+    suffix = "" if args.label_mode == "weak" else f"-{args.label_mode}"
+    report_prefix = f"dec-ml-scan-ranking{suffix}"
+    (output_dir / f"{report_prefix}-metrics.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
+    (output_dir / f"{report_prefix}-predictions.json").write_text(json.dumps(predictions, indent=2, ensure_ascii=False), encoding="utf-8")
+    (output_dir / f"{report_prefix}-per-target.json").write_text(json.dumps(per_target, indent=2, ensure_ascii=False), encoding="utf-8")
+    (output_dir / f"{report_prefix}-failures.json").write_text(json.dumps(failures, indent=2, ensure_ascii=False), encoding="utf-8")
+    write_report(output_dir, metrics, failures, report_prefix)
     print(json.dumps(metrics, indent=2, ensure_ascii=False))
 
 

@@ -19,6 +19,12 @@
 python scripts\evaluate_dec_ml_scan_20260825.py
 ```
 
+หลัง import validation แล้วรัน evaluator แบบรวม validated label กับ weak fallback:
+
+```powershell
+python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
+```
+
 ตัวอย่าง import ผล validation จาก Kali:
 
 ```powershell
