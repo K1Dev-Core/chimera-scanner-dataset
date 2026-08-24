@@ -1,53 +1,61 @@
-# Hex Branch Progress Import - 2026-08-05
+# สรุปความคืบหน้า branch Hex - 2026-08-05
 
-This note summarizes the useful work imported from `origin/Hex` into `Dec` without merging the whole branch.
+ไฟล์นี้สรุปว่าเราเอาอะไรจาก `origin/Hex` เข้ามาใน `Dec` แล้วบ้าง โดยไม่ได้ merge ทั้ง branch
 
-## Why Not Merge `Hex` Directly
+## ทำไมไม่ merge `Hex` ทั้งก้อน
 
-`Hex` contains useful dataset experiments, but a direct merge is risky:
+`Hex` มีงานทดลองที่มีประโยชน์ แต่ถ้า merge ตรง ๆ จะเสี่ยงและทำให้ `Dec` อ่านยาก เพราะ:
 
-- It deletes several current `Dec` generated datasets and docs.
-- It contains very deep bulk dataset paths that trigger Windows `Filename too long` warnings.
-- Some records are static metadata or weak labels, not active scanner evidence.
-- It mixes demo labs, slide materials, fresh lab source code, and dataset records in one branch.
+- มีการลบ generated dataset และเอกสารบางส่วนที่ `Dec` ใช้อยู่
+- มี path dataset ลึกมากจน Windows เจอปัญหา `Filename too long`
+- บาง record เป็น metadata หรือ weak label ไม่ใช่ผล scan จริง
+- มี demo labs, slide material, fresh lab source code และ dataset records ปนกัน
 
-For `Dec`, we imported compact records, feature tables, manifests, and curated experiment raw evidence only.
+ดังนั้นใน `Dec` เรานำเข้าเฉพาะส่วนที่ compact และใช้ต่อได้ง่าย ได้แก่ records, feature tables, manifests และ raw evidence ที่คัดแล้ว
 
-## Imported From `Hex`
+## ของที่ import จาก `Hex`
 
-| Path | Purpose |
+| path | ใช้ทำอะไร |
 | --- | --- |
-| `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/` | Bulk Vulhub metadata: 160 labs, feature seeds, weak labels, rank candidates, feature matrix. |
-| `chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/` | Expanded Vulhub metadata and exploit label candidates. |
-| `chimera-tools-name-date-2026-08-05-vulhub-redo/` | Active scanner redo seed: 8 labs with exploit labels/features. Records only, not raw tree. |
-| `chimera-tools-name-date-2026-08-05-active-scanner-suite/` | Active scanner suite summary records and target features. |
-| `chimera-tools-name-date-2026-08-05-multi-vuln-web/` | Multi-vulnerability web dataset records, feature matrix, and build script. |
-| `demo-feature-label-model-2026-08-05/` | Demo feature-label model pack and small report/data tables. |
-| `dataset/raw-curated/hex-exp-2026-08-05/` | Curated raw scanner/manual PoC outputs for the 12 experimental targets from the 2026-08-05 run. |
+| `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/` | metadata จาก Vulhub 160 labs, feature seed, weak label, rank candidates และ feature matrix |
+| `chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/` | metadata เพิ่มและ candidate label ฝั่ง exploit |
+| `chimera-tools-name-date-2026-08-05-vulhub-redo/` | active scanner seed 8 labs มี labels/features แต่ยังไม่เอา raw tree ทั้งก้อน |
+| `chimera-tools-name-date-2026-08-05-active-scanner-suite/` | สรุป scanner suite records และ target features |
+| `chimera-tools-name-date-2026-08-05-multi-vuln-web/` | dataset ทดลองหลาย vulnerability family สำหรับ exploit ranking |
+| `demo-feature-label-model-2026-08-05/` | ชุด demo feature-label model พร้อม report/table ขนาดเล็ก |
+| `dataset/raw-curated/hex-exp-2026-08-05/` | raw scanner/manual PoC outputs ที่คัดแล้วจาก 12 experimental targets |
 
-## Hex Progress Snapshot
+## สถานะของ `Hex` ตอนที่ดึงมา
 
-- `Hex` branch head: `a471f55 Add bulk Vulhub CVE dataset and active scanner suite`
-- Bulk Vulhub CVE dataset: 160 labs, 640 training/ranking rows, 117 feature columns, 1120 total records.
-- Vulhub redo active scan seed: 8 labs using `naabu`, `nmap`, `httpx`, `nuclei`, and `nikto`.
-- Multi-vulnerability web dataset: records and feature matrix for exploit ranking experiments.
-- Demo feature-label model pack: small explainable demo tables and reports.
-- Fresh lab ideas present on `Hex` but not imported here: Acme support portal, Nova DevOps console, Grafana CVE-2024-9264, TeamCity CVE-2024-27198.
+- branch head ของ `Hex`: `a471f55 Add bulk Vulhub CVE dataset and active scanner suite`
+- bulk Vulhub CVE dataset: 160 labs, 640 training/ranking rows, 117 feature columns, 1120 total records
+- Vulhub redo active scan seed: 8 labs ใช้ `naabu`, `nmap`, `httpx`, `nuclei`, `nikto`
+- multi-vulnerability web dataset: มี records และ feature matrix สำหรับทดลอง exploit ranking
+- demo feature-label model pack: มีตาราง/report เล็ก ๆ สำหรับอธิบาย pipeline
+- fresh lab ideas ที่ยังไม่ได้ import: Acme support portal, Nova DevOps console, Grafana CVE-2024-9264, TeamCity CVE-2024-27198
 
-## How To Use This In `Dec`
+## ใช้ของจาก `Hex` ใน `Dec` ยังไง
 
-Use the imported `Hex` materials as reference and feature seed data:
+ให้มองของจาก `Hex` เป็นข้อมูลเสริม ไม่ใช่ dataset หลัก
 
-- Good for target discovery, feature vocabulary, weak labels, scanner coverage analysis, and demo ranking examples.
-- Good for selecting next Kali scan targets from the 160-lab bulk metadata.
-- Good for explaining why scanner-only labels are weak until exploit validation is recorded.
+ใช้ได้ดีสำหรับ:
 
-Do not treat these imports as final ground truth:
+- เลือก target รอบถัดไป
+- หา feature vocabulary เพิ่ม
+- ดู weak label เบื้องต้น
+- วิเคราะห์ scanner coverage
+- ทำตัวอย่าง demo/ranking
 
-- `label-candidates` and `exploit-labels` are weak labels from lab identity.
-- `feature-seeds` are useful model inputs but may leak labels if target names, CVE strings, or lab names are used directly.
-- Imported records should be normalized into the current Dec schema before training alongside `generated/dec-vulhub-2026-08-24-fixed-core`.
+ยังไม่ควรใช้เป็น ground truth สุดท้าย เพราะ:
 
-## Next Integration Step
+- `label-candidates` และ `exploit-labels` หลายตัวมาจาก lab identity จึงเป็น weak label
+- `feature-seeds` บางตัวอาจเฉลยคำตอบ เช่น target name, CVE string, lab name
+- record จาก `Hex` ควร normalize เข้า schema ปัจจุบันของ `Dec` ก่อนนำไป train รวมกับชุดหลัก
 
-Use `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/records/lab-index.jsonl` to pick the next 10-20 targets for Kali active scans, then write new scanner outputs into a fresh `raw-curated` package and normalized Dec records.
+## ขั้นตอนต่อไป
+
+ใช้ไฟล์นี้เพื่อเลือก target เพิ่ม:
+
+`chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/records/lab-index.jsonl`
+
+แนวทางคือเลือก 10-20 targets ที่น่าสแกนต่อใน Kali แล้วเก็บ output รอบใหม่เป็น `raw-curated` package แยก จากนั้นค่อย normalize เข้า schema ของ `Dec`
