@@ -12,7 +12,7 @@
 
 ส่วน `dataset/raw-curated/` คือ raw scanner output ที่คัดแล้ว เอาไว้ตรวจหลักฐานหรือ parse feature เพิ่ม
 
-ส่วนโฟลเดอร์ที่ขึ้นต้นด้วย `chimera-tools-name-date-2026-08-05-*` คือข้อมูลที่ import จาก branch `Hex` เพื่อช่วยเลือก target เพิ่มและทำ feature seed แต่ยังไม่ควรถือเป็น ground truth เต็มตัว
+ส่วน `experiments/hex-2026-08-05/` คือข้อมูลที่ import จาก branch `Hex` เพื่อช่วยเลือก target เพิ่มและทำ feature seed แต่ยังไม่ควรถือเป็น ground truth เต็มตัว
 
 ## โครงสร้างที่ควรรู้
 
@@ -21,11 +21,11 @@
 | `generated/dec-vulhub-2026-08-24-fixed-core/` | normalized dataset หลัก 43 targets | ใช้ทำ analysis, feature engineering, demo, baseline ML |
 | `dataset/raw-curated/dec-vulhub-2026-08-24/` | raw scan output จากชุดแรก 10 targets | ใช้ตรวจหลักฐาน scanner output จริง |
 | `dataset/raw-curated/hex-exp-2026-08-05/` | raw scan/manual PoC จากชุดทดลอง 12 targets | ใช้เพิ่ม scanner coverage และ manual evidence |
-| `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/` | metadata จาก Vulhub 160 labs | ใช้เลือก target เพิ่ม และทำ feature seed |
-| `chimera-tools-name-date-2026-08-05-vulhub-redo/` | active scan seed 8 labs จาก Hex | ใช้ดูตัวอย่าง feature จาก scanner suite |
-| `chimera-tools-name-date-2026-08-05-multi-vuln-web/` | dataset ทดลองหลาย vulnerability family | ใช้ทำ demo ranking exploit/family |
-| `demo-feature-label-model-2026-08-05/` | ชุด demo model/feature-label เล็ก ๆ | ใช้อธิบาย pipeline และ presentation |
-| `HEX-BRANCH-PROGRESS-2026-08-05.md` | สรุปว่า branch Hex ทำอะไรไปแล้ว | ใช้อ่านความคืบหน้าฝั่ง Hex |
+| `experiments/hex-2026-08-05/vulhub-cve-bulk/` | metadata จาก Vulhub 160 labs | ใช้เลือก target เพิ่ม และทำ feature seed |
+| `experiments/hex-2026-08-05/vulhub-redo/` | active scan seed 8 labs จาก Hex | ใช้ดูตัวอย่าง feature จาก scanner suite |
+| `experiments/hex-2026-08-05/multi-vuln-web/` | dataset ทดลองหลาย vulnerability family | ใช้ทำ demo ranking exploit/family |
+| `experiments/hex-2026-08-05/demo-feature-label-model/` | ชุด demo model/feature-label เล็ก ๆ | ใช้อธิบาย pipeline และ presentation |
+| `docs/status/HEX-BRANCH-PROGRESS-2026-08-05.md` | สรุปว่า branch Hex ทำอะไรไปแล้ว | ใช้อ่านความคืบหน้าฝั่ง Hex |
 
 ## ชุดหลัก 43 targets
 
@@ -165,12 +165,12 @@ raw curated คือ output ดิบที่คัดมาแล้วว่
 
 | ชุด | ใช้ทำอะไร |
 | --- | --- |
-| `vulhub-cve-bulk` | รายชื่อ lab จำนวนมาก ใช้เลือก target เพิ่ม |
-| `vulhub-expanded-metadata` | metadata เพิ่มสำหรับ feature seed |
-| `vulhub-redo` | ตัวอย่าง active scan 8 labs |
-| `active-scanner-suite` | สรุป scanner suite และ feature เล็ก ๆ |
-| `multi-vuln-web` | ทดลอง ranking หลาย vulnerability family |
-| `demo-feature-label-model` | ชุดอธิบาย model/demo |
+| `experiments/hex-2026-08-05/vulhub-cve-bulk/` | รายชื่อ lab จำนวนมาก ใช้เลือก target เพิ่ม |
+| `experiments/hex-2026-08-05/vulhub-expanded-metadata/` | metadata เพิ่มสำหรับ feature seed |
+| `experiments/hex-2026-08-05/vulhub-redo/` | ตัวอย่าง active scan 8 labs |
+| `experiments/hex-2026-08-05/active-scanner-suite/` | สรุป scanner suite และ feature เล็ก ๆ |
+| `experiments/hex-2026-08-05/multi-vuln-web/` | ทดลอง ranking หลาย vulnerability family |
+| `experiments/hex-2026-08-05/demo-feature-label-model/` | ชุดอธิบาย model/demo |
 
 ## Feature ที่ควรเริ่มทำ
 
@@ -203,7 +203,7 @@ raw curated คือ output ดิบที่คัดมาแล้วว่
 
 1. ใช้ `generated/dec-vulhub-2026-08-24-fixed-core/` เป็น source หลัก
 2. ใช้ `raw-curated` ตรวจ evidence หรือ parse feature เพิ่ม
-3. ใช้ `vulhub-cve-bulk/records/lab-index.jsonl` เลือก targets รอบถัดไป
+3. ใช้ `experiments/hex-2026-08-05/vulhub-cve-bulk/records/lab-index.jsonl` เลือก targets รอบถัดไป
 4. ให้ Kali/opencode scan target ใหม่
 5. ทำ raw curated รอบใหม่ โดยไม่เอา cache/runtime/dependency
 6. normalize เข้า schema เดิม
@@ -221,5 +221,5 @@ raw curated คือ output ดิบที่คัดมาแล้วว่
 
 - ใช้ `generated/dec-vulhub-2026-08-24-fixed-core/` เป็น dataset หลัก
 - ใช้ `dataset/raw-curated/` เป็นหลักฐานดิบ
-- ใช้ `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/records/lab-index.jsonl` เพื่อเลือก target เพิ่ม
-- อ่าน `HEX-BRANCH-PROGRESS-2026-08-05.md` เพื่อรู้ว่า `Hex` ทำอะไรไปแล้ว
+- ใช้ `experiments/hex-2026-08-05/vulhub-cve-bulk/records/lab-index.jsonl` เพื่อเลือก target เพิ่ม
+- อ่าน `docs/status/HEX-BRANCH-PROGRESS-2026-08-05.md` เพื่อรู้ว่า `Hex` ทำอะไรไปแล้ว

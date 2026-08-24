@@ -17,12 +17,12 @@
 
 | path | ใช้ทำอะไร |
 | --- | --- |
-| `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/` | metadata จาก Vulhub 160 labs, feature seed, weak label, rank candidates และ feature matrix |
-| `chimera-tools-name-date-2026-08-05-vulhub-expanded-metadata/` | metadata เพิ่มและ candidate label ฝั่ง exploit |
-| `chimera-tools-name-date-2026-08-05-vulhub-redo/` | active scanner seed 8 labs มี labels/features แต่ยังไม่เอา raw tree ทั้งก้อน |
-| `chimera-tools-name-date-2026-08-05-active-scanner-suite/` | สรุป scanner suite records และ target features |
-| `chimera-tools-name-date-2026-08-05-multi-vuln-web/` | dataset ทดลองหลาย vulnerability family สำหรับ exploit ranking |
-| `demo-feature-label-model-2026-08-05/` | ชุด demo feature-label model พร้อม report/table ขนาดเล็ก |
+| `experiments/hex-2026-08-05/vulhub-cve-bulk/` | metadata จาก Vulhub 160 labs, feature seed, weak label, rank candidates และ feature matrix |
+| `experiments/hex-2026-08-05/vulhub-expanded-metadata/` | metadata เพิ่มและ candidate label ฝั่ง exploit |
+| `experiments/hex-2026-08-05/vulhub-redo/` | active scanner seed 8 labs มี labels/features แต่ยังไม่เอา raw tree ทั้งก้อน |
+| `experiments/hex-2026-08-05/active-scanner-suite/` | สรุป scanner suite records และ target features |
+| `experiments/hex-2026-08-05/multi-vuln-web/` | dataset ทดลองหลาย vulnerability family สำหรับ exploit ranking |
+| `experiments/hex-2026-08-05/demo-feature-label-model/` | ชุด demo feature-label model พร้อม report/table ขนาดเล็ก |
 | `dataset/raw-curated/hex-exp-2026-08-05/` | raw scanner/manual PoC outputs ที่คัดแล้วจาก 12 experimental targets |
 
 ## สถานะของ `Hex` ตอนที่ดึงมา
@@ -56,6 +56,6 @@
 
 ใช้ไฟล์นี้เพื่อเลือก target เพิ่ม:
 
-`chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/records/lab-index.jsonl`
+`experiments/hex-2026-08-05/vulhub-cve-bulk/records/lab-index.jsonl`
 
 แนวทางคือเลือก 10-20 targets ที่น่าสแกนต่อใน Kali แล้วเก็บ output รอบใหม่เป็น `raw-curated` package แยก จากนั้นค่อย normalize เข้า schema ของ `Dec`

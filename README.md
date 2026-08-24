@@ -2,29 +2,46 @@
 
 repo นี้เก็บ dataset สำหรับทดลองทำ cyber vulnerability scanner dataset จาก Vulhub/Kali tools เพื่อใช้กับ demo, feature engineering และ baseline ML
 
-branch หลักที่ใช้งานตอนนี้คือ `Dec`
+branch ที่ใช้งานตอนนี้คือ `Dec`
 
-## เริ่มอ่านตรงไหนดี
+## อ่านเร็วที่สุด
 
 ถ้าเพิ่งเปิด repo นี้ ให้เริ่มตามลำดับนี้:
 
-1. อ่านคู่มือไทย: `DEC-DATASET-GUIDE-TH.md`
-2. ดู normalized dataset ล่าสุด: `generated/dec-vulhub-2026-08-24-fixed-core/`
-3. ดู raw ที่คัดสะอาดแล้ว: `dataset/raw-curated/`
-4. ดูของที่ import จาก branch `Hex`: `HEX-BRANCH-PROGRESS-2026-08-05.md`
+1. อ่านคู่มือภาพรวมภาษาไทย: `docs/overview/DEC-DATASET-GUIDE-TH.md`
+2. เปิด dataset หลัก 43 targets: `generated/dec-vulhub-2026-08-24-fixed-core/`
+3. ดู raw scanner output ที่คัดแล้ว: `dataset/raw-curated/`
+4. ดูข้อมูลทดลองจาก `Hex`: `experiments/hex-2026-08-05/`
+5. อ่านสถานะ/ประวัติงาน: `docs/status/`
 
-## ภาพรวมสั้น ๆ
+## โครงสร้าง repo
 
-ชุดหลักของ `Dec` ตอนนี้คือ normalized core จำนวน 43 targets
+| path | คืออะไร | ใช้เมื่อ |
+| --- | --- | --- |
+| `generated/` | normalized dataset ที่พร้อมใช้ | ทำ analysis, feature engineering, demo, baseline ML |
+| `dataset/raw-curated/` | raw output จาก scanner ที่คัดเฉพาะผล scan จริง | ตรวจ evidence และ parse feature เพิ่ม |
+| `dataset/raw/` | raw เก่าที่ยังไม่ curate ทั้งหมด | อ้างอิงเท่านั้น ตอนนี้ AutoRecon มี path ยาวบน Windows |
+| `docs/` | คู่มือ สถานะ checklist และบทความอธิบาย | อ่านทำความเข้าใจ project |
+| `experiments/` | ชุดทดลองจาก Hex/ZAP ที่ยังไม่ใช่แกนหลัก | ใช้เป็น feature seed หรือไอเดีย target เพิ่ม |
+| `scripts/` | script สำหรับ build/normalize dataset | ใช้ตอน regenerate dataset |
 
-ไฟล์สำคัญอยู่ที่:
+## ชุดหลักของ Dec
 
-- `generated/dec-vulhub-2026-08-24-fixed-core/records/targets.jsonl`
-- `generated/dec-vulhub-2026-08-24-fixed-core/records/findings.jsonl`
-- `generated/dec-vulhub-2026-08-24-fixed-core/records/observations.jsonl`
-- `generated/dec-vulhub-2026-08-24-fixed-core/records/validations.jsonl`
-- `generated/dec-vulhub-2026-08-24-fixed-core/derived/target-features.json`
-- `generated/dec-vulhub-2026-08-24-fixed-core/derived/target-candidate-features.json`
+ชุดที่ควรถือเป็นแกนหลักตอนนี้คือ:
+
+`generated/dec-vulhub-2026-08-24-fixed-core/`
+
+ไฟล์สำคัญ:
+
+- `records/targets.jsonl`
+- `records/findings.jsonl`
+- `records/observations.jsonl`
+- `records/validations.jsonl`
+- `derived/target-features.json`
+- `derived/target-candidate-features.json`
+- `labels/target-candidate-labels.jsonl`
+- `manifest.json`
+- `quality-report.json`
 
 ## คำศัพท์สำคัญ
 
@@ -37,14 +54,7 @@ branch หลักที่ใช้งานตอนนี้คือ `Dec`
 ## สิ่งที่ควรระวัง
 
 - อย่าใช้ชื่อ target หรือ CVE ตรง ๆ เป็น feature สำหรับ train model ถ้าโจทย์คือทำนายช่องโหว่ เพราะจะเกิด label leakage
-- `Hex` import เป็นข้อมูลเสริมและ weak label ไม่ใช่ ground truth exploit success
+- ข้อมูลใน `experiments/hex-2026-08-05/` เป็นข้อมูลเสริมและ weak label ไม่ใช่ ground truth exploit success
 - `dataset/raw/autorecon/**` ยังมี path ยาวบน Windows จึงยังไม่ควรนำขึ้นหรือใช้ตรง ๆ
 
-## สถานะล่าสุด
-
-- `Dec` normalized core: 43 targets
-- raw curated หลัก: `dataset/raw-curated/dec-vulhub-2026-08-24/`
-- raw curated จากชุดทดลอง Hex: `dataset/raw-curated/hex-exp-2026-08-05/`
-- import จาก `Hex`: compact metadata, feature seeds, demo model pack, multi-vuln web records
-
-รายละเอียดทั้งหมดอยู่ใน `DEC-DATASET-GUIDE-TH.md`
+รายละเอียดเต็มอยู่ใน `docs/overview/DEC-DATASET-GUIDE-TH.md`
