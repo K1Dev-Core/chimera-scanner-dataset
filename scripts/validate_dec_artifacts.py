@@ -73,6 +73,8 @@ def validate_ml_scan() -> dict:
     require(ML_SCAN / "observations.jsonl")
     require(ML_SCAN / "labels-draft.jsonl")
     require(ML_SCAN / "derived" / "candidate-family-features.csv")
+    require(ML_SCAN / "derived" / "attack-order-top5.csv")
+    require(ML_SCAN / "derived" / "attack-order-top5-merged.csv")
     require(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
     require(ML_SCAN / "validation-results.schema.json")
     require(ML_SCAN / "validation-results.example.jsonl")
@@ -81,6 +83,8 @@ def validate_ml_scan() -> dict:
     feature_count, feature_cols = count_csv(ML_SCAN / "features.csv")
     candidate_count, candidate_cols = count_csv(ML_SCAN / "derived" / "candidate-family-features.csv")
     merged_count, _ = count_csv(ML_SCAN / "derived" / "candidate-family-features-merged.csv")
+    attack_order_count, attack_order_cols = count_csv(ML_SCAN / "derived" / "attack-order-top5.csv")
+    attack_order_merged_count, _ = count_csv(ML_SCAN / "derived" / "attack-order-top5-merged.csv")
     observations = load_jsonl(ML_SCAN / "observations.jsonl")
     labels = load_jsonl(ML_SCAN / "labels-draft.jsonl")
     metrics = load_json(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
@@ -103,6 +107,12 @@ def validate_ml_scan() -> dict:
         raise AssertionError("ML scan expected 29 features/observations/labels")
     if candidate_count != 783 or merged_count != 783:
         raise AssertionError("ML scan expected 783 candidate rows")
+    expected_attack_cols = {"target_id", "candidate_family", "ml_rank", "ml_probability", "recommended_action"}
+    missing_attack_cols = expected_attack_cols - set(attack_order_cols)
+    if missing_attack_cols:
+        raise AssertionError(f"attack-order-top5.csv missing columns: {sorted(missing_attack_cols)}")
+    if attack_order_count != 145 or attack_order_merged_count != 145:
+        raise AssertionError("attack order top5 expected 145 rows")
     if metrics["label_metadata"]["label_mode"] != "weak":
         raise AssertionError("default ranking metrics must use weak label mode")
     if merged_metrics["label_metadata"]["label_mode"] != "merged":
@@ -122,6 +132,8 @@ def validate_ml_scan() -> dict:
         "weak_labels": len(labels),
         "candidate_rows": candidate_count,
         "merged_candidate_rows": merged_count,
+        "attack_order_top5_rows": attack_order_count,
+        "attack_order_top5_merged_rows": attack_order_merged_count,
         "weak_top1": round(metrics["ml"]["top1_hit_rate"], 3),
         "merged_top1": round(merged_metrics["ml"]["top1_hit_rate"], 3),
         "fixture_rows": len(fixture),

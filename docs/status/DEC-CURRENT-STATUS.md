@@ -96,6 +96,7 @@ dataset/raw-curated/dec-ml-scan-2026-08-25/
 - `labels-draft.jsonl` - weak label จากชื่อ Vulhub lab
 - `derived/candidate-family-features.csv` - input ML จริงแบบ candidate-level
 - `derived/candidate-family-features.jsonl`
+- `derived/attack-order-top5.csv` - top-5 candidate family ต่อ target สำหรับคุม validation/attack order
 - `reports/dec-ml-scan-ranking-report-th.md`
 - `reports/dec-ml-attack-order-validation-plan-th.md`
 - `validation-target-queue.csv`
@@ -193,6 +194,7 @@ experiments/dec-ml-scan-2026-08-25/derived/validated-labels.jsonl
 | `scripts/build_dec_dataset_v2.py` | build dataset Dec v2 จาก records/raw เดิม |
 | `scripts/evaluate_dec_ml_ranking.py` | evaluate ranking ชุด fixed-core 43 targets |
 | `scripts/evaluate_dec_ml_scan_20260825.py` | evaluate scanner-derived features ชุด 29 targets |
+| `scripts/export_dec_attack_order.py` | export top-k attack order จาก ML predictions |
 | `scripts/import_dec_validation_results.py` | validate/import ผล validation จาก Kali |
 | `scripts/validate_dec_artifacts.py` | ตรวจ fixed core, ML scan, candidate rows และ report JSON |
 

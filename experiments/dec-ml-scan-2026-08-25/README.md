@@ -22,6 +22,8 @@
 | `derived/candidate-family-features.csv` | input ML แบบ candidate-level: 1 target x ทุก candidate family |
 | `derived/candidate-family-features.jsonl` | ข้อมูลเดียวกับ CSV แต่เหมาะกับ pipeline ที่อ่าน JSONL |
 | `derived/candidate-family-features-merged.csv` | input ML โหมด merged: ใช้ validated label ถ้ามี ไม่มีกลับไปใช้ weak label |
+| `derived/attack-order-top5.csv` | ลำดับ candidate family 5 อันดับแรกต่อ target สำหรับคุม validation/attack order |
+| `derived/attack-order-top5-merged.csv` | attack order จาก prediction โหมด merged |
 | `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
 | `reports/dec-ml-scan-ranking-merged-report-th.md` | รายงาน ranking โหมด merged สำหรับใช้หลัง import validation |
@@ -76,6 +78,15 @@ python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
 ```
 
 โหมด `merged` จะใช้ validated positive/negative ก่อน ถ้า target ยังไม่มีผล validation จะ fallback ไปใช้ weak label เพื่อให้ยังวัดภาพรวมครบทุก target ได้
+
+สร้างไฟล์ attack order สำหรับคุม Kali/opencode:
+
+```powershell
+python scripts\export_dec_attack_order.py --top-k 5
+python scripts\export_dec_attack_order.py --prediction-file experiments\dec-ml-scan-2026-08-25\reports\dec-ml-scan-ranking-merged-predictions.json --suffix merged --top-k 5
+```
+
+ไฟล์ `derived/attack-order-top5.csv` ช่วยบอกว่าแต่ละ target ควร validate candidate family ใดก่อน พร้อม rank/probability และ queue reason
 
 ผลล่าสุด:
 

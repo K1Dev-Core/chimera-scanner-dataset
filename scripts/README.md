@@ -9,6 +9,7 @@
 | `build_dec_dataset_v2.py` | script build dataset Dec v2 จาก records/raw ที่มี |
 | `evaluate_dec_ml_ranking.py` | evaluate ranking ของชุด normalized fixed-core 43 targets |
 | `evaluate_dec_ml_scan_20260825.py` | evaluate ranking จาก scanner-derived features ชุด Kali scan 29 targets |
+| `export_dec_attack_order.py` | export top-k attack order จาก ML predictions เป็น CSV/JSONL |
 | `import_dec_validation_results.py` | validate/import `validation-results.jsonl` จาก Kali ให้เป็น label table |
 | `validate_dec_artifacts.py` | ตรวจสุขภาพ artifacts หลักของ Dec เช่น fixed core, ML scan, reports และ candidate rows |
 
@@ -24,6 +25,12 @@ python scripts\evaluate_dec_ml_scan_20260825.py
 
 ```powershell
 python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
+```
+
+สร้าง attack order top-5 สำหรับให้ Kali/opencode ใช้:
+
+```powershell
+python scripts\export_dec_attack_order.py --top-k 5
 ```
 
 ตัวอย่าง import ผล validation จาก Kali:
