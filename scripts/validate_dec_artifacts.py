@@ -79,12 +79,24 @@ def validate_ml_scan() -> dict:
     require(ML_SCAN / "validation-results.schema.json")
     require(ML_SCAN / "validation-results.example.jsonl")
     require(ML_SCAN / "validation-results.fixture.jsonl")
+    require(ROOT / "scripts" / "kali" / "dec_validation_runner.py")
+    require(ROOT / "docs" / "kali" / "DEC-KALI-VALIDATION-RUNBOOK-TH.md")
+    require(ML_SCAN / "kali-run-kit" / "README-TH.md")
+    require(ML_SCAN / "kali-run-kit" / "features.csv")
+    require(ML_SCAN / "kali-run-kit" / "validation-target-queue.csv")
+    require(ML_SCAN / "kali-run-kit" / "attack-order-top5.csv")
+    require(ML_SCAN / "kali-run-kit" / "attack-order-top5-merged.csv")
+    require(ML_SCAN / "kali-run-kit" / "scripts" / "kali" / "dec_validation_runner.py")
 
     feature_count, feature_cols = count_csv(ML_SCAN / "features.csv")
     candidate_count, candidate_cols = count_csv(ML_SCAN / "derived" / "candidate-family-features.csv")
     merged_count, _ = count_csv(ML_SCAN / "derived" / "candidate-family-features-merged.csv")
     attack_order_count, attack_order_cols = count_csv(ML_SCAN / "derived" / "attack-order-top5.csv")
     attack_order_merged_count, _ = count_csv(ML_SCAN / "derived" / "attack-order-top5-merged.csv")
+    kit_feature_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "features.csv")
+    kit_queue_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "validation-target-queue.csv")
+    kit_attack_order_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "attack-order-top5.csv")
+    kit_attack_order_merged_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "attack-order-top5-merged.csv")
     observations = load_jsonl(ML_SCAN / "observations.jsonl")
     labels = load_jsonl(ML_SCAN / "labels-draft.jsonl")
     metrics = load_json(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
@@ -113,6 +125,12 @@ def validate_ml_scan() -> dict:
         raise AssertionError(f"attack-order-top5.csv missing columns: {sorted(missing_attack_cols)}")
     if attack_order_count != 145 or attack_order_merged_count != 145:
         raise AssertionError("attack order top5 expected 145 rows")
+    if kit_feature_count != feature_count:
+        raise AssertionError("kali-run-kit features.csv row count differs from experiment features.csv")
+    if kit_queue_count != 9:
+        raise AssertionError("kali-run-kit validation queue expected 9 rows")
+    if kit_attack_order_count != attack_order_count or kit_attack_order_merged_count != attack_order_merged_count:
+        raise AssertionError("kali-run-kit attack-order row counts differ from experiment derived files")
     if metrics["label_metadata"]["label_mode"] != "weak":
         raise AssertionError("default ranking metrics must use weak label mode")
     if merged_metrics["label_metadata"]["label_mode"] != "merged":
@@ -134,6 +152,7 @@ def validate_ml_scan() -> dict:
         "merged_candidate_rows": merged_count,
         "attack_order_top5_rows": attack_order_count,
         "attack_order_top5_merged_rows": attack_order_merged_count,
+        "kali_run_kit_queue_rows": kit_queue_count,
         "weak_top1": round(metrics["ml"]["top1_hit_rate"], 3),
         "merged_top1": round(merged_metrics["ml"]["top1_hit_rate"], 3),
         "fixture_rows": len(fixture),

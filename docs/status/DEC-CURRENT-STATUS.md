@@ -15,23 +15,24 @@ Branch ที่ถูกต้อง: `Dec` เท่านั้น
 4. ใช้ dataset หลักที่ `generated/dec-vulhub-2026-08-24-fixed-core/`
 5. ใช้ผล scan/ML ล่าสุดที่ `experiments/dec-ml-scan-2026-08-25/`
 6. ใช้ prompt Kali ล่าสุดที่ `docs/prompts/DEC-KALI-VALIDATION-QUEUE-PROMPT-TH.md`
+7. ถ้าจะให้ Kali/opencode รันต่อทันที ใช้ bundle ที่ `experiments/dec-ml-scan-2026-08-25/kali-run-kit/`
 
 ## สถานะ Git ล่าสุด
 
-remote `refs/heads/Dec` ล่าสุดที่ยืนยันแล้ว:
+remote `refs/heads/Dec` ล่าสุดที่ยืนยันแล้วก่อนเพิ่ม run-kit:
 
 ```text
-b6acc0f4949be3c0fc4196a7f3bd9576aeec8f52
+1a2564055d5c11bf79fec9ca7dbcc9733b674c1e
 ```
 
 commit ล่าสุด:
 
 ```text
-b6acc0f Add Dec Kali validation import workflow
-4e6870d Add Dec ML validation target plan
-36f05ae Add Dec ML scan candidate feature tables
-ffa611f Add Dec ML scan ranking evaluation
-f15c88b Add Dec ML scan 29-target curated dataset
+1a25640 Add Dec ML attack order export
+ce27345 Add Dec validation label fixture checks
+cee8b61 Add Dec artifact validation check
+48d9fd0 Support validated label evaluation for Dec ML scan
+b41056f Refresh Dec current status handoff
 ```
 
 working tree ยังมี unstaged deletion ของ `dataset/raw/autorecon/2026-08-04/...` จากปัญหา path ยาวบน Windows ให้ปล่อยไว้ก่อนและอย่า commit
@@ -97,6 +98,8 @@ dataset/raw-curated/dec-ml-scan-2026-08-25/
 - `derived/candidate-family-features.csv` - input ML จริงแบบ candidate-level
 - `derived/candidate-family-features.jsonl`
 - `derived/attack-order-top5.csv` - top-5 candidate family ต่อ target สำหรับคุม validation/attack order
+- `derived/attack-order-top5-merged.csv`
+- `kali-run-kit/` - bundle สำหรับส่งให้ Kali/opencode ใช้รัน validation scan ต่อ
 - `reports/dec-ml-scan-ranking-report-th.md`
 - `reports/dec-ml-attack-order-validation-plan-th.md`
 - `validation-target-queue.csv`
@@ -168,6 +171,20 @@ prompt พร้อมใช้:
 docs/prompts/DEC-KALI-VALIDATION-QUEUE-PROMPT-TH.md
 ```
 
+run kit พร้อมใช้:
+
+```text
+experiments/dec-ml-scan-2026-08-25/kali-run-kit/
+C:\Users\rapii\Desktop\kali-share\dataset\dec-kali-validation-run-kit
+```
+
+ถ้า Kali เห็น shared folder ให้รัน:
+
+```bash
+cd /media/sf_kali-share/dataset/dec-kali-validation-run-kit
+python3 scripts/kali/dec_validation_runner.py --queue validation-target-queue.csv --features features.csv --output-dir /home/kali/reports/dec-validation-manual
+```
+
 ให้ opencode/Kali ทำตาม queue เฉพาะ local lab:
 
 1. เปิด target ทีละตัว
@@ -196,6 +213,7 @@ experiments/dec-ml-scan-2026-08-25/derived/validated-labels.jsonl
 | `scripts/evaluate_dec_ml_scan_20260825.py` | evaluate scanner-derived features ชุด 29 targets |
 | `scripts/export_dec_attack_order.py` | export top-k attack order จาก ML predictions |
 | `scripts/import_dec_validation_results.py` | validate/import ผล validation จาก Kali |
+| `scripts/kali/dec_validation_runner.py` | เก็บ safe validation evidence จาก local Vulhub queue บน Kali |
 | `scripts/validate_dec_artifacts.py` | ตรวจ fixed core, ML scan, candidate rows และ report JSON |
 
 หลัง import validation แล้วให้รัน:

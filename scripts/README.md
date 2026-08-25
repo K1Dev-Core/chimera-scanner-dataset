@@ -11,6 +11,7 @@
 | `evaluate_dec_ml_scan_20260825.py` | evaluate ranking จาก scanner-derived features ชุด Kali scan 29 targets |
 | `export_dec_attack_order.py` | export top-k attack order จาก ML predictions เป็น CSV/JSONL |
 | `import_dec_validation_results.py` | validate/import `validation-results.jsonl` จาก Kali ให้เป็น label table |
+| `kali/dec_validation_runner.py` | runner สำหรับ Kali เพื่อเก็บ safe validation evidence จาก local Vulhub queue |
 | `validate_dec_artifacts.py` | ตรวจสุขภาพ artifacts หลักของ Dec เช่น fixed core, ML scan, reports และ candidate rows |
 
 ก่อนรัน script ควรอ่าน `docs/overview/DEC-DATASET-GUIDE-TH.md` และตรวจ path input/output ให้ตรงกับรอบ dataset ที่ต้องการสร้าง
@@ -31,6 +32,12 @@ python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
 
 ```powershell
 python scripts\export_dec_attack_order.py --top-k 5
+```
+
+runner ฝั่ง Kali อยู่ใน `scripts/kali/dec_validation_runner.py` และถูก copy เข้า `experiments/dec-ml-scan-2026-08-25/kali-run-kit/` แล้ว ตัวอย่างรันบน Kali:
+
+```bash
+python3 scripts/kali/dec_validation_runner.py --queue validation-target-queue.csv --features features.csv --output-dir /home/kali/reports/dec-validation-manual
 ```
 
 ตัวอย่าง import ผล validation จาก Kali:

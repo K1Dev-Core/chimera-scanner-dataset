@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# Scanner runtime/cache output that should not enter curated dataset commits.
+.zaphome/
+**/.zaphome/
+chromedriver
+*.jar

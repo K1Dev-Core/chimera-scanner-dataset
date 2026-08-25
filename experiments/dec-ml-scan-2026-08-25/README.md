@@ -24,6 +24,7 @@
 | `derived/candidate-family-features-merged.csv` | input ML โหมด merged: ใช้ validated label ถ้ามี ไม่มีกลับไปใช้ weak label |
 | `derived/attack-order-top5.csv` | ลำดับ candidate family 5 อันดับแรกต่อ target สำหรับคุม validation/attack order |
 | `derived/attack-order-top5-merged.csv` | attack order จาก prediction โหมด merged |
+| `kali-run-kit/` | ชุดไฟล์พร้อมส่งให้ Kali/opencode เพื่อรัน validation scan จาก queue |
 | `reports/dec-ml-scan-ranking-report-th.md` | รายงานทดสอบ ML ranking ภาษาไทยจากชุด scan นี้ |
 | `reports/dec-ml-scan-ranking-metrics.json` | metric เต็มสำหรับอ่านด้วย script/notebook |
 | `reports/dec-ml-scan-ranking-merged-report-th.md` | รายงาน ranking โหมด merged สำหรับใช้หลัง import validation |
@@ -106,6 +107,24 @@ python scripts\export_dec_attack_order.py --prediction-file experiments\dec-ml-s
 target เหล่านี้ถูกจัดไว้ใน `validation-target-queue.csv` แล้ว โดยเรียงจากเคสที่ให้ feedback กับโมเดลได้มากที่สุดก่อน
 
 prompt สำหรับส่งให้ opencode ฝั่ง Kali อยู่ที่ `docs/prompts/DEC-KALI-VALIDATION-QUEUE-PROMPT-TH.md`
+
+ถ้าต้องการส่งงานให้ Kali แบบง่าย ให้ใช้โฟลเดอร์นี้:
+
+```text
+kali-run-kit/
+```
+
+ในชุดนี้มี `features.csv`, `validation-target-queue.csv`, `attack-order-top5.csv`, prompt, runbook และ runner ครบแล้ว
+
+คำสั่งบน Kali:
+
+```bash
+cd /media/sf_kali-share/dataset/dec-kali-validation-run-kit
+python3 scripts/kali/dec_validation_runner.py \
+  --queue validation-target-queue.csv \
+  --features features.csv \
+  --output-dir /home/kali/reports/dec-validation-manual
+```
 
 เมื่อได้ไฟล์ `validation-results.jsonl` กลับมาจาก Kali ให้ import ด้วย:
 
