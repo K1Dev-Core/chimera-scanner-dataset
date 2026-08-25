@@ -19,20 +19,20 @@ Branch ที่ถูกต้อง: `Dec` เท่านั้น
 
 ## สถานะ Git ล่าสุด
 
-remote `refs/heads/Dec` ล่าสุดที่ยืนยันแล้วก่อนเพิ่ม run-kit:
+remote `refs/heads/Dec` ล่าสุดที่ยืนยันแล้ว:
 
 ```text
-1a2564055d5c11bf79fec9ca7dbcc9733b674c1e
+9ba433bad57e904976194fcb1f6ea5a303a6cc17
 ```
 
 commit ล่าสุด:
 
 ```text
+9ba433b Add Dec Hex next scan queue
+dd6ed16 Add Dec Hex target shortlist
+1f26ea8 Add Dec Kali validation run kit
 1a25640 Add Dec ML attack order export
 ce27345 Add Dec validation label fixture checks
-cee8b61 Add Dec artifact validation check
-48d9fd0 Support validated label evaluation for Dec ML scan
-b41056f Refresh Dec current status handoff
 ```
 
 working tree ยังมี unstaged deletion ของ `dataset/raw/autorecon/2026-08-04/...` จากปัญหา path ยาวบน Windows ให้ปล่อยไว้ก่อนและอย่า commit
@@ -104,6 +104,7 @@ dataset/raw-curated/dec-ml-scan-2026-08-25/
 - `reports/dec-ml-attack-order-validation-plan-th.md`
 - `validation-target-queue.csv`
 - `hex-next-target-candidates.csv` - shortlist 20 targets จาก Hex สำหรับสแกนเพิ่มรอบถัดไป
+- `hex-next-scan-queue.csv` - queue 10 targets แรกจาก Hex ที่ควรสแกนหลัง validation queue
 - `validation-results.schema.json`
 - `validation-results.example.jsonl`
 
