@@ -34,6 +34,40 @@
 - demo feature-label model pack: มีตาราง/report เล็ก ๆ สำหรับอธิบาย pipeline
 - fresh lab ideas ที่ยังไม่ได้ import: Acme support portal, Nova DevOps console, Grafana CVE-2024-9264, TeamCity CVE-2024-27198
 
+## ตรวจซ้ำจาก `origin/Hex` วันที่ 2026-08-25
+
+ตรวจด้วย `git ls-remote`, `git fetch origin Hex:refs/remotes/origin/Hex` และอ่าน tree โดยไม่ checkout branch อื่น ยืนยันว่าเรายังอยู่บน `Dec`
+
+สถานะ remote:
+
+- `origin/Dec`: `1f26ea88208617325b0b70c1d24cfe1b7ef25d41`
+- `origin/Hex`: `a471f557fc01e8732e259be0b0b8d9524d69b6db`
+
+สรุป tree ของ `Hex`:
+
+| top-level path | จำนวนไฟล์โดยประมาณ | ความหมาย |
+| --- | ---: | --- |
+| `chimera-tools-name-date-2026-08-05-vulhub-cve-bulk/` | 1452 | bulk metadata/README/compose map จาก Vulhub 160 labs |
+| `chimera-tools-name-date-2026-08-05-vulhub-redo/` | 160 | active scan seed 8 labs |
+| `chimera-tools-name-date-2026-08-05-multi-vuln-web/` | 146 | multi-vulnerability web experiment และ baseline model |
+| `chimera-tools-name-date-2026-08-05-active-scanner-suite/` | 55 | active scanner suite 2 local labs |
+| `fresh-labs/` | 26 | lab source code ใหม่ เช่น Acme, Nova, Grafana, TeamCity |
+| `demo-feature-label-model-2026-08-05/` | 11 | demo feature-label model pack |
+
+ข้อสรุป:
+
+- ไม่ควร merge `Hex` ทั้ง branch เพราะ diff แสดงว่า Hex จะลบ/ย้ายไฟล์ Dec หลักจำนวนมาก รวมถึง generated dataset, docs และ scripts
+- สิ่งที่ควรดึงต่อคือ metadata/target candidate ที่ compact และ active scanner features ที่ normalize แล้ว
+- สิ่งที่ยังไม่ควรดึงคือ raw tree ทั้งก้อน, folder ที่มี output runtime เยอะ, และ lab source code ที่ยังไม่ผ่าน schema Dec
+
+ไฟล์ shortlist ที่สร้างไว้สำหรับรอบถัดไป:
+
+```text
+experiments/dec-ml-scan-2026-08-25/hex-next-target-candidates.csv
+```
+
+ไฟล์นี้เลือก 20 targets จาก bulk Vulhub metadata เพื่อเพิ่ม product/family ใหม่ให้ Dec ก่อนนำไปสแกนจริงใน Kali
+
 ## ใช้ของจาก `Hex` ใน `Dec` ยังไง
 
 ให้มองของจาก `Hex` เป็นข้อมูลเสริม ไม่ใช่ dataset หลัก

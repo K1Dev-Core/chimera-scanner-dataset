@@ -6,6 +6,7 @@
 
 - `features.csv`: target URL/port/fingerprint จาก scanner รอบล่าสุด
 - `validation-target-queue.csv`: queue ที่ควร validate ก่อน
+- `hex-next-target-candidates.csv`: shortlist target จาก Hex สำหรับสแกนเพิ่มรอบถัดไป
 - `attack-order-top5.csv`: family 5 อันดับแรกที่ ML แนะนำต่อ target
 - `attack-order-top5-merged.csv`: family 5 อันดับแรกจากโหมด merged
 - `scripts/kali/dec_validation_runner.py`: runner เก็บ evidence แบบปลอดภัย

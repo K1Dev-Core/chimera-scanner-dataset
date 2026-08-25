@@ -103,6 +103,7 @@ dataset/raw-curated/dec-ml-scan-2026-08-25/
 - `reports/dec-ml-scan-ranking-report-th.md`
 - `reports/dec-ml-attack-order-validation-plan-th.md`
 - `validation-target-queue.csv`
+- `hex-next-target-candidates.csv` - shortlist 20 targets จาก Hex สำหรับสแกนเพิ่มรอบถัดไป
 - `validation-results.schema.json`
 - `validation-results.example.jsonl`
 

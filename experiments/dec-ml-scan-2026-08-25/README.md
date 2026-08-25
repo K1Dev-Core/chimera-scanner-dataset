@@ -30,6 +30,7 @@
 | `reports/dec-ml-scan-ranking-merged-report-th.md` | รายงาน ranking โหมด merged สำหรับใช้หลัง import validation |
 | `reports/dec-ml-attack-order-validation-plan-th.md` | แผนทดสอบ attack order และ validation loop รอบถัดไป |
 | `validation-target-queue.csv` | target queue สำหรับให้ Kali/opencode validate ต่อ |
+| `hex-next-target-candidates.csv` | shortlist 20 targets จาก Hex สำหรับเลือกสแกนเพิ่มรอบถัดไป |
 | `validation-results.schema.json` | schema ของผล validation ที่ Kali ต้องส่งกลับ |
 | `validation-results.example.jsonl` | ตัวอย่าง 1 record สำหรับเช็ก format |
 | `validation-results.fixture.jsonl` | fixture สำหรับทดสอบ import/evaluator หลายสถานะ ไม่ใช่ผล scan จริง |
