@@ -80,12 +80,14 @@ def validate_ml_scan() -> dict:
     require(ML_SCAN / "validation-results.example.jsonl")
     require(ML_SCAN / "validation-results.fixture.jsonl")
     require(ML_SCAN / "hex-next-target-candidates.csv")
+    require(ML_SCAN / "hex-next-scan-queue.csv")
     require(ROOT / "scripts" / "kali" / "dec_validation_runner.py")
     require(ROOT / "docs" / "kali" / "DEC-KALI-VALIDATION-RUNBOOK-TH.md")
     require(ML_SCAN / "kali-run-kit" / "README-TH.md")
     require(ML_SCAN / "kali-run-kit" / "features.csv")
     require(ML_SCAN / "kali-run-kit" / "validation-target-queue.csv")
     require(ML_SCAN / "kali-run-kit" / "hex-next-target-candidates.csv")
+    require(ML_SCAN / "kali-run-kit" / "hex-next-scan-queue.csv")
     require(ML_SCAN / "kali-run-kit" / "attack-order-top5.csv")
     require(ML_SCAN / "kali-run-kit" / "attack-order-top5-merged.csv")
     require(ML_SCAN / "kali-run-kit" / "scripts" / "kali" / "dec_validation_runner.py")
@@ -98,9 +100,11 @@ def validate_ml_scan() -> dict:
     kit_feature_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "features.csv")
     kit_queue_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "validation-target-queue.csv")
     kit_hex_next_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "hex-next-target-candidates.csv")
+    kit_hex_queue_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "hex-next-scan-queue.csv")
     kit_attack_order_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "attack-order-top5.csv")
     kit_attack_order_merged_count, _ = count_csv(ML_SCAN / "kali-run-kit" / "attack-order-top5-merged.csv")
     hex_next_count, hex_next_cols = count_csv(ML_SCAN / "hex-next-target-candidates.csv")
+    hex_queue_count, hex_queue_cols = count_csv(ML_SCAN / "hex-next-scan-queue.csv")
     observations = load_jsonl(ML_SCAN / "observations.jsonl")
     labels = load_jsonl(ML_SCAN / "labels-draft.jsonl")
     metrics = load_json(ML_SCAN / "reports" / "dec-ml-scan-ranking-metrics.json")
@@ -143,6 +147,12 @@ def validate_ml_scan() -> dict:
         raise AssertionError(f"hex-next-target-candidates.csv missing columns: {sorted(missing_hex_next_cols)}")
     if hex_next_count != 20:
         raise AssertionError("hex-next-target-candidates.csv expected 20 rows")
+    expected_hex_queue_cols = {"priority", "lab_id", "product", "cve", "known_exploit_family", "relative_vulhub_path", "ports", "queue_type", "reason"}
+    missing_hex_queue_cols = expected_hex_queue_cols - set(hex_queue_cols)
+    if missing_hex_queue_cols:
+        raise AssertionError(f"hex-next-scan-queue.csv missing columns: {sorted(missing_hex_queue_cols)}")
+    if hex_queue_count != 10 or kit_hex_queue_count != 10:
+        raise AssertionError("hex-next-scan-queue.csv expected 10 rows in experiment and run kit")
     if metrics["label_metadata"]["label_mode"] != "weak":
         raise AssertionError("default ranking metrics must use weak label mode")
     if merged_metrics["label_metadata"]["label_mode"] != "merged":
@@ -166,6 +176,7 @@ def validate_ml_scan() -> dict:
         "attack_order_top5_merged_rows": attack_order_merged_count,
         "kali_run_kit_queue_rows": kit_queue_count,
         "hex_next_target_candidates": hex_next_count,
+        "hex_next_scan_queue": hex_queue_count,
         "weak_top1": round(metrics["ml"]["top1_hit_rate"], 3),
         "merged_top1": round(merged_metrics["ml"]["top1_hit_rate"], 3),
         "fixture_rows": len(fixture),

@@ -1,0 +1,11 @@
+priority,lab_id,product,cve,known_exploit_family,relative_vulhub_path,ports,queue_type,reason
+1,activemq-cve-2022-41678,activemq,CVE-2022-41678,command-injection,activemq/CVE-2022-41678,61616;8161;5005,new_product_family,"เพิ่ม command-injection บน service ที่ไม่ใช่ web ล้วน ช่วยทดสอบ feature จาก nmap/service port"
+2,coldfusion-cve-2017-3066,coldfusion,CVE-2017-3066,deserialization,coldfusion/CVE-2017-3066,8500,new_product_family,"เพิ่ม deserialization family และ ColdFusion fingerprint"
+3,airflow-cve-2020-17526,airflow,cve-2020-17526,auth-bypass,airflow/CVE-2020-17526,8080;5555,new_product_family,"เพิ่ม auth-bypass ที่ชน port 8080 เพื่อสร้าง negative/positive control ให้ web family"
+4,confluence-cve-2019-3396,confluence,CVE-2019-3396,file-inclusion,confluence/CVE-2019-3396,8090,new_product_family,"เพิ่ม Confluence และ file-inclusion family ที่ scanner ควรมี path/title evidence ชัด"
+5,1panel-cve-2024-39907,1panel,CVE-2024-39907,sqli,1panel/CVE-2024-39907,10086,new_product_family,"เพิ่ม SQLi family ที่ไม่ควรใช้ชื่อ CVE เป็น feature ต้องพึ่ง scanner evidence"
+6,apache-cxf-cve-2024-28752,apache-cxf,CVE-2024-28752,ssrf,apache-cxf/CVE-2024-28752,8080,new_family,"เพิ่ม SSRF family และ Apache CXF fingerprint"
+7,apisix-cve-2020-13945,apisix,CVE-2020-13945,command-injection,apisix/CVE-2020-13945,9080;9091;9443;2379,port_diversity,"เพิ่มหลาย port และ gateway/API product เพื่อทดสอบ port/protocol feature"
+8,cacti-cve-2022-46169,cacti,CVE-2022-46169,auth-bypass,cacti/CVE-2022-46169,8080,web_negative_control,"เพิ่ม auth-bypass บน 8080 อีกตัว เพื่อกัน ML จำ port 8080 แบบหยาบ"
+9,cmsms-cve-2019-9053,cmsms,CVE-2019-9053,sqli,cmsms/CVE-2019-9053,80,web_cms_control,"เพิ่ม CMS family สำหรับเปรียบเทียบกับ Joomla/Drupal/Adminer"
+10,dubbo-cve-2019-17564,dubbo,CVE-2019-17564,deserialization,dubbo/CVE-2019-17564,8080;2181,nonhttp_mixed_control,"เพิ่ม deserialization กับ service ผสม web/non-web เพื่อทดสอบ nmap + protocol feature"
