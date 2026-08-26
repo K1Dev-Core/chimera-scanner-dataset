@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Chimera</title>
+        <style>
+            :root {
+                --bg: #000;
+                --surface: #0a0a0a;
+                --surface2: #111;
+                --line: rgba(255, 255, 255, 0.14);
+                --txt: #fff;
+                --mut: #888;
+                --dim: #555;
+                --acc: #0070f3;
+                --acc2: #005bb5;
+                --crit: #ff2d2d;
+                --high: #ff9f1a;
+                --med: #f5c518;
+                --low: #4ade80;
+                --info: #5b9aff;
+                --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+                --sans:
+                    ui-sans-serif, -apple-system, "Segoe UI", Roboto,
+                    "Noto Sans Thai", sans-serif;
+            }
+            * {
+                box-sizing: border-box;
+                border-radius: 0 !important;
+            }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--txt);
+                font: 14px/1.55 var(--sans);
+            }
+            a {
+                color: var(--acc);
+                text-decoration: none;
+            }
+            ::selection {
+                background: var(--acc);
+                color: #000;
+            }
+            input,
+            button {
+                font: inherit;
+            }
+            .lbl {
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                color: var(--mut);
+            }
+            .screen {
+                min-height: 100vh;
+                display: none;
+            }
+            .screen.on {
+                display: block;
+            }
+            /* ---------- SCAN SCREEN ---------- */
+            #screen-scan.on {
+                display: flex;
+                flex-direction: column;
+                padding: 28px 40px;
+                gap: 8px;
+            }
+            .top {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+            .logo {
+                font-weight: 700;
+                font-size: 16px;
+                letter-spacing: -0.02em;
+            }
+            .logo span {
+                color: var(--acc);
+            }
+            .top .spacer {
+                flex: 1;
+            }
+            .top a {
+                font-size: 12px;
+                color: var(--mut);
+            }
+            .hero {
+                max-width: 760px;
+                margin: 0 auto;
+                width: 100%;
+                padding-top: 6vh;
+            }
+            .hero h1 {
+                font-size: clamp(30px, 5vw, 52px);
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                line-height: 1.02;
+                margin: 0 0 12px;
+            }
+            .hero p {
+                color: var(--mut);
+                font-size: 16px;
+                margin: 0 0 32px;
+                max-width: 52ch;
+            }
+            .scanbar {
+                display: flex;
+                gap: 10px;
+                align-items: stretch;
+            }
+            .scanbar input {
+                flex: 1;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                color: var(--txt);
+                padding: 14px 16px;
+                font-family: var(--mono);
+                font-size: 14px;
+            }
+            .scanbar input:focus {
+                outline: none;
+                border-color: var(--acc);
+            }
+            .scanbar button {
+                background: var(--acc);
+                color: #000;
+                border: 0;
+                padding: 0 26px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: background 0.12s;
+            }
+            .scanbar button:hover {
+                background: var(--acc2);
+            }
+            .scanbar button:disabled {
+                background: #1a1a1a;
+                color: var(--dim);
+                cursor: default;
+            }
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 18px;
+                font-family: var(--mono);
+                font-size: 13px;
+                color: var(--mut);
+            }
+            .status .bar {
+                flex: 1;
+                height: 2px;
+                background: #1a1a1a;
+                overflow: hidden;
+            }
+            .status .bar i {
+                display: block;
+                height: 100%;
+                width: 0;
+                background: var(--acc);
+                transition: width 0.2s;
+            }
+            .chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 22px;
+            }
+            .chip {
+                font-family: var(--mono);
+                font-size: 12px;
+                padding: 4px 10px;
+                border: 1px solid var(--line);
+                color: var(--dim);
+            }
+            .chip.done {
+                color: var(--low);
+                border-color: rgba(74, 222, 128, 0.4);
+            }
+            .chip.run {
+                color: var(--acc);
+                border-color: var(--acc);
+            }
+            .term {
+                margin-top: 26px;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                padding: 14px 16px;
+                height: 340px;
+                overflow: auto;
+                font-family: var(--mono);
+                font-size: 12.5px;
+                line-height: 1.6;
+                white-space: pre-wrap;
+            }
+            .term .cmd {
+                color: var(--acc);
+            }
+            .term .info {
+                color: var(--mut);
+            }
+            .term .warn {
+                color: var(--med);
+            }
+            .term .raw {
+                color: #b6b6b6;
+            }
+            .term .done {
+                color: var(--low);
+            }
+            /* ---------- DASH SCREEN ---------- */
+            .layout {
+                display: grid;
+                grid-template-columns: 220px 1fr;
+                min-height: 100vh;
+            }
+            .side {
+                background: var(--surface);
+                border-right: 1px solid var(--line);
+                padding: 22px 16px;
+            }
+            .side .lbl {
+                color: var(--dim);
+                margin-bottom: 14px;
+            }
+            .nav a {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                padding: 9px 10px;
+                color: var(--txt);
+                font-size: 13px;
+                margin-bottom: 2px;
+                border: 1px solid transparent;
+            }
+            .nav a:hover {
+                background: var(--surface2);
+            }
+            .nav a.on {
+                background: var(--surface2);
+                border-color: var(--line);
+            }
+            .nav .n {
+                flex: 1;
+            }
+            .nav .cnt {
+                font-family: var(--mono);
+                font-size: 11px;
+                color: var(--mut);
+            }
+            .nav .sq {
+                width: 8px;
+                height: 8px;
+            }
+            .side .meta {
+                margin-top: 26px;
+                font-size: 12px;
+                color: var(--mut);
+            }
+            .side .meta div {
+                padding: 5px 0;
+                border-bottom: 1px solid var(--line);
+                display: flex;
+                justify-content: space-between;
+            }
+            .side .meta b {
+                color: var(--txt);
+                font-weight: 500;
+                font-family: var(--mono);
+            }
+            .main {
+                padding: 26px 34px;
+            }
+            .head {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 26px;
+            }
+            .head h2 {
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                margin: 0;
+            }
+            .head .spacer {
+                flex: 1;
+            }
+            .head button {
+                background: transparent;
+                border: 1px solid var(--line);
+                color: var(--txt);
+                padding: 9px 16px;
+                font-weight: 600;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            .head button:hover {
+                border-color: var(--acc);
+            }
+            .tiles {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+            .tile {
+                background: var(--surface);
+                border: 1px solid var(--line);
+                padding: 18px;
+            }
+            .tile .num {
+                font-size: 34px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                font-family: var(--mono);
+            }
+            .tile .cap {
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--mut);
+                margin-top: 6px;
+            }
+            .grid2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+            .card {
+                background: var(--surface);
+                border: 1px solid var(--line);
+                padding: 18px;
+            }
+            .card h3 {
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                color: var(--dim);
+                margin: 0 0 16px;
+                font-weight: 600;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th,
+            td {
+                text-align: left;
+                padding: 9px 12px;
+                border-bottom: 1px solid var(--line);
+                font-size: 13px;
+            }
+            th {
+                color: var(--mut);
+                font-weight: 500;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+            }
+            tr.row {
+                cursor: pointer;
+            }
+            tr.row:hover td {
+                background: var(--surface2);
+            }
+            .sev {
+                display: inline-block;
+                padding: 2px 9px;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                font-weight: 700;
+                border: 1px solid;
+            }
+            .sev.critical {
+                color: var(--crit);
+                border-color: var(--crit);
+            }
+            .sev.high {
+                color: var(--high);
+                border-color: var(--high);
+            }
+            .sev.medium {
+                color: var(--med);
+                border-color: var(--med);
+            }
+            .sev.low {
+                color: var(--low);
+                border-color: var(--low);
+            }
+            .sev.info {
+                color: var(--info);
+                border-color: var(--info);
+            }
+            .st {
+                display: inline-block;
+                font-size: 11px;
+                color: var(--mut);
+                border: 1px solid var(--line);
+                padding: 2px 8px;
+            }
+            .st.Open {
+                color: var(--med);
+            }
+            .st.Reported {
+                color: var(--high);
+            }
+            .st.Confirmed {
+                color: var(--crit);
+            }
+            .st.Ranked {
+                color: var(--info);
+            }
+            .detail {
+                position: fixed;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 460px;
+                background: var(--surface);
+                border-left: 1px solid var(--line);
+                padding: 28px;
+                overflow: auto;
+                transform: translateX(100%);
+                transition: 0.22s;
+            }
+            .detail.show {
+                transform: translateX(0);
+            }
+            .detail .x {
+                float: right;
+                cursor: pointer;
+                color: var(--mut);
+                font-size: 16px;
+            }
+            .field {
+                margin-bottom: 14px;
+            }
+            .field b {
+                display: block;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: var(--dim);
+                margin-bottom: 4px;
+            }
+            .field div,
+            .field .v {
+                font-size: 13px;
+            }
+            .field pre {
+                background: var(--bg);
+                border: 1px solid var(--line);
+                padding: 12px;
+                font-family: var(--mono);
+                font-size: 12px;
+                white-space: pre-wrap;
+            }
+            .rank {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+                font-size: 13px;
+            }
+            .rank .fam {
+                width: 130px;
+                font-weight: 600;
+                font-family: var(--mono);
+            }
+            .rank .bar {
+                flex: 1;
+                height: 6px;
+                background: #1a1a1a;
+                overflow: hidden;
+            }
+            .rank .bar i {
+                display: block;
+                height: 100%;
+                background: var(--acc);
+            }
+            .rank .pct {
+                width: 52px;
+                text-align: right;
+                font-family: var(--mono);
+                color: var(--mut);
+            }
+            .step {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid var(--line);
+                font-size: 13px;
+            }
+            .step .k {
+                color: var(--acc);
+                font-family: var(--mono);
+                font-size: 12px;
+                min-width: 70px;
+            }
+            .webbar {
+                font-size: 12px;
+                color: var(--mut);
+            }
+            .hrow {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 10px 12px;
+                border: 1px solid var(--line);
+                margin-bottom: 8px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+            .hrow:hover {
+                border-color: var(--acc);
+                background: var(--surface);
+            }
+            .hrow .hn {
+                flex: 1;
+                font-family: var(--mono);
+                color: var(--txt);
+            }
+            .hrow .ht {
+                font-family: var(--mono);
+                font-size: 11px;
+                color: var(--mut);
+            }
+            .hrow .hvuln {
+                font-size: 11px;
+                color: var(--acc);
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ============ SCAN SCREEN ============ -->
+        <div id="screen-scan" class="screen on">
+            <div class="top">
+                <div class="logo">CHIMERA<span>.</span></div>
+                <div class="spacer"></div>
+                <span class="lbl">vuln workbench</span>
+            </div>
+            <div class="hero">
+                <h1>Scan.<br />Rank.<br />Report.</h1>
+                <p>
+                    Enter a target URL, run the toolchain, and get an organized
+                    vuln report — hosts, services, findings, and an ML-ranked
+                    attack order.
+                </p>
+                <div class="scanbar">
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="ชื่อ (optional)"
+                        style="max-width: 200px"
+                    />
+                    <input
+                        id="url"
+                        type="text"
+                        placeholder="http://127.0.0.1:8080"
+                        autofocus
+                    />
+                    <button id="scan">SCAN</button>
+                </div>
+                <div class="status">
+                    <span id="lbl">IDLE</span>
+                    <div class="bar"><i id="prog"></i></div>
+                </div>
+                <div class="chips" id="chips"></div>
+                <div class="term" id="term">Scanning will stream here…</div>
+                <div class="card" style="margin-top: 24px">
+                    <h3>ประวัติการสแกน</h3>
+                    <div id="history"><div class="webbar">ยังไม่มีการสแกน</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ DASH SCREEN ============ -->
+        <div id="screen-dash" class="screen">
+            <div class="layout">
+                <aside class="side">
+                    <div class="logo" style="margin-bottom: 20px">
+                        CHIMERA<span>.</span>
+                    </div>
+                    <div class="lbl">Workspace</div>
+                    <nav class="nav" id="nav">
+                        <a data-v="dash" class="on"
+                            ><span
+                                class="sq"
+                                style="background: var(--acc)"
+                            ></span
+                            ><span class="n">Dashboard</span></a
+                        >
+                        <a data-v="vulns"
+                            ><span
+                                class="sq"
+                                style="background: var(--crit)"
+                            ></span
+                            ><span class="n">Vulnerabilities</span
+                            ><span class="cnt" id="c-vulns">0</span></a
+                        >
+                        <a data-v="hosts"
+                            ><span
+                                class="sq"
+                                style="background: var(--high)"
+                            ></span
+                            ><span class="n">Hosts &amp; Services</span
+                            ><span class="cnt" id="c-svc">0</span></a
+                        >
+                        <a data-v="rank"
+                            ><span
+                                class="sq"
+                                style="background: var(--med)"
+                            ></span
+                            ><span class="n">Ranking</span></a
+                        >
+                        <a data-v="logs"
+                            ><span
+                                class="sq"
+                                style="background: var(--low)"
+                            ></span
+                            ><span class="n">Scan Logs</span></a
+                        >
+                    </nav>
+                    <div class="meta">
+                        <div class="lbl" style="margin: 0 0 8px">Target</div>
+                        <div>
+                            <b
+                                id="m-url"
+                                style="
+                                    max-width: 120px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                "
+                                >—</b
+                            >
+                        </div>
+                        <div><b id="m-status">—</b></div>
+                    </div>
+                </aside>
+                <main class="main">
+                    <div class="head">
+                        <h2 id="view-title">Dashboard</h2>
+                        <div class="spacer"></div>
+                        <button id="exjson" class="hidden">Export JSON</button>
+                        <button id="exmd" class="hidden">Export MD</button>
+                        <button id="newscan">+ New scan</button>
+                    </div>
+
+                    <section id="v-dash">
+                        <div class="tiles">
+                            <div class="tile">
+                                <div class="num" id="sm-vulns">0</div>
+                                <div class="cap">Vulnerabilities</div>
+                            </div>
+                            <div class="tile">
+                                <div class="num" id="sm-hosts">0</div>
+                                <div class="cap">Hosts</div>
+                            </div>
+                            <div class="tile">
+                                <div class="num" id="sm-svc">0</div>
+                                <div class="cap">Services</div>
+                            </div>
+                            <div class="tile">
+                                <div class="num" id="sm-open">0</div>
+                                <div class="cap">Open</div>
+                            </div>
+                        </div>
+                        <div class="grid2">
+                            <div class="card">
+                                <h3>Severity</h3>
+                                <div id="d-sev"></div>
+                            </div>
+                            <div class="card">
+                                <h3>Workflow</h3>
+                                <div id="d-wf"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3>Findings by Tool</h3>
+                            <div id="d-tools" style="font-size: 13px"></div>
+                        </div>
+                    </section>
+
+                    <section id="v-vulns" class="hidden">
+                        <div class="card">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th>Tool</th>
+                                        <th>CVE</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="t-vulns"></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section id="v-hosts" class="hidden">
+                        <div class="card">
+                            <h3>Host</h3>
+                            <div id="d-host"></div>
+                        </div>
+                        <div class="card" style="margin-top: 14px">
+                            <h3>Services</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Port</th>
+                                        <th>Protocol</th>
+                                        <th>Status</th>
+                                        <th>Banner</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="t-svc"></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section id="v-rank" class="hidden">
+                        <div class="card">
+                            <h3>Attack Order · Model Probability</h3>
+                            <div id="d-rank"></div>
+                        </div>
+                    </section>
+
+                    <section id="v-logs" class="hidden">
+                        <div class="card">
+                            <h3>Scan Logs</h3>
+                            <div class="term" id="term2">…</div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <div class="detail" id="detail">
+            <span class="x" onclick="closeD()">✕</span>
+            <div id="d-body"></div>
+        </div>
+
+        <script>
+            const $ = (s) => document.querySelector(s);
+            let jobId = null;
+            let LAST = null;
+            const toolsSeen = {};
+            let ALL_LOGS = [];
+            $("#scan").addEventListener("click", scan);
+            $("#url").addEventListener("keydown", (e) => {
+                if (e.key === "Enter") scan();
+            });
+            $("#newscan").addEventListener("click", () => {
+                go("scan");
+                resetScan();
+            });
+            function resetScan() {
+                ALL_LOGS = [];
+                $("#term").textContent = "Scanning will stream here…";
+                $("#term2").textContent = "";
+                $("#chips").innerHTML = "";
+                $("#prog").style.width = "0";
+                $("#lbl").textContent = "IDLE";
+                $("#scan").disabled = false;
+            }
+            async function loadHistory() {
+                const r = await fetch("/api/scans");
+                const d = await r.json();
+                const list = d.scans || [];
+                const box = $("#history");
+                if (!list.length) {
+                    box.innerHTML = '<div class="webbar">ยังไม่มีการสแกน</div>';
+                    return;
+                }
+                box.innerHTML = list
+                    .map(
+                        (s) =>
+                            `<div class="hrow" data-id="${s.id}"><span class="hn">${esc(s.name || s.url)}</span><span class="ht">${esc(s.created_at)}</span><span class="hvuln">${(s.summary && s.summary.vulnerabilities) || 0} finding(s)</span></div>`
+                    )
+                    .join("");
+                box.querySelectorAll(".hrow").forEach((el) =>
+                    el.addEventListener("click", () => openSaved(el.dataset.id))
+                );
+            }
+            async function openSaved(id) {
+                const r = await fetch("/api/scan/" + id + "/report");
+                const d = await r.json();
+                if (!d.target) return;
+                LAST = { id, w: d, r: d.ranking || [] };
+                go("dash");
+                render(d, d.ranking || []);
+                document.getElementById("exjson").classList.remove("hidden");
+                document.getElementById("exmd").classList.remove("hidden");
+            }
+            loadHistory();
+
+            function go(s) {
+                $("#screen-scan").classList.toggle("on", s === "scan");
+                $("#screen-dash").classList.toggle("on", s !== "scan");
+            }
+            function switchV(v) {
+                ["dash", "vulns", "hosts", "rank", "logs"].forEach((x) =>
+                    $("#v-" + x).classList.toggle("hidden", x !== v),
+                );
+                document
+                    .querySelectorAll("#nav a")
+                    .forEach((a) =>
+                        a.classList.toggle("on", a.dataset.v === v),
+                    );
+                $("#view-title").textContent = {
+                    dash: "Dashboard",
+                    vulns: "Vulnerabilities",
+                    hosts: "Hosts & Services",
+                    rank: "Ranking",
+                    logs: "Scan Logs",
+                }[v];
+                if (v === "logs") {
+                    const b = $("#term2");
+                    if (b) b.scrollTop = b.scrollHeight;
+                }
+            }
+            document
+                .querySelectorAll("#nav a")
+                .forEach((a) =>
+                    a.addEventListener("click", () => switchV(a.dataset.v)),
+                );
+
+            function addLog(l) {
+                ALL_LOGS.push(l);
+                ["#term", "#term2"].forEach((sel) => {
+                    const box = $(sel);
+                    if (!box) return;
+                    const line = document.createElement("div");
+                    const cls = l.level === "raw" ? "raw" : l.level || "info";
+                    line.className = cls;
+                    line.textContent =
+                        "[" +
+                        new Date(l.ts * 1000).toTimeString().slice(0, 8) +
+                        "] " +
+                        l.tool +
+                        " ▸ " +
+                        (l.message || "");
+                    box.appendChild(line);
+                });
+                ["#term", "#term2"].forEach((sel) => {
+                    const b = $(sel);
+                    if (b) b.scrollTop = b.scrollHeight;
+                });
+            }
+            function chip(tool, state) {
+                const el = document.getElementById("chip-" + tool);
+                if (el) {
+                    el.className =
+                        "chip " +
+                        (state === "run"
+                            ? "run"
+                            : state === "done"
+                              ? "done"
+                              : "");
+                    el.textContent =
+                        tool +
+                        (state === "done" ? " ✓" : state === "run" ? " …" : "");
+                }
+            }
+            function scan() {
+                const url = $("#url").value.trim();
+                if (!url) return;
+                $("#scan").disabled = true;
+                $("#lbl").textContent = "SCANNING";
+                $("#chips").innerHTML = "";
+                fetch("/api/scan", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ url, name: $("#name").value.trim() }),
+                })
+                    .then((r) => r.json())
+                    .then((d) => {
+                        jobId = d.job_id;
+                        stream();
+                    })
+                    .catch(showErr);
+            }
+            function stream() {
+                const es = new EventSource("/api/scan/" + jobId + "/stream");
+                es.onmessage = (e) => {
+                    const d = JSON.parse(e.data);
+                    if (d.event === "tool_start") {
+                        chip(d.tool, "run");
+                    }
+                    if (d.event === "tool_done") {
+                        chip(d.tool, "done");
+                    }
+                    if (d.event === "log") {
+                        addLog(d);
+                        if (!toolsSeen[d.tool]) {
+                            toolsSeen[d.tool] = 1;
+                            const c = document.createElement("span");
+                            c.id = "chip-" + d.tool;
+                            c.className = "chip";
+                            c.textContent = d.tool;
+                            $("#chips").appendChild(c);
+                        }
+                        chip(d.tool, "run");
+                    }
+                    if (d.event === "done") {
+                        $("#prog").style.width = "100%";
+                    }
+                };
+                es.addEventListener("done", () => {
+                    es.close();
+                    loadResult();
+                });
+                es.onerror = () => {
+                    es.close();
+                    loadResult();
+                };
+            }
+            function showErr(e) {
+                $("#lbl").textContent = "ERROR";
+                console.error(e);
+            }
+            function loadResult() {
+                fetch("/api/scan/" + jobId + "/result")
+                    .then((r) => r.json())
+                    .then((d) => {
+                        $("#scan").disabled = false;
+                        $("#lbl").textContent = "DONE";
+                        $("#prog").style.width = "100%";
+                        if (!d.ok) {
+                            showErr(d);
+                            return;
+                        }
+                        render(d.workspace, d.ranking);
+                        LAST = { id: jobId, w: d.workspace, r: d.ranking };
+                        document.getElementById("exjson").classList.remove("hidden");
+                        document.getElementById("exmd").classList.remove("hidden");
+                        loadHistory();
+                    })
+                    .catch(showErr);
+            }
+            const esc = (s) =>
+                String(s || "")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            const svc = (s) =>
+                /^(critical|high|medium|low|info)$/.test(s || "") ? s : "info";
+            function render(w, ranking) {
+                const s = w.summary;
+                $("#sm-vulns").textContent = s.vulnerabilities;
+                $("#sm-hosts").textContent = s.hosts;
+                $("#sm-svc").textContent = s.services;
+                $("#sm-open").textContent = s.open;
+                $("#c-vulns").textContent = s.vulnerabilities;
+                $("#c-svc").textContent = s.services;
+                $("#m-url").textContent = w.target.url;
+                $("#m-status").textContent = "done";
+                $("#d-sev").innerHTML = [
+                    "critical",
+                    "high",
+                    "medium",
+                    "low",
+                    "info",
+                ]
+                    .map((x) => {
+                        const c = s.by_severity[x] || 0;
+                        return `<div class="step"><span class="k"><span class="sev ${x}">${x}</span></span><span style="flex:1"></span><span style="font-family:var(--mono)">${c}</span></div>`;
+                    })
+                    .join("");
+                $("#d-wf").innerHTML = w.workflow
+                    .map(
+                        (x) =>
+                            `<div class="step"><span class="k">${esc(x.step)}</span><span>${esc(x.detail)}</span></div>`,
+                    )
+                    .join("");
+                const tools = {};
+                (w.vulnerabilities || []).forEach(
+                    (v) => (tools[v.tool] = (tools[v.tool] || 0) + 1),
+                );
+                $("#d-tools").innerHTML = Object.entries(tools)
+                    .map(
+                        ([t, c]) =>
+                            `<span class="chip done">${esc(t)}</span> ${c}`,
+                    )
+                    .join(" &nbsp; ");
+                $("#t-vulns").innerHTML =
+                    (w.vulnerabilities || [])
+                        .map(
+                            (v) =>
+                                `<tr class="row" onclick="openD(${JSON.stringify(v).replace(/"/g, "&quot;")})">` +
+                                `<td><span class="sev ${svc(v.severity)}">${esc(v.severity)}</span></td>` +
+                                `<td>${esc(v.name)}</td><td><span class="st ${esc(v.status)}">${esc(v.status)}</span></td>` +
+                                `<td>${esc(v.tool)}</td><td style="font-family:var(--mono)">${esc(v.cve || "—")}</td></tr>`,
+                        )
+                        .join("") ||
+                    `<tr><td colspan="5" style="color:var(--dim)">No vulnerabilities found.</td></tr>`;
+                $("#d-host").innerHTML =
+                    `<div class="field"><b>Host</b><div class="v">${esc(w.target.id)}</div></div>` +
+                    `<div class="field"><b>URL</b><div class="v">${esc(w.target.url)}</div></div>` +
+                    (w.target.server
+                        ? `<div class="field"><b>Server</b><div class="v">${esc(w.target.server)}</div></div>`
+                        : "") +
+                    (w.target.title
+                        ? `<div class="field"><b>Title</b><div class="v">${esc(w.target.title)}</div></div>`
+                        : "") +
+                    (w.target.http_status
+                        ? `<div class="field"><b>HTTP</b><div class="v">${esc(w.target.http_status)}</div></div>`
+                        : "");
+                $("#t-svc").innerHTML = w.services
+                    .map(
+                        (x) =>
+                            `<tr><td style="font-family:var(--mono)">${esc(x.port)}</td><td>${esc(x.protocol)}</td><td>${esc(x.status)}</td><td style="font-family:var(--mono)">${esc(x.banner || "—")}</td></tr>`,
+                    )
+                    .join("");
+                $("#d-rank").innerHTML = ranking
+                    .map((r) => {
+                        const p =
+                            r.probability != null
+                                ? r.probability
+                                : r.confidence || 0;
+                        return `<div class="rank"><span class="fam">#${r.rank} ${esc(r.family)}</span><div class="bar"><i style="width:${(p * 100).toFixed(1)}%"></i></div><span class="pct">${(p * 100).toFixed(1)}%</span></div>`;
+                    })
+                    .join("");
+                go("dash");
+            }
+            function openD(v) {
+                $("#d-body").innerHTML =
+                    `<h2 style="margin:0 0 14px;letter-spacing:-.02em">${esc(v.name)}</h2>` +
+                    `<span class="sev ${svc(v.severity)}">${esc(v.severity)}</span>` +
+                    `<div style="margin-top:22px">` +
+                    `<div class="field"><b>Status</b><div class="v">${esc(v.status)}</div></div>` +
+                    `<div class="field"><b>Tool</b><div class="v">${esc(v.tool)}</div></div>` +
+                    (v.cve
+                        ? `<div class="field"><b>CVE</b><div class="v"><a href="https://nvd.nist.gov/vuln/detail/${esc(v.cve)}">${esc(v.cve)}</a></div></div>`
+                        : "") +
+                    (v.port
+                        ? `<div class="field"><b>Port</b><div class="v">${esc(v.port)}</div></div>`
+                        : "") +
+                    `<div class="field"><b>Description</b><div class="v">${esc(v.desc)}</div></div>` +
+                    (v.evidence
+                        ? `<div class="field"><b>Evidence</b><pre>${esc(v.evidence)}</pre></div>`
+                        : "") +
+                    (v.references && v.references.length
+                        ? `<div class="field"><b>References</b><div class="v">${v.references.map((r) => `<a href="https://nvd.nist.gov/vuln/detail/${esc(r)}">${esc(r)}</a>`).join(", ")}</div></div>`
+                        : "") +
+                    (v.solution
+                        ? `<div class="field"><b>Solution</b><div class="v">${esc(v.solution)}</div></div>`
+                        : "") +
+                    `</div>`;
+                $("#detail").classList.add("show");
+            }
+            function closeD() {
+                $("#detail").classList.remove("show");
+            }
+            function dl(name, text, mime) {
+                const b = new Blob([text], { type: mime });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(b);
+                a.download = name;
+                a.click();
+                URL.revokeObjectURL(a.href);
+            }
+            async function exportJSON() {
+                if (!LAST) return;
+                const r = await fetch("/api/scan/" + LAST.id + "/report");
+                const j = await r.json();
+                dl("chimera-report-" + LAST.id + ".json", JSON.stringify(j, null, 2), "application/json");
+            }
+            function exportMD() {
+                if (!LAST) return;
+                const w = LAST.w, rank = LAST.r || [];
+                let m = "# Chimera Scan Report\n\n";
+                m += "**Target:** " + (w.target?.url || "") + "\n";
+                m += "**Summary:**\n```\n" + JSON.stringify(w.summary, null, 2) + "\n```\n";
+                m += "## Vulnerabilities\n\n";
+                if (w.vulnerabilities?.length) {
+                    w.vulnerabilities.forEach((v) => {
+                        m += `- **${v.severity.toUpperCase()}** [${v.status}] ${v.cve || "—"} — ${v.name}\n`;
+                    });
+                } else m += "_No vulnerabilities._\n";
+                m += "\n## Attack Order / Ranking\n\n";
+                rank.forEach((x) => {
+                    const p = x.probability != null ? x.probability : (x.confidence || 0);
+                    m += `- #${x.rank} ${x.family} — ${(p * 100).toFixed(1)}%\n`;
+                });
+                dl("chimera-report-" + LAST.id + ".md", m, "text/markdown");
+            }
+            document.getElementById("exjson").addEventListener("click", exportJSON);
+            document.getElementById("exmd").addEventListener("click", exportMD);
+        </script>
+    </body>
+</html>
