@@ -1,0 +1,4 @@
+interface:
+  display_name: "CTF SSTI Auto-Enrich"
+  short_description: "Probe and enrich CTF SSTI targets."
+  default_prompt: "Use this skill to probe a CTF web target for server-side template injection, map filters, and build a minimal exploit path within challenge scope."

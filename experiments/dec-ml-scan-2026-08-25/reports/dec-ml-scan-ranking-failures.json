@@ -7,44 +7,19 @@
       {
         "rank": 1,
         "candidate_family": "adminer",
-        "probability": 0.5027080796982667,
+        "probability": 0.3323201230364789,
         "is_positive": false
       },
       {
         "rank": 2,
         "candidate_family": "appweb",
-        "probability": 0.5027080796982667,
+        "probability": 0.3323201230364789,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "drupal",
-        "probability": 0.5027080796982667,
-        "is_positive": false
-      }
-    ]
-  },
-  {
-    "target_id": "joomla_CVE-2023-23752",
-    "positive_family": "joomla",
-    "positive_rank": 17,
-    "ml_top3": [
-      {
-        "rank": 1,
-        "candidate_family": "aria2",
-        "probability": 0.05137762691697815,
-        "is_positive": false
-      },
-      {
-        "rank": 2,
-        "candidate_family": "redis",
-        "probability": 0.05137762691697815,
-        "is_positive": false
-      },
-      {
-        "rank": 3,
-        "candidate_family": "thinkphp",
-        "probability": 0.04253636134448443,
+        "probability": 0.3323201230364789,
         "is_positive": false
       }
     ]
@@ -52,24 +27,24 @@
   {
     "target_id": "shiro_CVE-2016-4437",
     "positive_family": "shiro",
-    "positive_rank": 12,
+    "positive_rank": 10,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "thinkphp",
-        "probability": 0.5027080796982667,
+        "candidate_family": "adminer",
+        "probability": 0.33232012303647906,
         "is_positive": false
       },
       {
         "rank": 2,
-        "candidate_family": "tomcat",
-        "probability": 0.5027080796982667,
+        "candidate_family": "appweb",
+        "probability": 0.33232012303647906,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "adminer",
-        "probability": 0.5027080796982666,
+        "candidate_family": "drupal",
+        "probability": 0.33232012303647906,
         "is_positive": false
       }
     ]
@@ -77,24 +52,24 @@
   {
     "target_id": "spring_CVE-2022-22965",
     "positive_family": "spring",
-    "positive_rank": 13,
+    "positive_rank": 11,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "thinkphp",
-        "probability": 0.5027080796982667,
+        "candidate_family": "adminer",
+        "probability": 0.32942173158025495,
         "is_positive": false
       },
       {
         "rank": 2,
-        "candidate_family": "tomcat",
-        "probability": 0.5027080796982667,
+        "candidate_family": "appweb",
+        "probability": 0.32942173158025495,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "adminer",
-        "probability": 0.5027080796982666,
+        "candidate_family": "drupal",
+        "probability": 0.32942173158025495,
         "is_positive": false
       }
     ]

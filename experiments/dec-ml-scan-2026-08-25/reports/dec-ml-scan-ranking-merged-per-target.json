@@ -7,19 +7,19 @@
       {
         "rank": 1,
         "candidate_family": "adminer",
-        "probability": 0.9966341495888951,
+        "probability": 0.9992214598009682,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "appweb",
-        "probability": 0.5347639626453683,
+        "candidate_family": "elasticsearch",
+        "probability": 0.9436800624479743,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "drupal",
-        "probability": 0.5347639626453683,
+        "candidate_family": "appweb",
+        "probability": 0.19355854970377737,
         "is_positive": false
       }
     ]
@@ -32,19 +32,19 @@
       {
         "rank": 1,
         "candidate_family": "druid",
-        "probability": 0.9966843549404097,
+        "probability": 0.9992184295345311,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08404197925158699,
+        "candidate_family": "jetty",
+        "probability": 0.9450494067808032,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08404197925158699,
+        "candidate_family": "aria2",
+        "probability": 0.06954920011369511,
         "is_positive": false
       }
     ]
@@ -52,24 +52,24 @@
   {
     "target_id": "appweb_CVE-2018-8715",
     "positive_family": "appweb",
-    "positive_rank": 2,
+    "positive_rank": 5,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "adminer",
-        "probability": 0.5027080796982667,
+        "candidate_family": "goahead",
+        "probability": 0.4884386198840795,
         "is_positive": false
       },
       {
         "rank": 2,
-        "candidate_family": "appweb",
-        "probability": 0.5027080796982667,
-        "is_positive": true
+        "candidate_family": "thinkphp",
+        "probability": 0.11028348529886893,
+        "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "drupal",
-        "probability": 0.5027080796982667,
+        "candidate_family": "tomcat",
+        "probability": 0.11028348529886893,
         "is_positive": false
       }
     ]
@@ -82,19 +82,19 @@
       {
         "rank": 1,
         "candidate_family": "aria2",
-        "probability": 0.9945712020718714,
+        "probability": 0.999794775859578,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "redis",
-        "probability": 0.4444160678801238,
+        "probability": 0.30952714291630473,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "adminer",
-        "probability": 0.05545742316505533,
+        "probability": 0.06296802481239347,
         "is_positive": false
       }
     ]
@@ -107,19 +107,19 @@
       {
         "rank": 1,
         "candidate_family": "couchdb",
-        "probability": 0.9719023641032458,
+        "probability": 0.9922883833793373,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08395677195737927,
+        "candidate_family": "aria2",
+        "probability": 0.06800178003465114,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08395677195737927,
+        "candidate_family": "redis",
+        "probability": 0.06800178003465114,
         "is_positive": false
       }
     ]
@@ -132,19 +132,19 @@
       {
         "rank": 1,
         "candidate_family": "couchdb",
-        "probability": 0.9719023641032458,
+        "probability": 0.9923367190497981,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08395677195737927,
+        "candidate_family": "nextjs",
+        "probability": 0.21875689092041165,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08395677195737927,
+        "candidate_family": "aria2",
+        "probability": 0.0682898237492753,
         "is_positive": false
       }
     ]
@@ -157,19 +157,19 @@
       {
         "rank": 1,
         "candidate_family": "drupal",
-        "probability": 0.9966341495888951,
+        "probability": 0.9991289120207647,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.5347639626453683,
+        "probability": 0.19437741082737098,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.5347639626453683,
+        "probability": 0.19437741082737098,
         "is_positive": false
       }
     ]
@@ -182,19 +182,19 @@
       {
         "rank": 1,
         "candidate_family": "elasticsearch",
-        "probability": 0.48486596268842835,
+        "probability": 0.9863764346233792,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08256180881487224,
+        "candidate_family": "aria2",
+        "probability": 0.06739681589622462,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08256180881487224,
+        "candidate_family": "redis",
+        "probability": 0.06739681589622462,
         "is_positive": false
       }
     ]
@@ -207,19 +207,19 @@
       {
         "rank": 1,
         "candidate_family": "flask",
-        "probability": 0.7600262068815921,
+        "probability": 0.7416742359863924,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.09360173761399933,
+        "probability": 0.08957396964240959,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.09360173761399933,
+        "probability": 0.08957396964240959,
         "is_positive": false
       }
     ]
@@ -227,24 +227,24 @@
   {
     "target_id": "goahead_CVE-2017-17562",
     "positive_family": "goahead",
-    "positive_rank": 4,
+    "positive_rank": 1,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "adminer",
-        "probability": 0.5027080796982667,
-        "is_positive": false
+        "candidate_family": "goahead",
+        "probability": 0.9853434500488526,
+        "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "appweb",
-        "probability": 0.5027080796982667,
+        "candidate_family": "adminer",
+        "probability": 0.18266631830415478,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "drupal",
-        "probability": 0.5027080796982667,
+        "candidate_family": "appweb",
+        "probability": 0.18266631830415478,
         "is_positive": false
       }
     ]
@@ -257,19 +257,19 @@
       {
         "rank": 1,
         "candidate_family": "gogs",
-        "probability": 0.9966729211193613,
+        "probability": 0.9991271460435122,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "grafana",
-        "probability": 0.5209577287841899,
+        "probability": 0.18636047656247634,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "nextjs",
-        "probability": 0.5209577287841899,
+        "probability": 0.18636047656247634,
         "is_positive": false
       }
     ]
@@ -282,19 +282,19 @@
       {
         "rank": 1,
         "candidate_family": "grafana",
-        "probability": 0.9966729211193613,
+        "probability": 0.999042130091861,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "gogs",
-        "probability": 0.5209577287841899,
+        "probability": 0.17405903495914843,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "nextjs",
-        "probability": 0.5209577287841899,
+        "probability": 0.17405903495914843,
         "is_positive": false
       }
     ]
@@ -307,19 +307,19 @@
       {
         "rank": 1,
         "candidate_family": "jenkins",
-        "probability": 0.9965747205130279,
+        "probability": 0.9991418833835082,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "jetty",
-        "probability": 0.9904632213543867,
+        "probability": 0.9983825291694707,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "adminer",
-        "probability": 0.5326512889823063,
+        "probability": 0.19287520174886252,
         "is_positive": false
       }
     ]
@@ -332,19 +332,19 @@
       {
         "rank": 1,
         "candidate_family": "jetty",
-        "probability": 0.9993849516111621,
+        "probability": 0.9987812103574208,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.5348471194162142,
+        "probability": 0.19457109664814295,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.5348471194162142,
+        "probability": 0.19457109664814295,
         "is_positive": false
       }
     ]
@@ -352,24 +352,24 @@
   {
     "target_id": "joomla_CVE-2023-23752",
     "positive_family": "joomla",
-    "positive_rank": 17,
+    "positive_rank": 1,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "aria2",
-        "probability": 0.05137762691697815,
-        "is_positive": false
+        "candidate_family": "joomla",
+        "probability": 0.4529038494109498,
+        "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "redis",
-        "probability": 0.05137762691697815,
+        "candidate_family": "aria2",
+        "probability": 0.08086284205907189,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "thinkphp",
-        "probability": 0.04253636134448443,
+        "candidate_family": "redis",
+        "probability": 0.08086284205907189,
         "is_positive": false
       }
     ]
@@ -377,25 +377,25 @@
   {
     "target_id": "nextjs_CVE-2025-29927",
     "positive_family": "nextjs",
-    "positive_rank": 3,
+    "positive_rank": 1,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "gogs",
-        "probability": 0.4024616165412548,
-        "is_positive": false
+        "candidate_family": "nextjs",
+        "probability": 0.9727496486507426,
+        "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "grafana",
-        "probability": 0.4024616165412548,
+        "candidate_family": "drupal",
+        "probability": 0.8627645176883197,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "nextjs",
-        "probability": 0.4024616165412548,
-        "is_positive": true
+        "candidate_family": "gogs",
+        "probability": 0.0884268744650522,
+        "is_positive": false
       }
     ]
   },
@@ -407,19 +407,19 @@
       {
         "rank": 1,
         "candidate_family": "nexus",
-        "probability": 0.46779622365503115,
+        "probability": 0.1797799574962304,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.07794501440145862,
+        "probability": 0.05484613335261995,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.07794501440145862,
+        "probability": 0.05484613335261995,
         "is_positive": false
       }
     ]
@@ -432,19 +432,19 @@
       {
         "rank": 1,
         "candidate_family": "nginx",
-        "probability": 0.9999291720010709,
+        "probability": 0.9989642418705165,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.5341419459051757,
+        "probability": 0.0954347383393245,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.5341419459051757,
+        "probability": 0.0954347383393245,
         "is_positive": false
       }
     ]
@@ -457,19 +457,19 @@
       {
         "rank": 1,
         "candidate_family": "phpmyadmin",
-        "probability": 0.8571004824378938,
+        "probability": 0.9946996241690994,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "adminer",
-        "probability": 0.5298050063598971,
+        "probability": 0.19432498636618364,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "appweb",
-        "probability": 0.5298050063598971,
+        "probability": 0.19432498636618364,
         "is_positive": false
       }
     ]
@@ -482,19 +482,19 @@
       {
         "rank": 1,
         "candidate_family": "rails",
-        "probability": 0.9966729211193613,
+        "probability": 0.9991271460435122,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "gogs",
-        "probability": 0.5209577287841899,
+        "probability": 0.1863604765624763,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "grafana",
-        "probability": 0.5209577287841899,
+        "probability": 0.1863604765624763,
         "is_positive": false
       }
     ]
@@ -507,19 +507,19 @@
       {
         "rank": 1,
         "candidate_family": "rails",
-        "probability": 0.9966729211193613,
+        "probability": 0.9991271460435122,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "gogs",
-        "probability": 0.5209577287841899,
+        "probability": 0.1863604765624763,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "grafana",
-        "probability": 0.5209577287841899,
+        "probability": 0.1863604765624763,
         "is_positive": false
       }
     ]
@@ -532,19 +532,19 @@
       {
         "rank": 1,
         "candidate_family": "redis",
-        "probability": 0.9946118040718108,
+        "probability": 0.9998269633527308,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "aria2",
-        "probability": 0.44668609671343257,
+        "probability": 0.3436912716881984,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "adminer",
-        "probability": 0.04462875637179083,
+        "probability": 0.021851658484746735,
         "is_positive": false
       }
     ]
@@ -552,24 +552,24 @@
   {
     "target_id": "shiro_CVE-2016-4437",
     "positive_family": "shiro",
-    "positive_rank": 12,
+    "positive_rank": 1,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "thinkphp",
-        "probability": 0.5027080796982667,
-        "is_positive": false
+        "candidate_family": "shiro",
+        "probability": 0.9853434500488526,
+        "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "tomcat",
-        "probability": 0.5027080796982667,
+        "candidate_family": "adminer",
+        "probability": 0.1826663183041548,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "adminer",
-        "probability": 0.5027080796982666,
+        "candidate_family": "appweb",
+        "probability": 0.1826663183041548,
         "is_positive": false
       }
     ]
@@ -582,19 +582,19 @@
       {
         "rank": 1,
         "candidate_family": "solr",
-        "probability": 0.9966843549404097,
+        "probability": 0.9991267670828887,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08404197925158699,
+        "candidate_family": "aria2",
+        "probability": 0.06772486755200255,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08404197925158699,
+        "candidate_family": "redis",
+        "probability": 0.06772486755200255,
         "is_positive": false
       }
     ]
@@ -602,24 +602,24 @@
   {
     "target_id": "spring_CVE-2022-22965",
     "positive_family": "spring",
-    "positive_rank": 13,
+    "positive_rank": 1,
     "ml_top3": [
       {
         "rank": 1,
-        "candidate_family": "thinkphp",
-        "probability": 0.5027080796982667,
-        "is_positive": false
+        "candidate_family": "spring",
+        "probability": 0.9863869884492028,
+        "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "tomcat",
-        "probability": 0.5027080796982667,
+        "probability": 0.801410497868254,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "adminer",
-        "probability": 0.5027080796982666,
+        "probability": 0.18350844511438985,
         "is_positive": false
       }
     ]
@@ -632,19 +632,19 @@
       {
         "rank": 1,
         "candidate_family": "struts2",
-        "probability": 0.9965747205130279,
+        "probability": 0.9991418833835082,
         "is_positive": true
       },
       {
         "rank": 2,
         "candidate_family": "jetty",
-        "probability": 0.9904632213543867,
+        "probability": 0.9983825291694707,
         "is_positive": false
       },
       {
         "rank": 3,
         "candidate_family": "adminer",
-        "probability": 0.5326512889823063,
+        "probability": 0.19287520174886247,
         "is_positive": false
       }
     ]
@@ -657,19 +657,19 @@
       {
         "rank": 1,
         "candidate_family": "thinkphp",
-        "probability": 0.5259008058869048,
+        "probability": 0.9959837516823787,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "tomcat",
-        "probability": 0.5259008058869048,
+        "candidate_family": "adminer",
+        "probability": 0.434671648867073,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "adminer",
-        "probability": 0.5259008058869047,
+        "candidate_family": "appweb",
+        "probability": 0.434671648867073,
         "is_positive": false
       }
     ]
@@ -682,19 +682,19 @@
       {
         "rank": 1,
         "candidate_family": "spring",
-        "probability": 0.9454021069504183,
+        "probability": 0.9258689915917951,
         "is_positive": false
       },
       {
         "rank": 2,
         "candidate_family": "tomcat",
-        "probability": 0.9454021069504183,
+        "probability": 0.9258689915917951,
         "is_positive": true
       },
       {
         "rank": 3,
-        "candidate_family": "thinkphp",
-        "probability": 0.5332522298880715,
+        "candidate_family": "adminer",
+        "probability": 0.18051018464896187,
         "is_positive": false
       }
     ]
@@ -707,19 +707,19 @@
       {
         "rank": 1,
         "candidate_family": "webmin",
-        "probability": 0.9910654441673551,
+        "probability": 0.9975579758554894,
         "is_positive": true
       },
       {
         "rank": 2,
-        "candidate_family": "adminer",
-        "probability": 0.08404188326286045,
+        "candidate_family": "shiro",
+        "probability": 0.1463385635083206,
         "is_positive": false
       },
       {
         "rank": 3,
-        "candidate_family": "appweb",
-        "probability": 0.08404188326286045,
+        "candidate_family": "aria2",
+        "probability": 0.06796017534977306,
         "is_positive": false
       }
     ]

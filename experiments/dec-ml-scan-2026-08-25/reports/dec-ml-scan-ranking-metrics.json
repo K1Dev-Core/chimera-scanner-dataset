@@ -1,6 +1,7 @@
 {
   "task": "ทดสอบว่า scanner-derived target fingerprints ช่วยเรียง candidate family ได้ถูกต้องหรือไม่",
   "experiment_dir": "experiments\\dec-ml-scan-2026-08-25",
+  "features_file": "experiments\\dec-ml-scan-2026-08-25\\features-enriched.csv",
   "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
   "label_metadata": {
     "label_mode": "weak",
@@ -21,9 +22,11 @@
     "server_alias_score",
     "nmap_alias_score",
     "body_alias_score",
+    "evidence_alias_score",
     "port_score",
     "protocol_score",
-    "http_tool_score"
+    "http_tool_score",
+    "scan_depth_score"
   ],
   "excluded_leakage_fields": [
     "target_id",
@@ -32,26 +35,26 @@
     "CVE in target_id"
   ],
   "ml": {
-    "top1_hit_rate": 0.7586206896551724,
-    "top3_hit_rate": 0.8620689655172413,
-    "top5_hit_rate": 0.896551724137931,
-    "mrr": 0.8207728714828106,
+    "top1_hit_rate": 0.8620689655172413,
+    "top3_hit_rate": 0.896551724137931,
+    "top5_hit_rate": 0.9310344827586207,
+    "mrr": 0.8945141065830721,
     "attempts_to_first_positive": {
-      "mean": 2.586206896551724,
+      "mean": 1.793103448275862,
       "median": 1.0,
-      "max": 17.0,
+      "max": 11.0,
       "evaluated_targets": 29
     }
   },
   "heuristic": {
-    "top1_hit_rate": 0.7241379310344828,
-    "top3_hit_rate": 0.8275862068965517,
-    "top5_hit_rate": 0.8620689655172413,
-    "mrr": 0.7906237440720199,
+    "top1_hit_rate": 0.8620689655172413,
+    "top3_hit_rate": 0.896551724137931,
+    "top5_hit_rate": 0.9310344827586207,
+    "mrr": 0.8945141065830721,
     "attempts_to_first_positive": {
-      "mean": 2.7241379310344827,
+      "mean": 1.793103448275862,
       "median": 1.0,
-      "max": 13.0,
+      "max": 11.0,
       "evaluated_targets": 29
     }
   },
@@ -68,45 +71,49 @@
   },
   "feature_ablation": {
     "current": {
-      "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/protocol/port/tool coverage",
+      "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/evidence/protocol/port/tool coverage",
       "features": [
         "title_alias_score",
         "server_alias_score",
         "nmap_alias_score",
         "body_alias_score",
+        "evidence_alias_score",
         "port_score",
         "protocol_score",
-        "http_tool_score"
+        "http_tool_score",
+        "scan_depth_score"
       ],
-      "top1_hit_rate": 0.7586206896551724,
-      "top3_hit_rate": 0.8620689655172413,
-      "top5_hit_rate": 0.896551724137931,
-      "mrr": 0.8207728714828106,
+      "top1_hit_rate": 0.8620689655172413,
+      "top3_hit_rate": 0.896551724137931,
+      "top5_hit_rate": 0.9310344827586207,
+      "mrr": 0.8945141065830721,
       "attempts_to_first_positive": {
-        "mean": 2.586206896551724,
+        "mean": 1.793103448275862,
         "median": 1.0,
-        "max": 17.0,
+        "max": 11.0,
         "evaluated_targets": 29
       }
     },
     "no_body_text": {
-      "description": "ตัด body/probe text ออก เหลือเฉพาะ metadata ที่มักนิ่งกว่า",
+      "description": "ตัด body text ออก แต่ยังใช้ evidence จาก scanner/raw-curated ที่ normalize แล้ว",
       "features": [
         "title_alias_score",
         "server_alias_score",
         "nmap_alias_score",
+        "evidence_alias_score",
         "port_score",
         "protocol_score",
-        "http_tool_score"
+        "http_tool_score",
+        "scan_depth_score"
       ],
-      "top1_hit_rate": 0.7241379310344828,
-      "top3_hit_rate": 0.8275862068965517,
-      "top5_hit_rate": 0.8620689655172413,
-      "mrr": 0.7902700747528333,
+      "top1_hit_rate": 0.8620689655172413,
+      "top3_hit_rate": 0.8620689655172413,
+      "top5_hit_rate": 0.9310344827586207,
+      "mrr": 0.8853187042842215,
       "attempts_to_first_positive": {
-        "mean": 2.793103448275862,
+        "mean": 1.9310344827586208,
         "median": 1.0,
-        "max": 15.0,
+        "max": 12.0,
         "evaluated_targets": 29
       }
     },
@@ -133,21 +140,22 @@
         "title_alias_score",
         "server_alias_score",
         "nmap_alias_score",
-        "body_alias_score"
+        "body_alias_score",
+        "evidence_alias_score"
       ],
-      "top1_hit_rate": 0.6551724137931034,
-      "top3_hit_rate": 0.7241379310344828,
-      "top5_hit_rate": 0.7241379310344828,
-      "mrr": 0.7098503724328312,
+      "top1_hit_rate": 0.7241379310344828,
+      "top3_hit_rate": 0.8620689655172413,
+      "top5_hit_rate": 0.8620689655172413,
+      "mrr": 0.8022313248137836,
       "attempts_to_first_positive": {
-        "mean": 5.275862068965517,
+        "mean": 3.3793103448275863,
         "median": 1.0,
-        "max": 25.0,
+        "max": 23.0,
         "evaluated_targets": 29
       }
     }
   },
-  "failure_case_count_top3": 4,
+  "failure_case_count_top3": 3,
   "warnings": [
     "labels-draft.jsonl เป็น weak label จากชื่อ lab/folder ยังไม่ใช่ exploit-success ground truth",
     "candidate rows ถูกสร้างจาก family list เพื่อวัด ranking เท่านั้น ไม่ใช่ข้อมูล scanner ดิบโดยตรง",

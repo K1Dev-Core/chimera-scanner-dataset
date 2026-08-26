@@ -1,0 +1,7 @@
+interface:
+  display_name: "CTF Auto Enrich"
+  short_description: "Reproducible CTF solve enrichment"
+  default_prompt: "Use $ctf-auto-enrich to verify the solved path, clean up the solve script, and produce a concise reproducible CTF report."
+
+policy:
+  allow_implicit_invocation: true

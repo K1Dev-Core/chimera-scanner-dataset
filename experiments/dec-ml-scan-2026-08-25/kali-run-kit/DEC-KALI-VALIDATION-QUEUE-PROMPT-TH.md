@@ -25,7 +25,7 @@
 
 ## เป้าหมายหลัก
 
-เรามี ML ranking จากชุด `dec-ml-scan-2026-08-25` แล้ว แต่ยังใช้ weak label จากชื่อ Vulhub lab
+เรามี ML ranking จากชุด `dec-ml-scan-2026-08-25` แล้ว รอบล่าสุดเพิ่ม `features-enriched.csv` จาก raw-curated evidence ทำให้ผลดีขึ้น แต่ยังมี 3 target ที่ ML ยังจัด expected family ไม่เข้า Top-3 คือ Spring, Shiro, GoAhead
 
 งานของคุณคือ validate target ตาม queue นี้ แล้วสร้างผลลัพธ์เป็น raw-curated + validation JSONL ที่ Codex ฝั่ง Windows เอากลับเข้า repo ได้
 
@@ -39,10 +39,10 @@ experiments/dec-ml-scan-2026-08-25/validation-target-queue.csv
 
 ```csv
 priority,target_id,weak_label,ml_positive_rank,queue_type
-1,joomla_CVE-2023-23752,joomla,17,hard_failure
-2,spring_CVE-2022-22965,spring,13,hard_failure
-3,shiro_CVE-2016-4437,shiro,12,hard_failure
-4,goahead_CVE-2017-17562,goahead,4,near_miss
+1,spring_CVE-2022-22965,spring,11,hard_failure
+2,shiro_CVE-2016-4437,shiro,10,hard_failure
+3,goahead_CVE-2017-17562,goahead,4,near_miss
+4,joomla_CVE-2023-23752,joomla,1,regression_guard
 5,redis_CVE-2022-0543,redis,1,positive_control
 6,aria2_rce,aria2,1,positive_control
 7,grafana_CVE-2021-43798,grafana,1,positive_control
@@ -140,9 +140,9 @@ curl -k -L --max-time 10 "$URL" > "$T/raw/curl_home.html"
 5. เก็บ probe เฉพาะ family ที่ต้อง validate เช่น:
 
 - Joomla: config/API endpoint ที่เกี่ยวกับ CVE-2023-23752
-- Spring: header/path ที่บอก Spring และ safe check สำหรับ CVE-2022-22965
-- Shiro: cookie/header/login evidence ที่บอก Apache Shiro
-- GoAhead: server banner/path ที่บอก GoAhead
+- Spring: header/path ที่บอก Spring เช่น `/actuator`, `/actuator/env`, `/actuator/health`, `/error` และ safe check สำหรับ CVE-2022-22965 ถ้ามี
+- Shiro: cookie/header/login evidence เช่น `rememberMe`, `JSESSIONID`, login route หรือ error ที่บอก Apache Shiro
+- GoAhead: server banner/path เช่น `/`, `/admin`, `/status`, `/goform/status` ที่บอก GoAhead
 - Redis: nmap/banner/INFO แบบไม่แก้ข้อมูล
 - Aria2: JSON-RPC version/system info แบบปลอดภัย
 - Grafana: title/header/path traversal safe indicator
@@ -195,3 +195,16 @@ curl -k -L --max-time 10 "$URL" > "$T/raw/curl_home.html"
 Kali output: /home/kali/reports/<RUN_ID>
 Shared output: /media/sf_kali-share/dataset/<RUN_ID>
 ```
+
+## Loop หลังจากสแกนเสร็จ
+
+ให้ทำงานเป็นรอบแบบนี้:
+
+1. สแกน queue ปัจจุบันและ copy ผลไป shared folder
+2. Codex ฝั่ง Windows import `validation-results.jsonl`
+3. รัน enrich feature ใหม่จาก raw-curated
+4. evaluate ML ใหม่แบบ `--label-mode merged`
+5. อ่าน failure report ใหม่
+6. ถ้ายังพลาด ให้สร้าง queue รอบถัดไปจาก target ที่ยังพลาดเท่านั้น
+
+หลักคิดคือไม่เพิ่ม scan แบบหว่านทั้งหมด แต่เพิ่ม evidence เฉพาะจุดที่ ML ยังแยกไม่ได้ เพื่อให้เวลาสั้นแต่ผลต่อโมเดลสูง

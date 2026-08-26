@@ -1,0 +1,4 @@
+interface:
+  display_name: "CTF GraphQL Introspection"
+  short_description: "Solve CTF GraphQL introspection and hidden-field challenges."
+  default_prompt: "Use this skill to inspect a CTF GraphQL endpoint, enumerate hidden schema fields, and extract flags from concealed queries."

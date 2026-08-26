@@ -18,6 +18,9 @@
 | `SCAN-SUMMARY-TH.md` | สรุปภาษาไทยของรอบสแกน |
 | `observations.jsonl` | observation ระดับ target จาก scanner/fingerprint |
 | `features.csv` | feature table สำหรับทดลอง ML ranking |
+| `features-enriched.csv` | feature table ที่เติม `evidence_text`, `body_fingerprint`, จำนวนไฟล์ evidence และจำนวน finding จาก raw-curated โดยตัด target/CVE leakage ออกก่อนใช้ |
+| `feature-inventory.csv` | รายการ feature ทั้งหมด พร้อมระดับข้อมูล ที่มา เหตุผลที่ใช้ และข้อควรระวัง |
+| `ML-COMPARISON-EXPLAINED-TH.md` | คำอธิบายภาษาไทยว่า ML วัดผลอย่างไร เปรียบเทียบอะไร และ source code ทำงานยังไง |
 | `labels-draft.jsonl` | weak label จากชื่อ Vulhub path |
 | `derived/candidate-family-features.csv` | input ML แบบ candidate-level: 1 target x ทุก candidate family |
 | `derived/candidate-family-features.jsonl` | ข้อมูลเดียวกับ CSV แต่เหมาะกับ pipeline ที่อ่าน JSONL |
@@ -69,10 +72,11 @@
 รัน evaluator รอบนี้ได้ด้วย:
 
 ```powershell
+python scripts\enrich_dec_ml_scan_features.py
 python scripts\evaluate_dec_ml_scan_20260825.py
 ```
 
-ค่า default คือ `--label-mode weak` แปลว่าใช้ `labels-draft.jsonl` ทั้งหมด
+ค่า default คือ `--label-mode weak` แปลว่าใช้ `labels-draft.jsonl` ทั้งหมด และ evaluator จะใช้ `features-enriched.csv` อัตโนมัติถ้าไฟล์นี้มีอยู่ ถ้าไม่มีกลับไปใช้ `features.csv`
 
 หลังจาก import ผล validation จาก Kali แล้ว ให้รันแบบ merged:
 
@@ -93,20 +97,21 @@ python scripts\export_dec_attack_order.py --prediction-file experiments\dec-ml-s
 
 ผลล่าสุด:
 
-- ML logistic ranker: Top-1 `0.759`, Top-3 `0.862`, mean attempts `2.586`
-- Scanner heuristic: Top-1 `0.724`, Top-3 `0.828`, mean attempts `2.724`
+- ML logistic ranker โหมด merged หลัง import Kali validation/tool-scope: Top-1 `0.931`, Top-3 `0.966`, mean attempts `1.172`
+- Scanner heuristic โหมด merged หลัง import Kali validation: Top-1 `0.931`, Top-3 `1.000`, mean attempts `1.103`
+- Validated-only 8 targets: Top-1 `1.000`, Top-3 `1.000`, mean attempts `1.000`
 - Random expected: Top-1 `0.037`, Top-3 `0.111`, mean attempts `14.000`
 
-ความหมายคือ ML ช่วยลดจำนวน candidate ที่ต้องลองจากค่าเฉลี่ยสุ่มประมาณ 14 เหลือประมาณ 2.6 แต่ยังไม่ใช่ความแม่น exploit จริง เพราะ label ยังเป็น weak label
+ความหมายคือ feature enriched + Kali validation evidence ช่วยลดจำนวน candidate ที่ต้องลองจากค่าเฉลี่ยสุ่มประมาณ 14 เหลือประมาณ 1.1-1.2 ในชุด 29 targets และ target ที่ validate แล้ว 8 ตัวเข้าอันดับ 1 ทั้งหมด
 
-จุดที่ ML ยังพลาดเกิน Top-3:
+จุดที่ ML ยังพลาดเกิน Top-3 หลัง import validation:
 
-- `goahead_CVE-2017-17562`
-- `joomla_CVE-2023-23752`
-- `shiro_CVE-2016-4437`
-- `spring_CVE-2022-22965`
+- ML logistic ยังมี `appweb_CVE-2018-8715` หลุด Top-3 หลังเพิ่ม GoAhead evidence รอบล่าสุด
+- Scanner heuristic ไม่มี failure เกิน Top-3
 
-target เหล่านี้ถูกจัดไว้ใน `validation-target-queue.csv` แล้ว โดยเรียงจากเคสที่ให้ feedback กับโมเดลได้มากที่สุดก่อน
+หมายเหตุ: `spring_CVE-2022-22965` ยังเป็น `inconclusive` ใน validation label เพราะ lab รอบนี้เห็น Tomcat/JSESSIONID แต่ไม่พบ Spring-specific fingerprint เช่น actuator หรือ Whitelabel Error Page ดังนั้นถ้าต้อง validate exploit/family ให้แน่นขึ้น ควรสแกน Spring lab เพิ่มอีกรอบด้วย target ที่มี Spring fingerprint ชัดกว่าเดิม
+
+หมายเหตุเพิ่ม: `appweb_CVE-2018-8715` ควรเข้าสแกนรอบถัดไปเพื่อหา AppWeb-specific fingerprint เพราะตอนนี้ evidence ของ AppWeb ยังไม่แข็งพอเมื่อเทียบกับ GoAhead
 
 prompt สำหรับส่งให้ opencode ฝั่ง Kali อยู่ที่ `docs/prompts/DEC-KALI-VALIDATION-QUEUE-PROMPT-TH.md`
 
@@ -133,6 +138,17 @@ python3 scripts/kali/dec_validation_runner.py \
 ```powershell
 python scripts\import_dec_validation_results.py --input path\to\validation-results.jsonl
 ```
+
+ถ้าผลจาก Kali เป็นทั้งโฟลเดอร์ run ที่มี `validation-results.jsonl` และ `raw-curated/` ให้ใช้ ingest script แทน เพื่อเอาทั้ง label และ evidence กลับเข้า ML loop:
+
+```powershell
+python scripts\ingest_dec_kali_validation_run.py --run-dir C:\Users\rapii\Desktop\kali-share\dataset\dec-validation-manual
+python scripts\enrich_dec_ml_scan_features.py
+python scripts\evaluate_dec_ml_scan_20260825.py --label-mode merged
+python scripts\export_dec_attack_order.py --prediction-file experiments\dec-ml-scan-2026-08-25\reports\dec-ml-scan-ranking-merged-predictions.json --suffix merged --top-k 5
+```
+
+flow นี้คือดูว่า ML พลาดอะไร แล้วสแกนเพิ่มเฉพาะจุดนั้น จากนั้นค่อยดึง evidence ใหม่กลับมาเป็น feature ใหม่ให้ ML เรียนรู้เพิ่ม
 
 ## ยังไม่ควรใช้ยังไง
 

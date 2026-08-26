@@ -1,0 +1,3 @@
+interface:
+  display_name: "Agentic Skill Install Gate"
+  short_description: "OWASP AST10 pre-install security review for Codex skills"

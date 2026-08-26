@@ -1,0 +1,3 @@
+display_name: CTF Novel Auto Enrich
+short_description: Triage unfamiliar hybrid CTF tasks.
+default_prompt: Use ctf-novel-auto-enrich to triage this unfamiliar CTF challenge, route it to the right technique, verify evidence, and produce a reusable handoff.

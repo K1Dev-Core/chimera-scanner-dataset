@@ -1,8 +1,8 @@
 priority,target_id,weak_label,ml_positive_rank,queue_type,reason,next_evidence_to_collect
-1,joomla_CVE-2023-23752,joomla,17,hard_failure,"ML หลุดหนักเพราะ scanner fingerprint ไม่เห็นคำ Joomla ชัด","HTTP API/config response; nuclei/wapiti/nikto output; validation note"
-2,spring_CVE-2022-22965,spring,13,hard_failure,"Spring/Tomcat/8080 ชนกัน ทำให้ model เลือก family อื่นก่อน","headers; framework-specific endpoint; safe PoC result"
-3,shiro_CVE-2016-4437,shiro,12,hard_failure,"หน้า login และ port 8080 ไม่พอแยก Shiro","cookie/header/probe evidence; safe validation result"
-4,goahead_CVE-2017-17562,goahead,4,near_miss,"พลาดเฉียด Top-3 เพราะ port 8080 ชนหลาย family","server banner; path probe; nmap service evidence"
+1,spring_CVE-2022-22965,spring,11,hard_failure,"หลัง enrich แล้ว Spring ยังพลาด เพราะ port 8080/Tomcat ชนกับหลาย family และยังไม่มี Spring-specific evidence ชัด","headers; /actuator; /actuator/env; framework error page; safe PoC result if available"
+2,shiro_CVE-2016-4437,shiro,10,hard_failure,"หลัง enrich แล้ว Shiro ยังพลาด เพราะมีแค่หน้า Login Page ไม่พอแยกจาก web app อื่น","Set-Cookie/rememberMe; login route; Shiro header/error evidence; safe validation note"
+3,goahead_CVE-2017-17562,goahead,4,near_miss,"หลัง enrich แล้ว GoAhead พลาดเฉียด Top-3 เพราะ port 8080 กับ generic Home Page ชนหลาย family","Server banner; GoAhead default path/status; nmap service evidence; safe validation note"
+4,joomla_CVE-2023-23752,joomla,1,regression_guard,"เคยพลาดหนักแต่รอบ enrich ดีขึ้นแล้ว ใช้เช็กว่า scan/feature ใหม่ไม่ทำให้ regression","HTTP API/config response; nuclei/wapiti/nikto output; validation note"
 5,redis_CVE-2022-0543,redis,1,positive_control,"non-http service fingerprint ชัด ใช้เป็นตัวเทียบว่าระบบทำถูกหน้าตาเป็นอย่างไร","redis banner/nmap evidence; validation note"
 6,aria2_rce,aria2,1,positive_control,"non-http RPC fingerprint ชัด ใช้เป็น positive control","aria2 JSON-RPC evidence; validation note"
 7,grafana_CVE-2021-43798,grafana,1,positive_control,"title ชัดและ model จัดถูก ใช้เป็น positive control","HTTP title/header; path probe evidence"

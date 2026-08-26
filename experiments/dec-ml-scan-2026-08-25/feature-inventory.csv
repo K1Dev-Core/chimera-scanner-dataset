@@ -1,0 +1,39 @@
+feature_name,level,created_by,source,used_by_model,meaning,why_use,caution
+target_id,target,features.csv,lab/target metadata,no,รหัส target/lab,ใช้ join ข้อมูลและรายงานผล,ห้ามใช้เป็น feature เพราะรั่ว label/CVE
+url,target,features.csv,scanner target metadata,no,URL หรือ protocol endpoint ของ target,ใช้ให้ runner/probe รู้ว่าจะสแกนที่ไหน,ไม่ใช้ตรง ๆ ในโมเดล ranking
+protocol_kind,target,features.csv,scanner normalization,yes via protocol_score,http หรือ nonhttp,ช่วยแยก web service กับ service แบบ Redis/Aria2,หยาบเกินไปถ้าใช้เดี่ยว ๆ
+port,target,features.csv,scanner normalization,yes via port_score,port หลักของ service,บาง family มี port เด่น เช่น Redis 6379 Grafana 3000,port 8080 ชนกันเยอะจึงห้ามใช้เดี่ยว ๆ
+candidate_family,target,features.csv,weak metadata,no,family จาก scanner/queue เดิม,ใช้เป็นบริบทเดิมเท่านั้น,ห้ามใช้เป็น feature เพราะทำให้โมเดลโกง
+title,target,features.csv/http probe,yes via title_alias_score,HTML title หรือ title จาก probe,หลาย product มี title เฉพาะ เช่น Grafana/Tomcat,บาง target เป็น generic Login Page/Home Page
+server,target,features.csv/http header,yes via server_alias_score,HTTP Server header,บอก product/version ได้ เช่น nginx/apache,อาจว่างหรือเป็น proxy/generic
+x_powered_by,target,features.csv/http header,yes via server_alias_score,X-Powered-By header,ช่วยจับ framework/language เช่น PHP,ไม่ใช่หลักฐาน CVE โดยตรง
+http_status,target,features.csv/http probe,yes via body_alias_score,status หรือ response summary,ช่วยรวมสัญญาณจาก HTTP response,ไม่พอใช้เดี่ยว ๆ
+nmap_service_line,target,features.csv/nmap,yes via nmap_alias_score,service/version line จาก nmap,ช่วยจับ Redis/Aria2/Tomcat/nginx,ถ้า nmap fail จะว่าง
+compose_exit,target,features.csv,lab runner,no,exit code จาก compose/lab setup,ใช้ debug lab run,ไม่ใช่ vulnerability feature
+nmap_exit,target,features.csv,nmap runner,no,exit code จาก nmap,ใช้ debug scanner run,ไม่ใช่ vulnerability feature
+scan_success,target,features.csv,runner,no,สถานะ scan สำเร็จหรือไม่,ใช้ quality gate,ไม่ใช้ ranking โดยตรง
+has_nmap,target,features.csv,runner,no,มี nmap output หรือไม่,ใช้บอก coverage,ยังไม่ได้เข้า model โดยตรง
+has_probe,target,features.csv,runner,yes via http_tool_score,มี safe probe output หรือไม่,ช่วยให้ web target ที่มี probe ครบได้คะแนน tool coverage,เป็น coverage ไม่ใช่ finding
+has_nikto,target,features.csv,runner,yes via http_tool_score,มี nikto output หรือไม่,บอกว่ามี web scan เพิ่ม,ต้องดู finding จริงอีกที
+has_wapiti,target,features.csv,runner,yes via http_tool_score,มี wapiti output หรือไม่,บอกว่ามี crawler/web scan เพิ่ม,coverage อาจไม่เท่ากับพบช่องโหว่
+text_mentions_family,target,features.csv,early heuristic,no,ข้อความกล่าวถึง family หรือไม่,ใช้ debug heuristic เก่า,ไม่ใช้ input model หลัก
+scan_mode,target,features.csv,runner,no,โหมดการสแกน,ใช้ trace ที่มาของข้อมูล,ไม่ใช้ ranking
+body_fingerprint,target,enrich_dec_ml_scan_features.py,raw-curated evidence,yes via body_alias_score,ข้อความ fingerprint จาก body/raw evidence หลัง clean,ช่วยจับ keyword จาก response จริง,ต้อง redact target/CVE leakage
+raw_title,target,enrich_dec_ml_scan_features.py,raw-curated html,no,title ที่ดึงจาก raw HTML,ใช้เติม title ถ้า title เดิมว่าง,อาจซ้ำกับ title
+evidence_text,target,enrich_dec_ml_scan_features.py,raw-curated evidence,yes via evidence_alias_score,ข้อความ evidence รวมจาก raw-curated หลัง redact,สำคัญสุดสำหรับ Shiro/GoAhead/Joomla/Grafana,ต้องไม่ให้ชื่อไฟล์/target/CVE กลายเป็นคำตอบ
+evidence_file_count,target,enrich_dec_ml_scan_features.py,raw-curated file count,yes via scan_depth_score,จำนวนไฟล์ evidence ที่อ่านได้,บอกความลึกของ scan,จำนวนไฟล์มากไม่ได้แปลว่าพบช่องโหว่
+nikto_finding_count,target,enrich_dec_ml_scan_features.py,nikto output,yes via scan_depth_score,จำนวน finding จาก nikto,ช่วยสะท้อน web finding coverage,nikto finding อาจเป็น misconfig ไม่ใช่ CVE ตรง
+nuclei_finding_count,target,enrich_dec_ml_scan_features.py,nuclei output,yes via scan_depth_score,จำนวน finding จาก nuclei,ช่วยเพิ่มน้ำหนักเมื่อ template match,template false positive ต้อง validate
+wapiti_finding_count,target,enrich_dec_ml_scan_features.py,wapiti output,yes via scan_depth_score,จำนวน finding จาก wapiti,ช่วยจับ web vulnerability/crawl findings,coverage ขึ้นกับ crawl/form
+title_alias_score,candidate,evaluate_dec_ml_scan_20260825.py,title + FAMILY_HINTS aliases,yes,คะแนนว่า title มี keyword ของ candidate family หรือไม่,ช่วยจับ product title เช่น Grafana/Tomcat/Adminer,Login Page/Home Page มักไม่พอ
+server_alias_score,candidate,evaluate_dec_ml_scan_20260825.py,server/x_powered_by + aliases,yes,คะแนนว่า header มี keyword ของ family หรือไม่,ช่วยจับ nginx/PHP/Tomcat,header อาจ generic หรือถูก proxy
+nmap_alias_score,candidate,evaluate_dec_ml_scan_20260825.py,nmap_service_line + aliases,yes,คะแนนว่า nmap service มี keyword family หรือไม่,ดีสำหรับ service/version detection,ถ้า nmap ไม่รันจะเป็น 0
+body_alias_score,candidate,evaluate_dec_ml_scan_20260825.py,http_status/body_fingerprint + aliases,yes,คะแนนว่า body/fingerprint มี keyword family หรือไม่,ช่วย web app ที่ title/header ว่าง,ต้องกัน leakage
+evidence_alias_score,candidate,evaluate_dec_ml_scan_20260825.py,evidence_text/nikto/wapiti/nuclei summaries + aliases,yes,คะแนน evidence รวมต่อ candidate family,เป็น feature สำคัญหลัง Kali validation,ต้องใช้ evidence จริงไม่ใช่ target name
+port_score,candidate,evaluate_dec_ml_scan_20260825.py,port + FAMILY_HINTS ports,yes,1 ถ้า port ตรง port ที่ family มักใช้,ช่วย Redis/Grafana/Aria2,port 8080 ชนหลาย family มาก
+protocol_score,candidate,evaluate_dec_ml_scan_20260825.py,protocol_kind + family group,yes,คะแนนความเข้ากันของ protocol กับ family,ช่วยแยก nonhttp จาก web,หยาบมาก
+http_tool_score,candidate,evaluate_dec_ml_scan_20260825.py,has_probe/has_nikto/has_wapiti/has_nuclei_output,yes,คะแนน coverage ของ HTTP tools,ช่วยให้ target ที่สแกนครบขึ้นมีบริบทมากขึ้น,coverage ไม่เท่ากับ exploitability
+scan_depth_score,candidate,evaluate_dec_ml_scan_20260825.py,evidence/finding counts,yes,คะแนนความลึกของ evidence/finding,ช่วยแยก target ที่มีหลักฐานเยอะ,ต้องระวังไฟล์ซ้ำหรือ noise
+heuristic_score,candidate,evaluate_dec_ml_scan_20260825.py,weighted sum of candidate features,no direct ML input but baseline score,คะแนน baseline แบบ rule/heuristic,ใช้เทียบกับ logistic ranker,ไม่ใช่ความน่าจะเป็นจริง
+ml_probability,candidate,evaluate_dec_ml_scan_20260825.py,leave-one-target-out logistic ranker output,no input; output,ความน่าจะเป็นจากโมเดลต่อ candidate family,ใช้จัดอันดับ attack/validation order,ไม่ใช่ exploit success proof
+label,candidate,evaluate_dec_ml_scan_20260825.py,weak/validated labels,no,positive_family_match หรือ negative_family,ใช้ฝึก/ประเมินโมเดล,weak label ยังไม่ใช่ ground truth exploit

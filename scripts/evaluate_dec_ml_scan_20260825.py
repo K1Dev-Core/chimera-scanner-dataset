@@ -19,7 +19,7 @@ FAMILY_HINTS = {
     "drupal": {"aliases": ["drupal"], "ports": [8080]},
     "elasticsearch": {"aliases": ["elasticsearch", "elastic"], "ports": [9200, 18108]},
     "flask": {"aliases": ["flask", "werkzeug", "gunicorn"], "ports": [5000, 8000]},
-    "goahead": {"aliases": ["goahead"], "ports": [8080]},
+    "goahead": {"aliases": ["goahead", "document error", "access error"], "ports": [8080]},
     "gogs": {"aliases": ["gogs"], "ports": [3000]},
     "grafana": {"aliases": ["grafana"], "ports": [3000]},
     "jenkins": {"aliases": ["jenkins"], "ports": [8080]},
@@ -31,7 +31,7 @@ FAMILY_HINTS = {
     "phpmyadmin": {"aliases": ["phpmyadmin", "phpmyadmin", "access denied"], "ports": [8080]},
     "rails": {"aliases": ["rails", "ruby on rails"], "ports": [3000]},
     "redis": {"aliases": ["redis"], "ports": [6379]},
-    "shiro": {"aliases": ["shiro"], "ports": [8080]},
+    "shiro": {"aliases": ["shiro", "rememberme", "remember me", "deleteme"], "ports": [8080]},
     "solr": {"aliases": ["solr"], "ports": [8983]},
     "spring": {"aliases": ["spring", "tomcat"], "ports": [8080]},
     "struts2": {"aliases": ["struts", "struts2"], "ports": [8080]},
@@ -47,29 +47,33 @@ PROFILES = {
             "server_alias_score",
             "nmap_alias_score",
             "body_alias_score",
+            "evidence_alias_score",
             "port_score",
             "protocol_score",
             "http_tool_score",
+            "scan_depth_score",
         ],
-        "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/protocol/port/tool coverage",
+        "description": "ใช้ scanner fingerprint หลักทั้งหมด: title/server/nmap/body/evidence/protocol/port/tool coverage",
     },
     "no_body_text": {
         "features": [
             "title_alias_score",
             "server_alias_score",
             "nmap_alias_score",
+            "evidence_alias_score",
             "port_score",
             "protocol_score",
             "http_tool_score",
+            "scan_depth_score",
         ],
-        "description": "ตัด body/probe text ออก เหลือเฉพาะ metadata ที่มักนิ่งกว่า",
+        "description": "ตัด body text ออก แต่ยังใช้ evidence จาก scanner/raw-curated ที่ normalize แล้ว",
     },
     "port_protocol_only": {
         "features": ["port_score", "protocol_score"],
         "description": "ใช้แค่ port/protocol เพื่อดู baseline ที่หยาบมากและเสี่ยงชนกัน",
     },
     "text_only": {
-        "features": ["title_alias_score", "server_alias_score", "nmap_alias_score", "body_alias_score"],
+        "features": ["title_alias_score", "server_alias_score", "nmap_alias_score", "body_alias_score", "evidence_alias_score"],
         "description": "ใช้เฉพาะคำจาก scanner evidence ไม่ใช้ port",
     },
 }
@@ -199,12 +203,14 @@ def candidate_features(target: dict, family: str) -> dict:
     title = text_value(target, "title")
     server = text_value(target, "server", "x_powered_by")
     nmap = text_value(target, "nmap_service_line")
-    body = text_value(target, "http_status")
+    body = text_value(target, "http_status", "body_fingerprint")
+    evidence = text_value(target, "evidence_text", "nikto_summary", "wapiti_summary", "nuclei_summary")
 
     title_alias = alias_score(title, aliases)
     server_alias = alias_score(server, aliases)
     nmap_alias = alias_score(nmap, aliases)
     body_alias = alias_score(body, aliases)
+    evidence_alias = alias_score(evidence, aliases)
     port_score = 1.0 if port is not None and port in set(hints.get("ports", [])) else 0.0
     protocol_score = 0.0
     if protocol == "nonhttp" and family in {"redis", "aria2"}:
@@ -217,24 +223,36 @@ def candidate_features(target: dict, family: str) -> dict:
         http_tool_score = 0.15 * truthy(target.get("has_probe"))
         http_tool_score += 0.10 * truthy(target.get("has_nikto"))
         http_tool_score += 0.10 * truthy(target.get("has_wapiti"))
+        http_tool_score += 0.10 * truthy(target.get("has_nuclei_output"))
+
+    scan_depth_score = 0.0
+    if family not in {"redis", "aria2"}:
+        scan_depth_score += min(0.20, 0.02 * float(as_int(target.get("evidence_file_count")) or 0))
+        scan_depth_score += min(0.20, 0.03 * float(as_int(target.get("nikto_finding_count")) or 0))
+        scan_depth_score += min(0.20, 0.02 * float(as_int(target.get("wapiti_finding_count")) or 0))
+        scan_depth_score += min(0.20, 0.03 * float(as_int(target.get("nuclei_finding_count")) or 0))
 
     score = (
         2.5 * title_alias
         + 2.0 * server_alias
         + 2.0 * nmap_alias
         + 1.2 * body_alias
+        + 2.2 * evidence_alias
         + 0.7 * port_score
         + 0.6 * protocol_score
         + http_tool_score
+        + scan_depth_score
     )
     return {
         "title_alias_score": title_alias,
         "server_alias_score": server_alias,
         "nmap_alias_score": nmap_alias,
         "body_alias_score": body_alias,
+        "evidence_alias_score": evidence_alias,
         "port_score": port_score,
         "protocol_score": protocol_score,
         "http_tool_score": http_tool_score,
+        "scan_depth_score": scan_depth_score,
         "heuristic_score": score,
     }
 
@@ -405,10 +423,11 @@ def write_report(output_dir: Path, metrics: dict, failures: list[dict], report_p
         f"- label counts: `{json.dumps(metrics['label_counts'], ensure_ascii=False)}`",
         f"- label mode: `{metrics['label_metadata']['label_mode']}`",
         f"- effective label rows: {metrics['label_metadata']['effective_label_rows']}",
+        f"- features file: `{metrics['features_file']}`",
         "",
         "## Input ที่ใช้ทดสอบ",
         "",
-        "ใช้ข้อมูลจาก scanner/fingerprint เท่านั้น เช่น `title`, `server`, `x_powered_by`, `nmap_service_line`, `port`, `protocol_kind`, และ flag ว่ามี output จาก tool ไหนบ้าง",
+        "ใช้ข้อมูลจาก scanner/fingerprint เท่านั้น เช่น `title`, `server`, `x_powered_by`, `nmap_service_line`, `port`, `protocol_kind`, `evidence_text` ที่ตัด target/CVE leakage แล้ว และ flag ว่ามี output จาก tool ไหนบ้าง",
         "",
         "ไม่ใช้ field ที่เฉลยคำตอบโดยตรง:",
         "",
@@ -466,9 +485,11 @@ def write_candidate_feature_tables(derived_dir: Path, rows: list[dict], label_mo
         "server_alias_score",
         "nmap_alias_score",
         "body_alias_score",
+        "evidence_alias_score",
         "port_score",
         "protocol_score",
         "http_tool_score",
+        "scan_depth_score",
         "heuristic_score",
     ]
     fieldnames = ["target_id", "candidate_family", "positive_family", "label", *feature_names]
@@ -497,6 +518,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate target-level Dec ML scan fingerprints.")
     parser.add_argument("--experiment-dir", default="experiments/dec-ml-scan-2026-08-25")
     parser.add_argument("--output-dir", default="experiments/dec-ml-scan-2026-08-25/reports")
+    parser.add_argument(
+        "--features-file",
+        default=None,
+        help="CSV feature table. Defaults to features-enriched.csv when present, otherwise features.csv.",
+    )
     parser.add_argument("--label-mode", choices=["weak", "validated", "merged"], default="weak")
     parser.add_argument(
         "--validated-labels",
@@ -514,7 +540,13 @@ def main() -> None:
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    with (experiment_dir / "features.csv").open(encoding="utf-8", newline="") as handle:
+    if args.features_file:
+        features_file = Path(args.features_file)
+    else:
+        enriched_features = experiment_dir / "features-enriched.csv"
+        features_file = enriched_features if enriched_features.exists() else experiment_dir / "features.csv"
+
+    with features_file.open(encoding="utf-8", newline="") as handle:
         target_features = list(csv.DictReader(handle))
     labels, label_metadata = load_effective_labels(experiment_dir, Path(args.validated_labels), args.label_mode)
     if not labels:
@@ -570,6 +602,7 @@ def main() -> None:
     metrics = {
         "task": "ทดสอบว่า scanner-derived target fingerprints ช่วยเรียง candidate family ได้ถูกต้องหรือไม่",
         "experiment_dir": str(experiment_dir),
+        "features_file": str(features_file),
         "validation": "Leave-One-Target-Out logistic ranker over generated candidate-family rows",
         "label_metadata": label_metadata,
         "targets": len(target_features),

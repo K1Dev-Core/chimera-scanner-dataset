@@ -15,11 +15,11 @@ from urllib.request import Request, urlopen
 
 HTTP_ALIASES = {
     "grafana": ["grafana"],
-    "goahead": ["goahead", "goahead-webs"],
+    "goahead": ["goahead", "goahead-webs", "goahead-webserver"],
     "joomla": ["joomla", "com_config", "api/index.php"],
     "nginx": ["nginx"],
-    "shiro": ["shiro", "rememberme", "jsecurity"],
-    "spring": ["spring", "actuator", "tomcat"],
+    "shiro": ["shiro", "rememberme", "jsecurity", "jessionid"],
+    "spring": ["spring", "spring boot", "actuator", "tomcat", "whitelabel error page"],
     "tomcat": ["tomcat", "apache-coyote", "catalina"],
 }
 NONHTTP_ALIASES = {
@@ -81,6 +81,24 @@ def tcp_probe(host: str, port: int, payload: bytes, output: Path, timeout: int =
     return True, "tcp_response"
 
 
+def http_probe_paths(base_url: str, weak_label: str) -> list[str]:
+    base = base_url.rstrip("/")
+    probes = {
+        "joomla": [
+            "/api/index.php/v1/config/application?public=true",
+            "/administrator/manifests/files/joomla.xml",
+            "/language/en-GB/en-GB.xml",
+        ],
+        "grafana": ["/login", "/api/health", "/public/build/manifest.json"],
+        "spring": ["/actuator", "/actuator/env", "/actuator/health", "/error"],
+        "tomcat": ["/docs/", "/manager/html"],
+        "nginx": ["/"],
+        "goahead": ["/", "/admin", "/status", "/goform/status"],
+        "shiro": ["/", "/login", "/;JSESSIONID=dec-validation", "/index"],
+    }
+    return [base + path for path in probes.get(weak_label, ["/"])]
+
+
 def find_feature(features: list[dict[str, str]], target_id: str) -> dict[str, str] | None:
     for row in features:
         if row.get("target_id") == target_id:
@@ -138,25 +156,33 @@ def scan_target(row: dict[str, str], feature: dict[str, str] | None, out_dir: Pa
             evidence_files.append(curl_out)
             tools_used.append("curl")
 
-        probe_urls = []
-        if weak_label == "joomla":
-            probe_urls.append(url.rstrip("/") + "/api/index.php/v1/config/application?public=true")
-        elif weak_label == "grafana":
-            probe_urls.append(url.rstrip("/") + "/login")
-        elif weak_label == "spring":
-            probe_urls.append(url.rstrip("/") + "/actuator")
-        elif weak_label == "tomcat":
-            probe_urls.append(url.rstrip("/") + "/docs/")
-        elif weak_label == "nginx":
-            probe_urls.append(url.rstrip("/") + "/")
-        elif weak_label in {"goahead", "shiro"}:
-            probe_urls.append(url.rstrip("/") + "/")
-        for index, probe_url in enumerate(probe_urls, start=1):
+        for index, probe_url in enumerate(http_probe_paths(url, weak_label), start=1):
             probe_out = raw_dir / f"safe_probe_{index}.txt"
             ok, _ = http_get(probe_url, probe_out)
             if ok or probe_out.exists():
                 evidence_files.append(probe_out)
                 tools_used.append("safe-http-probe")
+                safe_poc_used = True
+
+        if weak_label == "shiro" and command_exists("curl"):
+            cookie_out = raw_dir / "shiro_rememberme_cookie_probe.txt"
+            ok, _ = run_command(
+                [
+                    "curl",
+                    "-k",
+                    "-i",
+                    "--max-time",
+                    "10",
+                    "-H",
+                    "Cookie: rememberMe=dec-validation",
+                    url,
+                ],
+                cookie_out,
+                timeout=20,
+            )
+            if ok or cookie_out.exists():
+                evidence_files.append(cookie_out)
+                tools_used.append("safe-cookie-probe")
                 safe_poc_used = True
 
         if command_exists("nikto"):
