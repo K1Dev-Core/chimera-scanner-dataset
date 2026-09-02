@@ -43,6 +43,19 @@ ml-runtime/
     train_family_ranker.py
     train_gate_profiles.py
     train_runtime_models.py
+  requirements.txt
+  feature-schema/
+    runtime_feature_schema.json
+  sample-features/
+    full_feature_template.json
+    redis_positive_example.json
+    redis_negative_example.json
+    grafana_positive_example.json
+    solr_velocity_positive_example.json
+    solr_velocity_negative_example.json
+    couchdb_positive_example.json
+    tomcat_put_positive_example.json
+    unknown_drupal_example.json
 docs/
   ML-RUNTIME-HANDOFF-TH.md
   ML-RUNTIME-USAGE-TH.md
@@ -75,6 +88,14 @@ Output สำคัญ:
 - Ranker รู้จัก family อะไรบ้าง
 - train มาจาก dataset ไหน
 - metric ล่าสุดของ model คืออะไร
+
+`feature-schema/runtime_feature_schema.json`
+
+คือ schema สำหรับ scanner integration สรุปจาก manifest จริง มีรายการ Gate features, optional scanner features, candidate families และ field ที่ห้ามใช้เป็น precheck feature
+
+`sample-features/full_feature_template.json`
+
+คือ template เต็มที่ใส่ feature runtime ที่ scanner อาจส่งได้ โดย default เป็น 0 ทั้งหมด ใช้เป็น starting point ตอนเขียน feature extractor
 
 ## Model ที่ใช้
 
@@ -177,4 +198,3 @@ Strict flow = 1.0000
 - เตือนเมื่อควรหยุดหรือ triage
 
 ยังไม่พร้อมให้ LLM ยิง exploit เองอัตโนมัติเต็มตัว
-

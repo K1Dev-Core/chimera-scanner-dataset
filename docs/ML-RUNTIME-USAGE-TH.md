@@ -68,9 +68,21 @@ Runtime รับ flat JSON feature object 1 target ต่อ 1 ไฟล์
 มี sample input ให้ลองใช้ได้ทันทีที่:
 
 ```text
+ml-runtime/sample-features/full_feature_template.json
 ml-runtime/sample-features/redis_positive_example.json
 ml-runtime/sample-features/redis_negative_example.json
+ml-runtime/sample-features/grafana_positive_example.json
+ml-runtime/sample-features/solr_velocity_positive_example.json
+ml-runtime/sample-features/solr_velocity_negative_example.json
+ml-runtime/sample-features/couchdb_positive_example.json
 ml-runtime/sample-features/tomcat_put_positive_example.json
+ml-runtime/sample-features/unknown_drupal_example.json
+```
+
+สำหรับต่อ scanner จริง ให้ดู schema นี้ร่วมด้วย:
+
+```text
+ml-runtime/feature-schema/runtime_feature_schema.json
 ```
 
 ## Command

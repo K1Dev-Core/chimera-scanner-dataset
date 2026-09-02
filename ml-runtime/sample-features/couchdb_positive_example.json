@@ -1,0 +1,15 @@
+{
+  "target_id": "couchdb_positive_example",
+  "couchdb_detected": 1,
+  "admin_party_enabled": 1,
+  "auth_required": 0,
+  "no_auth_required": 1,
+  "config_accessible": 1,
+  "config_blocked": 0,
+  "users_db_accessible": 1,
+  "version_in_vulnerable_range": 1,
+  "version_patched": 0,
+  "known_family_signal_count": 3,
+  "unknown_family_signal_count": 0,
+  "unknown_product_detected": 0
+}

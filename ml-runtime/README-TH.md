@@ -21,8 +21,15 @@
 ไฟล์สำหรับลองใช้ทันที:
 
 - `requirements.txt`
+- `feature-schema/runtime_feature_schema.json`
+- `sample-features/full_feature_template.json`
 - `sample-features/redis_positive_example.json`
 - `sample-features/redis_negative_example.json`
+- `sample-features/grafana_positive_example.json`
+- `sample-features/solr_velocity_positive_example.json`
+- `sample-features/solr_velocity_negative_example.json`
+- `sample-features/couchdb_positive_example.json`
+- `sample-features/unknown_drupal_example.json`
 - `sample-features/tomcat_put_positive_example.json`
 
 ติดตั้ง dependency:
@@ -41,3 +48,5 @@ python ml-runtime/scripts/predict_prototype.py \
 ```
 
 ข้อควรระวัง: runtime นี้ยังเป็น prototype สำหรับ decision-support ไม่ใช่ autonomous exploit runner
+
+หมายเหตุ: sample ราย family เป็นตัวอย่างที่ตั้งค่าเฉพาะ feature สำคัญของ family นั้น แต่ scanner จริงควรอิง `feature-schema/runtime_feature_schema.json` และ `sample-features/full_feature_template.json`

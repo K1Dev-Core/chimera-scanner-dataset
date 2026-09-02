@@ -17,6 +17,8 @@ Runtime ที่เพิ่มเข้ามา:
 - `ml-runtime/models/prototype/prototype_manifest.json`
 - `ml-runtime/scripts/predict_prototype.py`
 - `ml-runtime/requirements.txt`
+- `ml-runtime/feature-schema/runtime_feature_schema.json`
+- `ml-runtime/sample-features/full_feature_template.json`
 - `ml-runtime/sample-features/*.json`
 
 สถานะ: พร้อมใช้เป็น prototype สำหรับ decision-support แต่ยังไม่ใช่ autonomous exploit runner
@@ -30,3 +32,5 @@ python ml-runtime/scripts/predict_prototype.py \
   --model-dir ml-runtime/models/prototype \
   --top-k 5
 ```
+
+หมายเหตุ: `sample-features/*_example.json` เป็นตัวอย่างให้รันง่าย ส่วน `sample-features/full_feature_template.json` และ `feature-schema/runtime_feature_schema.json` คือไฟล์ที่ควรดูเมื่อต่อ scanner จริง

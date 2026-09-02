@@ -1,0 +1,11 @@
+{
+  "target_id": "unknown_drupal_example",
+  "drupal_detected": 1,
+  "endpoint_reachable_count": 1,
+  "auth_required": 0,
+  "no_auth_required": 1,
+  "version_in_vulnerable_range": 1,
+  "known_family_signal_count": 0,
+  "unknown_family_signal_count": 2,
+  "unknown_product_detected": 1
+}

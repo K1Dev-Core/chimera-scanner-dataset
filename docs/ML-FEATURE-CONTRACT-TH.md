@@ -2,6 +2,18 @@
 
 เอกสารนี้บอกว่า scanner/feature extractor ต้องส่ง feature แบบไหนให้ ML runtime
 
+ไฟล์ machine-readable schema อยู่ที่:
+
+```text
+ml-runtime/feature-schema/runtime_feature_schema.json
+```
+
+ไฟล์ template เต็มอยู่ที่:
+
+```text
+ml-runtime/sample-features/full_feature_template.json
+```
+
 ## หลักการสำคัญ
 
 Feature ที่ส่งเข้า ML runtime ต้องเป็นข้อมูลที่รู้ได้ก่อน exploit verification
@@ -233,4 +245,3 @@ safety_note_th
 ```
 
 LLM ควรใช้ `final_decision` เป็นตัวคุม behavior หลัก ไม่ใช้ `gate.score` อย่างเดียว
-
