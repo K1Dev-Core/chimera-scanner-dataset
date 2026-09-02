@@ -1,0 +1,338 @@
+#!/usr/bin/env python3
+"""Train/evaluate multiple exploitability gate feature profiles.
+
+The goal is to compare a strong but leak-prone profile against stricter
+precheck profiles. This makes the model failure mode visible before we claim
+the gate is ready for real use.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+from pathlib import Path
+
+import numpy as np
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score, precision_score, recall_score
+from sklearn.model_selection import LeaveOneOut
+from xgboost import XGBClassifier
+
+
+ID_COLUMNS = {"target_id", "label"}
+
+POSTCHECK_OR_LEAK_RISK = {
+    "tool_metasploit_success",
+    "msf_check_confirmed",
+    "msf_check_not_vulnerable",
+    "rce_confirmed",
+    "manual_poc_failed",
+    "negative_evidence_count",
+}
+
+METASPLOIT_FEATURES = {
+    "tool_metasploit_success",
+    "metasploit_module_found",
+    "msf_check_confirmed",
+    "msf_check_not_vulnerable",
+}
+
+NUCLEI_CONFIRMATION_FEATURES = {
+    "nuclei_cve_confirmed",
+}
+
+BASIC_SCANNER_FEATURES = {
+    "service_port",
+    "is_http_target",
+    "is_non_http_service",
+    "raw_file_count",
+    "tool_httpx_success",
+    "tool_nuclei_success",
+    "nuclei_fingerprint_only",
+    "nuclei_no_vuln_found",
+    "whatweb_was_run",
+    "whatweb_worked",
+    "whatweb_timeout",
+    "whatweb_missing",
+    "whatweb_tech_detected",
+    "whatweb_version_detected",
+    "curl_was_run",
+    "curl_worked",
+    "curl_timeout",
+    "root_status_code",
+    "ffuf_was_run",
+    "ffuf_worked",
+    "ffuf_timeout",
+    "ffuf_missing",
+    "content_discovery_was_run",
+    "content_discovery_worked",
+    "content_discovery_timeout",
+    "content_discovery_missing",
+    "discovered_path_count",
+    "admin_path_found",
+    "api_path_found",
+    "login_path_found",
+    "manager_path_found",
+    "actuator_path_found",
+    "upload_path_found",
+    "config_path_found",
+    "rpc_path_found",
+    "sensitive_path_found",
+}
+
+PRECONDITION_FEATURES = {
+    "version_in_vulnerable_range",
+    "version_in_vulnerable_range_true",
+    "version_in_vulnerable_range_false",
+    "version_not_affected",
+    "version_patched",
+    "precondition_pass_count",
+    "precondition_fail_count",
+    "auth_required",
+    "no_auth_required",
+    "endpoint_reachable_count",
+    "endpoint_missing_count",
+    "method_put_allowed",
+    "method_put_rejected",
+    "jsp_upload_candidate",
+    "ajp_port_open",
+    "ajp_port_closed",
+    "anonymous_access",
+    "velocity_enabled",
+    "velocity_disabled",
+    "config_api_accessible",
+    "config_api_blocked",
+    "solr_core_found",
+    "invokefunction_reachable",
+    "invokefunction_not_found",
+    "rce_endpoint_candidate_found",
+    "admin_party_enabled",
+    "config_accessible",
+    "config_blocked",
+    "users_db_accessible",
+    "default_key_likely",
+    "default_key_unlikely",
+    "spring_not_detected",
+    "wrong_software_type",
+    "painless_sandbox_blocks",
+    "path_traversal_blocked",
+    "auth_blocks_exploit",
+    "endpoint_not_found",
+    "wrong_version",
+    "actuator_path_missing",
+    "precondition_probe_missing",
+}
+
+POSITIVE_PRECONDITION_FEATURES = {
+    "version_in_vulnerable_range",
+    "version_in_vulnerable_range_true",
+    "precondition_pass_count",
+    "no_auth_required",
+    "endpoint_reachable_count",
+    "method_put_allowed",
+    "jsp_upload_candidate",
+    "ajp_port_open",
+    "anonymous_access",
+    "velocity_enabled",
+    "config_api_accessible",
+    "solr_core_found",
+    "invokefunction_reachable",
+    "rce_endpoint_candidate_found",
+    "admin_party_enabled",
+    "config_accessible",
+    "users_db_accessible",
+    "default_key_likely",
+}
+
+NEGATIVE_PRECONDITION_FEATURES = {
+    "version_in_vulnerable_range_false",
+    "version_not_affected",
+    "version_patched",
+    "precondition_fail_count",
+    "auth_required",
+    "endpoint_missing_count",
+    "method_put_rejected",
+    "upload_blocked",
+    "wrong_context_path",
+    "ajp_port_closed",
+    "ajp_not_exposed",
+    "velocity_disabled",
+    "config_api_blocked",
+    "invokefunction_not_found",
+    "default_key_unlikely",
+    "spring_not_detected",
+    "wrong_software_type",
+    "painless_sandbox_blocks",
+    "path_traversal_blocked",
+    "auth_blocks_exploit",
+    "endpoint_not_found",
+    "wrong_version",
+    "actuator_path_missing",
+    "precondition_probe_missing",
+    "config_blocked",
+}
+
+DERIVED_PRECONDITION_FEATURES = {
+    "precondition_positive_signal_count",
+    "precondition_negative_signal_count",
+    "precondition_signal_balance",
+    "has_positive_precondition_signal",
+    "has_negative_precondition_signal",
+}
+
+
+def load_dataset(path: Path) -> tuple[list[str], np.ndarray, dict[str, np.ndarray]]:
+    rows = list(csv.DictReader(path.open(encoding="utf-8", newline="")))
+    targets = [row["target_id"] for row in rows]
+    labels = np.array([int(row["label"]) for row in rows])
+    columns = [name for name in rows[0] if name not in ID_COLUMNS]
+    data = {
+        name: np.array([float(row.get(name) or 0) for row in rows])
+        for name in columns
+    }
+    add_derived_precondition_features(data, len(rows))
+    return targets, labels, data
+
+
+def add_derived_precondition_features(data: dict[str, np.ndarray], row_count: int) -> None:
+    positive = np.zeros(row_count)
+    negative = np.zeros(row_count)
+    for name in POSITIVE_PRECONDITION_FEATURES:
+        if name in data:
+            positive += (data[name] > 0).astype(float)
+    for name in NEGATIVE_PRECONDITION_FEATURES:
+        if name in data:
+            negative += (data[name] > 0).astype(float)
+
+    data["precondition_positive_signal_count"] = positive
+    data["precondition_negative_signal_count"] = negative
+    data["precondition_signal_balance"] = positive - negative
+    data["has_positive_precondition_signal"] = (positive > 0).astype(float)
+    data["has_negative_precondition_signal"] = (negative > 0).astype(float)
+
+
+def profile_features(profile: str, all_features: list[str]) -> list[str]:
+    if profile == "full_v02":
+        return all_features
+    if profile == "strict_precheck":
+        return [name for name in all_features if name not in POSTCHECK_OR_LEAK_RISK]
+    if profile == "strict_no_negative_count":
+        return [name for name in all_features if name != "negative_evidence_count"]
+    if profile == "scanner_only":
+        return [name for name in all_features if name in BASIC_SCANNER_FEATURES]
+    if profile == "precondition_only":
+        return [name for name in all_features if name in PRECONDITION_FEATURES | DERIVED_PRECONDITION_FEATURES]
+    if profile == "no_metasploit":
+        return [name for name in all_features if name not in METASPLOIT_FEATURES]
+    if profile == "no_nuclei_confirm":
+        return [name for name in all_features if name not in NUCLEI_CONFIRMATION_FEATURES]
+    raise ValueError(f"unknown profile: {profile}")
+
+
+def build_matrix(data: dict[str, np.ndarray], features: list[str]) -> np.ndarray:
+    return np.column_stack([data[name] for name in features])
+
+
+def new_model() -> XGBClassifier:
+    return XGBClassifier(
+        objective="binary:logistic",
+        n_estimators=120,
+        max_depth=3,
+        learning_rate=0.08,
+        min_child_weight=2,
+        subsample=0.85,
+        colsample_bytree=0.85,
+        reg_alpha=0.2,
+        reg_lambda=1.2,
+        eval_metric="logloss",
+        random_state=42,
+    )
+
+
+def evaluate(y_true: np.ndarray, probabilities: np.ndarray, threshold: float) -> dict[str, object]:
+    predictions = (probabilities >= threshold).astype(int)
+    tn, fp, fn, tp = confusion_matrix(y_true, predictions, labels=[0, 1]).ravel()
+    return {
+        "threshold": threshold,
+        "accuracy": round(float(accuracy_score(y_true, predictions)), 4),
+        "precision": round(float(precision_score(y_true, predictions, zero_division=0)), 4),
+        "recall": round(float(recall_score(y_true, predictions, zero_division=0)), 4),
+        "f1": round(float(f1_score(y_true, predictions, zero_division=0)), 4),
+        "tp": int(tp),
+        "fp": int(fp),
+        "tn": int(tn),
+        "fn": int(fn),
+    }
+
+
+def choose_threshold(y_true: np.ndarray, probabilities: np.ndarray) -> dict[str, object]:
+    candidates = [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]
+    results = [evaluate(y_true, probabilities, threshold) for threshold in candidates]
+
+    # Prefer low false negatives first, then fewer false positives, then F1.
+    return sorted(results, key=lambda row: (row["fn"], row["fp"], -row["f1"], row["threshold"]))[0]
+
+
+def loo_predict(X: np.ndarray, y: np.ndarray) -> np.ndarray:
+    probabilities = np.zeros(len(y))
+    for train_idx, test_idx in LeaveOneOut().split(X):
+        model = new_model()
+        model.fit(X[train_idx], y[train_idx])
+        probabilities[test_idx] = model.predict_proba(X[test_idx])[:, 1]
+    return probabilities
+
+
+def write_predictions(path: Path, targets: list[str], y: np.ndarray, probabilities: np.ndarray, threshold: float) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["target_id", "true_label", "predicted_label", "probability", "threshold"])
+        for target, true_label, probability in zip(targets, y, probabilities):
+            writer.writerow([target, int(true_label), int(probability >= threshold), round(float(probability), 4), threshold])
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset", required=True, type=Path)
+    parser.add_argument("--out-dir", required=True, type=Path)
+    args = parser.parse_args()
+
+    targets, y, data = load_dataset(args.dataset)
+    all_features = list(data.keys())
+    profiles = [
+        "full_v02",
+        "strict_precheck",
+        "strict_no_negative_count",
+        "precondition_only",
+        "scanner_only",
+        "no_metasploit",
+        "no_nuclei_confirm",
+    ]
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+
+    summary: list[dict[str, object]] = []
+    for profile in profiles:
+        features = profile_features(profile, all_features)
+        X = build_matrix(data, features)
+        probabilities = loo_predict(X, y)
+        metrics = choose_threshold(y, probabilities)
+        write_predictions(args.out_dir / f"{profile}-predictions.csv", targets, y, probabilities, float(metrics["threshold"]))
+        summary.append(
+            {
+                "profile": profile,
+                "features": len(features),
+                **metrics,
+            }
+        )
+
+    with (args.out_dir / "gate-profile-comparison.json").open("w", encoding="utf-8") as handle:
+        json.dump(summary, handle, ensure_ascii=False, indent=2)
+
+    with (args.out_dir / "gate-profile-comparison.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(summary[0].keys()))
+        writer.writeheader()
+        writer.writerows(summary)
+
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()
