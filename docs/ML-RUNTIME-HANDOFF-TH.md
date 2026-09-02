@@ -97,6 +97,21 @@ Output สำคัญ:
 
 คือ template เต็มที่ใส่ feature runtime ที่ scanner อาจส่งได้ โดย default เป็น 0 ทั้งหมด ใช้เป็น starting point ตอนเขียน feature extractor
 
+## Runtime Safety Guard ล่าสุด
+
+runtime script เวอร์ชันนี้มี guard หลัง Ranker แล้ว
+
+ภาษาคนคือ:
+
+```text
+ถ้า family ที่ชนะคะแนนไม่ชนะขาด หรือมีหลักฐานเฉพาะ family ไม่พอ ระบบจะไม่บอกว่าพร้อมตรวจต่อทันที
+```
+
+field ที่ LLM/operator ควรอ่านเพิ่ม:
+
+- `ranker.confidence`
+- `ranker.family_readiness`
+
 ## Model ที่ใช้
 
 Gate:

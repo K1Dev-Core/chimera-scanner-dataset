@@ -121,6 +121,21 @@ python3 ml-runtime/scripts/predict_prototype.py \
   "ranker": {
     "model": "family_ranker",
     "decision": "known_family_ready",
+    "confidence": {
+      "level": "clear_margin",
+      "margin": 2.484223,
+      "reason": "อันดับหนึ่งชนะอันดับสองชัดเจน"
+    },
+    "family_readiness": {
+      "ready": true,
+      "specific_positive_signals": [
+        "lua_available",
+        "redis_detected",
+        "redis_info_accessible"
+      ],
+      "blocking_negative_signals": [],
+      "reason": "มีหลักฐานเฉพาะ family เพียงพอ และไม่พบตัวบล็อกของ family นี้"
+    },
     "top_families": [
       {
         "family": "redis",
@@ -201,9 +216,28 @@ LLM ควรอ่าน field เหล่านี้:
 - `gate.decision`
 - `gate.score`
 - `ranker.top_families`
+- `ranker.confidence`
+- `ranker.family_readiness`
 - `final_decision`
 - `recommended_next_action`
 - `reason_features`
 - `schema_warnings`
 
 LLM ไม่ควรใช้ score เพียงตัวเดียวเพื่อตัดสิน ต้องดู `final_decision` เป็นหลัก
+
+## Ranker Safety Fields
+
+`ranker.confidence`
+
+บอกว่า family อันดับหนึ่งชนะอันดับสองชัดไหม
+
+```text
+clear_margin = อันดับหนึ่งชนะชัด
+low_margin = คะแนนใกล้กัน ต้องตรวจมือหรือเก็บ evidence เพิ่ม
+```
+
+`ranker.family_readiness`
+
+บอกว่า family ที่ถูกเลือกมีหลักฐานเฉพาะ family พอไหม
+
+ถ้า `ready = false` หรือ `ranker.confidence.level = low_margin` runtime จะไม่ถือว่าพร้อมตรวจต่อทันที แต่จะลดไปเป็นต้องตรวจมือก่อน (`known_family_but_blocked_or_low_confidence`)

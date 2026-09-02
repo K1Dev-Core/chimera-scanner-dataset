@@ -23,6 +23,12 @@ Runtime ที่เพิ่มเข้ามา:
 
 สถานะ: พร้อมใช้เป็น prototype สำหรับ decision-support แต่ยังไม่ใช่ autonomous exploit runner
 
+runtime script มี Ranker safety guard แล้ว:
+
+- ถ้าคะแนน family อันดับหนึ่งกับอันดับสองใกล้กัน จะส่งไป manual triage
+- ถ้าหลักฐานเฉพาะ family ไม่พอ จะไม่ถือว่าพร้อมตรวจต่อทันที
+- LLM ควรอ่าน `ranker.confidence` และ `ranker.family_readiness` เพิ่มจาก `final_decision`
+
 ลองใช้งานเร็ว ๆ:
 
 ```bash
