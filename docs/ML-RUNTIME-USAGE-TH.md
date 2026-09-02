@@ -12,6 +12,12 @@ xgboost
 scikit-learn
 ```
 
+ติดตั้งจากไฟล์ที่ให้ไว้:
+
+```bash
+python -m pip install -r ml-runtime/requirements.txt
+```
+
 สำหรับ inference จริง ใช้หลัก ๆ:
 
 ```text
@@ -57,6 +63,14 @@ Runtime รับ flat JSON feature object 1 target ต่อ 1 ไฟล์
   "unknown_family_signal_count": 0,
   "unknown_product_detected": 0
 }
+```
+
+มี sample input ให้ลองใช้ได้ทันทีที่:
+
+```text
+ml-runtime/sample-features/redis_positive_example.json
+ml-runtime/sample-features/redis_negative_example.json
+ml-runtime/sample-features/tomcat_put_positive_example.json
 ```
 
 ## Command
@@ -181,4 +195,3 @@ LLM ควรอ่าน field เหล่านี้:
 - `schema_warnings`
 
 LLM ไม่ควรใช้ score เพียงตัวเดียวเพื่อตัดสิน ต้องดู `final_decision` เป็นหลัก
-

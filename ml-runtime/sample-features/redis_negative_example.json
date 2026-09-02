@@ -1,0 +1,13 @@
+{
+  "target_id": "redis_negative_example",
+  "redis_detected": 1,
+  "redis_info_accessible": 0,
+  "lua_available": 0,
+  "auth_required": 1,
+  "no_auth_required": 0,
+  "version_in_vulnerable_range": 1,
+  "version_patched": 0,
+  "known_family_signal_count": 0,
+  "unknown_family_signal_count": 0,
+  "unknown_product_detected": 0
+}

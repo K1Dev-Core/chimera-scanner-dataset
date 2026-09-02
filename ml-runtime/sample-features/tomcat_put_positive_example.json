@@ -1,0 +1,13 @@
+{
+  "target_id": "tomcat_put_positive_example",
+  "tomcat_detected": 1,
+  "method_put_allowed": 1,
+  "method_put_rejected": 0,
+  "jsp_upload_candidate": 1,
+  "upload_blocked": 0,
+  "version_in_vulnerable_range": 1,
+  "version_patched": 0,
+  "known_family_signal_count": 2,
+  "unknown_family_signal_count": 0,
+  "unknown_product_detected": 0
+}
