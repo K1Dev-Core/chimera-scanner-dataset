@@ -27,7 +27,11 @@ runtime script มี Ranker safety guard แล้ว:
 
 - ถ้าคะแนน family อันดับหนึ่งกับอันดับสองใกล้กัน จะส่งไป manual triage
 - ถ้าหลักฐานเฉพาะ family ไม่พอ จะไม่ถือว่าพร้อมตรวจต่อทันที
+- ถ้า Redis มี service signal แต่ไม่มี Lua evidence จะไม่ปล่อยเป็นพร้อมตรวจต่อ
+- ถ้า Grafana path traversal ถูก block และเข้า public plugin path ไม่ได้ จะไม่ปล่อยเป็นพร้อมตรวจต่อ
 - LLM ควรอ่าน `ranker.confidence` และ `ranker.family_readiness` เพิ่มจาก `final_decision`
+
+ผล validation ล่าสุด `ranker-guard-unknown-validation-v01` ผ่าน 24/24 ในชุด known-family, unknown-family และ weak/noisy โดย unknown-family 6/6 ถูกส่งไป triage และ weak/noisy 6/6 ไม่ถูกปล่อยเป็น exploit ต่ออัตโนมัติ
 
 ลองใช้งานเร็ว ๆ:
 

@@ -181,6 +181,42 @@ python3 ml-runtime/scripts/predict_prototype.py \
 
 target อาจน่าสนใจ แต่ไม่อยู่ใน family ที่ model รู้จัก ต้องหยุดการเลือก exploit family อัตโนมัติ
 
+## Guard สำคัญที่ scanner ต้องช่วยส่ง feature
+
+Redis weak/noisy:
+
+```json
+{
+  "redis_detected": 1,
+  "redis_info_accessible": 1,
+  "lua_available": 0,
+  "known_family_signal_count": 0
+}
+```
+
+เคสนี้ runtime จะไม่ปล่อยเป็น `ready_for_safe_verification` เพราะไม่มี Lua evidence ที่เป็นหัวใจของ Redis Lua exploit path
+
+Grafana weak/noisy:
+
+```json
+{
+  "grafana_detected": 1,
+  "path_traversal_blocked": 1,
+  "public_plugin_path_accessible": 0,
+  "known_family_signal_count": 0
+}
+```
+
+เคสนี้ runtime จะไม่ปล่อยเป็นพร้อมตรวจต่อ เพราะ traversal path ถูก block และไม่มี plugin path evidence
+
+Solr schema alias:
+
+```text
+template_accessible -> velocity_template_accessible -> velocity_enabled
+```
+
+ถ้า scanner รุ่นเก่ายังส่ง `template_accessible` runtime จะ map ให้ชั่วคราว แต่ scanner รุ่นต่อไปควรส่งชื่อ canonical คือ `velocity_template_accessible` หรือ `velocity_enabled`
+
 ## ตัวอย่าง Negative
 
 Redis ที่ต้อง auth:

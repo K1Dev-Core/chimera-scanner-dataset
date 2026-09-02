@@ -112,6 +112,12 @@ field ที่ LLM/operator ควรอ่านเพิ่ม:
 - `ranker.confidence`
 - `ranker.family_readiness`
 
+เพิ่ม guard จาก validation ล่าสุด:
+
+- Redis ที่ `redis_detected=1` แต่ `lua_available=0` และ `known_family_signal_count=0` จะถูก downgrade
+- Grafana ที่ `path_traversal_blocked=1` และ `public_plugin_path_accessible=0` จะถูก downgrade
+- ถ้า scanner ส่ง `known_family_signal_count=0` runtime จะถือว่า family ที่ Ranker เลือกยังไม่พร้อม (`family_readiness.ready=false`)
+
 ## Model ที่ใช้
 
 Gate:
@@ -157,6 +163,28 @@ tomcat_put
 ```
 
 ถ้า scanner เจอ product/family นอกกลุ่มนี้ ต้องส่ง unknown-family signal ให้ runtime guard ส่งไป `unknown_family_triage`
+
+## Validation ล่าสุด
+
+ชุด `ranker-guard-unknown-validation-v01` ทดสอบ 24 targets:
+
+| กลุ่ม | จำนวน | ผล |
+| --- | ---: | --- |
+| Known family | 12 | 12/12 safe |
+| Unknown family | 6 | 6/6 ถูกส่งไป unknown triage |
+| Weak/noisy | 6 | 6/6 ไม่ถูกปล่อยเป็น exploit |
+
+ผล runtime หลังแก้ guard:
+
+| Metric | Result |
+| --- | ---: |
+| Gate FP/FN | 0 / 0 |
+| Known-positive Ranker Top-1 | 1.0000 |
+| Unknown-family rejected | 1.0000 |
+| Safety flow | 1.0000 |
+| Strict flow | 1.0000 |
+
+หมายเหตุ: ตัวเลขนี้เป็นผล validation ของชุดควบคุม 24 targets ยังไม่ใช่ production accuracy
 
 ## ผล validation ล่าสุด
 
